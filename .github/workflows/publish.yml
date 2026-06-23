@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
   packages: write
 
 jobs:
@@ -68,21 +69,20 @@ jobs:
             -p:PackageVersion="${{ steps.version.outputs.version }}" \
             -p:ContinuousIntegrationBuild=true
 
+      - name: NuGet trusted publishing login
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: leadpingai
+
       - name: Publish to NuGet.org
-        env:
-          NUGET_TOKEN: ${{ secrets.NUGET__TOKEN }}
         run: |
           set -euo pipefail
-
-          if [ -z "${NUGET_TOKEN}" ]; then
-            echo "::error::NUGET__TOKEN is required to publish to NuGet.org."
-            exit 1
-          fi
 
           for package in artifacts/*.nupkg; do
             dotnet nuget push "${package}" \
               --source "https://api.nuget.org/v3/index.json" \
-              --api-key "${NUGET_TOKEN}" \
+              --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" \
               --skip-duplicate
           done
 
