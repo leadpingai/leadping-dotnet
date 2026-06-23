@@ -1,6 +1,6 @@
 # Leadping .NET SDK
 
-Typed .NET client for the Leadping API, generated from `leadpingai/openapi` with Kiota.
+Type-safe .NET client for the Leadping API.
 
 ## Install
 
@@ -26,16 +26,19 @@ using Leadping.OpenApiClient;
 using Microsoft.Kiota.Abstractions;
 
 IRequestAdapter adapter = CreateLeadpingRequestAdapter();
-adapter.BaseUrl = "https://api.leadping.ai";
-
 var client = new LeadpingOpenApiClient(adapter);
+
 var me = await client.Users.Me.GetAsync();
 ```
 
-`CreateLeadpingRequestAdapter` should return a Kiota request adapter configured with your Leadping authentication.
+`CreateLeadpingRequestAdapter` is application code. Configure it to send one of:
 
-## Notes
+- `Authorization: Bearer <token>`
+- `X-Leadping-Api-Key: <key>`
 
-- Generated code comes from `leadpingai/openapi`; update the OpenAPI spec instead of hand-editing generated files.
-- Package ID: `Leadping.OpenApiClient`
-- License: see `LICENSE`
+The client defaults to `https://api.leadping.ai` when the adapter does not already have a base URL.
+
+## Links
+
+- [API reference](https://leadping.ai/docs/api-reference)
+- [License](LICENSE)
