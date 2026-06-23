@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <PackageId>Leadping.OpenApiClient</PackageId>
+    <Title>Leadping .NET SDK</Title>
+    <Description>Typed .NET client for the Leadping API, generated from the Leadping OpenAPI document with Microsoft Kiota.</Description>
+    <Authors>Leadping</Authors>
+    <Company>Leadping</Company>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/leadpingai/leadping-dotnet</RepositoryUrl>
+    <PackageProjectUrl>https://leadping.ai</PackageProjectUrl>
+    <PackageTags>Leadping;API;SDK;OpenAPI;Kiota</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Kiota.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Form" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Multipart" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Text" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>

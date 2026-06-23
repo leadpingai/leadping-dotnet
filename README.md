@@ -1,0 +1,129 @@
+# Leadping .NET SDK
+
+Typed .NET client source for the Leadping API, generated from the public Leadping OpenAPI document with Microsoft Kiota.
+
+This SDK gives .NET applications a fluent, strongly typed way to call Leadping API resources such as leads, conversations, SMS, phone numbers, automations, reports, billing, and users.
+
+## At a glance
+
+| Item             | Value                                          |
+| ---------------- | ---------------------------------------------- |
+| Repository       | `leadpingai/leadping-dotnet`                   |
+| Main client      | `Leadping.OpenApiClient.LeadpingOpenApiClient` |
+| Default API host | `https://api.leadping.ai`                      |
+| OpenAPI source   | `leadpingai/openapi`                           |
+| Generator        | Microsoft Kiota `1.32.2`                       |
+
+## Status
+
+This repository contains generated SDK source plus NuGet packaging metadata. The `Publish .NET SDK` GitHub Actions workflow packages the SDK, publishes it to NuGet.org, publishes it to GitHub Packages, tags the commit, and creates a GitHub release with the `.nupkg` artifact.
+
+The generated source is refreshed from `leadpingai/openapi`. Do not hand-edit generated `.cs` files; update the OpenAPI document and regenerate the SDK instead. This README is intended to be preserved across regenerations.
+
+## Install
+
+Install from NuGet.org after a version is published:
+
+```bash
+dotnet add package Leadping.OpenApiClient
+```
+
+To use the package from GitHub Packages, add the Leadping GitHub Packages NuGet source first:
+
+```bash
+dotnet nuget add source https://nuget.pkg.github.com/leadpingai/index.json \
+  --name leadping-github \
+  --username USERNAME \
+  --password GITHUB_TOKEN
+
+dotnet add package Leadping.OpenApiClient --source leadping-github
+```
+
+The package includes the Kiota abstractions and serialization dependencies required by the generated client. Applications still choose their own Kiota request adapter and authentication provider.
+
+## Quick start
+
+```csharp
+using Leadping.OpenApiClient;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+string token = Environment.GetEnvironmentVariable("LEADPING_API_TOKEN")
+    ?? throw new InvalidOperationException("LEADPING_API_TOKEN is required.");
+
+var authProvider = new StaticBearerTokenAuthenticationProvider(token);
+var requestAdapter = new HttpClientRequestAdapter(authProvider)
+{
+    BaseUrl = "https://api.leadping.ai"
+};
+
+var client = new LeadpingOpenApiClient(requestAdapter);
+
+var me = await client.Users.Me.GetAsync();
+Console.WriteLine(me?.Email);
+
+internal sealed class StaticBearerTokenAuthenticationProvider : IAuthenticationProvider
+{
+    private readonly string _token;
+
+    public StaticBearerTokenAuthenticationProvider(string token)
+    {
+        _token = token;
+    }
+
+    public Task AuthenticateRequestAsync(
+        RequestInformation request,
+        Dictionary<string, object>? additionalAuthenticationContext = null,
+        CancellationToken cancellationToken = default)
+    {
+        request.Headers.Add("Authorization", $"Bearer {_token}");
+        return Task.CompletedTask;
+    }
+}
+```
+
+For production applications, use an authentication provider that matches your Leadping credential flow and refreshes credentials as needed.
+
+## Common entry points
+
+The client exposes request builders for the main Leadping API areas:
+
+| Area              | Builder                                                                          |
+| ----------------- | -------------------------------------------------------------------------------- |
+| Leads             | `client.Leads`                                                                   |
+| Conversations     | `client.Conversations`                                                           |
+| SMS               | `client.Sms`                                                                     |
+| Phone numbers     | `client.PhoneNumbers`                                                            |
+| Automations       | `client.Automations`                                                             |
+| Sources           | `client.Sources`                                                                 |
+| Reports           | `client.Reports`                                                                 |
+| Users             | `client.Users`                                                                   |
+| Businesses        | `client.Businesses`                                                              |
+| Usage and billing | `client.Usage`, `client.Wallets`, `client.Transactions`, `client.PaymentMethods` |
+
+Each builder mirrors the OpenAPI path structure and provides typed request and response models from the `Leadping.OpenApiClient.Models` namespace.
+
+## Regenerating
+
+This SDK is regenerated by the Leadping GitHub workflow from the canonical OpenAPI repository:
+
+```bash
+kiota generate \
+  --openapi ../openapi/openapi.json \
+  --language CSharp \
+  --output . \
+  --class-name LeadpingOpenApiClient \
+  --namespace-name Leadping.OpenApiClient \
+  --exclude-backward-compatible
+```
+
+## Support
+
+Use the Leadping API documentation and the OpenAPI document as the source of truth for routes, schemas, authentication requirements, and response shapes.
+
+Useful links:
+
+- Leadping API host: <https://api.leadping.ai>
+- OpenAPI repository: <https://github.com/leadpingai/openapi>
+- Kiota documentation: <https://learn.microsoft.com/openapi/kiota/>
