@@ -30,16 +30,51 @@ jobs:
         run: |
           set -euo pipefail
 
+          versions_file="$(mktemp)"
           git fetch --tags --force
-          latest_tag="$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | awk '/^v[0-9]+\.[0-9]+\.[0-9]+$/ { print; exit }')"
 
-          if [ -z "${latest_tag}" ]; then
-            version="1.0.0"
-          else
-            base="${latest_tag#v}"
-            IFS='.' read -r major minor patch <<< "${base}"
-            version="${major}.${minor}.$((patch + 1))"
+          git tag --list 'v[0-9]*.[0-9]*.[0-9]*' |
+            sed -E 's/^v//' |
+            awk '/^[0-9]+\.[0-9]+\.[0-9]+$/ { print }' >> "${versions_file}"
+
+          nuget_response="$(mktemp)"
+          if curl -fsSL "https://api.nuget.org/v3-flatcontainer/leadping.openapiclient/index.json" -o "${nuget_response}"; then
+            python3 - "${nuget_response}" <<'PY' >> "${versions_file}"
+          import json
+          import re
+          import sys
+
+          with open(sys.argv[1], encoding="utf-8") as handle:
+              data = json.load(handle)
+
+          for version in data.get("versions", []):
+              if re.fullmatch(r"\d+\.\d+\.\d+", version):
+                  print(version)
+          PY
           fi
+
+          version="$(python3 - "${versions_file}" <<'PY'
+          import re
+          import sys
+
+          best = None
+          with open(sys.argv[1], encoding="utf-8") as handle:
+              for line in handle:
+                  version = line.strip()
+                  if not re.fullmatch(r"\d+\.\d+\.\d+", version):
+                      continue
+
+                  parsed = tuple(int(part) for part in version.split("."))
+                  if best is None or parsed > best:
+                      best = parsed
+
+          if best is None:
+              print("1.0.0")
+          else:
+              major, minor, patch = best
+              print(f"{major}.{minor}.{patch + 1}")
+          PY
+          )"
 
           if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "::error::Version must look like 1.2.3."
