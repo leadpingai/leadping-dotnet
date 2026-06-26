@@ -1,3 +1,8 @@
+[![](https://img.shields.io/nuget/v/Leadping.OpenApiClient.svg?style=for-the-badge)](https://www.nuget.org/packages/Leadping.OpenApiClient/)
+[![](https://img.shields.io/github/actions/workflow/status/leadpingai/leadping-dotnet/publish.yml?style=for-the-badge)](https://github.com/leadpingai/leadping-dotnet/actions/workflows/publish.yml)
+[![](https://img.shields.io/nuget/dt/Leadping.OpenApiClient.svg?style=for-the-badge)](https://www.nuget.org/packages/Leadping.OpenApiClient/)
+[![](https://img.shields.io/github/actions/workflow/status/leadpingai/leadping-dotnet/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/leadpingai/leadping-dotnet/actions/workflows/codeql.yml)
+
 # Leadping .NET SDK
 
 Type-safe .NET client for the Leadping API.
