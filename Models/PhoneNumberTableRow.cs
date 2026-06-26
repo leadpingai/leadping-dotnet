@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number data used by Leadping API contracts.
+    /// List item schema for Leadping API phone number table row results shown in searchable tables.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The admin force enablement override on this phone number.</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The billing attribution value for this phone number.</summary>
+        /// <summary>Billing attribution used to reconcile this phone number with subscription billing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillingAttribution { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingAttribution { get; set; }
 #endif
-        /// <summary>The business value for this phone number.</summary>
+        /// <summary>Business summary connected to this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Business { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Business { get; set; }
 #endif
-        /// <summary>The capabilities value for this phone number.</summary>
+        /// <summary>SMS and voice capabilities available on this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Capabilities { get; set; }
@@ -47,11 +47,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Capabilities { get; set; }
 #endif
-        /// <summary>Whether this phone number is enabled.</summary>
+        /// <summary>Indicates whether this phone number table row is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Defines the supported SMS Warmup Health State values.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_healthStatus? HealthStatus { get; set; }
-        /// <summary>The unique ID for this phone number.</summary>
+        /// <summary>Unique Leadping identifier for this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -59,13 +59,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether internal test only applies to this phone number.</summary>
+        /// <summary>Indicates whether this record is restricted to internal Leadping testing.</summary>
         public bool? InternalTestOnly { get; set; }
-        /// <summary>The current inventory state for this phone number.</summary>
+        /// <summary>Leadping inventory state for this phone number.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberInventoryState? InventoryState { get; set; }
-        /// <summary>Whether this phone number is messaging program approved.</summary>
+        /// <summary>Indicates whether this phone number is approved for the configured messaging program.</summary>
         public bool? IsMessagingProgramApproved { get; set; }
-        /// <summary>The location value for this phone number.</summary>
+        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
-        /// <summary>The human-readable name shown for this phone number.</summary>
+        /// <summary>Display name for this phone number table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The number value for this phone number.</summary>
+        /// <summary>E.164 phone number exposed by this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The ownership value for this phone number.</summary>
+        /// <summary>Ownership classification for this phone number, such as Leadping-owned or customer-owned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ownership { get; set; }
@@ -97,9 +97,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ownership { get; set; }
 #endif
-        /// <summary>The current provider lifecycle state for this phone number.</summary>
+        /// <summary>Provider lifecycle state used to determine phone number readiness.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberProviderLifecycleState? ProviderLifecycleState { get; set; }
-        /// <summary>The current provider reconciliation status for this phone number.</summary>
+        /// <summary>Reconciliation status comparing Leadping data with provider data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderReconciliationStatus { get; set; }
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderReconciliationStatus { get; set; }
 #endif
-        /// <summary>The current provider status for this phone number.</summary>
+        /// <summary>Provider lifecycle or delivery status for this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderStatus { get; set; }
@@ -115,7 +115,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderStatus { get; set; }
 #endif
-        /// <summary>The routing summary value for this phone number.</summary>
+        /// <summary>Human-readable routing summary for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoutingSummary { get; set; }
@@ -123,11 +123,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RoutingSummary { get; set; }
 #endif
-        /// <summary>Whether this phone number is SMS ready.</summary>
+        /// <summary>Indicates whether SMS messaging is ready for this business or phone number.</summary>
         public bool? SmsReady { get; set; }
-        /// <summary>The current status for this phone number.</summary>
+        /// <summary>Current lifecycle status for this phone number table row in the Leadping API.</summary>
         public global::Leadping.OpenApiClient.Models.InternalPhoneNumberStatus? Status { get; set; }
-        /// <summary>The 10DLC campaign ID associated with this phone number.</summary>
+        /// <summary>10DLC campaign identifier associated with this sender or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenDlcCampaignId { get; set; }
@@ -135,7 +135,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TenDlcCampaignId { get; set; }
 #endif
-        /// <summary>The current 10DLC campaign status for this phone number.</summary>
+        /// <summary>10DLC campaign status associated with this sender or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenDlcCampaignStatus { get; set; }
@@ -143,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TenDlcCampaignStatus { get; set; }
 #endif
-        /// <summary>The type classification for this phone number.</summary>
+        /// <summary>Type classification used to route and interpret this phone number table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -151,7 +151,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The user value for this phone number.</summary>
+        /// <summary>User summary connected to this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? User { get; set; }
@@ -159,13 +159,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string User { get; set; }
 #endif
-        /// <summary>Whether this phone number is voice ready.</summary>
+        /// <summary>Indicates whether voice calling is ready for this business or phone number.</summary>
         public bool? VoiceReady { get; set; }
-        /// <summary>The warmup health score metric for this phone number.</summary>
+        /// <summary>Numeric sender warmup health score used by Leadping to assess deliverability readiness.</summary>
         public int? WarmupHealthScore { get; set; }
-        /// <summary>Whether warmup only applies to this phone number.</summary>
+        /// <summary>Indicates whether this phone number should only be used for warmup traffic.</summary>
         public bool? WarmupOnly { get; set; }
-        /// <summary>The warmup progress percent metric for this phone number.</summary>
+        /// <summary>Percent complete for the SMS sender warmup plan.</summary>
         public int? WarmupProgressPercent { get; set; }
         /// <summary>Defines the supported SMS Warmup Health State values.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_warmupState? WarmupState { get; set; }

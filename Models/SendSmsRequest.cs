@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for send SMS.
+    /// Request schema for the Leadping API SMS send request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SendSmsRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automation ID responsible for this SMS, if applicable.</summary>
+        /// <summary>Automation ID connected to this workflow, run, or event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutomationId { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationId { get; set; }
 #endif
-        /// <summary>The campaign ID associated with this SMS.</summary>
+        /// <summary>Messaging campaign identifier associated with this SMS send request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>The conversation ID associated with this SMS.</summary>
+        /// <summary>Conversation ID that links this SMS send request to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
-        /// <summary>The from phone number ID associated with this SMS.</summary>
+        /// <summary>Sender phone number ID used for this outbound SMS or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumberId { get; set; }
@@ -47,9 +47,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumberId { get; set; }
 #endif
-        /// <summary>Whether required consent is known for this outbound SMS.</summary>
+        /// <summary>Indicates whether the lead has the consent required for compliant outreach.</summary>
         public bool? HasRequiredConsent { get; set; }
-        /// <summary>The import batch ID responsible for this SMS, if applicable.</summary>
+        /// <summary>Bulk import batch ID that created or updated this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImportBatchId { get; set; }
@@ -57,11 +57,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ImportBatchId { get; set; }
 #endif
-        /// <summary>Whether this SMS is automated.</summary>
+        /// <summary>Indicates whether automation created or triggered this SMS send request.</summary>
         public bool? IsAutomated { get; set; }
-        /// <summary>Whether this SMS is for an imported lead.</summary>
+        /// <summary>Indicates whether this record originated from a bulk import rather than a real-time lead source.</summary>
         public bool? IsImportedLead { get; set; }
-        /// <summary>The outbound delivery request ID assigned by delivery control.</summary>
+        /// <summary>Outbound delivery request ID connected to this decision or attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundDeliveryRequestId { get; set; }
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundDeliveryRequestId { get; set; }
 #endif
-        /// <summary>Optional idempotency key for retry-safe outbound delivery control.</summary>
+        /// <summary>Idempotency key used to prevent duplicate outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundIdempotencyKey { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines priority classes used when pacing outbound delivery.</summary>
         public global::Leadping.OpenApiClient.Models.SendSmsRequest_outboundPriority? OutboundPriority { get; set; }
-        /// <summary>The outbound reservation ID assigned by delivery control.</summary>
+        /// <summary>Outbound reservation ID used to throttle and track delivery capacity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundReservationId { get; set; }
@@ -89,11 +89,11 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the source that requested outbound delivery.</summary>
         public global::Leadping.OpenApiClient.Models.SendSmsRequest_outboundSource? OutboundSource { get; set; }
-        /// <summary>The date and time for the scheduled for value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping should send the SMS message.</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
         /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
         public global::Leadping.OpenApiClient.Models.SendSmsRequest_selectionReason? SelectionReason { get; set; }
-        /// <summary>The SMS event ID associated with this SMS.</summary>
+        /// <summary>Existing SMS event ID to reuse or update when retrying a send request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SmsEventId { get; set; }
@@ -101,7 +101,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SmsEventId { get; set; }
 #endif
-        /// <summary>The source ID associated with this SMS.</summary>
+        /// <summary>Lead source ID used for attribution and sender selection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The text value for this SMS.</summary>
+        /// <summary>Body text for the SMS message or communication represented by this SMS send request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -117,7 +117,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>Whether this SMS was manually overridden.</summary>
+        /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this SMS send request.</summary>
         public bool? WasManuallyOverridden { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SendSmsRequest"/> and sets the default values.

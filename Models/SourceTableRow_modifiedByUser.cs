@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The user that most recently modified this source.
+    /// User summary for the person who last modified this lead source table row.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceTableRow_modifiedByUser : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

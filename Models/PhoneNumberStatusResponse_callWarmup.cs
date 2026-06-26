@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The voice call warmup value for this phone number status.
+    /// Voice call warmup status for this phone number.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberStatusResponse_callWarmup : global::Leadping.OpenApiClient.Models.PhoneNumberWarmupStatusResponse, IParsable

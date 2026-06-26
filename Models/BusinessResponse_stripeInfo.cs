@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Stripe billing state owned by this business.
+    /// Stripe customer and subscription state associated with this business or user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessResponse_stripeInfo : global::Leadping.OpenApiClient.Models.BusinessStripeInfo, IParsable

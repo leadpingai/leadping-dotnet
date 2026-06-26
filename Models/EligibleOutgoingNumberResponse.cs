@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing eligible outgoing number data returned to callers.
+    /// Response schema for the Leadping API eligible outgoing phone number returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EligibleOutgoingNumberResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The campaign ID associated with this eligible outgoing number.</summary>
+        /// <summary>Messaging campaign identifier associated with this eligible outgoing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>Whether the caller can send this eligible outgoing number.</summary>
+        /// <summary>Indicates whether Leadping can send outbound messages using this eligible outgoing phone number.</summary>
         public bool? CanSend { get; set; }
-        /// <summary>The display number value for this eligible outgoing number.</summary>
+        /// <summary>Human-readable phone number shown in Leadping UI and API responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayNumber { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DisplayNumber { get; set; }
 #endif
-        /// <summary>The health label value for this eligible outgoing number.</summary>
+        /// <summary>Short label describing the health state for display in dashboards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthLabel { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported SMS Warmup Health State values.</summary>
         public global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse_healthStatus? HealthStatus { get; set; }
-        /// <summary>The health warning value for this eligible outgoing number.</summary>
+        /// <summary>Warning text that explains a potential health or readiness issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthWarning { get; set; }
@@ -51,9 +51,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthWarning { get; set; }
 #endif
-        /// <summary>Whether this eligible outgoing number is selected.</summary>
+        /// <summary>Indicates whether this eligible outgoing phone number was selected for the requested operation.</summary>
         public bool? IsSelected { get; set; }
-        /// <summary>The human-readable label shown for this eligible outgoing number.</summary>
+        /// <summary>Short display label for this eligible outgoing phone number, formatted for charts, filters, or list views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The number value for this eligible outgoing number.</summary>
+        /// <summary>E.164 phone number exposed by this eligible outgoing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The phone number ID associated with this eligible outgoing number.</summary>
+        /// <summary>Leadping phone number ID connected to this eligible outgoing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumberId { get; set; }
@@ -77,7 +77,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
-        /// <summary>The reason label value for this eligible outgoing number.</summary>
+        /// <summary>Human-readable label for the reason code on this eligible outgoing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonLabel { get; set; }
@@ -85,9 +85,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ReasonLabel { get; set; }
 #endif
-        /// <summary>The human-readable selection reason explaining this eligible outgoing number.</summary>
+        /// <summary>Reason Leadping selected this outbound sender number.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionReason? SelectionReason { get; set; }
-        /// <summary>The source ID associated with this eligible outgoing number.</summary>
+        /// <summary>Lead source ID used to determine this phone number&apos;s outbound eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -95,7 +95,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The team ID associated with this eligible outgoing number.</summary>
+        /// <summary>Team ID used to determine this phone number&apos;s outbound eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId { get; set; }

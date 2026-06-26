@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The current business value for this user.
+    /// Business currently selected for the user session or profile.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserRequest_currentBusiness : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

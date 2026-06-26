@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing wallet data returned to callers.
+    /// Response schema for the Leadping API billing wallet response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WalletResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amountPurchased property</summary>
+        /// <summary>Amount of wallet credit purchased in this deposit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AmountPurchased { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode AmountPurchased { get; set; }
 #endif
-        /// <summary>The amountRemaining property</summary>
+        /// <summary>Amount of wallet credit still available for future usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AmountRemaining { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode AmountRemaining { get; set; }
 #endif
-        /// <summary>The monetary balance for this wallet.</summary>
+        /// <summary>Wallet or account balance after this transaction is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Balance { get; set; }
@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Balance { get; set; }
 #endif
-        /// <summary>The date and time for the balance calculated at value on this wallet.</summary>
+        /// <summary>UTC timestamp when Leadping last calculated the wallet balance.</summary>
         public DateTimeOffset? BalanceCalculatedAt { get; set; }
-        /// <summary>The businessId property</summary>
+        /// <summary>Business ID that owns this wallet balance or credit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Defines the lifecycle state for a wallet credit lot.</summary>
         public global::Leadping.OpenApiClient.Models.WalletResponse_creditStatus? CreditStatus { get; set; }
-        /// <summary>The currency property</summary>
+        /// <summary>ISO currency code used for the monetary amounts in this billing wallet response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>The expiredCreditAmount property</summary>
+        /// <summary>Amount of wallet credit that has expired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? ExpiredCreditAmount { get; set; }
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode ExpiredCreditAmount { get; set; }
 #endif
-        /// <summary>The expiresAt property</summary>
+        /// <summary>UTC timestamp when the wallet credit expires.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The unique identifier for the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,9 +89,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The nextCreditExpirationAt property</summary>
+        /// <summary>UTC timestamp when the next wallet credit amount expires.</summary>
         public DateTimeOffset? NextCreditExpirationAt { get; set; }
-        /// <summary>The nextExpiringCreditAmount property</summary>
+        /// <summary>Amount of wallet credit scheduled to expire next.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? NextExpiringCreditAmount { get; set; }
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode NextExpiringCreditAmount { get; set; }
 #endif
-        /// <summary>The originalTransactionId property</summary>
+        /// <summary>Original wallet transaction ID referenced by a reversal, refund, or adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginalTransactionId { get; set; }
@@ -107,11 +107,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OriginalTransactionId { get; set; }
 #endif
-        /// <summary>The purchasedAt property</summary>
+        /// <summary>UTC timestamp when the wallet credit was purchased.</summary>
         public DateTimeOffset? PurchasedAt { get; set; }
         /// <summary>Defines the source that created a wallet credit lot.</summary>
         public global::Leadping.OpenApiClient.Models.WalletResponse_sourceType? SourceType { get; set; }
-        /// <summary>The stripeChargeId property</summary>
+        /// <summary>Stripe charge identifier linked to this billing transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StripeChargeId { get; set; }
@@ -119,7 +119,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StripeChargeId { get; set; }
 #endif
-        /// <summary>The stripeInvoiceId property</summary>
+        /// <summary>Stripe invoice identifier linked to this billing transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StripeInvoiceId { get; set; }
@@ -127,7 +127,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StripeInvoiceId { get; set; }
 #endif
-        /// <summary>The stripePaymentIntentId property</summary>
+        /// <summary>Stripe payment intent identifier linked to this billing transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StripePaymentIntentId { get; set; }

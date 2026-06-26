@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number event record data used by Leadping API contracts.
+    /// History record schema for Leadping API phone number event record data exposed in automation and audit views.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberEventRecord : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actor ID associated with this phone number event record.</summary>
+        /// <summary>Actor ID for the user, system, or integration that performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActorId { get; set; }
@@ -21,7 +21,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ActorId { get; set; }
 #endif
-        /// <summary>The actor name value for this phone number event record.</summary>
+        /// <summary>Display name for the actor that performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActorName { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the created at value on this phone number event record.</summary>
+        /// <summary>UTC timestamp when this phone number event record was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The details value for this phone number event record.</summary>
+        /// <summary>Additional human-readable details that explain this phone number event record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Details { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Details { get; set; }
 #endif
-        /// <summary>The unique ID for this phone number event record.</summary>
+        /// <summary>Unique Leadping identifier for this phone number event record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Leadping-owned inventory state for phone-number assignment and routing.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberEventRecord_state? State { get; set; }
-        /// <summary>The title value for this phone number event record.</summary>
+        /// <summary>Short title displayed for this phone number event record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The type classification for this phone number event record.</summary>
+        /// <summary>Type classification used to route and interpret this phone number event record in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

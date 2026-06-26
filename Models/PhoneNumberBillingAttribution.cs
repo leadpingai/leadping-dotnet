@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number billing attribution data used by Leadping API contracts.
+    /// Public Leadping API schema for phone number billing attribution data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberBillingAttribution : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The business ID associated with this phone number billing attribution.</summary>
+        /// <summary>Business ID responsible for billing this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The business name value for this phone number billing attribution.</summary>
+        /// <summary>Business display name used in phone number billing records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessName { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessName { get; set; }
 #endif
-        /// <summary>The channel value for this phone number billing attribution.</summary>
+        /// <summary>Communication channel used for this phone number billing attribution, such as SMS or voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Channel { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Channel { get; set; }
 #endif
-        /// <summary>The monetary monthly amount for this phone number billing attribution.</summary>
+        /// <summary>Monthly subscription amount for the business billing plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? MonthlyAmount { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode MonthlyAmount { get; set; }
 #endif
-        /// <summary>The subscription item ID associated with this phone number billing attribution.</summary>
+        /// <summary>Stripe subscription item identifier used for phone number billing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionItemId { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SubscriptionItemId { get; set; }
 #endif
-        /// <summary>The user ID associated with this phone number billing attribution.</summary>
+        /// <summary>User ID associated with phone number billing responsibility, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The user name value for this phone number billing attribution.</summary>
+        /// <summary>Display name for the user connected to this phone number billing attribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserName { get; set; }

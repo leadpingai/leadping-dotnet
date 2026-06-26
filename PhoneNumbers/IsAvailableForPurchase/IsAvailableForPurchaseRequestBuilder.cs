@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.IsAvailableForPurchase
         /// Checks whether a phone number can be purchased for the current business before creating or assigning it.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse"/></returns>
-        /// <param name="body">Request payload for phone number availability.</param>
+        /// <param name="body">Request schema for checking phone number availability before purchase or assignment.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.IsAvailableForPurchase
         /// Checks whether a phone number can be purchased for the current business before creating or assigning it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for phone number availability.</param>
+        /// <param name="body">Request schema for checking phone number availability before purchase or assignment.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

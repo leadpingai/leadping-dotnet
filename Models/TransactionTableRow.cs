@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing transaction data used by Leadping API contracts.
+    /// List item schema for Leadping API billing transaction table row results shown in searchable tables.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionTableRow : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The account ID associated with this transaction.</summary>
+        /// <summary>Leadping account identifier used for wallet and transaction reconciliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -21,7 +21,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
-        /// <summary>The account name value for this transaction.</summary>
+        /// <summary>Display name of the wallet or account used for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The monetary amount for this transaction.</summary>
+        /// <summary>Monetary amount for this billing transaction or wallet operation.</summary>
         public double? Amount { get; set; }
-        /// <summary>The business ID associated with this transaction.</summary>
+        /// <summary>Business ID charged or credited by this wallet transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The business name value for this transaction.</summary>
+        /// <summary>Business display name shown for this wallet transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessName { get; set; }
@@ -49,9 +49,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessName { get; set; }
 #endif
-        /// <summary>The date and time for the created at value on this transaction.</summary>
+        /// <summary>UTC timestamp when this billing transaction table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The date and time for the created by value on this transaction.</summary>
+        /// <summary>Display name or identifier for the person or system that created this billing transaction table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>The human-readable description of this transaction.</summary>
+        /// <summary>Human-readable description that explains this billing transaction table row to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The unique ID for this transaction.</summary>
+        /// <summary>Unique Leadping identifier for this billing transaction table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lead ID associated with this transaction.</summary>
+        /// <summary>Lead ID connected to this transaction when the charge came from lead activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -83,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The lead name value for this transaction.</summary>
+        /// <summary>Lead display name shown for lead-related wallet transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadName { get; set; }
@@ -91,9 +91,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadName { get; set; }
 #endif
-        /// <summary>The monetary net amount for this transaction.</summary>
+        /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
         public double? NetAmount { get; set; }
-        /// <summary>The payment method display value for this transaction.</summary>
+        /// <summary>Masked or human-readable payment method shown for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentMethodDisplay { get; set; }
@@ -101,9 +101,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PaymentMethodDisplay { get; set; }
 #endif
-        /// <summary>The current transaction status for this transaction.</summary>
+        /// <summary>Processing status for this wallet transaction.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionStatus? TransactionStatus { get; set; }
-        /// <summary>The transaction type classification for this transaction.</summary>
+        /// <summary>Debit or credit classification for this wallet transaction.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionType? TransactionType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.TransactionTableRow"/> and sets the default values.

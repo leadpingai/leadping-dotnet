@@ -60,7 +60,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin.Item
         /// Updates admin triage fields on a feedback item, such as status, priority, notes, or reviewed metadata.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.FeedbackResponse"/></returns>
-        /// <param name="body">Admin triage update request for product feedback.</param>
+        /// <param name="body">Request schema for the Leadping API feedback admin update request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -106,7 +106,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin.Item
         /// Updates admin triage fields on a feedback item, such as status, priority, notes, or reviewed metadata.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Admin triage update request for product feedback.</param>
+        /// <param name="body">Request schema for the Leadping API feedback admin update request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

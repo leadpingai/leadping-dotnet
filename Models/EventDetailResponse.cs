@@ -8,18 +8,18 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing event detail data returned to callers.
+    /// Response schema for the Leadping API event detail response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventDetailResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blockedAt property</summary>
+        /// <summary>UTC timestamp when Leadping blocked this communication.</summary>
         public DateTimeOffset? BlockedAt { get; set; }
-        /// <summary>The canceledAt property</summary>
+        /// <summary>UTC timestamp when this delivery or workflow was canceled.</summary>
         public DateTimeOffset? CanceledAt { get; set; }
-        /// <summary>The conversationId property</summary>
+        /// <summary>Conversation ID that links this event detail response to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }
@@ -29,9 +29,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The deliveredAt property</summary>
+        /// <summary>UTC timestamp when the provider confirmed delivery.</summary>
         public DateTimeOffset? DeliveredAt { get; set; }
-        /// <summary>The human-readable description of this event detail.</summary>
+        /// <summary>Human-readable description that explains this event detail response to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The direction property</summary>
+        /// <summary>Communication direction for this event detail response, such as inbound or outbound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Direction { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Direction { get; set; }
 #endif
-        /// <summary>The eventCategory property</summary>
+        /// <summary>High-level category used to group this Leadping event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventCategory { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string EventCategory { get; set; }
 #endif
-        /// <summary>The event type classification for this event detail.</summary>
+        /// <summary>Event type used to classify this timeline, SMS, call, or automation event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }
@@ -63,9 +63,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The failedAt property</summary>
+        /// <summary>UTC timestamp when processing failed for this event detail response.</summary>
         public DateTimeOffset? FailedAt { get; set; }
-        /// <summary>The fromPhoneNumber property</summary>
+        /// <summary>Sender phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumber { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumber { get; set; }
 #endif
-        /// <summary>The fromPhoneNumberId property</summary>
+        /// <summary>Sender phone number ID used for this outbound SMS or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumberId { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lead ID associated with this event detail.</summary>
+        /// <summary>Lead ID associated with this event detail record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The outboundPhoneNumberId property</summary>
+        /// <summary>Phone number ID selected for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundPhoneNumberId { get; set; }
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundPhoneNumberId { get; set; }
 #endif
-        /// <summary>The providerMessageId property</summary>
+        /// <summary>Provider message identifier for SMS delivery tracking and reconciliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderMessageId { get; set; }
@@ -115,13 +115,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderMessageId { get; set; }
 #endif
-        /// <summary>The queuedAt property</summary>
+        /// <summary>UTC timestamp when Leadping queued this event detail response for processing.</summary>
         public DateTimeOffset? QueuedAt { get; set; }
-        /// <summary>The receivedAt property</summary>
+        /// <summary>UTC timestamp when Leadping received this inbound event or message.</summary>
         public DateTimeOffset? ReceivedAt { get; set; }
-        /// <summary>The scheduledFor property</summary>
+        /// <summary>UTC timestamp when the related delivery or workflow action is scheduled to run.</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
-        /// <summary>The secondary event type classification for this event detail.</summary>
+        /// <summary>Secondary event type used for additional event classification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryEventType { get; set; }
@@ -129,13 +129,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SecondaryEventType { get; set; }
 #endif
-        /// <summary>The sendingStartedAt property</summary>
+        /// <summary>UTC timestamp when Leadping began sending this message.</summary>
         public DateTimeOffset? SendingStartedAt { get; set; }
-        /// <summary>The sentAt property</summary>
+        /// <summary>UTC timestamp when Leadping sent this message to the provider.</summary>
         public DateTimeOffset? SentAt { get; set; }
         /// <summary>Defines the supported Event status values.</summary>
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_status? Status { get; set; }
-        /// <summary>The statusReason property</summary>
+        /// <summary>Human-readable reason explaining the current status of this event detail response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusReason { get; set; }
@@ -143,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StatusReason { get; set; }
 #endif
-        /// <summary>The summary property</summary>
+        /// <summary>Short human-readable summary of this event detail response for lists, timelines, and notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -151,7 +151,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
-        /// <summary>The timelineCategory property</summary>
+        /// <summary>Timeline category used to group events for display and filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimelineCategory { get; set; }
@@ -161,7 +161,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Event timeline type values.</summary>
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_timelineType? TimelineType { get; set; }
-        /// <summary>The toPhoneNumber property</summary>
+        /// <summary>Recipient phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToPhoneNumber { get; set; }
@@ -169,9 +169,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ToPhoneNumber { get; set; }
 #endif
-        /// <summary>The undeliverableAt property</summary>
+        /// <summary>UTC timestamp when the provider marked the message undeliverable.</summary>
         public DateTimeOffset? UndeliverableAt { get; set; }
-        /// <summary>A minimal Record type with an (string), (string), and maximum JSON compatibility. The reason for this type (over something like KeyValuePair, dictionary) is because of JSON serialization support.</summary>
+        /// <summary>User summary connected to this event detail response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_user? User { get; set; }
@@ -179,7 +179,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_user User { get; set; }
 #endif
-        /// <summary>The user ID associated with this event detail.</summary>
+        /// <summary>User ID associated with the activity that created this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

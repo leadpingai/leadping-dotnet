@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The website value for this business.
+    /// Leadping website record connected to this business.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessResponse_site : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

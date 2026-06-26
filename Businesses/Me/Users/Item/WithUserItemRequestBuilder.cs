@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.Users.Item
         /// Changes a user&apos;s role in the current business, updating access to lead, automation, billing, and admin workflows.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.BusinessUserResponse"/></returns>
-        /// <param name="body">Request payload for business user.</param>
+        /// <param name="body">Request schema for the Leadping API business user request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.Users.Item
         /// Changes a user&apos;s role in the current business, updating access to lead, automation, billing, and admin workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for business user.</param>
+        /// <param name="body">Request schema for the Leadping API business user request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

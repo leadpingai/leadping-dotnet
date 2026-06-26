@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The current lifecycle disposition for this lead.
+    /// Current disposition summary that describes the lead outcome.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadTableRow_currentDisposition : global::Leadping.OpenApiClient.Models.CurrentDispositionSummary, IParsable

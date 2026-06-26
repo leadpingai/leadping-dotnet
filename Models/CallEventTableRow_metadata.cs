@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The metadata key-value data carried with this call event; values must be safe to expose in API responses.
+    /// Structured metadata used for attribution, integrations, and reporting on this call event table row.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallEventTableRow_metadata : IAdditionalDataHolder, IParsable

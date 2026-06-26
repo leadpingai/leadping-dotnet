@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The business value for this source.
+    /// Business summary connected to this lead source table row.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceTableRow_business : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

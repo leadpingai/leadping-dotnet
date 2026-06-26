@@ -9,16 +9,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing lead profile data used by Leadping API contracts.
+    /// Public Leadping API schema for lead demographic profile data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadProfile : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the birth date value on this lead profile.</summary>
+        /// <summary>Lead birth date used for demographic matching and insurance intake workflows.</summary>
         public Date? BirthDate { get; set; }
-        /// <summary>The credit score metric for this lead profile.</summary>
+        /// <summary>Lead credit score range or score supplied by the intake source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? CreditScore { get; set; }
@@ -30,11 +30,11 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.LeadProfile_employmentType? EmploymentType { get; set; }
         /// <summary>Represents a gender classification used for demographic or identification purposes.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_gender? Gender { get; set; }
-        /// <summary>Whether this lead profile has bankruptcy.</summary>
+        /// <summary>Indicates whether the lead reported bankruptcy history.</summary>
         public bool? HasBankruptcy { get; set; }
-        /// <summary>Whether this lead profile has medical condition.</summary>
+        /// <summary>Indicates whether the lead reported a medical condition relevant to qualification.</summary>
         public bool? HasMedicalCondition { get; set; }
-        /// <summary>The height value for this lead profile.</summary>
+        /// <summary>Lead height provided for qualification workflows that require demographic details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Height { get; set; }
@@ -42,7 +42,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Height { get; set; }
 #endif
-        /// <summary>The income value for this lead profile.</summary>
+        /// <summary>Lead income amount or range supplied for qualification workflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Income { get; set; }
@@ -50,11 +50,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Income { get; set; }
 #endif
-        /// <summary>Whether this lead profile is homeowner.</summary>
+        /// <summary>Indicates whether the lead owns their home.</summary>
         public bool? IsHomeowner { get; set; }
         /// <summary>Defines the supported Marital Status Type values.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus? MaritalStatus { get; set; }
-        /// <summary>The months at residence value for this lead profile.</summary>
+        /// <summary>Number of months the lead has lived at the current residence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? MonthsAtResidence { get; set; }
@@ -62,7 +62,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode MonthsAtResidence { get; set; }
 #endif
-        /// <summary>The number of dependents value for this lead profile.</summary>
+        /// <summary>Number of dependents reported by the lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? NumberOfDependents { get; set; }
@@ -70,7 +70,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode NumberOfDependents { get; set; }
 #endif
-        /// <summary>The weight value for this lead profile.</summary>
+        /// <summary>Relative weighting used to rank or score this lead demographic profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Weight { get; set; }

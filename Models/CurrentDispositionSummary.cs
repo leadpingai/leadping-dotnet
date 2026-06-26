@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Compact current disposition state stored directly on a lead and surfaced with conversation data.
+    /// Summary schema for Leadping API current disposition summary data used in dashboards and reports.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CurrentDispositionSummary : IAdditionalDataHolder, IParsable
@@ -17,9 +17,9 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controlled disposition categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.CurrentDispositionSummary_category? Category { get; set; }
-        /// <summary>The changedAt property</summary>
+        /// <summary>UTC timestamp when the disposition last changed.</summary>
         public DateTimeOffset? ChangedAt { get; set; }
-        /// <summary>The changedByAutomationId property</summary>
+        /// <summary>Automation ID that last changed the disposition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangedByAutomationId { get; set; }
@@ -27,7 +27,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ChangedByAutomationId { get; set; }
 #endif
-        /// <summary>The changedByUserId property</summary>
+        /// <summary>User ID of the person who last changed the disposition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangedByUserId { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ChangedByUserId { get; set; }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Human-readable display name shown for this current disposition summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier for this current disposition summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The outcome property</summary>
+        /// <summary>Current disposition outcome assigned to the lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Outcome { get; set; }

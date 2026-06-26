@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing phone number status data returned to callers.
+    /// Response schema for the Leadping API phone number readiness status returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberStatusResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The calls possible value for this phone number status.</summary>
+        /// <summary>Indicates whether this phone number can currently place outbound calls.</summary>
         public int? CallsPossible { get; set; }
-        /// <summary>The voice call warmup value for this phone number status.</summary>
+        /// <summary>Voice call warmup status for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup? CallWarmup { get; set; }
@@ -25,11 +25,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup CallWarmup { get; set; }
 #endif
-        /// <summary>The messages possible value for this phone number status.</summary>
+        /// <summary>Indicates whether this phone number can currently send SMS messages.</summary>
         public int? MessagesPossible { get; set; }
-        /// <summary>The messages warmed value for this phone number status.</summary>
+        /// <summary>Number of warmup SMS messages completed for this sender.</summary>
         public int? MessagesWarmed { get; set; }
-        /// <summary>The number value for this phone number status.</summary>
+        /// <summary>E.164 phone number exposed by this phone number readiness status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The opt out metrics value for this phone number status.</summary>
+        /// <summary>Recent SMS opt-out metrics used to evaluate sender health and compliance risk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse? OptOutMetrics { get; set; }
@@ -45,7 +45,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse OptOutMetrics { get; set; }
 #endif
-        /// <summary>The recent events included with this phone number status.</summary>
+        /// <summary>Recent workflow events returned for timeline and troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse>? RecentEvents { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse> RecentEvents { get; set; }
 #endif
-        /// <summary>The SMS warmup value for this phone number status.</summary>
+        /// <summary>SMS sender warmup status for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup? SmsWarmup { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup SmsWarmup { get; set; }
 #endif
-        /// <summary>The traffic metrics value for this phone number status.</summary>
+        /// <summary>Phone number traffic metrics for recent SMS and call activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse? TrafficMetrics { get; set; }
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse TrafficMetrics { get; set; }
 #endif
-        /// <summary>The warmup calls made value for this phone number status.</summary>
+        /// <summary>Number of voice warmup calls completed for this phone number.</summary>
         public int? WarmupCallsMade { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse"/> and sets the default values.

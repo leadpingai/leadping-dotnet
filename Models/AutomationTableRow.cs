@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation data used by Leadping API contracts.
+    /// List item schema for Leadping API automation table row results shown in searchable tables.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationTableRow : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action summary value for this automation.</summary>
+        /// <summary>Human-readable summary of the automation action outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionSummary { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The admin force enablement override on this automation.</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The business value for this automation.</summary>
+        /// <summary>Business summary connected to this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_business? Business { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_business Business { get; set; }
 #endif
-        /// <summary>The business ID associated with this automation.</summary>
+        /// <summary>Business ID that owns this automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The condition summary value for this automation.</summary>
+        /// <summary>Human-readable summary of the automation condition evaluation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConditionSummary { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConditionSummary { get; set; }
 #endif
-        /// <summary>The created by user ID associated with this automation.</summary>
+        /// <summary>User ID of the person who created this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByUserId { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CreatedByUserId { get; set; }
 #endif
-        /// <summary>The human-readable description of this automation.</summary>
+        /// <summary>Human-readable description that explains this automation table row to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -71,9 +71,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether this automation is enabled.</summary>
+        /// <summary>Indicates whether this automation table row is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The health summary value for this automation.</summary>
+        /// <summary>Human-readable health summary for this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthSummary { get; set; }
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthSummary { get; set; }
 #endif
-        /// <summary>The unique ID for this automation.</summary>
+        /// <summary>Unique Leadping identifier for this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -89,11 +89,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this automation is system managed.</summary>
+        /// <summary>Indicates whether Leadping manages this automation table row automatically instead of a user.</summary>
         public bool? IsSystemManaged { get; set; }
-        /// <summary>The date and time for the last run at value on this automation.</summary>
+        /// <summary>UTC timestamp when this automation last ran.</summary>
         public DateTimeOffset? LastRunAt { get; set; }
-        /// <summary>The date and time for the last run error value on this automation.</summary>
+        /// <summary>Most recent automation run error message, if the last run failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastRunError { get; set; }
@@ -101,7 +101,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastRunError { get; set; }
 #endif
-        /// <summary>The current last run status for this automation.</summary>
+        /// <summary>Status from the most recent automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastRunStatus { get; set; }
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastRunStatus { get; set; }
 #endif
-        /// <summary>The management level value for this automation.</summary>
+        /// <summary>Management level that controls whether Leadping or the business owns this automation setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementLevel { get; set; }
@@ -117,9 +117,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ManagementLevel { get; set; }
 #endif
-        /// <summary>The date and time this automation was last modified.</summary>
+        /// <summary>UTC timestamp when this automation table row was last modified.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The human-readable name shown for this automation.</summary>
+        /// <summary>Display name for this automation table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -127,7 +127,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The rule sentence value for this automation.</summary>
+        /// <summary>Human-readable explanation of the automation rule being evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RuleSentence { get; set; }
@@ -135,7 +135,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RuleSentence { get; set; }
 #endif
-        /// <summary>The scope value for this automation.</summary>
+        /// <summary>Scope that limits where this automation table row applies in Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope { get; set; }
@@ -143,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
-        /// <summary>The trigger summary value for this automation.</summary>
+        /// <summary>Human-readable summary of the automation trigger that started the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerSummary { get; set; }
@@ -151,7 +151,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerSummary { get; set; }
 #endif
-        /// <summary>The primary trigger type label for this automation.</summary>
+        /// <summary>Automation trigger type that starts the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get; set; }
@@ -159,7 +159,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerType { get; set; }
 #endif
-        /// <summary>The user value for this automation.</summary>
+        /// <summary>User summary connected to this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_user? User { get; set; }
@@ -167,7 +167,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_user User { get; set; }
 #endif
-        /// <summary>The visibility value for this automation.</summary>
+        /// <summary>Visibility level that controls who can see this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility { get; set; }

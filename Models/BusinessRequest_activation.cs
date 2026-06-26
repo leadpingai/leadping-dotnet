@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The activation value for this business.
+    /// Business activation state covering site, billing, compliance, and telephony readiness.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessRequest_activation : global::Leadping.OpenApiClient.Models.BusinessActivationState, IParsable

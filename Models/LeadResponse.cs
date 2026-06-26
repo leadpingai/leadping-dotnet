@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing lead data returned to callers.
+    /// Response schema for the Leadping API lead response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminEnablementOverride property</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The archivedAt property</summary>
+        /// <summary>UTC timestamp when this record was archived.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>The archivedByUserId property</summary>
+        /// <summary>User ID of the person who archived this record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ArchivedByUserId { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ArchivedByUserId { get; set; }
 #endif
-        /// <summary>The archiveNote property</summary>
+        /// <summary>Optional note explaining why the lead was archived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ArchiveNote { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>The contact value for this lead.</summary>
+        /// <summary>Contact details for the lead or customer represented by this lead response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact? Contact { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Compact current disposition state stored directly on a lead and surfaced with conversation data.</summary>
+        /// <summary>Current disposition summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition? CurrentDisposition { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition CurrentDisposition { get; set; }
 #endif
-        /// <summary>The profile value for this lead.</summary>
+        /// <summary>Demographic profile details for the lead represented by this lead response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadProfile? Customer { get; set; }
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadProfile Customer { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>Indicates whether this lead response is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The unique identifier for the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The isArchived property</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>Safe, non-secret metadata associated with this lead.</summary>
+        /// <summary>Structured metadata used for attribution, integrations, and reporting on this lead response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadMetadata? Metadata { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>Tags currently assigned to this lead.</summary>
+        /// <summary>Tags currently attached to this lead, source, or record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.TagSummary>? Tags { get; set; }

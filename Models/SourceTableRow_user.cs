@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The user value for this source.
+    /// User summary connected to this lead source table row.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceTableRow_user : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

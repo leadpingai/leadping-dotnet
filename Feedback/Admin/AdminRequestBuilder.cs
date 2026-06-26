@@ -98,6 +98,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdminRequestBuilderGetQueryParameters 
         {
+            /// <summary>Product area or app section connected to this feedback admin query request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Area { get; set; }
@@ -105,6 +106,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin
 #else
             public string Area { get; set; }
 #endif
+            /// <summary>Business ID used to filter feedback items for admin review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? BusinessId { get; set; }
@@ -112,6 +114,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin
 #else
             public string BusinessId { get; set; }
 #endif
+            /// <summary>Pagination token used to request the next page of Leadping API results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? ContinuationToken { get; set; }
@@ -119,9 +122,13 @@ namespace Leadping.OpenApiClient.Feedback.Admin
 #else
             public string ContinuationToken { get; set; }
 #endif
+            /// <summary>End of the created-at date range filter for Leadping API results.</summary>
             public DateTimeOffset? CreatedEnd { get; set; }
+            /// <summary>Start of the created-at date range filter for Leadping API results.</summary>
             public DateTimeOffset? CreatedStart { get; set; }
+            /// <summary>Maximum number of results requested for this Leadping API page.</summary>
             public int? PageSize { get; set; }
+            /// <summary>Search text used to filter Leadping API results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Search { get; set; }
@@ -129,6 +136,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin
 #else
             public string Search { get; set; }
 #endif
+            /// <summary>Current lifecycle status for this feedback admin query request in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Status { get; set; }
@@ -136,6 +144,7 @@ namespace Leadping.OpenApiClient.Feedback.Admin
 #else
             public string Status { get; set; }
 #endif
+            /// <summary>Type classification used to route and interpret this feedback admin query request in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Type { get; set; }

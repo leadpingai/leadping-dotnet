@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The context snapshot key-value data carried with this automation run record; values must be safe to expose in API responses.
+    /// Snapshot of request context captured when this automation run record was created.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationRunRecord_contextSnapshot : IAdditionalDataHolder, IParsable

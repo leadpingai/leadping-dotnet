@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The lookup value for this phone.
+    /// Phone lookup details returned by the provider or Leadping enrichment service.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Phone_lookup : global::Leadping.OpenApiClient.Models.PhoneLookup, IParsable

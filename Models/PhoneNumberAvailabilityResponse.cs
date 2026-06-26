@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing phone number availability data returned to callers.
+    /// Response schema for the Leadping API phone number availability result returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberAvailabilityResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ISO currency code for monetary values in this phone number availability.</summary>
+        /// <summary>ISO currency code used for the monetary amounts in this phone number availability result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Currency { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
-        /// <summary>Whether this phone number availability is available.</summary>
+        /// <summary>Indicates whether this phone number is available for purchase or assignment.</summary>
         public bool? IsAvailable { get; set; }
-        /// <summary>The location value for this phone number availability.</summary>
+        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse_location? Location { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse_location Location { get; set; }
 #endif
-        /// <summary>The phone number associated with this phone number availability.</summary>
+        /// <summary>Phone number used by this phone number availability result for calls, SMS, lookup, or routing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>The monetary price for this phone number availability.</summary>
+        /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Price { get; set; }

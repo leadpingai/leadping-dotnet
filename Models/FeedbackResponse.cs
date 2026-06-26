@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Feedback item returned to admins and submitters.
+    /// Response schema for the Leadping API feedback item response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeedbackResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminNote property</summary>
+        /// <summary>Internal admin note used to track feedback review or resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdminNote { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AdminNote { get; set; }
 #endif
-        /// <summary>The allowContact property</summary>
+        /// <summary>Indicates whether the submitter permits Leadping support to contact them about the feedback.</summary>
         public bool? AllowContact { get; set; }
-        /// <summary>The area property</summary>
+        /// <summary>Product area or app section connected to this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Area { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Area { get; set; }
 #endif
-        /// <summary>The businessId property</summary>
+        /// <summary>Business ID connected to the feedback item, when the feedback came from a business workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The businessNameSnapshot property</summary>
+        /// <summary>Business name snapshot captured when the user submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessNameSnapshot { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessNameSnapshot { get; set; }
 #endif
-        /// <summary>The clientVersion property</summary>
+        /// <summary>Client application version that submitted this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientVersion { get; set; }
@@ -57,9 +57,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ClientVersion { get; set; }
 #endif
-        /// <summary>The closedAt property</summary>
+        /// <summary>UTC timestamp when this feedback item response was closed.</summary>
         public DateTimeOffset? ClosedAt { get; set; }
-        /// <summary>The closedByUserId property</summary>
+        /// <summary>User ID of the person who closed this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClosedByUserId { get; set; }
@@ -67,9 +67,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ClosedByUserId { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>UTC timestamp when this feedback item response was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The duplicateOfFeedbackItemId property</summary>
+        /// <summary>Feedback item ID that this item duplicates, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DuplicateOfFeedbackItemId { get; set; }
@@ -77,7 +77,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DuplicateOfFeedbackItemId { get; set; }
 #endif
-        /// <summary>The environment property</summary>
+        /// <summary>Deployment environment where this feedback item response was captured or processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Environment { get; set; }
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Environment { get; set; }
 #endif
-        /// <summary>The externalIssueUrl property</summary>
+        /// <summary>External issue tracker URL linked to this feedback item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalIssueUrl { get; set; }
@@ -93,7 +93,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ExternalIssueUrl { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier for this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -101,7 +101,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>Message text supplied by the user or returned by the Leadping API for this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -109,9 +109,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The reviewedAt property</summary>
+        /// <summary>UTC timestamp when an admin reviewed this feedback item response.</summary>
         public DateTimeOffset? ReviewedAt { get; set; }
-        /// <summary>The reviewedByUserId property</summary>
+        /// <summary>User ID of the admin who reviewed this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReviewedByUserId { get; set; }
@@ -119,7 +119,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ReviewedByUserId { get; set; }
 #endif
-        /// <summary>The route property</summary>
+        /// <summary>Application route where this feedback item response originated or should direct the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Route { get; set; }
@@ -127,7 +127,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Route { get; set; }
 #endif
-        /// <summary>The serverVersion property</summary>
+        /// <summary>Leadping API server version that processed this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServerVersion { get; set; }
@@ -135,9 +135,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ServerVersion { get; set; }
 #endif
-        /// <summary>Defines admin triage statuses for durable product feedback.</summary>
+        /// <summary>Current lifecycle status for this feedback item response in the Leadping API.</summary>
         public global::Leadping.OpenApiClient.Models.FeedbackStatus? Status { get; set; }
-        /// <summary>The subscriptionPlanSnapshot property</summary>
+        /// <summary>Billing plan snapshot captured when the user submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionPlanSnapshot { get; set; }
@@ -145,9 +145,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SubscriptionPlanSnapshot { get; set; }
 #endif
-        /// <summary>Defines the type of product feedback submitted from inside Leadping.</summary>
+        /// <summary>Type classification used to route and interpret this feedback item response in the Leadping API.</summary>
         public global::Leadping.OpenApiClient.Models.FeedbackType? Type { get; set; }
-        /// <summary>The userAgent property</summary>
+        /// <summary>Browser or client user agent captured when this feedback item response was submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserAgent { get; set; }
@@ -155,7 +155,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserAgent { get; set; }
 #endif
-        /// <summary>The userDisplayNameSnapshot property</summary>
+        /// <summary>User display name snapshot captured when the user submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserDisplayNameSnapshot { get; set; }
@@ -163,7 +163,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserDisplayNameSnapshot { get; set; }
 #endif
-        /// <summary>The userEmailSnapshot property</summary>
+        /// <summary>User email snapshot captured when the user submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserEmailSnapshot { get; set; }
@@ -171,7 +171,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserEmailSnapshot { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>User ID for the person who submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

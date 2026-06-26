@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation request snapshot data used by Leadping API contracts.
+    /// Public Leadping API schema for automation request snapshot data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationRequestSnapshot : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actions included with this automation request snapshot.</summary>
+        /// <summary>Automation actions configured or returned for this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationAction>? Actions { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The business ID associated with this automation request snapshot.</summary>
+        /// <summary>Business ID captured when the automation request snapshot was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The condition groups included with this automation request snapshot.</summary>
+        /// <summary>Grouped automation conditions used to decide whether this workflow should run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationConditionGroup>? ConditionGroups { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationConditionGroup> ConditionGroups { get; set; }
 #endif
-        /// <summary>The created by user ID associated with this automation request snapshot.</summary>
+        /// <summary>User ID of the person who created this automation request snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByUserId { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CreatedByUserId { get; set; }
 #endif
-        /// <summary>The human-readable description of this automation request snapshot.</summary>
+        /// <summary>Human-readable description that explains this automation request snapshot to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -55,9 +55,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether this automation request snapshot is enabled.</summary>
+        /// <summary>Indicates whether this automation request snapshot is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The unique ID for this automation request snapshot.</summary>
+        /// <summary>Unique Leadping identifier for this automation request snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -65,9 +65,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this automation request snapshot is system managed.</summary>
+        /// <summary>Indicates whether Leadping manages this automation request snapshot automatically instead of a user.</summary>
         public bool? IsSystemManaged { get; set; }
-        /// <summary>The management level value for this automation request snapshot.</summary>
+        /// <summary>Management level that controls whether Leadping or the business owns this automation setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementLevel { get; set; }
@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ManagementLevel { get; set; }
 #endif
-        /// <summary>The human-readable name shown for this automation request snapshot.</summary>
+        /// <summary>Display name for this automation request snapshot in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -83,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The scope value for this automation request snapshot.</summary>
+        /// <summary>Scope that limits where this automation request snapshot applies in Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
-        /// <summary>The triggers included with this automation request snapshot.</summary>
+        /// <summary>Automation triggers that can start this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationTrigger>? Triggers { get; set; }
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationTrigger> Triggers { get; set; }
 #endif
-        /// <summary>The visibility value for this automation request snapshot.</summary>
+        /// <summary>Visibility level that controls who can see this automation request snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility { get; set; }

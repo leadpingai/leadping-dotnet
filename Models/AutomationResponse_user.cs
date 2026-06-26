@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The user value for this automation.
+    /// User summary connected to this automation configuration response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationResponse_user : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

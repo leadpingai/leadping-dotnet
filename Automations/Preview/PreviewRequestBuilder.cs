@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Automations.Preview
         /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationPreviewResponse"/></returns>
-        /// <param name="body">API DTO containing automation preview data used by Leadping API contracts.</param>
+        /// <param name="body">Request schema for the Leadping API automation preview request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -62,7 +62,7 @@ namespace Leadping.OpenApiClient.Automations.Preview
         /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">API DTO containing automation preview data used by Leadping API contracts.</param>
+        /// <param name="body">Request schema for the Leadping API automation preview request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The compliance policy value for this business.
+    /// Compliance policy configuration for the business.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessRequest_compliancePolicy : global::Leadping.OpenApiClient.Models.BusinessCompliancePolicy, IParsable

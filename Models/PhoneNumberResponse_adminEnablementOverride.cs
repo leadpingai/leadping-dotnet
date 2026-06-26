@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Admin override that can enable or disable this record independently of normal status checks.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PhoneNumberResponse_adminEnablementOverride : global::Leadping.OpenApiClient.Models.AdminEnablementOverride, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

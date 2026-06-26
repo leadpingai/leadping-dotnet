@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for source.
+    /// Request schema for the Leadping API lead source request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminEnablementOverride property</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The allowed products included with this source.</summary>
+        /// <summary>Product allowlist used to accept or route leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedProducts { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedProducts { get; set; }
 #endif
-        /// <summary>The allowed states included with this source.</summary>
+        /// <summary>State or region allowlist used to accept leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedStates { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>The business ID associated with this source.</summary>
+        /// <summary>Business ID that owns or will own this lead source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -47,9 +47,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>Whether this source is compliance approved.</summary>
+        /// <summary>Indicates whether the business or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
-        /// <summary>The compliance notes value for this source.</summary>
+        /// <summary>Compliance notes captured for admin review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceNotes { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceNotes { get; set; }
 #endif
-        /// <summary>The cost per lead value for this source.</summary>
+        /// <summary>Configured cost charged when this source creates a billable lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? CostPerLead { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode CostPerLead { get; set; }
 #endif
-        /// <summary>Tag ids applied automatically to leads created from this source.</summary>
+        /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DefaultTagIds { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> DefaultTagIds { get; set; }
 #endif
-        /// <summary>Tag names applied automatically to leads created from this source, creating missing tags when allowed by the caller.</summary>
+        /// <summary>Tag names automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DefaultTagNames { get; set; }
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> DefaultTagNames { get; set; }
 #endif
-        /// <summary>The human-readable description of this source.</summary>
+        /// <summary>Human-readable description that explains this lead source request to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether this source is enabled.</summary>
+        /// <summary>Indicates whether this lead source request is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The unique identifier for the entity, when updating an existing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,9 +107,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Whether regenerate API key applies to this source.</summary>
+        /// <summary>Indicates whether Leadping should issue a new API key for this source.</summary>
         public bool? RegenerateApiKey { get; set; }
-        /// <summary>Whether this source requires TrustedForm.</summary>
+        /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SourceRequest"/> and sets the default values.

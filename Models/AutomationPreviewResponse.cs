@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation preview response data.
+    /// Response schema for the Leadping API automation preview response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationPreviewResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action results included with this automation preview.</summary>
+        /// <summary>Action preview results showing what the automation would do.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationPreviewActionResult>? ActionResults { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The condition results included with this automation preview.</summary>
+        /// <summary>Condition evaluation results returned by the automation preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationPreviewConditionResult>? ConditionResults { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationPreviewConditionResult> ConditionResults { get; set; }
 #endif
-        /// <summary>The sample payload key-value data carried with this automation preview; values must be safe to expose in API responses.</summary>
+        /// <summary>Example payload clients can use to understand this automation preview response format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationPreviewResponse_samplePayload? SamplePayload { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationPreviewResponse_samplePayload SamplePayload { get; set; }
 #endif
-        /// <summary>The trigger type classification for this automation preview.</summary>
+        /// <summary>Automation trigger type that starts the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerType { get; set; }
 #endif
-        /// <summary>The validation value for this automation preview.</summary>
+        /// <summary>Validation result returned for the automation configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationValidationResult? Validation { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationValidationResult Validation { get; set; }
 #endif
-        /// <summary>The warnings included with this automation preview.</summary>
+        /// <summary>Warnings returned for this automation preview response that do not necessarily block processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Warnings { get; set; }

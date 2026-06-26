@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for archiving a lead without deleting its history.
+    /// Request schema for the Leadping API lead archive request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadArchiveRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Optional internal note explaining the archive decision.</summary>
+        /// <summary>Optional archive note that gives additional context for why the lead was archived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Note { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Note { get; set; }
 #endif
-        /// <summary>Reason the lead should leave the active working pipeline.</summary>
+        /// <summary>Human-readable reason supplied for this request or result.</summary>
         public int? Reason { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadArchiveRequest"/> and sets the default values.

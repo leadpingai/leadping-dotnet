@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents phone information retrieved from a phone number lookup
+    /// Public Leadping API schema for phone lookup result data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneLookup : IAdditionalDataHolder, IParsable
@@ -27,11 +27,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this phone lookup is valid.</summary>
+        /// <summary>Indicates whether this phone lookup result passed validation.</summary>
         public bool? IsValid { get; set; }
         /// <summary>An enumerator describing phone line types</summary>
         public global::Leadping.OpenApiClient.Models.PhoneLookup_lineType? LineType { get; set; }
-        /// <summary>The location value for this phone lookup.</summary>
+        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneLookup_location? Location { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Gets or sets modified at.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The number value for this phone lookup.</summary>
+        /// <summary>E.164 phone number exposed by this phone lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }

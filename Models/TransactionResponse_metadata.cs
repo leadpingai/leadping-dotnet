@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Provider and wallet audit metadata for this transaction.
+    /// Structured metadata used for attribution, integrations, and reporting on this billing transaction response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionResponse_metadata : IAdditionalDataHolder, IParsable
