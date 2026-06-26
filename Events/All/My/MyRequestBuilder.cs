@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Events.All.My
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/all/my{?category*}", pathParameters)
+        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/all/my{?category*,endAt*,startAt*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Events.All.My
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/all/my{?category*}", rawUrl)
+        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/all/my{?category*,endAt*,startAt*}", rawUrl)
         {
         }
         /// <summary>
@@ -104,6 +104,10 @@ namespace Leadping.OpenApiClient.Events.All.My
             [QueryParameter("category")]
             public string Category { get; set; }
 #endif
+            [QueryParameter("endAt")]
+            public DateTimeOffset? EndAt { get; set; }
+            [QueryParameter("startAt")]
+            public DateTimeOffset? StartAt { get; set; }
         }
     }
 }
