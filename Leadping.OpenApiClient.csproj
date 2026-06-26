@@ -14,7 +14,7 @@
     <PackageProjectUrl>https://leadping.ai</PackageProjectUrl>
     <PackageTags>Leadping;API;SDK;OpenAPI;Kiota</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
