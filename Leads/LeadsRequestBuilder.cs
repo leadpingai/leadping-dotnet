@@ -126,7 +126,7 @@ namespace Leadping.OpenApiClient.Leads
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LeadsRequestBuilderPostQueryParameters 
         {
-            /// <summary>The Leadping source key supplied as a query string parameter.</summary>
+            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceKey")]

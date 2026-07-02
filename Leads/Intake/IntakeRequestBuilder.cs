@@ -281,7 +281,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string SellerLeadIdentifier { get; set; }
 #endif
-            /// <summary>The Leadping source key supplied as a query string parameter.</summary>
+            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceKey")]
@@ -402,7 +402,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IntakeRequestBuilderPostQueryParameters 
         {
-            /// <summary>The Leadping source key supplied as a query string parameter.</summary>
+            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceKey")]
