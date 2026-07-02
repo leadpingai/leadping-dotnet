@@ -40,7 +40,7 @@ namespace Leadping.OpenApiClient.Dispositions.Lead.Item
         {
         }
         /// <summary>
-        /// Lists disposition history for one lead so users can review outcomes, notes, and follow-up context.
+        /// Lists disposition outcome history for one lead, including prior outcomes, notes, follow-up context, timestamps, and actor details used for audit review.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.DispositionResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.Dispositions.Lead.Item
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists disposition history for one lead so users can review outcomes, notes, and follow-up context.
+        /// Lists disposition outcome history for one lead, including prior outcomes, notes, follow-up context, timestamps, and actor details used for audit review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

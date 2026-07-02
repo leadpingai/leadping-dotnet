@@ -9,32 +9,32 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Leadping.OpenApiClient.PhoneNumbers.All.My
+namespace Leadping.OpenApiClient.PhoneNumbers.All.Business
 {
     /// <summary>
-    /// Builds and executes requests for operations under \phone-numbers\all\my
+    /// Builds and executes requests for operations under \phone-numbers\all\business
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MyRequestBuilder : BaseRequestBuilder
+    public partial class BusinessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.Business.BusinessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/phone-numbers/all/my", pathParameters)
+        public BusinessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/phone-numbers/all/business", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.Business.BusinessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/phone-numbers/all/my", rawUrl)
+        public BusinessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/phone-numbers/all/business", rawUrl)
         {
         }
         /// <summary>
-        /// Lists phone numbers visible to the current user with paging, sorting, and filters for messaging, calling, and warmup management.
+        /// Lists phone numbers visible to the current business with paging, sorting, and filters for messaging, calling, and warmup management.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.All.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists phone numbers visible to the current user with paging, sorting, and filters for messaging, calling, and warmup management.
+        /// Lists phone numbers visible to the current business with paging, sorting, and filters for messaging, calling, and warmup management.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -83,11 +83,11 @@ namespace Leadping.OpenApiClient.PhoneNumbers.All.My
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.Business.BusinessRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder WithUrl(string rawUrl)
+        public global::Leadping.OpenApiClient.PhoneNumbers.All.Business.BusinessRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Leadping.OpenApiClient.PhoneNumbers.All.Business.BusinessRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

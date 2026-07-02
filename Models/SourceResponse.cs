@@ -39,8 +39,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>UTC timestamp when Leadping issued the source API key.</summary>
-        public DateTimeOffset? ApiKeyIssuedAt { get; set; }
         /// <summary>Masked preview of the source API key for display without exposing the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,7 +177,6 @@ namespace Leadping.OpenApiClient.Models
                 { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "apiKeyIssuedAt", n => { ApiKeyIssuedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>(global::Leadping.OpenApiClient.Models.SourceResponse_business.CreateFromDiscriminatorValue); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
@@ -211,7 +208,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
-            writer.WriteDateTimeOffsetValue("apiKeyIssuedAt", ApiKeyIssuedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>("business", Business);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);

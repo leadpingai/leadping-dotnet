@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
         {
         }
         /// <summary>
-        /// The source lead creation metrics.
+        /// Returns lead creation metrics for one business intake source, including accepted, rejected, duplicate, validation, and recent activity counts for monitoring.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceMetricsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceMetricsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceMetricsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The source lead creation metrics.
+        /// Returns lead creation metrics for one business intake source, including accepted, rejected, duplicate, validation, and recent activity counts for monitoring.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
             return new global::Leadping.OpenApiClient.Sources.Item.Metrics.MetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The source lead creation metrics.
+        /// Returns lead creation metrics for one business intake source, including accepted, rejected, duplicate, validation, and recent activity counts for monitoring.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MetricsRequestBuilderGetQueryParameters 

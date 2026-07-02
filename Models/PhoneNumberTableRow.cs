@@ -39,6 +39,20 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Business { get; set; }
 #endif
+        /// <summary>Unique Leadping business identifier connected to this phone number table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BusinessId { get; set; }
+#nullable restore
+#else
+        public string BusinessId { get; set; }
+#endif
+        /// <summary>Indicates whether controlled voice call warmup is enabled for this phone number.</summary>
+        public bool? CallWarmupEnabled { get; set; }
+        /// <summary>Defines the supported voice call warmup stages for a Leadping-managed phone number.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupStage? CallWarmupStage { get; set; }
+        /// <summary>Defines the supported health states for controlled internal voice call warmup.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupState? CallWarmupState { get; set; }
         /// <summary>SMS and voice capabilities available on this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,6 +211,10 @@ namespace Leadping.OpenApiClient.Models
                 { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "billingAttribution", n => { BillingAttribution = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetStringValue(); } },
+                { "businessId", n => { BusinessId = n.GetStringValue(); } },
+                { "callWarmupEnabled", n => { CallWarmupEnabled = n.GetBoolValue(); } },
+                { "callWarmupStage", n => { CallWarmupStage = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupStage>(); } },
+                { "callWarmupState", n => { CallWarmupState = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupState>(); } },
                 { "capabilities", n => { Capabilities = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_healthStatus>(); } },
@@ -235,6 +253,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteStringValue("billingAttribution", BillingAttribution);
             writer.WriteStringValue("business", Business);
+            writer.WriteStringValue("businessId", BusinessId);
+            writer.WriteBoolValue("callWarmupEnabled", CallWarmupEnabled);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupStage>("callWarmupStage", CallWarmupStage);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupState>("callWarmupState", CallWarmupState);
             writer.WriteStringValue("capabilities", Capabilities);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_healthStatus>("healthStatus", HealthStatus);

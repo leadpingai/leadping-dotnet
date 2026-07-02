@@ -45,6 +45,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse OptOutMetrics { get; set; }
 #endif
+        /// <summary>Current outbound SMS and voice capacity for this phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity? OutboundCapacity { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity OutboundCapacity { get; set; }
+#endif
         /// <summary>Recent workflow events returned for timeline and troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +110,7 @@ namespace Leadping.OpenApiClient.Models
                 { "messagesWarmed", n => { MessagesWarmed = n.GetIntValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "optOutMetrics", n => { OptOutMetrics = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse.CreateFromDiscriminatorValue); } },
+                { "outboundCapacity", n => { OutboundCapacity = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity.CreateFromDiscriminatorValue); } },
                 { "recentEvents", n => { RecentEvents = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "smsWarmup", n => { SmsWarmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup.CreateFromDiscriminatorValue); } },
                 { "trafficMetrics", n => { TrafficMetrics = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse.CreateFromDiscriminatorValue); } },
@@ -121,6 +130,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("messagesWarmed", MessagesWarmed);
             writer.WriteStringValue("number", Number);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>("optOutMetrics", OptOutMetrics);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity>("outboundCapacity", OutboundCapacity);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse>("recentEvents", RecentEvents);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup>("smsWarmup", SmsWarmup);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse>("trafficMetrics", TrafficMetrics);

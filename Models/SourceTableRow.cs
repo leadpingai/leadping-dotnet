@@ -39,8 +39,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>UTC timestamp when Leadping issued the source API key.</summary>
-        public DateTimeOffset? ApiKeyIssuedAt { get; set; }
         /// <summary>UTC timestamp when the source API key was last used.</summary>
         public DateTimeOffset? ApiKeyLastUsedAt { get; set; }
         /// <summary>Masked preview of the source API key for display without exposing the secret.</summary>
@@ -183,7 +181,6 @@ namespace Leadping.OpenApiClient.Models
                 { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.SourceTableRow_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "apiKeyIssuedAt", n => { ApiKeyIssuedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
@@ -217,7 +214,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
-            writer.WriteDateTimeOffsetValue("apiKeyIssuedAt", ApiKeyIssuedAt);
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
