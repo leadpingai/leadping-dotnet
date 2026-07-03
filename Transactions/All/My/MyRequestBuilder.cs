@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/transactions/all/my", pathParameters)
+        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/transactions/all/my{?endAt*,startAt*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/transactions/all/my", rawUrl)
+        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/transactions/all/my{?endAt*,startAt*}", rawUrl)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Transactions.All.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Transactions.All.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -66,11 +66,11 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Transactions.All.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Transactions.All.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -88,6 +88,17 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         public global::Leadping.OpenApiClient.Transactions.All.My.MyRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Leadping.OpenApiClient.Transactions.All.My.MyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Lists current-user transactions with paging, sorting, and filters for wallet events, billing history, and reconciliation.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class MyRequestBuilderPostQueryParameters 
+        {
+            [QueryParameter("endAt")]
+            public DateTimeOffset? EndAt { get; set; }
+            [QueryParameter("startAt")]
+            public DateTimeOffset? StartAt { get; set; }
         }
     }
 }
