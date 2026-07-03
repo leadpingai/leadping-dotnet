@@ -13,6 +13,22 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventTableRow : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Display name for the person or system that created this event timeline table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorDisplayName { get; set; }
+#nullable restore
+#else
+        public string ActorDisplayName { get; set; }
+#endif
+        /// <summary>User ID for the person or system that created this event timeline table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorUserId { get; set; }
+#nullable restore
+#else
+        public string ActorUserId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
@@ -302,6 +318,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
@@ -358,6 +376,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("actorDisplayName", ActorDisplayName);
+            writer.WriteStringValue("actorUserId", ActorUserId);
             writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);

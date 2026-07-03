@@ -153,6 +153,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.TagSummary> Tags { get; set; }
 #endif
+        /// <summary>UTC timestamp when this lead table row was last updated.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadTableRow"/> and sets the default values.
         /// </summary>
@@ -199,6 +201,7 @@ namespace Leadping.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusTone", n => { StatusTone = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -229,6 +232,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusTone", StatusTone);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("tags", Tags);
+            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

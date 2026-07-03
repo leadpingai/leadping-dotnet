@@ -40,6 +40,7 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,7 +52,11 @@ namespace Leadping.OpenApiClient.Transactions.All.My
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfTransactionTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists current-user transactions with paging, sorting, and filters for wallet events, billing history, and reconciliation.
