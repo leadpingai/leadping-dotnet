@@ -46,7 +46,7 @@ namespace Leadping.OpenApiClient.Suppressions
         {
         }
         /// <summary>
-        /// The suppression entry response was created successfully.
+        /// Creates or reactivates a Leadping suppression entry that blocks future outreach to a recipient across the selected communication channel.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SuppressionEntryResponse"/></returns>
         /// <param name="body">Request payload for suppression entry.</param>
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Suppressions
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SuppressionEntryResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SuppressionEntryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The suppression entry response was created successfully.
+        /// Creates or reactivates a Leadping suppression entry that blocks future outreach to a recipient across the selected communication channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request payload for suppression entry.</param>

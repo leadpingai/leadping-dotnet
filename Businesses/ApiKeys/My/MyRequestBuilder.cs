@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Businesses.ApiKeys.My
         {
         }
         /// <summary>
-        /// Returns a paged result of current-business API keys.
+        /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping business, with support for filtering, sorting, and pagination.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Businesses.ApiKeys.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a paged result of current-business API keys.
+        /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping business, with support for filtering, sorting, and pagination.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>

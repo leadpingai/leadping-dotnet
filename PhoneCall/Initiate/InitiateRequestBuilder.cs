@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Initiate
         {
         }
         /// <summary>
-        /// Returns the call details with a 200 status code.
+        /// Starts an outbound Leadping phone call for an authenticated user and returns the provider call identifiers, status, and routing details.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneCallResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API phone call initiation request, including the fields clients can send.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Initiate
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneCallResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the call details with a 200 status code.
+        /// Starts an outbound Leadping phone call for an authenticated user and returns the provider call identifiers, status, and routing details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API phone call initiation request, including the fields clients can send.</param>

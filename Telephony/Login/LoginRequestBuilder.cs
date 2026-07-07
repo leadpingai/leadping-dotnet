@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Telephony.Login
         {
         }
         /// <summary>
-        /// Returns the telephony login response with a 200 status code.
+        /// Generates a Leadping WebRTC login token so authenticated agents can connect to telephony services and place or receive browser-based calls.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TelephonyLoginResponse"/></returns>
         /// <param name="body">Request model for telephony login token generation.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Telephony.Login
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.TelephonyLoginResponse>(requestInfo, global::Leadping.OpenApiClient.Models.TelephonyLoginResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the telephony login response with a 200 status code.
+        /// Generates a Leadping WebRTC login token so authenticated agents can connect to telephony services and place or receive browser-based calls.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request model for telephony login token generation.</param>

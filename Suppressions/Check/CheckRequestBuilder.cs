@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Suppressions.Check
         {
         }
         /// <summary>
-        /// Returns the suppression check result.
+        /// Checks whether a recipient is blocked by an active Leadping suppression entry before sending messages or placing calls through the selected channel.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SuppressionCheckResult"/></returns>
         /// <param name="body">Request payload for suppression entry.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Suppressions.Check
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SuppressionCheckResult>(requestInfo, global::Leadping.OpenApiClient.Models.SuppressionCheckResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the suppression check result.
+        /// Checks whether a recipient is blocked by an active Leadping suppression entry before sending messages or placing calls through the selected channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request payload for suppression entry.</param>
