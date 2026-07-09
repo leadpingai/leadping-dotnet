@@ -52,6 +52,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.Users
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.BusinessUserTableRow&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Leadping.OpenApiClient.Models.BusinessUserTableRow>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,17 +63,22 @@ namespace Leadping.OpenApiClient.Businesses.Me.Users
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Leadping.OpenApiClient.Models.BusinessUserTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.BusinessUserTableRow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Leadping.OpenApiClient.Models.BusinessUserTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.BusinessUserTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Adds an existing user to the current business with the requested role for shared lead communication and account access.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.BusinessUserResponse"/></returns>
-        /// <param name="body">Request payload for business user.</param>
+        /// <param name="body">Request schema for the Leadping API business user request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +94,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.Users
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.BusinessUserResponse>(requestInfo, global::Leadping.OpenApiClient.Models.BusinessUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -115,7 +122,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.Users
         /// Adds an existing user to the current business with the requested role for shared lead communication and account access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for business user.</param>
+        /// <param name="body">Request schema for the Leadping API business user request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The sample payload key-value data carried with this automation preview; values must be safe to expose in API responses.
+    /// Example payload clients can use to understand this automation preview response format.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationPreviewResponse_samplePayload : IAdditionalDataHolder, IParsable

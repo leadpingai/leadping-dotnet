@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The postal address associated with this business.
+    /// Postal address for the business, lead, or contact represented by this business profile request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessRequest_address : global::Leadping.OpenApiClient.Models.StreetAddress, IParsable

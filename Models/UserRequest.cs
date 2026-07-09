@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for user.
+    /// Request schema for the Leadping API user profile request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserRequest : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.UserRequest_billingPlan? BillingPlan { get; set; }
-        /// <summary>The business value for this user.</summary>
+        /// <summary>Business summary connected to this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserRequest_business? Business { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserRequest_business Business { get; set; }
 #endif
-        /// <summary>The compliance value for this user.</summary>
+        /// <summary>User compliance settings and attestations captured for Leadping account review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserRequest_compliance? Compliance { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserRequest_compliance Compliance { get; set; }
 #endif
-        /// <summary>The current business value for this user.</summary>
+        /// <summary>Business currently selected for the user session or profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness? CurrentBusiness { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness CurrentBusiness { get; set; }
 #endif
-        /// <summary>The email address associated with this user.</summary>
+        /// <summary>Email address for the person represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The first name value for this user.</summary>
+        /// <summary>First name of the lead, user, or contact represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The date and time for the last name value on this user.</summary>
+        /// <summary>Last name of the lead, user, or contact represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The Leadping mobile device preferences for this user.</summary>
+        /// <summary>Mobile notification preferences configured for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>? MobileDevicePreferences { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The notification preferences value for this user.</summary>
+        /// <summary>Notification preferences configured for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences? NotificationPreferences { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences NotificationPreferences { get; set; }
 #endif
-        /// <summary>The phone number associated with this user.</summary>
+        /// <summary>Phone details for the lead, user, or business represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }

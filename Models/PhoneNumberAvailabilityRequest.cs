@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for phone number availability.
+    /// Request schema for checking phone number availability before purchase or assignment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberAvailabilityRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The phone number associated with this phone number availability.</summary>
+        /// <summary>Phone number to check for availability, formatted for provider lookup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }

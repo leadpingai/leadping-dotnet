@@ -9,7 +9,7 @@ using System;
 namespace Leadping.OpenApiClient.Leads.Item.Archive
 {
     /// <summary>
-    /// Request payload for archiving a lead without deleting its history.
+    /// Request schema for the Leadping API lead archive request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ArchivePostRequestBody : global::Leadping.OpenApiClient.Models.LeadArchiveRequest, IParsable

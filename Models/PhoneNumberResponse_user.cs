@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The user value for this phone number.
+    /// User summary connected to this phone number.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberResponse_user : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

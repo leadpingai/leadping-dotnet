@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for business.
+    /// Request schema for the Leadping API business profile request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The activation value for this business.</summary>
+        /// <summary>Business activation state covering site, billing, compliance, and telephony readiness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.BusinessRequest_activation? Activation { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The postal address associated with this business.</summary>
+        /// <summary>Postal address for the business, lead, or contact represented by this business profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.BusinessRequest_address? Address { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.BusinessRequest_address Address { get; set; }
 #endif
-        /// <summary>The adminEnablementOverride property</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The monetary auto refill amount for this business wallet.</summary>
+        /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AutoRefillAmount { get; set; }
@@ -47,9 +47,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode AutoRefillAmount { get; set; }
 #endif
-        /// <summary>Whether auto refill is enabled for this business wallet.</summary>
+        /// <summary>Indicates whether automatic wallet refill is enabled for the business.</summary>
         public bool? AutoRefillEnabled { get; set; }
-        /// <summary>The auto refill trigger value for this business wallet.</summary>
+        /// <summary>Wallet balance threshold that triggers automatic refill.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AutoRefillTrigger { get; set; }
@@ -57,9 +57,25 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode AutoRefillTrigger { get; set; }
 #endif
+        /// <summary>Postal address used for invoices, receipts, and payment processor billing records.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress? BillingAddress { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress BillingAddress { get; set; }
+#endif
+        /// <summary>Name used for invoices, receipts, and payment processor billing records.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingName { get; set; }
+#nullable restore
+#else
+        public string BillingName { get; set; }
+#endif
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessRequest_billingPlan? BillingPlan { get; set; }
-        /// <summary>The compliance policy value for this business.</summary>
+        /// <summary>Compliance policy configuration for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy? CompliancePolicy { get; set; }
@@ -67,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy CompliancePolicy { get; set; }
 #endif
-        /// <summary>The human-readable description of this business.</summary>
+        /// <summary>Human-readable description that explains this business profile request to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -75,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The EIN value for this business.</summary>
+        /// <summary>Employer Identification Number used for business and 10DLC verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ein { get; set; }
@@ -83,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ein { get; set; }
 #endif
-        /// <summary>The EIN document value for this business.</summary>
+        /// <summary>Uploaded EIN document reference used for business verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.BusinessRequest_einDocument? EinDocument { get; set; }
@@ -91,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.BusinessRequest_einDocument EinDocument { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>Indicates whether this business profile request is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The unique identifier for the entity, when updating an existing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +117,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this business is younger than90.</summary>
+        /// <summary>Indicates whether the business serves customers younger than 90, for compliance and underwriting context.</summary>
         public bool? IsYoungerThan90 { get; set; }
         /// <summary>The display name for the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +127,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The phone number associated with this business.</summary>
+        /// <summary>Phone details for the lead, user, or business represented by this business profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -119,7 +135,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>The phones included with this business.</summary>
+        /// <summary>Phone numbers assigned to this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.IdNameValue>? Phones { get; set; }
@@ -127,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.IdNameValue> Phones { get; set; }
 #endif
-        /// <summary>The secondary name value for this business.</summary>
+        /// <summary>Alternate business name or DBA shown in Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryName { get; set; }
@@ -139,7 +155,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.BusinessRequest_setupStep? SetupStep { get; set; }
         /// <summary>Defines the supported Business Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessRequest_status? Status { get; set; }
-        /// <summary>Stripe billing state owned by this business.</summary>
+        /// <summary>Stripe customer and subscription state associated with this business or user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.BusinessRequest_stripeInfo? StripeInfo { get; set; }
@@ -149,7 +165,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Subscription Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessRequest_subscriptionStatus? SubscriptionStatus { get; set; }
-        /// <summary>The vertical value for this business.</summary>
+        /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Vertical { get; set; }
@@ -157,7 +173,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Vertical { get; set; }
 #endif
-        /// <summary>The website URL associated with this business.</summary>
+        /// <summary>Business website URL used for compliance, brand review, and lead attribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Website { get; set; }
@@ -196,6 +212,8 @@ namespace Leadping.OpenApiClient.Models
                 { "autoRefillAmount", n => { AutoRefillAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress>(global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress.CreateFromDiscriminatorValue); } },
+                { "billingName", n => { BillingName = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingPlan>(); } },
                 { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy>(global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -229,6 +247,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
             writer.WriteObjectValue<UntypedNode>("autoRefillTrigger", AutoRefillTrigger);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress>("billingAddress", BillingAddress);
+            writer.WriteStringValue("billingName", BillingName);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteStringValue("description", Description);

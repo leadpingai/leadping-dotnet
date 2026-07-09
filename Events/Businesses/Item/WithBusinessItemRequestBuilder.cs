@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Events.Businesses.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBusinessItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/businesses/{businessId}", pathParameters)
+        public WithBusinessItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/businesses/{businessId}{?endAt*,startAt*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Events.Businesses.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBusinessItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/businesses/{businessId}", rawUrl)
+        public WithBusinessItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/businesses/{businessId}{?endAt*,startAt*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,13 +41,14 @@ namespace Leadping.OpenApiClient.Events.Businesses.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfEventTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfEventTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Events.Businesses.Item.WithBusinessItemRequestBuilder.WithBusinessItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfEventTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfEventTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Events.Businesses.Item.WithBusinessItemRequestBuilder.WithBusinessItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,6 +56,7 @@ namespace Leadping.OpenApiClient.Events.Businesses.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfEventTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfEventTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -66,11 +68,11 @@ namespace Leadping.OpenApiClient.Events.Businesses.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Events.Businesses.Item.WithBusinessItemRequestBuilder.WithBusinessItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Events.Businesses.Item.WithBusinessItemRequestBuilder.WithBusinessItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -88,6 +90,17 @@ namespace Leadping.OpenApiClient.Events.Businesses.Item
         public global::Leadping.OpenApiClient.Events.Businesses.Item.WithBusinessItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Leadping.OpenApiClient.Events.Businesses.Item.WithBusinessItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Lists event records for a business with paging and filters so admins can review lead communication and automation events.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithBusinessItemRequestBuilderPostQueryParameters 
+        {
+            [QueryParameter("endAt")]
+            public DateTimeOffset? EndAt { get; set; }
+            [QueryParameter("startAt")]
+            public DateTimeOffset? StartAt { get; set; }
         }
     }
 }

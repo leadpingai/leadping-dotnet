@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The coordinate inferred for this lead contact.
+    /// Latitude and longitude coordinate for this lead contact profile.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Coordinate : IAdditionalDataHolder, IParsable

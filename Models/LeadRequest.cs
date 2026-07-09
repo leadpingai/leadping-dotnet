@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for lead.
+    /// Request schema for the Leadping API lead request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminEnablementOverride property</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The contact value for this lead.</summary>
+        /// <summary>Contact details for the lead or customer represented by this lead request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact? Contact { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact Contact { get; set; }
 #endif
-        /// <summary>The profile value for this lead.</summary>
+        /// <summary>Demographic profile details for the lead represented by this lead request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadProfile? Customer { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadProfile Customer { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>Indicates whether this lead request is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The unique identifier for the entity, when updating an existing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Safe, non-secret metadata associated with this lead.</summary>
+        /// <summary>Structured metadata used for attribution, integrations, and reporting on this lead request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadMetadata? Metadata { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadMetadata Metadata { get; set; }
 #endif
-        /// <summary>Existing business tag ids to apply when the lead is created.</summary>
+        /// <summary>Tag IDs assigned to or filtered against this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TagIds { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> TagIds { get; set; }
 #endif
-        /// <summary>Business tag names to apply when the lead is created. Missing names are created safely by lead creation flows.</summary>
+        /// <summary>Tag names assigned to this lead when matching existing tags by name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TagNames { get; set; }

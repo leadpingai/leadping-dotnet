@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Metadata related to the origin, context, and attribution of a submitted lead.
+    /// Public Leadping API schema for lead attribution metadata data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadMetadata : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The assigned phone number ID associated with this lead metadata.</summary>
+        /// <summary>Phone number ID assigned to the lead, business, or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedPhoneNumberId { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AssignedPhoneNumberId { get; set; }
 #endif
-        /// <summary>The business ID associated with this lead metadata.</summary>
+        /// <summary>Business ID that owns this lead&apos;s attribution metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The human-readable compliance blocked reason explaining this lead metadata.</summary>
+        /// <summary>Reason Leadping blocked this operation for compliance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceBlockedReason { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceBlockedReason { get; set; }
 #endif
-        /// <summary>The current compliance status for this lead metadata.</summary>
+        /// <summary>Compliance status used to decide whether Leadping can send messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceStatus { get; set; }
@@ -47,9 +47,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceStatus { get; set; }
 #endif
-        /// <summary>The date and time for the created at value on this lead metadata.</summary>
+        /// <summary>UTC timestamp when this lead attribution metadata was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The direct post price value for this lead metadata.</summary>
+        /// <summary>Direct-post price supplied by the lead source during intake.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? DirectPostPrice { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode DirectPostPrice { get; set; }
 #endif
-        /// <summary>The external ID associated with this lead metadata.</summary>
+        /// <summary>External system identifier used to reconcile this lead attribution metadata across integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ExternalId { get; set; }
 #endif
-        /// <summary>The import batch ID associated with this lead.</summary>
+        /// <summary>Bulk import batch ID that created or updated this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImportBatchId { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ImportBatchId { get; set; }
 #endif
-        /// <summary>The IP address value for this lead metadata.</summary>
+        /// <summary>IP address captured with the request for audit and compliance review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress { get; set; }
@@ -81,9 +81,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string IpAddress { get; set; }
 #endif
-        /// <summary>Whether the lead was imported rather than received as a fresh inbound lead.</summary>
+        /// <summary>Indicates whether this lead was imported rather than captured through a live source.</summary>
         public bool? IsImported { get; set; }
-        /// <summary>The landing page value for this lead metadata.</summary>
+        /// <summary>Landing page URL where the lead submitted their information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LandingPage { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LandingPage { get; set; }
 #endif
-        /// <summary>The lead origin used by outbound pacing and automation safeguards.</summary>
+        /// <summary>System or workflow that created this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Origin { get; set; }
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Origin { get; set; }
 #endif
-        /// <summary>The monetary price for this lead metadata.</summary>
+        /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Price { get; set; }
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Price { get; set; }
 #endif
-        /// <summary>The product value for this lead metadata.</summary>
+        /// <summary>Product or offer associated with the lead or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Product { get; set; }
@@ -115,7 +115,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Product { get; set; }
 #endif
-        /// <summary>The pub ID associated with this lead metadata.</summary>
+        /// <summary>Publisher ID supplied by the lead source for attribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PubId { get; set; }
@@ -123,7 +123,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PubId { get; set; }
 #endif
-        /// <summary>The referrer value for this lead metadata.</summary>
+        /// <summary>Referring page or traffic source that sent the lead into Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Referrer { get; set; }
@@ -131,7 +131,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Referrer { get; set; }
 #endif
-        /// <summary>The seller lead ID associated with this lead metadata.</summary>
+        /// <summary>Seller-provided lead identifier used to deduplicate and reconcile lead delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SellerLeadId { get; set; }
@@ -139,7 +139,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SellerLeadId { get; set; }
 #endif
-        /// <summary>The SMS consent phone number value for this lead metadata.</summary>
+        /// <summary>Phone number where SMS consent was captured or evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SmsConsentPhoneNumber { get; set; }
@@ -147,7 +147,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SmsConsentPhoneNumber { get; set; }
 #endif
-        /// <summary>The current SMS consent status for this lead metadata.</summary>
+        /// <summary>Current SMS consent status recorded for this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SmsConsentStatus { get; set; }
@@ -155,15 +155,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SmsConsentStatus { get; set; }
 #endif
-        /// <summary>The date and time for the SMS help requested at value on this lead metadata.</summary>
+        /// <summary>UTC timestamp when the lead requested SMS help instructions.</summary>
         public DateTimeOffset? SmsHelpRequestedAt { get; set; }
-        /// <summary>Whether SMS opted out applies to this lead metadata.</summary>
+        /// <summary>Indicates whether the lead has opted out of SMS communication.</summary>
         public bool? SmsOptedOut { get; set; }
-        /// <summary>The date and time for the SMS opt in at value on this lead metadata.</summary>
+        /// <summary>UTC timestamp when the lead opted in to SMS communication.</summary>
         public DateTimeOffset? SmsOptInAt { get; set; }
-        /// <summary>The date and time for the SMS opt out at value on this lead metadata.</summary>
+        /// <summary>UTC timestamp when the lead opted out of SMS communication.</summary>
         public DateTimeOffset? SmsOptOutAt { get; set; }
-        /// <summary>The source metadata key-value data carried with this lead metadata; values must be safe to expose in API responses.</summary>
+        /// <summary>Source-provided key-value metadata retained for lead attribution and integration troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata? SourceMetadata { get; set; }
@@ -171,7 +171,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata SourceMetadata { get; set; }
 #endif
-        /// <summary>The sub ID associated with this lead metadata.</summary>
+        /// <summary>Affiliate or publisher sub ID captured for lead attribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubId { get; set; }
@@ -179,7 +179,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SubId { get; set; }
 #endif
-        /// <summary>The URL associated with this lead metadata.</summary>
+        /// <summary>TrustedForm certificate URL used as proof of consumer consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrustedFormUrl { get; set; }
@@ -187,7 +187,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TrustedFormUrl { get; set; }
 #endif
-        /// <summary>The user agent value for this lead metadata.</summary>
+        /// <summary>Browser or client user agent captured when this lead attribution metadata was submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserAgent { get; set; }
@@ -195,7 +195,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserAgent { get; set; }
 #endif
-        /// <summary>The user ID associated with this lead metadata.</summary>
+        /// <summary>User ID associated with this lead&apos;s attribution metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }
@@ -203,7 +203,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The utm campaign value for this lead metadata.</summary>
+        /// <summary>UTM campaign parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UtmCampaign { get; set; }
@@ -211,7 +211,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UtmCampaign { get; set; }
 #endif
-        /// <summary>The utm content value for this lead metadata.</summary>
+        /// <summary>UTM content parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UtmContent { get; set; }
@@ -219,7 +219,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UtmContent { get; set; }
 #endif
-        /// <summary>The utm medium value for this lead metadata.</summary>
+        /// <summary>UTM medium parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UtmMedium { get; set; }
@@ -227,7 +227,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UtmMedium { get; set; }
 #endif
-        /// <summary>The utm source value for this lead metadata.</summary>
+        /// <summary>UTM source parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UtmSource { get; set; }
@@ -235,7 +235,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UtmSource { get; set; }
 #endif
-        /// <summary>The utm term value for this lead metadata.</summary>
+        /// <summary>UTM term parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UtmTerm { get; set; }
@@ -243,7 +243,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UtmTerm { get; set; }
 #endif
-        /// <summary>The vertical value for this lead metadata.</summary>
+        /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Vertical { get; set; }

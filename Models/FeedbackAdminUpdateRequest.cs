@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Admin triage update request for product feedback.
+    /// Request schema for the Leadping API feedback admin update request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeedbackAdminUpdateRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminNote property</summary>
+        /// <summary>Internal admin note used to track feedback review or resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdminNote { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AdminNote { get; set; }
 #endif
-        /// <summary>The area property</summary>
+        /// <summary>Product area or app section connected to this feedback admin update request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Area { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Area { get; set; }
 #endif
-        /// <summary>The duplicateOfFeedbackItemId property</summary>
+        /// <summary>Feedback item ID that this item duplicates, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DuplicateOfFeedbackItemId { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DuplicateOfFeedbackItemId { get; set; }
 #endif
-        /// <summary>The externalIssueUrl property</summary>
+        /// <summary>External issue tracker URL linked to this feedback item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalIssueUrl { get; set; }

@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation validation result data used by Leadping API contracts.
+    /// Result schema for the Leadping API automation validation result returned by lookup and validation endpoints.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationValidationResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The errors included with this automation validation result.</summary>
+        /// <summary>Validation or processing errors returned for this automation validation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Errors { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> Errors { get; set; }
 #endif
-        /// <summary>The warnings included with this automation validation result.</summary>
+        /// <summary>Warnings returned for this automation validation result that do not necessarily block processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Warnings { get; set; }

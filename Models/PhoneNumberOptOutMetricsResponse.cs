@@ -8,22 +8,22 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing phone number opt out metrics data returned to callers.
+    /// Response schema for the Leadping API phone number opt-out metrics response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberOptOutMetricsResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The distinct contacted count for this phone number opt out metrics.</summary>
+        /// <summary>Number of distinct recipients contacted during this metrics window.</summary>
         public int? DistinctContactedCount { get; set; }
-        /// <summary>The opt out count for this phone number opt out metrics.</summary>
+        /// <summary>Number of recipients who opted out during this metrics window.</summary>
         public int? OptOutCount { get; set; }
-        /// <summary>The opt out rate percent metric for this phone number opt out metrics.</summary>
+        /// <summary>Percentage of contacted recipients who opted out during this metrics window.</summary>
         public double? OptOutRatePercent { get; set; }
-        /// <summary>The date and time for the window days value on this phone number opt out metrics.</summary>
+        /// <summary>Number of days included in the metrics reporting window.</summary>
         public int? WindowDays { get; set; }
-        /// <summary>The date and time for the window started at value on this phone number opt out metrics.</summary>
+        /// <summary>UTC timestamp when the metrics reporting window starts.</summary>
         public DateTimeOffset? WindowStartedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse"/> and sets the default values.

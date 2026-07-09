@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation preview condition result data used by Leadping API contracts.
+    /// Result schema for the Leadping API automation preview condition result returned by lookup and validation endpoints.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationPreviewConditionResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The condition ID associated with this automation preview condition result.</summary>
+        /// <summary>Automation condition ID evaluated by this preview result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConditionId { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConditionId { get; set; }
 #endif
-        /// <summary>Whether this automation preview condition result is passed.</summary>
+        /// <summary>Indicates whether this automation preview condition result passed the preview or validation check.</summary>
         public bool? Passed { get; set; }
-        /// <summary>The summary value for this automation preview condition result.</summary>
+        /// <summary>Short human-readable summary of this automation preview condition result for lists, timelines, and notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }

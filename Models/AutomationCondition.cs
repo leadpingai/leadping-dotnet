@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation condition data used by Leadping API contracts.
+    /// Public Leadping API schema for automation condition data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationCondition : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unique ID for this automation condition.</summary>
+        /// <summary>Unique Leadping identifier for this automation condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this automation condition is enabled.</summary>
+        /// <summary>Indicates whether this automation condition is active and allowed to run.</summary>
         public bool? IsEnabled { get; set; }
-        /// <summary>The operator value for this automation condition.</summary>
+        /// <summary>Automation comparison operator used by this condition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The settings key-value data carried with this automation condition; values must be safe to expose in API responses.</summary>
+        /// <summary>Key-value settings that configure how this automation condition behaves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationCondition_settings? Settings { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationCondition_settings Settings { get; set; }
 #endif
-        /// <summary>The type classification for this automation condition.</summary>
+        /// <summary>Type classification used to route and interpret this automation condition in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

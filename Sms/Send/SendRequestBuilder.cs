@@ -37,10 +37,11 @@ namespace Leadping.OpenApiClient.Sms.Send
         /// Sends an SMS message to a lead or phone number, applying current-business sender selection, scheduling, and delivery rules.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsResponse"/></returns>
-        /// <param name="body">Request payload for send SMS.</param>
+        /// <param name="body">Request schema for the Leadping API SMS send request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +57,7 @@ namespace Leadping.OpenApiClient.Sms.Send
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SmsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SmsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -64,7 +66,7 @@ namespace Leadping.OpenApiClient.Sms.Send
         /// Sends an SMS message to a lead or phone number, applying current-business sender selection, scheduling, and delivery rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for send SMS.</param>
+        /// <param name="body">Request schema for the Leadping API SMS send request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

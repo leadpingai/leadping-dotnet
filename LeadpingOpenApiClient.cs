@@ -12,11 +12,14 @@ using Leadping.OpenApiClient.Leads;
 using Leadping.OpenApiClient.Notifications;
 using Leadping.OpenApiClient.Outbound;
 using Leadping.OpenApiClient.PaymentMethods;
+using Leadping.OpenApiClient.PhoneCall;
 using Leadping.OpenApiClient.PhoneNumbers;
 using Leadping.OpenApiClient.Reports;
 using Leadping.OpenApiClient.Sms;
 using Leadping.OpenApiClient.Sources;
+using Leadping.OpenApiClient.Suppressions;
 using Leadping.OpenApiClient.Tags;
+using Leadping.OpenApiClient.Telephony;
 using Leadping.OpenApiClient.Transactions;
 using Leadping.OpenApiClient.Usage;
 using Leadping.OpenApiClient.Users;
@@ -99,6 +102,11 @@ namespace Leadping.OpenApiClient
         {
             get => new global::Leadping.OpenApiClient.PaymentMethods.PaymentMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The phoneCall property</summary>
+        public global::Leadping.OpenApiClient.PhoneCall.PhoneCallRequestBuilder PhoneCall
+        {
+            get => new global::Leadping.OpenApiClient.PhoneCall.PhoneCallRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The phoneNumbers property</summary>
         public global::Leadping.OpenApiClient.PhoneNumbers.PhoneNumbersRequestBuilder PhoneNumbers
         {
@@ -119,10 +127,20 @@ namespace Leadping.OpenApiClient
         {
             get => new global::Leadping.OpenApiClient.Sources.SourcesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The suppressions property</summary>
+        public global::Leadping.OpenApiClient.Suppressions.SuppressionsRequestBuilder Suppressions
+        {
+            get => new global::Leadping.OpenApiClient.Suppressions.SuppressionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The tags property</summary>
         public global::Leadping.OpenApiClient.Tags.TagsRequestBuilder Tags
         {
             get => new global::Leadping.OpenApiClient.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The telephony property</summary>
+        public global::Leadping.OpenApiClient.Telephony.TelephonyRequestBuilder Telephony
+        {
+            get => new global::Leadping.OpenApiClient.Telephony.TelephonyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transactions property</summary>
         public global::Leadping.OpenApiClient.Transactions.TransactionsRequestBuilder Transactions

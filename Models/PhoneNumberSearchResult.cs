@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing phone number search result data returned to callers.
+    /// Result schema for the Leadping API phone number search result returned by lookup and validation endpoints.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberSearchResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The location value for this phone number search result.</summary>
+        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberSearchResult_location? Location { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberSearchResult_location Location { get; set; }
 #endif
-        /// <summary>The number value for this phone number search result.</summary>
+        /// <summary>E.164 phone number exposed by this phone number search result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }

@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing phone number messaging event data returned to callers.
+    /// Response schema for the Leadping API phone number messaging event returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberMessagingEventResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the created at value on this phone number messaging event.</summary>
+        /// <summary>UTC timestamp when this phone number messaging event was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The direction value for this phone number messaging event.</summary>
+        /// <summary>Communication direction for this phone number messaging event, such as inbound or outbound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Direction { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Direction { get; set; }
 #endif
-        /// <summary>The event type classification for this phone number messaging event.</summary>
+        /// <summary>Event type used to classify this timeline, SMS, call, or automation event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The phone number associated with this phone number messaging event.</summary>
+        /// <summary>Sender phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumber { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumber { get; set; }
 #endif
-        /// <summary>The unique ID for this phone number messaging event.</summary>
+        /// <summary>Unique Leadping identifier for this phone number messaging event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -49,9 +49,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this phone number messaging event is opt out.</summary>
+        /// <summary>Indicates whether the recipient has opted out of further SMS communication.</summary>
         public bool? IsOptOut { get; set; }
-        /// <summary>The human-readable label shown for this phone number messaging event.</summary>
+        /// <summary>Short display label for this phone number messaging event, formatted for charts, filters, or list views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The current provider status for this phone number messaging event.</summary>
+        /// <summary>Provider lifecycle or delivery status for this phone number messaging event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderStatus { get; set; }
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderStatus { get; set; }
 #endif
-        /// <summary>The text preview value for this phone number messaging event.</summary>
+        /// <summary>Short preview of the SMS or conversation text for this phone number messaging event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TextPreview { get; set; }
@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TextPreview { get; set; }
 #endif
-        /// <summary>The phone number associated with this phone number messaging event.</summary>
+        /// <summary>Recipient phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToPhoneNumber { get; set; }

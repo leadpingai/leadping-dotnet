@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number ten dlc association data used by Leadping API contracts.
+    /// Public Leadping API schema for phone number 10DLC association data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberTenDlcAssociation : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current assignment status for this phone number 10DLC association.</summary>
+        /// <summary>Provider assignment status for linking the phone number to a 10DLC campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignmentStatus { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AssignmentStatus { get; set; }
 #endif
-        /// <summary>The brand ID associated with this phone number 10DLC association.</summary>
+        /// <summary>10DLC brand identifier associated with this phone number or campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BrandId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BrandId { get; set; }
 #endif
-        /// <summary>The campaign ID associated with this phone number 10DLC association.</summary>
+        /// <summary>Messaging campaign identifier associated with this phone number 10DLC association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>The current campaign status for this phone number 10DLC association.</summary>
+        /// <summary>10DLC campaign status reported by the messaging provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignStatus { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignStatus { get; set; }
 #endif
-        /// <summary>The human-readable failure reason explaining this phone number 10DLC association.</summary>
+        /// <summary>Human-readable reason explaining why this phone number 10DLC association failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FailureReason { get; set; }
 #endif
-        /// <summary>The last provider event ID associated with this phone number 10DLC association.</summary>
+        /// <summary>Most recent provider event identifier processed for this phone number 10DLC association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastProviderEventId { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastProviderEventId { get; set; }
 #endif
-        /// <summary>The messaging profile ID associated with this phone number 10DLC association.</summary>
+        /// <summary>Messaging profile identifier used for SMS routing with the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessagingProfileId { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string MessagingProfileId { get; set; }
 #endif
-        /// <summary>The date and time for the status updated at value on this phone number 10DLC association.</summary>
+        /// <summary>UTC timestamp when s ta tu su pd at e d occurred for this phone number 10DLC association.</summary>
         public DateTimeOffset? StatusUpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberTenDlcAssociation"/> and sets the default values.

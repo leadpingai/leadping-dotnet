@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for outgoing number manual override.
+    /// Request schema for the Leadping API outgoing number manual override request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutgoingNumberManualOverrideRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The from phone number ID associated with this outgoing number manual override.</summary>
+        /// <summary>Sender phone number ID used for this outbound SMS or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumberId { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumberId { get; set; }
 #endif
-        /// <summary>The selection value for this outgoing number manual override.</summary>
+        /// <summary>Selected outgoing number and selection rationale returned by Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionRequest? Selection { get; set; }

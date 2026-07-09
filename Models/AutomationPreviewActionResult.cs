@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation preview action result data used by Leadping API contracts.
+    /// Result schema for the Leadping API automation preview action result returned by lookup and validation endpoints.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationPreviewActionResult : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action ID associated with this automation preview action result.</summary>
+        /// <summary>Automation action ID executed or evaluated by this automation preview action result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionId { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The rendered output value for this automation preview action result.</summary>
+        /// <summary>Rendered preview output produced by this automation preview action result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenderedOutput { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RenderedOutput { get; set; }
 #endif
-        /// <summary>The summary value for this automation preview action result.</summary>
+        /// <summary>Short human-readable summary of this automation preview action result for lists, timelines, and notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
-        /// <summary>The warnings included with this automation preview action result.</summary>
+        /// <summary>Warnings returned for this automation preview action result that do not necessarily block processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Warnings { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> Warnings { get; set; }
 #endif
-        /// <summary>Whether this automation preview action result would have side effect.</summary>
+        /// <summary>Indicates whether the automation preview would perform an external action if executed live.</summary>
         public bool? WouldHaveSideEffect { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AutomationPreviewActionResult"/> and sets the default values.

@@ -32,10 +32,30 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
+        /// <summary>The smsLimitThisHour property</summary>
+        public int? SmsLimitThisHour { get; set; }
+        /// <summary>The smsLimitToday property</summary>
+        public int? SmsLimitToday { get; set; }
+        /// <summary>The smsRemainingThisHour property</summary>
+        public int? SmsRemainingThisHour { get; set; }
         /// <summary>The smsRemainingToday property</summary>
         public int? SmsRemainingToday { get; set; }
+        /// <summary>The smsUsedThisHour property</summary>
+        public int? SmsUsedThisHour { get; set; }
+        /// <summary>The smsUsedToday property</summary>
+        public int? SmsUsedToday { get; set; }
+        /// <summary>The voiceLimitThisHour property</summary>
+        public int? VoiceLimitThisHour { get; set; }
+        /// <summary>The voiceLimitToday property</summary>
+        public int? VoiceLimitToday { get; set; }
+        /// <summary>The voiceRemainingThisHour property</summary>
+        public int? VoiceRemainingThisHour { get; set; }
         /// <summary>The voiceRemainingToday property</summary>
         public int? VoiceRemainingToday { get; set; }
+        /// <summary>The voiceUsedThisHour property</summary>
+        public int? VoiceUsedThisHour { get; set; }
+        /// <summary>The voiceUsedToday property</summary>
+        public int? VoiceUsedToday { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity"/> and sets the default values.
         /// </summary>
@@ -64,8 +84,18 @@ namespace Leadping.OpenApiClient.Models
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
+                { "smsLimitThisHour", n => { SmsLimitThisHour = n.GetIntValue(); } },
+                { "smsLimitToday", n => { SmsLimitToday = n.GetIntValue(); } },
+                { "smsRemainingThisHour", n => { SmsRemainingThisHour = n.GetIntValue(); } },
                 { "smsRemainingToday", n => { SmsRemainingToday = n.GetIntValue(); } },
+                { "smsUsedThisHour", n => { SmsUsedThisHour = n.GetIntValue(); } },
+                { "smsUsedToday", n => { SmsUsedToday = n.GetIntValue(); } },
+                { "voiceLimitThisHour", n => { VoiceLimitThisHour = n.GetIntValue(); } },
+                { "voiceLimitToday", n => { VoiceLimitToday = n.GetIntValue(); } },
+                { "voiceRemainingThisHour", n => { VoiceRemainingThisHour = n.GetIntValue(); } },
                 { "voiceRemainingToday", n => { VoiceRemainingToday = n.GetIntValue(); } },
+                { "voiceUsedThisHour", n => { VoiceUsedThisHour = n.GetIntValue(); } },
+                { "voiceUsedToday", n => { VoiceUsedToday = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -78,8 +108,18 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
+            writer.WriteIntValue("smsLimitThisHour", SmsLimitThisHour);
+            writer.WriteIntValue("smsLimitToday", SmsLimitToday);
+            writer.WriteIntValue("smsRemainingThisHour", SmsRemainingThisHour);
             writer.WriteIntValue("smsRemainingToday", SmsRemainingToday);
+            writer.WriteIntValue("smsUsedThisHour", SmsUsedThisHour);
+            writer.WriteIntValue("smsUsedToday", SmsUsedToday);
+            writer.WriteIntValue("voiceLimitThisHour", VoiceLimitThisHour);
+            writer.WriteIntValue("voiceLimitToday", VoiceLimitToday);
+            writer.WriteIntValue("voiceRemainingThisHour", VoiceRemainingThisHour);
             writer.WriteIntValue("voiceRemainingToday", VoiceRemainingToday);
+            writer.WriteIntValue("voiceUsedThisHour", VoiceUsedThisHour);
+            writer.WriteIntValue("voiceUsedToday", VoiceUsedToday);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing lead data used by Leadping API contracts.
+    /// List item schema for Leadping API lead table row results shown in searchable tables.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The admin force enablement override on this lead.</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The date and time this lead left the active pipeline.</summary>
+        /// <summary>UTC timestamp when this record was archived.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>The user who archived the lead, if available.</summary>
+        /// <summary>User ID of the person who archived this record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ArchivedByUserId { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>The business ID associated with this lead.</summary>
+        /// <summary>Business ID that owns this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The business name value for this lead.</summary>
+        /// <summary>Business display name shown for this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessName { get; set; }
@@ -51,9 +51,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessName { get; set; }
 #endif
-        /// <summary>The date and time for the created at value on this lead.</summary>
+        /// <summary>UTC timestamp when this lead table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The current lifecycle disposition for this lead.</summary>
+        /// <summary>Current disposition summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition? CurrentDisposition { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition CurrentDisposition { get; set; }
 #endif
-        /// <summary>The email address associated with this lead.</summary>
+        /// <summary>Email address for the person represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -69,9 +69,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>Whether this lead is enabled.</summary>
+        /// <summary>Indicates whether this lead table row is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The first name value for this lead.</summary>
+        /// <summary>First name of the lead, user, or contact represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The unique ID for this lead.</summary>
+        /// <summary>Unique Leadping identifier for this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this lead is archived.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The date and time for the last name value on this lead.</summary>
+        /// <summary>Last name of the lead, user, or contact represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The phone number associated with this lead.</summary>
+        /// <summary>Phone details for the lead, user, or business represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -105,7 +105,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>The monetary price for this lead.</summary>
+        /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Price { get; set; }
@@ -113,7 +113,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Price { get; set; }
 #endif
-        /// <summary>The source ID associated with this lead.</summary>
+        /// <summary>Lead source ID that created or supplied this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -121,7 +121,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The source name value for this lead.</summary>
+        /// <summary>Lead source display name shown for this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceName { get; set; }
@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceName { get; set; }
 #endif
-        /// <summary>The current status for this lead.</summary>
+        /// <summary>Current lifecycle status for this lead table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -137,7 +137,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The status tone value for this lead.</summary>
+        /// <summary>Presentation tone that helps clients style the current status of this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusTone { get; set; }
@@ -145,7 +145,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StatusTone { get; set; }
 #endif
-        /// <summary>Compact tags assigned to the lead.</summary>
+        /// <summary>Tags currently attached to this lead, source, or record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.TagSummary>? Tags { get; set; }
@@ -153,6 +153,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.TagSummary> Tags { get; set; }
 #endif
+        /// <summary>UTC timestamp when this lead table row was last updated.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadTableRow"/> and sets the default values.
         /// </summary>
@@ -199,6 +201,7 @@ namespace Leadping.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusTone", n => { StatusTone = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -229,6 +232,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusTone", StatusTone);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("tags", Tags);
+            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

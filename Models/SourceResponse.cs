@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing source data returned to callers.
+    /// Response schema for the Leadping API lead source response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminEnablementOverride property</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The allowed products included with this source.</summary>
+        /// <summary>Product allowlist used to accept or route leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedProducts { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedProducts { get; set; }
 #endif
-        /// <summary>The allowed states included with this source.</summary>
+        /// <summary>State or region allowlist used to accept leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedStates { get; set; }
@@ -39,9 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>The date and time for the API key issued at value on this source.</summary>
-        public DateTimeOffset? ApiKeyIssuedAt { get; set; }
-        /// <summary>The API key preview value for this source.</summary>
+        /// <summary>Masked preview of the source API key for display without exposing the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiKeyPreview { get; set; }
@@ -49,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ApiKeyPreview { get; set; }
 #endif
-        /// <summary>The business value for this source.</summary>
+        /// <summary>Business summary connected to this lead source response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_business? Business { get; set; }
@@ -57,9 +55,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceResponse_business Business { get; set; }
 #endif
-        /// <summary>Whether this source is compliance approved.</summary>
+        /// <summary>Indicates whether the business or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
-        /// <summary>The compliance notes value for this source.</summary>
+        /// <summary>Compliance notes captured for admin review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceNotes { get; set; }
@@ -67,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceNotes { get; set; }
 #endif
-        /// <summary>The cost per lead value for this source.</summary>
+        /// <summary>Configured cost charged when this source creates a billable lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? CostPerLead { get; set; }
@@ -77,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The user that created this source.</summary>
+        /// <summary>User summary for the person who created this lead source response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser? CreatedByUser { get; set; }
@@ -85,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser CreatedByUser { get; set; }
 #endif
-        /// <summary>Tag ids applied automatically to leads created from this source.</summary>
+        /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DefaultTagIds { get; set; }
@@ -93,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> DefaultTagIds { get; set; }
 #endif
-        /// <summary>Tags applied automatically to leads created from this source.</summary>
+        /// <summary>Default tag summaries automatically applied to leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.TagSummary>? DefaultTags { get; set; }
@@ -101,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.TagSummary> DefaultTags { get; set; }
 #endif
-        /// <summary>The human-readable description of this source.</summary>
+        /// <summary>Human-readable description that explains this lead source response to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -109,9 +107,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether this source is enabled.</summary>
+        /// <summary>Indicates whether this lead source response is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The date and time when this source first accepted a lead.</summary>
+        /// <summary>UTC timestamp when this source first delivered a lead to Leadping.</summary>
         public DateTimeOffset? FirstLeadReceivedAt { get; set; }
         /// <summary>The unique identifier for the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,11 +119,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The date and time when this source most recently accepted a lead.</summary>
+        /// <summary>UTC timestamp when this source most recently delivered a lead to Leadping.</summary>
         public DateTimeOffset? LastLeadReceivedAt { get; set; }
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The user that most recently modified this source.</summary>
+        /// <summary>User summary for the person who last modified this lead source response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_modifiedByUser? ModifiedByUser { get; set; }
@@ -141,9 +139,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Whether this source requires TrustedForm.</summary>
+        /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
-        /// <summary>The user value for this source.</summary>
+        /// <summary>User summary connected to this lead source response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_user? User { get; set; }
@@ -179,7 +177,6 @@ namespace Leadping.OpenApiClient.Models
                 { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "apiKeyIssuedAt", n => { ApiKeyIssuedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>(global::Leadping.OpenApiClient.Models.SourceResponse_business.CreateFromDiscriminatorValue); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
@@ -211,7 +208,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
-            writer.WriteDateTimeOffsetValue("apiKeyIssuedAt", ApiKeyIssuedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>("business", Business);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);

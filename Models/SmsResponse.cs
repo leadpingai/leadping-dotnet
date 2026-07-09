@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing SMS data returned to callers.
+    /// Response schema for the Leadping API SMS message returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmsResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The monetary billable amount for this SMS.</summary>
+        /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? BillableAmount { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode BillableAmount { get; set; }
 #endif
-        /// <summary>The current billing status for this SMS.</summary>
+        /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillingStatus { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingStatus { get; set; }
 #endif
-        /// <summary>The date and time for the blocked at value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping blocked this communication.</summary>
         public DateTimeOffset? BlockedAt { get; set; }
-        /// <summary>The campaign ID associated with this SMS.</summary>
+        /// <summary>Messaging campaign identifier associated with this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -41,9 +41,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>The date and time for the canceled at value on this SMS.</summary>
+        /// <summary>UTC timestamp when this delivery or workflow was canceled.</summary>
         public DateTimeOffset? CanceledAt { get; set; }
-        /// <summary>The human-readable cancel reason explaining this SMS.</summary>
+        /// <summary>Reason this delivery, run, or request was canceled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CancelReason { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CancelReason { get; set; }
 #endif
-        /// <summary>The compliance action value for this SMS.</summary>
+        /// <summary>Compliance action applied to this message, lead, or sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceAction { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceAction { get; set; }
 #endif
-        /// <summary>The conversation ID associated with this SMS.</summary>
+        /// <summary>Conversation ID that links this SMS message to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }
@@ -69,9 +69,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The date and time for the delivered at value on this SMS.</summary>
+        /// <summary>UTC timestamp when the provider confirmed delivery.</summary>
         public DateTimeOffset? DeliveredAt { get; set; }
-        /// <summary>The error code value for this SMS.</summary>
+        /// <summary>Machine-readable error code returned while processing this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorCode { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ErrorCode { get; set; }
 #endif
-        /// <summary>The error message value for this SMS.</summary>
+        /// <summary>Human-readable error message returned while processing this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage { get; set; }
@@ -87,9 +87,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ErrorMessage { get; set; }
 #endif
-        /// <summary>The date and time for the failed at value on this SMS.</summary>
+        /// <summary>UTC timestamp when processing failed for this SMS message.</summary>
         public DateTimeOffset? FailedAt { get; set; }
-        /// <summary>The phone number associated with this SMS.</summary>
+        /// <summary>Sender phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumber { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumber { get; set; }
 #endif
-        /// <summary>The from phone number ID associated with this SMS.</summary>
+        /// <summary>Sender phone number ID used for this outbound SMS or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumberId { get; set; }
@@ -113,9 +113,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this SMS is warmup.</summary>
+        /// <summary>Indicates whether this SMS message is part of Leadping sender warmup traffic.</summary>
         public bool? IsWarmup { get; set; }
-        /// <summary>The lead ID associated with this SMS.</summary>
+        /// <summary>Lead ID associated with the SMS conversation or outreach attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -125,9 +125,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The date and time for the next retry at value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping will retry this SMS message.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
-        /// <summary>The outbound phone number ID associated with this SMS.</summary>
+        /// <summary>Phone number ID selected for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundPhoneNumberId { get; set; }
@@ -135,7 +135,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundPhoneNumberId { get; set; }
 #endif
-        /// <summary>The provider message ID associated with this SMS.</summary>
+        /// <summary>Provider message identifier for SMS delivery tracking and reconciliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderMessageId { get; set; }
@@ -143,15 +143,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderMessageId { get; set; }
 #endif
-        /// <summary>The date and time for the queued at value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping queued this SMS message for processing.</summary>
         public DateTimeOffset? QueuedAt { get; set; }
-        /// <summary>The date and time for the received at value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping received this inbound event or message.</summary>
         public DateTimeOffset? ReceivedAt { get; set; }
-        /// <summary>The retry count for this SMS.</summary>
+        /// <summary>Number of retry attempts already made for this SMS message.</summary>
         public int? RetryCount { get; set; }
-        /// <summary>The date and time for the scheduled for value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping is scheduled to send this SMS message.</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
-        /// <summary>The human-readable scheduled reason explaining this SMS.</summary>
+        /// <summary>Reason Leadping scheduled this delivery for a later time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduledReason { get; set; }
@@ -161,11 +161,11 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
         public global::Leadping.OpenApiClient.Models.SmsResponse_selectionReason? SelectionReason { get; set; }
-        /// <summary>The date and time for the sending started at value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping began sending this message.</summary>
         public DateTimeOffset? SendingStartedAt { get; set; }
-        /// <summary>The date and time for the sent at value on this SMS.</summary>
+        /// <summary>UTC timestamp when Leadping sent this message to the provider.</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>The source ID associated with this SMS.</summary>
+        /// <summary>Lead source ID used for attribution and sender selection on this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -175,7 +175,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported SMS Message Status values.</summary>
         public global::Leadping.OpenApiClient.Models.SmsResponse_status? Status { get; set; }
-        /// <summary>The human-readable status reason explaining this SMS.</summary>
+        /// <summary>Human-readable reason explaining the current status of this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusReason { get; set; }
@@ -183,7 +183,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StatusReason { get; set; }
 #endif
-        /// <summary>The Telnyx ID associated with this SMS.</summary>
+        /// <summary>Telnyx identifier connected to this phone number, call, or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TelnyxId { get; set; }
@@ -191,7 +191,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TelnyxId { get; set; }
 #endif
-        /// <summary>The 10DLC campaign ID associated with this SMS.</summary>
+        /// <summary>10DLC campaign identifier associated with this sender or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenDlcCampaignId { get; set; }
@@ -199,7 +199,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TenDlcCampaignId { get; set; }
 #endif
-        /// <summary>The text value for this SMS.</summary>
+        /// <summary>Body text for the SMS message or communication represented by this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -209,9 +209,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported SMS Traffic Type values.</summary>
         public global::Leadping.OpenApiClient.Models.SmsResponse_trafficType? TrafficType { get; set; }
-        /// <summary>The date and time for the undeliverable at value on this SMS.</summary>
+        /// <summary>UTC timestamp when the provider marked the message undeliverable.</summary>
         public DateTimeOffset? UndeliverableAt { get; set; }
-        /// <summary>Whether this SMS was manually overridden.</summary>
+        /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this SMS message.</summary>
         public bool? WasManuallyOverridden { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SmsResponse"/> and sets the default values.

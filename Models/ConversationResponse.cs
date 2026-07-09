@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing conversation data returned to callers.
+    /// Response schema for the Leadping API conversation response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The active outbound phone number ID associated with this conversation.</summary>
+        /// <summary>Phone number ID currently active for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActiveOutboundPhoneNumberId { get; set; }
@@ -23,11 +23,11 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archivedAt property</summary>
+        /// <summary>UTC timestamp when this record was archived.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>The current lifecycle disposition for the conversation&apos;s lead.</summary>
+        /// <summary>Current disposition summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition? CurrentDisposition { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition CurrentDisposition { get; set; }
 #endif
-        /// <summary>The first name value for this conversation.</summary>
+        /// <summary>First name of the lead, user, or contact represented by this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The unique ID for this conversation.</summary>
+        /// <summary>Unique Leadping identifier for this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -53,11 +53,11 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The isArchived property</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>Whether this conversation is unread.</summary>
+        /// <summary>Indicates whether the current user has unread activity in the conversation.</summary>
         public bool? IsUnread { get; set; }
-        /// <summary>The date and time for the last event at value on this conversation.</summary>
+        /// <summary>UTC timestamp when the most recent conversation event occurred.</summary>
         public DateTimeOffset? LastEventAt { get; set; }
-        /// <summary>The date and time for the last name value on this conversation.</summary>
+        /// <summary>Last name of the lead, user, or contact represented by this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The date and time for the last snippet value on this conversation.</summary>
+        /// <summary>Most recent message preview shown for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastSnippet { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastSnippet { get; set; }
 #endif
-        /// <summary>The lead ID associated with this conversation.</summary>
+        /// <summary>Lead ID associated with this inbox conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The lead&apos;s primary contact phone number for this conversation.</summary>
+        /// <summary>Lead&apos;s phone number used for conversation matching and outreach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadPhoneNumber { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadPhoneNumber { get; set; }
 #endif
-        /// <summary>The recommended next action for the inbox user.</summary>
+        /// <summary>Recommended next step to move this conversation response forward.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextStep { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NextStep { get; set; }
 #endif
-        /// <summary>The outbound phone number override ID associated with this conversation.</summary>
+        /// <summary>Phone number ID manually chosen to override automatic outbound selection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundPhoneNumberOverrideId { get; set; }
@@ -105,7 +105,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundPhoneNumberOverrideId { get; set; }
 #endif
-        /// <summary>The Leadping sender phone number associated with this conversation.</summary>
+        /// <summary>Phone number used by this conversation response for calls, SMS, lookup, or routing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber? PhoneNumber { get; set; }
@@ -115,7 +115,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the customer-facing operational status for an inbox conversation.</summary>
         public global::Leadping.OpenApiClient.Models.ConversationResponse_status? Status { get; set; }
-        /// <summary>The human-readable reason explaining the current conversation status.</summary>
+        /// <summary>Human-readable reason explaining the current status of this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusReason { get; set; }

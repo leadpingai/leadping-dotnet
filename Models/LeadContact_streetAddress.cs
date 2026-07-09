@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The street address value for this lead contact.
+    /// Postal street address for the lead contact profile.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadContact_streetAddress : global::Leadping.OpenApiClient.Models.StreetAddress, IParsable

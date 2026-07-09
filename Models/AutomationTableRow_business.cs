@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The business value for this automation.
+    /// Business summary connected to this automation table row.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationTableRow_business : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Compact current disposition state stored directly on a lead and surfaced with conversation data.
+    /// Current disposition summary that describes the lead outcome.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadResponse_currentDisposition : global::Leadping.OpenApiClient.Models.CurrentDispositionSummary, IParsable

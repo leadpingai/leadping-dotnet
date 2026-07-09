@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing call event data used by Leadping API contracts.
+    /// List item schema for Leadping API call event table row results shown in searchable tables.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallEventTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the answered at value on this call event.</summary>
+        /// <summary>UTC timestamp when the call was answered.</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
-        /// <summary>The monetary billable amount for this call event.</summary>
+        /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? BillableAmount { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode BillableAmount { get; set; }
 #endif
-        /// <summary>The billable seconds value for this call event.</summary>
+        /// <summary>Billable call duration in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? BillableSeconds { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode BillableSeconds { get; set; }
 #endif
-        /// <summary>The billing phone number ID associated with this call event.</summary>
+        /// <summary>Phone number identifier used for billing reconciliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillingPhoneNumberId { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingPhoneNumberId { get; set; }
 #endif
-        /// <summary>The current billing status for this call event.</summary>
+        /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillingStatus { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingStatus { get; set; }
 #endif
-        /// <summary>The business value for this call event.</summary>
+        /// <summary>Business summary connected to this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Business { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Business { get; set; }
 #endif
-        /// <summary>The business ID associated with this call event.</summary>
+        /// <summary>Business ID associated with this call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The caller ID associated with this call event.</summary>
+        /// <summary>Caller ID phone number presented during the outbound call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallerId { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CallerId { get; set; }
 #endif
-        /// <summary>The conversation ID associated with this call event.</summary>
+        /// <summary>Conversation ID that links this call event table row to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }
@@ -81,9 +81,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
-        /// <summary>The date and time for the created at value on this call event.</summary>
+        /// <summary>UTC timestamp when this call event table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The direction value for this call event.</summary>
+        /// <summary>Communication direction for this call event table row, such as inbound or outbound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Direction { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Direction { get; set; }
 #endif
-        /// <summary>The duration value for this call event.</summary>
+        /// <summary>Call duration or processing duration represented by this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Duration { get; set; }
@@ -99,9 +99,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Duration { get; set; }
 #endif
-        /// <summary>The date and time for the ended at value on this call event.</summary>
+        /// <summary>UTC timestamp when the call ended.</summary>
         public DateTimeOffset? EndedAt { get; set; }
-        /// <summary>The phone number associated with this call event.</summary>
+        /// <summary>Sender phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumber { get; set; }
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumber { get; set; }
 #endif
-        /// <summary>The from phone number ID associated with this call event.</summary>
+        /// <summary>Sender phone number ID used for this outbound SMS or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromPhoneNumberId { get; set; }
@@ -117,7 +117,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumberId { get; set; }
 #endif
-        /// <summary>The unique ID for this call event.</summary>
+        /// <summary>Unique Leadping identifier for this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -125,7 +125,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lead ID associated with this call event.</summary>
+        /// <summary>Lead ID associated with this call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -133,7 +133,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The metadata key-value data carried with this call event; values must be safe to expose in API responses.</summary>
+        /// <summary>Structured metadata used for attribution, integrations, and reporting on this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata? Metadata { get; set; }
@@ -141,7 +141,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata Metadata { get; set; }
 #endif
-        /// <summary>The current provider status for this call event.</summary>
+        /// <summary>Provider lifecycle or delivery status for this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderStatus { get; set; }
@@ -149,7 +149,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderStatus { get; set; }
 #endif
-        /// <summary>The URL associated with this call event.</summary>
+        /// <summary>URL for the call recording, when the provider makes one available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecordingUrl { get; set; }
@@ -159,7 +159,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Phone Call Status values.</summary>
         public global::Leadping.OpenApiClient.Models.CallEventTableRow_status? Status { get; set; }
-        /// <summary>The human-readable status reason explaining this call event.</summary>
+        /// <summary>Human-readable reason explaining the current status of this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusReason { get; set; }
@@ -167,7 +167,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StatusReason { get; set; }
 #endif
-        /// <summary>The Telnyx ID associated with this call event.</summary>
+        /// <summary>Telnyx identifier connected to this phone number, call, or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TelnyxId { get; set; }
@@ -175,7 +175,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TelnyxId { get; set; }
 #endif
-        /// <summary>The phone number associated with this call event.</summary>
+        /// <summary>Recipient phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToPhoneNumber { get; set; }
@@ -183,7 +183,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ToPhoneNumber { get; set; }
 #endif
-        /// <summary>The user value for this call event.</summary>
+        /// <summary>User summary connected to this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? User { get; set; }
@@ -191,7 +191,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string User { get; set; }
 #endif
-        /// <summary>The user ID associated with this call event.</summary>
+        /// <summary>User ID associated with the person or agent who initiated this call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

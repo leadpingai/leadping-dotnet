@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation trigger data used by Leadping API contracts.
+    /// Public Leadping API schema for automation trigger data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationTrigger : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The human-readable display name shown for this automation trigger.</summary>
+        /// <summary>Human-readable display name shown for this automation trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The unique ID for this automation trigger.</summary>
+        /// <summary>Unique Leadping identifier for this automation trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this automation trigger is enabled.</summary>
+        /// <summary>Indicates whether this automation trigger is active and allowed to run.</summary>
         public bool? IsEnabled { get; set; }
-        /// <summary>The settings key-value data carried with this automation trigger; values must be safe to expose in API responses.</summary>
+        /// <summary>Key-value settings that configure how this automation trigger behaves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationTrigger_settings? Settings { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationTrigger_settings Settings { get; set; }
 #endif
-        /// <summary>The type classification for this automation trigger.</summary>
+        /// <summary>Type classification used to route and interpret this automation trigger in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The Leadping sender phone number associated with this conversation.
+    /// Phone number used by this conversation response for calls, SMS, lookup, or routing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationResponse_phoneNumber : global::Leadping.OpenApiClient.Models.IdNameValue, IParsable

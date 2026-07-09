@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing automation run record data used by Leadping API contracts.
+    /// History record schema for Leadping API automation run record data exposed in automation and audit views.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationRunRecord : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actions included with this automation run record.</summary>
+        /// <summary>Automation actions configured or returned for this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>? Actions { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automation ID associated with this automation run record.</summary>
+        /// <summary>Automation ID connected to this workflow, run, or event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutomationId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationId { get; set; }
 #endif
-        /// <summary>The business ID associated with this automation run record.</summary>
+        /// <summary>Business ID that owns this automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The date and time for the completed at value on this automation run record.</summary>
+        /// <summary>UTC timestamp when processing completed for this automation run record.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The context snapshot key-value data carried with this automation run record; values must be safe to expose in API responses.</summary>
+        /// <summary>Snapshot of request context captured when this automation run record was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot? ContextSnapshot { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot ContextSnapshot { get; set; }
 #endif
-        /// <summary>The error value for this automation run record.</summary>
+        /// <summary>Error text returned while processing this automation run record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Error { get; set; }
 #endif
-        /// <summary>The execution key value for this automation run record.</summary>
+        /// <summary>Idempotency key used to identify a unique automation workflow execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExecutionKey { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ExecutionKey { get; set; }
 #endif
-        /// <summary>The execution mode value for this automation run record.</summary>
+        /// <summary>Execution mode used for automation preview or live workflow processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExecutionMode { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ExecutionMode { get; set; }
 #endif
-        /// <summary>The failure code value for this automation run record.</summary>
+        /// <summary>Machine-readable failure code for troubleshooting this automation run record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureCode { get; set; }
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FailureCode { get; set; }
 #endif
-        /// <summary>The unique ID for this automation run record.</summary>
+        /// <summary>Unique Leadping identifier for this automation run record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -89,9 +89,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The date and time for the last attempt at value on this automation run record.</summary>
+        /// <summary>UTC timestamp when Leadping last attempted to process this automation run.</summary>
         public DateTimeOffset? LastAttemptAt { get; set; }
-        /// <summary>The lead ID associated with this automation run record when the run is lead-scoped.</summary>
+        /// <summary>Lead ID that triggered this automation run, when the run is lead-based.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -99,9 +99,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The processing attempts value for this automation run record.</summary>
+        /// <summary>Number of processing attempts made for this workflow or delivery request.</summary>
         public int? ProcessingAttempts { get; set; }
-        /// <summary>The human-readable skipped reason explaining this automation run record.</summary>
+        /// <summary>Human-readable reason explaining why Leadping skipped this automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkippedReason { get; set; }
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SkippedReason { get; set; }
 #endif
-        /// <summary>The source event ID associated with this automation run record.</summary>
+        /// <summary>Source event ID that triggered this workflow or outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceEventId { get; set; }
@@ -117,9 +117,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceEventId { get; set; }
 #endif
-        /// <summary>The date and time for the started at value on this automation run record.</summary>
+        /// <summary>UTC timestamp when processing started for this automation run record.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The current status for this automation run record.</summary>
+        /// <summary>Current lifecycle status for this automation run record in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -127,7 +127,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The trigger type classification for this automation run record.</summary>
+        /// <summary>Automation trigger type that starts the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get; set; }

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "D49E781F9C6F633B641D587EC4E382F91A8B3AA41C60AE2287B995EAB89402210B11710C241BB186E9A4073C6D61A68EDD0168A174CE244EB86002C4605808EC",
+  "descriptionHash": "CE03D42FBAA9EA09F6EFD0798B07C95C05FBF1BE7E8367A7940640A85505DF1EA305092E8CAA67C9A1923715587B30C6AE32F2A99B79F097B2EBE9472D2FEA4B",
   "descriptionLocation": "../openapi/openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.3",
+  "kiotaVersion": "1.33.0",
   "clientClassName": "LeadpingOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Leadping.OpenApiClient",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

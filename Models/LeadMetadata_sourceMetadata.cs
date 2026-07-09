@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The source metadata key-value data carried with this lead metadata; values must be safe to expose in API responses.
+    /// Source-provided key-value metadata retained for lead attribution and integration troubleshooting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadMetadata_sourceMetadata : IAdditionalDataHolder, IParsable

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The settings key-value data carried with this automation action; values must be safe to expose in API responses.
+    /// Key-value settings that configure how this automation action behaves.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationAction_settings : IAdditionalDataHolder, IParsable

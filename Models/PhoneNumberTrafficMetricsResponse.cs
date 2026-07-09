@@ -8,24 +8,32 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing phone number traffic metrics data returned to callers.
+    /// Response schema for the Leadping API phone number traffic metrics response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberTrafficMetricsResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The call failed count for this phone number traffic metrics.</summary>
+        /// <summary>Number of outbound calls that failed during this metrics window.</summary>
         public int? CallFailedCount { get; set; }
-        /// <summary>The call placed count for this phone number traffic metrics.</summary>
+        /// <summary>Number of outbound calls placed during this metrics window.</summary>
         public int? CallPlacedCount { get; set; }
-        /// <summary>The SMS failed count for this phone number traffic metrics.</summary>
+        /// <summary>Number of SMS messages that failed during this metrics window.</summary>
         public int? SmsFailedCount { get; set; }
-        /// <summary>The SMS sent count for this phone number traffic metrics.</summary>
+        /// <summary>Number of SMS messages sent during this metrics window.</summary>
         public int? SmsSentCount { get; set; }
-        /// <summary>The date and time for the window days value on this phone number traffic metrics.</summary>
+        /// <summary>Time-series buckets that show how the metric changes across the reporting window.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>? Trend { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint> Trend { get; set; }
+#endif
+        /// <summary>Number of days included in the metrics reporting window.</summary>
         public int? WindowDays { get; set; }
-        /// <summary>The date and time for the window started at value on this phone number traffic metrics.</summary>
+        /// <summary>UTC timestamp when the metrics reporting window starts.</summary>
         public DateTimeOffset? WindowStartedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse"/> and sets the default values.
@@ -56,6 +64,7 @@ namespace Leadping.OpenApiClient.Models
                 { "callPlacedCount", n => { CallPlacedCount = n.GetIntValue(); } },
                 { "smsFailedCount", n => { SmsFailedCount = n.GetIntValue(); } },
                 { "smsSentCount", n => { SmsSentCount = n.GetIntValue(); } },
+                { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>(global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "windowDays", n => { WindowDays = n.GetIntValue(); } },
                 { "windowStartedAt", n => { WindowStartedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -71,6 +80,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("callPlacedCount", CallPlacedCount);
             writer.WriteIntValue("smsFailedCount", SmsFailedCount);
             writer.WriteIntValue("smsSentCount", SmsSentCount);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>("trend", Trend);
             writer.WriteIntValue("windowDays", WindowDays);
             writer.WriteDateTimeOffsetValue("windowStartedAt", WindowStartedAt);
             writer.WriteAdditionalData(AdditionalData);

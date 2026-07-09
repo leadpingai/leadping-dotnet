@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number location data used by Leadping API contracts.
+    /// Public Leadping API schema for phone number location data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberLocation : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coordinate inferred for this phone number location.</summary>
+        /// <summary>Latitude and longitude coordinate for this phone number location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate? Coordinate { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate Coordinate { get; set; }
 #endif
-        /// <summary>The country code value for this phone number location.</summary>
+        /// <summary>Country code for the phone number or location represented by this phone number location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>The location value for this phone number location.</summary>
+        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
-        /// <summary>The current state for this phone number location.</summary>
+        /// <summary>State, province, or region for the lead or business postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>The IANA time zone identifier inferred for this phone number location.</summary>
+        /// <summary>IANA or Windows time zone identifier used for local scheduling and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZoneId { get; set; }

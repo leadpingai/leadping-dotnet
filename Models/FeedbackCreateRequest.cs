@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// User-facing request for product feedback capture.
+    /// Request schema for the Leadping API feedback creation request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeedbackCreateRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowContact property</summary>
+        /// <summary>Indicates whether the submitter permits Leadping support to contact them about the feedback.</summary>
         public bool? AllowContact { get; set; }
-        /// <summary>The area property</summary>
+        /// <summary>Product area or app section connected to this feedback creation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Area { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Area { get; set; }
 #endif
-        /// <summary>The clientVersion property</summary>
+        /// <summary>Client application version that submitted this feedback creation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientVersion { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ClientVersion { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>Message text supplied by the user or returned by the Leadping API for this feedback creation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The route property</summary>
+        /// <summary>Application route where this feedback creation request originated or should direct the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Route { get; set; }

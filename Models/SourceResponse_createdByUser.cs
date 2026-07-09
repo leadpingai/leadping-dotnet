@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The user that created this source.
+    /// User summary for the person who created this lead source response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceResponse_createdByUser : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

@@ -37,10 +37,11 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Search
         /// Searches available phone numbers for purchase, applying country, area, and capability filters for lead communication setup.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberSearchResponse"/></returns>
-        /// <param name="body">Request payload for phone number search.</param>
+        /// <param name="body">Request schema for the Leadping API phone number search request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +57,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Search
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberSearchResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -64,7 +66,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Search
         /// Searches available phone numbers for purchase, applying country, area, and capability filters for lead communication setup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for phone number search.</param>
+        /// <param name="body">Request schema for the Leadping API phone number search request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

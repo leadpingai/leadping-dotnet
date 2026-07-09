@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for outgoing number selection.
+    /// Request schema for the Leadping API outgoing number selection request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutgoingNumberSelectionRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The campaign ID associated with this outgoing number selection.</summary>
+        /// <summary>Messaging campaign identifier associated with this outgoing number selection request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Outgoing Number Channel values.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionRequest_channel? Channel { get; set; }
-        /// <summary>The conversation ID associated with this outgoing number selection.</summary>
+        /// <summary>Conversation ID that links this outgoing number selection request to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
-        /// <summary>The lead ID associated with this outgoing number selection.</summary>
+        /// <summary>Lead ID used to choose the best outgoing sender number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The recipient phone number value for this outgoing number selection.</summary>
+        /// <summary>Recipient phone number that receives the outbound message or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientPhoneNumber { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RecipientPhoneNumber { get; set; }
 #endif
-        /// <summary>The source ID associated with this outgoing number selection.</summary>
+        /// <summary>Lead source ID used to choose the best outgoing sender number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The team ID associated with this outgoing number selection.</summary>
+        /// <summary>Team ID used to choose the best outgoing sender number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId { get; set; }

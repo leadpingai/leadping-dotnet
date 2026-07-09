@@ -34,11 +34,12 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
         {
         }
         /// <summary>
-        /// The source lead creation metrics.
+        /// Returns lead creation metrics for one business intake source, including accepted, rejected, duplicate, validation, and recent activity counts for monitoring.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceMetricsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,12 +53,13 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceMetricsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceMetricsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The source lead creation metrics.
+        /// Returns lead creation metrics for one business intake source, including accepted, rejected, duplicate, validation, and recent activity counts for monitoring.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +87,7 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
             return new global::Leadping.OpenApiClient.Sources.Item.Metrics.MetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The source lead creation metrics.
+        /// Returns lead creation metrics for one business intake source, including accepted, rejected, duplicate, validation, and recent activity counts for monitoring.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MetricsRequestBuilderGetQueryParameters 

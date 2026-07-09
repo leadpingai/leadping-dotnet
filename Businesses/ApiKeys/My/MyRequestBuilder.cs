@@ -9,45 +9,46 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Leadping.OpenApiClient.PhoneNumbers.All.My
+namespace Leadping.OpenApiClient.Businesses.ApiKeys.My
 {
     /// <summary>
-    /// Builds and executes requests for operations under \phone-numbers\all\my
+    /// Builds and executes requests for operations under \businesses\api-keys\my
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Businesses.ApiKeys.My.MyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/phone-numbers/all/my", pathParameters)
+        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/api-keys/my", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Businesses.ApiKeys.My.MyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/phone-numbers/all/my", rawUrl)
+        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/api-keys/my", rawUrl)
         {
         }
         /// <summary>
-        /// Lists phone numbers visible to the current user with paging, sorting, and filters for messaging, calling, and warmup management.
+        /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping business, with support for filtering, sorting, and pagination.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,11 +56,12 @@ namespace Leadping.OpenApiClient.PhoneNumbers.All.My
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfPhoneNumberTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfBusinessTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists phone numbers visible to the current user with paging, sorting, and filters for messaging, calling, and warmup management.
+        /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping business, with support for filtering, sorting, and pagination.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -83,11 +85,11 @@ namespace Leadping.OpenApiClient.PhoneNumbers.All.My
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Businesses.ApiKeys.My.MyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder WithUrl(string rawUrl)
+        public global::Leadping.OpenApiClient.Businesses.ApiKeys.My.MyRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Leadping.OpenApiClient.PhoneNumbers.All.My.MyRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Leadping.OpenApiClient.Businesses.ApiKeys.My.MyRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

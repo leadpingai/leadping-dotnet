@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for automation.
+    /// Request schema for the Leadping API automation configuration request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actions included with this automation.</summary>
+        /// <summary>Automation actions configured or returned for this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationAction>? Actions { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminEnablementOverride property</summary>
+        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
-        /// <summary>The business ID associated with this automation.</summary>
+        /// <summary>Business ID that owns this automation configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The condition groups included with this automation.</summary>
+        /// <summary>Grouped automation conditions used to decide whether this workflow should run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationConditionGroup>? ConditionGroups { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationConditionGroup> ConditionGroups { get; set; }
 #endif
-        /// <summary>The created by user ID associated with this automation.</summary>
+        /// <summary>User ID of the person who created this automation configuration request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedByUserId { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CreatedByUserId { get; set; }
 #endif
-        /// <summary>The human-readable description of this automation.</summary>
+        /// <summary>Human-readable description that explains this automation configuration request to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether this automation is enabled.</summary>
+        /// <summary>Indicates whether this automation configuration request is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The unique identifier for the entity, when updating an existing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,9 +73,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether this automation is system managed.</summary>
+        /// <summary>Indicates whether Leadping manages this automation configuration request automatically instead of a user.</summary>
         public bool? IsSystemManaged { get; set; }
-        /// <summary>The management level value for this automation.</summary>
+        /// <summary>Management level that controls whether Leadping or the business owns this automation setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementLevel { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The scope value for this automation.</summary>
+        /// <summary>Scope that limits where this automation configuration request applies in Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Scope { get; set; }
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
-        /// <summary>The triggers included with this automation.</summary>
+        /// <summary>Automation triggers that can start this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationTrigger>? Triggers { get; set; }
@@ -107,9 +107,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationTrigger> Triggers { get; set; }
 #endif
-        /// <summary>The version value for this automation.</summary>
+        /// <summary>Version number for this automation configuration request schema or saved configuration.</summary>
         public int? Version { get; set; }
-        /// <summary>The visibility value for this automation.</summary>
+        /// <summary>Visibility level that controls who can see this automation configuration request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility { get; set; }

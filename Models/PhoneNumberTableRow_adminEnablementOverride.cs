@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The admin force enablement override on this phone number.
+    /// Admin override that can enable or disable this record independently of normal status checks.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberTableRow_adminEnablementOverride : global::Leadping.OpenApiClient.Models.AdminEnablementOverride, IParsable

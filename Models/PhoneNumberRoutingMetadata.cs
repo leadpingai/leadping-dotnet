@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number routing metadata data used by Leadping API contracts.
+    /// Public Leadping API schema for phone number routing metadata data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberRoutingMetadata : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The campaign ID associated with this phone number routing metadata.</summary>
+        /// <summary>Messaging campaign identifier associated with this phone number routing metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>Whether internal test only applies to this phone number routing metadata.</summary>
+        /// <summary>Indicates whether this record is restricted to internal Leadping testing.</summary>
         public bool? InternalTestOnly { get; set; }
-        /// <summary>The messaging profile ID associated with this phone number routing metadata.</summary>
+        /// <summary>Messaging profile identifier used for SMS routing with the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessagingProfileId { get; set; }
@@ -33,9 +33,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string MessagingProfileId { get; set; }
 #endif
-        /// <summary>Whether SMS is enabled for this phone number routing metadata.</summary>
+        /// <summary>Indicates whether the phone number can be used for SMS messaging.</summary>
         public bool? SmsEnabled { get; set; }
-        /// <summary>The source ID associated with this phone number routing metadata.</summary>
+        /// <summary>Lead source ID assigned to this phone number for attribution and routing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The team ID associated with this phone number routing metadata.</summary>
+        /// <summary>Team ID used to route calls and messages for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
-        /// <summary>The voice connection ID associated with this phone number routing metadata.</summary>
+        /// <summary>Leadping v oi ce co nn ec ti o n ID that links this phone number routing metadata to the related record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VoiceConnectionId { get; set; }
@@ -59,9 +59,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string VoiceConnectionId { get; set; }
 #endif
-        /// <summary>Whether voice is enabled for this phone number routing metadata.</summary>
+        /// <summary>Indicates whether the phone number can be used for voice calls.</summary>
         public bool? VoiceEnabled { get; set; }
-        /// <summary>Whether warmup only applies to this phone number routing metadata.</summary>
+        /// <summary>Indicates whether this phone number should only be used for warmup traffic.</summary>
         public bool? WarmupOnly { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata"/> and sets the default values.

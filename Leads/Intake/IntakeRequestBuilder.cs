@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// Creates a source-authenticated lead from a flat intake payload, capturing contact fields, metadata, and automation-ready lead details.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
-        /// <param name="body">Request payload for lead intake.</param>
+        /// <param name="body">Request schema for the Leadping API lead intake request, including the fields clients can send.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -112,7 +112,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// Creates a source-authenticated lead from a flat intake payload, capturing contact fields, metadata, and automation-ready lead details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for lead intake.</param>
+        /// <param name="body">Request schema for the Leadping API lead intake request, including the fields clients can send.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,7 +145,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IntakeRequestBuilderGetQueryParameters 
         {
-            /// <summary>The address1 value for this lead intake.</summary>
+            /// <summary>First street address line submitted by the lead intake source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Address1 { get; set; }
@@ -153,7 +153,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Address1 { get; set; }
 #endif
-            /// <summary>The address2 value for this lead intake.</summary>
+            /// <summary>Second street address line submitted by the lead intake source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Address2 { get; set; }
@@ -161,9 +161,9 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Address2 { get; set; }
 #endif
-            /// <summary>The date and time for the birth date value on this lead intake.</summary>
+            /// <summary>Lead birth date used for demographic matching and insurance intake workflows.</summary>
             public Date? BirthDate { get; set; }
-            /// <summary>The city value for this lead intake.</summary>
+            /// <summary>City for the lead or business postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? City { get; set; }
@@ -171,11 +171,11 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string City { get; set; }
 #endif
-            /// <summary>The date and time for the date of birth value on this lead intake.</summary>
+            /// <summary>Lead date of birth supplied by intake sources and normalized into the lead profile.</summary>
             public Date? DateOfBirth { get; set; }
-            /// <summary>The direct post price value for this lead intake.</summary>
+            /// <summary>Direct-post price supplied by the lead source during intake.</summary>
             public double? DirectPostPrice { get; set; }
-            /// <summary>The email address associated with this lead intake.</summary>
+            /// <summary>Email address for the person represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Email { get; set; }
@@ -183,7 +183,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Email { get; set; }
 #endif
-            /// <summary>The external ID associated with this lead intake.</summary>
+            /// <summary>External system identifier used to reconcile this lead intake request across integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? ExternalId { get; set; }
@@ -191,7 +191,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string ExternalId { get; set; }
 #endif
-            /// <summary>The first name value for this lead intake.</summary>
+            /// <summary>First name of the lead, user, or contact represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? FirstName { get; set; }
@@ -199,7 +199,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string FirstName { get; set; }
 #endif
-            /// <summary>The gender value for this lead intake.</summary>
+            /// <summary>Lead gender supplied by intake sources and normalized when possible.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Gender { get; set; }
@@ -207,7 +207,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Gender { get; set; }
 #endif
-            /// <summary>The landing page value for this lead intake.</summary>
+            /// <summary>Landing page URL where the lead submitted their information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? LandingPage { get; set; }
@@ -215,7 +215,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string LandingPage { get; set; }
 #endif
-            /// <summary>The date and time for the last name value on this lead intake.</summary>
+            /// <summary>Last name of the lead, user, or contact represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? LastName { get; set; }
@@ -223,7 +223,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string LastName { get; set; }
 #endif
-            /// <summary>The phone number associated with this lead intake.</summary>
+            /// <summary>Phone details for the lead, user, or business represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Phone { get; set; }
@@ -231,7 +231,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Phone { get; set; }
 #endif
-            /// <summary>The phone type classification for this lead intake.</summary>
+            /// <summary>Source-provided phone type, such as mobile, landline, or VoIP, used during lead intake normalization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? PhoneType { get; set; }
@@ -239,7 +239,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string PhoneType { get; set; }
 #endif
-            /// <summary>The postal code value for this lead intake.</summary>
+            /// <summary>Postal code for the lead or business address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? PostalCode { get; set; }
@@ -247,9 +247,9 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string PostalCode { get; set; }
 #endif
-            /// <summary>The monetary price for this lead intake.</summary>
+            /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
             public double? Price { get; set; }
-            /// <summary>The product value for this lead intake.</summary>
+            /// <summary>Product or offer associated with the lead or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Product { get; set; }
@@ -257,7 +257,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Product { get; set; }
 #endif
-            /// <summary>The referrer value for this lead intake.</summary>
+            /// <summary>Referring page or traffic source that sent the lead into Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Referrer { get; set; }
@@ -265,7 +265,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Referrer { get; set; }
 #endif
-            /// <summary>The seller lead ID associated with this lead intake.</summary>
+            /// <summary>Seller-provided lead identifier used to deduplicate and reconcile lead delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? SellerLeadId { get; set; }
@@ -273,7 +273,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string SellerLeadId { get; set; }
 #endif
-            /// <summary>The seller lead identifier value for this lead intake.</summary>
+            /// <summary>Alternate seller-provided lead identifier used during intake normalization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? SellerLeadIdentifier { get; set; }
@@ -281,7 +281,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string SellerLeadIdentifier { get; set; }
 #endif
-            /// <summary>The Leadping source key supplied as a query string parameter.</summary>
+            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceKey")]
@@ -291,7 +291,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
             [QueryParameter("sourceKey")]
             public string SourceKey { get; set; }
 #endif
-            /// <summary>The source metadata key-value data carried with this lead intake; values must be safe to expose in API responses.</summary>
+            /// <summary>Source-provided key-value metadata retained for lead attribution and integration troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? SourceMetadata { get; set; }
@@ -299,7 +299,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string SourceMetadata { get; set; }
 #endif
-            /// <summary>The current state for this lead intake.</summary>
+            /// <summary>State, province, or region for the lead or business postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? State { get; set; }
@@ -307,7 +307,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string State { get; set; }
 #endif
-            /// <summary>The sub ID associated with this lead intake.</summary>
+            /// <summary>Affiliate or publisher sub ID captured for lead attribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? SubId { get; set; }
@@ -315,7 +315,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string SubId { get; set; }
 #endif
-            /// <summary>Existing business tag ids to assign as part of intake.</summary>
+            /// <summary>Tag IDs assigned to or filtered against this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string[]? TagIds { get; set; }
@@ -323,7 +323,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string[] TagIds { get; set; }
 #endif
-            /// <summary>Business tag names to assign as part of intake.</summary>
+            /// <summary>Tag names assigned to this lead when matching existing tags by name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string[]? TagNames { get; set; }
@@ -331,7 +331,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string[] TagNames { get; set; }
 #endif
-            /// <summary>The URL associated with this lead intake.</summary>
+            /// <summary>TrustedForm certificate URL used as proof of consumer consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? TrustedFormUrl { get; set; }
@@ -339,7 +339,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string TrustedFormUrl { get; set; }
 #endif
-            /// <summary>The utm campaign value for this lead intake.</summary>
+            /// <summary>UTM campaign parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UtmCampaign { get; set; }
@@ -347,7 +347,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string UtmCampaign { get; set; }
 #endif
-            /// <summary>The utm content value for this lead intake.</summary>
+            /// <summary>UTM content parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UtmContent { get; set; }
@@ -355,7 +355,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string UtmContent { get; set; }
 #endif
-            /// <summary>The utm medium value for this lead intake.</summary>
+            /// <summary>UTM medium parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UtmMedium { get; set; }
@@ -363,7 +363,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string UtmMedium { get; set; }
 #endif
-            /// <summary>The utm source value for this lead intake.</summary>
+            /// <summary>UTM source parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UtmSource { get; set; }
@@ -371,7 +371,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string UtmSource { get; set; }
 #endif
-            /// <summary>The utm term value for this lead intake.</summary>
+            /// <summary>UTM term parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UtmTerm { get; set; }
@@ -379,7 +379,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string UtmTerm { get; set; }
 #endif
-            /// <summary>The vertical value for this lead intake.</summary>
+            /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Vertical { get; set; }
@@ -387,7 +387,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string Vertical { get; set; }
 #endif
-            /// <summary>The zip value for this lead intake.</summary>
+            /// <summary>ZIP code submitted by the lead intake source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? Zip { get; set; }
@@ -402,7 +402,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IntakeRequestBuilderPostQueryParameters 
         {
-            /// <summary>The Leadping source key supplied as a query string parameter.</summary>
+            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceKey")]

@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing outgoing number selection data returned to callers.
+    /// Response schema for the Leadping API outgoing number selection response returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutgoingNumberSelectionResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The campaign ID associated with this outgoing number selection.</summary>
+        /// <summary>Messaging campaign identifier associated with this outgoing number selection response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignId { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>Whether the caller can send this outgoing number selection.</summary>
+        /// <summary>Indicates whether Leadping can send outbound messages using this outgoing number selection response.</summary>
         public bool? CanSend { get; set; }
-        /// <summary>The display number value for this outgoing number selection.</summary>
+        /// <summary>Human-readable phone number shown in Leadping UI and API responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayNumber { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DisplayNumber { get; set; }
 #endif
-        /// <summary>The eligible numbers included with this outgoing number selection.</summary>
+        /// <summary>Phone numbers that are eligible to send the requested outbound message or call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse>? EligibleNumbers { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse> EligibleNumbers { get; set; }
 #endif
-        /// <summary>The health label value for this outgoing number selection.</summary>
+        /// <summary>Short label describing the health state for display in dashboards.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthLabel { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported SMS Warmup Health State values.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse_healthStatus? HealthStatus { get; set; }
-        /// <summary>The health warning value for this outgoing number selection.</summary>
+        /// <summary>Warning text that explains a potential health or readiness issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HealthWarning { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthWarning { get; set; }
 #endif
-        /// <summary>The number value for this outgoing number selection.</summary>
+        /// <summary>E.164 phone number exposed by this outgoing number selection response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The phone number ID associated with this outgoing number selection.</summary>
+        /// <summary>Leadping phone number ID connected to this outgoing number selection response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumberId { get; set; }
@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
-        /// <summary>The reason label value for this outgoing number selection.</summary>
+        /// <summary>Human-readable label for the reason code on this outgoing number selection response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonLabel { get; set; }
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse_selectionReason? SelectionReason { get; set; }
-        /// <summary>The setup message value for this outgoing number selection.</summary>
+        /// <summary>Human-readable setup guidance shown for this outgoing number selection response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SetupMessage { get; set; }
@@ -93,7 +93,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SetupMessage { get; set; }
 #endif
-        /// <summary>The source ID associated with this outgoing number selection.</summary>
+        /// <summary>Lead source ID considered when Leadping selected the outgoing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -101,7 +101,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Whether this outgoing number selection was manually overridden.</summary>
+        /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this outgoing number selection response.</summary>
         public bool? WasManuallyOverridden { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse"/> and sets the default values.

@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for adding or replacing tags on a lead.
+    /// Request schema for the Leadping API lead tag update request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadTagsRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether missing tag names should be created for the lead&apos;s business.</summary>
+        /// <summary>Indicates whether Leadping should create missing records while processing the request.</summary>
         public bool? CreateMissing { get; set; }
-        /// <summary>Existing tag ids to apply.</summary>
+        /// <summary>Tag IDs assigned to or filtered against this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TagIds { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> TagIds { get; set; }
 #endif
-        /// <summary>Tag names to apply. Missing names may be created when CreateMissing is true.</summary>
+        /// <summary>Tag names assigned to this lead when matching existing tags by name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TagNames { get; set; }

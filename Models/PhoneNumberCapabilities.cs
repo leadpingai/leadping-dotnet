@@ -8,20 +8,20 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing phone number capabilities data used by Leadping API contracts.
+    /// Public Leadping API schema for phone number capabilities data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberCapabilities : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether SMS applies to this phone number capabilities.</summary>
+        /// <summary>SMS readiness details for this phone number or business.</summary>
         public bool? Sms { get; set; }
-        /// <summary>Whether testing applies to this phone number capabilities.</summary>
+        /// <summary>Indicates whether the request should run in test mode.</summary>
         public bool? Testing { get; set; }
-        /// <summary>Whether voice applies to this phone number capabilities.</summary>
+        /// <summary>Voice readiness details for this phone number or business.</summary>
         public bool? Voice { get; set; }
-        /// <summary>Whether warmup applies to this phone number capabilities.</summary>
+        /// <summary>Warmup status data for this sender or phone number.</summary>
         public bool? Warmup { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberCapabilities"/> and sets the default values.

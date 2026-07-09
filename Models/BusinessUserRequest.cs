@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for business user.
+    /// Request schema for the Leadping API business user request, including the fields clients can send.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessUserRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email address associated with this business user.</summary>
+        /// <summary>Email address for the person represented by this business user request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The role value for this business user.</summary>
+        /// <summary>Business role assigned to the user.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessUserRole? Role { get; set; }
-        /// <summary>The user ID associated with this business user.</summary>
+        /// <summary>User ID to add, update, or remove from the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

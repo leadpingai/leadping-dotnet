@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing lead contact data used by Leadping API contracts.
+    /// Public Leadping API schema for lead contact profile data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadContact : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coordinate inferred for this lead contact.</summary>
+        /// <summary>Latitude and longitude coordinate for this lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact_coordinate? Coordinate { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact_coordinate Coordinate { get; set; }
 #endif
-        /// <summary>The email address associated with this lead contact.</summary>
+        /// <summary>Email address for the person represented by this lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The first name value for this lead contact.</summary>
+        /// <summary>First name of the lead, user, or contact represented by this lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The date and time for the last name value on this lead contact.</summary>
+        /// <summary>Last name of the lead, user, or contact represented by this lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The phone number associated with this lead contact.</summary>
+        /// <summary>Phone details for the lead, user, or business represented by this lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact_phone? Phone { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact_phone Phone { get; set; }
 #endif
-        /// <summary>The street address value for this lead contact.</summary>
+        /// <summary>Postal street address for the lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact_streetAddress? StreetAddress { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact_streetAddress StreetAddress { get; set; }
 #endif
-        /// <summary>The IANA time zone identifier inferred for this lead contact.</summary>
+        /// <summary>IANA or Windows time zone identifier used for local scheduling and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZoneId { get; set; }
