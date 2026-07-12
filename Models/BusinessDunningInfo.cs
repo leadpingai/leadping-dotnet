@@ -11,7 +11,7 @@ namespace Leadping.OpenApiClient.Models
     /// Dunning state recorded after a failed recurring payment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserDunningInfo : IAdditionalDataHolder, IParsable
+    public partial class BusinessDunningInfo : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,21 +56,21 @@ namespace Leadping.OpenApiClient.Models
         public string Stage { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserDunningInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BusinessDunningInfo"/> and sets the default values.
         /// </summary>
-        public UserDunningInfo()
+        public BusinessDunningInfo()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserDunningInfo"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.BusinessDunningInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.UserDunningInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.BusinessDunningInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.UserDunningInfo();
+            return new global::Leadping.OpenApiClient.Models.BusinessDunningInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

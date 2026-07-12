@@ -15,16 +15,28 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The automationFailedEmailEnabled property</summary>
+        public bool? AutomationFailedEmailEnabled { get; set; }
         /// <summary>Whether automation failed notifications are enabled for this user notification preferences.</summary>
         public bool? AutomationFailedEnabled { get; set; }
+        /// <summary>The automationFailedSmsEnabled property</summary>
+        public bool? AutomationFailedSmsEnabled { get; set; }
         /// <summary>Whether billing email is enabled for this user notification preferences.</summary>
         public bool? BillingEmailEnabled { get; set; }
         /// <summary>Whether billing SMS is enabled for this user notification preferences.</summary>
         public bool? BillingSmsEnabled { get; set; }
+        /// <summary>The lowWalletBalanceEmailEnabled property</summary>
+        public bool? LowWalletBalanceEmailEnabled { get; set; }
         /// <summary>Whether low wallet balance notifications are enabled for this user notification preferences.</summary>
         public bool? LowWalletBalanceEnabled { get; set; }
+        /// <summary>The lowWalletBalanceSmsEnabled property</summary>
+        public bool? LowWalletBalanceSmsEnabled { get; set; }
+        /// <summary>The missedCallEmailEnabled property</summary>
+        public bool? MissedCallEmailEnabled { get; set; }
         /// <summary>Whether missed call notifications are enabled for this user notification preferences.</summary>
         public bool? MissedCallEnabled { get; set; }
+        /// <summary>The missedCallSmsEnabled property</summary>
+        public bool? MissedCallSmsEnabled { get; set; }
         /// <summary>Whether new lead email is enabled for this user notification preferences.</summary>
         public bool? NewLeadEmailEnabled { get; set; }
         /// <summary>Whether new lead notifications are enabled for this user notification preferences.</summary>
@@ -33,12 +45,22 @@ namespace Leadping.OpenApiClient.Models
         public bool? NewLeadSmsEnabled { get; set; }
         /// <summary>Whether payment failed notifications are enabled for this user notification preferences.</summary>
         public bool? PaymentFailedEnabled { get; set; }
+        /// <summary>The paymentFailedSmsEnabled property</summary>
+        public bool? PaymentFailedSmsEnabled { get; set; }
+        /// <summary>The subscriptionRenewingEmailEnabled property</summary>
+        public bool? SubscriptionRenewingEmailEnabled { get; set; }
         /// <summary>Whether subscription renewing notifications are enabled for this user notification preferences.</summary>
         public bool? SubscriptionRenewingEnabled { get; set; }
+        /// <summary>The subscriptionRenewingSmsEnabled property</summary>
+        public bool? SubscriptionRenewingSmsEnabled { get; set; }
         /// <summary>Whether 10DLC status notifications are enabled for this user notification preferences.</summary>
         public bool? TenDlcStatusEnabled { get; set; }
+        /// <summary>The unreadSmsEmailEnabled property</summary>
+        public bool? UnreadSmsEmailEnabled { get; set; }
         /// <summary>Whether unread SMS notifications are enabled for this user notification preferences.</summary>
         public bool? UnreadSmsEnabled { get; set; }
+        /// <summary>The unreadSmsSmsEnabled property</summary>
+        public bool? UnreadSmsSmsEnabled { get; set; }
         /// <summary>Whether usage limit hit notifications are enabled for this user notification preferences.</summary>
         public bool? UsageLimitHitEnabled { get; set; }
         /// <summary>
@@ -66,18 +88,29 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "automationFailedEmailEnabled", n => { AutomationFailedEmailEnabled = n.GetBoolValue(); } },
                 { "automationFailedEnabled", n => { AutomationFailedEnabled = n.GetBoolValue(); } },
+                { "automationFailedSmsEnabled", n => { AutomationFailedSmsEnabled = n.GetBoolValue(); } },
                 { "billingEmailEnabled", n => { BillingEmailEnabled = n.GetBoolValue(); } },
                 { "billingSmsEnabled", n => { BillingSmsEnabled = n.GetBoolValue(); } },
+                { "lowWalletBalanceEmailEnabled", n => { LowWalletBalanceEmailEnabled = n.GetBoolValue(); } },
                 { "lowWalletBalanceEnabled", n => { LowWalletBalanceEnabled = n.GetBoolValue(); } },
+                { "lowWalletBalanceSmsEnabled", n => { LowWalletBalanceSmsEnabled = n.GetBoolValue(); } },
+                { "missedCallEmailEnabled", n => { MissedCallEmailEnabled = n.GetBoolValue(); } },
                 { "missedCallEnabled", n => { MissedCallEnabled = n.GetBoolValue(); } },
+                { "missedCallSmsEnabled", n => { MissedCallSmsEnabled = n.GetBoolValue(); } },
                 { "newLeadEmailEnabled", n => { NewLeadEmailEnabled = n.GetBoolValue(); } },
                 { "newLeadEnabled", n => { NewLeadEnabled = n.GetBoolValue(); } },
                 { "newLeadSmsEnabled", n => { NewLeadSmsEnabled = n.GetBoolValue(); } },
                 { "paymentFailedEnabled", n => { PaymentFailedEnabled = n.GetBoolValue(); } },
+                { "paymentFailedSmsEnabled", n => { PaymentFailedSmsEnabled = n.GetBoolValue(); } },
+                { "subscriptionRenewingEmailEnabled", n => { SubscriptionRenewingEmailEnabled = n.GetBoolValue(); } },
                 { "subscriptionRenewingEnabled", n => { SubscriptionRenewingEnabled = n.GetBoolValue(); } },
+                { "subscriptionRenewingSmsEnabled", n => { SubscriptionRenewingSmsEnabled = n.GetBoolValue(); } },
                 { "tenDlcStatusEnabled", n => { TenDlcStatusEnabled = n.GetBoolValue(); } },
+                { "unreadSmsEmailEnabled", n => { UnreadSmsEmailEnabled = n.GetBoolValue(); } },
                 { "unreadSmsEnabled", n => { UnreadSmsEnabled = n.GetBoolValue(); } },
+                { "unreadSmsSmsEnabled", n => { UnreadSmsSmsEnabled = n.GetBoolValue(); } },
                 { "usageLimitHitEnabled", n => { UsageLimitHitEnabled = n.GetBoolValue(); } },
             };
         }
@@ -88,18 +121,29 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("automationFailedEmailEnabled", AutomationFailedEmailEnabled);
             writer.WriteBoolValue("automationFailedEnabled", AutomationFailedEnabled);
+            writer.WriteBoolValue("automationFailedSmsEnabled", AutomationFailedSmsEnabled);
             writer.WriteBoolValue("billingEmailEnabled", BillingEmailEnabled);
             writer.WriteBoolValue("billingSmsEnabled", BillingSmsEnabled);
+            writer.WriteBoolValue("lowWalletBalanceEmailEnabled", LowWalletBalanceEmailEnabled);
             writer.WriteBoolValue("lowWalletBalanceEnabled", LowWalletBalanceEnabled);
+            writer.WriteBoolValue("lowWalletBalanceSmsEnabled", LowWalletBalanceSmsEnabled);
+            writer.WriteBoolValue("missedCallEmailEnabled", MissedCallEmailEnabled);
             writer.WriteBoolValue("missedCallEnabled", MissedCallEnabled);
+            writer.WriteBoolValue("missedCallSmsEnabled", MissedCallSmsEnabled);
             writer.WriteBoolValue("newLeadEmailEnabled", NewLeadEmailEnabled);
             writer.WriteBoolValue("newLeadEnabled", NewLeadEnabled);
             writer.WriteBoolValue("newLeadSmsEnabled", NewLeadSmsEnabled);
             writer.WriteBoolValue("paymentFailedEnabled", PaymentFailedEnabled);
+            writer.WriteBoolValue("paymentFailedSmsEnabled", PaymentFailedSmsEnabled);
+            writer.WriteBoolValue("subscriptionRenewingEmailEnabled", SubscriptionRenewingEmailEnabled);
             writer.WriteBoolValue("subscriptionRenewingEnabled", SubscriptionRenewingEnabled);
+            writer.WriteBoolValue("subscriptionRenewingSmsEnabled", SubscriptionRenewingSmsEnabled);
             writer.WriteBoolValue("tenDlcStatusEnabled", TenDlcStatusEnabled);
+            writer.WriteBoolValue("unreadSmsEmailEnabled", UnreadSmsEmailEnabled);
             writer.WriteBoolValue("unreadSmsEnabled", UnreadSmsEnabled);
+            writer.WriteBoolValue("unreadSmsSmsEnabled", UnreadSmsSmsEnabled);
             writer.WriteBoolValue("usageLimitHitEnabled", UsageLimitHitEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -27,6 +27,8 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the supported Business Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessSwitchOption_businessStatus? BusinessStatus { get; set; }
+        /// <summary>Whether the business has a default billing payment method.</summary>
+        public bool? HasPaymentMethod { get; set; }
         /// <summary>The unique ID for this business switch option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +83,7 @@ namespace Leadping.OpenApiClient.Models
                 { "activationStatus", n => { ActivationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessSwitchOption_activationStatus>(); } },
                 { "activationSummary", n => { ActivationSummary = n.GetStringValue(); } },
                 { "businessStatus", n => { BusinessStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessSwitchOption_businessStatus>(); } },
+                { "hasPaymentMethod", n => { HasPaymentMethod = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
                 { "lastUsedAt", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
@@ -100,6 +103,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessSwitchOption_activationStatus>("activationStatus", ActivationStatus);
             writer.WriteStringValue("activationSummary", ActivationSummary);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessSwitchOption_businessStatus>("businessStatus", BusinessStatus);
+            writer.WriteBoolValue("hasPaymentMethod", HasPaymentMethod);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isCurrent", IsCurrent);
             writer.WriteDateTimeOffsetValue("lastUsedAt", LastUsedAt);

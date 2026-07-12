@@ -11,7 +11,7 @@ namespace Leadping.OpenApiClient.Models
     /// Captured subscription cancellation feedback for retention and churn analysis.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BusinessStripeInfo_cancellation : global::Leadping.OpenApiClient.Models.UserSubscriptionCancellationInfo, IParsable
+    public partial class BusinessStripeInfo_cancellation : global::Leadping.OpenApiClient.Models.BusinessSubscriptionCancellationInfo, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

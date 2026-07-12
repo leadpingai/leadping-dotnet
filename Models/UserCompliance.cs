@@ -25,22 +25,6 @@ namespace Leadping.OpenApiClient.Models
         public bool? AcceptedToSubscription { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The licensed products included with this user compliance.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? LicensedProducts { get; set; }
-#nullable restore
-#else
-        public List<string> LicensedProducts { get; set; }
-#endif
-        /// <summary>The licensed states included with this user compliance.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? LicensedStates { get; set; }
-#nullable restore
-#else
-        public List<string> LicensedStates { get; set; }
-#endif
         /// <summary>The TrustedForm certificates included with this user compliance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,8 +63,6 @@ namespace Leadping.OpenApiClient.Models
                 { "acceptedSms", n => { AcceptedSms = n.GetBoolValue(); } },
                 { "acceptedTerms", n => { AcceptedTerms = n.GetBoolValue(); } },
                 { "acceptedToSubscription", n => { AcceptedToSubscription = n.GetBoolValue(); } },
-                { "licensedProducts", n => { LicensedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "licensedStates", n => { LicensedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "trustedFormCertificates", n => { TrustedFormCertificates = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TrustedFormCertificate>(global::Leadping.OpenApiClient.Models.TrustedFormCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -96,8 +78,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("acceptedSms", AcceptedSms);
             writer.WriteBoolValue("acceptedTerms", AcceptedTerms);
             writer.WriteBoolValue("acceptedToSubscription", AcceptedToSubscription);
-            writer.WriteCollectionOfPrimitiveValues<string>("licensedProducts", LicensedProducts);
-            writer.WriteCollectionOfPrimitiveValues<string>("licensedStates", LicensedStates);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TrustedFormCertificate>("trustedFormCertificates", TrustedFormCertificates);
             writer.WriteAdditionalData(AdditionalData);
         }

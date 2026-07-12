@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the source API key was last used.</summary>
         public DateTimeOffset? ApiKeyLastUsedAt { get; set; }
-        /// <summary>Masked preview of the source API key for display without exposing the secret.</summary>
+        /// <summary>Masked preview of the source API key for compact display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiKeyPreview { get; set; }

@@ -51,6 +51,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The total number of tracked uses for this business API key.</summary>
         public long? ApiKeyTotalUses { get; set; }
+        /// <summary>Defines the supported Billing Plan values.</summary>
+        public global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan? BillingPlan { get; set; }
         /// <summary>The business ID that owns this row when the row represents a child business resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +87,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
+        /// <summary>The lastSubscriptionEventAt property</summary>
+        public DateTimeOffset? LastSubscriptionEventAt { get; set; }
         /// <summary>The date and time for the modified at value on this business.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>The human-readable name shown for this business.</summary>
@@ -97,6 +101,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether needs admin review applies to this business.</summary>
         public bool? NeedsAdminReview { get; set; }
+        /// <summary>The paymentFailedAt property</summary>
+        public DateTimeOffset? PaymentFailedAt { get; set; }
         /// <summary>The phone number associated with this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +115,10 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_setupStep? SetupStep { get; set; }
         /// <summary>Defines the supported Business Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_status? Status { get; set; }
+        /// <summary>The subscriptionCancelAt property</summary>
+        public DateTimeOffset? SubscriptionCancelAt { get; set; }
+        /// <summary>Defines the supported Subscription Status values.</summary>
+        public global::Leadping.OpenApiClient.Models.BusinessTableRow_subscriptionStatus? SubscriptionStatus { get; set; }
         /// <summary>Defines the supported 10DLC Application Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_tenDlcStatus? TenDlcStatus { get; set; }
         /// <summary>The user count for this business.</summary>
@@ -173,17 +183,22 @@ namespace Leadping.OpenApiClient.Models
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
+                { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan>(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "businessName", n => { BusinessName = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
+                { "lastSubscriptionEventAt", n => { LastSubscriptionEventAt = n.GetDateTimeOffsetValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "needsAdminReview", n => { NeedsAdminReview = n.GetBoolValue(); } },
+                { "paymentFailedAt", n => { PaymentFailedAt = n.GetDateTimeOffsetValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "setupStep", n => { SetupStep = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_setupStep>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_status>(); } },
+                { "subscriptionCancelAt", n => { SubscriptionCancelAt = n.GetDateTimeOffsetValue(); } },
+                { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_subscriptionStatus>(); } },
                 { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_tenDlcStatus>(); } },
                 { "userCount", n => { UserCount = n.GetIntValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -208,17 +223,22 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan>("billingPlan", BillingPlan);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("businessName", BusinessName);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("industry", Industry);
+            writer.WriteDateTimeOffsetValue("lastSubscriptionEventAt", LastSubscriptionEventAt);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("needsAdminReview", NeedsAdminReview);
+            writer.WriteDateTimeOffsetValue("paymentFailedAt", PaymentFailedAt);
             writer.WriteStringValue("phone", Phone);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_setupStep>("setupStep", SetupStep);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_status>("status", Status);
+            writer.WriteDateTimeOffsetValue("subscriptionCancelAt", SubscriptionCancelAt);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_tenDlcStatus>("tenDlcStatus", TenDlcStatus);
             writer.WriteIntValue("userCount", UserCount);
             writer.WriteStringValue("userId", UserId);

@@ -5,7 +5,7 @@ namespace Leadping.OpenApiClient.Models
 {
     /// <summary>Defines the supported Subscription Status values.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UserRequest_subscriptionStatus
+    public enum BusinessTableRow_subscriptionStatus
     {
         [EnumMember(Value = "Pending")]
         #pragma warning disable CS1591

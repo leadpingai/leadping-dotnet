@@ -8,10 +8,10 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The Stripe info value for this user.
+    /// Stripe state for the user&apos;s currently selected business.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserResponse_stripeInfo : global::Leadping.OpenApiClient.Models.UserStripeInfo, IParsable
+    public partial class UserResponse_stripeInfo : global::Leadping.OpenApiClient.Models.BusinessStripeInfo, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

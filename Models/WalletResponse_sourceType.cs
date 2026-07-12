@@ -23,10 +23,6 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         Refund_adjustment,
         #pragma warning restore CS1591
-        [EnumMember(Value = "migration")]
-        #pragma warning disable CS1591
-        Migration,
-        #pragma warning restore CS1591
         [EnumMember(Value = "chargeback_reversal")]
         #pragma warning disable CS1591
         Chargeback_reversal,

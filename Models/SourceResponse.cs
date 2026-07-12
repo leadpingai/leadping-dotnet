@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>Masked preview of the source API key for display without exposing the secret.</summary>
+        /// <summary>Masked preview of the source API key for compact display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiKeyPreview { get; set; }

@@ -11,7 +11,7 @@ namespace Leadping.OpenApiClient.Models
     /// Captured subscription cancellation feedback for retention and churn analysis.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserSubscriptionCancellationInfo : IAdditionalDataHolder, IParsable
+    public partial class BusinessSubscriptionCancellationInfo : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -76,21 +76,21 @@ namespace Leadping.OpenApiClient.Models
         public string TechnicalIssues { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserSubscriptionCancellationInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BusinessSubscriptionCancellationInfo"/> and sets the default values.
         /// </summary>
-        public UserSubscriptionCancellationInfo()
+        public BusinessSubscriptionCancellationInfo()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserSubscriptionCancellationInfo"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.BusinessSubscriptionCancellationInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.UserSubscriptionCancellationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.BusinessSubscriptionCancellationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.UserSubscriptionCancellationInfo();
+            return new global::Leadping.OpenApiClient.Models.BusinessSubscriptionCancellationInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

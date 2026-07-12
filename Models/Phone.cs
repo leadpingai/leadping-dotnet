@@ -31,6 +31,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
+        /// <summary>Identifier of the canonical phone identity stored by Leadping.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PhoneIdentityId { get; set; }
+#nullable restore
+#else
+        public string PhoneIdentityId { get; set; }
+#endif
         /// <summary>Type classification used to route and interpret this lead phone number in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "lookup", n => { Lookup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.Phone_lookup>(global::Leadping.OpenApiClient.Models.Phone_lookup.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -78,6 +87,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.Phone_lookup>("lookup", Lookup);
             writer.WriteStringValue("number", Number);
+            writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

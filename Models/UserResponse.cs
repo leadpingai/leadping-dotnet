@@ -17,14 +17,6 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_billingPlan? BillingPlan { get; set; }
-        /// <summary>The business value for this user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.UserResponse_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.UserResponse_business Business { get; set; }
-#endif
         /// <summary>The compliance value for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +139,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Roles { get; set; }
 #endif
-        /// <summary>The Stripe info value for this user.</summary>
+        /// <summary>Stripe state for the user&apos;s currently selected business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_stripeInfo? StripeInfo { get; set; }
@@ -183,7 +175,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_billingPlan>(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_business>(global::Leadping.OpenApiClient.Models.UserResponse_business.CreateFromDiscriminatorValue); } },
                 { "compliance", n => { Compliance = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>(global::Leadping.OpenApiClient.Models.UserResponse_compliance.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentBusiness", n => { CurrentBusiness = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness>(global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness.CreateFromDiscriminatorValue); } },
@@ -215,7 +206,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_billingPlan>("billingPlan", BillingPlan);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_business>("business", Business);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>("compliance", Compliance);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness>("currentBusiness", CurrentBusiness);

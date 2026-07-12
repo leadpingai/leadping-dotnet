@@ -11,7 +11,7 @@ namespace Leadping.OpenApiClient.Models
     /// Dunning state recorded after a failed recurring payment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BusinessStripeInfo_dunning : global::Leadping.OpenApiClient.Models.UserDunningInfo, IParsable
+    public partial class BusinessStripeInfo_dunning : global::Leadping.OpenApiClient.Models.BusinessDunningInfo, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
