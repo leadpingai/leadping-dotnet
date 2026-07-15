@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.PaymentMethods
         {
         }
         /// <summary>
-        /// Gets all cards attached to the current business billing customer.
+        /// List payment methods
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.PaymentMethods
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Gets all cards attached to the current business billing customer.
+        /// List payment methods
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

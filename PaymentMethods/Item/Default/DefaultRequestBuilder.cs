@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Item.Default
         {
         }
         /// <summary>
-        /// Makes a card the default payment method for the current business.
+        /// Set default payment method
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Item.Default
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse>(requestInfo, global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Makes a card the default payment method for the current business.
+        /// Set default payment method
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
