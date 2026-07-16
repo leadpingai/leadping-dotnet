@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Response metrics associated with this Leadping customer analytics.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerResponseMetrics : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The averageMinutes property</summary>
+        /// <summary>Average minutes measured in minutes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AverageMinutes { get; set; }
@@ -22,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode AverageMinutes { get; set; }
 #endif
-        /// <summary>The averageMinutesTrend property</summary>
+        /// <summary>Collection of average minutes trend included with this Leadping customer response metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>? AverageMinutesTrend { get; set; }
@@ -30,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal> AverageMinutesTrend { get; set; }
 #endif
-        /// <summary>The medianMinutes property</summary>
+        /// <summary>Median minutes measured in minutes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? MedianMinutes { get; set; }
@@ -38,15 +39,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode MedianMinutes { get; set; }
 #endif
-        /// <summary>The missedCalls property</summary>
+        /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
-        /// <summary>The respondedLeads property</summary>
+        /// <summary>Number of responded leads represented by this Leadping customer response metrics.</summary>
         public int? RespondedLeads { get; set; }
-        /// <summary>The respondedWithinFiveMinutesPercent property</summary>
+        /// <summary>Responded within five minutes percent expressed as a percentage.</summary>
         public double? RespondedWithinFiveMinutesPercent { get; set; }
-        /// <summary>The unreadMessages property</summary>
+        /// <summary>Number of unread messages represented by this Leadping customer response metrics.</summary>
         public int? UnreadMessages { get; set; }
-        /// <summary>The unrespondedLeads property</summary>
+        /// <summary>Number of unresponded leads represented by this Leadping customer response metrics.</summary>
         public int? UnrespondedLeads { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerResponseMetrics"/> and sets the default values.

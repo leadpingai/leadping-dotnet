@@ -14,9 +14,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>Date and time when the user data export completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The contentType property</summary>
+        /// <summary>Media type of the generated file or response content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType { get; set; }
@@ -24,9 +24,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContentType { get; set; }
 #endif
-        /// <summary>The downloadCount property</summary>
+        /// <summary>Total number of download records represented by this Leadping user data export.</summary>
         public int? DownloadCount { get; set; }
-        /// <summary>The downloadUrl property</summary>
+        /// <summary>Temporary URL for downloading the completed Leadping data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DownloadUrl { get; set; }
@@ -34,11 +34,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DownloadUrl { get; set; }
 #endif
-        /// <summary>The expiresAt property</summary>
+        /// <summary>Date and time when the user data export expires.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The failedAt property</summary>
+        /// <summary>Date and time when the user data export failed.</summary>
         public DateTimeOffset? FailedAt { get; set; }
-        /// <summary>The fileName property</summary>
+        /// <summary>Human-readable file name associated with this Leadping user data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -46,7 +46,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The files property</summary>
+        /// <summary>Collection of files included with this Leadping user data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.UserDataExportFile>? Files { get; set; }
@@ -54,7 +54,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.UserDataExportFile> Files { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier for the user data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -62,9 +62,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The maxDownloadCount property</summary>
+        /// <summary>Total number of max download records represented by this Leadping user data export.</summary>
         public int? MaxDownloadCount { get; set; }
-        /// <summary>The message property</summary>
+        /// <summary>Human-readable message for this Leadping user data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -72,9 +72,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>Date and time when the user data export was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The sizeBytes property</summary>
+        /// <summary>File size in bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? SizeBytes { get; set; }
@@ -82,9 +82,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode SizeBytes { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>Date and time when the user data export started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>Defines the supported user data export statuses values.</summary>
+        /// <summary>Current status for this Leadping user data export.</summary>
         public global::Leadping.OpenApiClient.Models.UserDataExportStatuses? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserDataExportResponse"/> and sets the default values.

@@ -31,14 +31,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The provider event ID associated with this ion entry audit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderEventId { get; set; }
-#nullable restore
-#else
-        public string ProviderEventId { get; set; }
-#endif
         /// <summary>The human-readable reason explaining this ion entry audit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,14 +54,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Source { get; set; }
-#endif
-        /// <summary>The source event ID associated with this ion entry audit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceEventId { get; set; }
-#nullable restore
-#else
-        public string SourceEventId { get; set; }
 #endif
         /// <summary>The current status for this ion entry audit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,11 +92,9 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actorId", n => { ActorId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "providerEventId", n => { ProviderEventId = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "safeMetadata", n => { SafeMetadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit_safeMetadata>(global::Leadping.OpenApiClient.Models.SuppressionEntryAudit_safeMetadata.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "sourceEventId", n => { SourceEventId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
@@ -126,11 +108,9 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorId", ActorId);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("providerEventId", ProviderEventId);
             writer.WriteStringValue("reason", Reason);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit_safeMetadata>("safeMetadata", SafeMetadata);
             writer.WriteStringValue("source", Source);
-            writer.WriteStringValue("sourceEventId", SourceEventId);
             writer.WriteStringValue("status", Status);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);

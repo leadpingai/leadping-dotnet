@@ -15,8 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An enumerator describing carrier types</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneLookup_carrierType? CarrierType { get; set; }
+        /// <summary>Complete carrier metadata reported for this phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneLookup_carrier? Carrier { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneLookup_carrier Carrier { get; set; }
+#endif
         /// <summary>Gets or sets created at.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Gets or sets id.</summary>
@@ -74,7 +80,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "carrierType", n => { CarrierType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneLookup_carrierType>(); } },
+                { "carrier", n => { Carrier = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_carrier>(global::Leadping.OpenApiClient.Models.PhoneLookup_carrier.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isValid", n => { IsValid = n.GetBoolValue(); } },
@@ -91,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneLookup_carrierType>("carrierType", CarrierType);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_carrier>("carrier", Carrier);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isValid", IsValid);

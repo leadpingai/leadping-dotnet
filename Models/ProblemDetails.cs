@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The detail property</summary>
+        /// <summary>Human-readable explanation specific to this occurrence of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Detail { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Detail { get; set; }
 #endif
-        /// <summary>The instance property</summary>
+        /// <summary>URI reference that identifies this specific occurrence of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Instance { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
-        /// <summary>The status property</summary>
+        /// <summary>HTTP status code returned for the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Status { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Status { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Short, human-readable summary of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>URI reference that identifies the problem type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

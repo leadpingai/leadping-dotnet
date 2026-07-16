@@ -33,14 +33,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode BillableSeconds { get; set; }
 #endif
-        /// <summary>Phone number identifier used for billing reconciliation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BillingPhoneNumberId { get; set; }
-#nullable restore
-#else
-        public string BillingPhoneNumberId { get; set; }
-#endif
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,22 +125,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>Structured metadata used for attribution, integrations, and reporting on this call event table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata? Metadata { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata Metadata { get; set; }
-#endif
-        /// <summary>Provider lifecycle or delivery status for this call event table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderStatus { get; set; }
-#nullable restore
-#else
-        public string ProviderStatus { get; set; }
-#endif
         /// <summary>URL for the call recording, when the provider makes one available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,14 +142,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string StatusReason { get; set; }
-#endif
-        /// <summary>Telnyx identifier connected to this phone number, call, or SMS event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TelnyxId { get; set; }
-#nullable restore
-#else
-        public string TelnyxId { get; set; }
 #endif
         /// <summary>Recipient phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -227,7 +195,6 @@ namespace Leadping.OpenApiClient.Models
                 { "answeredAt", n => { AnsweredAt = n.GetDateTimeOffsetValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billableSeconds", n => { BillableSeconds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "billingPhoneNumberId", n => { BillingPhoneNumberId = n.GetStringValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetStringValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
@@ -241,12 +208,9 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata>(global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata.CreateFromDiscriminatorValue); } },
-                { "providerStatus", n => { ProviderStatus = n.GetStringValue(); } },
                 { "recordingUrl", n => { RecordingUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
-                { "telnyxId", n => { TelnyxId = n.GetStringValue(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -262,7 +226,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("answeredAt", AnsweredAt);
             writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
             writer.WriteObjectValue<UntypedNode>("billableSeconds", BillableSeconds);
-            writer.WriteStringValue("billingPhoneNumberId", BillingPhoneNumberId);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteStringValue("business", Business);
             writer.WriteStringValue("businessId", BusinessId);
@@ -276,12 +239,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_metadata>("metadata", Metadata);
-            writer.WriteStringValue("providerStatus", ProviderStatus);
             writer.WriteStringValue("recordingUrl", RecordingUrl);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
-            writer.WriteStringValue("telnyxId", TelnyxId);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
             writer.WriteStringValue("user", User);
             writer.WriteStringValue("userId", UserId);

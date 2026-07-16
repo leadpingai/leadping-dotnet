@@ -13,14 +13,6 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionTableRow : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Leadping account identifier used for wallet and transaction reconciliation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountId { get; set; }
-#nullable restore
-#else
-        public string AccountId { get; set; }
-#endif
         /// <summary>Display name of the wallet or account used for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,14 +43,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when this billing transaction table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Display name or identifier for the person or system that created this billing transaction table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedBy { get; set; }
-#nullable restore
-#else
-        public string CreatedBy { get; set; }
-#endif
         /// <summary>Human-readable description that explains this billing transaction table row to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,13 +114,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountId", n => { AccountId = n.GetStringValue(); } },
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "businessName", n => { BusinessName = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
@@ -154,13 +136,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("businessName", BusinessName);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);

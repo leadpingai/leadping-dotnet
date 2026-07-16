@@ -33,14 +33,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.BusinessResponse_address Address { get; set; }
 #endif
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.BusinessResponse_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.BusinessResponse_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,14 +167,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Business Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessResponse_status? Status { get; set; }
-        /// <summary>Stripe customer and subscription state associated with this business or user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.BusinessResponse_stripeInfo? StripeInfo { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.BusinessResponse_stripeInfo StripeInfo { get; set; }
-#endif
         /// <summary>Defines the supported Subscription Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessResponse_subscriptionStatus? SubscriptionStatus { get; set; }
         /// <summary>User summary connected to this business profile response.</summary>
@@ -237,7 +221,6 @@ namespace Leadping.OpenApiClient.Models
                 { "accountBalance", n => { AccountBalance = n.GetDoubleValue(); } },
                 { "activation", n => { Activation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_activation>(global::Leadping.OpenApiClient.Models.BusinessResponse_activation.CreateFromDiscriminatorValue); } },
                 { "address", n => { Address = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_address>(global::Leadping.OpenApiClient.Models.BusinessResponse_address.CreateFromDiscriminatorValue); } },
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.BusinessResponse_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "autoRefillAmount", n => { AutoRefillAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -260,7 +243,6 @@ namespace Leadping.OpenApiClient.Models
                 { "setupStep", n => { SetupStep = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_setupStep>(); } },
                 { "site", n => { Site = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_site>(global::Leadping.OpenApiClient.Models.BusinessResponse_site.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_status>(); } },
-                { "stripeInfo", n => { StripeInfo = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_stripeInfo>(global::Leadping.OpenApiClient.Models.BusinessResponse_stripeInfo.CreateFromDiscriminatorValue); } },
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_subscriptionStatus>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_user>(global::Leadping.OpenApiClient.Models.BusinessResponse_user.CreateFromDiscriminatorValue); } },
                 { "vertical", n => { Vertical = n.GetStringValue(); } },
@@ -277,7 +259,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("accountBalance", AccountBalance);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_activation>("activation", Activation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_address>("address", Address);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteObjectValue<UntypedNode>("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
             writer.WriteObjectValue<UntypedNode>("autoRefillTrigger", AutoRefillTrigger);
@@ -300,7 +281,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_setupStep>("setupStep", SetupStep);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_site>("site", Site);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_status>("status", Status);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_stripeInfo>("stripeInfo", StripeInfo);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_user>("user", User);
             writer.WriteStringValue("vertical", Vertical);

@@ -7,20 +7,21 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Automation health associated with this Leadping customer analytics.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerAutomationHealth : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automationCount property</summary>
+        /// <summary>Total number of automation records represented by this Leadping customer automation health.</summary>
         public int? AutomationCount { get; set; }
-        /// <summary>The enabledCount property</summary>
+        /// <summary>Total number of enabled records represented by this Leadping customer automation health.</summary>
         public int? EnabledCount { get; set; }
-        /// <summary>The executions property</summary>
+        /// <summary>Number of executions represented by this Leadping customer automation health.</summary>
         public int? Executions { get; set; }
-        /// <summary>The failingAutomations property</summary>
+        /// <summary>Collection of failing automations included with this Leadping customer automation health.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation>? FailingAutomations { get; set; }
@@ -28,9 +29,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation> FailingAutomations { get; set; }
 #endif
-        /// <summary>The failureCount property</summary>
+        /// <summary>Total number of failure records represented by this Leadping customer automation health.</summary>
         public int? FailureCount { get; set; }
-        /// <summary>The lastFailure property</summary>
+        /// <summary>Last failure associated with this Leadping customer automation health.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure? LastFailure { get; set; }
@@ -38,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure LastFailure { get; set; }
 #endif
-        /// <summary>The successCount property</summary>
+        /// <summary>Total number of success records represented by this Leadping customer automation health.</summary>
         public int? SuccessCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerAutomationHealth"/> and sets the default values.

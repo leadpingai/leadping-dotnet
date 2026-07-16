@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>Product allowlist used to accept or route leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,24 +30,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> AllowedStates { get; set; }
-#endif
-        /// <summary>Business ID that owns or will own this lead source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>Indicates whether the business or sender passed compliance review.</summary>
-        public bool? ComplianceApproved { get; set; }
-        /// <summary>Compliance notes captured for admin review.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ComplianceNotes { get; set; }
-#nullable restore
-#else
-        public string ComplianceNotes { get; set; }
 #endif
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,12 +110,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
-                { "complianceNotes", n => { ComplianceNotes = n.GetStringValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultTagNames", n => { DefaultTagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -160,12 +130,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceRequest_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteBoolValue("complianceApproved", ComplianceApproved);
-            writer.WriteStringValue("complianceNotes", ComplianceNotes);
             writer.WriteObjectValue<UntypedNode>("costPerLead", CostPerLead);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagNames", DefaultTagNames);

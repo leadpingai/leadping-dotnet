@@ -23,14 +23,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>Business summary connected to this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,14 +85,6 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsSystemManaged { get; set; }
         /// <summary>UTC timestamp when this automation last ran.</summary>
         public DateTimeOffset? LastRunAt { get; set; }
-        /// <summary>Most recent automation run error message, if the last run failed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastRunError { get; set; }
-#nullable restore
-#else
-        public string LastRunError { get; set; }
-#endif
         /// <summary>Status from the most recent automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,7 +185,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionSummary", n => { ActionSummary = n.GetStringValue(); } },
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_business>(global::Leadping.OpenApiClient.Models.AutomationTableRow_business.CreateFromDiscriminatorValue); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "conditionSummary", n => { ConditionSummary = n.GetStringValue(); } },
@@ -212,7 +195,6 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isSystemManaged", n => { IsSystemManaged = n.GetBoolValue(); } },
                 { "lastRunAt", n => { LastRunAt = n.GetDateTimeOffsetValue(); } },
-                { "lastRunError", n => { LastRunError = n.GetStringValue(); } },
                 { "lastRunStatus", n => { LastRunStatus = n.GetStringValue(); } },
                 { "managementLevel", n => { ManagementLevel = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
@@ -233,7 +215,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionSummary", ActionSummary);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_business>("business", Business);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("conditionSummary", ConditionSummary);
@@ -244,7 +225,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isSystemManaged", IsSystemManaged);
             writer.WriteDateTimeOffsetValue("lastRunAt", LastRunAt);
-            writer.WriteStringValue("lastRunError", LastRunError);
             writer.WriteStringValue("lastRunStatus", LastRunStatus);
             writer.WriteStringValue("managementLevel", ManagementLevel);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);

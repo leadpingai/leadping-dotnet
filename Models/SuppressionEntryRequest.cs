@@ -13,14 +13,6 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionEntryRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actor ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActorId { get; set; }
-#nullable restore
-#else
-        public string ActorId { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The business ID associated with this ion entry.</summary>
@@ -55,14 +47,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>The provider event ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderEventId { get; set; }
-#nullable restore
-#else
-        public string ProviderEventId { get; set; }
-#endif
         /// <summary>The human-readable reason explaining this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,32 +63,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RecipientIdentifier { get; set; }
 #endif
-        /// <summary>The safe metadata key-value data carried with this ion entry; values must be safe to expose in API responses.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.SuppressionEntryRequest_safeMetadata? SafeMetadata { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.SuppressionEntryRequest_safeMetadata SafeMetadata { get; set; }
-#endif
-        /// <summary>The source value for this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Source { get; set; }
-#nullable restore
-#else
-        public string Source { get; set; }
-#endif
-        /// <summary>The source event ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceEventId { get; set; }
-#nullable restore
-#else
-        public string SourceEventId { get; set; }
-#endif
-        /// <summary>The date and time for the timestamp value on this ion entry.</summary>
-        public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SuppressionEntryRequest"/> and sets the default values.
         /// </summary>
@@ -130,18 +88,12 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorId", n => { ActorId = n.GetStringValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                { "providerEventId", n => { ProviderEventId = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "recipientIdentifier", n => { RecipientIdentifier = n.GetStringValue(); } },
-                { "safeMetadata", n => { SafeMetadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SuppressionEntryRequest_safeMetadata>(global::Leadping.OpenApiClient.Models.SuppressionEntryRequest_safeMetadata.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetStringValue(); } },
-                { "sourceEventId", n => { SourceEventId = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -151,18 +103,12 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorId", ActorId);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteStringValue("providerEventId", ProviderEventId);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("recipientIdentifier", RecipientIdentifier);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SuppressionEntryRequest_safeMetadata>("safeMetadata", SafeMetadata);
-            writer.WriteStringValue("source", Source);
-            writer.WriteStringValue("sourceEventId", SourceEventId);
-            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

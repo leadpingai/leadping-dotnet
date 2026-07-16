@@ -13,7 +13,7 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWorkflowEventResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actionId property</summary>
+        /// <summary>Unique identifier of the action associated with this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionId { get; set; }
@@ -23,15 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adminDiagnostics property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AdminDiagnostics { get; set; }
-#nullable restore
-#else
-        public string AdminDiagnostics { get; set; }
-#endif
-        /// <summary>The eventType property</summary>
+        /// <summary>Event type classification for this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }
@@ -39,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier for the automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -47,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The occurredAt property</summary>
+        /// <summary>Date and time when the automation workflow event event occurred.</summary>
         public DateTimeOffset? OccurredAt { get; set; }
-        /// <summary>The reasonCode property</summary>
+        /// <summary>Reason or diagnostic code that explains the current outcome for this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReasonCode { get; set; }
@@ -57,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ReasonCode { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Current status for this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -65,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The statusDisplay property</summary>
+        /// <summary>Human-readable status display for this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDisplay { get; set; }
@@ -73,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StatusDisplay { get; set; }
 #endif
-        /// <summary>The stepId property</summary>
+        /// <summary>Unique identifier of the step associated with this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StepId { get; set; }
@@ -81,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StepId { get; set; }
 #endif
-        /// <summary>The summary property</summary>
+        /// <summary>Human-readable summary for this Leadping automation workflow event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -115,7 +107,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionId", n => { ActionId = n.GetStringValue(); } },
-                { "adminDiagnostics", n => { AdminDiagnostics = n.GetStringValue(); } },
                 { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "occurredAt", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
@@ -134,7 +125,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionId", ActionId);
-            writer.WriteStringValue("adminDiagnostics", AdminDiagnostics);
             writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("occurredAt", OccurredAt);

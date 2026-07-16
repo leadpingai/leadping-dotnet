@@ -12,7 +12,7 @@ namespace Leadping.OpenApiClient.Models
     public partial class CustomerAnalyticsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activationHealth property</summary>
+        /// <summary>Activation health associated with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerActivationHealth? ActivationHealth { get; set; }
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automationHealth property</summary>
+        /// <summary>Automation health associated with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth? AutomationHealth { get; set; }
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth AutomationHealth { get; set; }
 #endif
-        /// <summary>The communicationUsage property</summary>
+        /// <summary>Communication usage associated with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage? CommunicationUsage { get; set; }
@@ -38,9 +38,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage CommunicationUsage { get; set; }
 #endif
-        /// <summary>The generatedAt property</summary>
+        /// <summary>Date and time when this Leadping customer analytics was generated.</summary>
         public DateTimeOffset? GeneratedAt { get; set; }
-        /// <summary>The leadSources property</summary>
+        /// <summary>Collection of lead sources included with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.CustomerLeadSourceBreakdown>? LeadSources { get; set; }
@@ -48,7 +48,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.CustomerLeadSourceBreakdown> LeadSources { get; set; }
 #endif
-        /// <summary>The leadTrend property</summary>
+        /// <summary>Lead trend associated with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerLeadTrend? LeadTrend { get; set; }
@@ -56,7 +56,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerLeadTrend LeadTrend { get; set; }
 #endif
-        /// <summary>The needsAttention property</summary>
+        /// <summary>Date and time when this Leadping customer analytics was needs attention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.CustomerNeedsAttentionItem>? NeedsAttention { get; set; }
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.CustomerNeedsAttentionItem> NeedsAttention { get; set; }
 #endif
-        /// <summary>The range property</summary>
+        /// <summary>Range associated with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange? Range { get; set; }
@@ -72,7 +72,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange Range { get; set; }
 #endif
-        /// <summary>The responseMetrics property</summary>
+        /// <summary>Response metrics associated with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerResponseMetrics? ResponseMetrics { get; set; }
@@ -80,7 +80,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerResponseMetrics ResponseMetrics { get; set; }
 #endif
-        /// <summary>The summary property</summary>
+        /// <summary>Human-readable summary for this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerAnalyticsSummary? Summary { get; set; }

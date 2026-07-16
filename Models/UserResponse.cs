@@ -139,14 +139,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Roles { get; set; }
 #endif
-        /// <summary>Stripe state for the user&apos;s currently selected business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.UserResponse_stripeInfo? StripeInfo { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.UserResponse_stripeInfo StripeInfo { get; set; }
-#endif
         /// <summary>Defines the supported Subscription Status values.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus? SubscriptionStatus { get; set; }
         /// <summary>
@@ -194,7 +186,6 @@ namespace Leadping.OpenApiClient.Models
                 { "personalDataDeletionStatus", n => { PersonalDataDeletionStatus = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "stripeInfo", n => { StripeInfo = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_stripeInfo>(global::Leadping.OpenApiClient.Models.UserResponse_stripeInfo.CreateFromDiscriminatorValue); } },
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus>(); } },
             };
         }
@@ -225,7 +216,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("personalDataDeletionStatus", PersonalDataDeletionStatus);
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<UntypedNode>("roles", Roles);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_stripeInfo>("stripeInfo", StripeInfo);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,9 +14,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The endAt property</summary>
+        /// <summary>Date and time when this Leadping analytics trend point was end.</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>Human-readable label for this Leadping analytics trend point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -24,9 +24,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The startAt property</summary>
+        /// <summary>Date and time when this Leadping analytics trend point was start.</summary>
         public DateTimeOffset? StartAt { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Value associated with this Leadping analytics trend point.</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal"/> and sets the default values.

@@ -14,9 +14,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The generatedAt property</summary>
+        /// <summary>Date and time when the source metrics was generated.</summary>
         public DateTimeOffset? GeneratedAt { get; set; }
-        /// <summary>The points property</summary>
+        /// <summary>Collection of points included with this Leadping source metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>? Points { get; set; }
@@ -24,7 +24,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint> Points { get; set; }
 #endif
-        /// <summary>The range property</summary>
+        /// <summary>Range associated with this Leadping source metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange? Range { get; set; }
@@ -32,7 +32,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange Range { get; set; }
 #endif
-        /// <summary>The totalLeads property</summary>
+        /// <summary>Total number of leads records represented by this Leadping source metrics.</summary>
         public int? TotalLeads { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SourceMetricsResponse"/> and sets the default values.

@@ -43,14 +43,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The channel value for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
-        /// <summary>The correlation ID associated with this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CorrelationId { get; set; }
-#nullable restore
-#else
-        public string CorrelationId { get; set; }
-#endif
         /// <summary>The date and time for the created at value on this usage ledger.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The monetary customer charge amount for this usage ledger.</summary>
@@ -79,26 +71,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The idempotency key value for this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IdempotencyKey { get; set; }
-#nullable restore
-#else
-        public string IdempotencyKey { get; set; }
-#endif
-        /// <summary>The monetary internal cost amount for this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? InternalCostAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode InternalCostAmount { get; set; }
-#endif
         /// <summary>Whether this usage ledger is billable.</summary>
         public bool? IsBillable { get; set; }
-        /// <summary>Whether this usage ledger is internal.</summary>
-        public bool? IsInternal { get; set; }
         /// <summary>The lead ID associated with this usage ledger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,14 +105,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
-        /// <summary>The monetary provider cost amount for this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ProviderCostAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode ProviderCostAmount { get; set; }
-#endif
         /// <summary>The quantity value for this usage ledger.</summary>
         public double? Quantity { get; set; }
         /// <summary>The SMS segments value for this usage ledger.</summary>
@@ -148,14 +114,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public UntypedNode SmsSegments { get; set; }
-#endif
-        /// <summary>The source event ID associated with this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceEventId { get; set; }
-#nullable restore
-#else
-        public string SourceEventId { get; set; }
 #endif
         /// <summary>The current status for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.UsageRecordStatus? Status { get; set; }
@@ -207,24 +165,18 @@ namespace Leadping.OpenApiClient.Models
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "businessName", n => { BusinessName = n.GetStringValue(); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>(); } },
-                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "customerChargeAmount", n => { CustomerChargeAmount = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "durationSeconds", n => { DurationSeconds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "idempotencyKey", n => { IdempotencyKey = n.GetStringValue(); } },
-                { "internalCostAmount", n => { InternalCostAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "isBillable", n => { IsBillable = n.GetBoolValue(); } },
-                { "isInternal", n => { IsInternal = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "providerCostAmount", n => { ProviderCostAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "smsSegments", n => { SmsSegments = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "sourceEventId", n => { SourceEventId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>(); } },
                 { "unitPrice", n => { UnitPrice = n.GetDoubleValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -243,24 +195,18 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("businessName", BusinessName);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>("channel", Channel);
-            writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("customerChargeAmount", CustomerChargeAmount);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<UntypedNode>("durationSeconds", DurationSeconds);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("idempotencyKey", IdempotencyKey);
-            writer.WriteObjectValue<UntypedNode>("internalCostAmount", InternalCostAmount);
             writer.WriteBoolValue("isBillable", IsBillable);
-            writer.WriteBoolValue("isInternal", IsInternal);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadName", LeadName);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
-            writer.WriteObjectValue<UntypedNode>("providerCostAmount", ProviderCostAmount);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteObjectValue<UntypedNode>("smsSegments", SmsSegments);
-            writer.WriteStringValue("sourceEventId", SourceEventId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>("status", Status);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
             writer.WriteStringValue("userId", UserId);

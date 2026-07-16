@@ -13,14 +13,6 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessRequest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Business activation state covering site, billing, compliance, and telephony readiness.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_activation? Activation { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_activation Activation { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Postal address for the business, lead, or contact represented by this business profile request.</summary>
@@ -30,14 +22,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public global::Leadping.OpenApiClient.Models.BusinessRequest_address Address { get; set; }
-#endif
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
 #endif
         /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,8 +57,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingName { get; set; }
 #endif
-        /// <summary>Defines the supported Billing Plan values.</summary>
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_billingPlan? BillingPlan { get; set; }
         /// <summary>Compliance policy configuration for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,20 +133,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SecondaryName { get; set; }
 #endif
-        /// <summary>Defines the supported Business Setup Step values.</summary>
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_setupStep? SetupStep { get; set; }
         /// <summary>Defines the supported Business Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessRequest_status? Status { get; set; }
-        /// <summary>Stripe customer and subscription state associated with this business or user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_stripeInfo? StripeInfo { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_stripeInfo StripeInfo { get; set; }
-#endif
-        /// <summary>Defines the supported Subscription Status values.</summary>
-        public global::Leadping.OpenApiClient.Models.BusinessRequest_subscriptionStatus? SubscriptionStatus { get; set; }
         /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,15 +176,12 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activation", n => { Activation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_activation>(global::Leadping.OpenApiClient.Models.BusinessRequest_activation.CreateFromDiscriminatorValue); } },
                 { "address", n => { Address = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_address>(global::Leadping.OpenApiClient.Models.BusinessRequest_address.CreateFromDiscriminatorValue); } },
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "autoRefillAmount", n => { AutoRefillAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress>(global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
-                { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingPlan>(); } },
                 { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy>(global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
@@ -226,10 +193,7 @@ namespace Leadping.OpenApiClient.Models
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.IdNameValue>(global::Leadping.OpenApiClient.Models.IdNameValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secondaryName", n => { SecondaryName = n.GetStringValue(); } },
-                { "setupStep", n => { SetupStep = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_setupStep>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_status>(); } },
-                { "stripeInfo", n => { StripeInfo = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_stripeInfo>(global::Leadping.OpenApiClient.Models.BusinessRequest_stripeInfo.CreateFromDiscriminatorValue); } },
-                { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_subscriptionStatus>(); } },
                 { "vertical", n => { Vertical = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
@@ -241,15 +205,12 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_activation>("activation", Activation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_address>("address", Address);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteObjectValue<UntypedNode>("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
             writer.WriteObjectValue<UntypedNode>("autoRefillTrigger", AutoRefillTrigger);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress>("billingAddress", BillingAddress);
             writer.WriteStringValue("billingName", BillingName);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("ein", Ein);
@@ -261,10 +222,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("phone", Phone);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.IdNameValue>("phones", Phones);
             writer.WriteStringValue("secondaryName", SecondaryName);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_setupStep>("setupStep", SetupStep);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_status>("status", Status);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_stripeInfo>("stripeInfo", StripeInfo);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessRequest_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteStringValue("vertical", Vertical);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);

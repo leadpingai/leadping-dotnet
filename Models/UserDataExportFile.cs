@@ -14,7 +14,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
+        /// <summary>Category classification for this Leadping user data export file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The contentType property</summary>
+        /// <summary>Media type of the generated file or response content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType { get; set; }
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContentType { get; set; }
 #endif
-        /// <summary>The fileName property</summary>
+        /// <summary>Human-readable file name associated with this Leadping user data export file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName { get; set; }
@@ -38,7 +38,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The rowCount property</summary>
+        /// <summary>Total number of row records represented by this Leadping user data export file.</summary>
         public int? RowCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserDataExportFile"/> and sets the default values.

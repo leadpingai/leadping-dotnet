@@ -14,9 +14,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines outbound delivery channels protected by delivery control.</summary>
+        /// <summary>Channel classification for this Leadping outbound queue item.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundDeliveryChannel? Channel { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier for the outbound queue item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,7 +24,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The phoneNumber property</summary>
+        /// <summary>Phone number associated with this Leadping outbound queue item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }
@@ -32,7 +32,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>The reason property</summary>
+        /// <summary>Human-readable explanation for the current outbound queue item outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason { get; set; }
@@ -42,11 +42,11 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Structured reason codes for outbound pacing and blocking decisions.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundQueueItem_reasonCode? ReasonCode { get; set; }
-        /// <summary>The scheduledSendAt property</summary>
+        /// <summary>Date and time when this Leadping outbound queue item was scheduled send.</summary>
         public DateTimeOffset? ScheduledSendAt { get; set; }
-        /// <summary>Defines the source that requested outbound delivery.</summary>
+        /// <summary>Source classification for this Leadping outbound queue item.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundDeliverySource? Source { get; set; }
-        /// <summary>Defines durable outbound delivery request statuses.</summary>
+        /// <summary>Current status for this Leadping outbound queue item.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundDeliveryStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundQueueItem"/> and sets the default values.

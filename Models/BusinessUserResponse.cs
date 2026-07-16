@@ -61,22 +61,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The renewal date used for this user&apos;s license proration.</summary>
         public DateTimeOffset? LicenseRenewalDate { get; set; }
-        /// <summary>The Stripe subscription ID containing this user&apos;s business license item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LicenseStripeSubscriptionId { get; set; }
-#nullable restore
-#else
-        public string LicenseStripeSubscriptionId { get; set; }
-#endif
-        /// <summary>The Stripe subscription item ID used for business user licenses.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LicenseStripeSubscriptionItemId { get; set; }
-#nullable restore
-#else
-        public string LicenseStripeSubscriptionItemId { get; set; }
-#endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>The display name for the entity.</summary>
@@ -148,8 +132,6 @@ namespace Leadping.OpenApiClient.Models
                 { "licenseBillingStatus", n => { LicenseBillingStatus = n.GetStringValue(); } },
                 { "licenseQuantity", n => { LicenseQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "licenseRenewalDate", n => { LicenseRenewalDate = n.GetDateTimeOffsetValue(); } },
-                { "licenseStripeSubscriptionId", n => { LicenseStripeSubscriptionId = n.GetStringValue(); } },
-                { "licenseStripeSubscriptionItemId", n => { LicenseStripeSubscriptionItemId = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "removedAt", n => { RemovedAt = n.GetDateTimeOffsetValue(); } },
@@ -174,8 +156,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("licenseBillingStatus", LicenseBillingStatus);
             writer.WriteObjectValue<UntypedNode>("licenseQuantity", LicenseQuantity);
             writer.WriteDateTimeOffsetValue("licenseRenewalDate", LicenseRenewalDate);
-            writer.WriteStringValue("licenseStripeSubscriptionId", LicenseStripeSubscriptionId);
-            writer.WriteStringValue("licenseStripeSubscriptionItemId", LicenseStripeSubscriptionItemId);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("removedAt", RemovedAt);

@@ -113,8 +113,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Indicates whether this SMS message is part of Leadping sender warmup traffic.</summary>
-        public bool? IsWarmup { get; set; }
         /// <summary>Lead ID associated with the SMS conversation or outreach attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,14 +132,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string OutboundPhoneNumberId { get; set; }
-#endif
-        /// <summary>Provider message identifier for SMS delivery tracking and reconciliation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderMessageId { get; set; }
-#nullable restore
-#else
-        public string ProviderMessageId { get; set; }
 #endif
         /// <summary>UTC timestamp when Leadping queued this SMS message for processing.</summary>
         public DateTimeOffset? QueuedAt { get; set; }
@@ -182,22 +172,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string StatusReason { get; set; }
-#endif
-        /// <summary>Telnyx identifier connected to this phone number, call, or SMS event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TelnyxId { get; set; }
-#nullable restore
-#else
-        public string TelnyxId { get; set; }
-#endif
-        /// <summary>10DLC campaign identifier associated with this sender or SMS event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TenDlcCampaignId { get; set; }
-#nullable restore
-#else
-        public string TenDlcCampaignId { get; set; }
 #endif
         /// <summary>Body text for the SMS message or communication represented by this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -254,12 +228,10 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumber", n => { FromPhoneNumber = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "isWarmup", n => { IsWarmup = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
-                { "providerMessageId", n => { ProviderMessageId = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "receivedAt", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "retryCount", n => { RetryCount = n.GetIntValue(); } },
@@ -271,8 +243,6 @@ namespace Leadping.OpenApiClient.Models
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsResponse_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
-                { "telnyxId", n => { TelnyxId = n.GetStringValue(); } },
-                { "tenDlcCampaignId", n => { TenDlcCampaignId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "trafficType", n => { TrafficType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsResponse_trafficType>(); } },
                 { "undeliverableAt", n => { UndeliverableAt = n.GetDateTimeOffsetValue(); } },
@@ -302,12 +272,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumber", FromPhoneNumber);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("isWarmup", IsWarmup);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
-            writer.WriteStringValue("providerMessageId", ProviderMessageId);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);
             writer.WriteIntValue("retryCount", RetryCount);
@@ -319,8 +287,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsResponse_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
-            writer.WriteStringValue("telnyxId", TelnyxId);
-            writer.WriteStringValue("tenDlcCampaignId", TenDlcCampaignId);
             writer.WriteStringValue("text", Text);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsResponse_trafficType>("trafficType", TrafficType);
             writer.WriteDateTimeOffsetValue("undeliverableAt", UndeliverableAt);

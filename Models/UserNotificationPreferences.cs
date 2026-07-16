@@ -15,27 +15,27 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automationFailedEmailEnabled property</summary>
+        /// <summary>Indicates whether automation failed email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? AutomationFailedEmailEnabled { get; set; }
         /// <summary>Whether automation failed notifications are enabled for this user notification preferences.</summary>
         public bool? AutomationFailedEnabled { get; set; }
-        /// <summary>The automationFailedSmsEnabled property</summary>
+        /// <summary>Indicates whether automation failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? AutomationFailedSmsEnabled { get; set; }
         /// <summary>Whether billing email is enabled for this user notification preferences.</summary>
         public bool? BillingEmailEnabled { get; set; }
         /// <summary>Whether billing SMS is enabled for this user notification preferences.</summary>
         public bool? BillingSmsEnabled { get; set; }
-        /// <summary>The lowWalletBalanceEmailEnabled property</summary>
+        /// <summary>Indicates whether low wallet balance email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? LowWalletBalanceEmailEnabled { get; set; }
         /// <summary>Whether low wallet balance notifications are enabled for this user notification preferences.</summary>
         public bool? LowWalletBalanceEnabled { get; set; }
-        /// <summary>The lowWalletBalanceSmsEnabled property</summary>
+        /// <summary>Indicates whether low wallet balance SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? LowWalletBalanceSmsEnabled { get; set; }
-        /// <summary>The missedCallEmailEnabled property</summary>
+        /// <summary>Indicates whether missed call email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? MissedCallEmailEnabled { get; set; }
         /// <summary>Whether missed call notifications are enabled for this user notification preferences.</summary>
         public bool? MissedCallEnabled { get; set; }
-        /// <summary>The missedCallSmsEnabled property</summary>
+        /// <summary>Indicates whether missed call SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? MissedCallSmsEnabled { get; set; }
         /// <summary>Whether new lead email is enabled for this user notification preferences.</summary>
         public bool? NewLeadEmailEnabled { get; set; }
@@ -45,21 +45,21 @@ namespace Leadping.OpenApiClient.Models
         public bool? NewLeadSmsEnabled { get; set; }
         /// <summary>Whether payment failed notifications are enabled for this user notification preferences.</summary>
         public bool? PaymentFailedEnabled { get; set; }
-        /// <summary>The paymentFailedSmsEnabled property</summary>
+        /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
-        /// <summary>The subscriptionRenewingEmailEnabled property</summary>
+        /// <summary>Indicates whether subscription renewing email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? SubscriptionRenewingEmailEnabled { get; set; }
         /// <summary>Whether subscription renewing notifications are enabled for this user notification preferences.</summary>
         public bool? SubscriptionRenewingEnabled { get; set; }
-        /// <summary>The subscriptionRenewingSmsEnabled property</summary>
+        /// <summary>Indicates whether subscription renewing SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? SubscriptionRenewingSmsEnabled { get; set; }
         /// <summary>Whether 10DLC status notifications are enabled for this user notification preferences.</summary>
         public bool? TenDlcStatusEnabled { get; set; }
-        /// <summary>The unreadSmsEmailEnabled property</summary>
+        /// <summary>Indicates whether unread SMS email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? UnreadSmsEmailEnabled { get; set; }
         /// <summary>Whether unread SMS notifications are enabled for this user notification preferences.</summary>
         public bool? UnreadSmsEnabled { get; set; }
-        /// <summary>The unreadSmsSmsEnabled property</summary>
+        /// <summary>Indicates whether unread SMS SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? UnreadSmsSmsEnabled { get; set; }
         /// <summary>Whether usage limit hit notifications are enabled for this user notification preferences.</summary>
         public bool? UsageLimitHitEnabled { get; set; }

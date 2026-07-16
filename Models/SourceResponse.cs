@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>Product allowlist used to accept or route leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,14 +49,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the business or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
-        /// <summary>Compliance notes captured for admin review.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ComplianceNotes { get; set; }
-#nullable restore
-#else
-        public string ComplianceNotes { get; set; }
-#endif
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,13 +158,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>(global::Leadping.OpenApiClient.Models.SourceResponse_business.CreateFromDiscriminatorValue); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
-                { "complianceNotes", n => { ComplianceNotes = n.GetStringValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdByUser", n => { CreatedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser>(global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser.CreateFromDiscriminatorValue); } },
@@ -205,13 +187,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>("business", Business);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
-            writer.WriteStringValue("complianceNotes", ComplianceNotes);
             writer.WriteObjectValue<UntypedNode>("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser>("createdByUser", CreatedByUser);

@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>UTC timestamp when this record was archived.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>User ID of the person who archived this record.</summary>
@@ -79,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isArchived property</summary>
+        /// <summary>Indicates whether the lead has been archived in Leadping.</summary>
         public bool? IsArchived { get; set; }
         /// <summary>Structured metadata used for attribution, integrations, and reporting on this lead response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +116,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "archiveNote", n => { ArchiveNote = n.GetStringValue(); } },
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
@@ -148,7 +139,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteStringValue("archivedByUserId", ArchivedByUserId);
             writer.WriteStringValue("archiveNote", ArchiveNote);

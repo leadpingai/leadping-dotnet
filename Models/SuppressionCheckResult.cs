@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The human-readable admin reason explaining this ion check result.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AdminReason { get; set; }
-#nullable restore
-#else
-        public string AdminReason { get; set; }
-#endif
         /// <summary>Whether this ion check result allows ed.</summary>
         public bool? Allowed { get; set; }
         /// <summary>The business ID associated with this ion check result.</summary>
@@ -116,7 +108,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminReason", n => { AdminReason = n.GetStringValue(); } },
                 { "allowed", n => { Allowed = n.GetBoolValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
@@ -136,7 +127,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("adminReason", AdminReason);
             writer.WriteBoolValue("allowed", Allowed);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("channel", Channel);

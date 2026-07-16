@@ -12,7 +12,7 @@ namespace Leadping.OpenApiClient.Models
     public partial class CustomerNeedsAttentionItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionHref property</summary>
+        /// <summary>Relative URL for the recommended follow-up action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionHref { get; set; }
@@ -20,7 +20,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ActionHref { get; set; }
 #endif
-        /// <summary>The actionText property</summary>
+        /// <summary>Action text associated with this Leadping customer needs attention item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionText { get; set; }
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The detail property</summary>
+        /// <summary>Human-readable detail for this Leadping customer needs attention item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Detail { get; set; }
@@ -38,7 +38,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Detail { get; set; }
 #endif
-        /// <summary>The severity property</summary>
+        /// <summary>Severity associated with this Leadping customer needs attention item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Severity { get; set; }
@@ -46,7 +46,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Severity { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Human-readable title for this Leadping customer needs attention item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }

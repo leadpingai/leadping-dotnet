@@ -12,7 +12,7 @@ namespace Leadping.OpenApiClient.Models
     public partial class CustomerActivationHealthItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionHref property</summary>
+        /// <summary>Relative URL for the recommended follow-up action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionHref { get; set; }
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The detail property</summary>
+        /// <summary>Human-readable detail for this Leadping customer activation health item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Detail { get; set; }
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Detail { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>Key associated with this Leadping customer activation health item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -38,7 +38,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>Human-readable label for this Leadping customer activation health item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -46,7 +46,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Current status for this Leadping customer activation health item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

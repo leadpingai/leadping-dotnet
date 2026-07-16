@@ -15,8 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether this usage counter is only shown to admins.</summary>
-        public bool? AdminOnly { get; set; }
         /// <summary>The stable key for this usage counter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +68,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminOnly", n => { AdminOnly = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "sortOrder", n => { SortOrder = n.GetIntValue(); } },
@@ -85,7 +82,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("adminOnly", AdminOnly);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("label", Label);
             writer.WriteIntValue("sortOrder", SortOrder);

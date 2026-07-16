@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>Contact details for the lead or customer represented by this lead request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +90,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "contact", n => { Contact = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>(global::Leadping.OpenApiClient.Models.LeadContact.CreateFromDiscriminatorValue); } },
                 { "customer", n => { Customer = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>(global::Leadping.OpenApiClient.Models.LeadProfile.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -115,7 +106,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>("contact", Contact);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>("customer", Customer);
             writer.WriteBoolValue("enabled", Enabled);

@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Human-readable summary for this Leadping customer analytics.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerAnalyticsSummary : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The averageResponseMinutes property</summary>
+        /// <summary>Average time, in minutes, before a lead receives a response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? AverageResponseMinutes { get; set; }
@@ -22,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode AverageResponseMinutes { get; set; }
 #endif
-        /// <summary>The billingStatus property</summary>
+        /// <summary>Current billing status for this Leadping customer analytics summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BillingStatus { get; set; }
@@ -30,15 +31,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingStatus { get; set; }
 #endif
-        /// <summary>The callMinutes property</summary>
+        /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
         public double? CallMinutes { get; set; }
-        /// <summary>The callsPlaced property</summary>
+        /// <summary>Number of outbound calls placed during the reporting period.</summary>
         public int? CallsPlaced { get; set; }
-        /// <summary>The callsReceived property</summary>
+        /// <summary>Number of inbound calls received during the reporting period.</summary>
         public int? CallsReceived { get; set; }
-        /// <summary>The leads property</summary>
+        /// <summary>Number of leads represented by this Leadping customer analytics summary.</summary>
         public int? Leads { get; set; }
-        /// <summary>The leadsComparison property</summary>
+        /// <summary>Date and time when this Leadping customer analytics summary was leads comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison? LeadsComparison { get; set; }
@@ -46,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison LeadsComparison { get; set; }
 #endif
-        /// <summary>The medianResponseMinutes property</summary>
+        /// <summary>Median response minutes measured in minutes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? MedianResponseMinutes { get; set; }
@@ -54,23 +55,23 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode MedianResponseMinutes { get; set; }
 #endif
-        /// <summary>The missedCalls property</summary>
+        /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
-        /// <summary>The missedLeads property</summary>
+        /// <summary>Number of missed leads represented by this Leadping customer analytics summary.</summary>
         public int? MissedLeads { get; set; }
-        /// <summary>The respondedWithinFiveMinutesPercent property</summary>
+        /// <summary>Responded within five minutes percent expressed as a percentage.</summary>
         public double? RespondedWithinFiveMinutesPercent { get; set; }
-        /// <summary>The smsReceived property</summary>
+        /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
-        /// <summary>The smsSent property</summary>
+        /// <summary>Number of SMS messages sent during the reporting period.</summary>
         public int? SmsSent { get; set; }
-        /// <summary>The unreadMessages property</summary>
+        /// <summary>Number of unread messages represented by this Leadping customer analytics summary.</summary>
         public int? UnreadMessages { get; set; }
-        /// <summary>The usageSpend property</summary>
+        /// <summary>Usage spend represented by this Leadping customer analytics summary.</summary>
         public double? UsageSpend { get; set; }
-        /// <summary>The walletBalance property</summary>
+        /// <summary>Wallet balance represented by this Leadping customer analytics summary.</summary>
         public double? WalletBalance { get; set; }
-        /// <summary>The walletStatus property</summary>
+        /// <summary>Current wallet status for this Leadping customer analytics summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WalletStatus { get; set; }

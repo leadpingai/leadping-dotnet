@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? CallbackAt { get; set; }
         /// <summary>Controlled disposition categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.DispositionResponse_category? Category { get; set; }
-        /// <summary>The changedAt property</summary>
+        /// <summary>Date and time when the disposition change occurred.</summary>
         public DateTimeOffset? ChangedAt { get; set; }
-        /// <summary>The changedByAutomationId property</summary>
+        /// <summary>Unique identifier of the automation that changed the disposition, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangedByAutomationId { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ChangedByAutomationId { get; set; }
 #endif
-        /// <summary>The changedByUserId property</summary>
+        /// <summary>Unique identifier of the Leadping user who made the change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangedByUserId { get; set; }
@@ -87,7 +87,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The newDispositionId property</summary>
+        /// <summary>Unique identifier of the new disposition associated with this Leadping disposition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NewDispositionId { get; set; }
@@ -103,7 +103,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The oldDispositionId property</summary>
+        /// <summary>Unique identifier of the old disposition associated with this Leadping disposition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OldDispositionId { get; set; }
@@ -111,7 +111,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OldDispositionId { get; set; }
 #endif
-        /// <summary>The oldDispositionOutcome property</summary>
+        /// <summary>Old disposition outcome associated with this Leadping disposition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OldDispositionOutcome { get; set; }
@@ -119,7 +119,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OldDispositionOutcome { get; set; }
 #endif
-        /// <summary>The oldDispositionType property</summary>
+        /// <summary>Old disposition type classification for this Leadping disposition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OldDispositionType { get; set; }

@@ -107,14 +107,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundPhoneNumberId { get; set; }
 #endif
-        /// <summary>Provider message identifier for SMS delivery tracking and reconciliation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderMessageId { get; set; }
-#nullable restore
-#else
-        public string ProviderMessageId { get; set; }
-#endif
         /// <summary>UTC timestamp when Leadping queued this event detail response for processing.</summary>
         public DateTimeOffset? QueuedAt { get; set; }
         /// <summary>UTC timestamp when Leadping received this inbound event or message.</summary>
@@ -228,7 +220,6 @@ namespace Leadping.OpenApiClient.Models
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
-                { "providerMessageId", n => { ProviderMessageId = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "receivedAt", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "scheduledFor", n => { ScheduledFor = n.GetDateTimeOffsetValue(); } },
@@ -269,7 +260,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
-            writer.WriteStringValue("providerMessageId", ProviderMessageId);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);
             writer.WriteDateTimeOffsetValue("scheduledFor", ScheduledFor);

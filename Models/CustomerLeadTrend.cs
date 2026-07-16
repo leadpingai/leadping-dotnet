@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Lead trend associated with this Leadping customer analytics.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerLeadTrend : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comparison property</summary>
+        /// <summary>Date and time when this Leadping customer lead trend was comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison? Comparison { get; set; }
@@ -22,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison Comparison { get; set; }
 #endif
-        /// <summary>The points property</summary>
+        /// <summary>Collection of points included with this Leadping customer lead trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>? Points { get; set; }
@@ -30,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint> Points { get; set; }
 #endif
-        /// <summary>The total property</summary>
+        /// <summary>Total number of total records represented by this Leadping customer lead trend.</summary>
         public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerLeadTrend"/> and sets the default values.

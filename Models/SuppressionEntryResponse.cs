@@ -63,14 +63,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedPhoneNumber { get; set; }
 #endif
-        /// <summary>The provider event ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderEventId { get; set; }
-#nullable restore
-#else
-        public string ProviderEventId { get; set; }
-#endif
         /// <summary>The human-readable reason explaining this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,14 +88,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Source { get; set; }
-#endif
-        /// <summary>The source event ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceEventId { get; set; }
-#nullable restore
-#else
-        public string SourceEventId { get; set; }
 #endif
         /// <summary>The current status for this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,12 +130,10 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "normalizedEmail", n => { NormalizedEmail = n.GetStringValue(); } },
                 { "normalizedPhoneNumber", n => { NormalizedPhoneNumber = n.GetStringValue(); } },
-                { "providerEventId", n => { ProviderEventId = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "recipientIdentifier", n => { RecipientIdentifier = n.GetStringValue(); } },
                 { "releasedAt", n => { ReleasedAt = n.GetDateTimeOffsetValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "sourceEventId", n => { SourceEventId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "suppressedAt", n => { SuppressedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -169,12 +151,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("normalizedEmail", NormalizedEmail);
             writer.WriteStringValue("normalizedPhoneNumber", NormalizedPhoneNumber);
-            writer.WriteStringValue("providerEventId", ProviderEventId);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("recipientIdentifier", RecipientIdentifier);
             writer.WriteDateTimeOffsetValue("releasedAt", ReleasedAt);
             writer.WriteStringValue("source", Source);
-            writer.WriteStringValue("sourceEventId", SourceEventId);
             writer.WriteStringValue("status", Status);
             writer.WriteDateTimeOffsetValue("suppressedAt", SuppressedAt);
             writer.WriteAdditionalData(AdditionalData);

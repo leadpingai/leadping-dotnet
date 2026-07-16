@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Automation ID connected to this workflow, run, or event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AutomationId { get; set; }
-#nullable restore
-#else
-        public string AutomationId { get; set; }
-#endif
         /// <summary>Messaging campaign identifier associated with this phone call initiation request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,18 +39,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumberId { get; set; }
 #endif
-        /// <summary>Bulk import batch ID that created or updated this lead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ImportBatchId { get; set; }
-#nullable restore
-#else
-        public string ImportBatchId { get; set; }
-#endif
-        /// <summary>Indicates whether automation created or triggered this phone call initiation request.</summary>
-        public bool? IsAutomated { get; set; }
-        /// <summary>Indicates whether this record originated from a bulk import rather than a real-time lead source.</summary>
-        public bool? IsImportedLead { get; set; }
         /// <summary>Lead ID associated with the outbound call request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,14 +46,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LeadId { get; set; }
-#endif
-        /// <summary>Outbound delivery request ID connected to this decision or attempt.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OutboundDeliveryRequestId { get; set; }
-#nullable restore
-#else
-        public string OutboundDeliveryRequestId { get; set; }
 #endif
         /// <summary>Idempotency key used to prevent duplicate outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,20 +55,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundIdempotencyKey { get; set; }
 #endif
-        /// <summary>Defines priority classes used when pacing outbound delivery.</summary>
-        public global::Leadping.OpenApiClient.Models.InitiateCallRequest_outboundPriority? OutboundPriority { get; set; }
-        /// <summary>Outbound reservation ID used to throttle and track delivery capacity.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OutboundReservationId { get; set; }
-#nullable restore
-#else
-        public string OutboundReservationId { get; set; }
-#endif
-        /// <summary>Defines the source that requested outbound delivery.</summary>
-        public global::Leadping.OpenApiClient.Models.InitiateCallRequest_outboundSource? OutboundSource { get; set; }
-        /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
-        public global::Leadping.OpenApiClient.Models.InitiateCallRequest_selectionReason? SelectionReason { get; set; }
         /// <summary>Lead source ID used for call attribution and sender selection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,20 +90,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "automationId", n => { AutomationId = n.GetStringValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
-                { "importBatchId", n => { ImportBatchId = n.GetStringValue(); } },
-                { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
-                { "isImportedLead", n => { IsImportedLead = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
-                { "outboundDeliveryRequestId", n => { OutboundDeliveryRequestId = n.GetStringValue(); } },
                 { "outboundIdempotencyKey", n => { OutboundIdempotencyKey = n.GetStringValue(); } },
-                { "outboundPriority", n => { OutboundPriority = n.GetEnumValue<global::Leadping.OpenApiClient.Models.InitiateCallRequest_outboundPriority>(); } },
-                { "outboundReservationId", n => { OutboundReservationId = n.GetStringValue(); } },
-                { "outboundSource", n => { OutboundSource = n.GetEnumValue<global::Leadping.OpenApiClient.Models.InitiateCallRequest_outboundSource>(); } },
-                { "selectionReason", n => { SelectionReason = n.GetEnumValue<global::Leadping.OpenApiClient.Models.InitiateCallRequest_selectionReason>(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "wasManuallyOverridden", n => { WasManuallyOverridden = n.GetBoolValue(); } },
             };
@@ -157,20 +106,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("automationId", AutomationId);
             writer.WriteStringValue("campaignId", CampaignId);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
-            writer.WriteStringValue("importBatchId", ImportBatchId);
-            writer.WriteBoolValue("isAutomated", IsAutomated);
-            writer.WriteBoolValue("isImportedLead", IsImportedLead);
             writer.WriteStringValue("leadId", LeadId);
-            writer.WriteStringValue("outboundDeliveryRequestId", OutboundDeliveryRequestId);
             writer.WriteStringValue("outboundIdempotencyKey", OutboundIdempotencyKey);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.InitiateCallRequest_outboundPriority>("outboundPriority", OutboundPriority);
-            writer.WriteStringValue("outboundReservationId", OutboundReservationId);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.InitiateCallRequest_outboundSource>("outboundSource", OutboundSource);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.InitiateCallRequest_selectionReason>("selectionReason", SelectionReason);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteBoolValue("wasManuallyOverridden", WasManuallyOverridden);
             writer.WriteAdditionalData(AdditionalData);

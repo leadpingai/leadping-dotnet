@@ -59,14 +59,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>Provider lifecycle or delivery status for this phone number messaging event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderStatus { get; set; }
-#nullable restore
-#else
-        public string ProviderStatus { get; set; }
-#endif
         /// <summary>Short preview of the SMS or conversation text for this phone number messaging event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +107,6 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isOptOut", n => { IsOptOut = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "providerStatus", n => { ProviderStatus = n.GetStringValue(); } },
                 { "textPreview", n => { TextPreview = n.GetStringValue(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
             };
@@ -134,7 +125,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isOptOut", IsOptOut);
             writer.WriteStringValue("label", Label);
-            writer.WriteStringValue("providerStatus", ProviderStatus);
             writer.WriteStringValue("textPreview", TextPreview);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
             writer.WriteAdditionalData(AdditionalData);

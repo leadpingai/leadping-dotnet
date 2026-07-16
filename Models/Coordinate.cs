@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The latitude property</summary>
+        /// <summary>Latitude of the geographic coordinate in decimal degrees, from -90 through 90.</summary>
         public double? Latitude { get; set; }
-        /// <summary>The longitude property</summary>
+        /// <summary>Longitude of the geographic coordinate in decimal degrees, from -180 through 180.</summary>
         public double? Longitude { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.Coordinate"/> and sets the default values.

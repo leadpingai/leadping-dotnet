@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>UTC timestamp when this record was archived.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>User ID of the person who archived this record.</summary>
@@ -180,7 +172,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "archivedByUserId", n => { ArchivedByUserId = n.GetStringValue(); } },
@@ -211,7 +202,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteStringValue("archivedByUserId", ArchivedByUserId);
             writer.WriteIntValue("archiveReason", ArchiveReason);

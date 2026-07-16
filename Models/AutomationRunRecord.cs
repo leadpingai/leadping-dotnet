@@ -41,30 +41,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when processing completed for this automation run record.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>Snapshot of request context captured when this automation run record was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot? ContextSnapshot { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot ContextSnapshot { get; set; }
-#endif
-        /// <summary>Error text returned while processing this automation run record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Error { get; set; }
-#nullable restore
-#else
-        public string Error { get; set; }
-#endif
-        /// <summary>Idempotency key used to identify a unique automation workflow execution.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExecutionKey { get; set; }
-#nullable restore
-#else
-        public string ExecutionKey { get; set; }
-#endif
         /// <summary>Execution mode used for automation preview or live workflow processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,14 +84,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string SkippedReason { get; set; }
-#endif
-        /// <summary>Source event ID that triggered this workflow or outbound delivery.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceEventId { get; set; }
-#nullable restore
-#else
-        public string SourceEventId { get; set; }
 #endif
         /// <summary>UTC timestamp when processing started for this automation run record.</summary>
         public DateTimeOffset? StartedAt { get; set; }
@@ -164,9 +132,6 @@ namespace Leadping.OpenApiClient.Models
                 { "automationId", n => { AutomationId = n.GetStringValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "contextSnapshot", n => { ContextSnapshot = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot>(global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "executionKey", n => { ExecutionKey = n.GetStringValue(); } },
                 { "executionMode", n => { ExecutionMode = n.GetStringValue(); } },
                 { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -174,7 +139,6 @@ namespace Leadping.OpenApiClient.Models
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "skippedReason", n => { SkippedReason = n.GetStringValue(); } },
-                { "sourceEventId", n => { SourceEventId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "triggerType", n => { TriggerType = n.GetStringValue(); } },
@@ -191,9 +155,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("automationId", AutomationId);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_contextSnapshot>("contextSnapshot", ContextSnapshot);
-            writer.WriteStringValue("error", Error);
-            writer.WriteStringValue("executionKey", ExecutionKey);
             writer.WriteStringValue("executionMode", ExecutionMode);
             writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("id", Id);
@@ -201,7 +162,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteStringValue("skippedReason", SkippedReason);
-            writer.WriteStringValue("sourceEventId", SourceEventId);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("triggerType", TriggerType);

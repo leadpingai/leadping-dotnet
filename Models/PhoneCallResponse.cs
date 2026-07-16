@@ -109,14 +109,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>Structured metadata used for attribution, integrations, and reporting on this phone call.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneCallResponse_metadata? Metadata { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.PhoneCallResponse_metadata Metadata { get; set; }
-#endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Phone number used by this phone call for calls, SMS, lookup, or routing.</summary>
@@ -208,7 +200,6 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_metadata>(global::Leadping.OpenApiClient.Models.PhoneCallResponse_metadata.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
@@ -243,7 +234,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_metadata>("metadata", Metadata);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Last failure associated with this Leadping customer automation health.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerAutomationHealth_lastFailure : global::Leadping.OpenApiClient.Models.CustomerFailingAutomation, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

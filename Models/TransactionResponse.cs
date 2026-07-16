@@ -13,14 +13,6 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Leadping account identifier used for wallet and transaction reconciliation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountId { get; set; }
-#nullable restore
-#else
-        public string AccountId { get; set; }
-#endif
         /// <summary>Display name of the wallet or account used for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,24 +41,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessName { get; set; }
 #endif
-        /// <summary>Correlation ID used to trace this workflow or request across Leadping services.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CorrelationId { get; set; }
-#nullable restore
-#else
-        public string CorrelationId { get; set; }
-#endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Display name or identifier for the person or system that created this billing transaction response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedBy { get; set; }
-#nullable restore
-#else
-        public string CreatedBy { get; set; }
-#endif
         /// <summary>Human-readable description that explains this billing transaction response to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,14 +58,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public UntypedNode GatewayFeeAmount { get; set; }
-#endif
-        /// <summary>Payment gateway identifier linked to this transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GatewayId { get; set; }
-#nullable restore
-#else
-        public string GatewayId { get; set; }
 #endif
         /// <summary>Payment gateway status returned for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,24 +91,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadName { get; set; }
 #endif
-        /// <summary>Structured metadata used for attribution, integrations, and reporting on this billing transaction response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.TransactionResponse_metadata? Metadata { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.TransactionResponse_metadata Metadata { get; set; }
-#endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>Display name or identifier for the person or system that last modified this billing transaction response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifiedBy { get; set; }
-#nullable restore
-#else
-        public string ModifiedBy { get; set; }
-#endif
         /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
         public double? NetAmount { get; set; }
         /// <summary>Additional billing notes that explain the transaction for admins or customers.</summary>
@@ -196,24 +148,18 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountId", n => { AccountId = n.GetStringValue(); } },
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "businessName", n => { BusinessName = n.GetStringValue(); } },
-                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "gatewayFeeAmount", n => { GatewayFeeAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "gatewayId", n => { GatewayId = n.GetStringValue(); } },
                 { "gatewayStatus", n => { GatewayStatus = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_metadata>(global::Leadping.OpenApiClient.Models.TransactionResponse_metadata.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
-                { "modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
                 { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "paymentMethodDisplay", n => { PaymentMethodDisplay = n.GetStringValue(); } },
@@ -229,24 +175,18 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("businessName", BusinessName);
-            writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<UntypedNode>("gatewayFeeAmount", GatewayFeeAmount);
-            writer.WriteStringValue("gatewayId", GatewayId);
             writer.WriteStringValue("gatewayStatus", GatewayStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadName", LeadName);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_metadata>("metadata", Metadata);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
-            writer.WriteStringValue("modifiedBy", ModifiedBy);
             writer.WriteDoubleValue("netAmount", NetAmount);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("paymentMethodDisplay", PaymentMethodDisplay);

@@ -21,10 +21,6 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
         /// <summary>The monetary customer charge amount for this usage summary line.</summary>
         public double? CustomerChargeAmount { get; set; }
-        /// <summary>The monetary internal cost amount for this usage summary line.</summary>
-        public double? InternalCostAmount { get; set; }
-        /// <summary>The monetary provider cost amount for this usage summary line.</summary>
-        public double? ProviderCostAmount { get; set; }
         /// <summary>The quantity value for this usage summary line.</summary>
         public double? Quantity { get; set; }
         /// <summary>The record count for this usage summary line.</summary>
@@ -59,8 +55,6 @@ namespace Leadping.OpenApiClient.Models
                 { "billableUnit", n => { BillableUnit = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>(); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>(); } },
                 { "customerChargeAmount", n => { CustomerChargeAmount = n.GetDoubleValue(); } },
-                { "internalCostAmount", n => { InternalCostAmount = n.GetDoubleValue(); } },
-                { "providerCostAmount", n => { ProviderCostAmount = n.GetDoubleValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "recordCount", n => { RecordCount = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>(); } },
@@ -76,8 +70,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>("billableUnit", BillableUnit);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>("channel", Channel);
             writer.WriteDoubleValue("customerChargeAmount", CustomerChargeAmount);
-            writer.WriteDoubleValue("internalCostAmount", InternalCostAmount);
-            writer.WriteDoubleValue("providerCostAmount", ProviderCostAmount);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteIntValue("recordCount", RecordCount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>("status", Status);

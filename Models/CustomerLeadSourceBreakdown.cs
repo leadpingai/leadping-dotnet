@@ -14,11 +14,11 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The leads property</summary>
+        /// <summary>Number of leads represented by this Leadping customer lead source breakdown.</summary>
         public int? Leads { get; set; }
-        /// <summary>The percent property</summary>
+        /// <summary>Percent expressed as a percentage.</summary>
         public double? Percent { get; set; }
-        /// <summary>The source property</summary>
+        /// <summary>Source classification for this Leadping customer lead source breakdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }

@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Internal admin note used to track feedback review or resolution.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AdminNote { get; set; }
-#nullable restore
-#else
-        public string AdminNote { get; set; }
-#endif
         /// <summary>Indicates whether the submitter permits Leadping support to contact them about the feedback.</summary>
         public bool? AllowContact { get; set; }
         /// <summary>Product area or app section connected to this feedback item response.</summary>
@@ -41,14 +33,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>Business name snapshot captured when the user submitted the feedback.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessNameSnapshot { get; set; }
-#nullable restore
-#else
-        public string BusinessNameSnapshot { get; set; }
-#endif
         /// <summary>Client application version that submitted this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,42 +41,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ClientVersion { get; set; }
 #endif
-        /// <summary>UTC timestamp when this feedback item response was closed.</summary>
-        public DateTimeOffset? ClosedAt { get; set; }
-        /// <summary>User ID of the person who closed this item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ClosedByUserId { get; set; }
-#nullable restore
-#else
-        public string ClosedByUserId { get; set; }
-#endif
         /// <summary>UTC timestamp when this feedback item response was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Feedback item ID that this item duplicates, when applicable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DuplicateOfFeedbackItemId { get; set; }
-#nullable restore
-#else
-        public string DuplicateOfFeedbackItemId { get; set; }
-#endif
-        /// <summary>Deployment environment where this feedback item response was captured or processed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Environment { get; set; }
-#nullable restore
-#else
-        public string Environment { get; set; }
-#endif
-        /// <summary>External issue tracker URL linked to this feedback item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalIssueUrl { get; set; }
-#nullable restore
-#else
-        public string ExternalIssueUrl { get; set; }
-#endif
         /// <summary>Unique Leadping identifier for this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,16 +59,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>UTC timestamp when an admin reviewed this feedback item response.</summary>
-        public DateTimeOffset? ReviewedAt { get; set; }
-        /// <summary>User ID of the admin who reviewed this item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReviewedByUserId { get; set; }
-#nullable restore
-#else
-        public string ReviewedByUserId { get; set; }
-#endif
         /// <summary>Application route where this feedback item response originated or should direct the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,50 +67,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Route { get; set; }
 #endif
-        /// <summary>Leadping API server version that processed this feedback item response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ServerVersion { get; set; }
-#nullable restore
-#else
-        public string ServerVersion { get; set; }
-#endif
         /// <summary>Current lifecycle status for this feedback item response in the Leadping API.</summary>
         public global::Leadping.OpenApiClient.Models.FeedbackStatus? Status { get; set; }
-        /// <summary>Billing plan snapshot captured when the user submitted the feedback.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SubscriptionPlanSnapshot { get; set; }
-#nullable restore
-#else
-        public string SubscriptionPlanSnapshot { get; set; }
-#endif
         /// <summary>Type classification used to route and interpret this feedback item response in the Leadping API.</summary>
         public global::Leadping.OpenApiClient.Models.FeedbackType? Type { get; set; }
-        /// <summary>Browser or client user agent captured when this feedback item response was submitted.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserAgent { get; set; }
-#nullable restore
-#else
-        public string UserAgent { get; set; }
-#endif
-        /// <summary>User display name snapshot captured when the user submitted the feedback.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserDisplayNameSnapshot { get; set; }
-#nullable restore
-#else
-        public string UserDisplayNameSnapshot { get; set; }
-#endif
-        /// <summary>User email snapshot captured when the user submitted the feedback.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserEmailSnapshot { get; set; }
-#nullable restore
-#else
-        public string UserEmailSnapshot { get; set; }
-#endif
         /// <summary>User ID for the person who submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -204,30 +104,16 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminNote", n => { AdminNote = n.GetStringValue(); } },
                 { "allowContact", n => { AllowContact = n.GetBoolValue(); } },
                 { "area", n => { Area = n.GetStringValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "businessNameSnapshot", n => { BusinessNameSnapshot = n.GetStringValue(); } },
                 { "clientVersion", n => { ClientVersion = n.GetStringValue(); } },
-                { "closedAt", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
-                { "closedByUserId", n => { ClosedByUserId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "duplicateOfFeedbackItemId", n => { DuplicateOfFeedbackItemId = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "externalIssueUrl", n => { ExternalIssueUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "reviewedAt", n => { ReviewedAt = n.GetDateTimeOffsetValue(); } },
-                { "reviewedByUserId", n => { ReviewedByUserId = n.GetStringValue(); } },
                 { "route", n => { Route = n.GetStringValue(); } },
-                { "serverVersion", n => { ServerVersion = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.FeedbackStatus>(); } },
-                { "subscriptionPlanSnapshot", n => { SubscriptionPlanSnapshot = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Leadping.OpenApiClient.Models.FeedbackType>(); } },
-                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
-                { "userDisplayNameSnapshot", n => { UserDisplayNameSnapshot = n.GetStringValue(); } },
-                { "userEmailSnapshot", n => { UserEmailSnapshot = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -238,30 +124,16 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("adminNote", AdminNote);
             writer.WriteBoolValue("allowContact", AllowContact);
             writer.WriteStringValue("area", Area);
             writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteStringValue("businessNameSnapshot", BusinessNameSnapshot);
             writer.WriteStringValue("clientVersion", ClientVersion);
-            writer.WriteDateTimeOffsetValue("closedAt", ClosedAt);
-            writer.WriteStringValue("closedByUserId", ClosedByUserId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("duplicateOfFeedbackItemId", DuplicateOfFeedbackItemId);
-            writer.WriteStringValue("environment", Environment);
-            writer.WriteStringValue("externalIssueUrl", ExternalIssueUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
-            writer.WriteDateTimeOffsetValue("reviewedAt", ReviewedAt);
-            writer.WriteStringValue("reviewedByUserId", ReviewedByUserId);
             writer.WriteStringValue("route", Route);
-            writer.WriteStringValue("serverVersion", ServerVersion);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.FeedbackStatus>("status", Status);
-            writer.WriteStringValue("subscriptionPlanSnapshot", SubscriptionPlanSnapshot);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.FeedbackType>("type", Type);
-            writer.WriteStringValue("userAgent", UserAgent);
-            writer.WriteStringValue("userDisplayNameSnapshot", UserDisplayNameSnapshot);
-            writer.WriteStringValue("userEmailSnapshot", UserEmailSnapshot);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

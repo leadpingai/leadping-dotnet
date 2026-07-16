@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneNumberRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.PhoneNumberRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>Business ID that owns the phone number being created or updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,7 +74,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRequest_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.PhoneNumberRequest_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -97,7 +88,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRequest_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);

@@ -14,13 +14,13 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The callMinutes property</summary>
+        /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
         public double? CallMinutes { get; set; }
-        /// <summary>The calls property</summary>
+        /// <summary>Number of calls represented by this Leadping customer communication usage point.</summary>
         public int? Calls { get; set; }
-        /// <summary>The endAt property</summary>
+        /// <summary>Date and time when this Leadping customer communication usage point was end.</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>Human-readable label for this Leadping customer communication usage point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -28,13 +28,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The smsReceived property</summary>
+        /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
-        /// <summary>The smsSent property</summary>
+        /// <summary>Number of SMS messages sent during the reporting period.</summary>
         public int? SmsSent { get; set; }
-        /// <summary>The spend property</summary>
+        /// <summary>Spend represented by this Leadping customer communication usage point.</summary>
         public double? Spend { get; set; }
-        /// <summary>The startAt property</summary>
+        /// <summary>Date and time when this Leadping customer communication usage point was start.</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint"/> and sets the default values.

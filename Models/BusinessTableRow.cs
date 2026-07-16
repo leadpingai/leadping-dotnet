@@ -25,14 +25,6 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_activationStatus? ActivationStatus { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The admin force enablement override on this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.BusinessTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.BusinessTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
         /// <summary>The date and time this business API key expires, or null when it has no expiration.</summary>
         public DateTimeOffset? ApiKeyExpiresAt { get; set; }
         /// <summary>The date and time this business API key was first used.</summary>
@@ -87,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
-        /// <summary>The lastSubscriptionEventAt property</summary>
+        /// <summary>Date and time when this Leadping business table row was last subscription event.</summary>
         public DateTimeOffset? LastSubscriptionEventAt { get; set; }
         /// <summary>The date and time for the modified at value on this business.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
@@ -101,7 +93,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether needs admin review applies to this business.</summary>
         public bool? NeedsAdminReview { get; set; }
-        /// <summary>The paymentFailedAt property</summary>
+        /// <summary>Date and time when this Leadping business table row was payment failed.</summary>
         public DateTimeOffset? PaymentFailedAt { get; set; }
         /// <summary>The phone number associated with this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_setupStep? SetupStep { get; set; }
         /// <summary>Defines the supported Business Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_status? Status { get; set; }
-        /// <summary>The subscriptionCancelAt property</summary>
+        /// <summary>Date and time when this Leadping business table row was subscription cancel.</summary>
         public DateTimeOffset? SubscriptionCancelAt { get; set; }
         /// <summary>Defines the supported Subscription Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_subscriptionStatus? SubscriptionStatus { get; set; }
@@ -176,7 +168,6 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "accountBalance", n => { AccountBalance = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "activationStatus", n => { ActivationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_activationStatus>(); } },
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.BusinessTableRow_adminEnablementOverride.CreateFromDiscriminatorValue); } },
                 { "apiKeyExpiresAt", n => { ApiKeyExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyFirstUsedAt", n => { ApiKeyFirstUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyIssuedAt", n => { ApiKeyIssuedAt = n.GetDateTimeOffsetValue(); } },
@@ -216,7 +207,6 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("accountBalance", AccountBalance);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_activationStatus>("activationStatus", ActivationStatus);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
             writer.WriteDateTimeOffsetValue("apiKeyExpiresAt", ApiKeyExpiresAt);
             writer.WriteDateTimeOffsetValue("apiKeyFirstUsedAt", ApiKeyFirstUsedAt);
             writer.WriteDateTimeOffsetValue("apiKeyIssuedAt", ApiKeyIssuedAt);

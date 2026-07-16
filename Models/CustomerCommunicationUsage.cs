@@ -7,30 +7,31 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Communication usage associated with this Leadping customer analytics.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerCommunicationUsage : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The answeredCalls property</summary>
+        /// <summary>Number of calls answered during the reporting period.</summary>
         public int? AnsweredCalls { get; set; }
-        /// <summary>The callMinutes property</summary>
+        /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
         public double? CallMinutes { get; set; }
-        /// <summary>The callsPlaced property</summary>
+        /// <summary>Number of outbound calls placed during the reporting period.</summary>
         public int? CallsPlaced { get; set; }
-        /// <summary>The callsReceived property</summary>
+        /// <summary>Number of inbound calls received during the reporting period.</summary>
         public int? CallsReceived { get; set; }
-        /// <summary>The failedOrBlockedSms property</summary>
+        /// <summary>Number of SMS messages that failed or were blocked during the reporting period.</summary>
         public int? FailedOrBlockedSms { get; set; }
-        /// <summary>The missedCalls property</summary>
+        /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
-        /// <summary>The smsReceived property</summary>
+        /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
-        /// <summary>The smsSent property</summary>
+        /// <summary>Number of SMS messages sent during the reporting period.</summary>
         public int? SmsSent { get; set; }
-        /// <summary>The trend property</summary>
+        /// <summary>Collection of trend included with this Leadping customer communication usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint>? Trend { get; set; }
@@ -38,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint> Trend { get; set; }
 #endif
-        /// <summary>The usageSpend property</summary>
+        /// <summary>Usage spend represented by this Leadping customer communication usage.</summary>
         public double? UsageSpend { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage"/> and sets the default values.

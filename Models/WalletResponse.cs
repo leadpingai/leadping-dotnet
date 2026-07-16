@@ -111,30 +111,6 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? PurchasedAt { get; set; }
         /// <summary>Defines the source that created a wallet credit lot.</summary>
         public global::Leadping.OpenApiClient.Models.WalletResponse_sourceType? SourceType { get; set; }
-        /// <summary>Stripe charge identifier linked to this billing transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StripeChargeId { get; set; }
-#nullable restore
-#else
-        public string StripeChargeId { get; set; }
-#endif
-        /// <summary>Stripe invoice identifier linked to this billing transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StripeInvoiceId { get; set; }
-#nullable restore
-#else
-        public string StripeInvoiceId { get; set; }
-#endif
-        /// <summary>Stripe payment intent identifier linked to this billing transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StripePaymentIntentId { get; set; }
-#nullable restore
-#else
-        public string StripePaymentIntentId { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.WalletResponse"/> and sets the default values.
         /// </summary>
@@ -178,9 +154,6 @@ namespace Leadping.OpenApiClient.Models
                 { "originalTransactionId", n => { OriginalTransactionId = n.GetStringValue(); } },
                 { "purchasedAt", n => { PurchasedAt = n.GetDateTimeOffsetValue(); } },
                 { "sourceType", n => { SourceType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_sourceType>(); } },
-                { "stripeChargeId", n => { StripeChargeId = n.GetStringValue(); } },
-                { "stripeInvoiceId", n => { StripeInvoiceId = n.GetStringValue(); } },
-                { "stripePaymentIntentId", n => { StripePaymentIntentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -208,9 +181,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("originalTransactionId", OriginalTransactionId);
             writer.WriteDateTimeOffsetValue("purchasedAt", PurchasedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_sourceType>("sourceType", SourceType);
-            writer.WriteStringValue("stripeChargeId", StripeChargeId);
-            writer.WriteStringValue("stripeInvoiceId", StripeInvoiceId);
-            writer.WriteStringValue("stripePaymentIntentId", StripePaymentIntentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

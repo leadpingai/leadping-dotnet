@@ -7,18 +7,19 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Range associated with this Leadping customer analytics.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AnalyticsDateRange : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bucketSize property</summary>
+        /// <summary>Bucket size associated with this Leadping analytics date range.</summary>
         public int? BucketSize { get; set; }
-        /// <summary>The endAt property</summary>
+        /// <summary>Date and time when this Leadping analytics date range was end.</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>The startAt property</summary>
+        /// <summary>Date and time when this Leadping analytics date range was start.</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AnalyticsDateRange"/> and sets the default values.

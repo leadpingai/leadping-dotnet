@@ -23,16 +23,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>Indicates whether this record is restricted to internal Leadping testing.</summary>
-        public bool? InternalTestOnly { get; set; }
-        /// <summary>Messaging profile identifier used for SMS routing with the provider.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessagingProfileId { get; set; }
-#nullable restore
-#else
-        public string MessagingProfileId { get; set; }
-#endif
         /// <summary>Indicates whether the phone number can be used for SMS messaging.</summary>
         public bool? SmsEnabled { get; set; }
         /// <summary>Lead source ID assigned to this phone number for attribution and routing.</summary>
@@ -51,18 +41,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
-        /// <summary>Leadping v oi ce co nn ec ti o n ID that links this phone number routing metadata to the related record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VoiceConnectionId { get; set; }
-#nullable restore
-#else
-        public string VoiceConnectionId { get; set; }
-#endif
         /// <summary>Indicates whether the phone number can be used for voice calls.</summary>
         public bool? VoiceEnabled { get; set; }
-        /// <summary>Indicates whether this phone number should only be used for warmup traffic.</summary>
-        public bool? WarmupOnly { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata"/> and sets the default values.
         /// </summary>
@@ -89,14 +69,10 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
-                { "internalTestOnly", n => { InternalTestOnly = n.GetBoolValue(); } },
-                { "messagingProfileId", n => { MessagingProfileId = n.GetStringValue(); } },
                 { "smsEnabled", n => { SmsEnabled = n.GetBoolValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
-                { "voiceConnectionId", n => { VoiceConnectionId = n.GetStringValue(); } },
                 { "voiceEnabled", n => { VoiceEnabled = n.GetBoolValue(); } },
-                { "warmupOnly", n => { WarmupOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -107,14 +83,10 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("campaignId", CampaignId);
-            writer.WriteBoolValue("internalTestOnly", InternalTestOnly);
-            writer.WriteStringValue("messagingProfileId", MessagingProfileId);
             writer.WriteBoolValue("smsEnabled", SmsEnabled);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("teamId", TeamId);
-            writer.WriteStringValue("voiceConnectionId", VoiceConnectionId);
             writer.WriteBoolValue("voiceEnabled", VoiceEnabled);
-            writer.WriteBoolValue("warmupOnly", WarmupOnly);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,7 +13,7 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWorkflowRunResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actions property</summary>
+        /// <summary>Collection of actions included with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse>? Actions { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automationId property</summary>
+        /// <summary>Unique identifier of the automation associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutomationId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationId { get; set; }
 #endif
-        /// <summary>The automationName property</summary>
+        /// <summary>Human-readable automation name associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutomationName { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationName { get; set; }
 #endif
-        /// <summary>The businessId property</summary>
+        /// <summary>Unique identifier of the business associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -47,19 +47,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>The cancelledAt property</summary>
+        /// <summary>Date and time when the automation workflow run was cancelled.</summary>
         public DateTimeOffset? CancelledAt { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>Date and time when the automation workflow run completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The correlationId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CorrelationId { get; set; }
-#nullable restore
-#else
-        public string CorrelationId { get; set; }
-#endif
-        /// <summary>The currentStepId property</summary>
+        /// <summary>Unique identifier of the current step associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrentStepId { get; set; }
@@ -67,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CurrentStepId { get; set; }
 #endif
-        /// <summary>The currentStepName property</summary>
+        /// <summary>Human-readable current step name associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrentStepName { get; set; }
@@ -75,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CurrentStepName { get; set; }
 #endif
-        /// <summary>The currentStepOrder property</summary>
+        /// <summary>Current step order associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? CurrentStepOrder { get; set; }
@@ -83,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode CurrentStepOrder { get; set; }
 #endif
-        /// <summary>The events property</summary>
+        /// <summary>Collection of events included with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>? Events { get; set; }
@@ -91,17 +83,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse> Events { get; set; }
 #endif
-        /// <summary>The executionKey property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExecutionKey { get; set; }
-#nullable restore
-#else
-        public string ExecutionKey { get; set; }
-#endif
-        /// <summary>The failedAt property</summary>
+        /// <summary>Date and time when the automation workflow run failed.</summary>
         public DateTimeOffset? FailedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier for the automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -109,15 +93,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The internalErrorDetails property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InternalErrorDetails { get; set; }
-#nullable restore
-#else
-        public string InternalErrorDetails { get; set; }
-#endif
-        /// <summary>The lastActionSummary property</summary>
+        /// <summary>Human-readable last action summary for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastActionSummary { get; set; }
@@ -125,7 +101,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastActionSummary { get; set; }
 #endif
-        /// <summary>The lastErrorCode property</summary>
+        /// <summary>Reason or diagnostic code that explains the current outcome for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastErrorCode { get; set; }
@@ -133,7 +109,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastErrorCode { get; set; }
 #endif
-        /// <summary>The lastErrorMessage property</summary>
+        /// <summary>Human-readable last error message for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastErrorMessage { get; set; }
@@ -141,9 +117,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastErrorMessage { get; set; }
 #endif
-        /// <summary>The lastExecutionAt property</summary>
+        /// <summary>Date and time of the most recent execution for this Leadping automation workflow run.</summary>
         public DateTimeOffset? LastExecutionAt { get; set; }
-        /// <summary>The leadId property</summary>
+        /// <summary>Unique identifier of the lead associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadId { get; set; }
@@ -151,15 +127,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
-        /// <summary>The maxRetryCount property</summary>
+        /// <summary>Total number of max retry records represented by this Leadping automation workflow run.</summary>
         public int? MaxRetryCount { get; set; }
-        /// <summary>The nextExecutionAt property</summary>
+        /// <summary>Date and time when the next execution is scheduled.</summary>
         public DateTimeOffset? NextExecutionAt { get; set; }
-        /// <summary>The nextRetryAt property</summary>
+        /// <summary>Date and time when the next retry is scheduled.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
-        /// <summary>The retryCount property</summary>
+        /// <summary>Total number of retry records represented by this Leadping automation workflow run.</summary>
         public int? RetryCount { get; set; }
-        /// <summary>The skipReasonCode property</summary>
+        /// <summary>Reason or diagnostic code that explains the current outcome for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkipReasonCode { get; set; }
@@ -167,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SkipReasonCode { get; set; }
 #endif
-        /// <summary>The skipReasonDisplay property</summary>
+        /// <summary>Human-readable skip reason display for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkipReasonDisplay { get; set; }
@@ -175,17 +151,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SkipReasonDisplay { get; set; }
 #endif
-        /// <summary>The sourceEventId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceEventId { get; set; }
-#nullable restore
-#else
-        public string SourceEventId { get; set; }
-#endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>Date and time when the automation workflow run started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>Current status for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -193,7 +161,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The statusDisplay property</summary>
+        /// <summary>Human-readable status display for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDisplay { get; set; }
@@ -201,7 +169,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string StatusDisplay { get; set; }
 #endif
-        /// <summary>The triggerDisplay property</summary>
+        /// <summary>Human-readable trigger display for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerDisplay { get; set; }
@@ -209,7 +177,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerDisplay { get; set; }
 #endif
-        /// <summary>The triggerType property</summary>
+        /// <summary>Trigger type classification for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get; set; }
@@ -217,7 +185,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerType { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>Date and time when the automation workflow run was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse"/> and sets the default values.
@@ -250,15 +218,12 @@ namespace Leadping.OpenApiClient.Models
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "cancelledAt", n => { CancelledAt = n.GetDateTimeOffsetValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "currentStepId", n => { CurrentStepId = n.GetStringValue(); } },
                 { "currentStepName", n => { CurrentStepName = n.GetStringValue(); } },
                 { "currentStepOrder", n => { CurrentStepOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "executionKey", n => { ExecutionKey = n.GetStringValue(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "internalErrorDetails", n => { InternalErrorDetails = n.GetStringValue(); } },
                 { "lastActionSummary", n => { LastActionSummary = n.GetStringValue(); } },
                 { "lastErrorCode", n => { LastErrorCode = n.GetStringValue(); } },
                 { "lastErrorMessage", n => { LastErrorMessage = n.GetStringValue(); } },
@@ -270,7 +235,6 @@ namespace Leadping.OpenApiClient.Models
                 { "retryCount", n => { RetryCount = n.GetIntValue(); } },
                 { "skipReasonCode", n => { SkipReasonCode = n.GetStringValue(); } },
                 { "skipReasonDisplay", n => { SkipReasonDisplay = n.GetStringValue(); } },
-                { "sourceEventId", n => { SourceEventId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusDisplay", n => { StatusDisplay = n.GetStringValue(); } },
@@ -292,15 +256,12 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("cancelledAt", CancelledAt);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteStringValue("currentStepId", CurrentStepId);
             writer.WriteStringValue("currentStepName", CurrentStepName);
             writer.WriteObjectValue<UntypedNode>("currentStepOrder", CurrentStepOrder);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>("events", Events);
-            writer.WriteStringValue("executionKey", ExecutionKey);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("internalErrorDetails", InternalErrorDetails);
             writer.WriteStringValue("lastActionSummary", LastActionSummary);
             writer.WriteStringValue("lastErrorCode", LastErrorCode);
             writer.WriteStringValue("lastErrorMessage", LastErrorMessage);
@@ -312,7 +273,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("retryCount", RetryCount);
             writer.WriteStringValue("skipReasonCode", SkipReasonCode);
             writer.WriteStringValue("skipReasonDisplay", SkipReasonDisplay);
-            writer.WriteStringValue("sourceEventId", SourceEventId);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusDisplay", StatusDisplay);

@@ -15,22 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
-        /// <summary>Billing attribution used to reconcile this phone number with subscription billing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BillingAttribution { get; set; }
-#nullable restore
-#else
-        public string BillingAttribution { get; set; }
-#endif
         /// <summary>Business summary connected to this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,24 +31,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>Indicates whether controlled voice call warmup is enabled for this phone number.</summary>
-        public bool? CallWarmupEnabled { get; set; }
-        /// <summary>Defines the supported voice call warmup stages for a Leadping-managed phone number.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupStage? CallWarmupStage { get; set; }
-        /// <summary>Defines the supported health states for controlled internal voice call warmup.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupState? CallWarmupState { get; set; }
-        /// <summary>SMS and voice capabilities available on this phone number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Capabilities { get; set; }
-#nullable restore
-#else
-        public string Capabilities { get; set; }
-#endif
         /// <summary>Indicates whether this phone number table row is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>Defines the supported SMS Warmup Health State values.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_healthStatus? HealthStatus { get; set; }
         /// <summary>Unique Leadping identifier for this phone number table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,12 +41,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Indicates whether this record is restricted to internal Leadping testing.</summary>
-        public bool? InternalTestOnly { get; set; }
-        /// <summary>Leadping inventory state for this phone number.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberInventoryState? InventoryState { get; set; }
-        /// <summary>Indicates whether this phone number is approved for the configured messaging program.</summary>
-        public bool? IsMessagingProgramApproved { get; set; }
         /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,24 +73,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ownership { get; set; }
 #endif
-        /// <summary>Provider lifecycle state used to determine phone number readiness.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberProviderLifecycleState? ProviderLifecycleState { get; set; }
-        /// <summary>Reconciliation status comparing Leadping data with provider data.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderReconciliationStatus { get; set; }
-#nullable restore
-#else
-        public string ProviderReconciliationStatus { get; set; }
-#endif
-        /// <summary>Provider lifecycle or delivery status for this phone number table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProviderStatus { get; set; }
-#nullable restore
-#else
-        public string ProviderStatus { get; set; }
-#endif
         /// <summary>Human-readable routing summary for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,16 +83,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether SMS messaging is ready for this business or phone number.</summary>
         public bool? SmsReady { get; set; }
-        /// <summary>Current lifecycle status for this phone number table row in the Leadping API.</summary>
-        public global::Leadping.OpenApiClient.Models.InternalPhoneNumberStatus? Status { get; set; }
-        /// <summary>10DLC campaign identifier associated with this sender or SMS event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TenDlcCampaignId { get; set; }
-#nullable restore
-#else
-        public string TenDlcCampaignId { get; set; }
-#endif
         /// <summary>10DLC campaign status associated with this sender or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,24 +99,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>User summary connected to this phone number table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? User { get; set; }
-#nullable restore
-#else
-        public string User { get; set; }
-#endif
         /// <summary>Indicates whether voice calling is ready for this business or phone number.</summary>
         public bool? VoiceReady { get; set; }
-        /// <summary>Numeric sender warmup health score used by Leadping to assess deliverability readiness.</summary>
-        public int? WarmupHealthScore { get; set; }
-        /// <summary>Indicates whether this phone number should only be used for warmup traffic.</summary>
-        public bool? WarmupOnly { get; set; }
-        /// <summary>Percent complete for the SMS sender warmup plan.</summary>
-        public int? WarmupProgressPercent { get; set; }
-        /// <summary>Defines the supported SMS Warmup Health State values.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_warmupState? WarmupState { get; set; }
+        /// <summary>Warmup state for this phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup? Warmup { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup Warmup { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberTableRow"/> and sets the default values.
         /// </summary>
@@ -208,39 +134,20 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride.CreateFromDiscriminatorValue); } },
-                { "billingAttribution", n => { BillingAttribution = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetStringValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "callWarmupEnabled", n => { CallWarmupEnabled = n.GetBoolValue(); } },
-                { "callWarmupStage", n => { CallWarmupStage = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupStage>(); } },
-                { "callWarmupState", n => { CallWarmupState = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupState>(); } },
-                { "capabilities", n => { Capabilities = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_healthStatus>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "internalTestOnly", n => { InternalTestOnly = n.GetBoolValue(); } },
-                { "inventoryState", n => { InventoryState = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberInventoryState>(); } },
-                { "isMessagingProgramApproved", n => { IsMessagingProgramApproved = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "ownership", n => { Ownership = n.GetStringValue(); } },
-                { "providerLifecycleState", n => { ProviderLifecycleState = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberProviderLifecycleState>(); } },
-                { "providerReconciliationStatus", n => { ProviderReconciliationStatus = n.GetStringValue(); } },
-                { "providerStatus", n => { ProviderStatus = n.GetStringValue(); } },
                 { "routingSummary", n => { RoutingSummary = n.GetStringValue(); } },
                 { "smsReady", n => { SmsReady = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.InternalPhoneNumberStatus>(); } },
-                { "tenDlcCampaignId", n => { TenDlcCampaignId = n.GetStringValue(); } },
                 { "tenDlcCampaignStatus", n => { TenDlcCampaignStatus = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "user", n => { User = n.GetStringValue(); } },
                 { "voiceReady", n => { VoiceReady = n.GetBoolValue(); } },
-                { "warmupHealthScore", n => { WarmupHealthScore = n.GetIntValue(); } },
-                { "warmupOnly", n => { WarmupOnly = n.GetBoolValue(); } },
-                { "warmupProgressPercent", n => { WarmupProgressPercent = n.GetIntValue(); } },
-                { "warmupState", n => { WarmupState = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_warmupState>(); } },
+                { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup>(global::Leadping.OpenApiClient.Models.PhoneNumberWarmup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -250,39 +157,20 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
-            writer.WriteStringValue("billingAttribution", BillingAttribution);
             writer.WriteStringValue("business", Business);
             writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteBoolValue("callWarmupEnabled", CallWarmupEnabled);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupStage>("callWarmupStage", CallWarmupStage);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_callWarmupState>("callWarmupState", CallWarmupState);
-            writer.WriteStringValue("capabilities", Capabilities);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_healthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("internalTestOnly", InternalTestOnly);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberInventoryState>("inventoryState", InventoryState);
-            writer.WriteBoolValue("isMessagingProgramApproved", IsMessagingProgramApproved);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("ownership", Ownership);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberProviderLifecycleState>("providerLifecycleState", ProviderLifecycleState);
-            writer.WriteStringValue("providerReconciliationStatus", ProviderReconciliationStatus);
-            writer.WriteStringValue("providerStatus", ProviderStatus);
             writer.WriteStringValue("routingSummary", RoutingSummary);
             writer.WriteBoolValue("smsReady", SmsReady);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.InternalPhoneNumberStatus>("status", Status);
-            writer.WriteStringValue("tenDlcCampaignId", TenDlcCampaignId);
             writer.WriteStringValue("tenDlcCampaignStatus", TenDlcCampaignStatus);
             writer.WriteStringValue("type", Type);
-            writer.WriteStringValue("user", User);
             writer.WriteBoolValue("voiceReady", VoiceReady);
-            writer.WriteIntValue("warmupHealthScore", WarmupHealthScore);
-            writer.WriteBoolValue("warmupOnly", WarmupOnly);
-            writer.WriteIntValue("warmupProgressPercent", WarmupProgressPercent);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_warmupState>("warmupState", WarmupState);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup>("warmup", Warmup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

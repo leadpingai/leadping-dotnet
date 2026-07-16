@@ -14,9 +14,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines phone-number outbound health states used by pacing.</summary>
+        /// <summary>Current health status for this Leadping outbound phone number capacity.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus? HealthStatus { get; set; }
-        /// <summary>The phoneNumber property</summary>
+        /// <summary>Phone number associated with this Leadping outbound phone number capacity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber { get; set; }
@@ -24,7 +24,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>The phoneNumberId property</summary>
+        /// <summary>Unique identifier of the phone number associated with this Leadping outbound phone number capacity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumberId { get; set; }
@@ -32,29 +32,29 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
-        /// <summary>The smsLimitThisHour property</summary>
+        /// <summary>Number of SMS limit this hour represented by this Leadping outbound phone number capacity.</summary>
         public int? SmsLimitThisHour { get; set; }
-        /// <summary>The smsLimitToday property</summary>
+        /// <summary>Number of SMS limit today represented by this Leadping outbound phone number capacity.</summary>
         public int? SmsLimitToday { get; set; }
-        /// <summary>The smsRemainingThisHour property</summary>
+        /// <summary>SMS remaining this hour for the applicable messaging or voice capacity window.</summary>
         public int? SmsRemainingThisHour { get; set; }
-        /// <summary>The smsRemainingToday property</summary>
+        /// <summary>SMS remaining today for the applicable messaging or voice capacity window.</summary>
         public int? SmsRemainingToday { get; set; }
-        /// <summary>The smsUsedThisHour property</summary>
+        /// <summary>SMS used this hour for the applicable messaging or voice capacity window.</summary>
         public int? SmsUsedThisHour { get; set; }
-        /// <summary>The smsUsedToday property</summary>
+        /// <summary>SMS used today for the applicable messaging or voice capacity window.</summary>
         public int? SmsUsedToday { get; set; }
-        /// <summary>The voiceLimitThisHour property</summary>
+        /// <summary>Voice limit this hour associated with this Leadping outbound phone number capacity.</summary>
         public int? VoiceLimitThisHour { get; set; }
-        /// <summary>The voiceLimitToday property</summary>
+        /// <summary>Voice limit today associated with this Leadping outbound phone number capacity.</summary>
         public int? VoiceLimitToday { get; set; }
-        /// <summary>The voiceRemainingThisHour property</summary>
+        /// <summary>Voice remaining this hour for the applicable messaging or voice capacity window.</summary>
         public int? VoiceRemainingThisHour { get; set; }
-        /// <summary>The voiceRemainingToday property</summary>
+        /// <summary>Voice remaining today for the applicable messaging or voice capacity window.</summary>
         public int? VoiceRemainingToday { get; set; }
-        /// <summary>The voiceUsedThisHour property</summary>
+        /// <summary>Voice used this hour for the applicable messaging or voice capacity window.</summary>
         public int? VoiceUsedThisHour { get; set; }
-        /// <summary>The voiceUsedToday property</summary>
+        /// <summary>Voice used today for the applicable messaging or voice capacity window.</summary>
         public int? VoiceUsedToday { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity"/> and sets the default values.

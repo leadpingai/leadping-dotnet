@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Last failure associated with this Leadping customer automation health.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CustomerFailingAutomation : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automationId property</summary>
+        /// <summary>Unique identifier of the automation associated with this Leadping customer failing automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutomationId { get; set; }
@@ -22,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationId { get; set; }
 #endif
-        /// <summary>The error property</summary>
+        /// <summary>Error associated with this Leadping customer failing automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get; set; }
@@ -30,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Error { get; set; }
 #endif
-        /// <summary>The failedAt property</summary>
+        /// <summary>Date and time when the customer failing automation failed.</summary>
         public DateTimeOffset? FailedAt { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Human-readable name of the customer failing automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

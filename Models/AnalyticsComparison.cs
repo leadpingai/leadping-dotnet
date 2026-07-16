@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Date and time when this Leadping customer analytics summary was leads comparison.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AnalyticsComparison : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The changePercent property</summary>
+        /// <summary>Percentage change between the current and previous reporting periods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? ChangePercent { get; set; }
@@ -22,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode ChangePercent { get; set; }
 #endif
-        /// <summary>The current property</summary>
+        /// <summary>Metric value for the current reporting period.</summary>
         public double? Current { get; set; }
-        /// <summary>The direction property</summary>
+        /// <summary>Direction classification for this Leadping analytics comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Direction { get; set; }
@@ -32,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Direction { get; set; }
 #endif
-        /// <summary>The previous property</summary>
+        /// <summary>Metric value for the preceding comparison period.</summary>
         public double? Previous { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AnalyticsComparison"/> and sets the default values.

@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isArchived property</summary>
+        /// <summary>Indicates whether the Leadping conversation has been archived.</summary>
         public bool? IsArchived { get; set; }
         /// <summary>Indicates whether the current user has unread activity in the conversation.</summary>
         public bool? IsUnread { get; set; }

@@ -17,18 +17,8 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether this phone number can currently place outbound calls.</summary>
         public int? CallsPossible { get; set; }
-        /// <summary>Voice call warmup status for this phone number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup? CallWarmup { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup CallWarmup { get; set; }
-#endif
         /// <summary>Indicates whether this phone number can currently send SMS messages.</summary>
         public int? MessagesPossible { get; set; }
-        /// <summary>Number of warmup SMS messages completed for this sender.</summary>
-        public int? MessagesWarmed { get; set; }
         /// <summary>E.164 phone number exposed by this phone number readiness status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,8 +67,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse TrafficMetrics { get; set; }
 #endif
-        /// <summary>Number of voice warmup calls completed for this phone number.</summary>
-        public int? WarmupCallsMade { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse"/> and sets the default values.
         /// </summary>
@@ -104,17 +92,14 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callWarmup", n => { CallWarmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup.CreateFromDiscriminatorValue); } },
                 { "callsPossible", n => { CallsPossible = n.GetIntValue(); } },
                 { "messagesPossible", n => { MessagesPossible = n.GetIntValue(); } },
-                { "messagesWarmed", n => { MessagesWarmed = n.GetIntValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "optOutMetrics", n => { OptOutMetrics = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse.CreateFromDiscriminatorValue); } },
                 { "outboundCapacity", n => { OutboundCapacity = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity.CreateFromDiscriminatorValue); } },
                 { "recentEvents", n => { RecentEvents = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "smsWarmup", n => { SmsWarmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup.CreateFromDiscriminatorValue); } },
                 { "trafficMetrics", n => { TrafficMetrics = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse.CreateFromDiscriminatorValue); } },
-                { "warmupCallsMade", n => { WarmupCallsMade = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -125,16 +110,13 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("callsPossible", CallsPossible);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_callWarmup>("callWarmup", CallWarmup);
             writer.WriteIntValue("messagesPossible", MessagesPossible);
-            writer.WriteIntValue("messagesWarmed", MessagesWarmed);
             writer.WriteStringValue("number", Number);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>("optOutMetrics", OptOutMetrics);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity>("outboundCapacity", OutboundCapacity);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse>("recentEvents", RecentEvents);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup>("smsWarmup", SmsWarmup);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse>("trafficMetrics", TrafficMetrics);
-            writer.WriteIntValue("warmupCallsMade", WarmupCallsMade);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,15 +14,15 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blockedCount property</summary>
+        /// <summary>Total number of blocked records represented by this Leadping outbound capacity overview.</summary>
         public int? BlockedCount { get; set; }
-        /// <summary>The coolingPhoneNumbers property</summary>
+        /// <summary>Number of cooling phone numbers represented by this Leadping outbound capacity overview.</summary>
         public int? CoolingPhoneNumbers { get; set; }
-        /// <summary>The healthyPhoneNumbers property</summary>
+        /// <summary>Number of healthy phone numbers represented by this Leadping outbound capacity overview.</summary>
         public int? HealthyPhoneNumbers { get; set; }
-        /// <summary>The limitedPhoneNumbers property</summary>
+        /// <summary>Number of limited phone numbers represented by this Leadping outbound capacity overview.</summary>
         public int? LimitedPhoneNumbers { get; set; }
-        /// <summary>The phoneNumbers property</summary>
+        /// <summary>Collection of phone numbers included with this Leadping outbound capacity overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity>? PhoneNumbers { get; set; }
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity> PhoneNumbers { get; set; }
 #endif
-        /// <summary>The recentDecisions property</summary>
+        /// <summary>Collection of recent decisions included with this Leadping outbound capacity overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.OutboundQueueItem>? RecentDecisions { get; set; }
@@ -38,11 +38,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.OutboundQueueItem> RecentDecisions { get; set; }
 #endif
-        /// <summary>The scheduledCount property</summary>
+        /// <summary>Total number of scheduled records represented by this Leadping outbound capacity overview.</summary>
         public int? ScheduledCount { get; set; }
-        /// <summary>The smsCapacityRemainingToday property</summary>
+        /// <summary>SMS capacity remaining today for the applicable messaging or voice capacity window.</summary>
         public int? SmsCapacityRemainingToday { get; set; }
-        /// <summary>The voiceCapacityRemainingToday property</summary>
+        /// <summary>Voice capacity remaining today for the applicable messaging or voice capacity window.</summary>
         public int? VoiceCapacityRemainingToday { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundCapacityOverview"/> and sets the default values.

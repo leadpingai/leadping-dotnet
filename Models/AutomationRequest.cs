@@ -23,22 +23,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Admin override that can enable or disable this record independently of normal status checks.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride? AdminEnablementOverride { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride AdminEnablementOverride { get; set; }
-#endif
-        /// <summary>Business ID that owns this automation configuration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>Grouped automation conditions used to decide whether this workflow should run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,14 +30,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationConditionGroup> ConditionGroups { get; set; }
-#endif
-        /// <summary>User ID of the person who created this automation configuration request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedByUserId { get; set; }
-#nullable restore
-#else
-        public string CreatedByUserId { get; set; }
 #endif
         /// <summary>Human-readable description that explains this automation configuration request to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,16 +48,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
-#endif
-        /// <summary>Indicates whether Leadping manages this automation configuration request automatically instead of a user.</summary>
-        public bool? IsSystemManaged { get; set; }
-        /// <summary>Management level that controls whether Leadping or the business owns this automation setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ManagementLevel { get; set; }
-#nullable restore
-#else
-        public string ManagementLevel { get; set; }
 #endif
         /// <summary>The display name for the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,15 +109,10 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationAction>(global::Leadping.OpenApiClient.Models.AutomationAction.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "adminEnablementOverride", n => { AdminEnablementOverride = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride>(global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride.CreateFromDiscriminatorValue); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "conditionGroups", n => { ConditionGroups = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationConditionGroup>(global::Leadping.OpenApiClient.Models.AutomationConditionGroup.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "isSystemManaged", n => { IsSystemManaged = n.GetBoolValue(); } },
-                { "managementLevel", n => { ManagementLevel = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>(global::Leadping.OpenApiClient.Models.AutomationTrigger.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -167,15 +128,10 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationAction>("actions", Actions);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationRequest_adminEnablementOverride>("adminEnablementOverride", AdminEnablementOverride);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationConditionGroup>("conditionGroups", ConditionGroups);
-            writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("isSystemManaged", IsSystemManaged);
-            writer.WriteStringValue("managementLevel", ManagementLevel);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("scope", Scope);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>("triggers", Triggers);

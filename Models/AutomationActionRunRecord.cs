@@ -41,30 +41,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when processing completed for this automation action run record.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>Stable integration connection key used by this automation action.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectionKey { get; set; }
-#nullable restore
-#else
-        public string ConnectionKey { get; set; }
-#endif
-        /// <summary>Error text returned while processing this automation action run record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Error { get; set; }
-#nullable restore
-#else
-        public string Error { get; set; }
-#endif
-        /// <summary>Idempotency key used to identify a unique automation workflow execution.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExecutionKey { get; set; }
-#nullable restore
-#else
-        public string ExecutionKey { get; set; }
-#endif
         /// <summary>UTC timestamp when processing failed for this automation action run record.</summary>
         public DateTimeOffset? FailedAt { get; set; }
         /// <summary>Machine-readable failure code for troubleshooting this automation action run record.</summary>
@@ -87,14 +63,6 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? NextRetryAt { get; set; }
         /// <summary>Sort order used to evaluate or display this automation action run record.</summary>
         public int? Order { get; set; }
-        /// <summary>Generated output returned by this automation action run record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Output { get; set; }
-#nullable restore
-#else
-        public string Output { get; set; }
-#endif
         /// <summary>Number of processing attempts made for this workflow or delivery request.</summary>
         public int? ProcessingAttempts { get; set; }
         /// <summary>UTC timestamp when this automation action run record was scheduled.</summary>
@@ -138,15 +106,11 @@ namespace Leadping.OpenApiClient.Models
                 { "actionType", n => { ActionType = n.GetStringValue(); } },
                 { "automationRunId", n => { AutomationRunId = n.GetStringValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "connectionKey", n => { ConnectionKey = n.GetStringValue(); } },
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "executionKey", n => { ExecutionKey = n.GetStringValue(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "order", n => { Order = n.GetIntValue(); } },
-                { "output", n => { Output = n.GetStringValue(); } },
                 { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetDateTimeOffsetValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -164,15 +128,11 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("actionType", ActionType);
             writer.WriteStringValue("automationRunId", AutomationRunId);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteStringValue("connectionKey", ConnectionKey);
-            writer.WriteStringValue("error", Error);
-            writer.WriteStringValue("executionKey", ExecutionKey);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
             writer.WriteIntValue("order", Order);
-            writer.WriteStringValue("output", Output);
             writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteDateTimeOffsetValue("scheduledAt", ScheduledAt);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

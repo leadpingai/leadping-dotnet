@@ -17,8 +17,6 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable quantity total for this usage summary.</summary>
         public double? BillableQuantityTotal { get; set; }
-        /// <summary>The billing blocked count for this usage summary.</summary>
-        public int? BillingBlockedCount { get; set; }
         /// <summary>The named usage counters included with this usage summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,8 +29,6 @@ namespace Leadping.OpenApiClient.Models
         public double? CustomerChargeTotal { get; set; }
         /// <summary>The failed count for this usage summary.</summary>
         public int? FailedCount { get; set; }
-        /// <summary>The internal cost total for this usage summary.</summary>
-        public double? InternalCostTotal { get; set; }
         /// <summary>The lines included with this usage summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,16 +37,12 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.UsageSummaryLine> Lines { get; set; }
 #endif
-        /// <summary>The non billable internal count for this usage summary.</summary>
-        public int? NonBillableInternalCount { get; set; }
         /// <summary>The pending invoice count for this usage summary.</summary>
         public int? PendingInvoiceCount { get; set; }
         /// <summary>The date and time for the period end value on this usage summary.</summary>
         public DateTimeOffset? PeriodEnd { get; set; }
         /// <summary>The date and time for the period start value on this usage summary.</summary>
         public DateTimeOffset? PeriodStart { get; set; }
-        /// <summary>The provider cost total for this usage summary.</summary>
-        public double? ProviderCostTotal { get; set; }
         /// <summary>The usage record count for this usage summary.</summary>
         public int? UsageRecordCount { get; set; }
         /// <summary>
@@ -79,17 +71,13 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billableQuantityTotal", n => { BillableQuantityTotal = n.GetDoubleValue(); } },
-                { "billingBlockedCount", n => { BillingBlockedCount = n.GetIntValue(); } },
                 { "counters", n => { Counters = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageCounterLine>(global::Leadping.OpenApiClient.Models.UsageCounterLine.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customerChargeTotal", n => { CustomerChargeTotal = n.GetDoubleValue(); } },
                 { "failedCount", n => { FailedCount = n.GetIntValue(); } },
-                { "internalCostTotal", n => { InternalCostTotal = n.GetDoubleValue(); } },
                 { "lines", n => { Lines = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageSummaryLine>(global::Leadping.OpenApiClient.Models.UsageSummaryLine.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "nonBillableInternalCount", n => { NonBillableInternalCount = n.GetIntValue(); } },
                 { "pendingInvoiceCount", n => { PendingInvoiceCount = n.GetIntValue(); } },
                 { "periodEnd", n => { PeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "periodStart", n => { PeriodStart = n.GetDateTimeOffsetValue(); } },
-                { "providerCostTotal", n => { ProviderCostTotal = n.GetDoubleValue(); } },
                 { "usageRecordCount", n => { UsageRecordCount = n.GetIntValue(); } },
             };
         }
@@ -101,17 +89,13 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("billableQuantityTotal", BillableQuantityTotal);
-            writer.WriteIntValue("billingBlockedCount", BillingBlockedCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageCounterLine>("counters", Counters);
             writer.WriteDoubleValue("customerChargeTotal", CustomerChargeTotal);
             writer.WriteIntValue("failedCount", FailedCount);
-            writer.WriteDoubleValue("internalCostTotal", InternalCostTotal);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageSummaryLine>("lines", Lines);
-            writer.WriteIntValue("nonBillableInternalCount", NonBillableInternalCount);
             writer.WriteIntValue("pendingInvoiceCount", PendingInvoiceCount);
             writer.WriteDateTimeOffsetValue("periodEnd", PeriodEnd);
             writer.WriteDateTimeOffsetValue("periodStart", PeriodStart);
-            writer.WriteDoubleValue("providerCostTotal", ProviderCostTotal);
             writer.WriteIntValue("usageRecordCount", UsageRecordCount);
             writer.WriteAdditionalData(AdditionalData);
         }
