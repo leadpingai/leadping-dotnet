@@ -8,20 +8,20 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Geographic location metadata for the phone number, lead, or lookup result.
+    /// The ID and name for this source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PhoneNumberResponse_location : global::Leadping.OpenApiClient.Models.PhoneNumberLocation, IParsable
+    public partial class LeadTableRow_source : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberResponse_location"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadTableRow_source"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Leadping.OpenApiClient.Models.PhoneNumberResponse_location CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Leadping.OpenApiClient.Models.LeadTableRow_source CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.PhoneNumberResponse_location();
+            return new global::Leadping.OpenApiClient.Models.LeadTableRow_source();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -37,6 +37,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LicenseRenewalDate { get; set; }
         /// <summary>The role value for this business user.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessUserRole? Role { get; set; }
+        /// <summary>The ID and name for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.IdNamePair? User { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.IdNamePair User { get; set; }
+#endif
         /// <summary>The user email value for this business user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,22 +52,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string UserEmail { get; set; }
-#endif
-        /// <summary>The user ID associated with this business user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
-        /// <summary>The user name value for this business user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserName { get; set; }
-#nullable restore
-#else
-        public string UserName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BusinessUserTableRow"/> and sets the default values.
@@ -91,9 +83,8 @@ namespace Leadping.OpenApiClient.Models
                 { "licenseBillingStatus", n => { LicenseBillingStatus = n.GetStringValue(); } },
                 { "licenseRenewalDate", n => { LicenseRenewalDate = n.GetDateTimeOffsetValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessUserRole>(); } },
+                { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -108,9 +99,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("licenseBillingStatus", LicenseBillingStatus);
             writer.WriteDateTimeOffsetValue("licenseRenewalDate", LicenseRenewalDate);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessUserRole>("role", Role);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("user", User);
             writer.WriteStringValue("userEmail", UserEmail);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("userName", UserName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

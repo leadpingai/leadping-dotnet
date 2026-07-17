@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Phone lookup details returned by the provider or Leadping enrichment service.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.Phone_lookup? Lookup { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.Phone_lookup Lookup { get; set; }
-#endif
         /// <summary>E.164 phone number exposed by this lead phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +64,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lookup", n => { Lookup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.Phone_lookup>(global::Leadping.OpenApiClient.Models.Phone_lookup.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -85,7 +76,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.Phone_lookup>("lookup", Lookup);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteStringValue("type", Type);

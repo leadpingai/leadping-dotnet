@@ -13,13 +13,13 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivationTimelineEvent : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actor name value for this activation timeline event.</summary>
+        /// <summary>The ID and name for this actor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActorName { get; set; }
+        public global::Leadping.OpenApiClient.Models.ActivationTimelineEvent_actor? Actor { get; set; }
 #nullable restore
 #else
-        public string ActorName { get; set; }
+        public global::Leadping.OpenApiClient.Models.ActivationTimelineEvent_actor Actor { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -98,7 +98,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actorName", n => { ActorName = n.GetStringValue(); } },
+                { "actor", n => { Actor = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ActivationTimelineEvent_actor>(global::Leadping.OpenApiClient.Models.ActivationTimelineEvent_actor.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "failureReason", n => { FailureReason = n.GetStringValue(); } },
@@ -115,7 +115,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actorName", ActorName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ActivationTimelineEvent_actor>("actor", Actor);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("failureReason", FailureReason);

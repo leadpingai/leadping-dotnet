@@ -17,21 +17,13 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? AcceptedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The business ID associated with this business invitation.</summary>
+        /// <summary>The ID and name for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessId { get; set; }
+        public global::Leadping.OpenApiClient.Models.IdNamePair? Business { get; set; }
 #nullable restore
 #else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>The business name value for this business invitation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessName { get; set; }
-#nullable restore
-#else
-        public string BusinessName { get; set; }
+        public global::Leadping.OpenApiClient.Models.IdNamePair Business { get; set; }
 #endif
         /// <summary>The date and time for the created at value on this business invitation.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -127,8 +119,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "acceptedAt", n => { AcceptedAt = n.GetDateTimeOffsetValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "businessName", n => { BusinessName = n.GetStringValue(); } },
+                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
@@ -155,8 +146,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("acceptedAt", AcceptedAt);
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteStringValue("businessName", BusinessName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("email", Email);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);

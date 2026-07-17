@@ -13,33 +13,17 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionTableRow : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Display name of the wallet or account used for this transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountName { get; set; }
-#nullable restore
-#else
-        public string AccountName { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount for this billing transaction or wallet operation.</summary>
         public double? Amount { get; set; }
-        /// <summary>Business ID charged or credited by this wallet transaction.</summary>
+        /// <summary>The ID and name for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessId { get; set; }
+        public global::Leadping.OpenApiClient.Models.TransactionTableRow_business? Business { get; set; }
 #nullable restore
 #else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>Business display name shown for this wallet transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessName { get; set; }
-#nullable restore
-#else
-        public string BusinessName { get; set; }
+        public global::Leadping.OpenApiClient.Models.TransactionTableRow_business Business { get; set; }
 #endif
         /// <summary>UTC timestamp when this billing transaction table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -59,21 +43,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Lead ID connected to this transaction when the charge came from lead activity.</summary>
+        /// <summary>The ID and name for this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeadId { get; set; }
+        public global::Leadping.OpenApiClient.Models.TransactionTableRow_lead? Lead { get; set; }
 #nullable restore
 #else
-        public string LeadId { get; set; }
-#endif
-        /// <summary>Lead display name shown for lead-related wallet transactions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LeadName { get; set; }
-#nullable restore
-#else
-        public string LeadName { get; set; }
+        public global::Leadping.OpenApiClient.Models.TransactionTableRow_lead Lead { get; set; }
 #endif
         /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
         public double? NetAmount { get; set; }
@@ -114,15 +90,12 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountName", n => { AccountName = n.GetStringValue(); } },
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "businessName", n => { BusinessName = n.GetStringValue(); } },
+                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_business>(global::Leadping.OpenApiClient.Models.TransactionTableRow_business.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "leadId", n => { LeadId = n.GetStringValue(); } },
-                { "leadName", n => { LeadName = n.GetStringValue(); } },
+                { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_lead>(global::Leadping.OpenApiClient.Models.TransactionTableRow_lead.CreateFromDiscriminatorValue); } },
                 { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "paymentMethodDisplay", n => { PaymentMethodDisplay = n.GetStringValue(); } },
                 { "transactionStatus", n => { TransactionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TransactionStatus>(); } },
@@ -136,15 +109,12 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("accountName", AccountName);
             writer.WriteDoubleValue("amount", Amount);
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteStringValue("businessName", BusinessName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_business>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("leadId", LeadId);
-            writer.WriteStringValue("leadName", LeadName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_lead>("lead", Lead);
             writer.WriteDoubleValue("netAmount", NetAmount);
             writer.WriteStringValue("paymentMethodDisplay", PaymentMethodDisplay);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TransactionStatus>("transactionStatus", TransactionStatus);

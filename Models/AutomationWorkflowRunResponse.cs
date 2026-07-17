@@ -23,21 +23,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unique identifier of the automation associated with this Leadping automation workflow run.</summary>
+        /// <summary>The ID and name for this automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutomationId { get; set; }
+        public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation? Automation { get; set; }
 #nullable restore
 #else
-        public string AutomationId { get; set; }
-#endif
-        /// <summary>Human-readable automation name associated with this Leadping automation workflow run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AutomationName { get; set; }
-#nullable restore
-#else
-        public string AutomationName { get; set; }
+        public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation Automation { get; set; }
 #endif
         /// <summary>Unique identifier of the business associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,21 +43,13 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? CancelledAt { get; set; }
         /// <summary>Date and time when the automation workflow run completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>Unique identifier of the current step associated with this Leadping automation workflow run.</summary>
+        /// <summary>The ID and name for this currentStep.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentStepId { get; set; }
+        public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep? CurrentStep { get; set; }
 #nullable restore
 #else
-        public string CurrentStepId { get; set; }
-#endif
-        /// <summary>Human-readable current step name associated with this Leadping automation workflow run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CurrentStepName { get; set; }
-#nullable restore
-#else
-        public string CurrentStepName { get; set; }
+        public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep CurrentStep { get; set; }
 #endif
         /// <summary>Current step order associated with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -213,13 +197,11 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "automationId", n => { AutomationId = n.GetStringValue(); } },
-                { "automationName", n => { AutomationName = n.GetStringValue(); } },
+                { "automation", n => { Automation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation>(global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation.CreateFromDiscriminatorValue); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "cancelledAt", n => { CancelledAt = n.GetDateTimeOffsetValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "currentStepId", n => { CurrentStepId = n.GetStringValue(); } },
-                { "currentStepName", n => { CurrentStepName = n.GetStringValue(); } },
+                { "currentStep", n => { CurrentStep = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>(global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep.CreateFromDiscriminatorValue); } },
                 { "currentStepOrder", n => { CurrentStepOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
@@ -251,13 +233,11 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse>("actions", Actions);
-            writer.WriteStringValue("automationId", AutomationId);
-            writer.WriteStringValue("automationName", AutomationName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation>("automation", Automation);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("cancelledAt", CancelledAt);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteStringValue("currentStepId", CurrentStepId);
-            writer.WriteStringValue("currentStepName", CurrentStepName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>("currentStep", CurrentStep);
             writer.WriteObjectValue<UntypedNode>("currentStepOrder", CurrentStepOrder);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>("events", Events);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);

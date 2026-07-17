@@ -8,20 +8,20 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Phone lookup details returned by the provider or Leadping enrichment service.
+    /// The ID and name for this business.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Phone_lookup : global::Leadping.OpenApiClient.Models.PhoneLookup, IParsable
+    public partial class TransactionResponse_business : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.Phone_lookup"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TransactionResponse_business"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Leadping.OpenApiClient.Models.Phone_lookup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Leadping.OpenApiClient.Models.TransactionResponse_business CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.Phone_lookup();
+            return new global::Leadping.OpenApiClient.Models.TransactionResponse_business();
         }
         /// <summary>
         /// The deserialization information for the current model

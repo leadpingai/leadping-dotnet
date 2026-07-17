@@ -45,21 +45,13 @@ namespace Leadping.OpenApiClient.Models
         public long? ApiKeyTotalUses { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan? BillingPlan { get; set; }
-        /// <summary>The business ID that owns this row when the row represents a child business resource.</summary>
+        /// <summary>The ID and name for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessId { get; set; }
+        public global::Leadping.OpenApiClient.Models.BusinessTableRow_business? Business { get; set; }
 #nullable restore
 #else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>The business name that owns this row when the row represents a child business resource.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessName { get; set; }
-#nullable restore
-#else
-        public string BusinessName { get; set; }
+        public global::Leadping.OpenApiClient.Models.BusinessTableRow_business Business { get; set; }
 #endif
         /// <summary>Whether this business is enabled.</summary>
         public bool? Enabled { get; set; }
@@ -115,22 +107,6 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_tenDlcStatus? TenDlcStatus { get; set; }
         /// <summary>The user count for this business.</summary>
         public int? UserCount { get; set; }
-        /// <summary>The user ID value for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
-        /// <summary>The user name value for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserName { get; set; }
-#nullable restore
-#else
-        public string UserName { get; set; }
-#endif
         /// <summary>The website URL associated with this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,8 +151,7 @@ namespace Leadping.OpenApiClient.Models
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan>(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "businessName", n => { BusinessName = n.GetStringValue(); } },
+                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_business>(global::Leadping.OpenApiClient.Models.BusinessTableRow_business.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
@@ -192,8 +167,6 @@ namespace Leadping.OpenApiClient.Models
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_subscriptionStatus>(); } },
                 { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_tenDlcStatus>(); } },
                 { "userCount", n => { UserCount = n.GetIntValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "userName", n => { UserName = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
                 { "websiteStatus", n => { WebsiteStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_websiteStatus>(); } },
             };
@@ -214,8 +187,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan>("billingPlan", BillingPlan);
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteStringValue("businessName", BusinessName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_business>("business", Business);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("industry", Industry);
@@ -231,8 +203,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_tenDlcStatus>("tenDlcStatus", TenDlcStatus);
             writer.WriteIntValue("userCount", UserCount);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("userName", UserName);
             writer.WriteStringValue("website", Website);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_websiteStatus>("websiteStatus", WebsiteStatus);
             writer.WriteAdditionalData(AdditionalData);

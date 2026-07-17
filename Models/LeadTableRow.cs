@@ -27,21 +27,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>Business ID that owns this lead.</summary>
+        /// <summary>The ID and name for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessId { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_business? Business { get; set; }
 #nullable restore
 #else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>Business display name shown for this lead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessName { get; set; }
-#nullable restore
-#else
-        public string BusinessName { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_business Business { get; set; }
 #endif
         /// <summary>UTC timestamp when this lead table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -105,21 +97,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Price { get; set; }
 #endif
-        /// <summary>Lead source ID that created or supplied this lead.</summary>
+        /// <summary>The ID and name for this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceId { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_source? Source { get; set; }
 #nullable restore
 #else
-        public string SourceId { get; set; }
-#endif
-        /// <summary>Lead source display name shown for this lead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceName { get; set; }
-#nullable restore
-#else
-        public string SourceName { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_source Source { get; set; }
 #endif
         /// <summary>Current lifecycle status for this lead table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,8 +159,7 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "archivedByUserId", n => { ArchivedByUserId = n.GetStringValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "businessName", n => { BusinessName = n.GetStringValue(); } },
+                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_business>(global::Leadping.OpenApiClient.Models.LeadTableRow_business.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentDisposition", n => { CurrentDisposition = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition>(global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
@@ -187,8 +170,7 @@ namespace Leadping.OpenApiClient.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "sourceId", n => { SourceId = n.GetStringValue(); } },
-                { "sourceName", n => { SourceName = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>(global::Leadping.OpenApiClient.Models.LeadTableRow_source.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusTone", n => { StatusTone = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -205,8 +187,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteStringValue("archivedByUserId", ArchivedByUserId);
             writer.WriteIntValue("archiveReason", ArchiveReason);
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteStringValue("businessName", BusinessName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_business>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition>("currentDisposition", CurrentDisposition);
             writer.WriteStringValue("email", Email);
@@ -217,8 +198,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<UntypedNode>("price", Price);
-            writer.WriteStringValue("sourceId", SourceId);
-            writer.WriteStringValue("sourceName", SourceName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusTone", StatusTone);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("tags", Tags);

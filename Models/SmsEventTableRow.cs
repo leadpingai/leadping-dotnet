@@ -147,21 +147,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether automation created or triggered this SMS event table row.</summary>
         public bool? IsAutomated { get; set; }
-        /// <summary>Lead ID associated with this SMS event.</summary>
+        /// <summary>The ID and name for this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeadId { get; set; }
+        public global::Leadping.OpenApiClient.Models.IdNamePair? Lead { get; set; }
 #nullable restore
 #else
-        public string LeadId { get; set; }
-#endif
-        /// <summary>Lead display name shown for this SMS event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LeadName { get; set; }
-#nullable restore
-#else
-        public string LeadName { get; set; }
+        public global::Leadping.OpenApiClient.Models.IdNamePair Lead { get; set; }
 #endif
         /// <summary>Phone number ID selected for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -291,8 +283,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
-                { "leadId", n => { LeadId = n.GetStringValue(); } },
-                { "leadName", n => { LeadName = n.GetStringValue(); } },
+                { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
                 { "outboundSource", n => { OutboundSource = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsEventTableRow_outboundSource>(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
@@ -340,8 +331,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isAutomated", IsAutomated);
-            writer.WriteStringValue("leadId", LeadId);
-            writer.WriteStringValue("leadName", LeadName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("lead", Lead);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsEventTableRow_outboundSource>("outboundSource", OutboundSource);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);

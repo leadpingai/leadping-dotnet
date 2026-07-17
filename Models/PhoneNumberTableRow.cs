@@ -41,14 +41,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Location { get; set; }
-#nullable restore
-#else
-        public string Location { get; set; }
-#endif
         /// <summary>Display name for this phone number table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +130,6 @@ namespace Leadping.OpenApiClient.Models
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "ownership", n => { Ownership = n.GetStringValue(); } },
@@ -161,7 +152,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("ownership", Ownership);
