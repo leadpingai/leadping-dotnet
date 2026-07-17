@@ -163,6 +163,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SecondaryName { get; set; }
 #endif
+        /// <summary>Defines the supported User Setup Status values.</summary>
+        public global::Leadping.OpenApiClient.Models.BusinessResponse_setupStatus? SetupStatus { get; set; }
         /// <summary>Defines the supported Business Setup Step values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessResponse_setupStep? SetupStep { get; set; }
         /// <summary>Leadping website record connected to this business.</summary>
@@ -249,6 +251,7 @@ namespace Leadping.OpenApiClient.Models
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.IdNameValue>(global::Leadping.OpenApiClient.Models.IdNameValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secondaryName", n => { SecondaryName = n.GetStringValue(); } },
+                { "setupStatus", n => { SetupStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_setupStatus>(); } },
                 { "setupStep", n => { SetupStep = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_setupStep>(); } },
                 { "site", n => { Site = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_site>(global::Leadping.OpenApiClient.Models.BusinessResponse_site.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_status>(); } },
@@ -288,6 +291,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("phone", Phone);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.IdNameValue>("phones", Phones);
             writer.WriteStringValue("secondaryName", SecondaryName);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_setupStatus>("setupStatus", SetupStatus);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_setupStep>("setupStep", SetupStep);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_site>("site", Site);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_status>("status", Status);
