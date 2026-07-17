@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Human-readable summary for this Leadping customer analytics.
+    /// Represents customer analytics summary data exposed by Leadping analytics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerAnalyticsSummary : IAdditionalDataHolder, IParsable

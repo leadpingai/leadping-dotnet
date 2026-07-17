@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Range associated with this Leadping customer analytics.
+    /// Represents analytics date range data exposed by Leadping analytics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsDateRange : IAdditionalDataHolder, IParsable

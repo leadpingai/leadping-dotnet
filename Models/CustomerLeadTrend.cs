@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Lead trend associated with this Leadping customer analytics.
+    /// Represents customer lead trend data exposed by Leadping analytics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerLeadTrend : IAdditionalDataHolder, IParsable

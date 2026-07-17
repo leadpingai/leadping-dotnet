@@ -17,6 +17,14 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_billingPlan? BillingPlan { get; set; }
+        /// <summary>Customer-safe billing state for the user&apos;s currently selected business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.UserResponse_billingState? BillingState { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.UserResponse_billingState BillingState { get; set; }
+#endif
         /// <summary>The compliance value for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,6 +175,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_billingPlan>(); } },
+                { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_billingState>(global::Leadping.OpenApiClient.Models.UserResponse_billingState.CreateFromDiscriminatorValue); } },
                 { "compliance", n => { Compliance = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>(global::Leadping.OpenApiClient.Models.UserResponse_compliance.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentBusiness", n => { CurrentBusiness = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness>(global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness.CreateFromDiscriminatorValue); } },
@@ -197,6 +206,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_billingPlan>("billingPlan", BillingPlan);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_billingState>("billingState", BillingState);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>("compliance", Compliance);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness>("currentBusiness", CurrentBusiness);

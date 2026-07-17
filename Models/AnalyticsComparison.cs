@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Date and time when this Leadping customer analytics summary was leads comparison.
+    /// Represents analytics comparison data exposed by Leadping analytics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsComparison : IAdditionalDataHolder, IParsable

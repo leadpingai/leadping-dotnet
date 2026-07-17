@@ -69,6 +69,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan? BillingPlan { get; set; }
+        /// <summary>Customer-safe billing state for this business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.BusinessResponse_billingState? BillingState { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.BusinessResponse_billingState BillingState { get; set; }
+#endif
         /// <summary>Compliance policy configuration for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -227,6 +235,7 @@ namespace Leadping.OpenApiClient.Models
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingAddress>(global::Leadping.OpenApiClient.Models.BusinessResponse_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan>(); } },
+                { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingState>(global::Leadping.OpenApiClient.Models.BusinessResponse_billingState.CreateFromDiscriminatorValue); } },
                 { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_compliancePolicy>(global::Leadping.OpenApiClient.Models.BusinessResponse_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -265,6 +274,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingAddress>("billingAddress", BillingAddress);
             writer.WriteStringValue("billingName", BillingName);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan>("billingPlan", BillingPlan);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingState>("billingState", BillingState);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
