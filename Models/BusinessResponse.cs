@@ -77,6 +77,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.BusinessResponse_billingState BillingState { get; set; }
 #endif
+        /// <summary>Tax identifier printed on billing documents. This may differ from the business verification EIN.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingTaxId { get; set; }
+#nullable restore
+#else
+        public string BillingTaxId { get; set; }
+#endif
         /// <summary>Compliance policy configuration for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,6 +246,7 @@ namespace Leadping.OpenApiClient.Models
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan>(); } },
                 { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingState>(global::Leadping.OpenApiClient.Models.BusinessResponse_billingState.CreateFromDiscriminatorValue); } },
+                { "billingTaxId", n => { BillingTaxId = n.GetStringValue(); } },
                 { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_compliancePolicy>(global::Leadping.OpenApiClient.Models.BusinessResponse_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -278,6 +287,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("billingName", BillingName);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingState>("billingState", BillingState);
+            writer.WriteStringValue("billingTaxId", BillingTaxId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);

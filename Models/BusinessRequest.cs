@@ -57,6 +57,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingName { get; set; }
 #endif
+        /// <summary>Tax identifier printed on billing documents. This may differ from the business verification EIN.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingTaxId { get; set; }
+#nullable restore
+#else
+        public string BillingTaxId { get; set; }
+#endif
         /// <summary>Compliance policy configuration for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +190,7 @@ namespace Leadping.OpenApiClient.Models
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress>(global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
+                { "billingTaxId", n => { BillingTaxId = n.GetStringValue(); } },
                 { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy>(global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
@@ -211,6 +220,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("autoRefillTrigger", AutoRefillTrigger);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_billingAddress>("billingAddress", BillingAddress);
             writer.WriteStringValue("billingName", BillingName);
+            writer.WriteStringValue("billingTaxId", BillingTaxId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessRequest_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("ein", Ein);

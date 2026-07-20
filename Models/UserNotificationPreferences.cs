@@ -47,6 +47,18 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedEnabled { get; set; }
         /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
+        /// <summary>Whether the user has consented to receive Leadping account notification SMS messages.</summary>
+        public bool? SmsConsentOptedIn { get; set; }
+        /// <summary>The TrustedForm certificate captured for the user&apos;s most recent SMS opt-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate? SmsConsentTrustedFormCertificate { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate SmsConsentTrustedFormCertificate { get; set; }
+#endif
+        /// <summary>When the user&apos;s Leadping notification SMS consent was last changed.</summary>
+        public DateTimeOffset? SmsConsentUpdatedAt { get; set; }
         /// <summary>Indicates whether subscription renewing email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? SubscriptionRenewingEmailEnabled { get; set; }
         /// <summary>Whether subscription renewing notifications are enabled for this user notification preferences.</summary>
@@ -104,6 +116,9 @@ namespace Leadping.OpenApiClient.Models
                 { "newLeadSmsEnabled", n => { NewLeadSmsEnabled = n.GetBoolValue(); } },
                 { "paymentFailedEnabled", n => { PaymentFailedEnabled = n.GetBoolValue(); } },
                 { "paymentFailedSmsEnabled", n => { PaymentFailedSmsEnabled = n.GetBoolValue(); } },
+                { "smsConsentOptedIn", n => { SmsConsentOptedIn = n.GetBoolValue(); } },
+                { "smsConsentTrustedFormCertificate", n => { SmsConsentTrustedFormCertificate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate>(global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate.CreateFromDiscriminatorValue); } },
+                { "smsConsentUpdatedAt", n => { SmsConsentUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "subscriptionRenewingEmailEnabled", n => { SubscriptionRenewingEmailEnabled = n.GetBoolValue(); } },
                 { "subscriptionRenewingEnabled", n => { SubscriptionRenewingEnabled = n.GetBoolValue(); } },
                 { "subscriptionRenewingSmsEnabled", n => { SubscriptionRenewingSmsEnabled = n.GetBoolValue(); } },
@@ -137,6 +152,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("newLeadSmsEnabled", NewLeadSmsEnabled);
             writer.WriteBoolValue("paymentFailedEnabled", PaymentFailedEnabled);
             writer.WriteBoolValue("paymentFailedSmsEnabled", PaymentFailedSmsEnabled);
+            writer.WriteBoolValue("smsConsentOptedIn", SmsConsentOptedIn);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate>("smsConsentTrustedFormCertificate", SmsConsentTrustedFormCertificate);
+            writer.WriteDateTimeOffsetValue("smsConsentUpdatedAt", SmsConsentUpdatedAt);
             writer.WriteBoolValue("subscriptionRenewingEmailEnabled", SubscriptionRenewingEmailEnabled);
             writer.WriteBoolValue("subscriptionRenewingEnabled", SubscriptionRenewingEnabled);
             writer.WriteBoolValue("subscriptionRenewingSmsEnabled", SubscriptionRenewingSmsEnabled);

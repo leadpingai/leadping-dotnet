@@ -15,6 +15,8 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Date and time when the scheduled billing plan change takes effect.</summary>
+        public DateTimeOffset? BillingPlanChangeEffectiveAt { get; set; }
         /// <summary>Gets or sets the number of user licenses currently assigned by the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,8 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LastPaymentMethodEventAt { get; set; }
         /// <summary>Gets or sets when Leadping last processed a subscription event for the business.</summary>
         public DateTimeOffset? LastSubscriptionEventAt { get; set; }
+        /// <summary>Defines the supported Billing Plan values.</summary>
+        public global::Leadping.OpenApiClient.Models.BusinessBillingState_pendingBillingPlan? PendingBillingPlan { get; set; }
         /// <summary>Gets or sets the number of phone numbers included in the business subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +61,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode PhoneNumberQuantity { get; set; }
 #endif
+        /// <summary>Current plan renewal date.</summary>
+        public DateTimeOffset? PlanRenewalAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BusinessBillingState"/> and sets the default values.
         /// </summary>
@@ -82,6 +88,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "billingPlanChangeEffectiveAt", n => { BillingPlanChangeEffectiveAt = n.GetDateTimeOffsetValue(); } },
                 { "businessUserAssignedQuantity", n => { BusinessUserAssignedQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "businessUserQuantity", n => { BusinessUserQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "cancelAt", n => { CancelAt = n.GetDateTimeOffsetValue(); } },
@@ -90,7 +97,9 @@ namespace Leadping.OpenApiClient.Models
                 { "hasStripeCustomer", n => { HasStripeCustomer = n.GetBoolValue(); } },
                 { "lastPaymentMethodEventAt", n => { LastPaymentMethodEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastSubscriptionEventAt", n => { LastSubscriptionEventAt = n.GetDateTimeOffsetValue(); } },
+                { "pendingBillingPlan", n => { PendingBillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessBillingState_pendingBillingPlan>(); } },
                 { "phoneNumberQuantity", n => { PhoneNumberQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "planRenewalAt", n => { PlanRenewalAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -100,6 +109,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("billingPlanChangeEffectiveAt", BillingPlanChangeEffectiveAt);
             writer.WriteObjectValue<UntypedNode>("businessUserAssignedQuantity", BusinessUserAssignedQuantity);
             writer.WriteObjectValue<UntypedNode>("businessUserQuantity", BusinessUserQuantity);
             writer.WriteDateTimeOffsetValue("cancelAt", CancelAt);
@@ -108,7 +118,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("hasStripeCustomer", HasStripeCustomer);
             writer.WriteDateTimeOffsetValue("lastPaymentMethodEventAt", LastPaymentMethodEventAt);
             writer.WriteDateTimeOffsetValue("lastSubscriptionEventAt", LastSubscriptionEventAt);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessBillingState_pendingBillingPlan>("pendingBillingPlan", PendingBillingPlan);
             writer.WriteObjectValue<UntypedNode>("phoneNumberQuantity", PhoneNumberQuantity);
+            writer.WriteDateTimeOffsetValue("planRenewalAt", PlanRenewalAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
