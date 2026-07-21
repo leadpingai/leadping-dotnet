@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Customer-safe Stripe invoice summary for billing history.
+    /// Customer-safe Leadping invoice summary for billing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StripeInvoiceResponse : IAdditionalDataHolder, IParsable
@@ -19,14 +19,8 @@ namespace Leadping.OpenApiClient.Models
         public double? Amount { get; set; }
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The hostedInvoiceUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? HostedInvoiceUrl { get; set; }
-#nullable restore
-#else
-        public string HostedInvoiceUrl { get; set; }
-#endif
+        /// <summary>The hasPdf property</summary>
+        public bool? HasPdf { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,7 +72,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "hostedInvoiceUrl", n => { HostedInvoiceUrl = n.GetStringValue(); } },
+                { "hasPdf", n => { HasPdf = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -93,7 +87,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("hostedInvoiceUrl", HostedInvoiceUrl);
+            writer.WriteBoolValue("hasPdf", HasPdf);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("status", Status);

@@ -31,6 +31,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
+        /// <summary>Source API key used to authenticate inbound lead delivery to Leadping. Unlike a business API key, this value remains available to authorized source users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApiKey { get; set; }
+#nullable restore
+#else
+        public string ApiKey { get; set; }
+#endif
         /// <summary>Masked preview of the source API key for compact display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,6 +168,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>(global::Leadping.OpenApiClient.Models.SourceResponse_business.CreateFromDiscriminatorValue); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
@@ -189,6 +198,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
+            writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_business>("business", Business);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);

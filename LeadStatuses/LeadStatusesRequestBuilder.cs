@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
         {
         }
         /// <summary>
-        /// Get all
+        /// Lists the current business&apos;s active lead statuses for organizing and tracking leads through the sales workflow.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.LeadStatusResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create
+        /// Creates a reusable lead status for the current business to categorize leads in its sales workflow.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadStatusResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadStatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all
+        /// Lists the current business&apos;s active lead statuses for organizing and tracking leads through the sales workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             return requestInfo;
         }
         /// <summary>
-        /// Create
+        /// Creates a reusable lead status for the current business to categorize leads in its sales workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -15,6 +15,8 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates whether Leadping successfully calculated capacity for this phone number.</summary>
+        public bool? CapacityAvailable { get; set; }
         /// <summary>Current health status for this Leadping outbound phone number capacity.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus? HealthStatus { get; set; }
         /// <summary>Phone number associated with this Leadping outbound phone number capacity.</summary>
@@ -82,6 +84,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "capacityAvailable", n => { CapacityAvailable = n.GetBoolValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
@@ -106,6 +109,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("capacityAvailable", CapacityAvailable);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);

@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
         {
         }
         /// <summary>
-        /// Archive
+        /// Archives a lead status for the current business so it is unavailable for new assignments while existing lead history is preserved.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update
+        /// Updates the name, color, and display order of a lead status owned by the current business.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadStatusResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadStatusResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive
+        /// Archives a lead status for the current business so it is unavailable for new assignments while existing lead history is preserved.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update
+        /// Updates the name, color, and display order of a lead status owned by the current business.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -31,6 +31,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
+        /// <summary>Source API key used to authenticate inbound lead delivery to Leadping. Unlike a business API key, this value remains available to authorized source users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApiKey { get; set; }
+#nullable restore
+#else
+        public string ApiKey { get; set; }
+#endif
         /// <summary>UTC timestamp when the source API key was last used.</summary>
         public DateTimeOffset? ApiKeyLastUsedAt { get; set; }
         /// <summary>Masked preview of the source API key for compact display.</summary>
@@ -172,6 +180,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
@@ -204,6 +213,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
+            writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
