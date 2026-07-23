@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing SMS warmup ui state data used by Leadping API contracts.
+    /// API DTO containing SMS readiness UI state data used by Leadping API contracts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SmsWarmupUiState : IAdditionalDataHolder, IParsable
+    public partial class SmsReadinessUiState : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The human-readable description of this SMS warmup UI state.</summary>
+        /// <summary>The human-readable description of this SMS readiness UI state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The human-readable label shown for this SMS warmup UI state.</summary>
-        public global::Leadping.OpenApiClient.Models.SmsWarmupHealthState? Label { get; set; }
-        /// <summary>The tone value for this SMS warmup UI state.</summary>
+        /// <summary>The human-readable label shown for this SMS readiness UI state.</summary>
+        public global::Leadping.OpenApiClient.Models.SmsReadinessState? Label { get; set; }
+        /// <summary>The tone value for this SMS readiness UI state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tone { get; set; }
@@ -34,21 +34,21 @@ namespace Leadping.OpenApiClient.Models
         public string Tone { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SmsWarmupUiState"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SmsReadinessUiState"/> and sets the default values.
         /// </summary>
-        public SmsWarmupUiState()
+        public SmsReadinessUiState()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsWarmupUiState"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsReadinessUiState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.SmsWarmupUiState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.SmsReadinessUiState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.SmsWarmupUiState();
+            return new global::Leadping.OpenApiClient.Models.SmsReadinessUiState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "label", n => { Label = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsWarmupHealthState>(); } },
+                { "label", n => { Label = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessState>(); } },
                 { "tone", n => { Tone = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsWarmupHealthState>("label", Label);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessState>("label", Label);
             writer.WriteStringValue("tone", Tone);
             writer.WriteAdditionalData(AdditionalData);
         }

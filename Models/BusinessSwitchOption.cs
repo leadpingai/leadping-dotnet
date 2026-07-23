@@ -55,6 +55,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? ReadyForCustomerTraffic { get; set; }
         /// <summary>The role value for this business switch option.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessUserRole? Role { get; set; }
+        /// <summary>Defines the supported 10DLC Application Status values.</summary>
+        public global::Leadping.OpenApiClient.Models.BusinessSwitchOption_tenDlcStatus? TenDlcStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BusinessSwitchOption"/> and sets the default values.
         /// </summary>
@@ -91,6 +93,7 @@ namespace Leadping.OpenApiClient.Models
                 { "needsAdminReview", n => { NeedsAdminReview = n.GetBoolValue(); } },
                 { "readyForCustomerTraffic", n => { ReadyForCustomerTraffic = n.GetBoolValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessUserRole>(); } },
+                { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessSwitchOption_tenDlcStatus>(); } },
             };
         }
         /// <summary>
@@ -111,6 +114,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("needsAdminReview", NeedsAdminReview);
             writer.WriteBoolValue("readyForCustomerTraffic", ReadyForCustomerTraffic);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessUserRole>("role", Role);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessSwitchOption_tenDlcStatus>("tenDlcStatus", TenDlcStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

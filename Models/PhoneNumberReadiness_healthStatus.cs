@@ -5,7 +5,7 @@ namespace Leadping.OpenApiClient.Models
 {
     /// <summary>Defines the supported SMS readiness health assessments.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum EligibleOutgoingNumberResponse_healthStatus
+    public enum PhoneNumberReadiness_healthStatus
     {
         [EnumMember(Value = "Not Evaluated")]
         #pragma warning disable CS1591

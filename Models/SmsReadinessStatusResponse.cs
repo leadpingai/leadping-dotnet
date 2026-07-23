@@ -11,12 +11,14 @@ namespace Leadping.OpenApiClient.Models
     /// API response containing SMS warmup status data returned to callers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SmsWarmupStatusResponse : IAdditionalDataHolder, IParsable
+    public partial class SmsReadinessStatusResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The health score metric for this SMS warmup status.</summary>
         public int? HealthScore { get; set; }
+        /// <summary>The current delivery-health assessment for this SMS warmup status.</summary>
+        public global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus? HealthStatus { get; set; }
         /// <summary>The phone number associated with this SMS warmup status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,34 +37,34 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The progress percent metric for this SMS warmup status.</summary>
         public int? ProgressPercent { get; set; }
-        /// <summary>The current status for this SMS warmup status.</summary>
-        public global::Leadping.OpenApiClient.Models.SmsWarmupHealthState? Status { get; set; }
+        /// <summary>The current state for this SMS warmup status.</summary>
+        public global::Leadping.OpenApiClient.Models.SmsReadinessState? Status { get; set; }
         /// <summary>The current UI state for this SMS warmup status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.SmsWarmupUiState? UiState { get; set; }
+        public global::Leadping.OpenApiClient.Models.SmsReadinessUiState? UiState { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.SmsWarmupUiState UiState { get; set; }
+        public global::Leadping.OpenApiClient.Models.SmsReadinessUiState UiState { get; set; }
 #endif
         /// <summary>Whether warmup is enabled for this SMS warmup status.</summary>
         public bool? WarmupEnabled { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SmsWarmupStatusResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SmsReadinessStatusResponse"/> and sets the default values.
         /// </summary>
-        public SmsWarmupStatusResponse()
+        public SmsReadinessStatusResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsWarmupStatusResponse"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsReadinessStatusResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.SmsWarmupStatusResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.SmsReadinessStatusResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.SmsWarmupStatusResponse();
+            return new global::Leadping.OpenApiClient.Models.SmsReadinessStatusResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,11 +75,12 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "healthScore", n => { HealthScore = n.GetIntValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "progressPercent", n => { ProgressPercent = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsWarmupHealthState>(); } },
-                { "uiState", n => { UiState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SmsWarmupUiState>(global::Leadping.OpenApiClient.Models.SmsWarmupUiState.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessState>(); } },
+                { "uiState", n => { UiState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SmsReadinessUiState>(global::Leadping.OpenApiClient.Models.SmsReadinessUiState.CreateFromDiscriminatorValue); } },
                 { "warmupEnabled", n => { WarmupEnabled = n.GetBoolValue(); } },
             };
         }
@@ -89,11 +92,12 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("healthScore", HealthScore);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
             writer.WriteIntValue("progressPercent", ProgressPercent);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsWarmupHealthState>("status", Status);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SmsWarmupUiState>("uiState", UiState);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessState>("status", Status);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SmsReadinessUiState>("uiState", UiState);
             writer.WriteBoolValue("warmupEnabled", WarmupEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

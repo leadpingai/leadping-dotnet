@@ -71,13 +71,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata Routing { get; set; }
 #endif
-        /// <summary>SMS and voice warmup state for this phone number.</summary>
+        /// <summary>SMS and call warmup for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup? Warmup { get; set; }
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness? Warmup { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup Warmup { get; set; }
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness Warmup { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberResponse"/> and sets the default values.
@@ -114,7 +114,7 @@ namespace Leadping.OpenApiClient.Models
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "routing", n => { Routing = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>(global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata.CreateFromDiscriminatorValue); } },
-                { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup>(global::Leadping.OpenApiClient.Models.PhoneNumberWarmup.CreateFromDiscriminatorValue); } },
+                { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>(global::Leadping.OpenApiClient.Models.PhoneNumberReadiness.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>("routing", Routing);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup>("warmup", Warmup);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>("warmup", Warmup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

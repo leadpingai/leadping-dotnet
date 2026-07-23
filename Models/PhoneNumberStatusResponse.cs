@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API phone number readiness status returned to authenticated clients.
+    /// Response schema for the Leadping API phone number warmup status returned to authenticated clients.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberStatusResponse : IAdditionalDataHolder, IParsable
@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Models
         public int? CallsPossible { get; set; }
         /// <summary>Indicates whether this phone number can currently send SMS messages.</summary>
         public int? MessagesPossible { get; set; }
-        /// <summary>E.164 phone number exposed by this phone number readiness status.</summary>
+        /// <summary>E.164 phone number exposed by this phone number warmup status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse> RecentEvents { get; set; }
 #endif
-        /// <summary>SMS sender warmup status for this phone number.</summary>
+        /// <summary>SMS warmup status for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup? SmsWarmup { get; set; }

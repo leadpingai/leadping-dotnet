@@ -15,10 +15,16 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of outbound calls that connected during this metrics window.</summary>
+        public int? CallConnectedCount { get; set; }
         /// <summary>Number of outbound calls that failed during this metrics window.</summary>
         public int? CallFailedCount { get; set; }
+        /// <summary>Number of outbound calls that failed because the destination number was invalid during this metrics window.</summary>
+        public int? CallInvalidNumberCount { get; set; }
         /// <summary>Number of outbound calls placed during this metrics window.</summary>
         public int? CallPlacedCount { get; set; }
+        /// <summary>Number of connected outbound calls shorter than 30 seconds during this metrics window.</summary>
+        public int? CallShortCount { get; set; }
         /// <summary>Number of SMS messages that failed during this metrics window.</summary>
         public int? SmsFailedCount { get; set; }
         /// <summary>Number of SMS messages sent during this metrics window.</summary>
@@ -60,8 +66,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callConnectedCount", n => { CallConnectedCount = n.GetIntValue(); } },
                 { "callFailedCount", n => { CallFailedCount = n.GetIntValue(); } },
+                { "callInvalidNumberCount", n => { CallInvalidNumberCount = n.GetIntValue(); } },
                 { "callPlacedCount", n => { CallPlacedCount = n.GetIntValue(); } },
+                { "callShortCount", n => { CallShortCount = n.GetIntValue(); } },
                 { "smsFailedCount", n => { SmsFailedCount = n.GetIntValue(); } },
                 { "smsSentCount", n => { SmsSentCount = n.GetIntValue(); } },
                 { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>(global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -76,8 +85,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("callConnectedCount", CallConnectedCount);
             writer.WriteIntValue("callFailedCount", CallFailedCount);
+            writer.WriteIntValue("callInvalidNumberCount", CallInvalidNumberCount);
             writer.WriteIntValue("callPlacedCount", CallPlacedCount);
+            writer.WriteIntValue("callShortCount", CallShortCount);
             writer.WriteIntValue("smsFailedCount", SmsFailedCount);
             writer.WriteIntValue("smsSentCount", SmsSentCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>("trend", Trend);

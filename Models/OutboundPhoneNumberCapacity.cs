@@ -35,6 +35,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
+        /// <summary>Next midnight Eastern time, when SMS daily capacity resets.</summary>
+        public DateTimeOffset? SmsDailyResetsAt { get; set; }
+        /// <summary>Start of the next Eastern time hour, when SMS hourly capacity resets.</summary>
+        public DateTimeOffset? SmsHourlyResetsAt { get; set; }
         /// <summary>Number of SMS limit this hour represented by this Leadping outbound phone number capacity.</summary>
         public int? SmsLimitThisHour { get; set; }
         /// <summary>Number of SMS limit today represented by this Leadping outbound phone number capacity.</summary>
@@ -47,6 +51,10 @@ namespace Leadping.OpenApiClient.Models
         public int? SmsUsedThisHour { get; set; }
         /// <summary>SMS used today for the applicable messaging or voice capacity window.</summary>
         public int? SmsUsedToday { get; set; }
+        /// <summary>Next midnight Eastern time, when voice daily capacity resets.</summary>
+        public DateTimeOffset? VoiceDailyResetsAt { get; set; }
+        /// <summary>Start of the next Eastern time hour, when voice hourly capacity resets.</summary>
+        public DateTimeOffset? VoiceHourlyResetsAt { get; set; }
         /// <summary>Voice limit this hour associated with this Leadping outbound phone number capacity.</summary>
         public int? VoiceLimitThisHour { get; set; }
         /// <summary>Voice limit today associated with this Leadping outbound phone number capacity.</summary>
@@ -88,12 +96,16 @@ namespace Leadping.OpenApiClient.Models
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
+                { "smsDailyResetsAt", n => { SmsDailyResetsAt = n.GetDateTimeOffsetValue(); } },
+                { "smsHourlyResetsAt", n => { SmsHourlyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "smsLimitThisHour", n => { SmsLimitThisHour = n.GetIntValue(); } },
                 { "smsLimitToday", n => { SmsLimitToday = n.GetIntValue(); } },
                 { "smsRemainingThisHour", n => { SmsRemainingThisHour = n.GetIntValue(); } },
                 { "smsRemainingToday", n => { SmsRemainingToday = n.GetIntValue(); } },
                 { "smsUsedThisHour", n => { SmsUsedThisHour = n.GetIntValue(); } },
                 { "smsUsedToday", n => { SmsUsedToday = n.GetIntValue(); } },
+                { "voiceDailyResetsAt", n => { VoiceDailyResetsAt = n.GetDateTimeOffsetValue(); } },
+                { "voiceHourlyResetsAt", n => { VoiceHourlyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "voiceLimitThisHour", n => { VoiceLimitThisHour = n.GetIntValue(); } },
                 { "voiceLimitToday", n => { VoiceLimitToday = n.GetIntValue(); } },
                 { "voiceRemainingThisHour", n => { VoiceRemainingThisHour = n.GetIntValue(); } },
@@ -113,12 +125,16 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
+            writer.WriteDateTimeOffsetValue("smsDailyResetsAt", SmsDailyResetsAt);
+            writer.WriteDateTimeOffsetValue("smsHourlyResetsAt", SmsHourlyResetsAt);
             writer.WriteIntValue("smsLimitThisHour", SmsLimitThisHour);
             writer.WriteIntValue("smsLimitToday", SmsLimitToday);
             writer.WriteIntValue("smsRemainingThisHour", SmsRemainingThisHour);
             writer.WriteIntValue("smsRemainingToday", SmsRemainingToday);
             writer.WriteIntValue("smsUsedThisHour", SmsUsedThisHour);
             writer.WriteIntValue("smsUsedToday", SmsUsedToday);
+            writer.WriteDateTimeOffsetValue("voiceDailyResetsAt", VoiceDailyResetsAt);
+            writer.WriteDateTimeOffsetValue("voiceHourlyResetsAt", VoiceHourlyResetsAt);
             writer.WriteIntValue("voiceLimitThisHour", VoiceLimitThisHour);
             writer.WriteIntValue("voiceLimitToday", VoiceLimitToday);
             writer.WriteIntValue("voiceRemainingThisHour", VoiceRemainingThisHour);

@@ -35,6 +35,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition CurrentDisposition { get; set; }
 #endif
+        /// <summary>Email address used to resolve the lead&apos;s avatar when available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get; set; }
+#nullable restore
+#else
+        public string Email { get; set; }
+#endif
         /// <summary>First name of the lead, user, or contact represented by this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +160,7 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentDisposition", n => { CurrentDisposition = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
@@ -179,6 +188,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition>("currentDisposition", CurrentDisposition);
+            writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);

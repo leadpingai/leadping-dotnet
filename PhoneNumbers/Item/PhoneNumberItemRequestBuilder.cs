@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates phone number settings such as display name, assignment, messaging options, or warmup configuration.
+        /// Updates phone number settings such as its optional label, assignment, messaging options, or warmup configuration.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API phone number update request, including the fields clients can send.</param>
@@ -168,7 +168,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates phone number settings such as display name, assignment, messaging options, or warmup configuration.
+        /// Updates phone number settings such as its optional label, assignment, messaging options, or warmup configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API phone number update request, including the fields clients can send.</param>

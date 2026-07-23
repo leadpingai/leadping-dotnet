@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Warmup
         {
         }
         /// <summary>
-        /// Returns warmup status for a phone number, including readiness, limits, and recent events used for delivery pacing.
+        /// Returns warmup status for a phone number, including limits and recent events used for delivery pacing.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Warmup
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns warmup status for a phone number, including readiness, limits, and recent events used for delivery pacing.
+        /// Returns warmup status for a phone number, including limits and recent events used for delivery pacing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Warmup
             return new global::Leadping.OpenApiClient.PhoneNumbers.Item.Warmup.WarmupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns warmup status for a phone number, including readiness, limits, and recent events used for delivery pacing.
+        /// Returns warmup status for a phone number, including limits and recent events used for delivery pacing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WarmupRequestBuilderGetQueryParameters 

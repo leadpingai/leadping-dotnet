@@ -8,39 +8,39 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Warmup state for a Leadping phone number.
+    /// Messaging and calling warmup for a Leadping phone number.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PhoneNumberWarmup : IAdditionalDataHolder, IParsable
+    public partial class PhoneNumberReadiness : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether the phone number warmup is enabled in Leadping.</summary>
+        /// <summary>Indicates whether phone number warmup is enabled in Leadping.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>Current warmup health score used to assess phone number readiness.</summary>
+        /// <summary>Current warmup health score used to assess phone number warmup.</summary>
         public int? HealthScore { get; set; }
-        /// <summary>Defines the supported SMS Warmup Health State values.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup_healthStatus? HealthStatus { get; set; }
+        /// <summary>Defines the supported SMS readiness health assessments.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus? HealthStatus { get; set; }
         /// <summary>Warmup completion percentage, from 0 through 100.</summary>
         public int? ProgressPercent { get; set; }
-        /// <summary>Defines the supported SMS Warmup Health State values.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup_state? State { get; set; }
+        /// <summary>Defines the supported SMS readiness states.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state? State { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberWarmup"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberReadiness"/> and sets the default values.
         /// </summary>
-        public PhoneNumberWarmup()
+        public PhoneNumberReadiness()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberWarmup"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberReadiness"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.PhoneNumberWarmup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.PhoneNumberReadiness CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.PhoneNumberWarmup();
+            return new global::Leadping.OpenApiClient.Models.PhoneNumberReadiness();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,9 +52,9 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "healthScore", n => { HealthScore = n.GetIntValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup_healthStatus>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>(); } },
                 { "progressPercent", n => { ProgressPercent = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state>(); } },
             };
         }
         /// <summary>
@@ -66,9 +66,9 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteIntValue("healthScore", HealthScore);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup_healthStatus>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>("healthStatus", HealthStatus);
             writer.WriteIntValue("progressPercent", ProgressPercent);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup_state>("state", State);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

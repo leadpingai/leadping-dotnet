@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthLabel { get; set; }
 #endif
-        /// <summary>Defines the supported SMS Warmup Health State values.</summary>
+        /// <summary>Defines the supported SMS readiness health assessments.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse_healthStatus? HealthStatus { get; set; }
         /// <summary>Warning text that explains a potential health or readiness issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

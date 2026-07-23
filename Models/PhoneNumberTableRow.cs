@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Display name for this phone number table row in the Leadping API.</summary>
+        /// <summary>Optional display label for this phone number table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -96,10 +96,10 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Warmup state for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup? Warmup { get; set; }
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness? Warmup { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.PhoneNumberWarmup Warmup { get; set; }
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness Warmup { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberTableRow"/> and sets the default values.
@@ -138,7 +138,7 @@ namespace Leadping.OpenApiClient.Models
                 { "tenDlcCampaignStatus", n => { TenDlcCampaignStatus = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "voiceReady", n => { VoiceReady = n.GetBoolValue(); } },
-                { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup>(global::Leadping.OpenApiClient.Models.PhoneNumberWarmup.CreateFromDiscriminatorValue); } },
+                { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>(global::Leadping.OpenApiClient.Models.PhoneNumberReadiness.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -160,7 +160,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("tenDlcCampaignStatus", TenDlcCampaignStatus);
             writer.WriteStringValue("type", Type);
             writer.WriteBoolValue("voiceReady", VoiceReady);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberWarmup>("warmup", Warmup);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>("warmup", Warmup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

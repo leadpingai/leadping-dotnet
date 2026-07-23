@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Status
         {
         }
         /// <summary>
-        /// Returns provider and Leadping status for a phone number, including messaging readiness, assignments, and verification state.
+        /// Returns provider and Leadping status for a phone number, including messaging warmup, assignments, and verification state.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Status
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns provider and Leadping status for a phone number, including messaging readiness, assignments, and verification state.
+        /// Returns provider and Leadping status for a phone number, including messaging warmup, assignments, and verification state.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Status
             return new global::Leadping.OpenApiClient.PhoneNumbers.Item.Status.StatusRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns provider and Leadping status for a phone number, including messaging readiness, assignments, and verification state.
+        /// Returns provider and Leadping status for a phone number, including messaging warmup, assignments, and verification state.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatusRequestBuilderGetQueryParameters 

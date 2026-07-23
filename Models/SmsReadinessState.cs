@@ -3,25 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported SMS Warmup Health State values.</summary>
+    /// <summary>Defines the supported SMS readiness states.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum SmsWarmupHealthState
+    public enum SmsReadinessState
     {
         [EnumMember(Value = "Not Started")]
         #pragma warning disable CS1591
         NotStarted,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Warming")]
+        [EnumMember(Value = "In Progress")]
         #pragma warning disable CS1591
-        Warming,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Healthy")]
-        #pragma warning disable CS1591
-        Healthy,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Needs Attention")]
-        #pragma warning disable CS1591
-        NeedsAttention,
+        InProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "Paused")]
         #pragma warning disable CS1591
