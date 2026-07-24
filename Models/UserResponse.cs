@@ -149,6 +149,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines the supported Subscription Status values.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus? SubscriptionStatus { get; set; }
+        /// <summary>IANA time zone identifier used when displaying dates and times for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/> and sets the default values.
         /// </summary>
@@ -196,6 +204,7 @@ namespace Leadping.OpenApiClient.Models
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus>(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -227,6 +236,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<UntypedNode>("roles", Roles);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

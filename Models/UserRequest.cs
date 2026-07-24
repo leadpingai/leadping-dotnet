@@ -97,6 +97,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
+        /// <summary>IANA time zone identifier used when displaying dates and times for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserRequest"/> and sets the default values.
         /// </summary>
@@ -133,6 +141,7 @@ namespace Leadping.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notificationPreferences", n => { NotificationPreferences = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences>(global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -153,6 +162,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences>("notificationPreferences", NotificationPreferences);
             writer.WriteStringValue("phone", Phone);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
