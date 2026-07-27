@@ -21,6 +21,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ActorDisplayName { get; set; }
 #endif
+        /// <summary>Email address for the person who created this event timeline table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorEmail { get; set; }
+#nullable restore
+#else
+        public string ActorEmail { get; set; }
+#endif
         /// <summary>User ID for the person or system that created this event timeline table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -293,6 +301,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                { "actorEmail", n => { ActorEmail = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
@@ -347,6 +356,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
+            writer.WriteStringValue("actorEmail", ActorEmail);
             writer.WriteStringValue("actorUserId", ActorUserId);
             writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);

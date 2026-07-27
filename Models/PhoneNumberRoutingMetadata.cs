@@ -41,6 +41,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
+        /// <summary>Leadping 10DLC application entity associated with this phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenDlcApplicationId { get; set; }
+#nullable restore
+#else
+        public string TenDlcApplicationId { get; set; }
+#endif
         /// <summary>Indicates whether the phone number can be used for voice calls.</summary>
         public bool? VoiceEnabled { get; set; }
         /// <summary>
@@ -72,6 +80,7 @@ namespace Leadping.OpenApiClient.Models
                 { "smsEnabled", n => { SmsEnabled = n.GetBoolValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "tenDlcApplicationId", n => { TenDlcApplicationId = n.GetStringValue(); } },
                 { "voiceEnabled", n => { VoiceEnabled = n.GetBoolValue(); } },
             };
         }
@@ -86,6 +95,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("smsEnabled", SmsEnabled);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("tenDlcApplicationId", TenDlcApplicationId);
             writer.WriteBoolValue("voiceEnabled", VoiceEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

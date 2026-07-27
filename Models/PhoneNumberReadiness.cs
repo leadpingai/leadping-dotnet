@@ -15,6 +15,8 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Defines the supported voice call warmup stages for a Leadping-managed phone number.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_callStage? CallStage { get; set; }
         /// <summary>Indicates whether phone number warmup is enabled in Leadping.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Current warmup health score used to assess phone number warmup.</summary>
@@ -50,6 +52,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callStage", n => { CallStage = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_callStage>(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "healthScore", n => { HealthScore = n.GetIntValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>(); } },
@@ -64,6 +67,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_callStage>("callStage", CallStage);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteIntValue("healthScore", HealthScore);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>("healthStatus", HealthStatus);

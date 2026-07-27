@@ -133,6 +133,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? TelephonyReadyAt { get; set; }
         /// <summary>The current telephony status for this business activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationTelephonyStatus? TelephonyStatus { get; set; }
+        /// <summary>Identifier of the first-class 10DLC application entity for this business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenDlcApplicationId { get; set; }
+#nullable restore
+#else
+        public string TenDlcApplicationId { get; set; }
+#endif
         /// <summary>The 10DLC draft value for this business activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +225,7 @@ namespace Leadping.OpenApiClient.Models
                 { "telephonyProvisioningStartedAt", n => { TelephonyProvisioningStartedAt = n.GetDateTimeOffsetValue(); } },
                 { "telephonyReadyAt", n => { TelephonyReadyAt = n.GetDateTimeOffsetValue(); } },
                 { "telephonyStatus", n => { TelephonyStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ActivationTelephonyStatus>(); } },
+                { "tenDlcApplicationId", n => { TenDlcApplicationId = n.GetStringValue(); } },
                 { "tenDlcDraft", n => { TenDlcDraft = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessActivationState_tenDlcDraft>(global::Leadping.OpenApiClient.Models.BusinessActivationState_tenDlcDraft.CreateFromDiscriminatorValue); } },
                 { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -261,6 +270,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("telephonyProvisioningStartedAt", TelephonyProvisioningStartedAt);
             writer.WriteDateTimeOffsetValue("telephonyReadyAt", TelephonyReadyAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ActivationTelephonyStatus>("telephonyStatus", TelephonyStatus);
+            writer.WriteStringValue("tenDlcApplicationId", TenDlcApplicationId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessActivationState_tenDlcDraft>("tenDlcDraft", TenDlcDraft);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus>("tenDlcStatus", TenDlcStatus);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

@@ -15,6 +15,22 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Canonical city resolved by Leadping from its ZIP-code geography data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CanonicalCity { get; set; }
+#nullable restore
+#else
+        public string CanonicalCity { get; set; }
+#endif
+        /// <summary>Canonical state or territory abbreviation resolved by Leadping.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CanonicalState { get; set; }
+#nullable restore
+#else
+        public string CanonicalState { get; set; }
+#endif
         /// <summary>Latitude and longitude coordinate for this phone number location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +38,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate Coordinate { get; set; }
+#endif
+        /// <summary>Describes how the coordinate was resolved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource? CoordinateSource { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource CoordinateSource { get; set; }
 #endif
         /// <summary>Country code for the phone number or location represented by this phone number location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +79,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TimeZoneId { get; set; }
 #endif
+        /// <summary>Describes how the time zone was resolved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource? TimeZoneSource { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource TimeZoneSource { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberLocation"/> and sets the default values.
         /// </summary>
@@ -80,11 +112,15 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "canonicalCity", n => { CanonicalCity = n.GetStringValue(); } },
+                { "canonicalState", n => { CanonicalState = n.GetStringValue(); } },
                 { "coordinate", n => { Coordinate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate>(global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate.CreateFromDiscriminatorValue); } },
+                { "coordinateSource", n => { CoordinateSource = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource>(global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource.CreateFromDiscriminatorValue); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
+                { "timeZoneSource", n => { TimeZoneSource = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource>(global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,11 +130,15 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("canonicalCity", CanonicalCity);
+            writer.WriteStringValue("canonicalState", CanonicalState);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate>("coordinate", Coordinate);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource>("coordinateSource", CoordinateSource);
             writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("timeZoneId", TimeZoneId);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource>("timeZoneSource", TimeZoneSource);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

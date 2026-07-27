@@ -83,6 +83,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>Canonical phone identity and provider lookup details for this lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity? PhoneIdentity { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity PhoneIdentity { get; set; }
+#endif
         /// <summary>Tags currently attached to this lead, source, or record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +137,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "phoneIdentity", n => { PhoneIdentity = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity>(global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -152,6 +161,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>("metadata", Metadata);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity>("phoneIdentity", PhoneIdentity);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
