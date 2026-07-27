@@ -52,7 +52,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the name, color, and display order of a lead status owned by the current business.
+        /// Updates the name, color, and display order of a lead status owned by the current business so pipeline stages remain clear and consistently organized.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates the name, color, and display order of a lead status owned by the current business.
+        /// Updates the name, color, and display order of a lead status owned by the current business so pipeline stages remain clear and consistently organized.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

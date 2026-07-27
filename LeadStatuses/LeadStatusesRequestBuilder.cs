@@ -66,7 +66,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a reusable lead status for the current business to categorize leads in its sales workflow.
+        /// Creates a reusable lead status for the current business to categorize, organize, and track leads consistently throughout its sales and follow-up workflow.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             return requestInfo;
         }
         /// <summary>
-        /// Creates a reusable lead status for the current business to categorize leads in its sales workflow.
+        /// Creates a reusable lead status for the current business to categorize, organize, and track leads consistently throughout its sales and follow-up workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

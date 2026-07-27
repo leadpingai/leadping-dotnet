@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.OneZerodlc.Notes
         {
         }
         /// <summary>
-        /// Updates the shared 10DLC notes for the current business.
+        /// Updates the shared 10DLC registration notes for the current business, keeping carrier review context and messaging compliance details current.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.BusinessResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.OneZerodlc.Notes
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.BusinessResponse>(requestInfo, global::Leadping.OpenApiClient.Models.BusinessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the shared 10DLC notes for the current business.
+        /// Updates the shared 10DLC registration notes for the current business, keeping carrier review context and messaging compliance details current.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
