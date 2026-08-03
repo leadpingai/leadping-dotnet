@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average time, in minutes, before a lead receives a response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AverageResponseMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode AverageResponseMinutes { get; set; }
-#endif
+        public double? AverageResponseMinutes { get; set; }
         /// <summary>Current billing status for this Leadping customer analytics summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,13 +42,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison LeadsComparison { get; set; }
 #endif
         /// <summary>Median response minutes measured in minutes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MedianResponseMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode MedianResponseMinutes { get; set; }
-#endif
+        public double? MedianResponseMinutes { get; set; }
         /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
         /// <summary>Number of missed leads represented by this Leadping customer analytics summary.</summary>
@@ -104,14 +92,14 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "averageResponseMinutes", n => { AverageResponseMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "averageResponseMinutes", n => { AverageResponseMinutes = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
                 { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
                 { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
                 { "leads", n => { Leads = n.GetIntValue(); } },
                 { "leadsComparison", n => { LeadsComparison = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>(global::Leadping.OpenApiClient.Models.AnalyticsComparison.CreateFromDiscriminatorValue); } },
-                { "medianResponseMinutes", n => { MedianResponseMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "medianResponseMinutes", n => { MedianResponseMinutes = n.GetDoubleValue(); } },
                 { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
                 { "missedLeads", n => { MissedLeads = n.GetIntValue(); } },
                 { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetDoubleValue(); } },
@@ -130,14 +118,14 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("averageResponseMinutes", AverageResponseMinutes);
+            writer.WriteDoubleValue("averageResponseMinutes", AverageResponseMinutes);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDoubleValue("callMinutes", CallMinutes);
             writer.WriteIntValue("callsPlaced", CallsPlaced);
             writer.WriteIntValue("callsReceived", CallsReceived);
             writer.WriteIntValue("leads", Leads);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>("leadsComparison", LeadsComparison);
-            writer.WriteObjectValue<UntypedNode>("medianResponseMinutes", MedianResponseMinutes);
+            writer.WriteDoubleValue("medianResponseMinutes", MedianResponseMinutes);
             writer.WriteIntValue("missedCalls", MissedCalls);
             writer.WriteIntValue("missedLeads", MissedLeads);
             writer.WriteDoubleValue("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);

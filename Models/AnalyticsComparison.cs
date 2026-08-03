@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Percentage change between the current and previous reporting periods.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ChangePercent { get; set; }
-#nullable restore
-#else
-        public UntypedNode ChangePercent { get; set; }
-#endif
+        public double? ChangePercent { get; set; }
         /// <summary>Metric value for the current reporting period.</summary>
         public double? Current { get; set; }
         /// <summary>Direction classification for this Leadping analytics comparison.</summary>
@@ -60,7 +54,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "changePercent", n => { ChangePercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "changePercent", n => { ChangePercent = n.GetDoubleValue(); } },
                 { "current", n => { Current = n.GetDoubleValue(); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
                 { "previous", n => { Previous = n.GetDoubleValue(); } },
@@ -73,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("changePercent", ChangePercent);
+            writer.WriteDoubleValue("changePercent", ChangePercent);
             writer.WriteDoubleValue("current", Current);
             writer.WriteStringValue("direction", Direction);
             writer.WriteDoubleValue("previous", Previous);

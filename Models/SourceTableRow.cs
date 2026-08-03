@@ -70,13 +70,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Indicates whether the business or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CostPerLead { get; set; }
-#nullable restore
-#else
-        public UntypedNode CostPerLead { get; set; }
-#endif
+        public double? CostPerLead { get; set; }
         /// <summary>UTC timestamp when this lead source table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>User summary for the person who created this lead source table row.</summary>
@@ -187,7 +181,7 @@ namespace Leadping.OpenApiClient.Models
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_business>(global::Leadping.OpenApiClient.Models.SourceTableRow_business.CreateFromDiscriminatorValue); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
-                { "costPerLead", n => { CostPerLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdByUser", n => { CreatedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_createdByUser>(global::Leadping.OpenApiClient.Models.SourceTableRow_createdByUser.CreateFromDiscriminatorValue); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -220,7 +214,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_business>("business", Business);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
-            writer.WriteObjectValue<UntypedNode>("costPerLead", CostPerLead);
+            writer.WriteDoubleValue("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_createdByUser>("createdByUser", CreatedByUser);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);

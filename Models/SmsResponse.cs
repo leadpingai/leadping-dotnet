@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BillableAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode BillableAmount { get; set; }
-#endif
+        public double? BillableAmount { get; set; }
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +115,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
+        /// <summary>Media attached to this message. A non-empty collection identifies an MMS message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>? Media { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.MessageMediaAttachment> Media { get; set; }
+#endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>UTC timestamp when Leadping will retry this SMS message.</summary>
@@ -212,7 +214,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
@@ -229,6 +231,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
+                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
@@ -256,7 +259,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
+            writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
             writer.WriteStringValue("campaignId", CampaignId);
@@ -273,6 +276,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);

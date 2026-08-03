@@ -16,29 +16,11 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount of wallet credit purchased in this deposit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AmountPurchased { get; set; }
-#nullable restore
-#else
-        public UntypedNode AmountPurchased { get; set; }
-#endif
+        public double? AmountPurchased { get; set; }
         /// <summary>Amount of wallet credit still available for future usage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AmountRemaining { get; set; }
-#nullable restore
-#else
-        public UntypedNode AmountRemaining { get; set; }
-#endif
+        public double? AmountRemaining { get; set; }
         /// <summary>Wallet or account balance after this transaction is applied.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Balance { get; set; }
-#nullable restore
-#else
-        public UntypedNode Balance { get; set; }
-#endif
+        public double? Balance { get; set; }
         /// <summary>UTC timestamp when Leadping last calculated the wallet balance.</summary>
         public DateTimeOffset? BalanceCalculatedAt { get; set; }
         /// <summary>Business ID that owns this wallet balance or credit.</summary>
@@ -62,13 +44,7 @@ namespace Leadping.OpenApiClient.Models
         public string Currency { get; set; }
 #endif
         /// <summary>Amount of wallet credit that has expired.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ExpiredCreditAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode ExpiredCreditAmount { get; set; }
-#endif
+        public double? ExpiredCreditAmount { get; set; }
         /// <summary>UTC timestamp when the wallet credit expires.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The unique identifier for the entity.</summary>
@@ -92,13 +68,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when the next wallet credit amount expires.</summary>
         public DateTimeOffset? NextCreditExpirationAt { get; set; }
         /// <summary>Amount of wallet credit scheduled to expire next.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? NextExpiringCreditAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode NextExpiringCreditAmount { get; set; }
-#endif
+        public double? NextExpiringCreditAmount { get; set; }
         /// <summary>Original wallet transaction ID referenced by a reversal, refund, or adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,21 +106,21 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amountPurchased", n => { AmountPurchased = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "amountRemaining", n => { AmountRemaining = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "balance", n => { Balance = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "amountPurchased", n => { AmountPurchased = n.GetDoubleValue(); } },
+                { "amountRemaining", n => { AmountRemaining = n.GetDoubleValue(); } },
+                { "balance", n => { Balance = n.GetDoubleValue(); } },
                 { "balanceCalculatedAt", n => { BalanceCalculatedAt = n.GetDateTimeOffsetValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creditStatus", n => { CreditStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_creditStatus>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "expiredCreditAmount", n => { ExpiredCreditAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "expiredCreditAmount", n => { ExpiredCreditAmount = n.GetDoubleValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nextCreditExpirationAt", n => { NextCreditExpirationAt = n.GetDateTimeOffsetValue(); } },
-                { "nextExpiringCreditAmount", n => { NextExpiringCreditAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "nextExpiringCreditAmount", n => { NextExpiringCreditAmount = n.GetDoubleValue(); } },
                 { "originalTransactionId", n => { OriginalTransactionId = n.GetStringValue(); } },
                 { "purchasedAt", n => { PurchasedAt = n.GetDateTimeOffsetValue(); } },
                 { "sourceType", n => { SourceType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_sourceType>(); } },
@@ -163,21 +133,21 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("amountPurchased", AmountPurchased);
-            writer.WriteObjectValue<UntypedNode>("amountRemaining", AmountRemaining);
-            writer.WriteObjectValue<UntypedNode>("balance", Balance);
+            writer.WriteDoubleValue("amountPurchased", AmountPurchased);
+            writer.WriteDoubleValue("amountRemaining", AmountRemaining);
+            writer.WriteDoubleValue("balance", Balance);
             writer.WriteDateTimeOffsetValue("balanceCalculatedAt", BalanceCalculatedAt);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_creditStatus>("creditStatus", CreditStatus);
             writer.WriteStringValue("currency", Currency);
-            writer.WriteObjectValue<UntypedNode>("expiredCreditAmount", ExpiredCreditAmount);
+            writer.WriteDoubleValue("expiredCreditAmount", ExpiredCreditAmount);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("nextCreditExpirationAt", NextCreditExpirationAt);
-            writer.WriteObjectValue<UntypedNode>("nextExpiringCreditAmount", NextExpiringCreditAmount);
+            writer.WriteDoubleValue("nextExpiringCreditAmount", NextExpiringCreditAmount);
             writer.WriteStringValue("originalTransactionId", OriginalTransactionId);
             writer.WriteDateTimeOffsetValue("purchasedAt", PurchasedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_sourceType>("sourceType", SourceType);

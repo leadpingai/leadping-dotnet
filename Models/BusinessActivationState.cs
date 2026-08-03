@@ -17,6 +17,8 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ActivatedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The number of registrar-verified domains found by the current search.</summary>
+        public int? AvailableDomainCount { get; set; }
         /// <summary>The current billing subscription status for this business activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus? BillingSubscriptionStatus { get; set; }
         /// <summary>The business description value for this business activation state.</summary>
@@ -57,6 +59,22 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.ActivationDomainOption> DomainOptions { get; set; }
 #endif
+        /// <summary>The date and time the selected domain was purchased.</summary>
+        public DateTimeOffset? DomainPurchasedAt { get; set; }
+        /// <summary>The current domain generation attempt.</summary>
+        public int? DomainSearchAttempt { get; set; }
+        /// <summary>Identifies the active domain search run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainSearchId { get; set; }
+#nullable restore
+#else
+        public string DomainSearchId { get; set; }
+#endif
+        /// <summary>Defines the stages of a domain search.</summary>
+        public global::Leadping.OpenApiClient.Models.BusinessActivationState_domainSearchStage? DomainSearchStage { get; set; }
+        /// <summary>The last time domain search progress changed.</summary>
+        public DateTimeOffset? DomainSearchUpdatedAt { get; set; }
         /// <summary>The events included with this business activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +171,14 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus? TenDlcStatus { get; set; }
         /// <summary>The date and time for the updated at value on this business activation state.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The latest persisted website generation progress message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebsiteGenerationResult { get; set; }
+#nullable restore
+#else
+        public string WebsiteGenerationResult { get; set; }
+#endif
         /// <summary>The website needs value for this business activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,6 +223,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "activatedAt", n => { ActivatedAt = n.GetDateTimeOffsetValue(); } },
+                { "availableDomainCount", n => { AvailableDomainCount = n.GetIntValue(); } },
                 { "billingSubscriptionStatus", n => { BillingSubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus>(); } },
                 { "businessDescription", n => { BusinessDescription = n.GetStringValue(); } },
                 { "complianceNotes", n => { ComplianceNotes = n.GetStringValue(); } },
@@ -205,6 +232,11 @@ namespace Leadping.OpenApiClient.Models
                 { "customerFacingStatus", n => { CustomerFacingStatus = n.GetStringValue(); } },
                 { "domainApprovedAt", n => { DomainApprovedAt = n.GetDateTimeOffsetValue(); } },
                 { "domainOptions", n => { DomainOptions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ActivationDomainOption>(global::Leadping.OpenApiClient.Models.ActivationDomainOption.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "domainPurchasedAt", n => { DomainPurchasedAt = n.GetDateTimeOffsetValue(); } },
+                { "domainSearchAttempt", n => { DomainSearchAttempt = n.GetIntValue(); } },
+                { "domainSearchId", n => { DomainSearchId = n.GetStringValue(); } },
+                { "domainSearchStage", n => { DomainSearchStage = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessActivationState_domainSearchStage>(); } },
+                { "domainSearchUpdatedAt", n => { DomainSearchUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ActivationTimelineEvent>(global::Leadping.OpenApiClient.Models.ActivationTimelineEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
@@ -229,6 +261,7 @@ namespace Leadping.OpenApiClient.Models
                 { "tenDlcDraft", n => { TenDlcDraft = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessActivationState_tenDlcDraft>(global::Leadping.OpenApiClient.Models.BusinessActivationState_tenDlcDraft.CreateFromDiscriminatorValue); } },
                 { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "websiteGenerationResult", n => { WebsiteGenerationResult = n.GetStringValue(); } },
                 { "websiteNeeds", n => { WebsiteNeeds = n.GetStringValue(); } },
                 { "websiteStatus", n => { WebsiteStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.WebsiteLifecycleStatus>(); } },
                 { "websiteUrl", n => { WebsiteUrl = n.GetStringValue(); } },
@@ -242,6 +275,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("activatedAt", ActivatedAt);
+            writer.WriteIntValue("availableDomainCount", AvailableDomainCount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus>("billingSubscriptionStatus", BillingSubscriptionStatus);
             writer.WriteStringValue("businessDescription", BusinessDescription);
             writer.WriteStringValue("complianceNotes", ComplianceNotes);
@@ -250,6 +284,11 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("customerFacingStatus", CustomerFacingStatus);
             writer.WriteDateTimeOffsetValue("domainApprovedAt", DomainApprovedAt);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ActivationDomainOption>("domainOptions", DomainOptions);
+            writer.WriteDateTimeOffsetValue("domainPurchasedAt", DomainPurchasedAt);
+            writer.WriteIntValue("domainSearchAttempt", DomainSearchAttempt);
+            writer.WriteStringValue("domainSearchId", DomainSearchId);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessActivationState_domainSearchStage>("domainSearchStage", DomainSearchStage);
+            writer.WriteDateTimeOffsetValue("domainSearchUpdatedAt", DomainSearchUpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ActivationTimelineEvent>("events", Events);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("industry", Industry);
@@ -274,6 +313,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessActivationState_tenDlcDraft>("tenDlcDraft", TenDlcDraft);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus>("tenDlcStatus", TenDlcStatus);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("websiteGenerationResult", WebsiteGenerationResult);
             writer.WriteStringValue("websiteNeeds", WebsiteNeeds);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.WebsiteLifecycleStatus>("websiteStatus", WebsiteStatus);
             writer.WriteStringValue("websiteUrl", WebsiteUrl);

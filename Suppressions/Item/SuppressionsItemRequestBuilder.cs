@@ -9,70 +9,70 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Leadping.OpenApiClient.Users.Me.LastLogin
+namespace Leadping.OpenApiClient.Suppressions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \users\me\last-login
+    /// Builds and executes requests for operations under \suppressions\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LastLoginRequestBuilder : BaseRequestBuilder
+    public partial class SuppressionsItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Users.Me.LastLogin.LastLoginRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastLoginRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/me/last-login", pathParameters)
+        public SuppressionsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/suppressions/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Users.Me.LastLogin.LastLoginRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LastLoginRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/me/last-login", rawUrl)
+        public SuppressionsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/suppressions/{id}", rawUrl)
         {
         }
         /// <summary>
-        /// Records a successful sign-in for the current user, updating login metadata used for auditing and account events.
+        /// Get
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SuppressionEntryResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.UserResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.SuppressionEntryResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.UserResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.SuppressionEntryResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.UserResponse>(requestInfo, global::Leadping.OpenApiClient.Models.UserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SuppressionEntryResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SuppressionEntryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Records a successful sign-in for the current user, updating login metadata used for auditing and account events.
+        /// Get
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -80,11 +80,11 @@ namespace Leadping.OpenApiClient.Users.Me.LastLogin
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Users.Me.LastLogin.LastLoginRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Leadping.OpenApiClient.Users.Me.LastLogin.LastLoginRequestBuilder WithUrl(string rawUrl)
+        public global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Leadping.OpenApiClient.Users.Me.LastLogin.LastLoginRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable seconds value for this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BillableSeconds { get; set; }
-#nullable restore
-#else
-        public UntypedNode BillableSeconds { get; set; }
-#endif
+        public int? BillableSeconds { get; set; }
         /// <summary>The billable unit value for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.BillableUnit? BillableUnit { get; set; }
         /// <summary>The ID and name for this business.</summary>
@@ -48,13 +42,7 @@ namespace Leadping.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The duration seconds value for this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? DurationSeconds { get; set; }
-#nullable restore
-#else
-        public UntypedNode DurationSeconds { get; set; }
-#endif
+        public int? DurationSeconds { get; set; }
         /// <summary>The unique ID for this usage ledger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,15 +80,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The quantity value for this usage ledger.</summary>
         public double? Quantity { get; set; }
         /// <summary>The SMS segments value for this usage ledger.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SmsSegments { get; set; }
-#nullable restore
-#else
-        public UntypedNode SmsSegments { get; set; }
-#endif
+        public int? SmsSegments { get; set; }
         /// <summary>The current status for this usage ledger.</summary>
-        public global::Leadping.OpenApiClient.Models.UsageRecordStatus? Status { get; set; }
+        public global::Leadping.OpenApiClient.Models.UsageStatus? Status { get; set; }
         /// <summary>The unit price value for this usage ledger.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>The ID and name for this user.</summary>
@@ -136,22 +118,22 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billableSeconds", n => { BillableSeconds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "billableSeconds", n => { BillableSeconds = n.GetIntValue(); } },
                 { "billableUnit", n => { BillableUnit = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>(); } },
                 { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business>(global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business.CreateFromDiscriminatorValue); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "customerChargeAmount", n => { CustomerChargeAmount = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "durationSeconds", n => { DurationSeconds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "durationSeconds", n => { DurationSeconds = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isBillable", n => { IsBillable = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead>(global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead.CreateFromDiscriminatorValue); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "smsSegments", n => { SmsSegments = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>(); } },
+                { "smsSegments", n => { SmsSegments = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageStatus>(); } },
                 { "unitPrice", n => { UnitPrice = n.GetDoubleValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_user>(global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_user.CreateFromDiscriminatorValue); } },
             };
@@ -163,22 +145,22 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("billableSeconds", BillableSeconds);
+            writer.WriteIntValue("billableSeconds", BillableSeconds);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>("billableUnit", BillableUnit);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business>("business", Business);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>("channel", Channel);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("customerChargeAmount", CustomerChargeAmount);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<UntypedNode>("durationSeconds", DurationSeconds);
+            writer.WriteIntValue("durationSeconds", DurationSeconds);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isBillable", IsBillable);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead>("lead", Lead);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
             writer.WriteDoubleValue("quantity", Quantity);
-            writer.WriteObjectValue<UntypedNode>("smsSegments", SmsSegments);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>("status", Status);
+            writer.WriteIntValue("smsSegments", SmsSegments);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageStatus>("status", Status);
             writer.WriteDoubleValue("unitPrice", UnitPrice);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_user>("user", User);
             writer.WriteAdditionalData(AdditionalData);

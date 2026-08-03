@@ -44,7 +44,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The date and time for the period start value on this usage summary.</summary>
         public DateTimeOffset? PeriodStart { get; set; }
         /// <summary>The usage record count for this usage summary.</summary>
-        public int? UsageRecordCount { get; set; }
+        public int? TransactionCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UsageSummaryResponse"/> and sets the default values.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Leadping.OpenApiClient.Models
                 { "pendingInvoiceCount", n => { PendingInvoiceCount = n.GetIntValue(); } },
                 { "periodEnd", n => { PeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "periodStart", n => { PeriodStart = n.GetDateTimeOffsetValue(); } },
-                { "usageRecordCount", n => { UsageRecordCount = n.GetIntValue(); } },
+                { "transactionCount", n => { TransactionCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("pendingInvoiceCount", PendingInvoiceCount);
             writer.WriteDateTimeOffsetValue("periodEnd", PeriodEnd);
             writer.WriteDateTimeOffsetValue("periodStart", PeriodStart);
-            writer.WriteIntValue("usageRecordCount", UsageRecordCount);
+            writer.WriteIntValue("transactionCount", TransactionCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

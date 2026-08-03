@@ -31,18 +31,6 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         Phone_number_minute_limit_reached,
         #pragma warning restore CS1591
-        [EnumMember(Value = "business_daily_limit_reached")]
-        #pragma warning disable CS1591
-        Business_daily_limit_reached,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "business_hourly_limit_reached")]
-        #pragma warning disable CS1591
-        Business_hourly_limit_reached,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "business_minute_limit_reached")]
-        #pragma warning disable CS1591
-        Business_minute_limit_reached,
-        #pragma warning restore CS1591
         [EnumMember(Value = "lead_daily_limit_reached")]
         #pragma warning disable CS1591
         Lead_daily_limit_reached,

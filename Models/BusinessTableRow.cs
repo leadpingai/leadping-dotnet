@@ -14,13 +14,7 @@ namespace Leadping.OpenApiClient.Models
     public partial class BusinessTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>The account balance value for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AccountBalance { get; set; }
-#nullable restore
-#else
-        public UntypedNode AccountBalance { get; set; }
-#endif
+        public double? AccountBalance { get; set; }
         /// <summary>Defines the supported Customer Activation Status values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessTableRow_activationStatus? ActivationStatus { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,6 +27,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ApiKeyIssuedAt { get; set; }
         /// <summary>The date and time this business API key was last used.</summary>
         public DateTimeOffset? ApiKeyLastUsedAt { get; set; }
+        /// <summary>WorkOS permission slugs granted to this business API key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ApiKeyPermissions { get; set; }
+#nullable restore
+#else
+        public List<string> ApiKeyPermissions { get; set; }
+#endif
         /// <summary>The masked API key preview owned by this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,12 +144,13 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountBalance", n => { AccountBalance = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "accountBalance", n => { AccountBalance = n.GetDoubleValue(); } },
                 { "activationStatus", n => { ActivationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_activationStatus>(); } },
                 { "apiKeyExpiresAt", n => { ApiKeyExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyFirstUsedAt", n => { ApiKeyFirstUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyIssuedAt", n => { ApiKeyIssuedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
+                { "apiKeyPermissions", n => { ApiKeyPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan>(); } },
@@ -178,12 +181,13 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("accountBalance", AccountBalance);
+            writer.WriteDoubleValue("accountBalance", AccountBalance);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_activationStatus>("activationStatus", ActivationStatus);
             writer.WriteDateTimeOffsetValue("apiKeyExpiresAt", ApiKeyExpiresAt);
             writer.WriteDateTimeOffsetValue("apiKeyFirstUsedAt", ApiKeyFirstUsedAt);
             writer.WriteDateTimeOffsetValue("apiKeyIssuedAt", ApiKeyIssuedAt);
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
+            writer.WriteCollectionOfPrimitiveValues<string>("apiKeyPermissions", ApiKeyPermissions);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessTableRow_billingPlan>("billingPlan", BillingPlan);

@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Updates the internal notes associated with a 10DLC application.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class TenDlcNotesRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The notes property</summary>
+        /// <summary>Notes to store with the 10DLC application, or null to clear them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }

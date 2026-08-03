@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
         /// Updates the name, color, and display order of a lead status owned by the current business so pipeline stages remain clear and consistently organized.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Defines the editable values used to create or update a lead status.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
         /// Updates the name, color, and display order of a lead status owned by the current business so pipeline stages remain clear and consistently organized.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Defines the editable values used to create or update a lead status.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,7 +108,7 @@ namespace Leadping.OpenApiClient.LeadStatuses.Item
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json, text/plain;q=0.9");
+            requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

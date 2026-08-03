@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average minutes measured in minutes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AverageMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode AverageMinutes { get; set; }
-#endif
+        public double? AverageMinutes { get; set; }
         /// <summary>Collection of average minutes trend included with this Leadping customer response metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +26,7 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal> AverageMinutesTrend { get; set; }
 #endif
         /// <summary>Median minutes measured in minutes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MedianMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode MedianMinutes { get; set; }
-#endif
+        public double? MedianMinutes { get; set; }
         /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
         /// <summary>Number of responded leads represented by this Leadping customer response metrics.</summary>
@@ -74,9 +62,9 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "averageMinutes", n => { AverageMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "averageMinutes", n => { AverageMinutes = n.GetDoubleValue(); } },
                 { "averageMinutesTrend", n => { AverageMinutesTrend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "medianMinutes", n => { MedianMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "medianMinutes", n => { MedianMinutes = n.GetDoubleValue(); } },
                 { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
                 { "respondedLeads", n => { RespondedLeads = n.GetIntValue(); } },
                 { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetDoubleValue(); } },
@@ -91,9 +79,9 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("averageMinutes", AverageMinutes);
+            writer.WriteDoubleValue("averageMinutes", AverageMinutes);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>("averageMinutesTrend", AverageMinutesTrend);
-            writer.WriteObjectValue<UntypedNode>("medianMinutes", MedianMinutes);
+            writer.WriteDoubleValue("medianMinutes", MedianMinutes);
             writer.WriteIntValue("missedCalls", MissedCalls);
             writer.WriteIntValue("respondedLeads", RespondedLeads);
             writer.WriteDoubleValue("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);

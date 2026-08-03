@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expiresAt property</summary>
+        /// <summary>Date and time after which the download URL is no longer valid.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>Short-lived URL that can be used to download the invoice PDF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

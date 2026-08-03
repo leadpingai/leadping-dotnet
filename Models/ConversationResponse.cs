@@ -65,6 +65,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsUnread { get; set; }
         /// <summary>UTC timestamp when the most recent conversation event occurred.</summary>
         public DateTimeOffset? LastEventAt { get; set; }
+        /// <summary>Indicates that the most recent conversation activity is an internal note.</summary>
+        public bool? LastEventIsInternalNote { get; set; }
         /// <summary>Last name of the lead, user, or contact represented by this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,6 +168,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isUnread", n => { IsUnread = n.GetBoolValue(); } },
                 { "lastEventAt", n => { LastEventAt = n.GetDateTimeOffsetValue(); } },
+                { "lastEventIsInternalNote", n => { LastEventIsInternalNote = n.GetBoolValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "lastSnippet", n => { LastSnippet = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
@@ -194,6 +197,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isUnread", IsUnread);
             writer.WriteDateTimeOffsetValue("lastEventAt", LastEventAt);
+            writer.WriteBoolValue("lastEventIsInternalNote", LastEventIsInternalNote);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("lastSnippet", LastSnippet);
             writer.WriteStringValue("leadId", LeadId);

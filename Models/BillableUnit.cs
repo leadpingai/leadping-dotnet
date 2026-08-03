@@ -7,6 +7,14 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BillableUnit
     {
+        [EnumMember(Value = "lead_received")]
+        #pragma warning disable CS1591
+        Lead_received,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "phone_identity_lookup")]
+        #pragma warning disable CS1591
+        Phone_identity_lookup,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sms_segment")]
         #pragma warning disable CS1591
         Sms_segment,
@@ -38,6 +46,10 @@ namespace Leadping.OpenApiClient.Models
         [EnumMember(Value = "website_setup")]
         #pragma warning disable CS1591
         Website_setup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openai_operation")]
+        #pragma warning disable CS1591
+        Openai_operation,
         #pragma warning restore CS1591
         [EnumMember(Value = "domain_registration")]
         #pragma warning disable CS1591

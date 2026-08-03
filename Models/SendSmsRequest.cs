@@ -39,6 +39,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumberId { get; set; }
 #endif
+        /// <summary>Public HTTPS media URLs to attach. Supplying at least one URL sends the message as MMS.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MediaUrls { get; set; }
+#nullable restore
+#else
+        public List<string> MediaUrls { get; set; }
+#endif
         /// <summary>Idempotency key used to prevent duplicate outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +111,7 @@ namespace Leadping.OpenApiClient.Models
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
+                { "mediaUrls", n => { MediaUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "outboundIdempotencyKey", n => { OutboundIdempotencyKey = n.GetStringValue(); } },
                 { "scheduledFor", n => { ScheduledFor = n.GetDateTimeOffsetValue(); } },
                 { "smsEventId", n => { SmsEventId = n.GetStringValue(); } },
@@ -121,6 +130,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("campaignId", CampaignId);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
+            writer.WriteCollectionOfPrimitiveValues<string>("mediaUrls", MediaUrls);
             writer.WriteStringValue("outboundIdempotencyKey", OutboundIdempotencyKey);
             writer.WriteDateTimeOffsetValue("scheduledFor", ScheduledFor);
             writer.WriteStringValue("smsEventId", SmsEventId);

@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         DraftGenerated,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DraftNeedsAdminReview")]
+        [EnumMember(Value = "DraftIncomplete")]
         #pragma warning disable CS1591
-        DraftNeedsAdminReview,
+        DraftIncomplete,
         #pragma warning restore CS1591
         [EnumMember(Value = "ReadyToSubmit")]
         #pragma warning disable CS1591

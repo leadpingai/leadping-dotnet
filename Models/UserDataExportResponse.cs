@@ -76,13 +76,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Date and time when the user data export was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>File size in bytes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SizeBytes { get; set; }
-#nullable restore
-#else
-        public UntypedNode SizeBytes { get; set; }
-#endif
+        public long? SizeBytes { get; set; }
         /// <summary>Date and time when the user data export started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>Current status for this Leadping user data export.</summary>
@@ -124,7 +118,7 @@ namespace Leadping.OpenApiClient.Models
                 { "maxDownloadCount", n => { MaxDownloadCount = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
-                { "sizeBytes", n => { SizeBytes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sizeBytes", n => { SizeBytes = n.GetLongValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserDataExportStatuses>(); } },
             };
@@ -148,7 +142,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("maxDownloadCount", MaxDownloadCount);
             writer.WriteStringValue("message", Message);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
-            writer.WriteObjectValue<UntypedNode>("sizeBytes", SizeBytes);
+            writer.WriteLongValue("sizeBytes", SizeBytes);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserDataExportStatuses>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

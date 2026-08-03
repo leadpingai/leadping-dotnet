@@ -15,6 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Caller-name data returned by the provider.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneLookup_callerName? CallerName { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneLookup_callerName CallerName { get; set; }
+#endif
         /// <summary>Complete carrier metadata reported for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +33,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Gets or sets created at.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Fraud value returned by the provider, when available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Fraud { get; set; }
+#nullable restore
+#else
+        public string Fraud { get; set; }
+#endif
         /// <summary>Gets or sets id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +63,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Gets or sets modified at.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>Provider-formatted national phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NationalFormat { get; set; }
+#nullable restore
+#else
+        public string NationalFormat { get; set; }
+#endif
         /// <summary>E.164 phone number exposed by this phone lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +78,22 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Number { get; set; }
+#endif
+        /// <summary>Complete portability data returned by Telnyx.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneLookup_portability? Portability { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneLookup_portability Portability { get; set; }
+#endif
+        /// <summary>Provider record discriminator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecordType { get; set; }
+#nullable restore
+#else
+        public string RecordType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneLookup"/> and sets the default values.
@@ -80,14 +120,19 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callerName", n => { CallerName = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_callerName>(global::Leadping.OpenApiClient.Models.PhoneLookup_callerName.CreateFromDiscriminatorValue); } },
                 { "carrier", n => { Carrier = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_carrier>(global::Leadping.OpenApiClient.Models.PhoneLookup_carrier.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "fraud", n => { Fraud = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isValid", n => { IsValid = n.GetBoolValue(); } },
                 { "lineType", n => { LineType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneLookup_lineType>(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_location>(global::Leadping.OpenApiClient.Models.PhoneLookup_location.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "nationalFormat", n => { NationalFormat = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "portability", n => { Portability = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_portability>(global::Leadping.OpenApiClient.Models.PhoneLookup_portability.CreateFromDiscriminatorValue); } },
+                { "recordType", n => { RecordType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,14 +142,19 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_callerName>("callerName", CallerName);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_carrier>("carrier", Carrier);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("fraud", Fraud);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isValid", IsValid);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneLookup_lineType>("lineType", LineType);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_location>("location", Location);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
+            writer.WriteStringValue("nationalFormat", NationalFormat);
             writer.WriteStringValue("number", Number);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneLookup_portability>("portability", Portability);
+            writer.WriteStringValue("recordType", RecordType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

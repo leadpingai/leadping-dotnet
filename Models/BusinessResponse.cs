@@ -34,23 +34,11 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.BusinessResponse_address Address { get; set; }
 #endif
         /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AutoRefillAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode AutoRefillAmount { get; set; }
-#endif
+        public double? AutoRefillAmount { get; set; }
         /// <summary>Indicates whether automatic wallet refill is enabled for the business.</summary>
         public bool? AutoRefillEnabled { get; set; }
         /// <summary>Wallet balance threshold that triggers automatic refill.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AutoRefillTrigger { get; set; }
-#nullable restore
-#else
-        public UntypedNode AutoRefillTrigger { get; set; }
-#endif
+        public double? AutoRefillTrigger { get; set; }
         /// <summary>Postal address used for invoices, receipts, and payment processor billing records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -239,9 +227,9 @@ namespace Leadping.OpenApiClient.Models
                 { "accountBalance", n => { AccountBalance = n.GetDoubleValue(); } },
                 { "activation", n => { Activation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_activation>(global::Leadping.OpenApiClient.Models.BusinessResponse_activation.CreateFromDiscriminatorValue); } },
                 { "address", n => { Address = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_address>(global::Leadping.OpenApiClient.Models.BusinessResponse_address.CreateFromDiscriminatorValue); } },
-                { "autoRefillAmount", n => { AutoRefillAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "autoRefillAmount", n => { AutoRefillAmount = n.GetDoubleValue(); } },
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
-                { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetDoubleValue(); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingAddress>(global::Leadping.OpenApiClient.Models.BusinessResponse_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan>(); } },
@@ -280,9 +268,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("accountBalance", AccountBalance);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_activation>("activation", Activation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_address>("address", Address);
-            writer.WriteObjectValue<UntypedNode>("autoRefillAmount", AutoRefillAmount);
+            writer.WriteDoubleValue("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
-            writer.WriteObjectValue<UntypedNode>("autoRefillTrigger", AutoRefillTrigger);
+            writer.WriteDoubleValue("autoRefillTrigger", AutoRefillTrigger);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingAddress>("billingAddress", BillingAddress);
             writer.WriteStringValue("billingName", BillingName);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessResponse_billingPlan>("billingPlan", BillingPlan);

@@ -52,13 +52,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep CurrentStep { get; set; }
 #endif
         /// <summary>Current step order associated with this Leadping automation workflow run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CurrentStepOrder { get; set; }
-#nullable restore
-#else
-        public UntypedNode CurrentStepOrder { get; set; }
-#endif
+        public int? CurrentStepOrder { get; set; }
         /// <summary>Collection of events included with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,7 +196,7 @@ namespace Leadping.OpenApiClient.Models
                 { "cancelledAt", n => { CancelledAt = n.GetDateTimeOffsetValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentStep", n => { CurrentStep = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>(global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep.CreateFromDiscriminatorValue); } },
-                { "currentStepOrder", n => { CurrentStepOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "currentStepOrder", n => { CurrentStepOrder = n.GetIntValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -238,7 +232,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("cancelledAt", CancelledAt);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>("currentStep", CurrentStep);
-            writer.WriteObjectValue<UntypedNode>("currentStepOrder", CurrentStepOrder);
+            writer.WriteIntValue("currentStepOrder", CurrentStepOrder);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>("events", Events);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("id", Id);

@@ -18,21 +18,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when the call was answered.</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BillableAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode BillableAmount { get; set; }
-#endif
+        public double? BillableAmount { get; set; }
         /// <summary>Billable call duration in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BillableSeconds { get; set; }
-#nullable restore
-#else
-        public UntypedNode BillableSeconds { get; set; }
-#endif
+        public int? BillableSeconds { get; set; }
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +44,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string BusinessId { get; set; }
+#endif
+        /// <summary>Display name for the business associated with this call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BusinessName { get; set; }
+#nullable restore
+#else
+        public string BusinessName { get; set; }
 #endif
         /// <summary>Caller ID phone number presented during the outbound call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,13 +80,7 @@ namespace Leadping.OpenApiClient.Models
         public string Direction { get; set; }
 #endif
         /// <summary>Call duration or processing duration represented by this call event table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Duration { get; set; }
-#nullable restore
-#else
-        public UntypedNode Duration { get; set; }
-#endif
+        public int? Duration { get; set; }
         /// <summary>UTC timestamp when the call ended.</summary>
         public DateTimeOffset? EndedAt { get; set; }
         /// <summary>Sender phone number used for this communication.</summary>
@@ -124,6 +114,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LeadId { get; set; }
+#endif
+        /// <summary>Display name for the lead associated with this call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadName { get; set; }
+#nullable restore
+#else
+        public string LeadName { get; set; }
 #endif
         /// <summary>URL for the call recording, when the provider makes one available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,21 +191,23 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "answeredAt", n => { AnsweredAt = n.GetDateTimeOffsetValue(); } },
-                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "billableSeconds", n => { BillableSeconds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
+                { "billableSeconds", n => { BillableSeconds = n.GetIntValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "business", n => { Business = n.GetStringValue(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
+                { "businessName", n => { BusinessName = n.GetStringValue(); } },
                 { "callerId", n => { CallerId = n.GetStringValue(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
-                { "duration", n => { Duration = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "duration", n => { Duration = n.GetIntValue(); } },
                 { "endedAt", n => { EndedAt = n.GetDateTimeOffsetValue(); } },
                 { "fromPhoneNumber", n => { FromPhoneNumber = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
+                { "leadName", n => { LeadName = n.GetStringValue(); } },
                 { "recordingUrl", n => { RecordingUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
@@ -224,21 +224,23 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("answeredAt", AnsweredAt);
-            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
-            writer.WriteObjectValue<UntypedNode>("billableSeconds", BillableSeconds);
+            writer.WriteDoubleValue("billableAmount", BillableAmount);
+            writer.WriteIntValue("billableSeconds", BillableSeconds);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteStringValue("business", Business);
             writer.WriteStringValue("businessId", BusinessId);
+            writer.WriteStringValue("businessName", BusinessName);
             writer.WriteStringValue("callerId", CallerId);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("direction", Direction);
-            writer.WriteObjectValue<UntypedNode>("duration", Duration);
+            writer.WriteIntValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("endedAt", EndedAt);
             writer.WriteStringValue("fromPhoneNumber", FromPhoneNumber);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
+            writer.WriteStringValue("leadName", LeadName);
             writer.WriteStringValue("recordingUrl", RecordingUrl);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);

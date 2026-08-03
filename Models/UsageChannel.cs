@@ -7,6 +7,10 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UsageChannel
     {
+        [EnumMember(Value = "lead")]
+        #pragma warning disable CS1591
+        Lead,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sms")]
         #pragma warning disable CS1591
         Sms,
@@ -34,6 +38,10 @@ namespace Leadping.OpenApiClient.Models
         [EnumMember(Value = "website")]
         #pragma warning disable CS1591
         Website,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openai")]
+        #pragma warning disable CS1591
+        Openai,
         #pragma warning restore CS1591
         [EnumMember(Value = "domain")]
         #pragma warning disable CS1591

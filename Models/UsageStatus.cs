@@ -5,7 +5,7 @@ namespace Leadping.OpenApiClient.Models
 {
     /// <summary>Defines the supported Usage Record Status values.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UsageRecordStatus
+    public enum UsageStatus
     {
         [EnumMember(Value = "recorded")]
         #pragma warning disable CS1591

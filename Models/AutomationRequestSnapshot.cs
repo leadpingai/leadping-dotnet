@@ -39,6 +39,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationConditionGroup> ConditionGroups { get; set; }
 #endif
+        /// <summary>Directed connections between nodes in this automation graph.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.AutomationConnection>? Connections { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.AutomationConnection> Connections { get; set; }
+#endif
         /// <summary>User ID of the person who created this automation request snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationAction>(global::Leadping.OpenApiClient.Models.AutomationAction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "conditionGroups", n => { ConditionGroups = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationConditionGroup>(global::Leadping.OpenApiClient.Models.AutomationConditionGroup.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "connections", n => { Connections = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationConnection>(global::Leadping.OpenApiClient.Models.AutomationConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -157,6 +166,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationAction>("actions", Actions);
             writer.WriteStringValue("businessId", BusinessId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationConditionGroup>("conditionGroups", ConditionGroups);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationConnection>("connections", Connections);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);

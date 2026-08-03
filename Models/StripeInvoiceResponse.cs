@@ -15,13 +15,13 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Total invoice amount in the invoice currency.</summary>
         public double? Amount { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>Date and time when the invoice was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The hasPdf property</summary>
+        /// <summary>Indicates whether a downloadable PDF is available for the invoice.</summary>
         public bool? HasPdf { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Provider identifier for the invoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +29,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The number property</summary>
+        /// <summary>Human-readable invoice number, when assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Number { get; set; }
@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Current provider-reported invoice status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

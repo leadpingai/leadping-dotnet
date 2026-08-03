@@ -26,7 +26,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The record count for this usage summary line.</summary>
         public int? RecordCount { get; set; }
         /// <summary>The current status for this usage summary line.</summary>
-        public global::Leadping.OpenApiClient.Models.UsageRecordStatus? Status { get; set; }
+        public global::Leadping.OpenApiClient.Models.UsageStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UsageSummaryLine"/> and sets the default values.
         /// </summary>
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
                 { "customerChargeAmount", n => { CustomerChargeAmount = n.GetDoubleValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "recordCount", n => { RecordCount = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageStatus>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("customerChargeAmount", CustomerChargeAmount);
             writer.WriteDoubleValue("quantity", Quantity);
             writer.WriteIntValue("recordCount", RecordCount);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageRecordStatus>("status", Status);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

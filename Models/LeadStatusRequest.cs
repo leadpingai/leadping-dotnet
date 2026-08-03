@@ -7,16 +7,17 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Defines the editable values used to create or update a lead status.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LeadStatusRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controlled disposition categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.LeadStatusRequest_category? Category { get; set; }
-        /// <summary>The color property</summary>
+        /// <summary>Display color for the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -24,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name for the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -32,14 +33,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The sortOrder property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SortOrder { get; set; }
-#nullable restore
-#else
-        public UntypedNode SortOrder { get; set; }
-#endif
+        /// <summary>Relative display order for the lead status.</summary>
+        public int? SortOrder { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadStatusRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
                 { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusRequest_category>(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "sortOrder", n => { SortOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sortOrder", n => { SortOrder = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +76,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusRequest_category>("category", Category);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("sortOrder", SortOrder);
+            writer.WriteIntValue("sortOrder", SortOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

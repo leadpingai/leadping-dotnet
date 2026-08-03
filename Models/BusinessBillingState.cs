@@ -18,21 +18,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Date and time when the scheduled billing plan change takes effect.</summary>
         public DateTimeOffset? BillingPlanChangeEffectiveAt { get; set; }
         /// <summary>Gets or sets the number of user licenses currently assigned by the business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BusinessUserAssignedQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode BusinessUserAssignedQuantity { get; set; }
-#endif
+        public long? BusinessUserAssignedQuantity { get; set; }
         /// <summary>Gets or sets the number of user licenses included in the business subscription.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BusinessUserQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode BusinessUserQuantity { get; set; }
-#endif
+        public long? BusinessUserQuantity { get; set; }
         /// <summary>Gets or sets when the active subscription is scheduled to cancel.</summary>
         public DateTimeOffset? CancelAt { get; set; }
         /// <summary>Gets or sets the customer-safe payment recovery state for the business.</summary>
@@ -54,13 +42,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.BusinessBillingState_pendingBillingPlan? PendingBillingPlan { get; set; }
         /// <summary>Gets or sets the number of phone numbers included in the business subscription.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PhoneNumberQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode PhoneNumberQuantity { get; set; }
-#endif
+        public long? PhoneNumberQuantity { get; set; }
+        /// <summary>Start of the current plan billing period.</summary>
+        public DateTimeOffset? PlanPeriodStartAt { get; set; }
         /// <summary>Current plan renewal date.</summary>
         public DateTimeOffset? PlanRenewalAt { get; set; }
         /// <summary>
@@ -89,8 +73,8 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlanChangeEffectiveAt", n => { BillingPlanChangeEffectiveAt = n.GetDateTimeOffsetValue(); } },
-                { "businessUserAssignedQuantity", n => { BusinessUserAssignedQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "businessUserQuantity", n => { BusinessUserQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "businessUserAssignedQuantity", n => { BusinessUserAssignedQuantity = n.GetLongValue(); } },
+                { "businessUserQuantity", n => { BusinessUserQuantity = n.GetLongValue(); } },
                 { "cancelAt", n => { CancelAt = n.GetDateTimeOffsetValue(); } },
                 { "dunning", n => { Dunning = n.GetObjectValue<global::Leadping.OpenApiClient.Models.BusinessBillingState_dunning>(global::Leadping.OpenApiClient.Models.BusinessBillingState_dunning.CreateFromDiscriminatorValue); } },
                 { "hasPaymentMethod", n => { HasPaymentMethod = n.GetBoolValue(); } },
@@ -98,7 +82,8 @@ namespace Leadping.OpenApiClient.Models
                 { "lastPaymentMethodEventAt", n => { LastPaymentMethodEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastSubscriptionEventAt", n => { LastSubscriptionEventAt = n.GetDateTimeOffsetValue(); } },
                 { "pendingBillingPlan", n => { PendingBillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BusinessBillingState_pendingBillingPlan>(); } },
-                { "phoneNumberQuantity", n => { PhoneNumberQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "phoneNumberQuantity", n => { PhoneNumberQuantity = n.GetLongValue(); } },
+                { "planPeriodStartAt", n => { PlanPeriodStartAt = n.GetDateTimeOffsetValue(); } },
                 { "planRenewalAt", n => { PlanRenewalAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -110,8 +95,8 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("billingPlanChangeEffectiveAt", BillingPlanChangeEffectiveAt);
-            writer.WriteObjectValue<UntypedNode>("businessUserAssignedQuantity", BusinessUserAssignedQuantity);
-            writer.WriteObjectValue<UntypedNode>("businessUserQuantity", BusinessUserQuantity);
+            writer.WriteLongValue("businessUserAssignedQuantity", BusinessUserAssignedQuantity);
+            writer.WriteLongValue("businessUserQuantity", BusinessUserQuantity);
             writer.WriteDateTimeOffsetValue("cancelAt", CancelAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.BusinessBillingState_dunning>("dunning", Dunning);
             writer.WriteBoolValue("hasPaymentMethod", HasPaymentMethod);
@@ -119,7 +104,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lastPaymentMethodEventAt", LastPaymentMethodEventAt);
             writer.WriteDateTimeOffsetValue("lastSubscriptionEventAt", LastSubscriptionEventAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BusinessBillingState_pendingBillingPlan>("pendingBillingPlan", PendingBillingPlan);
-            writer.WriteObjectValue<UntypedNode>("phoneNumberQuantity", PhoneNumberQuantity);
+            writer.WriteLongValue("phoneNumberQuantity", PhoneNumberQuantity);
+            writer.WriteDateTimeOffsetValue("planPeriodStartAt", PlanPeriodStartAt);
             writer.WriteDateTimeOffsetValue("planRenewalAt", PlanRenewalAt);
             writer.WriteAdditionalData(AdditionalData);
         }

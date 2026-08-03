@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents a configurable status that can be assigned to leads.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LeadStatusResponse : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The businessId property</summary>
+        /// <summary>Identifier of the business that owns the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessId { get; set; }
@@ -22,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BusinessId { get; set; }
 #endif
-        /// <summary>Controlled disposition categories used for reporting, automation, and analytics.</summary>
+        /// <summary>Disposition category represented by the lead status.</summary>
         public global::Leadping.OpenApiClient.Models.DispositionCategory? Category { get; set; }
-        /// <summary>The color property</summary>
+        /// <summary>Display color assigned to the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -32,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -40,11 +41,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isArchived property</summary>
+        /// <summary>Indicates whether the lead status has been archived.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The modifiedAt property</summary>
+        /// <summary>Date and time when the lead status was last modified.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -52,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The sortOrder property</summary>
+        /// <summary>Relative display order of the lead status.</summary>
         public int? SortOrder { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/> and sets the default values.

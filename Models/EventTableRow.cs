@@ -40,13 +40,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BillableAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode BillableAmount { get; set; }
-#endif
+        public double? BillableAmount { get; set; }
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +171,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
+        /// <summary>Media attached to an MMS timeline event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>? Media { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.MessageMediaAttachment> Media { get; set; }
+#endif
         /// <summary>UTC timestamp when Leadping will retry this event timeline table row.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
         /// <summary>Phone number ID selected for outbound delivery.</summary>
@@ -303,7 +305,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
                 { "actorEmail", n => { ActorEmail = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
-                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
@@ -324,6 +326,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
+                { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
@@ -358,7 +361,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
             writer.WriteStringValue("actorEmail", ActorEmail);
             writer.WriteStringValue("actorUserId", ActorUserId);
-            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
+            writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
             writer.WriteStringValue("campaignId", CampaignId);
@@ -379,6 +382,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);

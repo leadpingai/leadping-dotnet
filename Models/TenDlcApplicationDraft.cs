@@ -15,6 +15,10 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The current provider review status for the submitted brand.</summary>
+        public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? BrandStatus { get; set; }
+        /// <summary>The current provider review status for the submitted campaign.</summary>
+        public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? CampaignStatus { get; set; }
         /// <summary>The company name value for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,13 +68,7 @@ namespace Leadping.OpenApiClient.Models
         public string Ein { get; set; }
 #endif
         /// <summary>The expected monthly volume value for this 10DLC application draft.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ExpectedMonthlyVolume { get; set; }
-#nullable restore
-#else
-        public UntypedNode ExpectedMonthlyVolume { get; set; }
-#endif
+        public int? ExpectedMonthlyVolume { get; set; }
         /// <summary>The industry value for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,13 +190,15 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "brandStatus", n => { BrandStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>(); } },
+                { "campaignStatus", n => { CampaignStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>(); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "complianceWarnings", n => { ComplianceWarnings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contactEmail", n => { ContactEmail = n.GetStringValue(); } },
                 { "contactName", n => { ContactName = n.GetStringValue(); } },
                 { "contactPhone", n => { ContactPhone = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
-                { "expectedMonthlyVolume", n => { ExpectedMonthlyVolume = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "expectedMonthlyVolume", n => { ExpectedMonthlyVolume = n.GetIntValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
                 { "lastSubmittedAt", n => { LastSubmittedAt = n.GetDateTimeOffsetValue(); } },
                 { "leadSource", n => { LeadSource = n.GetStringValue(); } },
@@ -223,13 +223,15 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>("brandStatus", BrandStatus);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>("campaignStatus", CampaignStatus);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteCollectionOfPrimitiveValues<string>("complianceWarnings", ComplianceWarnings);
             writer.WriteStringValue("contactEmail", ContactEmail);
             writer.WriteStringValue("contactName", ContactName);
             writer.WriteStringValue("contactPhone", ContactPhone);
             writer.WriteStringValue("ein", Ein);
-            writer.WriteObjectValue<UntypedNode>("expectedMonthlyVolume", ExpectedMonthlyVolume);
+            writer.WriteIntValue("expectedMonthlyVolume", ExpectedMonthlyVolume);
             writer.WriteStringValue("industry", Industry);
             writer.WriteDateTimeOffsetValue("lastSubmittedAt", LastSubmittedAt);
             writer.WriteStringValue("leadSource", LeadSource);

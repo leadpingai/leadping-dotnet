@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.OneZerodlc.Notes
         /// Updates the shared 10DLC registration notes for the current business, keeping carrier review context and messaging compliance details current.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.BusinessResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Updates the internal notes associated with a 10DLC application.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.Businesses.Me.OneZerodlc.Notes
         /// Updates the shared 10DLC registration notes for the current business, keeping carrier review context and messaging compliance details current.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Updates the internal notes associated with a 10DLC application.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
