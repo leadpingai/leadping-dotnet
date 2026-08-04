@@ -17,7 +17,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_billingPlan? BillingPlan { get; set; }
-        /// <summary>Customer-safe billing state for the user&apos;s currently selected business.</summary>
+        /// <summary>Customer-safe billing state for the user&apos;s currently selected organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_billingState? BillingState { get; set; }
@@ -35,13 +35,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The current business value for this user.</summary>
+        /// <summary>The current organization value for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness? CurrentBusiness { get; set; }
+        public global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization? CurrentOrganization { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness CurrentBusiness { get; set; }
+        public global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization CurrentOrganization { get; set; }
 #endif
         /// <summary>The email address associated with this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Leadping.OpenApiClient.Models
                 { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_billingState>(global::Leadping.OpenApiClient.Models.UserResponse_billingState.CreateFromDiscriminatorValue); } },
                 { "compliance", n => { Compliance = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>(global::Leadping.OpenApiClient.Models.UserResponse_compliance.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currentBusiness", n => { CurrentBusiness = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness>(global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness.CreateFromDiscriminatorValue); } },
+                { "currentOrganization", n => { CurrentOrganization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization>(global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -218,7 +218,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_billingState>("billingState", BillingState);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>("compliance", Compliance);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentBusiness>("currentBusiness", CurrentBusiness);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization>("currentOrganization", CurrentOrganization);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);

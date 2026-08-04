@@ -40,7 +40,7 @@ namespace Leadping.OpenApiClient.Sources.Item
         {
         }
         /// <summary>
-        /// Deletes a lead source from the current business so it can no longer accept or route newly captured leads.
+        /// Deletes a lead source from the current organization so it can no longer accept or route newly captured leads.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.Sources.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns one lead source for the current business, including intake settings, credentials metadata, and routing context.
+        /// Returns one lead source for the current organization, including intake settings, credentials metadata, and routing context.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Sources.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a lead source for the current business, changing intake settings, credentials, routing context, or active status.
+        /// Updates a lead source for the current organization, changing intake settings, credentials, routing context, or active status.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API lead source request, including the fields clients can send.</param>
@@ -116,7 +116,7 @@ namespace Leadping.OpenApiClient.Sources.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a lead source from the current business so it can no longer accept or route newly captured leads.
+        /// Deletes a lead source from the current organization so it can no longer accept or route newly captured leads.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Leadping.OpenApiClient.Sources.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns one lead source for the current business, including intake settings, credentials metadata, and routing context.
+        /// Returns one lead source for the current organization, including intake settings, credentials metadata, and routing context.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Leadping.OpenApiClient.Sources.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a lead source for the current business, changing intake settings, credentials, routing context, or active status.
+        /// Updates a lead source for the current organization, changing intake settings, credentials, routing context, or active status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API lead source request, including the fields clients can send.</param>

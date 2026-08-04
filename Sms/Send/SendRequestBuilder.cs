@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Sms.Send
         {
         }
         /// <summary>
-        /// Sends an SMS message to a lead or phone number, applying current-business sender selection, scheduling, and delivery rules.
+        /// Sends an SMS message to a lead or phone number, applying current-organization sender selection, scheduling, and delivery rules.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API SMS send request, including the fields clients can send.</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Sms.Send
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SmsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SmsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends an SMS message to a lead or phone number, applying current-business sender selection, scheduling, and delivery rules.
+        /// Sends an SMS message to a lead or phone number, applying current-organization sender selection, scheduling, and delivery rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API SMS send request, including the fields clients can send.</param>

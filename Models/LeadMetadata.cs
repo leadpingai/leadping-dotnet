@@ -15,21 +15,13 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Phone number ID assigned to the lead, business, or source.</summary>
+        /// <summary>Phone number ID assigned to the lead, organization, or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedPhoneNumberId { get; set; }
 #nullable restore
 #else
         public string AssignedPhoneNumberId { get; set; }
-#endif
-        /// <summary>Business ID that owns this lead&apos;s attribution metadata.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
 #endif
         /// <summary>Reason Leadping blocked this operation for compliance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,6 +76,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LandingPage { get; set; }
+#endif
+        /// <summary>Organization ID that owns this lead&apos;s attribution metadata.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>System or workflow that created this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -267,7 +267,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignedPhoneNumberId", n => { AssignedPhoneNumberId = n.GetStringValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "complianceBlockedReason", n => { ComplianceBlockedReason = n.GetStringValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -277,6 +276,7 @@ namespace Leadping.OpenApiClient.Models
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isImported", n => { IsImported = n.GetBoolValue(); } },
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "product", n => { Product = n.GetStringValue(); } },
@@ -311,7 +311,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignedPhoneNumberId", AssignedPhoneNumberId);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("complianceBlockedReason", ComplianceBlockedReason);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
@@ -321,6 +320,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isImported", IsImported);
             writer.WriteStringValue("landingPage", LandingPage);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("origin", Origin);
             writer.WriteDoubleValue("price", Price);
             writer.WriteStringValue("product", Product);

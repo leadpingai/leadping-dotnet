@@ -15,22 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Business summary connected to this phone number table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Business { get; set; }
-#nullable restore
-#else
-        public string Business { get; set; }
-#endif
-        /// <summary>Unique Leadping business identifier connected to this phone number table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>Indicates whether this phone number table row is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Unique Leadping identifier for this phone number table row.</summary>
@@ -57,6 +41,22 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
+        /// <summary>Organization summary connected to this phone number table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Organization { get; set; }
+#nullable restore
+#else
+        public string Organization { get; set; }
+#endif
+        /// <summary>Unique Leadping organization identifier connected to this phone number table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Ownership classification for this phone number, such as Leadping-owned or customer-owned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RoutingSummary { get; set; }
 #endif
-        /// <summary>Indicates whether SMS messaging is ready for this business or phone number.</summary>
+        /// <summary>Indicates whether SMS messaging is ready for this organization or phone number.</summary>
         public bool? SmsReady { get; set; }
         /// <summary>10DLC campaign status associated with this sender or SMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Indicates whether voice calling is ready for this business or phone number.</summary>
+        /// <summary>Indicates whether voice calling is ready for this organization or phone number.</summary>
         public bool? VoiceReady { get; set; }
         /// <summary>Warmup state for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,12 +126,12 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "business", n => { Business = n.GetStringValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "ownership", n => { Ownership = n.GetStringValue(); } },
                 { "routingSummary", n => { RoutingSummary = n.GetStringValue(); } },
                 { "smsReady", n => { SmsReady = n.GetBoolValue(); } },
@@ -148,12 +148,12 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("business", Business);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
+            writer.WriteStringValue("organization", Organization);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("ownership", Ownership);
             writer.WriteStringValue("routingSummary", RoutingSummary);
             writer.WriteBoolValue("smsReady", SmsReady);

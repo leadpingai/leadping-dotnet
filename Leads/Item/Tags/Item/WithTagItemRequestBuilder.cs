@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Leads.Item.Tags.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \leads\{id}\tags\{tagId}
+    /// Builds and executes requests for operations under \leads\{-id}\tags\{tagId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithTagItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/tags/{tagId}", pathParameters)
+        public WithTagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/tags/{tagId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/tags/{tagId}", rawUrl)
+        public WithTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/tags/{tagId}", rawUrl)
         {
         }
         /// <summary>
-        /// Removes one current-business tag from a lead while leaving the lead record, other tags, and communication history intact.
+        /// Removes one current-organization tag from a lead while leaving the lead record, other tags, and communication history intact.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes one current-business tag from a lead while leaving the lead record, other tags, and communication history intact.
+        /// Removes one current-organization tag from a lead while leaving the lead record, other tags, and communication history intact.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

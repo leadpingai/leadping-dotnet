@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Outbound.Overview
         {
         }
         /// <summary>
-        /// Returns current-business outbound capacity, scheduled work, and pacing decisions used to control lead communication delivery.
+        /// Returns current-organization outbound capacity, scheduled work, and pacing decisions used to control lead communication delivery.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OutboundCapacityOverview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Outbound.Overview
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OutboundCapacityOverview>(requestInfo, global::Leadping.OpenApiClient.Models.OutboundCapacityOverview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns current-business outbound capacity, scheduled work, and pacing decisions used to control lead communication delivery.
+        /// Returns current-organization outbound capacity, scheduled work, and pacing decisions used to control lead communication delivery.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

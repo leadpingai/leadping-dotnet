@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Leads.Item.Archive
 {
     /// <summary>
-    /// Builds and executes requests for operations under \leads\{id}\archive
+    /// Builds and executes requests for operations under \leads\{-id}\archive
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ArchiveRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Archive
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArchiveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/archive", pathParameters)
+        public ArchiveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/archive", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Archive
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/archive", rawUrl)
+        public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/archive", rawUrl)
         {
         }
         /// <summary>

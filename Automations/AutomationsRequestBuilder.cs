@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Automations
         {
         }
         /// <summary>
-        /// Creates an automation for current-business leads, configuring triggers, message steps, and follow-up behavior.
+        /// Creates an automation for current-organization leads, configuring triggers, message steps, and follow-up behavior.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API automation configuration request, including the fields clients can send.</param>
@@ -86,7 +86,7 @@ namespace Leadping.OpenApiClient.Automations
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates an automation for current-business leads, configuring triggers, message steps, and follow-up behavior.
+        /// Creates an automation for current-organization leads, configuring triggers, message steps, and follow-up behavior.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API automation configuration request, including the fields clients can send.</param>

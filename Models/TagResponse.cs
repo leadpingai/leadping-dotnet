@@ -17,14 +17,6 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UTC timestamp when this record was archived.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>Business ID that owns this tag.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>Hex color used to display this tag or status in Leadping clients.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +71,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedName { get; set; }
 #endif
+        /// <summary>Organization ID that owns this tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.TagResponse"/> and sets the default values.
         /// </summary>
@@ -105,7 +105,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
@@ -115,6 +114,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "normalizedName", n => { NormalizedName = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -125,7 +125,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("color", Color);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
@@ -135,6 +134,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("normalizedName", NormalizedName);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

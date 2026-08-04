@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers
         {
         }
         /// <summary>
-        /// Purchases or creates a phone number for the current business so it can be assigned to messaging, calls, and lead follow-up.
+        /// Purchases or creates a phone number for the current organization so it can be assigned to messaging, calls, and lead follow-up.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API phone number update request, including the fields clients can send.</param>
@@ -100,7 +100,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Purchases or creates a phone number for the current business so it can be assigned to messaging, calls, and lead follow-up.
+        /// Purchases or creates a phone number for the current organization so it can be assigned to messaging, calls, and lead follow-up.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API phone number update request, including the fields clients can send.</param>

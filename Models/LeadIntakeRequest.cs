@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Lead birth date used for demographic matching and insurance intake workflows.</summary>
         public Date? BirthDate { get; set; }
-        /// <summary>City for the lead or business postal address.</summary>
+        /// <summary>City for the lead or organization postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -94,7 +94,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>Phone details for the lead, user, or business represented by this lead intake request.</summary>
+        /// <summary>Phone details for the lead, user, or organization represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -110,7 +110,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneType { get; set; }
 #endif
-        /// <summary>Postal code for the lead or business address.</summary>
+        /// <summary>Postal code for the lead or organization address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostalCode { get; set; }
@@ -160,7 +160,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_sourceMetadata SourceMetadata { get; set; }
 #endif
-        /// <summary>State, province, or region for the lead or business postal address.</summary>
+        /// <summary>State, province, or region for the lead or organization postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }

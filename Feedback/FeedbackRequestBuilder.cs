@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Feedback
         {
         }
         /// <summary>
-        /// Creates product feedback for the current business, capturing category, message, and context for operator review.
+        /// Creates product feedback for the current organization, capturing category, message, and context for operator review.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.FeedbackResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API feedback creation request, including the fields clients can send.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Feedback
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.FeedbackResponse>(requestInfo, global::Leadping.OpenApiClient.Models.FeedbackResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates product feedback for the current business, capturing category, message, and context for operator review.
+        /// Creates product feedback for the current organization, capturing category, message, and context for operator review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API feedback creation request, including the fields clients can send.</param>

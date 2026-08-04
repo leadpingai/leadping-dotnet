@@ -23,14 +23,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit> Audit { get; set; }
 #endif
-        /// <summary>The business ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>The channel value for this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +54,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string NormalizedPhoneNumber { get; set; }
+#endif
+        /// <summary>The organization ID associated with this ion entry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>The human-readable reason explaining this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,11 +125,11 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audit", n => { Audit = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>(global::Leadping.OpenApiClient.Models.SuppressionEntryAudit.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "normalizedEmail", n => { NormalizedEmail = n.GetStringValue(); } },
                 { "normalizedPhoneNumber", n => { NormalizedPhoneNumber = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "recipientIdentifier", n => { RecipientIdentifier = n.GetStringValue(); } },
                 { "releasedAt", n => { ReleasedAt = n.GetDateTimeOffsetValue(); } },
@@ -146,11 +146,11 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>("audit", Audit);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("normalizedEmail", NormalizedEmail);
             writer.WriteStringValue("normalizedPhoneNumber", NormalizedPhoneNumber);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("recipientIdentifier", RecipientIdentifier);
             writer.WriteDateTimeOffsetValue("releasedAt", ReleasedAt);

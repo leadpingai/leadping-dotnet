@@ -29,6 +29,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>Number of MMS messages that failed during this metrics window.</summary>
+        public int? MmsFailedCount { get; set; }
+        /// <summary>Number of MMS messages sent during this metrics window.</summary>
+        public int? MmsSentCount { get; set; }
         /// <summary>Number of SMS messages that failed during this metrics window.</summary>
         public int? SmsFailedCount { get; set; }
         /// <summary>Number of SMS messages sent during this metrics window.</summary>
@@ -64,6 +68,8 @@ namespace Leadping.OpenApiClient.Models
                 { "callPlacedCount", n => { CallPlacedCount = n.GetIntValue(); } },
                 { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "mmsFailedCount", n => { MmsFailedCount = n.GetIntValue(); } },
+                { "mmsSentCount", n => { MmsSentCount = n.GetIntValue(); } },
                 { "smsFailedCount", n => { SmsFailedCount = n.GetIntValue(); } },
                 { "smsSentCount", n => { SmsSentCount = n.GetIntValue(); } },
                 { "startAt", n => { StartAt = n.GetDateTimeOffsetValue(); } },
@@ -80,6 +86,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("callPlacedCount", CallPlacedCount);
             writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteStringValue("label", Label);
+            writer.WriteIntValue("mmsFailedCount", MmsFailedCount);
+            writer.WriteIntValue("mmsSentCount", MmsSentCount);
             writer.WriteIntValue("smsFailedCount", SmsFailedCount);
             writer.WriteIntValue("smsSentCount", SmsSentCount);
             writer.WriteDateTimeOffsetValue("startAt", StartAt);

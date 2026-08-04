@@ -31,14 +31,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation Automation { get; set; }
 #endif
-        /// <summary>Unique identifier of the business associated with this Leadping automation workflow run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>Date and time when the automation workflow run was cancelled.</summary>
         public DateTimeOffset? CancelledAt { get; set; }
         /// <summary>Date and time when the automation workflow run completed.</summary>
@@ -111,6 +103,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? NextExecutionAt { get; set; }
         /// <summary>Date and time when the next retry is scheduled.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
+        /// <summary>Unique identifier of the organization associated with this Leadping automation workflow run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Total number of retry records represented by this Leadping automation workflow run.</summary>
         public int? RetryCount { get; set; }
         /// <summary>Reason or diagnostic code that explains the current outcome for this Leadping automation workflow run.</summary>
@@ -192,7 +192,6 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "automation", n => { Automation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation>(global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation.CreateFromDiscriminatorValue); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "cancelledAt", n => { CancelledAt = n.GetDateTimeOffsetValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentStep", n => { CurrentStep = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>(global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep.CreateFromDiscriminatorValue); } },
@@ -208,6 +207,7 @@ namespace Leadping.OpenApiClient.Models
                 { "maxRetryCount", n => { MaxRetryCount = n.GetIntValue(); } },
                 { "nextExecutionAt", n => { NextExecutionAt = n.GetDateTimeOffsetValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "retryCount", n => { RetryCount = n.GetIntValue(); } },
                 { "skipReasonCode", n => { SkipReasonCode = n.GetStringValue(); } },
                 { "skipReasonDisplay", n => { SkipReasonDisplay = n.GetStringValue(); } },
@@ -228,7 +228,6 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse>("actions", Actions);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation>("automation", Automation);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("cancelledAt", CancelledAt);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>("currentStep", CurrentStep);
@@ -244,6 +243,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("maxRetryCount", MaxRetryCount);
             writer.WriteDateTimeOffsetValue("nextExecutionAt", NextExecutionAt);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteIntValue("retryCount", RetryCount);
             writer.WriteStringValue("skipReasonCode", SkipReasonCode);
             writer.WriteStringValue("skipReasonDisplay", SkipReasonDisplay);

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Controlled disposition categories used for reporting, automation, and analytics.</summary>
+    /// <summary>Controlled lead status change categories used for reporting, automation, and analytics.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LeadStatusRequest_category
     {

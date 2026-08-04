@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Users.Compliance
         {
         }
         /// <summary>
-        /// Updates current-user compliance settings used for messaging eligibility, billing readiness, and business account setup.
+        /// Updates current-user compliance settings used for messaging eligibility, billing readiness, and organization account setup.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
         /// <param name="body">Request payload for compliance update.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Users.Compliance
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.UserResponse>(requestInfo, global::Leadping.OpenApiClient.Models.UserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates current-user compliance settings used for messaging eligibility, billing readiness, and business account setup.
+        /// Updates current-user compliance settings used for messaging eligibility, billing readiness, and organization account setup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request payload for compliance update.</param>

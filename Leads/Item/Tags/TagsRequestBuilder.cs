@@ -13,7 +13,7 @@ using System;
 namespace Leadping.OpenApiClient.Leads.Item.Tags
 {
     /// <summary>
-    /// Builds and executes requests for operations under \leads\{id}\tags
+    /// Builds and executes requests for operations under \leads\{-id}\tags
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/tags", pathParameters)
+        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/tags", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/tags", rawUrl)
+        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/tags", rawUrl)
         {
         }
         /// <summary>
-        /// Adds one or more current-business tags to a lead so users can segment, filter, route, and review follow-up work.
+        /// Adds one or more current-organization tags to a lead so users can segment, filter, route, and review follow-up work.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
@@ -76,7 +76,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replaces all tags on a lead with the supplied current-business tags, keeping segmentation and routing labels in sync.
+        /// Replaces all tags on a lead with the supplied current-organization tags, keeping segmentation and routing labels in sync.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
@@ -105,7 +105,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds one or more current-business tags to a lead so users can segment, filter, route, and review follow-up work.
+        /// Adds one or more current-organization tags to a lead so users can segment, filter, route, and review follow-up work.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
@@ -127,7 +127,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
             return requestInfo;
         }
         /// <summary>
-        /// Replaces all tags on a lead with the supplied current-business tags, keeping segmentation and routing labels in sync.
+        /// Replaces all tags on a lead with the supplied current-organization tags, keeping segmentation and routing labels in sync.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>

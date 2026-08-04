@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Leads.Item.WorkflowStatus
 {
     /// <summary>
-    /// Builds and executes requests for operations under \leads\{id}\workflow-status
+    /// Builds and executes requests for operations under \leads\{-id}\workflow-status
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowStatusRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Leads.Item.WorkflowStatus
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/workflow-status", pathParameters)
+        public WorkflowStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/workflow-status", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Leadping.OpenApiClient.Leads.Item.WorkflowStatus
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/workflow-status", rawUrl)
+        public WorkflowStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/workflow-status", rawUrl)
         {
         }
         /// <summary>
-        /// Returns automation workflow status for one lead, including active runs, paused state, and follow-up progress for the current business.
+        /// Returns automation workflow status for one lead, including active runs, paused state, and follow-up progress for the current organization.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationWorkflowStatusResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Leads.Item.WorkflowStatus
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationWorkflowStatusResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationWorkflowStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns automation workflow status for one lead, including active runs, paused state, and follow-up progress for the current business.
+        /// Returns automation workflow status for one lead, including active runs, paused state, and follow-up progress for the current organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

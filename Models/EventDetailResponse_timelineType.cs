@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         Note,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Disposition")]
+        [EnumMember(Value = "LeadStatusChange")]
         #pragma warning disable CS1591
-        Disposition,
+        LeadStatusChange,
         #pragma warning restore CS1591
         [EnumMember(Value = "LeadCreated")]
         #pragma warning disable CS1591

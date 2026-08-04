@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Tags.Item
         {
         }
         /// <summary>
-        /// Archives a tag for the current business so it stops being used for new segmentation while historical lead labels remain available.
+        /// Archives a tag for the current organization so it stops being used for new segmentation while historical lead labels remain available.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Tags.Item
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a current-business tag&apos;s name, color, or archived state so lead segmentation and filters stay consistent.
+        /// Updates a current-organization tag&apos;s name, color, or archived state so lead segmentation and filters stay consistent.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TagResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API tag request, including the fields clients can send.</param>
@@ -88,7 +88,7 @@ namespace Leadping.OpenApiClient.Tags.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.TagResponse>(requestInfo, global::Leadping.OpenApiClient.Models.TagResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archives a tag for the current business so it stops being used for new segmentation while historical lead labels remain available.
+        /// Archives a tag for the current organization so it stops being used for new segmentation while historical lead labels remain available.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Tags.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a current-business tag&apos;s name, color, or archived state so lead segmentation and filters stay consistent.
+        /// Updates a current-organization tag&apos;s name, color, or archived state so lead segmentation and filters stay consistent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API tag request, including the fields clients can send.</param>

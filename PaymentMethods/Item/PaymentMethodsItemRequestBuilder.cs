@@ -66,7 +66,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns one payment method for the current user or business, including card metadata used for billing management.
+        /// Returns one payment method for the current user or organization, including card metadata used for billing management.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns one payment method for the current user or business, including card metadata used for billing management.
+        /// Returns one payment method for the current user or organization, including card metadata used for billing management.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

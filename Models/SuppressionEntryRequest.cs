@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The business ID associated with this ion entry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>The channel value for this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +30,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Email { get; set; }
+#endif
+        /// <summary>The organization ID associated with this ion entry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>The phone number associated with this ion entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,9 +88,9 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "recipientIdentifier", n => { RecipientIdentifier = n.GetStringValue(); } },
@@ -103,9 +103,9 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("recipientIdentifier", RecipientIdentifier);

@@ -45,13 +45,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Current disposition summary that describes the lead outcome.</summary>
+        /// <summary>Current lead status change summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition? CurrentDisposition { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus? CurrentLeadStatus { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition CurrentDisposition { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus CurrentLeadStatus { get; set; }
 #endif
         /// <summary>Demographic profile details for the lead represented by this lead response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Leadping.OpenApiClient.Models
                 { "archivedByUserId", n => { ArchivedByUserId = n.GetStringValue(); } },
                 { "contact", n => { Contact = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>(global::Leadping.OpenApiClient.Models.LeadContact.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currentDisposition", n => { CurrentDisposition = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition>(global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition.CreateFromDiscriminatorValue); } },
+                { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "customer", n => { Customer = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>(global::Leadping.OpenApiClient.Models.LeadProfile.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -154,7 +154,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("archiveReason", ArchiveReason);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>("contact", Contact);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentDisposition>("currentDisposition", CurrentDisposition);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>("customer", Customer);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);

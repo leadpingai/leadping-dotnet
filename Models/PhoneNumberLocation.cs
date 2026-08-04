@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
-        /// <summary>State, province, or region for the lead or business postal address.</summary>
+        /// <summary>State, province, or region for the lead or organization postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }

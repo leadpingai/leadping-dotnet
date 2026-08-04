@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.PaymentMethods
         {
         }
         /// <summary>
-        /// Lists the payment methods available to the current business for billing, invoice payments, and wallet funding.
+        /// Lists the payment methods available to the current organization for billing, invoice payments, and wallet funding.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Leadping.OpenApiClient.PaymentMethods
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists the payment methods available to the current business for billing, invoice payments, and wallet funding.
+        /// Lists the payment methods available to the current organization for billing, invoice payments, and wallet funding.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

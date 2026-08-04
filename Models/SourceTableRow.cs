@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>Source API key used to authenticate inbound lead delivery to Leadping. Unlike a business API key, this value remains available to authorized source users.</summary>
+        /// <summary>Source API key used to authenticate inbound lead delivery to Leadping. Unlike an organization API key, this value remains available to authorized source users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiKey { get; set; }
@@ -51,23 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Total number of authenticated requests made with this source API key.</summary>
         public long? ApiKeyTotalUses { get; set; }
-        /// <summary>Business summary connected to this lead source table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.SourceTableRow_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.SourceTableRow_business Business { get; set; }
-#endif
-        /// <summary>Business ID that owns this lead source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>Indicates whether the business or sender passed compliance review.</summary>
+        /// <summary>Indicates whether the organization or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
         public double? CostPerLead { get; set; }
@@ -137,6 +121,22 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Organization summary connected to this lead source table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.SourceTableRow_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.SourceTableRow_organization Organization { get; set; }
+#endif
+        /// <summary>Organization ID that owns this lead source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
         /// <summary>User summary connected to this lead source table row.</summary>
@@ -178,8 +178,6 @@ namespace Leadping.OpenApiClient.Models
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_business>(global::Leadping.OpenApiClient.Models.SourceTableRow_business.CreateFromDiscriminatorValue); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -194,6 +192,8 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "modifiedByUser", n => { ModifiedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_modifiedByUser>(global::Leadping.OpenApiClient.Models.SourceTableRow_modifiedByUser.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_organization>(global::Leadping.OpenApiClient.Models.SourceTableRow_organization.CreateFromDiscriminatorValue); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "requiresTrustedForm", n => { RequiresTrustedForm = n.GetBoolValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_user>(global::Leadping.OpenApiClient.Models.SourceTableRow_user.CreateFromDiscriminatorValue); } },
             };
@@ -211,8 +211,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_business>("business", Business);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
             writer.WriteDoubleValue("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
@@ -227,6 +225,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_modifiedByUser>("modifiedByUser", ModifiedByUser);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_organization>("organization", Organization);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteBoolValue("requiresTrustedForm", RequiresTrustedForm);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_user>("user", User);
             writer.WriteAdditionalData(AdditionalData);

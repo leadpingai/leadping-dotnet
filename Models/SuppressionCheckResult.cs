@@ -17,14 +17,6 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this ion check result allows ed.</summary>
         public bool? Allowed { get; set; }
-        /// <summary>The business ID associated with this ion check result.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>The channel value for this ion check result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +48,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string NormalizedPhoneNumber { get; set; }
+#endif
+        /// <summary>The organization ID associated with this ion check result.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>The recipient identifier value for this ion check result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,11 +109,11 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed", n => { Allowed = n.GetBoolValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
                 { "customerReason", n => { CustomerReason = n.GetStringValue(); } },
                 { "normalizedEmail", n => { NormalizedEmail = n.GetStringValue(); } },
                 { "normalizedPhoneNumber", n => { NormalizedPhoneNumber = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "recipientIdentifier", n => { RecipientIdentifier = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "suppressedAt", n => { SuppressedAt = n.GetDateTimeOffsetValue(); } },
@@ -128,11 +128,11 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowed", Allowed);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("customerReason", CustomerReason);
             writer.WriteStringValue("normalizedEmail", NormalizedEmail);
             writer.WriteStringValue("normalizedPhoneNumber", NormalizedPhoneNumber);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("recipientIdentifier", RecipientIdentifier);
             writer.WriteStringValue("source", Source);
             writer.WriteDateTimeOffsetValue("suppressedAt", SuppressedAt);

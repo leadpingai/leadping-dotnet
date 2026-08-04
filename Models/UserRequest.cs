@@ -25,13 +25,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserRequest_compliance Compliance { get; set; }
 #endif
-        /// <summary>Business currently selected for the user session or profile.</summary>
+        /// <summary>Organization currently selected for the user session or profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness? CurrentBusiness { get; set; }
+        public global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization? CurrentOrganization { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness CurrentBusiness { get; set; }
+        public global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization CurrentOrganization { get; set; }
 #endif
         /// <summary>Email address for the person represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences NotificationPreferences { get; set; }
 #endif
-        /// <summary>Phone details for the lead, user, or business represented by this user profile request.</summary>
+        /// <summary>Phone details for the lead, user, or organization represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -132,7 +132,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserRequest_billingPlan>(); } },
                 { "compliance", n => { Compliance = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_compliance>(global::Leadping.OpenApiClient.Models.UserRequest_compliance.CreateFromDiscriminatorValue); } },
-                { "currentBusiness", n => { CurrentBusiness = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness>(global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness.CreateFromDiscriminatorValue); } },
+                { "currentOrganization", n => { CurrentOrganization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization>(global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -153,7 +153,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserRequest_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_compliance>("compliance", Compliance);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_currentBusiness>("currentBusiness", CurrentBusiness);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization>("currentOrganization", CurrentOrganization);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);

@@ -23,14 +23,6 @@ namespace Leadping.OpenApiClient.Models
         public double? Balance { get; set; }
         /// <summary>UTC timestamp when Leadping last calculated the wallet balance.</summary>
         public DateTimeOffset? BalanceCalculatedAt { get; set; }
-        /// <summary>Business ID that owns this wallet balance or credit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Defines the lifecycle state for a wallet credit lot.</summary>
@@ -69,6 +61,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? NextCreditExpirationAt { get; set; }
         /// <summary>Amount of wallet credit scheduled to expire next.</summary>
         public double? NextExpiringCreditAmount { get; set; }
+        /// <summary>Organization ID that owns this wallet balance or credit.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Original wallet transaction ID referenced by a reversal, refund, or adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +110,6 @@ namespace Leadping.OpenApiClient.Models
                 { "amountRemaining", n => { AmountRemaining = n.GetDoubleValue(); } },
                 { "balance", n => { Balance = n.GetDoubleValue(); } },
                 { "balanceCalculatedAt", n => { BalanceCalculatedAt = n.GetDateTimeOffsetValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creditStatus", n => { CreditStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_creditStatus>(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
@@ -121,6 +120,7 @@ namespace Leadping.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nextCreditExpirationAt", n => { NextCreditExpirationAt = n.GetDateTimeOffsetValue(); } },
                 { "nextExpiringCreditAmount", n => { NextExpiringCreditAmount = n.GetDoubleValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "originalTransactionId", n => { OriginalTransactionId = n.GetStringValue(); } },
                 { "purchasedAt", n => { PurchasedAt = n.GetDateTimeOffsetValue(); } },
                 { "sourceType", n => { SourceType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_sourceType>(); } },
@@ -137,7 +137,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("amountRemaining", AmountRemaining);
             writer.WriteDoubleValue("balance", Balance);
             writer.WriteDateTimeOffsetValue("balanceCalculatedAt", BalanceCalculatedAt);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_creditStatus>("creditStatus", CreditStatus);
             writer.WriteStringValue("currency", Currency);
@@ -148,6 +147,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("nextCreditExpirationAt", NextCreditExpirationAt);
             writer.WriteDoubleValue("nextExpiringCreditAmount", NextExpiringCreditAmount);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("originalTransactionId", OriginalTransactionId);
             writer.WriteDateTimeOffsetValue("purchasedAt", PurchasedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.WalletResponse_sourceType>("sourceType", SourceType);

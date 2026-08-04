@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The expected monthly volume value for this 10DLC application draft.</summary>
         public int? ExpectedMonthlyVolume { get; set; }
-        /// <summary>The industry value for this 10DLC application draft.</summary>
+        /// <summary>The Telnyx brand vertical for this 10DLC application draft. The JSON name is retained for backward compatibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Industry { get; set; }

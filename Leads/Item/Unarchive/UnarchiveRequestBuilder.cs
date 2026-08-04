@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Leads.Item.Unarchive
 {
     /// <summary>
-    /// Builds and executes requests for operations under \leads\{id}\unarchive
+    /// Builds and executes requests for operations under \leads\{-id}\unarchive
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnarchiveRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Unarchive
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnarchiveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/unarchive", pathParameters)
+        public UnarchiveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/unarchive", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Unarchive
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnarchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{id}/unarchive", rawUrl)
+        public UnarchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/{%2Did}/unarchive", rawUrl)
         {
         }
         /// <summary>

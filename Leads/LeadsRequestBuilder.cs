@@ -32,14 +32,14 @@ namespace Leadping.OpenApiClient.Leads
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.leads.item collection</summary>
         /// <param name="position">The ID of the lead to retrieve.</param>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Leads.Item.LeadsItemRequestBuilder"/></returns>
-        public global::Leadping.OpenApiClient.Leads.Item.LeadsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Leads.Item.ItemRequestBuilder"/></returns>
+        public global::Leadping.OpenApiClient.Leads.Item.ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("id", position);
-                return new global::Leadping.OpenApiClient.Leads.Item.LeadsItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("%2Did", position);
+                return new global::Leadping.OpenApiClient.Leads.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

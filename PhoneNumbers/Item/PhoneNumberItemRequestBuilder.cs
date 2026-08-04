@@ -46,7 +46,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item
         {
         }
         /// <summary>
-        /// Deletes a phone number from the current business when it should no longer be used for lead communication.
+        /// Deletes a phone number from the current organization when it should no longer be used for lead communication.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a phone number from the current business when it should no longer be used for lead communication.
+        /// Deletes a phone number from the current organization when it should no longer be used for lead communication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

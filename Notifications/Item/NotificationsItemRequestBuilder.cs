@@ -40,7 +40,7 @@ namespace Leadping.OpenApiClient.Notifications.Item
         {
         }
         /// <summary>
-        /// Returns one notification for the current user and business, including its content, read state, delivery context, and relevant account activity.
+        /// Returns one notification for the current user and organization, including its content, read state, delivery context, and relevant account activity.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.NotificationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Notifications.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.NotificationResponse>(requestInfo, global::Leadping.OpenApiClient.Models.NotificationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns one notification for the current user and business, including its content, read state, delivery context, and relevant account activity.
+        /// Returns one notification for the current user and organization, including its content, read state, delivery context, and relevant account activity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

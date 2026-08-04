@@ -23,22 +23,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Business summary connected to this automation table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.AutomationTableRow_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.AutomationTableRow_business Business { get; set; }
-#endif
-        /// <summary>Business ID that owns this automation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>Human-readable summary of the automation condition evaluation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +77,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastRunStatus { get; set; }
 #endif
-        /// <summary>Management level that controls whether Leadping or the business owns this automation setting.</summary>
+        /// <summary>Management level that controls whether Leadping or the organization owns this automation setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementLevel { get; set; }
@@ -110,6 +94,22 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>Organization summary connected to this automation table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.AutomationTableRow_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.AutomationTableRow_organization Organization { get; set; }
+#endif
+        /// <summary>Organization ID that owns this automation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>Human-readable explanation of the automation rule being evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -185,8 +185,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionSummary", n => { ActionSummary = n.GetStringValue(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_business>(global::Leadping.OpenApiClient.Models.AutomationTableRow_business.CreateFromDiscriminatorValue); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "conditionSummary", n => { ConditionSummary = n.GetStringValue(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -199,6 +197,8 @@ namespace Leadping.OpenApiClient.Models
                 { "managementLevel", n => { ManagementLevel = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_organization>(global::Leadping.OpenApiClient.Models.AutomationTableRow_organization.CreateFromDiscriminatorValue); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "ruleSentence", n => { RuleSentence = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "triggerSummary", n => { TriggerSummary = n.GetStringValue(); } },
@@ -215,8 +215,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionSummary", ActionSummary);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_business>("business", Business);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("conditionSummary", ConditionSummary);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteStringValue("description", Description);
@@ -229,6 +227,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("managementLevel", ManagementLevel);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_organization>("organization", Organization);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("ruleSentence", RuleSentence);
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("triggerSummary", TriggerSummary);

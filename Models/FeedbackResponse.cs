@@ -25,14 +25,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Area { get; set; }
 #endif
-        /// <summary>Business ID connected to the feedback item, when the feedback came from a business workspace.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>Client application version that submitted this feedback item response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +50,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Message { get; set; }
+#endif
+        /// <summary>Organization ID connected to the feedback item, when the feedback came from an organization workspace.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>Application route where this feedback item response originated or should direct the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,11 +106,11 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "allowContact", n => { AllowContact = n.GetBoolValue(); } },
                 { "area", n => { Area = n.GetStringValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "clientVersion", n => { ClientVersion = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "route", n => { Route = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.FeedbackStatus>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Leadping.OpenApiClient.Models.FeedbackType>(); } },
@@ -126,11 +126,11 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowContact", AllowContact);
             writer.WriteStringValue("area", Area);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteStringValue("clientVersion", ClientVersion);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("route", Route);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.FeedbackStatus>("status", Status);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.FeedbackType>("type", Type);

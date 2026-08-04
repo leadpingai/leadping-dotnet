@@ -43,22 +43,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when Leadping blocked this communication.</summary>
         public DateTimeOffset? BlockedAt { get; set; }
-        /// <summary>Business summary connected to this SMS event table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Business { get; set; }
-#nullable restore
-#else
-        public string Business { get; set; }
-#endif
-        /// <summary>Business display name shown for this SMS event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessName { get; set; }
-#nullable restore
-#else
-        public string BusinessName { get; set; }
-#endif
         /// <summary>UTC timestamp when this delivery or workflow was canceled.</summary>
         public DateTimeOffset? CanceledAt { get; set; }
         /// <summary>Reason this delivery, run, or request was canceled.</summary>
@@ -156,6 +140,22 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Leadping.OpenApiClient.Models.MessageMediaAttachment> Media { get; set; }
+#endif
+        /// <summary>Organization summary connected to this SMS event table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Organization { get; set; }
+#nullable restore
+#else
+        public string Organization { get; set; }
+#endif
+        /// <summary>Organization display name shown for this SMS event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationName { get; set; }
+#nullable restore
+#else
+        public string OrganizationName { get; set; }
 #endif
         /// <summary>Phone number ID selected for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -269,8 +269,6 @@ namespace Leadping.OpenApiClient.Models
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
-                { "business", n => { Business = n.GetStringValue(); } },
-                { "businessName", n => { BusinessName = n.GetStringValue(); } },
                 { "cancelReason", n => { CancelReason = n.GetStringValue(); } },
                 { "canceledAt", n => { CanceledAt = n.GetDateTimeOffsetValue(); } },
                 { "complianceAction", n => { ComplianceAction = n.GetStringValue(); } },
@@ -287,6 +285,8 @@ namespace Leadping.OpenApiClient.Models
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
+                { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
                 { "outboundSource", n => { OutboundSource = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsEventTableRow_outboundSource>(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
@@ -318,8 +318,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
-            writer.WriteStringValue("business", Business);
-            writer.WriteStringValue("businessName", BusinessName);
             writer.WriteDateTimeOffsetValue("canceledAt", CanceledAt);
             writer.WriteStringValue("cancelReason", CancelReason);
             writer.WriteStringValue("complianceAction", ComplianceAction);
@@ -336,6 +334,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isAutomated", IsAutomated);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("lead", Lead);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
+            writer.WriteStringValue("organization", Organization);
+            writer.WriteStringValue("organizationName", OrganizationName);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsEventTableRow_outboundSource>("outboundSource", OutboundSource);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);

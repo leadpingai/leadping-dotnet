@@ -29,30 +29,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingStatus { get; set; }
 #endif
-        /// <summary>Business summary connected to this call event table row.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Business { get; set; }
-#nullable restore
-#else
-        public string Business { get; set; }
-#endif
-        /// <summary>Business ID associated with this call event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>Display name for the business associated with this call event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessName { get; set; }
-#nullable restore
-#else
-        public string BusinessName { get; set; }
-#endif
         /// <summary>Caller ID phone number presented during the outbound call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +98,30 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LeadName { get; set; }
+#endif
+        /// <summary>Organization summary connected to this call event table row.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Organization { get; set; }
+#nullable restore
+#else
+        public string Organization { get; set; }
+#endif
+        /// <summary>Organization ID associated with this call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
+        /// <summary>Display name for the organization associated with this call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationName { get; set; }
+#nullable restore
+#else
+        public string OrganizationName { get; set; }
 #endif
         /// <summary>URL for the call recording, when the provider makes one available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,9 +194,6 @@ namespace Leadping.OpenApiClient.Models
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billableSeconds", n => { BillableSeconds = n.GetIntValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
-                { "business", n => { Business = n.GetStringValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "businessName", n => { BusinessName = n.GetStringValue(); } },
                 { "callerId", n => { CallerId = n.GetStringValue(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -208,6 +205,9 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
                 { "recordingUrl", n => { RecordingUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
@@ -227,9 +227,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteIntValue("billableSeconds", BillableSeconds);
             writer.WriteStringValue("billingStatus", BillingStatus);
-            writer.WriteStringValue("business", Business);
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteStringValue("businessName", BusinessName);
             writer.WriteStringValue("callerId", CallerId);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
@@ -241,6 +238,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadName", LeadName);
+            writer.WriteStringValue("organization", Organization);
+            writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("organizationName", OrganizationName);
             writer.WriteStringValue("recordingUrl", RecordingUrl);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);

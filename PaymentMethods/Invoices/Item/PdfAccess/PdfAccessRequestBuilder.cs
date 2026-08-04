@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices.Item.PdfAccess
         {
         }
         /// <summary>
-        /// Creates a short-lived, secure URL that lets the current business view or download a private Stripe invoice PDF without exposing a permanent file link.
+        /// Creates a short-lived, secure URL that lets the current organization view or download a private Stripe invoice PDF without exposing a permanent file link.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.InvoicePdfAccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices.Item.PdfAccess
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.InvoicePdfAccessResponse>(requestInfo, global::Leadping.OpenApiClient.Models.InvoicePdfAccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a short-lived, secure URL that lets the current business view or download a private Stripe invoice PDF without exposing a permanent file link.
+        /// Creates a short-lived, secure URL that lets the current organization view or download a private Stripe invoice PDF without exposing a permanent file link.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices.Item.PdfAccess
             return new global::Leadping.OpenApiClient.PaymentMethods.Invoices.Item.PdfAccess.PdfAccessRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Creates a short-lived, secure URL that lets the current business view or download a private Stripe invoice PDF without exposing a permanent file link.
+        /// Creates a short-lived, secure URL that lets the current organization view or download a private Stripe invoice PDF without exposing a permanent file link.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PdfAccessRequestBuilderGetQueryParameters 

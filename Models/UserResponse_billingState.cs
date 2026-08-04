@@ -8,10 +8,10 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Customer-safe billing state for the user&apos;s currently selected business.
+    /// Customer-safe billing state for the user&apos;s currently selected organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserResponse_billingState : global::Leadping.OpenApiClient.Models.BusinessBillingState, IParsable
+    public partial class UserResponse_billingState : global::Leadping.OpenApiClient.Models.OrganizationBillingState, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

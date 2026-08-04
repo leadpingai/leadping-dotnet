@@ -23,14 +23,6 @@ namespace Leadping.OpenApiClient.Models
         public double? BilledAmount { get; set; }
         /// <summary>Defines the supported Usage Channel values.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_billingChannel? BillingChannel { get; set; }
-        /// <summary>The ID and name for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.TransactionTableRow_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.TransactionTableRow_business Business { get; set; }
-#endif
         /// <summary>UTC timestamp when this billing transaction table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Human-readable description that explains this billing transaction table row to API users.</summary>
@@ -59,6 +51,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
         public double? NetAmount { get; set; }
+        /// <summary>The ID and name for this organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.TransactionTableRow_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.TransactionTableRow_organization Organization { get; set; }
+#endif
         /// <summary>Masked or human-readable payment method shown for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,12 +128,12 @@ namespace Leadping.OpenApiClient.Models
                 { "billableUnit", n => { BillableUnit = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_billableUnit>(); } },
                 { "billedAmount", n => { BilledAmount = n.GetDoubleValue(); } },
                 { "billingChannel", n => { BillingChannel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_billingChannel>(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_business>(global::Leadping.OpenApiClient.Models.TransactionTableRow_business.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_lead>(global::Leadping.OpenApiClient.Models.TransactionTableRow_lead.CreateFromDiscriminatorValue); } },
                 { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_organization>(global::Leadping.OpenApiClient.Models.TransactionTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "paymentMethodDisplay", n => { PaymentMethodDisplay = n.GetStringValue(); } },
                 { "pricingVersion", n => { PricingVersion = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
@@ -155,12 +155,12 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_billableUnit>("billableUnit", BillableUnit);
             writer.WriteDoubleValue("billedAmount", BilledAmount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_billingChannel>("billingChannel", BillingChannel);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_business>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_lead>("lead", Lead);
             writer.WriteDoubleValue("netAmount", NetAmount);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_organization>("organization", Organization);
             writer.WriteStringValue("paymentMethodDisplay", PaymentMethodDisplay);
             writer.WriteStringValue("pricingVersion", PricingVersion);
             writer.WriteDoubleValue("quantity", Quantity);

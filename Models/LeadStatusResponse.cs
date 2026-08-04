@@ -15,16 +15,8 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifier of the business that owns the lead status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
-        /// <summary>Disposition category represented by the lead status.</summary>
-        public global::Leadping.OpenApiClient.Models.DispositionCategory? Category { get; set; }
+        /// <summary>LeadStatusChange category represented by the lead status.</summary>
+        public global::Leadping.OpenApiClient.Models.LeadStatusCategory? Category { get; set; }
         /// <summary>Display color assigned to the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +45,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Identifier of the organization that owns the lead status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Relative display order of the lead status.</summary>
         public int? SortOrder { get; set; }
         /// <summary>
@@ -80,13 +80,13 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.DispositionCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusCategory>(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "sortOrder", n => { SortOrder = n.GetIntValue(); } },
             };
         }
@@ -97,13 +97,13 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("businessId", BusinessId);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.DispositionCategory>("category", Category);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusCategory>("category", Category);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteIntValue("sortOrder", SortOrder);
             writer.WriteAdditionalData(AdditionalData);
         }

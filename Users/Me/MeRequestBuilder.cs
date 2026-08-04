@@ -40,7 +40,7 @@ namespace Leadping.OpenApiClient.Users.Me
         {
         }
         /// <summary>
-        /// Returns the current user&apos;s profile, roles, business context, billing state, and compliance settings for portal sessions.
+        /// Returns the current user&apos;s profile, roles, organization context, billing state, and compliance settings for portal sessions.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Users.Me
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.UserResponse>(requestInfo, global::Leadping.OpenApiClient.Models.UserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the current user&apos;s profile fields, contact details, preferences, or business context used across Leadping.
+        /// Updates the current user&apos;s profile fields, contact details, preferences, or organization context used across Leadping.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API user profile request, including the fields clients can send.</param>
@@ -92,7 +92,7 @@ namespace Leadping.OpenApiClient.Users.Me
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.UserResponse>(requestInfo, global::Leadping.OpenApiClient.Models.UserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the current user&apos;s profile, roles, business context, billing state, and compliance settings for portal sessions.
+        /// Returns the current user&apos;s profile, roles, organization context, billing state, and compliance settings for portal sessions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Leadping.OpenApiClient.Users.Me
             return requestInfo;
         }
         /// <summary>
-        /// Updates the current user&apos;s profile fields, contact details, preferences, or business context used across Leadping.
+        /// Updates the current user&apos;s profile fields, contact details, preferences, or organization context used across Leadping.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API user profile request, including the fields clients can send.</param>

@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Team ID used to choose the best outgoing sender number.</summary>
+        /// <summary>Organization ID used to choose the best outgoing sender number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId { get; set; }

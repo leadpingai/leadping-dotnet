@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Analytics.My
         {
         }
         /// <summary>
-        /// Returns current-business analytics for lead communication, including event volume, response metrics, and date-range filtering.
+        /// Returns current-organization analytics for lead communication, including event volume, response metrics, and date-range filtering.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.CustomerAnalyticsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Analytics.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.CustomerAnalyticsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.CustomerAnalyticsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns current-business analytics for lead communication, including event volume, response metrics, and date-range filtering.
+        /// Returns current-organization analytics for lead communication, including event volume, response metrics, and date-range filtering.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Analytics.My
             return new global::Leadping.OpenApiClient.Analytics.My.MyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns current-business analytics for lead communication, including event volume, response metrics, and date-range filtering.
+        /// Returns current-organization analytics for lead communication, including event volume, response metrics, and date-range filtering.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MyRequestBuilderGetQueryParameters 

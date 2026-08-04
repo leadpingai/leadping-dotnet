@@ -19,14 +19,6 @@ namespace Leadping.OpenApiClient.Models
         public int? BillableSeconds { get; set; }
         /// <summary>The billable unit value for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.BillableUnit? BillableUnit { get; set; }
-        /// <summary>The ID and name for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business Business { get; set; }
-#endif
         /// <summary>The channel value for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
         /// <summary>The date and time for the created at value on this usage ledger.</summary>
@@ -60,6 +52,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead Lead { get; set; }
+#endif
+        /// <summary>The ID and name for this organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization Organization { get; set; }
 #endif
         /// <summary>The phone number associated with this usage ledger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,6 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "billableSeconds", n => { BillableSeconds = n.GetIntValue(); } },
                 { "billableUnit", n => { BillableUnit = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business>(global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business.CreateFromDiscriminatorValue); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "customerChargeAmount", n => { CustomerChargeAmount = n.GetDoubleValue(); } },
@@ -129,6 +128,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isBillable", n => { IsBillable = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead>(global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization>(global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
@@ -147,7 +147,6 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("billableSeconds", BillableSeconds);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>("billableUnit", BillableUnit);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_business>("business", Business);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>("channel", Channel);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("customerChargeAmount", CustomerChargeAmount);
@@ -156,6 +155,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isBillable", IsBillable);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead>("lead", Lead);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
             writer.WriteDoubleValue("quantity", Quantity);

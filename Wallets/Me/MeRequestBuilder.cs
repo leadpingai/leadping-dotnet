@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Wallets.Me
         {
         }
         /// <summary>
-        /// Returns the current business wallet, including balance and funding status used for communication delivery and billing.
+        /// Returns the current organization wallet, including balance and funding status used for communication delivery and billing.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.WalletResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Wallets.Me
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.WalletResponse>(requestInfo, global::Leadping.OpenApiClient.Models.WalletResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the current business wallet, including balance and funding status used for communication delivery and billing.
+        /// Returns the current organization wallet, including balance and funding status used for communication delivery and billing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

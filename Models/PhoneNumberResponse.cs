@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Business summary connected to this phone number.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneNumberResponse_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.PhoneNumberResponse_business Business { get; set; }
-#endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Indicates whether this phone number is active and available in the Leadping API.</summary>
@@ -54,6 +46,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Number { get; set; }
+#endif
+        /// <summary>Organization summary connected to this phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization Organization { get; set; }
 #endif
         /// <summary>Identifier of the canonical phone identity for this number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +104,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_business>(global::Leadping.OpenApiClient.Models.PhoneNumberResponse_business.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -112,6 +111,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>(global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization.CreateFromDiscriminatorValue); } },
                 { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "routing", n => { Routing = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>(global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata.CreateFromDiscriminatorValue); } },
                 { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>(global::Leadping.OpenApiClient.Models.PhoneNumberReadiness.CreateFromDiscriminatorValue); } },
@@ -124,7 +124,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_business>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
@@ -132,6 +131,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>("organization", Organization);
             writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>("routing", Routing);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>("warmup", Warmup);

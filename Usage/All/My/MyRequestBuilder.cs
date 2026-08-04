@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Usage.All.My
         {
         }
         /// <summary>
-        /// Lists current-business usage ledger entries with paging, sorting, and filters for messaging, billing, and wallet review.
+        /// Lists current-organization usage ledger entries with paging, sorting, and filters for messaging, billing, and wallet review.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfUsageLedgerTableRow"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Usage.All.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfUsageLedgerTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfUsageLedgerTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists current-business usage ledger entries with paging, sorting, and filters for messaging, billing, and wallet review.
+        /// Lists current-organization usage ledger entries with paging, sorting, and filters for messaging, billing, and wallet review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>

@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices
         {
         }
         /// <summary>
-        /// Returns the current business&apos;s Stripe invoices with their amounts, payment status, billing period, and hosted invoice details.
+        /// Returns the current organization&apos;s Stripe invoices with their amounts, payment status, billing period, and hosted invoice details.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.StripeInvoiceResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns the current business&apos;s Stripe invoices with their amounts, payment status, billing period, and hosted invoice details.
+        /// Returns the current organization&apos;s Stripe invoices with their amounts, payment status, billing period, and hosted invoice details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -27,23 +27,15 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>The ID and name for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadTableRow_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.LeadTableRow_business Business { get; set; }
-#endif
         /// <summary>UTC timestamp when this lead table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Current disposition summary that describes the lead outcome.</summary>
+        /// <summary>Current lead status change summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition? CurrentDisposition { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus? CurrentLeadStatus { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition CurrentDisposition { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus CurrentLeadStatus { get; set; }
 #endif
         /// <summary>Email address for the person represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +73,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>Phone details for the lead, user, or business represented by this lead table row.</summary>
+        /// <summary>The ID and name for this organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_organization Organization { get; set; }
+#endif
+        /// <summary>Phone details for the lead, user, or organization represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -153,15 +153,15 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "archivedByUserId", n => { ArchivedByUserId = n.GetStringValue(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_business>(global::Leadping.OpenApiClient.Models.LeadTableRow_business.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currentDisposition", n => { CurrentDisposition = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition>(global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition.CreateFromDiscriminatorValue); } },
+                { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus>(global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>(global::Leadping.OpenApiClient.Models.LeadTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>(global::Leadping.OpenApiClient.Models.LeadTableRow_source.CreateFromDiscriminatorValue); } },
@@ -181,15 +181,15 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteStringValue("archivedByUserId", ArchivedByUserId);
             writer.WriteIntValue("archiveReason", ArchiveReason);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_business>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentDisposition>("currentDisposition", CurrentDisposition);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("lastName", LastName);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phone", Phone);
             writer.WriteDoubleValue("price", Price);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>("source", Source);

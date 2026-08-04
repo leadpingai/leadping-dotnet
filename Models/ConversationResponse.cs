@@ -27,13 +27,13 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>Current disposition summary that describes the lead outcome.</summary>
+        /// <summary>Current lead status change summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition? CurrentDisposition { get; set; }
+        public global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus? CurrentLeadStatus { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition CurrentDisposition { get; set; }
+        public global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus CurrentLeadStatus { get; set; }
 #endif
         /// <summary>Email address used to resolve the lead&apos;s avatar when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +161,7 @@ namespace Leadping.OpenApiClient.Models
                 { "activeOutboundPhoneNumberId", n => { ActiveOutboundPhoneNumberId = n.GetStringValue(); } },
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
-                { "currentDisposition", n => { CurrentDisposition = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition.CreateFromDiscriminatorValue); } },
+                { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -190,7 +190,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("activeOutboundPhoneNumberId", ActiveOutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentDisposition>("currentDisposition", CurrentDisposition);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);

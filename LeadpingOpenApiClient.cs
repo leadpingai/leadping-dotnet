@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.Analytics;
 using Leadping.OpenApiClient.Automations;
-using Leadping.OpenApiClient.Businesses;
 using Leadping.OpenApiClient.Contact;
 using Leadping.OpenApiClient.Conversations;
-using Leadping.OpenApiClient.Dispositions;
 using Leadping.OpenApiClient.Events;
 using Leadping.OpenApiClient.Feedback;
+using Leadping.OpenApiClient.LeadStatusChanges;
 using Leadping.OpenApiClient.LeadStatuses;
 using Leadping.OpenApiClient.Leads;
 using Leadping.OpenApiClient.Notifications;
+using Leadping.OpenApiClient.Organizations;
 using Leadping.OpenApiClient.Outbound;
 using Leadping.OpenApiClient.PaymentMethods;
 using Leadping.OpenApiClient.PhoneCall;
@@ -53,11 +53,6 @@ namespace Leadping.OpenApiClient
         {
             get => new global::Leadping.OpenApiClient.Automations.AutomationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The businesses property</summary>
-        public global::Leadping.OpenApiClient.Businesses.BusinessesRequestBuilder Businesses
-        {
-            get => new global::Leadping.OpenApiClient.Businesses.BusinessesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The contact property</summary>
         public global::Leadping.OpenApiClient.Contact.ContactRequestBuilder Contact
         {
@@ -67,11 +62,6 @@ namespace Leadping.OpenApiClient
         public global::Leadping.OpenApiClient.Conversations.ConversationsRequestBuilder Conversations
         {
             get => new global::Leadping.OpenApiClient.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dispositions property</summary>
-        public global::Leadping.OpenApiClient.Dispositions.DispositionsRequestBuilder Dispositions
-        {
-            get => new global::Leadping.OpenApiClient.Dispositions.DispositionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
         public global::Leadping.OpenApiClient.Events.EventsRequestBuilder Events
@@ -88,6 +78,11 @@ namespace Leadping.OpenApiClient
         {
             get => new global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The leadStatusChanges property</summary>
+        public global::Leadping.OpenApiClient.LeadStatusChanges.LeadStatusChangesRequestBuilder LeadStatusChanges
+        {
+            get => new global::Leadping.OpenApiClient.LeadStatusChanges.LeadStatusChangesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The leadStatuses property</summary>
         public global::Leadping.OpenApiClient.LeadStatuses.LeadStatusesRequestBuilder LeadStatuses
         {
@@ -97,6 +92,11 @@ namespace Leadping.OpenApiClient
         public global::Leadping.OpenApiClient.Notifications.NotificationsRequestBuilder Notifications
         {
             get => new global::Leadping.OpenApiClient.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizations property</summary>
+        public global::Leadping.OpenApiClient.Organizations.OrganizationsRequestBuilder Organizations
+        {
+            get => new global::Leadping.OpenApiClient.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The outbound property</summary>
         public global::Leadping.OpenApiClient.Outbound.OutboundRequestBuilder Outbound

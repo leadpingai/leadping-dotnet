@@ -95,7 +95,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Team ID used to determine this phone number&apos;s outbound eligibility.</summary>
+        /// <summary>Organization ID used to determine this phone number&apos;s outbound eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId { get; set; }

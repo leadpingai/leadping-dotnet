@@ -25,6 +25,10 @@ namespace Leadping.OpenApiClient.Models
         public int? CallPlacedCount { get; set; }
         /// <summary>Number of connected outbound calls shorter than 30 seconds during this metrics window.</summary>
         public int? CallShortCount { get; set; }
+        /// <summary>Number of MMS messages that failed during this metrics window.</summary>
+        public int? MmsFailedCount { get; set; }
+        /// <summary>Number of MMS messages sent during this metrics window.</summary>
+        public int? MmsSentCount { get; set; }
         /// <summary>Number of SMS messages that failed during this metrics window.</summary>
         public int? SmsFailedCount { get; set; }
         /// <summary>Number of SMS messages sent during this metrics window.</summary>
@@ -71,6 +75,8 @@ namespace Leadping.OpenApiClient.Models
                 { "callInvalidNumberCount", n => { CallInvalidNumberCount = n.GetIntValue(); } },
                 { "callPlacedCount", n => { CallPlacedCount = n.GetIntValue(); } },
                 { "callShortCount", n => { CallShortCount = n.GetIntValue(); } },
+                { "mmsFailedCount", n => { MmsFailedCount = n.GetIntValue(); } },
+                { "mmsSentCount", n => { MmsSentCount = n.GetIntValue(); } },
                 { "smsFailedCount", n => { SmsFailedCount = n.GetIntValue(); } },
                 { "smsSentCount", n => { SmsSentCount = n.GetIntValue(); } },
                 { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>(global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -90,6 +96,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("callInvalidNumberCount", CallInvalidNumberCount);
             writer.WriteIntValue("callPlacedCount", CallPlacedCount);
             writer.WriteIntValue("callShortCount", CallShortCount);
+            writer.WriteIntValue("mmsFailedCount", MmsFailedCount);
+            writer.WriteIntValue("mmsSentCount", MmsSentCount);
             writer.WriteIntValue("smsFailedCount", SmsFailedCount);
             writer.WriteIntValue("smsSentCount", SmsSentCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>("trend", Trend);

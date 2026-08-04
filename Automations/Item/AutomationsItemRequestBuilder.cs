@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Automations.Item
         {
         }
         /// <summary>
-        /// Deletes an automation for the current business so it no longer schedules follow-up or routing work for captured leads.
+        /// Deletes an automation for the current organization so it no longer schedules follow-up or routing work for captured leads.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Automations.Item
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns one automation for the current business, including trigger criteria, message steps, routing settings, and enabled state.
+        /// Returns one automation for the current organization, including trigger criteria, message steps, routing settings, and enabled state.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Leadping.OpenApiClient.Automations.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an automation for current-business leads, changing triggers, message steps, routing, or active follow-up settings.
+        /// Updates an automation for current-organization leads, changing triggers, message steps, routing, or active follow-up settings.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API automation configuration request, including the fields clients can send.</param>
@@ -113,7 +113,7 @@ namespace Leadping.OpenApiClient.Automations.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an automation for the current business so it no longer schedules follow-up or routing work for captured leads.
+        /// Deletes an automation for the current organization so it no longer schedules follow-up or routing work for captured leads.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace Leadping.OpenApiClient.Automations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns one automation for the current business, including trigger criteria, message steps, routing settings, and enabled state.
+        /// Returns one automation for the current organization, including trigger criteria, message steps, routing settings, and enabled state.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Leadping.OpenApiClient.Automations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an automation for current-business leads, changing triggers, message steps, routing, or active follow-up settings.
+        /// Updates an automation for current-organization leads, changing triggers, message steps, routing, or active follow-up settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API automation configuration request, including the fields clients can send.</param>

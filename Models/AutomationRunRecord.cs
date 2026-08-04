@@ -31,14 +31,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationId { get; set; }
 #endif
-        /// <summary>Business ID that owns this automation run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BusinessId { get; set; }
-#nullable restore
-#else
-        public string BusinessId { get; set; }
-#endif
         /// <summary>UTC timestamp when processing completed for this automation run record.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>Execution mode used for automation preview or live workflow processing.</summary>
@@ -74,6 +66,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LeadId { get; set; }
+#endif
+        /// <summary>Organization ID that owns this automation run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>Number of processing attempts made for this workflow or delivery request.</summary>
         public int? ProcessingAttempts { get; set; }
@@ -130,13 +130,13 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>(global::Leadping.OpenApiClient.Models.AutomationActionRunRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "automationId", n => { AutomationId = n.GetStringValue(); } },
-                { "businessId", n => { BusinessId = n.GetStringValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "executionMode", n => { ExecutionMode = n.GetStringValue(); } },
                 { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lastAttemptAt", n => { LastAttemptAt = n.GetDateTimeOffsetValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "skippedReason", n => { SkippedReason = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -153,13 +153,13 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>("actions", Actions);
             writer.WriteStringValue("automationId", AutomationId);
-            writer.WriteStringValue("businessId", BusinessId);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteStringValue("executionMode", ExecutionMode);
             writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastAttemptAt", LastAttemptAt);
             writer.WriteStringValue("leadId", LeadId);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteStringValue("skippedReason", SkippedReason);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

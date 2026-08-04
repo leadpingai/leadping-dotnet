@@ -23,14 +23,6 @@ namespace Leadping.OpenApiClient.Models
         public double? BilledAmount { get; set; }
         /// <summary>Defines the supported Usage Channel values.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionResponse_billingChannel? BillingChannel { get; set; }
-        /// <summary>The ID and name for this business.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.TransactionResponse_business? Business { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.TransactionResponse_business Business { get; set; }
-#endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Human-readable description that explains this billing transaction response to API users.</summary>
@@ -79,6 +71,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
+        /// <summary>The ID and name for this organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.TransactionResponse_organization? Organization { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.TransactionResponse_organization Organization { get; set; }
+#endif
         /// <summary>Masked or human-readable payment method shown for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,7 +122,6 @@ namespace Leadping.OpenApiClient.Models
                 { "billableUnit", n => { BillableUnit = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TransactionResponse_billableUnit>(); } },
                 { "billedAmount", n => { BilledAmount = n.GetDoubleValue(); } },
                 { "billingChannel", n => { BillingChannel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TransactionResponse_billingChannel>(); } },
-                { "business", n => { Business = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_business>(global::Leadping.OpenApiClient.Models.TransactionResponse_business.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "gatewayFeeAmount", n => { GatewayFeeAmount = n.GetDoubleValue(); } },
@@ -132,6 +131,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_organization>(global::Leadping.OpenApiClient.Models.TransactionResponse_organization.CreateFromDiscriminatorValue); } },
                 { "paymentMethodDisplay", n => { PaymentMethodDisplay = n.GetStringValue(); } },
                 { "platformFeeAmount", n => { PlatformFeeAmount = n.GetDoubleValue(); } },
                 { "transactionStatus", n => { TransactionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TransactionStatus>(); } },
@@ -149,7 +149,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TransactionResponse_billableUnit>("billableUnit", BillableUnit);
             writer.WriteDoubleValue("billedAmount", BilledAmount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TransactionResponse_billingChannel>("billingChannel", BillingChannel);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_business>("business", Business);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("gatewayFeeAmount", GatewayFeeAmount);
@@ -159,6 +158,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDoubleValue("netAmount", NetAmount);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_organization>("organization", Organization);
             writer.WriteStringValue("paymentMethodDisplay", PaymentMethodDisplay);
             writer.WriteDoubleValue("platformFeeAmount", PlatformFeeAmount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TransactionStatus>("transactionStatus", TransactionStatus);

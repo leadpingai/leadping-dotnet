@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Sources
         {
         }
         /// <summary>
-        /// Creates a lead source for the current business, storing intake credentials and routing context for captured external leads.
+        /// Creates a lead source for the current organization, storing intake credentials and routing context for captured external leads.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API lead source request, including the fields clients can send.</param>
@@ -80,7 +80,7 @@ namespace Leadping.OpenApiClient.Sources
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a lead source for the current business, storing intake credentials and routing context for captured external leads.
+        /// Creates a lead source for the current organization, storing intake credentials and routing context for captured external leads.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API lead source request, including the fields clients can send.</param>

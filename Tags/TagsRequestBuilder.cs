@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Tags
         {
         }
         /// <summary>
-        /// Lists tags for the current business, optionally including archived tags, for lead segmentation, filters, and routing labels.
+        /// Lists tags for the current organization, optionally including archived tags, for lead segmentation, filters, and routing labels.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.TagResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Tags
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a tag for the current business so leads can be segmented, filtered, routed, and reviewed by label.
+        /// Creates a tag for the current organization so leads can be segmented, filtered, routed, and reviewed by label.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TagResponse"/></returns>
         /// <param name="body">Request schema for the Leadping API tag request, including the fields clients can send.</param>
@@ -98,7 +98,7 @@ namespace Leadping.OpenApiClient.Tags
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.TagResponse>(requestInfo, global::Leadping.OpenApiClient.Models.TagResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists tags for the current business, optionally including archived tags, for lead segmentation, filters, and routing labels.
+        /// Lists tags for the current organization, optionally including archived tags, for lead segmentation, filters, and routing labels.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Leadping.OpenApiClient.Tags
             return requestInfo;
         }
         /// <summary>
-        /// Creates a tag for the current business so leads can be segmented, filtered, routed, and reviewed by label.
+        /// Creates a tag for the current organization so leads can be segmented, filtered, routed, and reviewed by label.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request schema for the Leadping API tag request, including the fields clients can send.</param>
@@ -148,7 +148,7 @@ namespace Leadping.OpenApiClient.Tags
             return new global::Leadping.OpenApiClient.Tags.TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists tags for the current business, optionally including archived tags, for lead segmentation, filters, and routing labels.
+        /// Lists tags for the current organization, optionally including archived tags, for lead segmentation, filters, and routing labels.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderGetQueryParameters 
