@@ -27,6 +27,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
+        /// <summary>Optional profile image URL explicitly associated with the lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AvatarUrl { get; set; }
+#nullable restore
+#else
+        public string AvatarUrl { get; set; }
+#endif
         /// <summary>Current lead status change summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +169,7 @@ namespace Leadping.OpenApiClient.Models
                 { "activeOutboundPhoneNumberId", n => { ActiveOutboundPhoneNumberId = n.GetStringValue(); } },
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
+                { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
@@ -190,6 +199,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("activeOutboundPhoneNumberId", ActiveOutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
+            writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
