@@ -71,6 +71,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The priority value for this notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationPriority? Priority { get; set; }
+        /// <summary>Whether this notification should also be delivered as a device push notification.</summary>
+        public bool? PushEnabled { get; set; }
         /// <summary>The date and time for the read at value on this notification.</summary>
         public DateTimeOffset? ReadAt { get; set; }
         /// <summary>The related entity ID associated with this notification.</summary>
@@ -134,6 +136,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Leadping.OpenApiClient.Models.NotificationPriority>(); } },
+                { "pushEnabled", n => { PushEnabled = n.GetBoolValue(); } },
                 { "readAt", n => { ReadAt = n.GetDateTimeOffsetValue(); } },
                 { "relatedEntityId", n => { RelatedEntityId = n.GetStringValue(); } },
                 { "relatedEntityType", n => { RelatedEntityType = n.GetStringValue(); } },
@@ -158,6 +161,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.NotificationPriority>("priority", Priority);
+            writer.WriteBoolValue("pushEnabled", PushEnabled);
             writer.WriteDateTimeOffsetValue("readAt", ReadAt);
             writer.WriteStringValue("relatedEntityId", RelatedEntityId);
             writer.WriteStringValue("relatedEntityType", RelatedEntityType);

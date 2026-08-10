@@ -4,6 +4,7 @@ using Leadping.OpenApiClient.Notifications.Announcements;
 using Leadping.OpenApiClient.Notifications.Item;
 using Leadping.OpenApiClient.Notifications.MarkAllRead;
 using Leadping.OpenApiClient.Notifications.Me;
+using Leadping.OpenApiClient.Notifications.Push;
 using Leadping.OpenApiClient.Notifications.UnreadCount;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
@@ -33,6 +34,11 @@ namespace Leadping.OpenApiClient.Notifications
         public global::Leadping.OpenApiClient.Notifications.Me.MeRequestBuilder Me
         {
             get => new global::Leadping.OpenApiClient.Notifications.Me.MeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The push property</summary>
+        public global::Leadping.OpenApiClient.Notifications.Push.PushRequestBuilder Push
+        {
+            get => new global::Leadping.OpenApiClient.Notifications.Push.PushRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unreadCount property</summary>
         public global::Leadping.OpenApiClient.Notifications.UnreadCount.UnreadCountRequestBuilder UnreadCount
