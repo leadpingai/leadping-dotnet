@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Leadping.OpenApiClient.leads.item.tags.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the organization tag to remove.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Leads.Item.Tags.Item.WithTagItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Leads.Item.Tags.Item.WithTagItemRequestBuilder this[string position]
         {
@@ -50,7 +50,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
         /// Adds one or more current-organization tags to a lead so users can segment, filter, route, and review follow-up work.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
-        /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with lead tag update.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
         /// Replaces all tags on a lead with the supplied current-organization tags, keeping segmentation and routing labels in sync.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
-        /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with lead tag update.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -108,7 +108,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
         /// Adds one or more current-organization tags to a lead so users can segment, filter, route, and review follow-up work.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with lead tag update.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,7 +130,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Tags
         /// Replaces all tags on a lead with the supplied current-organization tags, keeping segmentation and routing labels in sync.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for the Leadping API lead tag update request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with lead tag update.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

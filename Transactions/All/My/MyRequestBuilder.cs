@@ -95,8 +95,10 @@ namespace Leadping.OpenApiClient.Transactions.All.My
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MyRequestBuilderPostQueryParameters 
         {
+            /// <summary>Optional exclusive end timestamp for transaction creation.</summary>
             [QueryParameter("endAt")]
             public DateTimeOffset? EndAt { get; set; }
+            /// <summary>Optional inclusive start timestamp for transaction creation.</summary>
             [QueryParameter("startAt")]
             public DateTimeOffset? StartAt { get; set; }
         }

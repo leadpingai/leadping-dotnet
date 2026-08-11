@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API eligible outgoing phone number returned to authenticated clients.
+    /// Describes a Leadping phone number that is eligible to send an outbound message or place a call.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EligibleOutgoingNumberResponse : IAdditionalDataHolder, IParsable

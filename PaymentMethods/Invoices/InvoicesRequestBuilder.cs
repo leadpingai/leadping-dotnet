@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices
     public partial class InvoicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Leadping.OpenApiClient.paymentMethods.invoices.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The Stripe invoice identifier whose PDF should be accessed.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.PaymentMethods.Invoices.Item.WithInvoiceItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.PaymentMethods.Invoices.Item.WithInvoiceItemRequestBuilder this[string position]
         {

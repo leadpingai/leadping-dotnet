@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// List item schema for Leadping API event timeline table row results shown in searchable tables.
+    /// Summarizes event timeline data in paginated and searchable results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventTableRow : IAdditionalDataHolder, IParsable

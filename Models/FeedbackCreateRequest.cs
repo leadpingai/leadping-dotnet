@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request schema for the Leadping API feedback creation request, including the fields clients can send.
+    /// Defines the fields clients can send when working with feedback creation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeedbackCreateRequest : IAdditionalDataHolder, IParsable

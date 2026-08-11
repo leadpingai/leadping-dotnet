@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for change billing plan.
+    /// Defines the input used for change billing plan.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChangeBillingPlanRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The billing plan value for this billing plan.</summary>
+        /// <summary>Billing plan for this billing plan.</summary>
         public global::Leadping.OpenApiClient.Models.BillingPlan? BillingPlan { get; set; }
         /// <summary>The user ID associated with this billing plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

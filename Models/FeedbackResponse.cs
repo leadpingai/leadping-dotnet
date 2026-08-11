@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API feedback item response returned to authenticated clients.
+    /// Describes feedback item data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeedbackResponse : IAdditionalDataHolder, IParsable

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The notification preferences value for this user.
+    /// Notification preferences for this user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserResponse_notificationPreferences : global::Leadping.OpenApiClient.Models.UserNotificationPreferences, IParsable

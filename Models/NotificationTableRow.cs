@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing notification data returned to callers.
+    /// Describes notification data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotificationTableRow : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action button text value for this notification.</summary>
+        /// <summary>Action button text for this notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionButtonText { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The details value for this notification.</summary>
+        /// <summary>Optional supporting details displayed beneath the notification message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Details { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this notification is read.</summary>
         public bool? IsRead { get; set; }
-        /// <summary>The message value for this notification.</summary>
+        /// <summary>Message for this notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -69,9 +69,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The priority value for this notification.</summary>
+        /// <summary>Priority for this notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationPriority? Priority { get; set; }
-        /// <summary>The date and time for the read at value on this notification.</summary>
+        /// <summary>UTC timestamp for read at on this notification.</summary>
         public DateTimeOffset? ReadAt { get; set; }
         /// <summary>The related entity ID associated with this notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

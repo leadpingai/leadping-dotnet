@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API billing wallet response returned to authenticated clients.
+    /// Describes billing wallet data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WalletResponse : IAdditionalDataHolder, IParsable

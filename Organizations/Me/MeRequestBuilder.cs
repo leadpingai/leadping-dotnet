@@ -92,7 +92,7 @@ namespace Leadping.OpenApiClient.Organizations.Me
         /// Creates an organization account for the authenticated user, assigns them as its owner, and makes it their active organization context.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationResponse"/></returns>
-        /// <param name="body">Request schema for the Leadping API organization profile request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with organization profile.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -119,7 +119,7 @@ namespace Leadping.OpenApiClient.Organizations.Me
         /// Updates the authenticated user&apos;s current organization profile, including contact, settings, and communication configuration.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationResponse"/></returns>
-        /// <param name="body">Request schema for the Leadping API organization profile request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with organization profile.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -165,7 +165,7 @@ namespace Leadping.OpenApiClient.Organizations.Me
         /// Creates an organization account for the authenticated user, assigns them as its owner, and makes it their active organization context.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for the Leadping API organization profile request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with organization profile.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,7 +187,7 @@ namespace Leadping.OpenApiClient.Organizations.Me
         /// Updates the authenticated user&apos;s current organization profile, including contact, settings, and communication configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for the Leadping API organization profile request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with organization profile.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

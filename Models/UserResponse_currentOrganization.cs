@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The current organization value for this user.
+    /// Current organization for this user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserResponse_currentOrganization : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

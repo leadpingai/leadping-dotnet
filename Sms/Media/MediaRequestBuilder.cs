@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Sms.Media
         {
         }
         /// <summary>
-        /// Uploads media for a subsequent MMS send.
+        /// Uploads and validates one media attachment, returning the metadata needed to include the asset in a subsequent Leadping MMS send.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.MessageMediaAttachment"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Sms.Media
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(requestInfo, global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads media for a subsequent MMS send.
+        /// Uploads and validates one media attachment, returning the metadata needed to include the asset in a subsequent Leadping MMS send.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

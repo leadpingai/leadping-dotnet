@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API phone number traffic metrics response returned to authenticated clients.
+    /// Describes phone number traffic metrics data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberTrafficMetricsResponse : IAdditionalDataHolder, IParsable

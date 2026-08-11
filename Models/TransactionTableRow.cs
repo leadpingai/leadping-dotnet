@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// List item schema for Leadping API billing transaction table row results shown in searchable tables.
+    /// Summarizes billing transaction data in paginated and searchable results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionTableRow : IAdditionalDataHolder, IParsable
@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Models
         public double? Amount { get; set; }
         /// <summary>Defines the supported Billable Unit values.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_billableUnit? BillableUnit { get; set; }
-        /// <summary>The billedAmount property</summary>
+        /// <summary>Customer-facing amount billed for the metered usage or wallet transaction.</summary>
         public double? BilledAmount { get; set; }
         /// <summary>Defines the supported Usage Channel values.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_billingChannel? BillingChannel { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The ID and name for this lead.</summary>
+        /// <summary>Identifier and display name of the related lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_lead? Lead { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
         public double? NetAmount { get; set; }
-        /// <summary>The ID and name for this organization.</summary>
+        /// <summary>Identifier and display name of the related organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_organization? Organization { get; set; }
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PaymentMethodDisplay { get; set; }
 #endif
-        /// <summary>The pricingVersion property</summary>
+        /// <summary>Version of the pricing rules used to calculate the billed amount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PricingVersion { get; set; }
@@ -75,9 +75,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PricingVersion { get; set; }
 #endif
-        /// <summary>The quantity property</summary>
+        /// <summary>Number of billable units measured for this transaction, when usage-based pricing applies.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The sourceEventId property</summary>
+        /// <summary>Identifier of the event that created this billing transaction, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceEventId { get; set; }
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceEventId { get; set; }
 #endif
-        /// <summary>The sourceEventType property</summary>
+        /// <summary>Event type that created this billing transaction, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceEventType { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.TransactionStatus? TransactionStatus { get; set; }
         /// <summary>Debit or credit classification for this wallet transaction.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionType? TransactionType { get; set; }
-        /// <summary>The unitPrice property</summary>
+        /// <summary>Price charged per billable unit when usage-based pricing applies.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.TransactionTableRow"/> and sets the default values.

@@ -95,6 +95,7 @@ namespace Leadping.OpenApiClient.Leads.All.My
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MyRequestBuilderPostQueryParameters 
         {
+            /// <summary>Optional filter selecting active, archived, or all leads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("archiveFilter")]
@@ -104,6 +105,7 @@ namespace Leadping.OpenApiClient.Leads.All.My
             [QueryParameter("archiveFilter")]
             public string ArchiveFilter { get; set; }
 #endif
+            /// <summary>Optional tag identifiers used to filter the lead list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tagIds")]
@@ -113,8 +115,10 @@ namespace Leadping.OpenApiClient.Leads.All.My
             [QueryParameter("tagIds")]
             public string[] TagIds { get; set; }
 #endif
+            /// <summary>Whether a lead must contain every supplied tag instead of any supplied tag.</summary>
             [QueryParameter("tagMatchAll")]
             public bool? TagMatchAll { get; set; }
+            /// <summary>Whether to include only leads that have no tags.</summary>
             [QueryParameter("untagged")]
             public bool? Untagged { get; set; }
         }

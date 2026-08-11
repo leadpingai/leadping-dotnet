@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing organization user data used by Leadping API contracts.
+    /// Describes organization user data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationMemberTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the created at value on this organization user.</summary>
+        /// <summary>UTC timestamp for created at on this organization user.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique ID for this organization user.</summary>
+        /// <summary>Unique Leadping identifier for this organization user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -35,9 +35,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The renewal date used for this user&apos;s license proration.</summary>
         public DateTimeOffset? LicenseRenewalDate { get; set; }
-        /// <summary>The role value for this organization user.</summary>
+        /// <summary>Role for this organization user.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
-        /// <summary>The ID and name for this user.</summary>
+        /// <summary>Identifier and display name of the related user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? User { get; set; }
@@ -45,7 +45,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.IdNamePair User { get; set; }
 #endif
-        /// <summary>The user email value for this organization user.</summary>
+        /// <summary>User email for this organization user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserEmail { get; set; }

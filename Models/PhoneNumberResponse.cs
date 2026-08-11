@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API phone number returned to authenticated clients.
+    /// Describes a Leadping-managed phone number, including capabilities, messaging registration, health, and assignment details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberResponse : IAdditionalDataHolder, IParsable

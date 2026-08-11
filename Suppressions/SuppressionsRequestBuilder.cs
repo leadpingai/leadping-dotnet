@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Suppressions
             get => new global::Leadping.OpenApiClient.Suppressions.Release.ReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.suppressions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the suppression entry to retrieve.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder this[string position]
         {
@@ -68,7 +68,7 @@ namespace Leadping.OpenApiClient.Suppressions
         /// Creates or reactivates a Leadping suppression entry that blocks future outreach to a recipient across the selected communication channel.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SuppressionEntryResponse"/></returns>
-        /// <param name="body">Request payload for suppression entry.</param>
+        /// <param name="body">Defines a recipient and communication channel to suppress, release, or check before Leadping sends outreach.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -95,7 +95,7 @@ namespace Leadping.OpenApiClient.Suppressions
         /// Creates or reactivates a Leadping suppression entry that blocks future outreach to a recipient across the selected communication channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for suppression entry.</param>
+        /// <param name="body">Defines a recipient and communication channel to suppress, release, or check before Leadping sends outreach.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

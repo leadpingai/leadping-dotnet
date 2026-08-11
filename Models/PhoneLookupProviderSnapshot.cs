@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The lookupType property</summary>
+        /// <summary>The provider lookup product or operation that produced this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LookupType { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LookupType { get; set; }
 #endif
-        /// <summary>The provider property</summary>
+        /// <summary>The provider that supplied the phone lookup record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Provider { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>The rawRecordJson property</summary>
+        /// <summary>The complete provider response serialized as JSON for lossless audit and replay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RawRecordJson { get; set; }
@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RawRecordJson { get; set; }
 #endif
-        /// <summary>The retrievedAt property</summary>
+        /// <summary>The UTC timestamp when Leadping retrieved the provider record.</summary>
         public DateTimeOffset? RetrievedAt { get; set; }
-        /// <summary>The schemaVersion property</summary>
+        /// <summary>The Leadping schema version used to interpret the stored provider record.</summary>
         public int? SchemaVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneLookupProviderSnapshot"/> and sets the default values.

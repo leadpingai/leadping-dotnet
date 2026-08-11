@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Users.Compliance
         /// Updates current-user compliance settings used for messaging eligibility, billing readiness, and organization account setup.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
-        /// <param name="body">Request payload for compliance update.</param>
+        /// <param name="body">Defines the input used for compliance update.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.Users.Compliance
         /// Updates current-user compliance settings used for messaging eligibility, billing readiness, and organization account setup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for compliance update.</param>
+        /// <param name="body">Defines the input used for compliance update.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

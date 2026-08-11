@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing activation timeline event data used by Leadping API contracts.
+    /// Describes activation timeline event data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivationTimelineEvent : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The ID and name for this actor.</summary>
+        /// <summary>Identifier and display name of the related actor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.ActivationTimelineEvent_actor? Actor { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the created at value on this activation timeline event.</summary>
+        /// <summary>UTC timestamp for created at on this activation timeline event.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The details value for this activation timeline event.</summary>
+        /// <summary>Details for this activation timeline event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Details { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FailureReason { get; set; }
 #endif
-        /// <summary>The unique ID for this activation timeline event.</summary>
+        /// <summary>Unique Leadping identifier for this activation timeline event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The title value for this activation timeline event.</summary>
+        /// <summary>Title for this activation timeline event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// List item schema for Leadping API lead table row results shown in searchable tables.
+    /// Summarizes lead data in paginated and searchable results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadTableRow : IAdditionalDataHolder, IParsable
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The ID and name for this organization.</summary>
+        /// <summary>Identifier and display name of the related organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_organization? Organization { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
         public double? Price { get; set; }
-        /// <summary>The ID and name for this source.</summary>
+        /// <summary>Identifier and display name of the related source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_source? Source { get; set; }

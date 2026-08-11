@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing suppression check result data returned to callers.
+    /// Reports whether Leadping may contact a recipient and identifies the active suppression when contact is blocked.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionCheckResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether this ion check result allows ed.</summary>
+        /// <summary>Whether outreach to the recipient is allowed for the requested channel.</summary>
         public bool? Allowed { get; set; }
-        /// <summary>The channel value for this ion check result.</summary>
+        /// <summary>Communication channel evaluated by the suppression check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Channel { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Channel { get; set; }
 #endif
-        /// <summary>The human-readable customer reason explaining this ion check result.</summary>
+        /// <summary>Customer-safe explanation of why contact is blocked or allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerReason { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CustomerReason { get; set; }
 #endif
-        /// <summary>The normalized email value for this ion check result.</summary>
+        /// <summary>Email address used for matching, normalized for comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NormalizedEmail { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedEmail { get; set; }
 #endif
-        /// <summary>The phone number associated with this ion check result.</summary>
+        /// <summary>Phone number used for matching, normalized to a consistent format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NormalizedPhoneNumber { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedPhoneNumber { get; set; }
 #endif
-        /// <summary>The organization ID associated with this ion check result.</summary>
+        /// <summary>Identifier of the organization whose suppression list was checked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The recipient identifier value for this ion check result.</summary>
+        /// <summary>Provider or customer identifier used to match the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientIdentifier { get; set; }
@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time the blocking suppression became active.</summary>
         public DateTimeOffset? SuppressedAt { get; set; }
-        /// <summary>The suppression entry ID associated with this ion check result.</summary>
+        /// <summary>Identifier of the active suppression that blocked contact, when one matched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SuppressionEntryId { get; set; }

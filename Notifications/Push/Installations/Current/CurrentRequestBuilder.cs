@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Notifications.Push.Installations.Current
         {
         }
         /// <summary>
-        /// Register or refresh the current user&apos;s mobile push installation.
+        /// Registers or refreshes the authenticated user&apos;s mobile push installation so Leadping can deliver account and workflow notifications to the device.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="body">Describes a mobile push installation. Identity and Azure tags are derived by the API.</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Notifications.Push.Installations.Current
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Register or refresh the current user&apos;s mobile push installation.
+        /// Registers or refreshes the authenticated user&apos;s mobile push installation so Leadping can deliver account and workflow notifications to the device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Describes a mobile push installation. Identity and Azure tags are derived by the API.</param>

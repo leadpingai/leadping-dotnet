@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing trusted form certificate data used by Leadping API contracts.
+    /// Describes trusted form certificate data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrustedFormCertificate : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the created at value on this TrustedForm certificate.</summary>
+        /// <summary>UTC timestamp for created at on this TrustedForm certificate.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique ID for this TrustedForm certificate.</summary>
+        /// <summary>Unique Leadping identifier for this TrustedForm certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The source value for this TrustedForm certificate.</summary>
+        /// <summary>Source for this TrustedForm certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }

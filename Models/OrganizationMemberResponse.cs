@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing organization user data returned to callers.
+    /// Describes organization user data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationMemberResponse : IAdditionalDataHolder, IParsable
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The date and time for the last used at value on this organization user.</summary>
+        /// <summary>UTC timestamp for last used at on this organization user.</summary>
         public DateTimeOffset? LastUsedAt { get; set; }
         /// <summary>The billing status for this user&apos;s organization license.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organization value for this organization user.</summary>
+        /// <summary>Organization for this organization user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? Organization { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.IdNamePair Organization { get; set; }
 #endif
-        /// <summary>The date and time for the removed at value on this organization user.</summary>
+        /// <summary>UTC timestamp for removed at on this organization user.</summary>
         public DateTimeOffset? RemovedAt { get; set; }
         /// <summary>The removed by user ID associated with this organization user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,9 +75,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RemovedByUserId { get; set; }
 #endif
-        /// <summary>The role value for this organization user.</summary>
+        /// <summary>Role for this organization user.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
-        /// <summary>The user value for this organization user.</summary>
+        /// <summary>User for this organization user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? User { get; set; }
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.IdNamePair User { get; set; }
 #endif
-        /// <summary>The user email value for this organization user.</summary>
+        /// <summary>User email for this organization user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserEmail { get; set; }

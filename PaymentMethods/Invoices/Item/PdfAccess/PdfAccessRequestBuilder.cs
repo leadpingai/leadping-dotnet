@@ -90,6 +90,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices.Item.PdfAccess
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PdfAccessRequestBuilderGetQueryParameters 
         {
+            /// <summary>Whether the secure URL should download the PDF instead of displaying it inline.</summary>
             [QueryParameter("download")]
             public bool? Download { get; set; }
         }

@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Optional profile image URL for the contact. Clients fall back to Gravatarand then initials when this value is not supplied.</summary>
+        /// <summary>Optional profile image URL for the contact. Clients fall back to Gravatar and then initials when this value is not supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUrl { get; set; }

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing a named usage counter shown in usage summaries.
+    /// Describes one named usage total displayed in organization billing and activity summaries.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageCounterLine : IAdditionalDataHolder, IParsable
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Unit { get; set; }
 #endif
-        /// <summary>The numeric value for this usage counter.</summary>
+        /// <summary>Numeric for this usage counter.</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UsageCounterLine"/> and sets the default values.

@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing organization activation state data used by Leadping API contracts.
+    /// Describes organization activation state data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationActivationState : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The date and time for the activated at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for activated at on this organization activation state.</summary>
         public DateTimeOffset? ActivatedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -21,7 +21,7 @@ namespace Leadping.OpenApiClient.Models
         public int? AvailableDomainCount { get; set; }
         /// <summary>The current billing subscription status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus? BillingSubscriptionStatus { get; set; }
-        /// <summary>The compliance notes value for this organization activation state.</summary>
+        /// <summary>Compliance notes for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceNotes { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether controlled launch applies to this organization activation state.</summary>
         public bool? ControlledLaunch { get; set; }
-        /// <summary>The date and time for the created at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for created at on this organization activation state.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The current customer facing status for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CustomerFacingStatus { get; set; }
 #endif
-        /// <summary>The date and time for the domain approved at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for domain approved at on this organization activation state.</summary>
         public DateTimeOffset? DomainApprovedAt { get; set; }
         /// <summary>The domain options included with this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,9 +75,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.ActivationTimelineEvent> Events { get; set; }
 #endif
-        /// <summary>The date and time for the failed at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for failed at on this organization activation state.</summary>
         public DateTimeOffset? FailedAt { get; set; }
-        /// <summary>The industry value for this organization activation state.</summary>
+        /// <summary>Industry for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Industry { get; set; }
@@ -85,13 +85,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
-        /// <summary>The date and time for the launch approved at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for launch approved at on this organization activation state.</summary>
         public DateTimeOffset? LaunchApprovedAt { get; set; }
-        /// <summary>The date and time for the launch review requested at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for launch review requested at on this organization activation state.</summary>
         public DateTimeOffset? LaunchReviewRequestedAt { get; set; }
         /// <summary>The current launch review status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationLaunchReviewStatus? LaunchReviewStatus { get; set; }
-        /// <summary>The offer value for this organization activation state.</summary>
+        /// <summary>Offer for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offer { get; set; }
@@ -101,7 +101,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The current onboarding status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationOnboardingStatus? OnboardingStatus { get; set; }
-        /// <summary>The organization description value for this organization activation state.</summary>
+        /// <summary>Organization description for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationDescription { get; set; }
@@ -109,11 +109,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationDescription { get; set; }
 #endif
-        /// <summary>The date and time for the payment method confirmed at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for payment method confirmed at on this organization activation state.</summary>
         public DateTimeOffset? PaymentMethodConfirmedAt { get; set; }
         /// <summary>The current payment status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationPaymentStatus? PaymentStatus { get; set; }
-        /// <summary>The selected domain value for this organization activation state.</summary>
+        /// <summary>Selected domain for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SelectedDomain { get; set; }
@@ -121,7 +121,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SelectedDomain { get; set; }
 #endif
-        /// <summary>The service area value for this organization activation state.</summary>
+        /// <summary>Service area for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceArea { get; set; }
@@ -131,11 +131,11 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The current status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.CustomerActivationStatus? Status { get; set; }
-        /// <summary>The date and time for the subscription active at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for subscription active at on this organization activation state.</summary>
         public DateTimeOffset? SubscriptionActiveAt { get; set; }
-        /// <summary>The date and time for the subscription pending at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for subscription pending at on this organization activation state.</summary>
         public DateTimeOffset? SubscriptionPendingAt { get; set; }
-        /// <summary>The target audience value for this organization activation state.</summary>
+        /// <summary>Target audience for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetAudience { get; set; }
@@ -143,11 +143,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TargetAudience { get; set; }
 #endif
-        /// <summary>The date and time for the telephony partially provisioned at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for telephony partially provisioned at on this organization activation state.</summary>
         public DateTimeOffset? TelephonyPartiallyProvisionedAt { get; set; }
-        /// <summary>The date and time for the telephony provisioning started at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for telephony provisioning started at on this organization activation state.</summary>
         public DateTimeOffset? TelephonyProvisioningStartedAt { get; set; }
-        /// <summary>The date and time for the telephony ready at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for telephony ready at on this organization activation state.</summary>
         public DateTimeOffset? TelephonyReadyAt { get; set; }
         /// <summary>The current telephony status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationTelephonyStatus? TelephonyStatus { get; set; }
@@ -159,7 +159,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TenDlcApplicationId { get; set; }
 #endif
-        /// <summary>The 10DLC draft value for this organization activation state.</summary>
+        /// <summary>10DLC draft for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationActivationState_tenDlcDraft? TenDlcDraft { get; set; }
@@ -169,7 +169,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The current 10DLC status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus? TenDlcStatus { get; set; }
-        /// <summary>The date and time for the updated at value on this organization activation state.</summary>
+        /// <summary>UTC timestamp for updated at on this organization activation state.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The latest persisted website generation progress message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,7 +179,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string WebsiteGenerationResult { get; set; }
 #endif
-        /// <summary>The website needs value for this organization activation state.</summary>
+        /// <summary>Website needs for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebsiteNeeds { get; set; }

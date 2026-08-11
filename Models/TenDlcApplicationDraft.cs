@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing ten dlc application draft data used by Leadping API contracts.
+    /// Describes ten dlc application draft data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TenDlcApplicationDraft : IAdditionalDataHolder, IParsable
@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? BrandStatus { get; set; }
         /// <summary>The current provider review status for the submitted campaign.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? CampaignStatus { get; set; }
-        /// <summary>The company name value for this 10DLC application draft.</summary>
+        /// <summary>Company name for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyName { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> ComplianceWarnings { get; set; }
 #endif
-        /// <summary>The contact email value for this 10DLC application draft.</summary>
+        /// <summary>Contact email for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactEmail { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContactEmail { get; set; }
 #endif
-        /// <summary>The contact name value for this 10DLC application draft.</summary>
+        /// <summary>Contact name for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactName { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContactName { get; set; }
 #endif
-        /// <summary>The contact phone value for this 10DLC application draft.</summary>
+        /// <summary>Contact phone for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactPhone { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContactPhone { get; set; }
 #endif
-        /// <summary>The EIN value for this 10DLC application draft.</summary>
+        /// <summary>EIN for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ein { get; set; }
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ein { get; set; }
 #endif
-        /// <summary>The expected monthly volume value for this 10DLC application draft.</summary>
+        /// <summary>Expected monthly volume for this 10DLC application draft.</summary>
         public int? ExpectedMonthlyVolume { get; set; }
         /// <summary>The Telnyx brand vertical for this 10DLC application draft. The JSON name is retained for backward compatibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,16 +77,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
-        /// <summary>The date and time for the last submitted at value on this 10DLC application draft.</summary>
+        /// <summary>UTC timestamp for last submitted at on this 10DLC application draft.</summary>
         public DateTimeOffset? LastSubmittedAt { get; set; }
-        /// <summary>The lead source value for this 10DLC application draft.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LeadSource { get; set; }
-#nullable restore
-#else
-        public string LeadSource { get; set; }
-#endif
         /// <summary>The message examples included with this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +95,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> MissingFields { get; set; }
 #endif
-        /// <summary>The opt in language value for this 10DLC application draft.</summary>
+        /// <summary>Opt in language for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OptInLanguage { get; set; }
@@ -111,7 +103,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OptInLanguage { get; set; }
 #endif
-        /// <summary>The URL associated with this 10DLC application draft.</summary>
+        /// <summary>Public privacy-policy URL that explains how messaging recipient data is handled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivacyPolicyUrl { get; set; }
@@ -127,7 +119,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RejectionReason { get; set; }
 #endif
-        /// <summary>The URL associated with this 10DLC application draft.</summary>
+        /// <summary>Public terms-of-service URL governing the messaging program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TermsUrl { get; set; }
@@ -137,9 +129,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether TrustedForm required applies to this 10DLC application draft.</summary>
         public bool? TrustedFormRequired { get; set; }
-        /// <summary>The date and time for the updated at value on this 10DLC application draft.</summary>
+        /// <summary>UTC timestamp for updated at on this 10DLC application draft.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The use case value for this 10DLC application draft.</summary>
+        /// <summary>Use case for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UseCase { get; set; }
@@ -147,7 +139,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UseCase { get; set; }
 #endif
-        /// <summary>The use case description value for this 10DLC application draft.</summary>
+        /// <summary>Use case description for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UseCaseDescription { get; set; }
@@ -155,9 +147,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UseCaseDescription { get; set; }
 #endif
-        /// <summary>The version value for this 10DLC application draft.</summary>
+        /// <summary>Version for this 10DLC application draft.</summary>
         public int? Version { get; set; }
-        /// <summary>The URL associated with this 10DLC application draft.</summary>
+        /// <summary>Public business website URL submitted to carriers during brand review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebsiteUrl { get; set; }
@@ -201,7 +193,6 @@ namespace Leadping.OpenApiClient.Models
                 { "expectedMonthlyVolume", n => { ExpectedMonthlyVolume = n.GetIntValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
                 { "lastSubmittedAt", n => { LastSubmittedAt = n.GetDateTimeOffsetValue(); } },
-                { "leadSource", n => { LeadSource = n.GetStringValue(); } },
                 { "messageExamples", n => { MessageExamples = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "missingFields", n => { MissingFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "optInLanguage", n => { OptInLanguage = n.GetStringValue(); } },
@@ -234,7 +225,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("expectedMonthlyVolume", ExpectedMonthlyVolume);
             writer.WriteStringValue("industry", Industry);
             writer.WriteDateTimeOffsetValue("lastSubmittedAt", LastSubmittedAt);
-            writer.WriteStringValue("leadSource", LeadSource);
             writer.WriteCollectionOfPrimitiveValues<string>("messageExamples", MessageExamples);
             writer.WriteCollectionOfPrimitiveValues<string>("missingFields", MissingFields);
             writer.WriteStringValue("optInLanguage", OptInLanguage);

@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Gets or sets the identity provider that issued the sign-in identity (e.g., &quot;contoso.com&quot; or &quot;facebook.com&quot;).</summary>
+        /// <summary>Identity provider or tenant that issued the user&apos;s sign-in identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Issuer { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Issuer { get; set; }
 #endif
-        /// <summary>Gets or sets the unique identifier assigned to the user by the identity provider.</summary>
+        /// <summary>Unique user identifier assigned by the identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerAssignedId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string IssuerAssignedId { get; set; }
 #endif
-        /// <summary>Gets or sets the method of sign-in used by the identity (e.g., &quot;emailAddress&quot;, &quot;userName&quot;, or &quot;federated&quot;).</summary>
+        /// <summary>Sign-in method represented by the identity, such as email address, username, or federated login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignInType { get; set; }

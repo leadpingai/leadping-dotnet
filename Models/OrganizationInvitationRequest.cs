@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for organization invitation.
+    /// Defines the input used for organization invitation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationInvitationRequest : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The role value for this organization invitation.</summary>
+        /// <summary>Role for this organization invitation.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationInvitationRequest"/> and sets the default values.

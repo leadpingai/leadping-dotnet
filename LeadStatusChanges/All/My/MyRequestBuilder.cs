@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges.All.My
         {
         }
         /// <summary>
-        /// Get all for current organization
+        /// Returns a filtered, paginated history of lead status changes for the current organization for workflow analysis, reporting, and audit review.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfLeadStatusChangeResponse"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges.All.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfLeadStatusChangeResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfLeadStatusChangeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all for current organization
+        /// Returns a filtered, paginated history of lead status changes for the current organization for workflow analysis, reporting, and audit review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>

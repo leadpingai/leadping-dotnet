@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing ion entry audit data used by Leadping API contracts.
+    /// Records one auditable change to a recipient suppression entry.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionEntryAudit : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actor ID associated with this ion entry audit.</summary>
+        /// <summary>Identifier of the user or system actor responsible for the change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActorId { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unique ID for this ion entry audit.</summary>
+        /// <summary>Unique identifier for this suppression audit record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The human-readable reason explaining this ion entry audit.</summary>
+        /// <summary>Human-readable reason recorded for the suppression change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>The safe metadata key-value data carried with this ion entry audit; values must be safe to expose in API responses.</summary>
+        /// <summary>Non-sensitive metadata that provides additional audit context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SuppressionEntryAudit_safeMetadata? SafeMetadata { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SuppressionEntryAudit_safeMetadata SafeMetadata { get; set; }
 #endif
-        /// <summary>The source value for this ion entry audit.</summary>
+        /// <summary>System or workflow that initiated the change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The current status for this ion entry audit.</summary>
+        /// <summary>Suppression status established by this change, such as active or released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The date and time for the timestamp value on this ion entry audit.</summary>
+        /// <summary>UTC timestamp when the suppression change occurred.</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SuppressionEntryAudit"/> and sets the default values.

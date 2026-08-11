@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing organization invitation data returned to callers.
+    /// Describes organization invitation data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationInvitationResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The date and time for the accepted at value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for accepted at on this organization invitation.</summary>
         public DateTimeOffset? AcceptedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the created at value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for created at on this organization invitation.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The email address associated with this organization invitation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -27,9 +27,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The date and time for the expires at value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for expires at on this organization invitation.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The unique ID for this organization invitation.</summary>
+        /// <summary>Unique Leadping identifier for this organization invitation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LicenseReleasedAt { get; set; }
         /// <summary>The renewal date used for proration of this license.</summary>
         public DateTimeOffset? LicenseRenewalDate { get; set; }
-        /// <summary>The ID and name for this organization.</summary>
+        /// <summary>Identifier and display name of the related organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? Organization { get; set; }
@@ -61,13 +61,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.IdNamePair Organization { get; set; }
 #endif
-        /// <summary>The date and time for the resent at value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for resent at on this organization invitation.</summary>
         public DateTimeOffset? ResentAt { get; set; }
-        /// <summary>The date and time for the revoked at value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for revoked at on this organization invitation.</summary>
         public DateTimeOffset? RevokedAt { get; set; }
-        /// <summary>The role value for this organization invitation.</summary>
+        /// <summary>Role for this organization invitation.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
-        /// <summary>The safe message value for this organization invitation.</summary>
+        /// <summary>Safe message for this organization invitation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SafeMessage { get; set; }
@@ -83,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SendFailureReason { get; set; }
 #endif
-        /// <summary>The date and time for the sent at value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for sent at on this organization invitation.</summary>
         public DateTimeOffset? SentAt { get; set; }
         /// <summary>The current status for this organization invitation.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationInvitationStatus? Status { get; set; }

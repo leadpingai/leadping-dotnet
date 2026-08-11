@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing organization compliance policy data used by Leadping API contracts.
+    /// Describes organization compliance policy data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationCompliancePolicy : IAdditionalDataHolder, IParsable

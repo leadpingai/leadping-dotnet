@@ -97,8 +97,10 @@ namespace Leadping.OpenApiClient.Events.Organizations.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithOrganizationItemRequestBuilderPostQueryParameters 
         {
+            /// <summary>Optional exclusive end timestamp for event occurrence.</summary>
             [QueryParameter("endAt")]
             public DateTimeOffset? EndAt { get; set; }
+            /// <summary>Optional inclusive start timestamp for event occurrence.</summary>
             [QueryParameter("startAt")]
             public DateTimeOffset? StartAt { get; set; }
         }

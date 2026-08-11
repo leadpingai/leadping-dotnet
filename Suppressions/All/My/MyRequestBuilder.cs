@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Suppressions.All.My
         {
         }
         /// <summary>
-        /// Get all for current organization
+        /// Returns a filtered, paginated list of recipients the current organization has blocked from phone, SMS, or email outreach.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfSuppressionEntryResponse"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Suppressions.All.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfSuppressionEntryResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfSuppressionEntryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all for current organization
+        /// Returns a filtered, paginated list of recipients the current organization has blocked from phone, SMS, or email outreach.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>

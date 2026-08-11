@@ -17,6 +17,14 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether Leadping successfully calculated capacity for this phone number.</summary>
         public bool? CapacityAvailable { get; set; }
+        /// <summary>Human-readable reason for the current phone-number health state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HealthReason { get; set; }
+#nullable restore
+#else
+        public string HealthReason { get; set; }
+#endif
         /// <summary>Current health status for this Leadping outbound phone number capacity.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus? HealthStatus { get; set; }
         /// <summary>Phone number associated with this Leadping outbound phone number capacity.</summary>
@@ -35,6 +43,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
+        /// <summary>Indicates whether this phone number has an approved 10DLC messaging campaign assignment.</summary>
+        public bool? SmsApproved { get; set; }
         /// <summary>Next midnight Eastern time, when SMS daily capacity resets.</summary>
         public DateTimeOffset? SmsDailyResetsAt { get; set; }
         /// <summary>Start of the next Eastern time hour, when SMS hourly capacity resets.</summary>
@@ -47,6 +57,8 @@ namespace Leadping.OpenApiClient.Models
         public int? SmsLimitToday { get; set; }
         /// <summary>The next time SMS capacity becomes available in the rolling minute window.</summary>
         public DateTimeOffset? SmsMinutelyResetsAt { get; set; }
+        /// <summary>Indicates whether SMS limits for this phone number are still ramping up.</summary>
+        public bool? SmsRamping { get; set; }
         /// <summary>SMS remaining this hour for the applicable messaging or voice capacity window.</summary>
         public int? SmsRemainingThisHour { get; set; }
         /// <summary>SMS remaining in the current rolling minute.</summary>
@@ -71,6 +83,8 @@ namespace Leadping.OpenApiClient.Models
         public int? VoiceLimitToday { get; set; }
         /// <summary>The next time voice capacity becomes available in the rolling minute window.</summary>
         public DateTimeOffset? VoiceMinutelyResetsAt { get; set; }
+        /// <summary>Indicates whether call limits for this phone number are still ramping up.</summary>
+        public bool? VoiceRamping { get; set; }
         /// <summary>Voice remaining this hour for the applicable messaging or voice capacity window.</summary>
         public int? VoiceRemainingThisHour { get; set; }
         /// <summary>Voice remaining in the current rolling minute.</summary>
@@ -109,15 +123,18 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "capacityAvailable", n => { CapacityAvailable = n.GetBoolValue(); } },
+                { "healthReason", n => { HealthReason = n.GetStringValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
+                { "smsApproved", n => { SmsApproved = n.GetBoolValue(); } },
                 { "smsDailyResetsAt", n => { SmsDailyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "smsHourlyResetsAt", n => { SmsHourlyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "smsLimitThisHour", n => { SmsLimitThisHour = n.GetIntValue(); } },
                 { "smsLimitThisMinute", n => { SmsLimitThisMinute = n.GetIntValue(); } },
                 { "smsLimitToday", n => { SmsLimitToday = n.GetIntValue(); } },
                 { "smsMinutelyResetsAt", n => { SmsMinutelyResetsAt = n.GetDateTimeOffsetValue(); } },
+                { "smsRamping", n => { SmsRamping = n.GetBoolValue(); } },
                 { "smsRemainingThisHour", n => { SmsRemainingThisHour = n.GetIntValue(); } },
                 { "smsRemainingThisMinute", n => { SmsRemainingThisMinute = n.GetIntValue(); } },
                 { "smsRemainingToday", n => { SmsRemainingToday = n.GetIntValue(); } },
@@ -130,6 +147,7 @@ namespace Leadping.OpenApiClient.Models
                 { "voiceLimitThisMinute", n => { VoiceLimitThisMinute = n.GetIntValue(); } },
                 { "voiceLimitToday", n => { VoiceLimitToday = n.GetIntValue(); } },
                 { "voiceMinutelyResetsAt", n => { VoiceMinutelyResetsAt = n.GetDateTimeOffsetValue(); } },
+                { "voiceRamping", n => { VoiceRamping = n.GetBoolValue(); } },
                 { "voiceRemainingThisHour", n => { VoiceRemainingThisHour = n.GetIntValue(); } },
                 { "voiceRemainingThisMinute", n => { VoiceRemainingThisMinute = n.GetIntValue(); } },
                 { "voiceRemainingToday", n => { VoiceRemainingToday = n.GetIntValue(); } },
@@ -146,15 +164,18 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("capacityAvailable", CapacityAvailable);
+            writer.WriteStringValue("healthReason", HealthReason);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
+            writer.WriteBoolValue("smsApproved", SmsApproved);
             writer.WriteDateTimeOffsetValue("smsDailyResetsAt", SmsDailyResetsAt);
             writer.WriteDateTimeOffsetValue("smsHourlyResetsAt", SmsHourlyResetsAt);
             writer.WriteIntValue("smsLimitThisHour", SmsLimitThisHour);
             writer.WriteIntValue("smsLimitThisMinute", SmsLimitThisMinute);
             writer.WriteIntValue("smsLimitToday", SmsLimitToday);
             writer.WriteDateTimeOffsetValue("smsMinutelyResetsAt", SmsMinutelyResetsAt);
+            writer.WriteBoolValue("smsRamping", SmsRamping);
             writer.WriteIntValue("smsRemainingThisHour", SmsRemainingThisHour);
             writer.WriteIntValue("smsRemainingThisMinute", SmsRemainingThisMinute);
             writer.WriteIntValue("smsRemainingToday", SmsRemainingToday);
@@ -167,6 +188,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("voiceLimitThisMinute", VoiceLimitThisMinute);
             writer.WriteIntValue("voiceLimitToday", VoiceLimitToday);
             writer.WriteDateTimeOffsetValue("voiceMinutelyResetsAt", VoiceMinutelyResetsAt);
+            writer.WriteBoolValue("voiceRamping", VoiceRamping);
             writer.WriteIntValue("voiceRemainingThisHour", VoiceRemainingThisHour);
             writer.WriteIntValue("voiceRemainingThisMinute", VoiceRemainingThisMinute);
             writer.WriteIntValue("voiceRemainingToday", VoiceRemainingToday);

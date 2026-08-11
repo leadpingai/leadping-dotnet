@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Date and time when the user data export was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>File size in bytes.</summary>
+        /// <summary>Size of the generated export archive in bytes, when the export is ready.</summary>
         public long? SizeBytes { get; set; }
         /// <summary>Date and time when the user data export started.</summary>
         public DateTimeOffset? StartedAt { get; set; }

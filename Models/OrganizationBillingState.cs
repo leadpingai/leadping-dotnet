@@ -17,9 +17,9 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time when the scheduled billing plan change takes effect.</summary>
         public DateTimeOffset? BillingPlanChangeEffectiveAt { get; set; }
-        /// <summary>Gets or sets when the active subscription is scheduled to cancel.</summary>
+        /// <summary>UTC timestamp when the active subscription is scheduled to cancel.</summary>
         public DateTimeOffset? CancelAt { get; set; }
-        /// <summary>Gets or sets the customer-safe payment recovery state for the organization.</summary>
+        /// <summary>Customer-safe payment recovery state for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationBillingState_dunning? Dunning { get; set; }
@@ -31,17 +31,17 @@ namespace Leadping.OpenApiClient.Models
         public bool? HasPaymentMethod { get; set; }
         /// <summary>Indicates whether the organization has a Stripe customer account.</summary>
         public bool? HasStripeCustomer { get; set; }
-        /// <summary>Gets or sets when Leadping last processed a payment-method event for the organization.</summary>
+        /// <summary>UTC timestamp when Leadping last processed a payment-method event for the organization.</summary>
         public DateTimeOffset? LastPaymentMethodEventAt { get; set; }
-        /// <summary>Gets or sets when Leadping last processed a subscription event for the organization.</summary>
+        /// <summary>UTC timestamp when Leadping last processed a subscription event for the organization.</summary>
         public DateTimeOffset? LastSubscriptionEventAt { get; set; }
-        /// <summary>Gets or sets the number of user licenses currently assigned by the organization.</summary>
+        /// <summary>Number of user licenses currently assigned to organization members.</summary>
         public long? OrganizationMemberAssignedQuantity { get; set; }
-        /// <summary>Gets or sets the number of user licenses included in the organization subscription.</summary>
+        /// <summary>Number of user licenses included in the organization&apos;s subscription plan.</summary>
         public long? OrganizationMemberQuantity { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan? PendingBillingPlan { get; set; }
-        /// <summary>Gets or sets the number of phone numbers included in the organization subscription.</summary>
+        /// <summary>Number of phone numbers included in the organization&apos;s subscription plan.</summary>
         public long? PhoneNumberQuantity { get; set; }
         /// <summary>Start of the current plan billing period.</summary>
         public DateTimeOffset? PlanPeriodStartAt { get; set; }

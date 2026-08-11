@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing organization switch option data used by Leadping API contracts.
+    /// Describes organization switch option data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationSwitchOption : IAdditionalDataHolder, IParsable
     {
         /// <summary>Defines the supported Customer Activation Status values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_activationStatus? ActivationStatus { get; set; }
-        /// <summary>The activation summary value for this organization switch option.</summary>
+        /// <summary>Activation summary for this organization switch option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivationSummary { get; set; }
@@ -27,7 +27,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the organization has a default billing payment method.</summary>
         public bool? HasPaymentMethod { get; set; }
-        /// <summary>The unique ID for this organization switch option.</summary>
+        /// <summary>Unique Leadping identifier for this organization switch option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this organization switch option is current.</summary>
         public bool? IsCurrent { get; set; }
-        /// <summary>The date and time for the last used at value on this organization switch option.</summary>
+        /// <summary>UTC timestamp for last used at on this organization switch option.</summary>
         public DateTimeOffset? LastUsedAt { get; set; }
         /// <summary>The human-readable name shown for this organization switch option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_organizationStatus? OrganizationStatus { get; set; }
         /// <summary>Whether ready for customer traffic applies to this organization switch option.</summary>
         public bool? ReadyForCustomerTraffic { get; set; }
-        /// <summary>The role value for this organization switch option.</summary>
+        /// <summary>Role for this organization switch option.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
         /// <summary>Defines the supported 10DLC Application Status values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_tenDlcStatus? TenDlcStatus { get; set; }

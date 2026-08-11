@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The ID and name for this automation.
+    /// Identifier and display name of the related automation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWorkflowRunResponse_automation : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

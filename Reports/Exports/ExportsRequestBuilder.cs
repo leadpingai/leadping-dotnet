@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Reports.Exports
             get => new global::Leadping.OpenApiClient.Reports.Exports.My.MyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.reports.exports.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the current user&apos;s data export.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Reports.Exports.Item.WithExportItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Reports.Exports.Item.WithExportItemRequestBuilder this[string position]
         {

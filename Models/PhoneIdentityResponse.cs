@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for a canonical phone identity returned by the Leadping API.
+    /// Describes Leadping&apos;s canonical identity for a phone number, including normalization, carrier, line type, reputation, and lookup history.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneIdentityResponse : IAdditionalDataHolder, IParsable
@@ -34,6 +34,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup Lookup { get; set; }
+#endif
+        /// <summary>Lookup, enrichment, and reputation actions performed for this identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction>? LookupActions { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction> LookupActions { get; set; }
 #endif
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
@@ -90,6 +98,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lastEnrichedAt", n => { LastEnrichedAt = n.GetDateTimeOffsetValue(); } },
                 { "lookup", n => { Lookup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup>(global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup.CreateFromDiscriminatorValue); } },
+                { "lookupActions", n => { LookupActions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction>(global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
@@ -107,6 +116,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastEnrichedAt", LastEnrichedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup>("lookup", Lookup);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction>("lookupActions", LookupActions);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);

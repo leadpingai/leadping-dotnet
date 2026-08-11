@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API phone call returned to authenticated clients.
+    /// Describes a Leadping phone call, including participants, direction, provider state, timing, recording, and billing details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneCallResponse : IAdditionalDataHolder, IParsable

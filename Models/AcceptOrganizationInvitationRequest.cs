@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request payload for accept organization invitation.
+    /// Defines the input used for accept organization invitation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AcceptOrganizationInvitationRequest : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The first name value for this organization invitation.</summary>
+        /// <summary>First name for this organization invitation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The date and time for the last name value on this organization invitation.</summary>
+        /// <summary>UTC timestamp for last name on this organization invitation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }

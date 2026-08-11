@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing SMS readiness UI state data used by Leadping API contracts.
+    /// Describes SMS readiness UI state data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmsReadinessUiState : IAdditionalDataHolder, IParsable
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The human-readable label shown for this SMS readiness UI state.</summary>
         public global::Leadping.OpenApiClient.Models.SmsReadinessState? Label { get; set; }
-        /// <summary>The tone value for this SMS readiness UI state.</summary>
+        /// <summary>Tone for this SMS readiness UI state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tone { get; set; }

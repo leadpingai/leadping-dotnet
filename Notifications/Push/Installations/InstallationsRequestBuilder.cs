@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Notifications.Push.Installations
             get => new global::Leadping.OpenApiClient.Notifications.Push.Installations.Current.CurrentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.notifications.push.installations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The stable mobile installation identifier to unregister.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Notifications.Push.Installations.Item.WithInstallationItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Notifications.Push.Installations.Item.WithInstallationItemRequestBuilder this[string position]
         {

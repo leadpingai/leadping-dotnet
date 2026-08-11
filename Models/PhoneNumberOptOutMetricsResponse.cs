@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API phone number opt-out metrics response returned to authenticated clients.
+    /// Describes phone number opt-out metrics data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberOptOutMetricsResponse : IAdditionalDataHolder, IParsable

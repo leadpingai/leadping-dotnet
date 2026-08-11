@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Notifications.Push.Installations.Item
         {
         }
         /// <summary>
-        /// Unregister the current user&apos;s mobile push installation.
+        /// Removes a mobile push installation from the authenticated user&apos;s account so Leadping no longer sends notifications to that device.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Notifications.Push.Installations.Item
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unregister the current user&apos;s mobile push installation.
+        /// Removes a mobile push installation from the authenticated user&apos;s account so Leadping no longer sends notifications to that device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

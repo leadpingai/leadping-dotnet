@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request schema for the Leadping API outgoing number manual override request, including the fields clients can send.
+    /// Defines the fields clients can send when working with outgoing number manual override.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutgoingNumberManualOverrideRequest : IAdditionalDataHolder, IParsable

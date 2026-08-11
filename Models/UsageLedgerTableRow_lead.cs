@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The ID and name for this lead.
+    /// Identifier and display name of the related lead.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageLedgerTableRow_lead : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

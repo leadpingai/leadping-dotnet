@@ -94,10 +94,13 @@ namespace Leadping.OpenApiClient.Analytics.My
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MyRequestBuilderGetQueryParameters 
         {
+            /// <summary>Optional number of recent days to include when explicit timestamps are not supplied.</summary>
             [QueryParameter("days")]
             public int? Days { get; set; }
+            /// <summary>Optional exclusive end timestamp for the analytics period.</summary>
             [QueryParameter("endAt")]
             public DateTimeOffset? EndAt { get; set; }
+            /// <summary>Optional inclusive start timestamp for the analytics period.</summary>
             [QueryParameter("startAt")]
             public DateTimeOffset? StartAt { get; set; }
         }

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing usage summary response data.
+    /// Describes usage summary response data used by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageSummaryResponse : IAdditionalDataHolder, IParsable
@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The pending invoice count for this usage summary.</summary>
         public int? PendingInvoiceCount { get; set; }
-        /// <summary>The date and time for the period end value on this usage summary.</summary>
+        /// <summary>UTC timestamp for period end on this usage summary.</summary>
         public DateTimeOffset? PeriodEnd { get; set; }
-        /// <summary>The date and time for the period start value on this usage summary.</summary>
+        /// <summary>UTC timestamp for period start on this usage summary.</summary>
         public DateTimeOffset? PeriodStart { get; set; }
         /// <summary>The usage record count for this usage summary.</summary>
         public int? TransactionCount { get; set; }

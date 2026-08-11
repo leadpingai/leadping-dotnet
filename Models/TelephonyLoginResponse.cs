@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The callback token value for this telephony login.</summary>
+        /// <summary>Callback token for this telephony login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallbackToken { get; set; }
@@ -23,9 +23,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CallbackToken { get; set; }
 #endif
-        /// <summary>The date and time for the expires at value on this telephony login.</summary>
+        /// <summary>UTC timestamp for expires at on this telephony login.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The password value for this telephony login.</summary>
+        /// <summary>Password for this telephony login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Password { get; set; }
@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Password { get; set; }
 #endif
-        /// <summary>The username value for this telephony login.</summary>
+        /// <summary>Username for this telephony login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Username { get; set; }

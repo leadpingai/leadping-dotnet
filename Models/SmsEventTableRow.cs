@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// List item schema for Leadping API SMS event table row results shown in searchable tables.
+    /// Summarizes SMS event data in paginated and searchable results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmsEventTableRow : IAdditionalDataHolder, IParsable
@@ -125,7 +125,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether automation created or triggered this SMS event table row.</summary>
         public bool? IsAutomated { get; set; }
-        /// <summary>The ID and name for this lead.</summary>
+        /// <summary>Identifier and display name of the related lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? Lead { get; set; }

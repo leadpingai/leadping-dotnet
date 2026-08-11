@@ -8,20 +8,20 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing usage ledger data used by Leadping API contracts.
+    /// Describes usage ledger data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageLedgerTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The billable seconds value for this usage ledger.</summary>
+        /// <summary>Billable seconds for this usage ledger.</summary>
         public int? BillableSeconds { get; set; }
-        /// <summary>The billable unit value for this usage ledger.</summary>
+        /// <summary>Billable unit for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.BillableUnit? BillableUnit { get; set; }
-        /// <summary>The channel value for this usage ledger.</summary>
+        /// <summary>Channel for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
-        /// <summary>The date and time for the created at value on this usage ledger.</summary>
+        /// <summary>UTC timestamp for created at on this usage ledger.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The monetary customer charge amount for this usage ledger.</summary>
         public double? CustomerChargeAmount { get; set; }
@@ -33,9 +33,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The duration seconds value for this usage ledger.</summary>
+        /// <summary>Duration seconds for this usage ledger.</summary>
         public int? DurationSeconds { get; set; }
-        /// <summary>The unique ID for this usage ledger.</summary>
+        /// <summary>Unique Leadping identifier for this usage ledger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -45,7 +45,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this usage ledger is billable.</summary>
         public bool? IsBillable { get; set; }
-        /// <summary>The ID and name for this lead.</summary>
+        /// <summary>Identifier and display name of the related lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead? Lead { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead Lead { get; set; }
 #endif
-        /// <summary>The ID and name for this organization.</summary>
+        /// <summary>Identifier and display name of the related organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization? Organization { get; set; }
@@ -77,15 +77,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneNumberId { get; set; }
 #endif
-        /// <summary>The quantity value for this usage ledger.</summary>
+        /// <summary>Quantity for this usage ledger.</summary>
         public double? Quantity { get; set; }
-        /// <summary>The SMS segments value for this usage ledger.</summary>
+        /// <summary>SMS segments for this usage ledger.</summary>
         public int? SmsSegments { get; set; }
         /// <summary>The current status for this usage ledger.</summary>
         public global::Leadping.OpenApiClient.Models.UsageStatus? Status { get; set; }
-        /// <summary>The unit price value for this usage ledger.</summary>
+        /// <summary>Unit price for this usage ledger.</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>The ID and name for this user.</summary>
+        /// <summary>Identifier and display name of the related user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_user? User { get; set; }

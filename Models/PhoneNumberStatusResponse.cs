@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API phone number warmup status returned to authenticated clients.
+    /// Describes a phone number&apos;s current warmup stage, limits, progress, and readiness for production traffic.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberStatusResponse : IAdditionalDataHolder, IParsable

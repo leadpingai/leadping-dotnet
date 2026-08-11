@@ -99,6 +99,7 @@ namespace Leadping.OpenApiClient.Conversations.My
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MyRequestBuilderPostQueryParameters 
         {
+            /// <summary>Optional filter selecting active, archived, or all lead conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("archiveFilter")]

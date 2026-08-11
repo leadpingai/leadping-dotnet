@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time for the appointment end at value on this lead status change.</summary>
+        /// <summary>UTC timestamp for appointment end at on this lead status change.</summary>
         public DateTimeOffset? AppointmentEndAt { get; set; }
-        /// <summary>The appointment notes value for this lead status change.</summary>
+        /// <summary>Additional scheduling or preparation notes for the related appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppointmentNotes { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AppointmentNotes { get; set; }
 #endif
-        /// <summary>The date and time for the appointment start at value on this lead status change.</summary>
+        /// <summary>UTC timestamp for appointment start at on this lead status change.</summary>
         public DateTimeOffset? AppointmentStartAt { get; set; }
         /// <summary>The assigned to user ID associated with this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AssignedToUserId { get; set; }
 #endif
-        /// <summary>The date and time for the callback at value on this lead status change.</summary>
+        /// <summary>UTC timestamp for callback at on this lead status change.</summary>
         public DateTimeOffset? CallbackAt { get; set; }
         /// <summary>Controlled lead status change categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse_category? Category { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Known sources that can change a lead&apos;s current lead status change.</summary>
         public global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse_changeSource? ChangeSource { get; set; }
-        /// <summary>The date and time for the created at value on this lead status change.</summary>
+        /// <summary>UTC timestamp for created at on this lead status change.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The current follow up status for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FollowUpStatus { get; set; }
 #endif
-        /// <summary>The unique ID for this lead status change.</summary>
+        /// <summary>Unique Leadping identifier for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -135,7 +135,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OldLeadStatusChangeType { get; set; }
 #endif
-        /// <summary>The outcome value for this lead status change.</summary>
+        /// <summary>Result of the interaction or workflow step that caused the status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Outcome { get; set; }
@@ -167,11 +167,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The date and time for the task due at value on this lead status change.</summary>
+        /// <summary>UTC timestamp for task due at on this lead status change.</summary>
         public DateTimeOffset? TaskDueAt { get; set; }
-        /// <summary>The date and time for the timestamp value on this lead status change.</summary>
+        /// <summary>UTC timestamp for timestamp on this lead status change.</summary>
         public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>The type classification for this lead status change.</summary>
+        /// <summary>Category of status change recorded for the lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -179,7 +179,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The date and time for the updated at value on this lead status change.</summary>
+        /// <summary>UTC timestamp for updated at on this lead status change.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse"/> and sets the default values.

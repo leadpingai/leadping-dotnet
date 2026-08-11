@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Outgoing.New
         /// Selects an outgoing phone number for a new outbound lead message using destination, source, and delivery eligibility rules.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse"/></returns>
-        /// <param name="body">Request schema for the Leadping API outgoing number selection request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with outgoing number selection.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -64,7 +64,7 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Outgoing.New
         /// Selects an outgoing phone number for a new outbound lead message using destination, source, and delivery eligibility rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for the Leadping API outgoing number selection request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with outgoing number selection.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

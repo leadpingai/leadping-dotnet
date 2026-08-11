@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Users.ChangeBillingPlan
         /// Changes the current user&apos;s billing plan selection, updating account billing state and plan-specific capabilities.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
-        /// <param name="body">Request payload for change billing plan.</param>
+        /// <param name="body">Defines the input used for change billing plan.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -66,7 +66,7 @@ namespace Leadping.OpenApiClient.Users.ChangeBillingPlan
         /// Changes the current user&apos;s billing plan selection, updating account billing state and plan-specific capabilities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for change billing plan.</param>
+        /// <param name="body">Defines the input used for change billing plan.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

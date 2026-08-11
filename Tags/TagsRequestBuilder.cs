@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Tags
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Leadping.OpenApiClient.tags.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the tag to update.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Tags.Item.TagsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Tags.Item.TagsItemRequestBuilder this[string position]
         {
@@ -74,7 +74,7 @@ namespace Leadping.OpenApiClient.Tags
         /// Creates a tag for the current organization so leads can be segmented, filtered, routed, and reviewed by label.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TagResponse"/></returns>
-        /// <param name="body">Request schema for the Leadping API tag request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with tag.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -120,7 +120,7 @@ namespace Leadping.OpenApiClient.Tags
         /// Creates a tag for the current organization so leads can be segmented, filtered, routed, and reviewed by label.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request schema for the Leadping API tag request, including the fields clients can send.</param>
+        /// <param name="body">Defines the fields clients can send when working with tag.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +153,7 @@ namespace Leadping.OpenApiClient.Tags
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Whether to include tags that are no longer available for new assignments.</summary>
             [QueryParameter("includeArchived")]
             public bool? IncludeArchived { get; set; }
         }

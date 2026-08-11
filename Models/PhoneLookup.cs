@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_carrier Carrier { get; set; }
 #endif
-        /// <summary>Gets or sets created at.</summary>
+        /// <summary>UTC timestamp when the phone lookup record was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Fraud value returned by the provider, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Fraud { get; set; }
 #endif
-        /// <summary>Gets or sets id.</summary>
+        /// <summary>Unique Leadping identifier for the saved phone lookup record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_location Location { get; set; }
 #endif
-        /// <summary>Gets or sets modified at.</summary>
+        /// <summary>UTC timestamp when the phone lookup record was last updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Provider-formatted national phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

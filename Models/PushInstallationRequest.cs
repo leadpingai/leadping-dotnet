@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appBuild property</summary>
+        /// <summary>The application build number reported by the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppBuild { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AppBuild { get; set; }
 #endif
-        /// <summary>The appIdentifier property</summary>
+        /// <summary>The application bundle identifier or package name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppIdentifier { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AppIdentifier { get; set; }
 #endif
-        /// <summary>The appName property</summary>
+        /// <summary>The human-readable application name reported by the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppName { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AppName { get; set; }
 #endif
-        /// <summary>The appVersion property</summary>
+        /// <summary>The semantic application version reported by the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppVersion { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AppVersion { get; set; }
 #endif
-        /// <summary>The deviceModel property</summary>
+        /// <summary>The device model reported by the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceModel { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DeviceModel { get; set; }
 #endif
-        /// <summary>The devicePlatform property</summary>
+        /// <summary>The mobile operating-system platform reported by the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePlatform { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DevicePlatform { get; set; }
 #endif
-        /// <summary>The deviceVersion property</summary>
+        /// <summary>The mobile operating-system version reported by the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceVersion { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DeviceVersion { get; set; }
 #endif
-        /// <summary>The installationId property</summary>
+        /// <summary>The stable installation identifier assigned by the mobile client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstallationId { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string InstallationId { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Optional client metadata stored with the push installation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PushInstallationRequest_metadata? Metadata { get; set; }
@@ -87,7 +87,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PushInstallationRequest_metadata Metadata { get; set; }
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>The Azure Notification Hubs platform name, such as apns or fcmv1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get; set; }
@@ -95,7 +95,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Platform { get; set; }
 #endif
-        /// <summary>The pushChannel property</summary>
+        /// <summary>The provider-issued push token or channel used to deliver notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PushChannel { get; set; }

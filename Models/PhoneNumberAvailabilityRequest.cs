@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request schema for checking phone number availability before purchase or assignment.
+    /// Defines the phone number and capability requirements Leadping should verify before purchase or assignment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberAvailabilityRequest : IAdditionalDataHolder, IParsable

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The ID and name for this currentStep.
+    /// Identifier and display name of the workflow step currently awaiting or performing work.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationWorkflowRunResponse_currentStep : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

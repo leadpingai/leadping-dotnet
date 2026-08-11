@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
     public partial class LeadStatusesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Leadping.OpenApiClient.leadStatuses.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the lead status to update.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.LeadStatuses.Item.LeadStatusesItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.LeadStatuses.Item.LeadStatusesItemRequestBuilder this[string position]
         {

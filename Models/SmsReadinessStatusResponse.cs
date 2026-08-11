@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing SMS warmup status data returned to callers.
+    /// Describes SMS warmup status data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmsReadinessStatusResponse : IAdditionalDataHolder, IParsable

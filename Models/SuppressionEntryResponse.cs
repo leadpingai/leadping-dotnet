@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing suppression entry data returned to callers.
+    /// Describes a recipient suppression that prevents outreach through one or more communication channels.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionEntryResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The audit included with this ion entry.</summary>
+        /// <summary>Chronological audit history of suppression and release changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>? Audit { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit> Audit { get; set; }
 #endif
-        /// <summary>The channel value for this ion entry.</summary>
+        /// <summary>Communication channel affected by the suppression, such as SMS, voice, email, or all channels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Channel { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Channel { get; set; }
 #endif
-        /// <summary>The unique ID for this ion entry.</summary>
+        /// <summary>Unique Leadping identifier for the suppression entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The normalized email value for this ion entry.</summary>
+        /// <summary>Suppressed email address normalized for matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NormalizedEmail { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedEmail { get; set; }
 #endif
-        /// <summary>The phone number associated with this ion entry.</summary>
+        /// <summary>Suppressed phone number normalized to a consistent format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NormalizedPhoneNumber { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedPhoneNumber { get; set; }
 #endif
-        /// <summary>The organization ID associated with this ion entry.</summary>
+        /// <summary>Identifier of the organization that owns the suppression entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>The human-readable reason explaining this ion entry.</summary>
+        /// <summary>Human-readable reason the recipient was suppressed or subsequently released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>The recipient identifier value for this ion entry.</summary>
+        /// <summary>Provider or customer identifier used to recognize the suppressed recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientIdentifier { get; set; }
@@ -79,9 +79,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RecipientIdentifier { get; set; }
 #endif
-        /// <summary>The date and time for the released at value on this ion entry.</summary>
+        /// <summary>UTC timestamp when the suppression was released, or while it remains active.</summary>
         public DateTimeOffset? ReleasedAt { get; set; }
-        /// <summary>The source value for this ion entry.</summary>
+        /// <summary>System or workflow that created the suppression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The current status for this ion entry.</summary>
+        /// <summary>Current lifecycle state, such as active or released.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The date and time for the suppressed at value on this ion entry.</summary>
+        /// <summary>UTC timestamp when the suppression became active.</summary>
         public DateTimeOffset? SuppressedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SuppressionEntryResponse"/> and sets the default values.

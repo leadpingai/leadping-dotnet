@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API response containing user data returned to callers.
+    /// Describes user data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserResponse : IAdditionalDataHolder, IParsable
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserResponse_billingState BillingState { get; set; }
 #endif
-        /// <summary>The compliance value for this user.</summary>
+        /// <summary>Compliance for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_compliance? Compliance { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when the entity was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The current organization value for this user.</summary>
+        /// <summary>Current organization for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization? CurrentOrganization { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The first name value for this user.</summary>
+        /// <summary>First name for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -77,7 +77,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when this user last completed the Leadping sign-in flow.</summary>
         public DateTimeOffset? LastLoggedInAt { get; set; }
-        /// <summary>The date and time for the last name value on this user.</summary>
+        /// <summary>UTC timestamp for last name on this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -103,7 +103,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The notification preferences value for this user.</summary>
+        /// <summary>Notification preferences for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_notificationPreferences? NotificationPreferences { get; set; }
@@ -111,7 +111,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserResponse_notificationPreferences NotificationPreferences { get; set; }
 #endif
-        /// <summary>The date and time for the personal data deleted at value on this user.</summary>
+        /// <summary>UTC timestamp for personal data deleted at on this user.</summary>
         public DateTimeOffset? PersonalDataDeletedAt { get; set; }
         /// <summary>The human-readable personal data deletion reason explaining this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PersonalDataDeletionReason { get; set; }
 #endif
-        /// <summary>The date and time for the personal data deletion requested at value on this user.</summary>
+        /// <summary>UTC timestamp for personal data deletion requested at on this user.</summary>
         public DateTimeOffset? PersonalDataDeletionRequestedAt { get; set; }
         /// <summary>The current personal data deletion status for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

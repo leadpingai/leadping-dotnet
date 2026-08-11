@@ -8,12 +8,12 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing organization data used by Leadping API contracts.
+    /// Describes organization data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationTableRow : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The account balance value for this organization.</summary>
+        /// <summary>Account balance for this organization.</summary>
         public double? AccountBalance { get; set; }
         /// <summary>Defines the supported Customer Activation Status values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_activationStatus? ActivationStatus { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_billingPlan? BillingPlan { get; set; }
         /// <summary>Whether this organization is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The unique ID for this organization.</summary>
+        /// <summary>Unique Leadping identifier for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The industry value for this organization.</summary>
+        /// <summary>Industry for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Industry { get; set; }
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Date and time when this Leadping organization table row was last subscription event.</summary>
         public DateTimeOffset? LastSubscriptionEventAt { get; set; }
-        /// <summary>The date and time for the modified at value on this organization.</summary>
+        /// <summary>UTC timestamp for modified at on this organization.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>The human-readable name shown for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether needs admin review applies to this organization.</summary>
         public bool? NeedsAdminReview { get; set; }
-        /// <summary>The ID and name for this organization.</summary>
+        /// <summary>Identifier and display name of the related organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_organization? Organization { get; set; }

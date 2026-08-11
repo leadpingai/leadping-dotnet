@@ -74,7 +74,7 @@ namespace Leadping.OpenApiClient.Organizations.Me.Invitations
         /// Creates an invitation for the current organization so another user can join with the requested role and account access.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationInvitationResponse"/></returns>
-        /// <param name="body">Request payload for organization invitation.</param>
+        /// <param name="body">Defines the input used for organization invitation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -120,7 +120,7 @@ namespace Leadping.OpenApiClient.Organizations.Me.Invitations
         /// Creates an invitation for the current organization so another user can join with the requested role and account access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request payload for organization invitation.</param>
+        /// <param name="body">Defines the input used for organization invitation.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

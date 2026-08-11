@@ -8,20 +8,20 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing usage summary line data used by Leadping API contracts.
+    /// Describes usage summary line data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageSummaryLine : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The billable unit value for this usage summary line.</summary>
+        /// <summary>Billable unit for this usage summary line.</summary>
         public global::Leadping.OpenApiClient.Models.BillableUnit? BillableUnit { get; set; }
-        /// <summary>The channel value for this usage summary line.</summary>
+        /// <summary>Channel for this usage summary line.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
         /// <summary>The monetary customer charge amount for this usage summary line.</summary>
         public double? CustomerChargeAmount { get; set; }
-        /// <summary>The quantity value for this usage summary line.</summary>
+        /// <summary>Quantity for this usage summary line.</summary>
         public double? Quantity { get; set; }
         /// <summary>The record count for this usage summary line.</summary>
         public int? RecordCount { get; set; }

@@ -31,6 +31,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity> PhoneNumbers { get; set; }
 #endif
+        /// <summary>Number of phone numbers whose SMS or calling capacity is still ramping up.</summary>
+        public int? RampingPhoneNumbers { get; set; }
         /// <summary>Collection of recent decisions included with this Leadping outbound capacity overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +77,7 @@ namespace Leadping.OpenApiClient.Models
                 { "healthyPhoneNumbers", n => { HealthyPhoneNumbers = n.GetIntValue(); } },
                 { "limitedPhoneNumbers", n => { LimitedPhoneNumbers = n.GetIntValue(); } },
                 { "phoneNumbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity>(global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rampingPhoneNumbers", n => { RampingPhoneNumbers = n.GetIntValue(); } },
                 { "recentDecisions", n => { RecentDecisions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundQueueItem>(global::Leadping.OpenApiClient.Models.OutboundQueueItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledCount", n => { ScheduledCount = n.GetIntValue(); } },
                 { "smsCapacityRemainingToday", n => { SmsCapacityRemainingToday = n.GetIntValue(); } },
@@ -93,6 +96,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("healthyPhoneNumbers", HealthyPhoneNumbers);
             writer.WriteIntValue("limitedPhoneNumbers", LimitedPhoneNumbers);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity>("phoneNumbers", PhoneNumbers);
+            writer.WriteIntValue("rampingPhoneNumbers", RampingPhoneNumbers);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundQueueItem>("recentDecisions", RecentDecisions);
             writer.WriteIntValue("scheduledCount", ScheduledCount);
             writer.WriteIntValue("smsCapacityRemainingToday", SmsCapacityRemainingToday);

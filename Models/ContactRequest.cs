@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request schema for the Leadping API contact form request, including the fields clients can send.
+    /// Defines the fields clients can send when working with contact form.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContactRequest : IAdditionalDataHolder, IParsable

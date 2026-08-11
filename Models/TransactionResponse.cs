@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API billing transaction response returned to authenticated clients.
+    /// Describes billing transaction data returned by Leadping.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionResponse : IAdditionalDataHolder, IParsable
@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Models
         public double? Amount { get; set; }
         /// <summary>Defines the supported Billable Unit values.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionResponse_billableUnit? BillableUnit { get; set; }
-        /// <summary>The billedAmount property</summary>
+        /// <summary>Customer-facing amount billed for the transaction.</summary>
         public double? BilledAmount { get; set; }
         /// <summary>Defines the supported Usage Channel values.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionResponse_billingChannel? BillingChannel { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The ID and name for this lead.</summary>
+        /// <summary>Identifier and display name of the related lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.TransactionResponse_lead? Lead { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The ID and name for this organization.</summary>
+        /// <summary>Identifier and display name of the related organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.TransactionResponse_organization? Organization { get; set; }

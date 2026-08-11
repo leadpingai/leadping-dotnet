@@ -93,6 +93,7 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DownloadRequestBuilderGetQueryParameters 
         {
+            /// <summary>The short-lived download token issued for this export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("token")]

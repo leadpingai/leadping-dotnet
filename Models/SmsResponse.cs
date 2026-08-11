@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response schema for the Leadping API SMS message returned to authenticated clients.
+    /// Describes an SMS or MMS message, including participants, delivery state, scheduling, media, and billing details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmsResponse : IAdditionalDataHolder, IParsable

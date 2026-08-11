@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing stripe payment method data used by Leadping API contracts.
+    /// Describes stripe payment method data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StripePaymentMethodResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The brand value for this Stripe payment method.</summary>
+        /// <summary>Card network brand, such as Visa, Mastercard, or American Express.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brand { get; set; }
@@ -23,13 +23,13 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Brand { get; set; }
 #endif
-        /// <summary>The date and time for the created at value on this Stripe payment method.</summary>
+        /// <summary>UTC timestamp for created at on this Stripe payment method.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The exp month value for this Stripe payment method.</summary>
+        /// <summary>Two-digit month when the card expires.</summary>
         public int? ExpMonth { get; set; }
-        /// <summary>The exp year value for this Stripe payment method.</summary>
+        /// <summary>Four-digit year when the card expires.</summary>
         public int? ExpYear { get; set; }
-        /// <summary>The unique ID for this Stripe payment method.</summary>
+        /// <summary>Unique Leadping identifier for this Stripe payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this Stripe payment method is default.</summary>
         public bool? IsDefault { get; set; }
-        /// <summary>The date and time for the last4 value on this Stripe payment method.</summary>
+        /// <summary>UTC timestamp for last4 on this Stripe payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Last4 { get; set; }

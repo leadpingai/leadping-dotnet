@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID and name for this automation.</summary>
+        /// <summary>Identifier and display name of the related automation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_automation? Automation { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? CancelledAt { get; set; }
         /// <summary>Date and time when the automation workflow run completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The ID and name for this currentStep.</summary>
+        /// <summary>Identifier and display name of the workflow step currently awaiting or performing work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep? CurrentStep { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastActionSummary { get; set; }
 #endif
-        /// <summary>Reason or diagnostic code that explains the current outcome for this Leadping automation workflow run.</summary>
+        /// <summary>Machine-readable code for the most recent workflow execution error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastErrorCode { get; set; }
@@ -113,7 +113,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Total number of retry records represented by this Leadping automation workflow run.</summary>
         public int? RetryCount { get; set; }
-        /// <summary>Reason or diagnostic code that explains the current outcome for this Leadping automation workflow run.</summary>
+        /// <summary>Machine-readable code explaining why the workflow run or action was skipped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkipReasonCode { get; set; }

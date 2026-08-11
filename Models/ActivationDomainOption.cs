@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// API DTO containing activation domain option data used by Leadping API contracts.
+    /// Describes activation domain option data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivationDomainOption : IAdditionalDataHolder, IParsable
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DomainName { get; set; }
 #endif
-        /// <summary>The estimated annual cost value for this activation domain option.</summary>
+        /// <summary>Estimated annual cost for this activation domain option.</summary>
         public double? EstimatedAnnualCost { get; set; }
-        /// <summary>The industry relevance value for this activation domain option.</summary>
+        /// <summary>Industry relevance for this activation domain option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IndustryRelevance { get; set; }
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this activation domain option is recommended.</summary>
         public bool? Recommended { get; set; }
-        /// <summary>The trust concerns value for this activation domain option.</summary>
+        /// <summary>Trust concerns for this activation domain option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrustConcerns { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TrustConcerns { get; set; }
 #endif
-        /// <summary>The why it fits value for this activation domain option.</summary>
+        /// <summary>Why it fits for this activation domain option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WhyItFits { get; set; }

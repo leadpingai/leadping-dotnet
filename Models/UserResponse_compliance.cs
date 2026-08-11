@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The compliance value for this user.
+    /// Compliance for this user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserResponse_compliance : global::Leadping.OpenApiClient.Models.UserCompliance, IParsable
