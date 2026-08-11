@@ -28,7 +28,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Date and time when this Leadping analytics trend point was start.</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>Value associated with this Leadping analytics trend point.</summary>
-        public int? Value { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Value { get; set; }
+#nullable restore
+#else
+        public UntypedNode Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint"/> and sets the default values.
         /// </summary>
@@ -57,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
                 { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "startAt", n => { StartAt = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,7 +76,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteStringValue("label", Label);
             writer.WriteDateTimeOffsetValue("startAt", StartAt);
-            writer.WriteIntValue("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

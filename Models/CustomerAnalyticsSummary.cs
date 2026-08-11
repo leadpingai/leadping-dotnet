@@ -16,7 +16,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average time, in minutes, before a lead receives a response.</summary>
-        public double? AverageResponseMinutes { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? AverageResponseMinutes { get; set; }
+#nullable restore
+#else
+        public UntypedNode AverageResponseMinutes { get; set; }
+#endif
         /// <summary>Current billing status for this Leadping customer analytics summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,13 +32,37 @@ namespace Leadping.OpenApiClient.Models
         public string BillingStatus { get; set; }
 #endif
         /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
-        public double? CallMinutes { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallMinutes { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallMinutes { get; set; }
+#endif
         /// <summary>Number of outbound calls placed during the reporting period.</summary>
-        public int? CallsPlaced { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallsPlaced { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallsPlaced { get; set; }
+#endif
         /// <summary>Number of inbound calls received during the reporting period.</summary>
-        public int? CallsReceived { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallsReceived { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallsReceived { get; set; }
+#endif
         /// <summary>Number of leads represented by this Leadping customer analytics summary.</summary>
-        public int? Leads { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Leads { get; set; }
+#nullable restore
+#else
+        public UntypedNode Leads { get; set; }
+#endif
         /// <summary>Date and time when this Leadping customer analytics summary was leads comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,23 +72,77 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison LeadsComparison { get; set; }
 #endif
         /// <summary>Median response minutes measured in minutes.</summary>
-        public double? MedianResponseMinutes { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MedianResponseMinutes { get; set; }
+#nullable restore
+#else
+        public UntypedNode MedianResponseMinutes { get; set; }
+#endif
         /// <summary>Number of calls missed during the reporting period.</summary>
-        public int? MissedCalls { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MissedCalls { get; set; }
+#nullable restore
+#else
+        public UntypedNode MissedCalls { get; set; }
+#endif
         /// <summary>Number of missed leads represented by this Leadping customer analytics summary.</summary>
-        public int? MissedLeads { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MissedLeads { get; set; }
+#nullable restore
+#else
+        public UntypedNode MissedLeads { get; set; }
+#endif
         /// <summary>Responded within five minutes percent expressed as a percentage.</summary>
-        public double? RespondedWithinFiveMinutesPercent { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RespondedWithinFiveMinutesPercent { get; set; }
+#nullable restore
+#else
+        public UntypedNode RespondedWithinFiveMinutesPercent { get; set; }
+#endif
         /// <summary>Number of SMS messages received during the reporting period.</summary>
-        public int? SmsReceived { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsReceived { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsReceived { get; set; }
+#endif
         /// <summary>Number of SMS messages sent during the reporting period.</summary>
-        public int? SmsSent { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsSent { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsSent { get; set; }
+#endif
         /// <summary>Number of unread messages represented by this Leadping customer analytics summary.</summary>
-        public int? UnreadMessages { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? UnreadMessages { get; set; }
+#nullable restore
+#else
+        public UntypedNode UnreadMessages { get; set; }
+#endif
         /// <summary>Usage spend represented by this Leadping customer analytics summary.</summary>
-        public double? UsageSpend { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? UsageSpend { get; set; }
+#nullable restore
+#else
+        public UntypedNode UsageSpend { get; set; }
+#endif
         /// <summary>Wallet balance represented by this Leadping customer analytics summary.</summary>
-        public double? WalletBalance { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? WalletBalance { get; set; }
+#nullable restore
+#else
+        public UntypedNode WalletBalance { get; set; }
+#endif
         /// <summary>Current wallet status for this Leadping customer analytics summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,22 +176,22 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "averageResponseMinutes", n => { AverageResponseMinutes = n.GetDoubleValue(); } },
+                { "averageResponseMinutes", n => { AverageResponseMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
-                { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
-                { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
-                { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
-                { "leads", n => { Leads = n.GetIntValue(); } },
+                { "callMinutes", n => { CallMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callsPlaced", n => { CallsPlaced = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callsReceived", n => { CallsReceived = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "leads", n => { Leads = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "leadsComparison", n => { LeadsComparison = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>(global::Leadping.OpenApiClient.Models.AnalyticsComparison.CreateFromDiscriminatorValue); } },
-                { "medianResponseMinutes", n => { MedianResponseMinutes = n.GetDoubleValue(); } },
-                { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
-                { "missedLeads", n => { MissedLeads = n.GetIntValue(); } },
-                { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetDoubleValue(); } },
-                { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
-                { "smsSent", n => { SmsSent = n.GetIntValue(); } },
-                { "unreadMessages", n => { UnreadMessages = n.GetIntValue(); } },
-                { "usageSpend", n => { UsageSpend = n.GetDoubleValue(); } },
-                { "walletBalance", n => { WalletBalance = n.GetDoubleValue(); } },
+                { "medianResponseMinutes", n => { MedianResponseMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "missedCalls", n => { MissedCalls = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "missedLeads", n => { MissedLeads = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsReceived", n => { SmsReceived = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsSent", n => { SmsSent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "unreadMessages", n => { UnreadMessages = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "usageSpend", n => { UsageSpend = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "walletBalance", n => { WalletBalance = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "walletStatus", n => { WalletStatus = n.GetStringValue(); } },
             };
         }
@@ -118,22 +202,22 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("averageResponseMinutes", AverageResponseMinutes);
+            writer.WriteObjectValue<UntypedNode>("averageResponseMinutes", AverageResponseMinutes);
             writer.WriteStringValue("billingStatus", BillingStatus);
-            writer.WriteDoubleValue("callMinutes", CallMinutes);
-            writer.WriteIntValue("callsPlaced", CallsPlaced);
-            writer.WriteIntValue("callsReceived", CallsReceived);
-            writer.WriteIntValue("leads", Leads);
+            writer.WriteObjectValue<UntypedNode>("callMinutes", CallMinutes);
+            writer.WriteObjectValue<UntypedNode>("callsPlaced", CallsPlaced);
+            writer.WriteObjectValue<UntypedNode>("callsReceived", CallsReceived);
+            writer.WriteObjectValue<UntypedNode>("leads", Leads);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>("leadsComparison", LeadsComparison);
-            writer.WriteDoubleValue("medianResponseMinutes", MedianResponseMinutes);
-            writer.WriteIntValue("missedCalls", MissedCalls);
-            writer.WriteIntValue("missedLeads", MissedLeads);
-            writer.WriteDoubleValue("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);
-            writer.WriteIntValue("smsReceived", SmsReceived);
-            writer.WriteIntValue("smsSent", SmsSent);
-            writer.WriteIntValue("unreadMessages", UnreadMessages);
-            writer.WriteDoubleValue("usageSpend", UsageSpend);
-            writer.WriteDoubleValue("walletBalance", WalletBalance);
+            writer.WriteObjectValue<UntypedNode>("medianResponseMinutes", MedianResponseMinutes);
+            writer.WriteObjectValue<UntypedNode>("missedCalls", MissedCalls);
+            writer.WriteObjectValue<UntypedNode>("missedLeads", MissedLeads);
+            writer.WriteObjectValue<UntypedNode>("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);
+            writer.WriteObjectValue<UntypedNode>("smsReceived", SmsReceived);
+            writer.WriteObjectValue<UntypedNode>("smsSent", SmsSent);
+            writer.WriteObjectValue<UntypedNode>("unreadMessages", UnreadMessages);
+            writer.WriteObjectValue<UntypedNode>("usageSpend", UsageSpend);
+            writer.WriteObjectValue<UntypedNode>("walletBalance", WalletBalance);
             writer.WriteStringValue("walletStatus", WalletStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

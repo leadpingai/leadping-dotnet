@@ -101,8 +101,15 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Status
             [QueryParameter("startDate")]
             public Date? StartDate { get; set; }
             /// <summary>The window days.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("windowDays")]
-            public int? WindowDays { get; set; }
+            public string? WindowDays { get; set; }
+#nullable restore
+#else
+            [QueryParameter("windowDays")]
+            public string WindowDays { get; set; }
+#endif
         }
     }
 }

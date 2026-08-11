@@ -47,7 +47,13 @@ namespace Leadping.OpenApiClient.Sms.Media
         public global::Leadping.OpenApiClient.Sms.Media.MediaPostRequestBody_Headers Headers { get; set; }
 #endif
         /// <summary>The Length property</summary>
-        public long? Length { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Length { get; set; }
+#nullable restore
+#else
+        public UntypedNode Length { get; set; }
+#endif
         /// <summary>The Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +91,7 @@ namespace Leadping.OpenApiClient.Sms.Media
                 { "ContentType", n => { ContentType = n.GetStringValue(); } },
                 { "FileName", n => { FileName = n.GetStringValue(); } },
                 { "Headers", n => { Headers = n.GetObjectValue<global::Leadping.OpenApiClient.Sms.Media.MediaPostRequestBody_Headers>(global::Leadping.OpenApiClient.Sms.Media.MediaPostRequestBody_Headers.CreateFromDiscriminatorValue); } },
-                { "Length", n => { Length = n.GetLongValue(); } },
+                { "Length", n => { Length = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -100,7 +106,7 @@ namespace Leadping.OpenApiClient.Sms.Media
             writer.WriteStringValue("ContentType", ContentType);
             writer.WriteStringValue("FileName", FileName);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Sms.Media.MediaPostRequestBody_Headers>("Headers", Headers);
-            writer.WriteLongValue("Length", Length);
+            writer.WriteObjectValue<UntypedNode>("Length", Length);
             writer.WriteStringValue("Name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

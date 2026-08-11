@@ -50,11 +50,23 @@ namespace Leadping.OpenApiClient.Models
         public string ApiKeyPreview { get; set; }
 #endif
         /// <summary>Total number of authenticated requests made with this source API key.</summary>
-        public long? ApiKeyTotalUses { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ApiKeyTotalUses { get; set; }
+#nullable restore
+#else
+        public UntypedNode ApiKeyTotalUses { get; set; }
+#endif
         /// <summary>Indicates whether the organization or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
-        public double? CostPerLead { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CostPerLead { get; set; }
+#nullable restore
+#else
+        public UntypedNode CostPerLead { get; set; }
+#endif
         /// <summary>UTC timestamp when this lead source table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>User summary for the person who created this lead source table row.</summary>
@@ -177,9 +189,9 @@ namespace Leadping.OpenApiClient.Models
                 { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
-                { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
+                { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
-                { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
+                { "costPerLead", n => { CostPerLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdByUser", n => { CreatedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_createdByUser>(global::Leadping.OpenApiClient.Models.SourceTableRow_createdByUser.CreateFromDiscriminatorValue); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -210,9 +222,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
-            writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
+            writer.WriteObjectValue<UntypedNode>("apiKeyTotalUses", ApiKeyTotalUses);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
-            writer.WriteDoubleValue("costPerLead", CostPerLead);
+            writer.WriteObjectValue<UntypedNode>("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_createdByUser>("createdByUser", CreatedByUser);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);

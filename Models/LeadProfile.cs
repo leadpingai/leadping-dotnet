@@ -19,7 +19,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Lead birth date used for demographic matching and insurance intake workflows.</summary>
         public Date? BirthDate { get; set; }
         /// <summary>Lead credit score range or score supplied by the intake source.</summary>
-        public int? CreditScore { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CreditScore { get; set; }
+#nullable restore
+#else
+        public UntypedNode CreditScore { get; set; }
+#endif
         /// <summary>Defines the supported Employment Type values.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_employmentType? EmploymentType { get; set; }
         /// <summary>Represents a gender classification used for demographic or identification purposes.</summary>
@@ -29,19 +35,49 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Indicates whether the lead reported a medical condition relevant to qualification.</summary>
         public bool? HasMedicalCondition { get; set; }
         /// <summary>Lead height provided for qualification workflows that require demographic details.</summary>
-        public int? Height { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Height { get; set; }
+#nullable restore
+#else
+        public UntypedNode Height { get; set; }
+#endif
         /// <summary>Lead income amount or range supplied for qualification workflows.</summary>
-        public int? Income { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Income { get; set; }
+#nullable restore
+#else
+        public UntypedNode Income { get; set; }
+#endif
         /// <summary>Indicates whether the lead owns their home.</summary>
         public bool? IsHomeowner { get; set; }
         /// <summary>Defines the supported Marital Status Type values.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus? MaritalStatus { get; set; }
         /// <summary>Number of months the lead has lived at the current residence.</summary>
-        public int? MonthsAtResidence { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MonthsAtResidence { get; set; }
+#nullable restore
+#else
+        public UntypedNode MonthsAtResidence { get; set; }
+#endif
         /// <summary>Number of dependents reported by the lead.</summary>
-        public int? NumberOfDependents { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? NumberOfDependents { get; set; }
+#nullable restore
+#else
+        public UntypedNode NumberOfDependents { get; set; }
+#endif
         /// <summary>Relative weighting used to rank or score this lead demographic profile.</summary>
-        public int? Weight { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Weight { get; set; }
+#nullable restore
+#else
+        public UntypedNode Weight { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadProfile"/> and sets the default values.
         /// </summary>
@@ -68,18 +104,18 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "birthDate", n => { BirthDate = n.GetDateValue(); } },
-                { "creditScore", n => { CreditScore = n.GetIntValue(); } },
+                { "creditScore", n => { CreditScore = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "employmentType", n => { EmploymentType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_employmentType>(); } },
                 { "gender", n => { Gender = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_gender>(); } },
                 { "hasBankruptcy", n => { HasBankruptcy = n.GetBoolValue(); } },
                 { "hasMedicalCondition", n => { HasMedicalCondition = n.GetBoolValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "income", n => { Income = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "income", n => { Income = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "isHomeowner", n => { IsHomeowner = n.GetBoolValue(); } },
                 { "maritalStatus", n => { MaritalStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus>(); } },
-                { "monthsAtResidence", n => { MonthsAtResidence = n.GetIntValue(); } },
-                { "numberOfDependents", n => { NumberOfDependents = n.GetIntValue(); } },
-                { "weight", n => { Weight = n.GetIntValue(); } },
+                { "monthsAtResidence", n => { MonthsAtResidence = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "numberOfDependents", n => { NumberOfDependents = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "weight", n => { Weight = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,18 +126,18 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("birthDate", BirthDate);
-            writer.WriteIntValue("creditScore", CreditScore);
+            writer.WriteObjectValue<UntypedNode>("creditScore", CreditScore);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_employmentType>("employmentType", EmploymentType);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_gender>("gender", Gender);
             writer.WriteBoolValue("hasBankruptcy", HasBankruptcy);
             writer.WriteBoolValue("hasMedicalCondition", HasMedicalCondition);
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("income", Income);
+            writer.WriteObjectValue<UntypedNode>("height", Height);
+            writer.WriteObjectValue<UntypedNode>("income", Income);
             writer.WriteBoolValue("isHomeowner", IsHomeowner);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus>("maritalStatus", MaritalStatus);
-            writer.WriteIntValue("monthsAtResidence", MonthsAtResidence);
-            writer.WriteIntValue("numberOfDependents", NumberOfDependents);
-            writer.WriteIntValue("weight", Weight);
+            writer.WriteObjectValue<UntypedNode>("monthsAtResidence", MonthsAtResidence);
+            writer.WriteObjectValue<UntypedNode>("numberOfDependents", NumberOfDependents);
+            writer.WriteObjectValue<UntypedNode>("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

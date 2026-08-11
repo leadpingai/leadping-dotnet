@@ -26,9 +26,21 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp for created at on this Stripe payment method.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Two-digit month when the card expires.</summary>
-        public int? ExpMonth { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ExpMonth { get; set; }
+#nullable restore
+#else
+        public UntypedNode ExpMonth { get; set; }
+#endif
         /// <summary>Four-digit year when the card expires.</summary>
-        public int? ExpYear { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ExpYear { get; set; }
+#nullable restore
+#else
+        public UntypedNode ExpYear { get; set; }
+#endif
         /// <summary>Unique Leadping identifier for this Stripe payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,8 +86,8 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "brand", n => { Brand = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "expMonth", n => { ExpMonth = n.GetIntValue(); } },
-                { "expYear", n => { ExpYear = n.GetIntValue(); } },
+                { "expMonth", n => { ExpMonth = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "expYear", n => { ExpYear = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "last4", n => { Last4 = n.GetStringValue(); } },
@@ -90,8 +102,8 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("brand", Brand);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteIntValue("expMonth", ExpMonth);
-            writer.WriteIntValue("expYear", ExpYear);
+            writer.WriteObjectValue<UntypedNode>("expMonth", ExpMonth);
+            writer.WriteObjectValue<UntypedNode>("expYear", ExpYear);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteStringValue("last4", Last4);

@@ -40,7 +40,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-        public double? BillableAmount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? BillableAmount { get; set; }
+#nullable restore
+#else
+        public UntypedNode BillableAmount { get; set; }
+#endif
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,7 +216,13 @@ namespace Leadping.OpenApiClient.Models
         public string RelatedEntityType { get; set; }
 #endif
         /// <summary>Number of retry attempts already made for this event timeline table row.</summary>
-        public int? RetryCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RetryCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode RetryCount { get; set; }
+#endif
         /// <summary>UTC timestamp when the related delivery or workflow action is scheduled to run.</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
         /// <summary>Reason Leadping scheduled this delivery for a later time.</summary>
@@ -305,7 +317,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
                 { "actorEmail", n => { ActorEmail = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
-                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
+                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
@@ -333,7 +345,7 @@ namespace Leadping.OpenApiClient.Models
                 { "receivedAt", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "relatedEntityId", n => { RelatedEntityId = n.GetStringValue(); } },
                 { "relatedEntityType", n => { RelatedEntityType = n.GetStringValue(); } },
-                { "retryCount", n => { RetryCount = n.GetIntValue(); } },
+                { "retryCount", n => { RetryCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "scheduledFor", n => { ScheduledFor = n.GetDateTimeOffsetValue(); } },
                 { "scheduledReason", n => { ScheduledReason = n.GetStringValue(); } },
                 { "selectionReason", n => { SelectionReason = n.GetEnumValue<global::Leadping.OpenApiClient.Models.EventTableRow_selectionReason>(); } },
@@ -361,7 +373,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
             writer.WriteStringValue("actorEmail", ActorEmail);
             writer.WriteStringValue("actorUserId", ActorUserId);
-            writer.WriteDoubleValue("billableAmount", BillableAmount);
+            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
             writer.WriteStringValue("campaignId", CampaignId);
@@ -389,7 +401,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);
             writer.WriteStringValue("relatedEntityId", RelatedEntityId);
             writer.WriteStringValue("relatedEntityType", RelatedEntityType);
-            writer.WriteIntValue("retryCount", RetryCount);
+            writer.WriteObjectValue<UntypedNode>("retryCount", RetryCount);
             writer.WriteDateTimeOffsetValue("scheduledFor", ScheduledFor);
             writer.WriteStringValue("scheduledReason", ScheduledReason);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.EventTableRow_selectionReason>("selectionReason", SelectionReason);

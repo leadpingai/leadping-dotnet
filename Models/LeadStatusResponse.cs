@@ -54,7 +54,13 @@ namespace Leadping.OpenApiClient.Models
         public string OrganizationId { get; set; }
 #endif
         /// <summary>Relative display order of the lead status.</summary>
-        public int? SortOrder { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SortOrder { get; set; }
+#nullable restore
+#else
+        public UntypedNode SortOrder { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadStatusResponse"/> and sets the default values.
         /// </summary>
@@ -87,7 +93,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "sortOrder", n => { SortOrder = n.GetIntValue(); } },
+                { "sortOrder", n => { SortOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,7 +110,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteIntValue("sortOrder", SortOrder);
+            writer.WriteObjectValue<UntypedNode>("sortOrder", SortOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

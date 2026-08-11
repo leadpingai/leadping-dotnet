@@ -54,7 +54,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Date and time when the next retry is scheduled.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
         /// <summary>Total number of retry records represented by this Leadping automation workflow action.</summary>
-        public int? RetryCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RetryCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode RetryCount { get; set; }
+#endif
         /// <summary>Safe reason associated with this Leadping automation workflow action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +108,13 @@ namespace Leadping.OpenApiClient.Models
         public string StepId { get; set; }
 #endif
         /// <summary>Step order associated with this Leadping automation workflow action.</summary>
-        public int? StepOrder { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? StepOrder { get; set; }
+#nullable restore
+#else
+        public UntypedNode StepOrder { get; set; }
+#endif
         /// <summary>Human-readable user summary for this Leadping automation workflow action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +155,7 @@ namespace Leadping.OpenApiClient.Models
                 { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
-                { "retryCount", n => { RetryCount = n.GetIntValue(); } },
+                { "retryCount", n => { RetryCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "safeReason", n => { SafeReason = n.GetStringValue(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetDateTimeOffsetValue(); } },
                 { "skippedAt", n => { SkippedAt = n.GetDateTimeOffsetValue(); } },
@@ -152,7 +164,7 @@ namespace Leadping.OpenApiClient.Models
                 { "statusDisplay", n => { StatusDisplay = n.GetStringValue(); } },
                 { "stepDisplayName", n => { StepDisplayName = n.GetStringValue(); } },
                 { "stepId", n => { StepId = n.GetStringValue(); } },
-                { "stepOrder", n => { StepOrder = n.GetIntValue(); } },
+                { "stepOrder", n => { StepOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "userSummary", n => { UserSummary = n.GetStringValue(); } },
             };
         }
@@ -170,7 +182,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
-            writer.WriteIntValue("retryCount", RetryCount);
+            writer.WriteObjectValue<UntypedNode>("retryCount", RetryCount);
             writer.WriteStringValue("safeReason", SafeReason);
             writer.WriteDateTimeOffsetValue("scheduledAt", ScheduledAt);
             writer.WriteDateTimeOffsetValue("skippedAt", SkippedAt);
@@ -179,7 +191,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("statusDisplay", StatusDisplay);
             writer.WriteStringValue("stepDisplayName", StepDisplayName);
             writer.WriteStringValue("stepId", StepId);
-            writer.WriteIntValue("stepOrder", StepOrder);
+            writer.WriteObjectValue<UntypedNode>("stepOrder", StepOrder);
             writer.WriteStringValue("userSummary", UserSummary);
             writer.WriteAdditionalData(AdditionalData);
         }

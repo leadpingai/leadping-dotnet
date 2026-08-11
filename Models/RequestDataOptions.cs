@@ -42,7 +42,13 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.OrderByOption> OrderBy { get; set; }
 #endif
         /// <summary>Maximum items to return in one page</summary>
-        public int? PageSize { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PageSize { get; set; }
+#nullable restore
+#else
+        public UntypedNode PageSize { get; set; }
+#endif
         /// <summary>Advanced range-based filters (e.g., Price &gt; 50 and Price &lt;= 200).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +102,7 @@ namespace Leadping.OpenApiClient.Models
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ExactMatchFilter>(global::Leadping.OpenApiClient.Models.ExactMatchFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "includeCount", n => { IncludeCount = n.GetBoolValue(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrderByOption>(global::Leadping.OpenApiClient.Models.OrderByOption.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pageSize", n => { PageSize = n.GetIntValue(); } },
+                { "pageSize", n => { PageSize = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "rangeFilters", n => { RangeFilters = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.RangeFilter>(global::Leadping.OpenApiClient.Models.RangeFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "searchFields", n => { SearchFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -113,7 +119,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ExactMatchFilter>("filters", Filters);
             writer.WriteBoolValue("includeCount", IncludeCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrderByOption>("orderBy", OrderBy);
-            writer.WriteIntValue("pageSize", PageSize);
+            writer.WriteObjectValue<UntypedNode>("pageSize", PageSize);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.RangeFilter>("rangeFilters", RangeFilters);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("searchFields", SearchFields);

@@ -44,7 +44,13 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep CurrentStep { get; set; }
 #endif
         /// <summary>Current step order associated with this Leadping automation workflow run.</summary>
-        public int? CurrentStepOrder { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CurrentStepOrder { get; set; }
+#nullable restore
+#else
+        public UntypedNode CurrentStepOrder { get; set; }
+#endif
         /// <summary>Collection of events included with this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +104,13 @@ namespace Leadping.OpenApiClient.Models
         public string LeadId { get; set; }
 #endif
         /// <summary>Total number of max retry records represented by this Leadping automation workflow run.</summary>
-        public int? MaxRetryCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MaxRetryCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode MaxRetryCount { get; set; }
+#endif
         /// <summary>Date and time when the next execution is scheduled.</summary>
         public DateTimeOffset? NextExecutionAt { get; set; }
         /// <summary>Date and time when the next retry is scheduled.</summary>
@@ -112,7 +124,13 @@ namespace Leadping.OpenApiClient.Models
         public string OrganizationId { get; set; }
 #endif
         /// <summary>Total number of retry records represented by this Leadping automation workflow run.</summary>
-        public int? RetryCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RetryCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode RetryCount { get; set; }
+#endif
         /// <summary>Machine-readable code explaining why the workflow run or action was skipped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,7 +213,7 @@ namespace Leadping.OpenApiClient.Models
                 { "cancelledAt", n => { CancelledAt = n.GetDateTimeOffsetValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentStep", n => { CurrentStep = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>(global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep.CreateFromDiscriminatorValue); } },
-                { "currentStepOrder", n => { CurrentStepOrder = n.GetIntValue(); } },
+                { "currentStepOrder", n => { CurrentStepOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -204,11 +222,11 @@ namespace Leadping.OpenApiClient.Models
                 { "lastErrorMessage", n => { LastErrorMessage = n.GetStringValue(); } },
                 { "lastExecutionAt", n => { LastExecutionAt = n.GetDateTimeOffsetValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
-                { "maxRetryCount", n => { MaxRetryCount = n.GetIntValue(); } },
+                { "maxRetryCount", n => { MaxRetryCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "nextExecutionAt", n => { NextExecutionAt = n.GetDateTimeOffsetValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "retryCount", n => { RetryCount = n.GetIntValue(); } },
+                { "retryCount", n => { RetryCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "skipReasonCode", n => { SkipReasonCode = n.GetStringValue(); } },
                 { "skipReasonDisplay", n => { SkipReasonDisplay = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -231,7 +249,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("cancelledAt", CancelledAt);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowRunResponse_currentStep>("currentStep", CurrentStep);
-            writer.WriteIntValue("currentStepOrder", CurrentStepOrder);
+            writer.WriteObjectValue<UntypedNode>("currentStepOrder", CurrentStepOrder);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>("events", Events);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("id", Id);
@@ -240,11 +258,11 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastErrorMessage", LastErrorMessage);
             writer.WriteDateTimeOffsetValue("lastExecutionAt", LastExecutionAt);
             writer.WriteStringValue("leadId", LeadId);
-            writer.WriteIntValue("maxRetryCount", MaxRetryCount);
+            writer.WriteObjectValue<UntypedNode>("maxRetryCount", MaxRetryCount);
             writer.WriteDateTimeOffsetValue("nextExecutionAt", NextExecutionAt);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteIntValue("retryCount", RetryCount);
+            writer.WriteObjectValue<UntypedNode>("retryCount", RetryCount);
             writer.WriteStringValue("skipReasonCode", SkipReasonCode);
             writer.WriteStringValue("skipReasonDisplay", SkipReasonDisplay);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

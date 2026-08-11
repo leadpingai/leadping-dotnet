@@ -50,53 +50,161 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Start of the next Eastern time hour, when SMS hourly capacity resets.</summary>
         public DateTimeOffset? SmsHourlyResetsAt { get; set; }
         /// <summary>Number of SMS limit this hour represented by this Leadping outbound phone number capacity.</summary>
-        public int? SmsLimitThisHour { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsLimitThisHour { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsLimitThisHour { get; set; }
+#endif
         /// <summary>SMS limit for one rolling minute.</summary>
-        public int? SmsLimitThisMinute { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsLimitThisMinute { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsLimitThisMinute { get; set; }
+#endif
         /// <summary>Number of SMS limit today represented by this Leadping outbound phone number capacity.</summary>
-        public int? SmsLimitToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsLimitToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsLimitToday { get; set; }
+#endif
         /// <summary>The next time SMS capacity becomes available in the rolling minute window.</summary>
         public DateTimeOffset? SmsMinutelyResetsAt { get; set; }
         /// <summary>Indicates whether SMS limits for this phone number are still ramping up.</summary>
         public bool? SmsRamping { get; set; }
         /// <summary>SMS remaining this hour for the applicable messaging or voice capacity window.</summary>
-        public int? SmsRemainingThisHour { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsRemainingThisHour { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsRemainingThisHour { get; set; }
+#endif
         /// <summary>SMS remaining in the current rolling minute.</summary>
-        public int? SmsRemainingThisMinute { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsRemainingThisMinute { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsRemainingThisMinute { get; set; }
+#endif
         /// <summary>SMS remaining today for the applicable messaging or voice capacity window.</summary>
-        public int? SmsRemainingToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsRemainingToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsRemainingToday { get; set; }
+#endif
         /// <summary>SMS used this hour for the applicable messaging or voice capacity window.</summary>
-        public int? SmsUsedThisHour { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsUsedThisHour { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsUsedThisHour { get; set; }
+#endif
         /// <summary>SMS used in the current rolling minute.</summary>
-        public int? SmsUsedThisMinute { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsUsedThisMinute { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsUsedThisMinute { get; set; }
+#endif
         /// <summary>SMS used today for the applicable messaging or voice capacity window.</summary>
-        public int? SmsUsedToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsUsedToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsUsedToday { get; set; }
+#endif
         /// <summary>Next midnight Eastern time, when voice daily capacity resets.</summary>
         public DateTimeOffset? VoiceDailyResetsAt { get; set; }
         /// <summary>Start of the next Eastern time hour, when voice hourly capacity resets.</summary>
         public DateTimeOffset? VoiceHourlyResetsAt { get; set; }
         /// <summary>Voice limit this hour associated with this Leadping outbound phone number capacity.</summary>
-        public int? VoiceLimitThisHour { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceLimitThisHour { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceLimitThisHour { get; set; }
+#endif
         /// <summary>Voice limit for one rolling minute.</summary>
-        public int? VoiceLimitThisMinute { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceLimitThisMinute { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceLimitThisMinute { get; set; }
+#endif
         /// <summary>Voice limit today associated with this Leadping outbound phone number capacity.</summary>
-        public int? VoiceLimitToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceLimitToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceLimitToday { get; set; }
+#endif
         /// <summary>The next time voice capacity becomes available in the rolling minute window.</summary>
         public DateTimeOffset? VoiceMinutelyResetsAt { get; set; }
         /// <summary>Indicates whether call limits for this phone number are still ramping up.</summary>
         public bool? VoiceRamping { get; set; }
         /// <summary>Voice remaining this hour for the applicable messaging or voice capacity window.</summary>
-        public int? VoiceRemainingThisHour { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceRemainingThisHour { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceRemainingThisHour { get; set; }
+#endif
         /// <summary>Voice remaining in the current rolling minute.</summary>
-        public int? VoiceRemainingThisMinute { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceRemainingThisMinute { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceRemainingThisMinute { get; set; }
+#endif
         /// <summary>Voice remaining today for the applicable messaging or voice capacity window.</summary>
-        public int? VoiceRemainingToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceRemainingToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceRemainingToday { get; set; }
+#endif
         /// <summary>Voice used this hour for the applicable messaging or voice capacity window.</summary>
-        public int? VoiceUsedThisHour { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceUsedThisHour { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceUsedThisHour { get; set; }
+#endif
         /// <summary>Voice used in the current rolling minute.</summary>
-        public int? VoiceUsedThisMinute { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceUsedThisMinute { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceUsedThisMinute { get; set; }
+#endif
         /// <summary>Voice used today for the applicable messaging or voice capacity window.</summary>
-        public int? VoiceUsedToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceUsedToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceUsedToday { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity"/> and sets the default values.
         /// </summary>
@@ -130,30 +238,30 @@ namespace Leadping.OpenApiClient.Models
                 { "smsApproved", n => { SmsApproved = n.GetBoolValue(); } },
                 { "smsDailyResetsAt", n => { SmsDailyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "smsHourlyResetsAt", n => { SmsHourlyResetsAt = n.GetDateTimeOffsetValue(); } },
-                { "smsLimitThisHour", n => { SmsLimitThisHour = n.GetIntValue(); } },
-                { "smsLimitThisMinute", n => { SmsLimitThisMinute = n.GetIntValue(); } },
-                { "smsLimitToday", n => { SmsLimitToday = n.GetIntValue(); } },
+                { "smsLimitThisHour", n => { SmsLimitThisHour = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsLimitThisMinute", n => { SmsLimitThisMinute = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsLimitToday", n => { SmsLimitToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "smsMinutelyResetsAt", n => { SmsMinutelyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "smsRamping", n => { SmsRamping = n.GetBoolValue(); } },
-                { "smsRemainingThisHour", n => { SmsRemainingThisHour = n.GetIntValue(); } },
-                { "smsRemainingThisMinute", n => { SmsRemainingThisMinute = n.GetIntValue(); } },
-                { "smsRemainingToday", n => { SmsRemainingToday = n.GetIntValue(); } },
-                { "smsUsedThisHour", n => { SmsUsedThisHour = n.GetIntValue(); } },
-                { "smsUsedThisMinute", n => { SmsUsedThisMinute = n.GetIntValue(); } },
-                { "smsUsedToday", n => { SmsUsedToday = n.GetIntValue(); } },
+                { "smsRemainingThisHour", n => { SmsRemainingThisHour = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsRemainingThisMinute", n => { SmsRemainingThisMinute = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsRemainingToday", n => { SmsRemainingToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsUsedThisHour", n => { SmsUsedThisHour = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsUsedThisMinute", n => { SmsUsedThisMinute = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsUsedToday", n => { SmsUsedToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "voiceDailyResetsAt", n => { VoiceDailyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "voiceHourlyResetsAt", n => { VoiceHourlyResetsAt = n.GetDateTimeOffsetValue(); } },
-                { "voiceLimitThisHour", n => { VoiceLimitThisHour = n.GetIntValue(); } },
-                { "voiceLimitThisMinute", n => { VoiceLimitThisMinute = n.GetIntValue(); } },
-                { "voiceLimitToday", n => { VoiceLimitToday = n.GetIntValue(); } },
+                { "voiceLimitThisHour", n => { VoiceLimitThisHour = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceLimitThisMinute", n => { VoiceLimitThisMinute = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceLimitToday", n => { VoiceLimitToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "voiceMinutelyResetsAt", n => { VoiceMinutelyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "voiceRamping", n => { VoiceRamping = n.GetBoolValue(); } },
-                { "voiceRemainingThisHour", n => { VoiceRemainingThisHour = n.GetIntValue(); } },
-                { "voiceRemainingThisMinute", n => { VoiceRemainingThisMinute = n.GetIntValue(); } },
-                { "voiceRemainingToday", n => { VoiceRemainingToday = n.GetIntValue(); } },
-                { "voiceUsedThisHour", n => { VoiceUsedThisHour = n.GetIntValue(); } },
-                { "voiceUsedThisMinute", n => { VoiceUsedThisMinute = n.GetIntValue(); } },
-                { "voiceUsedToday", n => { VoiceUsedToday = n.GetIntValue(); } },
+                { "voiceRemainingThisHour", n => { VoiceRemainingThisHour = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceRemainingThisMinute", n => { VoiceRemainingThisMinute = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceRemainingToday", n => { VoiceRemainingToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceUsedThisHour", n => { VoiceUsedThisHour = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceUsedThisMinute", n => { VoiceUsedThisMinute = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceUsedToday", n => { VoiceUsedToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -171,30 +279,30 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("smsApproved", SmsApproved);
             writer.WriteDateTimeOffsetValue("smsDailyResetsAt", SmsDailyResetsAt);
             writer.WriteDateTimeOffsetValue("smsHourlyResetsAt", SmsHourlyResetsAt);
-            writer.WriteIntValue("smsLimitThisHour", SmsLimitThisHour);
-            writer.WriteIntValue("smsLimitThisMinute", SmsLimitThisMinute);
-            writer.WriteIntValue("smsLimitToday", SmsLimitToday);
+            writer.WriteObjectValue<UntypedNode>("smsLimitThisHour", SmsLimitThisHour);
+            writer.WriteObjectValue<UntypedNode>("smsLimitThisMinute", SmsLimitThisMinute);
+            writer.WriteObjectValue<UntypedNode>("smsLimitToday", SmsLimitToday);
             writer.WriteDateTimeOffsetValue("smsMinutelyResetsAt", SmsMinutelyResetsAt);
             writer.WriteBoolValue("smsRamping", SmsRamping);
-            writer.WriteIntValue("smsRemainingThisHour", SmsRemainingThisHour);
-            writer.WriteIntValue("smsRemainingThisMinute", SmsRemainingThisMinute);
-            writer.WriteIntValue("smsRemainingToday", SmsRemainingToday);
-            writer.WriteIntValue("smsUsedThisHour", SmsUsedThisHour);
-            writer.WriteIntValue("smsUsedThisMinute", SmsUsedThisMinute);
-            writer.WriteIntValue("smsUsedToday", SmsUsedToday);
+            writer.WriteObjectValue<UntypedNode>("smsRemainingThisHour", SmsRemainingThisHour);
+            writer.WriteObjectValue<UntypedNode>("smsRemainingThisMinute", SmsRemainingThisMinute);
+            writer.WriteObjectValue<UntypedNode>("smsRemainingToday", SmsRemainingToday);
+            writer.WriteObjectValue<UntypedNode>("smsUsedThisHour", SmsUsedThisHour);
+            writer.WriteObjectValue<UntypedNode>("smsUsedThisMinute", SmsUsedThisMinute);
+            writer.WriteObjectValue<UntypedNode>("smsUsedToday", SmsUsedToday);
             writer.WriteDateTimeOffsetValue("voiceDailyResetsAt", VoiceDailyResetsAt);
             writer.WriteDateTimeOffsetValue("voiceHourlyResetsAt", VoiceHourlyResetsAt);
-            writer.WriteIntValue("voiceLimitThisHour", VoiceLimitThisHour);
-            writer.WriteIntValue("voiceLimitThisMinute", VoiceLimitThisMinute);
-            writer.WriteIntValue("voiceLimitToday", VoiceLimitToday);
+            writer.WriteObjectValue<UntypedNode>("voiceLimitThisHour", VoiceLimitThisHour);
+            writer.WriteObjectValue<UntypedNode>("voiceLimitThisMinute", VoiceLimitThisMinute);
+            writer.WriteObjectValue<UntypedNode>("voiceLimitToday", VoiceLimitToday);
             writer.WriteDateTimeOffsetValue("voiceMinutelyResetsAt", VoiceMinutelyResetsAt);
             writer.WriteBoolValue("voiceRamping", VoiceRamping);
-            writer.WriteIntValue("voiceRemainingThisHour", VoiceRemainingThisHour);
-            writer.WriteIntValue("voiceRemainingThisMinute", VoiceRemainingThisMinute);
-            writer.WriteIntValue("voiceRemainingToday", VoiceRemainingToday);
-            writer.WriteIntValue("voiceUsedThisHour", VoiceUsedThisHour);
-            writer.WriteIntValue("voiceUsedThisMinute", VoiceUsedThisMinute);
-            writer.WriteIntValue("voiceUsedToday", VoiceUsedToday);
+            writer.WriteObjectValue<UntypedNode>("voiceRemainingThisHour", VoiceRemainingThisHour);
+            writer.WriteObjectValue<UntypedNode>("voiceRemainingThisMinute", VoiceRemainingThisMinute);
+            writer.WriteObjectValue<UntypedNode>("voiceRemainingToday", VoiceRemainingToday);
+            writer.WriteObjectValue<UntypedNode>("voiceUsedThisHour", VoiceUsedThisHour);
+            writer.WriteObjectValue<UntypedNode>("voiceUsedThisMinute", VoiceUsedThisMinute);
+            writer.WriteObjectValue<UntypedNode>("voiceUsedToday", VoiceUsedToday);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

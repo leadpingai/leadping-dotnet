@@ -35,7 +35,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>HTTP status code returned for the problem.</summary>
-        public int? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Status { get; set; }
+#nullable restore
+#else
+        public UntypedNode Status { get; set; }
+#endif
         /// <summary>Short, human-readable summary of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "detail", n => { Detail = n.GetStringValue(); } },
                 { "instance", n => { Instance = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -93,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("instance", Instance);
-            writer.WriteIntValue("status", Status);
+            writer.WriteObjectValue<UntypedNode>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

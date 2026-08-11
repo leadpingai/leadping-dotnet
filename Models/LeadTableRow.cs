@@ -90,7 +90,13 @@ namespace Leadping.OpenApiClient.Models
         public string Phone { get; set; }
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
-        public double? Price { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Price { get; set; }
+#nullable restore
+#else
+        public UntypedNode Price { get; set; }
+#endif
         /// <summary>Identifier and display name of the related source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,7 +169,7 @@ namespace Leadping.OpenApiClient.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>(global::Leadping.OpenApiClient.Models.LeadTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
+                { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>(global::Leadping.OpenApiClient.Models.LeadTableRow_source.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusTone", n => { StatusTone = n.GetStringValue(); } },
@@ -191,7 +197,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteDoubleValue("price", Price);
+            writer.WriteObjectValue<UntypedNode>("price", Price);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusTone", StatusTone);

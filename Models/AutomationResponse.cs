@@ -146,7 +146,13 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.AutomationResponse_user User { get; set; }
 #endif
         /// <summary>Version number for this automation configuration response schema or saved configuration.</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Version { get; set; }
+#nullable restore
+#else
+        public UntypedNode Version { get; set; }
+#endif
         /// <summary>Visibility level that controls who can see this automation configuration response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -200,7 +206,7 @@ namespace Leadping.OpenApiClient.Models
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>(global::Leadping.OpenApiClient.Models.AutomationTrigger.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_user>(global::Leadping.OpenApiClient.Models.AutomationResponse_user.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
@@ -231,7 +237,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("scope", Scope);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>("triggers", Triggers);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_user>("user", User);
-            writer.WriteIntValue("version", Version);
+            writer.WriteObjectValue<UntypedNode>("version", Version);
             writer.WriteStringValue("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }

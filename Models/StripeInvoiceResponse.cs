@@ -16,7 +16,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total invoice amount in the invoice currency.</summary>
-        public double? Amount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Amount { get; set; }
+#nullable restore
+#else
+        public UntypedNode Amount { get; set; }
+#endif
         /// <summary>Date and time when the invoice was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Indicates whether a downloadable PDF is available for the invoice.</summary>
@@ -70,7 +76,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "amount", n => { Amount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "hasPdf", n => { HasPdf = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -85,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("amount", Amount);
+            writer.WriteObjectValue<UntypedNode>("amount", Amount);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteBoolValue("hasPdf", HasPdf);
             writer.WriteStringValue("id", Id);

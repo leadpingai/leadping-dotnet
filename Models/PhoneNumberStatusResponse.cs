@@ -16,9 +16,21 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether this phone number can currently place outbound calls.</summary>
-        public int? CallsPossible { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallsPossible { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallsPossible { get; set; }
+#endif
         /// <summary>Indicates whether this phone number can currently send SMS messages.</summary>
-        public int? MessagesPossible { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MessagesPossible { get; set; }
+#nullable restore
+#else
+        public UntypedNode MessagesPossible { get; set; }
+#endif
         /// <summary>E.164 phone number exposed by this phone number warmup status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,8 +104,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callsPossible", n => { CallsPossible = n.GetIntValue(); } },
-                { "messagesPossible", n => { MessagesPossible = n.GetIntValue(); } },
+                { "callsPossible", n => { CallsPossible = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "messagesPossible", n => { MessagesPossible = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "optOutMetrics", n => { OptOutMetrics = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse.CreateFromDiscriminatorValue); } },
                 { "outboundCapacity", n => { OutboundCapacity = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity.CreateFromDiscriminatorValue); } },
@@ -109,8 +121,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("callsPossible", CallsPossible);
-            writer.WriteIntValue("messagesPossible", MessagesPossible);
+            writer.WriteObjectValue<UntypedNode>("callsPossible", CallsPossible);
+            writer.WriteObjectValue<UntypedNode>("messagesPossible", MessagesPossible);
             writer.WriteStringValue("number", Number);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>("optOutMetrics", OptOutMetrics);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity>("outboundCapacity", OutboundCapacity);

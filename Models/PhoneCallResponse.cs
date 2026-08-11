@@ -18,7 +18,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when the call was answered.</summary>
         public DateTimeOffset? AnsweredAt { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-        public double? BillableAmount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? BillableAmount { get; set; }
+#nullable restore
+#else
+        public UntypedNode BillableAmount { get; set; }
+#endif
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +68,13 @@ namespace Leadping.OpenApiClient.Models
         public string Direction { get; set; }
 #endif
         /// <summary>Call duration in seconds.</summary>
-        public int? DurationSeconds { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? DurationSeconds { get; set; }
+#nullable restore
+#else
+        public UntypedNode DurationSeconds { get; set; }
+#endif
         /// <summary>UTC timestamp when the call ended.</summary>
         public DateTimeOffset? EndedAt { get; set; }
         /// <summary>Sender phone number used for this communication.</summary>
@@ -175,14 +187,14 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "answeredAt", n => { AnsweredAt = n.GetDateTimeOffsetValue(); } },
-                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
+                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "callerId", n => { CallerId = n.GetStringValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
-                { "durationSeconds", n => { DurationSeconds = n.GetIntValue(); } },
+                { "durationSeconds", n => { DurationSeconds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "endedAt", n => { EndedAt = n.GetDateTimeOffsetValue(); } },
                 { "fromPhoneNumber", n => { FromPhoneNumber = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
@@ -209,14 +221,14 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("answeredAt", AnsweredAt);
-            writer.WriteDoubleValue("billableAmount", BillableAmount);
+            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteStringValue("callerId", CallerId);
             writer.WriteStringValue("campaignId", CampaignId);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("direction", Direction);
-            writer.WriteIntValue("durationSeconds", DurationSeconds);
+            writer.WriteObjectValue<UntypedNode>("durationSeconds", DurationSeconds);
             writer.WriteDateTimeOffsetValue("endedAt", EndedAt);
             writer.WriteStringValue("fromPhoneNumber", FromPhoneNumber);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);

@@ -16,9 +16,21 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
-        public double? CallMinutes { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallMinutes { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallMinutes { get; set; }
+#endif
         /// <summary>Number of calls represented by this Leadping customer communication usage point.</summary>
-        public int? Calls { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Calls { get; set; }
+#nullable restore
+#else
+        public UntypedNode Calls { get; set; }
+#endif
         /// <summary>Date and time when this Leadping customer communication usage point was end.</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>Human-readable label for this Leadping customer communication usage point.</summary>
@@ -30,11 +42,29 @@ namespace Leadping.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>Number of SMS messages received during the reporting period.</summary>
-        public int? SmsReceived { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsReceived { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsReceived { get; set; }
+#endif
         /// <summary>Number of SMS messages sent during the reporting period.</summary>
-        public int? SmsSent { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsSent { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsSent { get; set; }
+#endif
         /// <summary>Spend represented by this Leadping customer communication usage point.</summary>
-        public double? Spend { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Spend { get; set; }
+#nullable restore
+#else
+        public UntypedNode Spend { get; set; }
+#endif
         /// <summary>Date and time when this Leadping customer communication usage point was start.</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>
@@ -62,13 +92,13 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
-                { "calls", n => { Calls = n.GetIntValue(); } },
+                { "callMinutes", n => { CallMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "calls", n => { Calls = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
-                { "smsSent", n => { SmsSent = n.GetIntValue(); } },
-                { "spend", n => { Spend = n.GetDoubleValue(); } },
+                { "smsReceived", n => { SmsReceived = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsSent", n => { SmsSent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "spend", n => { Spend = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "startAt", n => { StartAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -79,13 +109,13 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("callMinutes", CallMinutes);
-            writer.WriteIntValue("calls", Calls);
+            writer.WriteObjectValue<UntypedNode>("callMinutes", CallMinutes);
+            writer.WriteObjectValue<UntypedNode>("calls", Calls);
             writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteStringValue("label", Label);
-            writer.WriteIntValue("smsReceived", SmsReceived);
-            writer.WriteIntValue("smsSent", SmsSent);
-            writer.WriteDoubleValue("spend", Spend);
+            writer.WriteObjectValue<UntypedNode>("smsReceived", SmsReceived);
+            writer.WriteObjectValue<UntypedNode>("smsSent", SmsSent);
+            writer.WriteObjectValue<UntypedNode>("spend", Spend);
             writer.WriteDateTimeOffsetValue("startAt", StartAt);
             writer.WriteAdditionalData(AdditionalData);
         }

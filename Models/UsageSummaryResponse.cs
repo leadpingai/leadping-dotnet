@@ -16,7 +16,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable quantity total for this usage summary.</summary>
-        public double? BillableQuantityTotal { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? BillableQuantityTotal { get; set; }
+#nullable restore
+#else
+        public UntypedNode BillableQuantityTotal { get; set; }
+#endif
         /// <summary>The named usage counters included with this usage summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,9 +32,21 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.UsageCounterLine> Counters { get; set; }
 #endif
         /// <summary>The customer charge total for this usage summary.</summary>
-        public double? CustomerChargeTotal { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CustomerChargeTotal { get; set; }
+#nullable restore
+#else
+        public UntypedNode CustomerChargeTotal { get; set; }
+#endif
         /// <summary>The failed count for this usage summary.</summary>
-        public int? FailedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? FailedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode FailedCount { get; set; }
+#endif
         /// <summary>The lines included with this usage summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,13 +56,25 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.UsageSummaryLine> Lines { get; set; }
 #endif
         /// <summary>The pending invoice count for this usage summary.</summary>
-        public int? PendingInvoiceCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PendingInvoiceCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode PendingInvoiceCount { get; set; }
+#endif
         /// <summary>UTC timestamp for period end on this usage summary.</summary>
         public DateTimeOffset? PeriodEnd { get; set; }
         /// <summary>UTC timestamp for period start on this usage summary.</summary>
         public DateTimeOffset? PeriodStart { get; set; }
         /// <summary>The usage record count for this usage summary.</summary>
-        public int? TransactionCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? TransactionCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode TransactionCount { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UsageSummaryResponse"/> and sets the default values.
         /// </summary>
@@ -70,15 +100,15 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billableQuantityTotal", n => { BillableQuantityTotal = n.GetDoubleValue(); } },
+                { "billableQuantityTotal", n => { BillableQuantityTotal = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "counters", n => { Counters = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageCounterLine>(global::Leadping.OpenApiClient.Models.UsageCounterLine.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "customerChargeTotal", n => { CustomerChargeTotal = n.GetDoubleValue(); } },
-                { "failedCount", n => { FailedCount = n.GetIntValue(); } },
+                { "customerChargeTotal", n => { CustomerChargeTotal = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "failedCount", n => { FailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "lines", n => { Lines = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageSummaryLine>(global::Leadping.OpenApiClient.Models.UsageSummaryLine.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pendingInvoiceCount", n => { PendingInvoiceCount = n.GetIntValue(); } },
+                { "pendingInvoiceCount", n => { PendingInvoiceCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "periodEnd", n => { PeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "periodStart", n => { PeriodStart = n.GetDateTimeOffsetValue(); } },
-                { "transactionCount", n => { TransactionCount = n.GetIntValue(); } },
+                { "transactionCount", n => { TransactionCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,15 +118,15 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("billableQuantityTotal", BillableQuantityTotal);
+            writer.WriteObjectValue<UntypedNode>("billableQuantityTotal", BillableQuantityTotal);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageCounterLine>("counters", Counters);
-            writer.WriteDoubleValue("customerChargeTotal", CustomerChargeTotal);
-            writer.WriteIntValue("failedCount", FailedCount);
+            writer.WriteObjectValue<UntypedNode>("customerChargeTotal", CustomerChargeTotal);
+            writer.WriteObjectValue<UntypedNode>("failedCount", FailedCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UsageSummaryLine>("lines", Lines);
-            writer.WriteIntValue("pendingInvoiceCount", PendingInvoiceCount);
+            writer.WriteObjectValue<UntypedNode>("pendingInvoiceCount", PendingInvoiceCount);
             writer.WriteDateTimeOffsetValue("periodEnd", PeriodEnd);
             writer.WriteDateTimeOffsetValue("periodStart", PeriodStart);
-            writer.WriteIntValue("transactionCount", TransactionCount);
+            writer.WriteObjectValue<UntypedNode>("transactionCount", TransactionCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

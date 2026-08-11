@@ -32,7 +32,13 @@ namespace Leadping.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>The display order for this usage counter.</summary>
-        public int? SortOrder { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SortOrder { get; set; }
+#nullable restore
+#else
+        public UntypedNode SortOrder { get; set; }
+#endif
         /// <summary>The unit label for this usage counter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +48,13 @@ namespace Leadping.OpenApiClient.Models
         public string Unit { get; set; }
 #endif
         /// <summary>Numeric for this usage counter.</summary>
-        public double? Value { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Value { get; set; }
+#nullable restore
+#else
+        public UntypedNode Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UsageCounterLine"/> and sets the default values.
         /// </summary>
@@ -70,9 +82,9 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "sortOrder", n => { SortOrder = n.GetIntValue(); } },
+                { "sortOrder", n => { SortOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetDoubleValue(); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,9 +96,9 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("label", Label);
-            writer.WriteIntValue("sortOrder", SortOrder);
+            writer.WriteObjectValue<UntypedNode>("sortOrder", SortOrder);
             writer.WriteStringValue("unit", Unit);
-            writer.WriteDoubleValue("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

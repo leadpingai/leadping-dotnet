@@ -16,23 +16,77 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of outbound calls that connected during this metrics window.</summary>
-        public int? CallConnectedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallConnectedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallConnectedCount { get; set; }
+#endif
         /// <summary>Number of outbound calls that failed during this metrics window.</summary>
-        public int? CallFailedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallFailedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallFailedCount { get; set; }
+#endif
         /// <summary>Number of outbound calls that failed because the destination number was invalid during this metrics window.</summary>
-        public int? CallInvalidNumberCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallInvalidNumberCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallInvalidNumberCount { get; set; }
+#endif
         /// <summary>Number of outbound calls placed during this metrics window.</summary>
-        public int? CallPlacedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallPlacedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallPlacedCount { get; set; }
+#endif
         /// <summary>Number of connected outbound calls shorter than 30 seconds during this metrics window.</summary>
-        public int? CallShortCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CallShortCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode CallShortCount { get; set; }
+#endif
         /// <summary>Number of MMS messages that failed during this metrics window.</summary>
-        public int? MmsFailedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MmsFailedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode MmsFailedCount { get; set; }
+#endif
         /// <summary>Number of MMS messages sent during this metrics window.</summary>
-        public int? MmsSentCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MmsSentCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode MmsSentCount { get; set; }
+#endif
         /// <summary>Number of SMS messages that failed during this metrics window.</summary>
-        public int? SmsFailedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsFailedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsFailedCount { get; set; }
+#endif
         /// <summary>Number of SMS messages sent during this metrics window.</summary>
-        public int? SmsSentCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsSentCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsSentCount { get; set; }
+#endif
         /// <summary>Time-series buckets that show how the metric changes across the reporting window.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +96,13 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint> Trend { get; set; }
 #endif
         /// <summary>Number of days included in the metrics reporting window.</summary>
-        public int? WindowDays { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? WindowDays { get; set; }
+#nullable restore
+#else
+        public UntypedNode WindowDays { get; set; }
+#endif
         /// <summary>UTC timestamp when the metrics reporting window starts.</summary>
         public DateTimeOffset? WindowStartedAt { get; set; }
         /// <summary>
@@ -70,17 +130,17 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callConnectedCount", n => { CallConnectedCount = n.GetIntValue(); } },
-                { "callFailedCount", n => { CallFailedCount = n.GetIntValue(); } },
-                { "callInvalidNumberCount", n => { CallInvalidNumberCount = n.GetIntValue(); } },
-                { "callPlacedCount", n => { CallPlacedCount = n.GetIntValue(); } },
-                { "callShortCount", n => { CallShortCount = n.GetIntValue(); } },
-                { "mmsFailedCount", n => { MmsFailedCount = n.GetIntValue(); } },
-                { "mmsSentCount", n => { MmsSentCount = n.GetIntValue(); } },
-                { "smsFailedCount", n => { SmsFailedCount = n.GetIntValue(); } },
-                { "smsSentCount", n => { SmsSentCount = n.GetIntValue(); } },
+                { "callConnectedCount", n => { CallConnectedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callFailedCount", n => { CallFailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callInvalidNumberCount", n => { CallInvalidNumberCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callPlacedCount", n => { CallPlacedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callShortCount", n => { CallShortCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "mmsFailedCount", n => { MmsFailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "mmsSentCount", n => { MmsSentCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsFailedCount", n => { SmsFailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsSentCount", n => { SmsSentCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>(global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "windowDays", n => { WindowDays = n.GetIntValue(); } },
+                { "windowDays", n => { WindowDays = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "windowStartedAt", n => { WindowStartedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -91,17 +151,17 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("callConnectedCount", CallConnectedCount);
-            writer.WriteIntValue("callFailedCount", CallFailedCount);
-            writer.WriteIntValue("callInvalidNumberCount", CallInvalidNumberCount);
-            writer.WriteIntValue("callPlacedCount", CallPlacedCount);
-            writer.WriteIntValue("callShortCount", CallShortCount);
-            writer.WriteIntValue("mmsFailedCount", MmsFailedCount);
-            writer.WriteIntValue("mmsSentCount", MmsSentCount);
-            writer.WriteIntValue("smsFailedCount", SmsFailedCount);
-            writer.WriteIntValue("smsSentCount", SmsSentCount);
+            writer.WriteObjectValue<UntypedNode>("callConnectedCount", CallConnectedCount);
+            writer.WriteObjectValue<UntypedNode>("callFailedCount", CallFailedCount);
+            writer.WriteObjectValue<UntypedNode>("callInvalidNumberCount", CallInvalidNumberCount);
+            writer.WriteObjectValue<UntypedNode>("callPlacedCount", CallPlacedCount);
+            writer.WriteObjectValue<UntypedNode>("callShortCount", CallShortCount);
+            writer.WriteObjectValue<UntypedNode>("mmsFailedCount", MmsFailedCount);
+            writer.WriteObjectValue<UntypedNode>("mmsSentCount", MmsSentCount);
+            writer.WriteObjectValue<UntypedNode>("smsFailedCount", SmsFailedCount);
+            writer.WriteObjectValue<UntypedNode>("smsSentCount", SmsSentCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneNumberTrafficTrendPoint>("trend", Trend);
-            writer.WriteIntValue("windowDays", WindowDays);
+            writer.WriteObjectValue<UntypedNode>("windowDays", WindowDays);
             writer.WriteDateTimeOffsetValue("windowStartedAt", WindowStartedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

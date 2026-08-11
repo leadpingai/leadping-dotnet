@@ -16,9 +16,21 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Percentage change between the current and previous reporting periods.</summary>
-        public double? ChangePercent { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ChangePercent { get; set; }
+#nullable restore
+#else
+        public UntypedNode ChangePercent { get; set; }
+#endif
         /// <summary>Metric value for the current reporting period.</summary>
-        public double? Current { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Current { get; set; }
+#nullable restore
+#else
+        public UntypedNode Current { get; set; }
+#endif
         /// <summary>Direction classification for this Leadping analytics comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,7 +40,13 @@ namespace Leadping.OpenApiClient.Models
         public string Direction { get; set; }
 #endif
         /// <summary>Metric value for the preceding comparison period.</summary>
-        public double? Previous { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Previous { get; set; }
+#nullable restore
+#else
+        public UntypedNode Previous { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AnalyticsComparison"/> and sets the default values.
         /// </summary>
@@ -54,10 +72,10 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "changePercent", n => { ChangePercent = n.GetDoubleValue(); } },
-                { "current", n => { Current = n.GetDoubleValue(); } },
+                { "changePercent", n => { ChangePercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "current", n => { Current = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
-                { "previous", n => { Previous = n.GetDoubleValue(); } },
+                { "previous", n => { Previous = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,10 +85,10 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("changePercent", ChangePercent);
-            writer.WriteDoubleValue("current", Current);
+            writer.WriteObjectValue<UntypedNode>("changePercent", ChangePercent);
+            writer.WriteObjectValue<UntypedNode>("current", Current);
             writer.WriteStringValue("direction", Direction);
-            writer.WriteDoubleValue("previous", Previous);
+            writer.WriteObjectValue<UntypedNode>("previous", Previous);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,13 +16,37 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of blocked records represented by this Leadping outbound capacity overview.</summary>
-        public int? BlockedCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? BlockedCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode BlockedCount { get; set; }
+#endif
         /// <summary>Number of cooling phone numbers represented by this Leadping outbound capacity overview.</summary>
-        public int? CoolingPhoneNumbers { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CoolingPhoneNumbers { get; set; }
+#nullable restore
+#else
+        public UntypedNode CoolingPhoneNumbers { get; set; }
+#endif
         /// <summary>Number of healthy phone numbers represented by this Leadping outbound capacity overview.</summary>
-        public int? HealthyPhoneNumbers { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? HealthyPhoneNumbers { get; set; }
+#nullable restore
+#else
+        public UntypedNode HealthyPhoneNumbers { get; set; }
+#endif
         /// <summary>Number of limited phone numbers represented by this Leadping outbound capacity overview.</summary>
-        public int? LimitedPhoneNumbers { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? LimitedPhoneNumbers { get; set; }
+#nullable restore
+#else
+        public UntypedNode LimitedPhoneNumbers { get; set; }
+#endif
         /// <summary>Collection of phone numbers included with this Leadping outbound capacity overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +56,13 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity> PhoneNumbers { get; set; }
 #endif
         /// <summary>Number of phone numbers whose SMS or calling capacity is still ramping up.</summary>
-        public int? RampingPhoneNumbers { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RampingPhoneNumbers { get; set; }
+#nullable restore
+#else
+        public UntypedNode RampingPhoneNumbers { get; set; }
+#endif
         /// <summary>Collection of recent decisions included with this Leadping outbound capacity overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,11 +72,29 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.OutboundQueueItem> RecentDecisions { get; set; }
 #endif
         /// <summary>Total number of scheduled records represented by this Leadping outbound capacity overview.</summary>
-        public int? ScheduledCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ScheduledCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode ScheduledCount { get; set; }
+#endif
         /// <summary>SMS capacity remaining today for the applicable messaging or voice capacity window.</summary>
-        public int? SmsCapacityRemainingToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SmsCapacityRemainingToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode SmsCapacityRemainingToday { get; set; }
+#endif
         /// <summary>Voice capacity remaining today for the applicable messaging or voice capacity window.</summary>
-        public int? VoiceCapacityRemainingToday { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? VoiceCapacityRemainingToday { get; set; }
+#nullable restore
+#else
+        public UntypedNode VoiceCapacityRemainingToday { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundCapacityOverview"/> and sets the default values.
         /// </summary>
@@ -72,16 +120,16 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "blockedCount", n => { BlockedCount = n.GetIntValue(); } },
-                { "coolingPhoneNumbers", n => { CoolingPhoneNumbers = n.GetIntValue(); } },
-                { "healthyPhoneNumbers", n => { HealthyPhoneNumbers = n.GetIntValue(); } },
-                { "limitedPhoneNumbers", n => { LimitedPhoneNumbers = n.GetIntValue(); } },
+                { "blockedCount", n => { BlockedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "coolingPhoneNumbers", n => { CoolingPhoneNumbers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "healthyPhoneNumbers", n => { HealthyPhoneNumbers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "limitedPhoneNumbers", n => { LimitedPhoneNumbers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "phoneNumbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity>(global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rampingPhoneNumbers", n => { RampingPhoneNumbers = n.GetIntValue(); } },
+                { "rampingPhoneNumbers", n => { RampingPhoneNumbers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "recentDecisions", n => { RecentDecisions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundQueueItem>(global::Leadping.OpenApiClient.Models.OutboundQueueItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "scheduledCount", n => { ScheduledCount = n.GetIntValue(); } },
-                { "smsCapacityRemainingToday", n => { SmsCapacityRemainingToday = n.GetIntValue(); } },
-                { "voiceCapacityRemainingToday", n => { VoiceCapacityRemainingToday = n.GetIntValue(); } },
+                { "scheduledCount", n => { ScheduledCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "smsCapacityRemainingToday", n => { SmsCapacityRemainingToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "voiceCapacityRemainingToday", n => { VoiceCapacityRemainingToday = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,16 +139,16 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("blockedCount", BlockedCount);
-            writer.WriteIntValue("coolingPhoneNumbers", CoolingPhoneNumbers);
-            writer.WriteIntValue("healthyPhoneNumbers", HealthyPhoneNumbers);
-            writer.WriteIntValue("limitedPhoneNumbers", LimitedPhoneNumbers);
+            writer.WriteObjectValue<UntypedNode>("blockedCount", BlockedCount);
+            writer.WriteObjectValue<UntypedNode>("coolingPhoneNumbers", CoolingPhoneNumbers);
+            writer.WriteObjectValue<UntypedNode>("healthyPhoneNumbers", HealthyPhoneNumbers);
+            writer.WriteObjectValue<UntypedNode>("limitedPhoneNumbers", LimitedPhoneNumbers);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity>("phoneNumbers", PhoneNumbers);
-            writer.WriteIntValue("rampingPhoneNumbers", RampingPhoneNumbers);
+            writer.WriteObjectValue<UntypedNode>("rampingPhoneNumbers", RampingPhoneNumbers);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OutboundQueueItem>("recentDecisions", RecentDecisions);
-            writer.WriteIntValue("scheduledCount", ScheduledCount);
-            writer.WriteIntValue("smsCapacityRemainingToday", SmsCapacityRemainingToday);
-            writer.WriteIntValue("voiceCapacityRemainingToday", VoiceCapacityRemainingToday);
+            writer.WriteObjectValue<UntypedNode>("scheduledCount", ScheduledCount);
+            writer.WriteObjectValue<UntypedNode>("smsCapacityRemainingToday", SmsCapacityRemainingToday);
+            writer.WriteObjectValue<UntypedNode>("voiceCapacityRemainingToday", VoiceCapacityRemainingToday);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

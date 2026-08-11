@@ -45,7 +45,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Lead date of birth supplied by intake sources and normalized into the lead profile.</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>Direct-post price supplied by the lead source during intake.</summary>
-        public double? DirectPostPrice { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? DirectPostPrice { get; set; }
+#nullable restore
+#else
+        public UntypedNode DirectPostPrice { get; set; }
+#endif
         /// <summary>Email address for the person represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,7 +125,13 @@ namespace Leadping.OpenApiClient.Models
         public string PostalCode { get; set; }
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
-        public double? Price { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Price { get; set; }
+#nullable restore
+#else
+        public UntypedNode Price { get; set; }
+#endif
         /// <summary>Product or offer associated with the lead or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -286,7 +298,7 @@ namespace Leadping.OpenApiClient.Models
                 { "birthDate", n => { BirthDate = n.GetDateValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateValue(); } },
-                { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
+                { "directPostPrice", n => { DirectPostPrice = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
@@ -296,7 +308,7 @@ namespace Leadping.OpenApiClient.Models
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "phoneType", n => { PhoneType = n.GetStringValue(); } },
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
+                { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetStringValue(); } },
                 { "referrer", n => { Referrer = n.GetStringValue(); } },
                 { "sellerLeadId", n => { SellerLeadId = n.GetStringValue(); } },
@@ -328,7 +340,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateValue("birthDate", BirthDate);
             writer.WriteStringValue("city", City);
             writer.WriteDateValue("dateOfBirth", DateOfBirth);
-            writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
+            writer.WriteObjectValue<UntypedNode>("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("firstName", FirstName);
@@ -338,7 +350,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("phoneType", PhoneType);
             writer.WriteStringValue("postalCode", PostalCode);
-            writer.WriteDoubleValue("price", Price);
+            writer.WriteObjectValue<UntypedNode>("price", Price);
             writer.WriteStringValue("product", Product);
             writer.WriteStringValue("referrer", Referrer);
             writer.WriteStringValue("sellerLeadId", SellerLeadId);

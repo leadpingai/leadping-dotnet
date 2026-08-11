@@ -42,7 +42,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when this lead attribution metadata was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Direct-post price supplied by the lead source during intake.</summary>
-        public double? DirectPostPrice { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? DirectPostPrice { get; set; }
+#nullable restore
+#else
+        public UntypedNode DirectPostPrice { get; set; }
+#endif
         /// <summary>External system identifier used to reconcile this lead attribution metadata across integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +100,13 @@ namespace Leadping.OpenApiClient.Models
         public string Origin { get; set; }
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
-        public double? Price { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Price { get; set; }
+#nullable restore
+#else
+        public UntypedNode Price { get; set; }
+#endif
         /// <summary>Product or offer associated with the lead or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,7 +282,7 @@ namespace Leadping.OpenApiClient.Models
                 { "complianceBlockedReason", n => { ComplianceBlockedReason = n.GetStringValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
+                { "directPostPrice", n => { DirectPostPrice = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "importBatchId", n => { ImportBatchId = n.GetStringValue(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
@@ -278,7 +290,7 @@ namespace Leadping.OpenApiClient.Models
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetDoubleValue(); } },
+                { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetStringValue(); } },
                 { "pubId", n => { PubId = n.GetStringValue(); } },
                 { "referrer", n => { Referrer = n.GetStringValue(); } },
@@ -314,7 +326,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("complianceBlockedReason", ComplianceBlockedReason);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
+            writer.WriteObjectValue<UntypedNode>("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("importBatchId", ImportBatchId);
             writer.WriteStringValue("ipAddress", IpAddress);
@@ -322,7 +334,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("landingPage", LandingPage);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("origin", Origin);
-            writer.WriteDoubleValue("price", Price);
+            writer.WriteObjectValue<UntypedNode>("price", Price);
             writer.WriteStringValue("product", Product);
             writer.WriteStringValue("pubId", PubId);
             writer.WriteStringValue("referrer", Referrer);

@@ -95,8 +95,15 @@ namespace Leadping.OpenApiClient.Analytics.My
         public partial class MyRequestBuilderGetQueryParameters 
         {
             /// <summary>Optional number of recent days to include when explicit timestamps are not supplied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("days")]
-            public int? Days { get; set; }
+            public string? Days { get; set; }
+#nullable restore
+#else
+            [QueryParameter("days")]
+            public string Days { get; set; }
+#endif
             /// <summary>Optional exclusive end timestamp for the analytics period.</summary>
             [QueryParameter("endAt")]
             public DateTimeOffset? EndAt { get; set; }

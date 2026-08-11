@@ -32,7 +32,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-        public double? BillableAmount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? BillableAmount { get; set; }
+#nullable restore
+#else
+        public UntypedNode BillableAmount { get; set; }
+#endif
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -266,7 +272,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
-                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
+                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
                 { "cancelReason", n => { CancelReason = n.GetStringValue(); } },
@@ -315,7 +321,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
             writer.WriteStringValue("actorUserId", ActorUserId);
-            writer.WriteDoubleValue("billableAmount", BillableAmount);
+            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
             writer.WriteDateTimeOffsetValue("canceledAt", CanceledAt);

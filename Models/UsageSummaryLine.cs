@@ -20,11 +20,29 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Channel for this usage summary line.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
         /// <summary>The monetary customer charge amount for this usage summary line.</summary>
-        public double? CustomerChargeAmount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CustomerChargeAmount { get; set; }
+#nullable restore
+#else
+        public UntypedNode CustomerChargeAmount { get; set; }
+#endif
         /// <summary>Quantity for this usage summary line.</summary>
-        public double? Quantity { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Quantity { get; set; }
+#nullable restore
+#else
+        public UntypedNode Quantity { get; set; }
+#endif
         /// <summary>The record count for this usage summary line.</summary>
-        public int? RecordCount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RecordCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode RecordCount { get; set; }
+#endif
         /// <summary>The current status for this usage summary line.</summary>
         public global::Leadping.OpenApiClient.Models.UsageStatus? Status { get; set; }
         /// <summary>
@@ -54,9 +72,9 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "billableUnit", n => { BillableUnit = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>(); } },
                 { "channel", n => { Channel = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>(); } },
-                { "customerChargeAmount", n => { CustomerChargeAmount = n.GetDoubleValue(); } },
-                { "quantity", n => { Quantity = n.GetDoubleValue(); } },
-                { "recordCount", n => { RecordCount = n.GetIntValue(); } },
+                { "customerChargeAmount", n => { CustomerChargeAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "quantity", n => { Quantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "recordCount", n => { RecordCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UsageStatus>(); } },
             };
         }
@@ -69,9 +87,9 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BillableUnit>("billableUnit", BillableUnit);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageChannel>("channel", Channel);
-            writer.WriteDoubleValue("customerChargeAmount", CustomerChargeAmount);
-            writer.WriteDoubleValue("quantity", Quantity);
-            writer.WriteIntValue("recordCount", RecordCount);
+            writer.WriteObjectValue<UntypedNode>("customerChargeAmount", CustomerChargeAmount);
+            writer.WriteObjectValue<UntypedNode>("quantity", Quantity);
+            writer.WriteObjectValue<UntypedNode>("recordCount", RecordCount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UsageStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

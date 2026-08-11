@@ -34,7 +34,13 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange Range { get; set; }
 #endif
         /// <summary>Total number of leads records represented by this Leadping source metrics.</summary>
-        public int? TotalLeads { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? TotalLeads { get; set; }
+#nullable restore
+#else
+        public UntypedNode TotalLeads { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SourceMetricsResponse"/> and sets the default values.
         /// </summary>
@@ -63,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
                 { "generatedAt", n => { GeneratedAt = n.GetDateTimeOffsetValue(); } },
                 { "points", n => { Points = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "range", n => { Range = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsDateRange>(global::Leadping.OpenApiClient.Models.AnalyticsDateRange.CreateFromDiscriminatorValue); } },
-                { "totalLeads", n => { TotalLeads = n.GetIntValue(); } },
+                { "totalLeads", n => { TotalLeads = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,7 +82,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("generatedAt", GeneratedAt);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>("points", Points);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsDateRange>("range", Range);
-            writer.WriteIntValue("totalLeads", TotalLeads);
+            writer.WriteObjectValue<UntypedNode>("totalLeads", TotalLeads);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

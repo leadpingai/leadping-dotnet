@@ -16,7 +16,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The health score metric for this SMS warmup status.</summary>
-        public int? HealthScore { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? HealthScore { get; set; }
+#nullable restore
+#else
+        public UntypedNode HealthScore { get; set; }
+#endif
         /// <summary>The current delivery-health assessment for this SMS warmup status.</summary>
         public global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus? HealthStatus { get; set; }
         /// <summary>The phone number associated with this SMS warmup status.</summary>
@@ -36,7 +42,13 @@ namespace Leadping.OpenApiClient.Models
         public string PhoneNumberId { get; set; }
 #endif
         /// <summary>The progress percent metric for this SMS warmup status.</summary>
-        public int? ProgressPercent { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ProgressPercent { get; set; }
+#nullable restore
+#else
+        public UntypedNode ProgressPercent { get; set; }
+#endif
         /// <summary>The current state for this SMS warmup status.</summary>
         public global::Leadping.OpenApiClient.Models.SmsReadinessState? Status { get; set; }
         /// <summary>The current UI state for this SMS warmup status.</summary>
@@ -74,11 +86,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "healthScore", n => { HealthScore = n.GetIntValue(); } },
+                { "healthScore", n => { HealthScore = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus>(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "progressPercent", n => { ProgressPercent = n.GetIntValue(); } },
+                { "progressPercent", n => { ProgressPercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessState>(); } },
                 { "uiState", n => { UiState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SmsReadinessUiState>(global::Leadping.OpenApiClient.Models.SmsReadinessUiState.CreateFromDiscriminatorValue); } },
                 { "warmupEnabled", n => { WarmupEnabled = n.GetBoolValue(); } },
@@ -91,11 +103,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("healthScore", HealthScore);
+            writer.WriteObjectValue<UntypedNode>("healthScore", HealthScore);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus>("healthStatus", HealthStatus);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
-            writer.WriteIntValue("progressPercent", ProgressPercent);
+            writer.WriteObjectValue<UntypedNode>("progressPercent", ProgressPercent);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsReadinessState>("status", Status);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SmsReadinessUiState>("uiState", UiState);
             writer.WriteBoolValue("warmupEnabled", WarmupEnabled);

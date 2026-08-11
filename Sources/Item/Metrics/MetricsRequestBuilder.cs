@@ -93,8 +93,15 @@ namespace Leadping.OpenApiClient.Sources.Item.Metrics
         public partial class MetricsRequestBuilderGetQueryParameters 
         {
             /// <summary>Optional rolling day count when explicit dates are not provided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("days")]
-            public int? Days { get; set; }
+            public string? Days { get; set; }
+#nullable restore
+#else
+            [QueryParameter("days")]
+            public string Days { get; set; }
+#endif
             /// <summary>Optional end date/time for the metric range.</summary>
             [QueryParameter("endAt")]
             public DateTimeOffset? EndAt { get; set; }
