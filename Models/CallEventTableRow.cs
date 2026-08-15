@@ -175,6 +175,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string User { get; set; }
 #endif
+        /// <summary>Email address for the person or agent who initiated this call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserEmail { get; set; }
+#nullable restore
+#else
+        public string UserEmail { get; set; }
+#endif
         /// <summary>User ID associated with the person or agent who initiated this call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,6 +190,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string UserId { get; set; }
+#endif
+        /// <summary>Display name for the person or agent who initiated this call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserName { get; set; }
+#nullable restore
+#else
+        public string UserName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CallEventTableRow"/> and sets the default values.
@@ -231,7 +247,9 @@ namespace Leadping.OpenApiClient.Models
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
                 { "user", n => { User = n.GetStringValue(); } },
+                { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -264,7 +282,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("statusReason", StatusReason);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
             writer.WriteStringValue("user", User);
+            writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);
+            writer.WriteStringValue("userName", UserName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

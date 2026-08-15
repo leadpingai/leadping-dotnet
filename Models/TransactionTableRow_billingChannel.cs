@@ -51,6 +51,10 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         OneZerodlc,
         #pragma warning restore CS1591
+        [EnumMember(Value = "payment")]
+        #pragma warning disable CS1591
+        Payment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connection")]
         #pragma warning disable CS1591
         Connection,

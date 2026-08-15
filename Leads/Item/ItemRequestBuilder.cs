@@ -70,7 +70,7 @@ namespace Leadping.OpenApiClient.Leads.Item
         {
         }
         /// <summary>
-        /// Deletes a lead from the current organization when it should no longer appear in communication, routing, or event workflows.
+        /// Marks a lead as deleted so it no longer appears in user-facing lead, conversation, routing, or event workflows. The stored lead,conversation, and event records are retained.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Leadping.OpenApiClient.Leads.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a lead from the current organization when it should no longer appear in communication, routing, or event workflows.
+        /// Marks a lead as deleted so it no longer appears in user-facing lead, conversation, routing, or event workflows. The stored lead,conversation, and event records are retained.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -61,6 +61,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadProfile Customer { get; set; }
 #endif
+        /// <summary>UTC timestamp when this lead was soft deleted.</summary>
+        public DateTimeOffset? DeletedAt { get; set; }
+        /// <summary>User ID of the person who soft deleted this lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeletedByUserId { get; set; }
+#nullable restore
+#else
+        public string DeletedByUserId { get; set; }
+#endif
         /// <summary>Indicates whether this lead response is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The unique identifier for the entity.</summary>
@@ -90,6 +100,18 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity PhoneIdentity { get; set; }
+#endif
+        /// <summary>Defines the asynchronous verification and enrichment lifecycle for a lead.</summary>
+        public global::Leadping.OpenApiClient.Models.LeadResponse_processingStatus? ProcessingStatus { get; set; }
+        /// <summary>UTC timestamp when the processing stage last changed.</summary>
+        public DateTimeOffset? ProcessingStatusChangedAt { get; set; }
+        /// <summary>Explanation when asynchronous lead processing is blocked or fails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProcessingStatusReason { get; set; }
+#nullable restore
+#else
+        public string ProcessingStatusReason { get; set; }
 #endif
         /// <summary>Tags currently attached to this lead, source, or record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,12 +154,17 @@ namespace Leadping.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "customer", n => { Customer = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>(global::Leadping.OpenApiClient.Models.LeadProfile.CreateFromDiscriminatorValue); } },
+                { "deletedAt", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
+                { "deletedByUserId", n => { DeletedByUserId = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "phoneIdentity", n => { PhoneIdentity = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity>(global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity.CreateFromDiscriminatorValue); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadResponse_processingStatus>(); } },
+                { "processingStatusChangedAt", n => { ProcessingStatusChangedAt = n.GetDateTimeOffsetValue(); } },
+                { "processingStatusReason", n => { ProcessingStatusReason = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -156,12 +183,17 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>("customer", Customer);
+            writer.WriteDateTimeOffsetValue("deletedAt", DeletedAt);
+            writer.WriteStringValue("deletedByUserId", DeletedByUserId);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>("metadata", Metadata);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity>("phoneIdentity", PhoneIdentity);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadResponse_processingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteDateTimeOffsetValue("processingStatusChangedAt", ProcessingStatusChangedAt);
+            writer.WriteStringValue("processingStatusReason", ProcessingStatusReason);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }

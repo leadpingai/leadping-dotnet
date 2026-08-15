@@ -97,6 +97,18 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode Price { get; set; }
 #endif
+        /// <summary>Defines the asynchronous verification and enrichment lifecycle for a lead.</summary>
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus? ProcessingStatus { get; set; }
+        /// <summary>UTC timestamp when the processing stage last changed.</summary>
+        public DateTimeOffset? ProcessingStatusChangedAt { get; set; }
+        /// <summary>Explanation when asynchronous lead processing is blocked or fails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProcessingStatusReason { get; set; }
+#nullable restore
+#else
+        public string ProcessingStatusReason { get; set; }
+#endif
         /// <summary>Identifier and display name of the related source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +182,9 @@ namespace Leadping.OpenApiClient.Models
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>(global::Leadping.OpenApiClient.Models.LeadTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus>(); } },
+                { "processingStatusChangedAt", n => { ProcessingStatusChangedAt = n.GetDateTimeOffsetValue(); } },
+                { "processingStatusReason", n => { ProcessingStatusReason = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>(global::Leadping.OpenApiClient.Models.LeadTableRow_source.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusTone", n => { StatusTone = n.GetStringValue(); } },
@@ -198,6 +213,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<UntypedNode>("price", Price);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteDateTimeOffsetValue("processingStatusChangedAt", ProcessingStatusChangedAt);
+            writer.WriteStringValue("processingStatusReason", ProcessingStatusReason);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_source>("source", Source);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusTone", StatusTone);

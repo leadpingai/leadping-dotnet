@@ -67,6 +67,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser CreatedByUser { get; set; }
 #endif
+        /// <summary>Email used to resolve the creator&apos;s avatar.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByUserEmail { get; set; }
+#nullable restore
+#else
+        public string CreatedByUserEmail { get; set; }
+#endif
         /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +182,7 @@ namespace Leadping.OpenApiClient.Models
                 { "costPerLead", n => { CostPerLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdByUser", n => { CreatedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser>(global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser.CreateFromDiscriminatorValue); } },
+                { "createdByUserEmail", n => { CreatedByUserEmail = n.GetStringValue(); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultTags", n => { DefaultTags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -204,6 +213,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser>("createdByUser", CreatedByUser);
+            writer.WriteStringValue("createdByUserEmail", CreatedByUserEmail);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("defaultTags", DefaultTags);
             writer.WriteStringValue("description", Description);

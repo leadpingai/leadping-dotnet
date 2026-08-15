@@ -171,6 +171,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_user User { get; set; }
 #endif
+        /// <summary>Email address for the user connected to this event detail response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserEmail { get; set; }
+#nullable restore
+#else
+        public string UserEmail { get; set; }
+#endif
         /// <summary>User ID associated with the activity that created this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,6 +242,7 @@ namespace Leadping.OpenApiClient.Models
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
                 { "undeliverableAt", n => { UndeliverableAt = n.GetDateTimeOffsetValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.EventDetailResponse_user>(global::Leadping.OpenApiClient.Models.EventDetailResponse_user.CreateFromDiscriminatorValue); } },
+                { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -274,6 +283,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
             writer.WriteDateTimeOffsetValue("undeliverableAt", UndeliverableAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.EventDetailResponse_user>("user", User);
+            writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
