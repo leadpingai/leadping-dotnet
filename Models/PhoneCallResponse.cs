@@ -49,6 +49,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
+        /// <summary>Ordered diagnostic entries recorded while Leadping processed this call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>? ConsoleEntries { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry> ConsoleEntries { get; set; }
+#endif
         /// <summary>Conversation ID that links this phone call to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,6 +199,7 @@ namespace Leadping.OpenApiClient.Models
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "callerId", n => { CallerId = n.GetStringValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
+                { "consoleEntries", n => { ConsoleEntries = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>(global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
@@ -225,6 +234,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteStringValue("callerId", CallerId);
             writer.WriteStringValue("campaignId", CampaignId);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>("consoleEntries", ConsoleEntries);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("direction", Direction);

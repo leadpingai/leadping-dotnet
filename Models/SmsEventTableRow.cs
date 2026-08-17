@@ -67,6 +67,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceAction { get; set; }
 #endif
+        /// <summary>Ordered diagnostic entries recorded while Leadping processed this message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>? ConsoleEntries { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry> ConsoleEntries { get; set; }
+#endif
         /// <summary>Conversation ID that links this SMS event table row to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -278,6 +286,7 @@ namespace Leadping.OpenApiClient.Models
                 { "cancelReason", n => { CancelReason = n.GetStringValue(); } },
                 { "canceledAt", n => { CanceledAt = n.GetDateTimeOffsetValue(); } },
                 { "complianceAction", n => { ComplianceAction = n.GetStringValue(); } },
+                { "consoleEntries", n => { ConsoleEntries = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>(global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deliveredAt", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
@@ -327,6 +336,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("canceledAt", CanceledAt);
             writer.WriteStringValue("cancelReason", CancelReason);
             writer.WriteStringValue("complianceAction", ComplianceAction);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>("consoleEntries", ConsoleEntries);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDateTimeOffsetValue("deliveredAt", DeliveredAt);
