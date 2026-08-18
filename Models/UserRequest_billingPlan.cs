@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Billing Plan values.</summary>
+    /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserRequest_billingPlan
     {

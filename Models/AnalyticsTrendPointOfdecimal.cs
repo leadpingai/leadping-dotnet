@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents analytics trend point data exposed by Leadping analytics.
+    /// Associates a typed analytics value with one normalized time bucket in a trend series.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsTrendPointOfdecimal : IAdditionalDataHolder, IParsable

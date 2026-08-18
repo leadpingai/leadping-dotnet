@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents outbound capacity overview data used by Leadping.
+    /// Summarizes organization-wide SMS and voice sending capacity, phone-number health, and recent outbound pacing decisions.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutboundCapacityOverview : IAdditionalDataHolder, IParsable

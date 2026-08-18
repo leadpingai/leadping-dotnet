@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Activation Payment Status values.</summary>
+    /// <summary>Describes whether valid funding and payment prerequisites are satisfied during organization activation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ActivationPaymentStatus
     {

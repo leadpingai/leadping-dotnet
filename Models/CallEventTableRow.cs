@@ -139,7 +139,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RecordingUrl { get; set; }
 #endif
-        /// <summary>Defines the supported Phone Call Status values.</summary>
+        /// <summary>Describes the durable business outcome of a Leadping phone call after provider status normalization.</summary>
         public global::Leadping.OpenApiClient.Models.CallEventTableRow_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this call event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthLabel { get; set; }
 #endif
-        /// <summary>Defines the supported SMS readiness health assessments.</summary>
+        /// <summary>Summarizes the severity of conditions affecting an organization&apos;s ability to send compliant SMS or MMS traffic.</summary>
         public global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse_healthStatus? HealthStatus { get; set; }
         /// <summary>Warning text that explains a potential health or readiness issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

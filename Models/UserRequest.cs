@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines the supported Billing Plan values.</summary>
+        /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.UserRequest_billingPlan? BillingPlan { get; set; }
         /// <summary>User compliance settings and attestations captured for Leadping account review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
         public long? OrganizationMemberAssignedQuantity { get; set; }
         /// <summary>Number of user licenses included in the organization&apos;s subscription plan.</summary>
         public long? OrganizationMemberQuantity { get; set; }
-        /// <summary>Defines the supported Billing Plan values.</summary>
+        /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan? PendingBillingPlan { get; set; }
         /// <summary>Number of phone numbers included in the organization&apos;s subscription plan.</summary>
         public long? PhoneNumberQuantity { get; set; }

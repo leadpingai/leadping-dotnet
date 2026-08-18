@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Customer Activation Status values.</summary>
+    /// <summary>Summarizes an organization&apos;s overall progress from initial Leadping onboarding through launch readiness.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationTableRow_activationStatus
     {

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer communication usage point data exposed by Leadping analytics.
+    /// Measures organization messaging and calling activity within one analytics time bucket.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerCommunicationUsagePoint : IAdditionalDataHolder, IParsable

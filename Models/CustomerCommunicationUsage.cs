@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer communication usage data exposed by Leadping analytics.
+    /// Aggregates an organization&apos;s SMS, MMS, and calling activity, delivery outcomes, and billable usage over time.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerCommunicationUsage : IAdditionalDataHolder, IParsable

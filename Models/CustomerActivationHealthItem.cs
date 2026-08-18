@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer activation health item data exposed by Leadping analytics.
+    /// Describes the state, severity, and recommended next action for one organization activation requirement.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerActivationHealthItem : IAdditionalDataHolder, IParsable

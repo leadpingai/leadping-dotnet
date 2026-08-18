@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Organization Invitation Status values.</summary>
+    /// <summary>Describes the lifecycle of an organization membership invitation from issuance through acceptance, expiration, or revocation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationInvitationStatus
     {

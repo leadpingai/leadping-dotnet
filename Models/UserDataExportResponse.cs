@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response model containing user data export data returned by the Leadping API.
+    /// Describes the lifecycle, scope, progress, retention, and downloadable artifacts of a Leadping user-data export request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDataExportResponse : IAdditionalDataHolder, IParsable

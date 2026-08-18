@@ -127,7 +127,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the call started ringing.</summary>
         public DateTimeOffset? RingingAt { get; set; }
-        /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
+        /// <summary>Explains why Leadping selected, rejected, or substituted an outgoing caller or messaging number.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneCallResponse_selectionReason? SelectionReason { get; set; }
         /// <summary>Lead source ID used for attribution and routing on this call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

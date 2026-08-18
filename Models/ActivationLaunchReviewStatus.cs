@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Activation Launch Review Status values.</summary>
+    /// <summary>Describes the administrative review decision that determines whether an organization can launch Leadping workflows.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ActivationLaunchReviewStatus
     {

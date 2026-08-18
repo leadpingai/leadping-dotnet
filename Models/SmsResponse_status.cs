@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported SMS Message Status values.</summary>
+    /// <summary>Describes the normalized lifecycle of an SMS or MMS message from scheduling through delivery or failure.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SmsResponse_status
     {

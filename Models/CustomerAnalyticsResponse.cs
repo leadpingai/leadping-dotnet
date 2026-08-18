@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response model containing customer analytics data returned by the Leadping API.
+    /// Aggregates an organization&apos;s lead performance, response speed, communication usage, automation health, and activation insights.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerAnalyticsResponse : IAdditionalDataHolder, IParsable

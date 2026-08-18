@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported SMS Traffic Type values.</summary>
+    /// <summary>Classifies messaging traffic by conversational, informational, marketing, or other compliance-relevant purpose.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SmsEventTableRow_trafficType
     {

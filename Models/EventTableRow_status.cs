@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Event timeline status values.</summary>
+    /// <summary>Provides the customer-facing outcome shown for an item in a lead or conversation timeline.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EventTableRow_status
     {

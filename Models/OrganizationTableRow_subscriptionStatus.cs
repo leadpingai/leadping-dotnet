@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Subscription Status values.</summary>
+    /// <summary>Describes an organization&apos;s billing subscription lifecycle, including trial, active, delinquent, canceled, and expired states.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationTableRow_subscriptionStatus
     {

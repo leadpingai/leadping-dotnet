@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents outbound phone number capacity data used by Leadping.
+    /// Reports the sending capacity, current load, and availability of a phone number considered for outbound delivery.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutboundPhoneNumberCapacity : IAdditionalDataHolder, IParsable

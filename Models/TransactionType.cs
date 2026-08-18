@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Transaction Type values.</summary>
+    /// <summary>Classifies a wallet transaction as a debit, credit, refund, adjustment, deposit, or other balance movement.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionType
     {

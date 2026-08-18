@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported user data export statuses values.</summary>
+    /// <summary>Identifies the preparation, availability, failure, expiration, or deletion stage of a Leadping user-data export.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserDataExportStatuses
     {

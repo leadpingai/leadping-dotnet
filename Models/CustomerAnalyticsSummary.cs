@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer analytics summary data exposed by Leadping analytics.
+    /// Summarizes an organization&apos;s primary lead, response, communication, and conversion KPIs for the selected period.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerAnalyticsSummary : IAdditionalDataHolder, IParsable

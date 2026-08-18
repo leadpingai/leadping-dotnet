@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response model for lead status change data.
+    /// Describes an auditable lead status transition, including the previous and new status, source, actor, and effective time.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadStatusChangeResponse : IAdditionalDataHolder, IParsable

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Event timeline type values.</summary>
+    /// <summary>Classifies the kind of activity displayed in a lead or conversation event timeline.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EventTimelineType
     {

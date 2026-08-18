@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer automation health data exposed by Leadping analytics.
+    /// Summarizes automation coverage, execution success, failures, and workflows requiring organization attention.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerAutomationHealth : IAdditionalDataHolder, IParsable

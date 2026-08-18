@@ -201,7 +201,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? SendingStartedAt { get; set; }
         /// <summary>UTC timestamp when Leadping sent this message to the provider.</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>Defines the supported SMS Message Status values.</summary>
+        /// <summary>Describes the normalized lifecycle of an SMS or MMS message from scheduling through delivery or failure.</summary>
         public global::Leadping.OpenApiClient.Models.SmsEventTableRow_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this SMS event table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -227,7 +227,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ToPhoneNumber { get; set; }
 #endif
-        /// <summary>Defines the supported SMS Traffic Type values.</summary>
+        /// <summary>Classifies messaging traffic by conversational, informational, marketing, or other compliance-relevant purpose.</summary>
         public global::Leadping.OpenApiClient.Models.SmsEventTableRow_trafficType? TrafficType { get; set; }
         /// <summary>UTC timestamp when the provider marked the message undeliverable.</summary>
         public DateTimeOffset? UndeliverableAt { get; set; }

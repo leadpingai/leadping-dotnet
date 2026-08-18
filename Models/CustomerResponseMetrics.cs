@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer response metrics data exposed by Leadping analytics.
+    /// Measures how quickly and consistently an organization responds to leads across supported communication channels.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerResponseMetrics : IAdditionalDataHolder, IParsable

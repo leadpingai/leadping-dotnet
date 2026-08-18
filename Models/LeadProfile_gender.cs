@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Represents a gender classification used for demographic or identification purposes.</summary>
+    /// <summary>Classifies a lead&apos;s self-reported gender when required by a qualification, demographic, or integration workflow.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LeadProfile_gender
     {

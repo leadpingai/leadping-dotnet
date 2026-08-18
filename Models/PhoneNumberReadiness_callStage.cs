@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported voice call warmup stages for a Leadping-managed phone number.</summary>
+    /// <summary>Identifies the current traffic-ramp stage of controlled voice warmup for a Leadping-managed phone number.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PhoneNumberReadiness_callStage
     {

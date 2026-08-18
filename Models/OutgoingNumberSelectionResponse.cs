@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthLabel { get; set; }
 #endif
-        /// <summary>Defines the supported SMS readiness health assessments.</summary>
+        /// <summary>Summarizes the severity of conditions affecting an organization&apos;s ability to send compliant SMS or MMS traffic.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse_healthStatus? HealthStatus { get; set; }
         /// <summary>Warning text that explains a potential health or readiness issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ReasonLabel { get; set; }
 #endif
-        /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
+        /// <summary>Explains why Leadping selected, rejected, or substituted an outgoing caller or messaging number.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionResponse_selectionReason? SelectionReason { get; set; }
         /// <summary>Human-readable setup guidance shown for this outgoing number selection response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

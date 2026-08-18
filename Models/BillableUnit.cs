@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Billable Unit values.</summary>
+    /// <summary>Identifies the metered unit used to price Leadping usage, such as a message, call minute, lookup, or phone number.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BillableUnit
     {

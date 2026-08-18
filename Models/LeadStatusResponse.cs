@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a configurable status that can be assigned to leads.
+    /// Describes an organization-defined lead status used to classify pipeline progress, drive automation, and report lifecycle outcomes.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadStatusResponse : IAdditionalDataHolder, IParsable

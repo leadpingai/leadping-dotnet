@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents outbound queue item data used by Leadping.
+    /// Describes a queued or recently evaluated outbound delivery request and the pacing decision that controls when it may be sent.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutboundQueueItem : IAdditionalDataHolder, IParsable

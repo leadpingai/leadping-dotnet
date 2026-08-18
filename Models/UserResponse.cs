@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines the supported Billing Plan values.</summary>
+        /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_billingPlan? BillingPlan { get; set; }
         /// <summary>Customer-safe billing state for the user&apos;s currently selected organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +147,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> Roles { get; set; }
 #endif
-        /// <summary>Defines the supported Subscription Status values.</summary>
+        /// <summary>Describes an organization&apos;s billing subscription lifecycle, including trial, active, delinquent, canceled, and expired states.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus? SubscriptionStatus { get; set; }
         /// <summary>IANA time zone identifier used when displaying dates and times for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

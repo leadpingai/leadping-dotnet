@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response model containing user data export file data returned by the Leadping API.
+    /// Describes a file included in a user-data export, including its logical category, media type, size, and integrity metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserDataExportFile : IAdditionalDataHolder, IParsable

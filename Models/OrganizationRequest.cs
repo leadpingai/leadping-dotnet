@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SecondaryName { get; set; }
 #endif
-        /// <summary>Defines the supported Organization Status values.</summary>
+        /// <summary>Describes an organization&apos;s account lifecycle and whether it can actively use Leadping services.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationRequest_status? Status { get; set; }
         /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

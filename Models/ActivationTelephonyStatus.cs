@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Activation Telephony Status values.</summary>
+    /// <summary>Describes whether phone numbers, calling, messaging, and provider resources are ready for organization launch.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ActivationTelephonyStatus
     {

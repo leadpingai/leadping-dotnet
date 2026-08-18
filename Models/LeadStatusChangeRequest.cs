@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request model for creating or updating a lead status change.
+    /// Defines a lead status transition or correction, including its target status, effective time, source, and explanatory context.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadStatusChangeRequest : IAdditionalDataHolder, IParsable

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Usage Channel values.</summary>
+    /// <summary>Identifies the messaging, calling, phone-number, lookup, or platform channel that generated billable usage.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionResponse_billingChannel
     {

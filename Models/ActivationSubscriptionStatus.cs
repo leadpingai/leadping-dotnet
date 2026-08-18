@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Activation Subscription Status values.</summary>
+    /// <summary>Describes whether an organization&apos;s subscription is ready, blocked, or still incomplete during activation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ActivationSubscriptionStatus
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Website Lifecycle Status values.</summary>
+    /// <summary>Describes an organization website&apos;s lifecycle from discovery and verification through activation, suspension, or removal.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WebsiteLifecycleStatus
     {

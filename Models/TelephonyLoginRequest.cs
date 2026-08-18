@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Request model for telephony login token generation.
+    /// Identifies the Leadping user and calling context for which a short-lived telephony client token should be issued.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TelephonyLoginRequest : IAdditionalDataHolder, IParsable

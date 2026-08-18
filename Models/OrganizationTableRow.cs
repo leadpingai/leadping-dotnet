@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Account balance for this organization.</summary>
         public double? AccountBalance { get; set; }
-        /// <summary>Defines the supported Customer Activation Status values.</summary>
+        /// <summary>Summarizes an organization&apos;s overall progress from initial Leadping onboarding through launch readiness.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_activationStatus? ActivationStatus { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +45,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The total number of tracked uses for this organization API key.</summary>
         public long? ApiKeyTotalUses { get; set; }
-        /// <summary>Defines the supported Billing Plan values.</summary>
+        /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_billingPlan? BillingPlan { get; set; }
         /// <summary>Whether this organization is enabled.</summary>
         public bool? Enabled { get; set; }
@@ -97,15 +97,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>Defines the supported Organization Setup Step values.</summary>
+        /// <summary>Identifies a discrete billing, telephony, compliance, or configuration stage in organization provisioning.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_setupStep? SetupStep { get; set; }
-        /// <summary>Defines the supported Organization Status values.</summary>
+        /// <summary>Describes an organization&apos;s account lifecycle and whether it can actively use Leadping services.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_status? Status { get; set; }
         /// <summary>Date and time when this Leadping organization table row was subscription cancel.</summary>
         public DateTimeOffset? SubscriptionCancelAt { get; set; }
-        /// <summary>Defines the supported Subscription Status values.</summary>
+        /// <summary>Describes an organization&apos;s billing subscription lifecycle, including trial, active, delinquent, canceled, and expired states.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_subscriptionStatus? SubscriptionStatus { get; set; }
-        /// <summary>Defines the supported 10DLC Application Status values.</summary>
+        /// <summary>Describes an organization&apos;s overall 10DLC registration lifecycle across brand and messaging campaign submission.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_tenDlcStatus? TenDlcStatus { get; set; }
         /// <summary>The user count for this organization.</summary>
         public int? UserCount { get; set; }
@@ -117,7 +117,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Website { get; set; }
 #endif
-        /// <summary>Defines the supported Website Lifecycle Status values.</summary>
+        /// <summary>Describes an organization website&apos;s lifecycle from discovery and verification through activation, suspension, or removal.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_websiteStatus? WebsiteStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationTableRow"/> and sets the default values.

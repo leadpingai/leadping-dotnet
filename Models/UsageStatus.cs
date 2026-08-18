@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Usage Record Status values.</summary>
+    /// <summary>Describes whether a metered usage record is pending, rated, billed, reconciled, excluded, or failed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UsageStatus
     {

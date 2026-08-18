@@ -43,9 +43,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProviderPricingVersion { get; set; }
 #endif
-        /// <summary>Identifies the outcome of a phone identity lookup action.</summary>
+        /// <summary>The processing outcome reported for the phone identity lookup.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneIdentityLookupActionStatus? Status { get; set; }
-        /// <summary>Identifies the kind of lookup action performed for a phone identity.</summary>
+        /// <summary>The category of enrichment, validation, or reputation lookup that was performed.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneIdentityLookupActionType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction"/> and sets the default values.

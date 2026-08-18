@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Organization Status values.</summary>
+    /// <summary>Describes an organization&apos;s account lifecycle and whether it can actively use Leadping services.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationResponse_status
     {

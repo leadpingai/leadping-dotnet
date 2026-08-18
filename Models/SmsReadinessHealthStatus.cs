@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported SMS readiness health assessments.</summary>
+    /// <summary>Summarizes the severity of conditions affecting an organization&apos;s ability to send compliant SMS or MMS traffic.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SmsReadinessHealthStatus
     {

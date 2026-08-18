@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>Defines the supported Outgoing Number Channel values.</summary>
+        /// <summary>Identifies whether an outgoing phone number is eligible for voice, SMS, MMS, or another communication channel.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionRequest_channel? Channel { get; set; }
         /// <summary>Conversation ID that links this outgoing number selection request to the Leadping inbox thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

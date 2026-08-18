@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported User Setup Status values.</summary>
+    /// <summary>Describes a user&apos;s progress through required Leadping profile and account setup tasks.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationResponse_setupStatus
     {

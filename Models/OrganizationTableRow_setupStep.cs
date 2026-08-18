@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Organization Setup Step values.</summary>
+    /// <summary>Identifies a discrete billing, telephony, compliance, or configuration stage in organization provisioning.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationTableRow_setupStep
     {

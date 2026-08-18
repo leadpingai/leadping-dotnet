@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Marital Status Type values.</summary>
+    /// <summary>Classifies a lead&apos;s reported marital status when required by a qualification or integration workflow.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LeadProfile_maritalStatus
     {

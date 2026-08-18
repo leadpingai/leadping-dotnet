@@ -13,7 +13,7 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationSwitchOption : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Defines the supported Customer Activation Status values.</summary>
+        /// <summary>Summarizes an organization&apos;s overall progress from initial Leadping onboarding through launch readiness.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_activationStatus? ActivationStatus { get; set; }
         /// <summary>Activation summary for this organization switch option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,13 +49,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether needs admin review applies to this organization switch option.</summary>
         public bool? NeedsAdminReview { get; set; }
-        /// <summary>Defines the supported Organization Status values.</summary>
+        /// <summary>Describes an organization&apos;s account lifecycle and whether it can actively use Leadping services.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_organizationStatus? OrganizationStatus { get; set; }
         /// <summary>Whether ready for customer traffic applies to this organization switch option.</summary>
         public bool? ReadyForCustomerTraffic { get; set; }
         /// <summary>Role for this organization switch option.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
-        /// <summary>Defines the supported 10DLC Application Status values.</summary>
+        /// <summary>Describes an organization&apos;s overall 10DLC registration lifecycle across brand and messaging campaign submission.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_tenDlcStatus? TenDlcStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationSwitchOption"/> and sets the default values.

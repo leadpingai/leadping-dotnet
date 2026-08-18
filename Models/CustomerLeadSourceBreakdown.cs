@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer lead source breakdown data exposed by Leadping analytics.
+    /// Attributes an organization&apos;s lead volume, qualification, and conversion outcomes to a specific acquisition source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerLeadSourceBreakdown : IAdditionalDataHolder, IParsable

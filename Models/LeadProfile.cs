@@ -20,9 +20,9 @@ namespace Leadping.OpenApiClient.Models
         public Date? BirthDate { get; set; }
         /// <summary>Lead credit score range or score supplied by the intake source.</summary>
         public int? CreditScore { get; set; }
-        /// <summary>Defines the supported Employment Type values.</summary>
+        /// <summary>Classifies a lead&apos;s reported employment arrangement for qualification and demographic workflows.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_employmentType? EmploymentType { get; set; }
-        /// <summary>Represents a gender classification used for demographic or identification purposes.</summary>
+        /// <summary>Classifies a lead&apos;s self-reported gender when required by a qualification, demographic, or integration workflow.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_gender? Gender { get; set; }
         /// <summary>Indicates whether the lead reported bankruptcy history.</summary>
         public bool? HasBankruptcy { get; set; }
@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Models
         public int? Income { get; set; }
         /// <summary>Indicates whether the lead owns their home.</summary>
         public bool? IsHomeowner { get; set; }
-        /// <summary>Defines the supported Marital Status Type values.</summary>
+        /// <summary>Classifies a lead&apos;s reported marital status when required by a qualification or integration workflow.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus? MaritalStatus { get; set; }
         /// <summary>Number of months the lead has lived at the current residence.</summary>
         public int? MonthsAtResidence { get; set; }

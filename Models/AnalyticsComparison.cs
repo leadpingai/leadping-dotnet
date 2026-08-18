@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents analytics comparison data exposed by Leadping analytics.
+    /// Compares a metric with the preceding period and reports its absolute and percentage change.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsComparison : IAdditionalDataHolder, IParsable

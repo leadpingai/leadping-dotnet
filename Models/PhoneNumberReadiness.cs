@@ -15,17 +15,17 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines the supported voice call warmup stages for a Leadping-managed phone number.</summary>
+        /// <summary>Identifies the current traffic-ramp stage of controlled voice warmup for a Leadping-managed phone number.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_callStage? CallStage { get; set; }
         /// <summary>Indicates whether phone number warmup is enabled in Leadping.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Current warmup health score used to assess phone number warmup.</summary>
         public int? HealthScore { get; set; }
-        /// <summary>Defines the supported SMS readiness health assessments.</summary>
+        /// <summary>Summarizes the severity of conditions affecting an organization&apos;s ability to send compliant SMS or MMS traffic.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus? HealthStatus { get; set; }
         /// <summary>Warmup completion percentage, from 0 through 100.</summary>
         public int? ProgressPercent { get; set; }
-        /// <summary>Defines the supported SMS readiness states.</summary>
+        /// <summary>Describes whether an organization is configured and permitted to send SMS or MMS traffic through Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state? State { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberReadiness"/> and sets the default values.

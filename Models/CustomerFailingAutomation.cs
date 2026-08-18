@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer failing automation data exposed by Leadping analytics.
+    /// Identifies an automation with recent execution failures and summarizes its affected leads and failure context.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerFailingAutomation : IAdditionalDataHolder, IParsable

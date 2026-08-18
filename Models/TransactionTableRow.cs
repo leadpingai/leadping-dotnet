@@ -17,11 +17,11 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount for this billing transaction or wallet operation.</summary>
         public double? Amount { get; set; }
-        /// <summary>Defines the supported Billable Unit values.</summary>
+        /// <summary>Identifies the metered unit used to price Leadping usage, such as a message, call minute, lookup, or phone number.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_billableUnit? BillableUnit { get; set; }
         /// <summary>Customer-facing amount billed for the metered usage or wallet transaction.</summary>
         public double? BilledAmount { get; set; }
-        /// <summary>Defines the supported Usage Channel values.</summary>
+        /// <summary>Identifies the messaging, calling, phone-number, lookup, or platform channel that generated billable usage.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_billingChannel? BillingChannel { get; set; }
         /// <summary>UTC timestamp when this billing transaction table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }

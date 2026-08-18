@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Event status values.</summary>
+    /// <summary>Describes whether a Leadping event is pending, processing, completed, failed, or otherwise resolved.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EventDetailResponse_status
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Activation Onboarding Status values.</summary>
+    /// <summary>Describes completion and blocking state for an organization&apos;s core Leadping onboarding requirements.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ActivationOnboardingStatus
     {

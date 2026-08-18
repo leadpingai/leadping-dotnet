@@ -159,7 +159,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ScheduledReason { get; set; }
 #endif
-        /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
+        /// <summary>Explains why Leadping selected, rejected, or substituted an outgoing caller or messaging number.</summary>
         public global::Leadping.OpenApiClient.Models.SmsResponse_selectionReason? SelectionReason { get; set; }
         /// <summary>UTC timestamp when Leadping began sending this message.</summary>
         public DateTimeOffset? SendingStartedAt { get; set; }
@@ -173,7 +173,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Defines the supported SMS Message Status values.</summary>
+        /// <summary>Describes the normalized lifecycle of an SMS or MMS message from scheduling through delivery or failure.</summary>
         public global::Leadping.OpenApiClient.Models.SmsResponse_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this SMS message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>Defines the supported SMS Traffic Type values.</summary>
+        /// <summary>Classifies messaging traffic by conversational, informational, marketing, or other compliance-relevant purpose.</summary>
         public global::Leadping.OpenApiClient.Models.SmsResponse_trafficType? TrafficType { get; set; }
         /// <summary>UTC timestamp when the provider marked the message undeliverable.</summary>
         public DateTimeOffset? UndeliverableAt { get; set; }

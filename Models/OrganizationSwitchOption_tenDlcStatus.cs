@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported 10DLC Application Status values.</summary>
+    /// <summary>Describes an organization&apos;s overall 10DLC registration lifecycle across brand and messaging campaign submission.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationSwitchOption_tenDlcStatus
     {

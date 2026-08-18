@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Outgoing Number Selection Reason values.</summary>
+    /// <summary>Explains why Leadping selected, rejected, or substituted an outgoing caller or messaging number.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OutgoingNumberSelectionResponse_selectionReason
     {

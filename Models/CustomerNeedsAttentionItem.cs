@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents customer needs attention item data exposed by Leadping analytics.
+    /// Identifies an organization-level issue or opportunity and provides severity, supporting context, and a recommended action.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerNeedsAttentionItem : IAdditionalDataHolder, IParsable

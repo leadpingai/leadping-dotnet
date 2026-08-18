@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported SMS readiness states.</summary>
+    /// <summary>Describes whether an organization is configured and permitted to send SMS or MMS traffic through Leadping.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PhoneNumberReadiness_state
     {

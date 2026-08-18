@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a user&apos;s sign-in identity, including information about the identity provider and method of authentication.
+    /// Identifies an external sign-in identity linked to a Leadping user, including its provider, provider-assigned user identifier, and authentication method.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserIdentity : IAdditionalDataHolder, IParsable

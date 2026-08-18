@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Response model containing source metrics data returned by the Leadping API.
+    /// Aggregates lead volume, conversion, delivery, and activity metrics attributed to a Leadping source over the requested reporting period.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceMetricsResponse : IAdditionalDataHolder, IParsable

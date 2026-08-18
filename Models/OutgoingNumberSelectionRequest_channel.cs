@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Outgoing Number Channel values.</summary>
+    /// <summary>Identifies whether an outgoing phone number is eligible for voice, SMS, MMS, or another communication channel.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OutgoingNumberSelectionRequest_channel
     {

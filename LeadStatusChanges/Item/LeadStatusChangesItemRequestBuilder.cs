@@ -94,7 +94,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges.Item
         /// Updates a lead status history entry and, when it is current, updates the lead&apos;s current status.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse"/></returns>
-        /// <param name="body">Request model for creating or updating a lead status change.</param>
+        /// <param name="body">Defines a lead status transition or correction, including its target status, effective time, source, and explanatory context.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -165,7 +165,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges.Item
         /// Updates a lead status history entry and, when it is current, updates the lead&apos;s current status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request model for creating or updating a lead status change.</param>
+        /// <param name="body">Defines a lead status transition or correction, including its target status, effective time, source, and explanatory context.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

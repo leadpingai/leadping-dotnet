@@ -125,7 +125,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? SendingStartedAt { get; set; }
         /// <summary>UTC timestamp when Leadping sent this message to the provider.</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>Defines the supported Event status values.</summary>
+        /// <summary>Describes whether a Leadping event is pending, processing, completed, failed, or otherwise resolved.</summary>
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this event detail response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TimelineCategory { get; set; }
 #endif
-        /// <summary>Defines the supported Event timeline type values.</summary>
+        /// <summary>Classifies the kind of activity displayed in a lead or conversation event timeline.</summary>
         public global::Leadping.OpenApiClient.Models.EventDetailResponse_timelineType? TimelineType { get; set; }
         /// <summary>Recipient phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

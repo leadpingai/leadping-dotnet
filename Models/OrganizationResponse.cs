@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingName { get; set; }
 #endif
-        /// <summary>Defines the supported Billing Plan values.</summary>
+        /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_billingPlan? BillingPlan { get; set; }
         /// <summary>Customer-safe billing state for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,9 +159,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SecondaryName { get; set; }
 #endif
-        /// <summary>Defines the supported User Setup Status values.</summary>
+        /// <summary>Describes a user&apos;s progress through required Leadping profile and account setup tasks.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_setupStatus? SetupStatus { get; set; }
-        /// <summary>Defines the supported Organization Setup Step values.</summary>
+        /// <summary>Identifies a discrete billing, telephony, compliance, or configuration stage in organization provisioning.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_setupStep? SetupStep { get; set; }
         /// <summary>Leadping website record connected to this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -171,9 +171,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_site Site { get; set; }
 #endif
-        /// <summary>Defines the supported Organization Status values.</summary>
+        /// <summary>Describes an organization&apos;s account lifecycle and whether it can actively use Leadping services.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_status? Status { get; set; }
-        /// <summary>Defines the supported Subscription Status values.</summary>
+        /// <summary>Describes an organization&apos;s billing subscription lifecycle, including trial, active, delinquent, canceled, and expired states.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_subscriptionStatus? SubscriptionStatus { get; set; }
         /// <summary>User summary connected to this organization profile response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

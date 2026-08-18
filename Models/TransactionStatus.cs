@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>Defines the supported Transaction Status values.</summary>
+    /// <summary>Describes the processing and settlement lifecycle of a Leadping wallet or billing transaction.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionStatus
     {
