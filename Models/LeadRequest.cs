@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this lead request is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The unique identifier for the entity, when updating an existing entity.</summary>
+        /// <summary>Stable unique identifier of an existing resource to update; omit it when the API assigns an identifier during creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An enumerator for sort direction during querying</summary>
+        /// <summary>Identifies whether query results are ordered from lower to higher values or from higher to lower values.</summary>
         public global::Leadping.OpenApiClient.Models.OrderByOption_direction? Direction { get; set; }
         /// <summary>Serializable field name used for sorting; supported names are determined by the queried resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>An enumerator for sort direction during querying</summary>
+    /// <summary>Identifies whether query results are ordered from lower to higher values or from higher to lower values.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrderByOption_direction
     {

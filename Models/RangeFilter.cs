@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// A generic object for handling range filtering during querying
+    /// Selects records by applying inclusive or exclusive lower and upper bounds to a named comparable field.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RangeFilter : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The field to filter by.</summary>
+        /// <summary>Serializable field name to evaluate; supported names are determined by the queried resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Field { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Field { get; set; }
 #endif
-        /// <summary>The exclusive lower bound for the field value.</summary>
+        /// <summary>Exclusive lower bound; matching field values must be greater than this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? GreaterThan { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode GreaterThan { get; set; }
 #endif
-        /// <summary>The inclusive lower bound for the field value.</summary>
+        /// <summary>Inclusive lower bound; matching field values must be greater than or equal to this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? GreaterThanOrEqual { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode GreaterThanOrEqual { get; set; }
 #endif
-        /// <summary>The exclusive upper bound for the field value.</summary>
+        /// <summary>Exclusive upper bound; matching field values must be less than this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? LessThan { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public UntypedNode LessThan { get; set; }
 #endif
-        /// <summary>The inclusive upper bound for the field value.</summary>
+        /// <summary>Inclusive upper bound; matching field values must be less than or equal to this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? LessThanOrEqual { get; set; }
