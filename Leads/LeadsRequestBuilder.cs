@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Leads
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LeadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads{?sourceKey*}", pathParameters)
+        public LeadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Leads
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LeadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads{?sourceKey*}", rawUrl)
+        public LeadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads", rawUrl)
         {
         }
         /// <summary>
@@ -72,11 +72,11 @@ namespace Leadping.OpenApiClient.Leads
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse?> PostAsync(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder.LeadsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse?> PostAsync(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse> PostAsync(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder.LeadsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse> PostAsync(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -99,11 +99,11 @@ namespace Leadping.OpenApiClient.Leads
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder.LeadsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder.LeadsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,23 +121,6 @@ namespace Leadping.OpenApiClient.Leads
         public global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Creates a source-authenticated lead captured outside Leadping, starting follow-up, routing, and automation from structured lead data.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class LeadsRequestBuilderPostQueryParameters 
-        {
-            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("sourceKey")]
-            public string? SourceKey { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sourceKey")]
-            public string SourceKey { get; set; }
-#endif
         }
     }
 }

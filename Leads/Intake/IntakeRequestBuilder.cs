@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntakeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/intake{?Address1*,Address2*,BirthDate*,City*,DateOfBirth*,DirectPostPrice*,Email*,ExternalId*,FirstName*,Gender*,LandingPage*,LastName*,Phone*,PhoneType*,PostalCode*,Price*,Product*,Referrer*,SellerLeadId*,SellerLeadIdentifier*,SourceMetadata*,State*,SubId*,TagIds*,TagNames*,TrustedFormUrl*,UtmCampaign*,UtmContent*,UtmMedium*,UtmSource*,UtmTerm*,Vertical*,Zip*,sourceKey*}", pathParameters)
+        public IntakeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/intake{?Address1*,Address2*,BirthDate*,City*,DateOfBirth*,DirectPostPrice*,Email*,ExternalId*,FirstName*,Gender*,LandingPage*,LastName*,Phone*,PhoneType*,PostalCode*,Price*,Product*,Referrer*,SellerLeadId*,SellerLeadIdentifier*,SourceMetadata*,State*,SubId*,TagIds*,TagNames*,TrustedFormUrl*,UtmCampaign*,UtmContent*,UtmMedium*,UtmSource*,UtmTerm*,Vertical*,Zip*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntakeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/intake{?Address1*,Address2*,BirthDate*,City*,DateOfBirth*,DirectPostPrice*,Email*,ExternalId*,FirstName*,Gender*,LandingPage*,LastName*,Phone*,PhoneType*,PostalCode*,Price*,Product*,Referrer*,SellerLeadId*,SellerLeadIdentifier*,SourceMetadata*,State*,SubId*,TagIds*,TagNames*,TrustedFormUrl*,UtmCampaign*,UtmContent*,UtmMedium*,UtmSource*,UtmTerm*,Vertical*,Zip*,sourceKey*}", rawUrl)
+        public IntakeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/leads/intake{?Address1*,Address2*,BirthDate*,City*,DateOfBirth*,DirectPostPrice*,Email*,ExternalId*,FirstName*,Gender*,LandingPage*,LastName*,Phone*,PhoneType*,PostalCode*,Price*,Product*,Referrer*,SellerLeadId*,SellerLeadIdentifier*,SourceMetadata*,State*,SubId*,TagIds*,TagNames*,TrustedFormUrl*,UtmCampaign*,UtmContent*,UtmMedium*,UtmSource*,UtmTerm*,Vertical*,Zip*}", rawUrl)
         {
         }
         /// <summary>
@@ -75,11 +75,11 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse?> PostAsync(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder.IntakeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse?> PostAsync(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse> PostAsync(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder.IntakeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.LeadResponse> PostAsync(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,11 +120,11 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder.IntakeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder.IntakeRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -285,16 +285,6 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #else
             public string SellerLeadIdentifier { get; set; }
 #endif
-            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("sourceKey")]
-            public string? SourceKey { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sourceKey")]
-            public string SourceKey { get; set; }
-#endif
             /// <summary>Source-provided key-value metadata retained for lead attribution and integration troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -398,23 +388,6 @@ namespace Leadping.OpenApiClient.Leads.Intake
 #nullable restore
 #else
             public string Zip { get; set; }
-#endif
-        }
-        /// <summary>
-        /// Creates a source-authenticated lead from a flat intake payload, capturing contact fields, metadata, and automation-ready lead details.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IntakeRequestBuilderPostQueryParameters 
-        {
-            /// <summary>The Leadping source key supplied as a query string parameter, or omitted when supplied as Authorization: Bearer lp_src_...</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("sourceKey")]
-            public string? SourceKey { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sourceKey")]
-            public string SourceKey { get; set; }
 #endif
         }
     }
