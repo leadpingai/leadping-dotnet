@@ -16,21 +16,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Latitude of the geographic coordinate in decimal degrees, from -90 through 90.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Latitude { get; set; }
-#nullable restore
-#else
-        public UntypedNode Latitude { get; set; }
-#endif
+        public double? Latitude { get; set; }
         /// <summary>Longitude of the geographic coordinate in decimal degrees, from -180 through 180.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Longitude { get; set; }
-#nullable restore
-#else
-        public UntypedNode Longitude { get; set; }
-#endif
+        public double? Longitude { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.Coordinate"/> and sets the default values.
         /// </summary>
@@ -56,8 +44,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "latitude", n => { Latitude = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "longitude", n => { Longitude = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("latitude", Latitude);
-            writer.WriteObjectValue<UntypedNode>("longitude", Longitude);
+            writer.WriteDoubleValue("latitude", Latitude);
+            writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

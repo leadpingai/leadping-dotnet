@@ -38,13 +38,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Date and time when this Leadping organization dunning info was payment failed.</summary>
         public DateTimeOffset? PaymentFailedAt { get; set; }
         /// <summary>Total number of retry attempt records represented by this Leadping organization dunning info.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? RetryAttemptCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode RetryAttemptCount { get; set; }
-#endif
+        public int? RetryAttemptCount { get; set; }
         /// <summary>Current stage for this Leadping organization dunning info.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +80,7 @@ namespace Leadping.OpenApiClient.Models
                 { "outboundRestrictedAt", n => { OutboundRestrictedAt = n.GetDateTimeOffsetValue(); } },
                 { "outboundSuspendedAt", n => { OutboundSuspendedAt = n.GetDateTimeOffsetValue(); } },
                 { "paymentFailedAt", n => { PaymentFailedAt = n.GetDateTimeOffsetValue(); } },
-                { "retryAttemptCount", n => { RetryAttemptCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "retryAttemptCount", n => { RetryAttemptCount = n.GetIntValue(); } },
                 { "stage", n => { Stage = n.GetStringValue(); } },
             };
         }
@@ -105,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("outboundRestrictedAt", OutboundRestrictedAt);
             writer.WriteDateTimeOffsetValue("outboundSuspendedAt", OutboundSuspendedAt);
             writer.WriteDateTimeOffsetValue("paymentFailedAt", PaymentFailedAt);
-            writer.WriteObjectValue<UntypedNode>("retryAttemptCount", RetryAttemptCount);
+            writer.WriteIntValue("retryAttemptCount", RetryAttemptCount);
             writer.WriteStringValue("stage", Stage);
             writer.WriteAdditionalData(AdditionalData);
         }

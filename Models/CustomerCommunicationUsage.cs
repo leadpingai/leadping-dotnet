@@ -16,69 +16,21 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of calls answered during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AnsweredCalls { get; set; }
-#nullable restore
-#else
-        public UntypedNode AnsweredCalls { get; set; }
-#endif
+        public int? AnsweredCalls { get; set; }
         /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CallMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode CallMinutes { get; set; }
-#endif
+        public double? CallMinutes { get; set; }
         /// <summary>Number of outbound calls placed during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CallsPlaced { get; set; }
-#nullable restore
-#else
-        public UntypedNode CallsPlaced { get; set; }
-#endif
+        public int? CallsPlaced { get; set; }
         /// <summary>Number of inbound calls received during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CallsReceived { get; set; }
-#nullable restore
-#else
-        public UntypedNode CallsReceived { get; set; }
-#endif
+        public int? CallsReceived { get; set; }
         /// <summary>Number of SMS messages that failed or were blocked during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? FailedOrBlockedSms { get; set; }
-#nullable restore
-#else
-        public UntypedNode FailedOrBlockedSms { get; set; }
-#endif
+        public int? FailedOrBlockedSms { get; set; }
         /// <summary>Number of calls missed during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MissedCalls { get; set; }
-#nullable restore
-#else
-        public UntypedNode MissedCalls { get; set; }
-#endif
+        public int? MissedCalls { get; set; }
         /// <summary>Number of SMS messages received during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SmsReceived { get; set; }
-#nullable restore
-#else
-        public UntypedNode SmsReceived { get; set; }
-#endif
+        public int? SmsReceived { get; set; }
         /// <summary>Number of SMS messages sent during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SmsSent { get; set; }
-#nullable restore
-#else
-        public UntypedNode SmsSent { get; set; }
-#endif
+        public int? SmsSent { get; set; }
         /// <summary>Collection of trend included with this Leadping customer communication usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,13 +40,7 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint> Trend { get; set; }
 #endif
         /// <summary>Usage spend represented by this Leadping customer communication usage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? UsageSpend { get; set; }
-#nullable restore
-#else
-        public UntypedNode UsageSpend { get; set; }
-#endif
+        public double? UsageSpend { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage"/> and sets the default values.
         /// </summary>
@@ -120,16 +66,16 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "answeredCalls", n => { AnsweredCalls = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "callMinutes", n => { CallMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "callsPlaced", n => { CallsPlaced = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "callsReceived", n => { CallsReceived = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "failedOrBlockedSms", n => { FailedOrBlockedSms = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "missedCalls", n => { MissedCalls = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "smsReceived", n => { SmsReceived = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "smsSent", n => { SmsSent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "answeredCalls", n => { AnsweredCalls = n.GetIntValue(); } },
+                { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
+                { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
+                { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
+                { "failedOrBlockedSms", n => { FailedOrBlockedSms = n.GetIntValue(); } },
+                { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
+                { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
+                { "smsSent", n => { SmsSent = n.GetIntValue(); } },
                 { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint>(global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "usageSpend", n => { UsageSpend = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "usageSpend", n => { UsageSpend = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -139,16 +85,16 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("answeredCalls", AnsweredCalls);
-            writer.WriteObjectValue<UntypedNode>("callMinutes", CallMinutes);
-            writer.WriteObjectValue<UntypedNode>("callsPlaced", CallsPlaced);
-            writer.WriteObjectValue<UntypedNode>("callsReceived", CallsReceived);
-            writer.WriteObjectValue<UntypedNode>("failedOrBlockedSms", FailedOrBlockedSms);
-            writer.WriteObjectValue<UntypedNode>("missedCalls", MissedCalls);
-            writer.WriteObjectValue<UntypedNode>("smsReceived", SmsReceived);
-            writer.WriteObjectValue<UntypedNode>("smsSent", SmsSent);
+            writer.WriteIntValue("answeredCalls", AnsweredCalls);
+            writer.WriteDoubleValue("callMinutes", CallMinutes);
+            writer.WriteIntValue("callsPlaced", CallsPlaced);
+            writer.WriteIntValue("callsReceived", CallsReceived);
+            writer.WriteIntValue("failedOrBlockedSms", FailedOrBlockedSms);
+            writer.WriteIntValue("missedCalls", MissedCalls);
+            writer.WriteIntValue("smsReceived", SmsReceived);
+            writer.WriteIntValue("smsSent", SmsSent);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint>("trend", Trend);
-            writer.WriteObjectValue<UntypedNode>("usageSpend", UsageSpend);
+            writer.WriteDoubleValue("usageSpend", UsageSpend);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

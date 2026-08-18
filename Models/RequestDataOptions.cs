@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Opaque Cosmos DB continuation token. ‑ on the **first** request. ‑ Client must echo back the NextToken it received from the previous page.</summary>
+        /// <summary>Opaque Cosmos DB continuation token. ‑ null on the **first** request. ‑ Client must echo back the NextToken it received from the previous page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContinuationToken { get; set; }
@@ -42,13 +42,7 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.OrderByOption> OrderBy { get; set; }
 #endif
         /// <summary>Maximum items to return in one page</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PageSize { get; set; }
-#nullable restore
-#else
-        public UntypedNode PageSize { get; set; }
-#endif
+        public int? PageSize { get; set; }
         /// <summary>Advanced range-based filters (e.g., Price &gt; 50 and Price &lt;= 200).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.RangeFilter> RangeFilters { get; set; }
 #endif
-        /// <summary>The search term to filter results (applied to ).</summary>
+        /// <summary>The search term to filter results (applied to SearchFields).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Search { get; set; }
@@ -102,7 +96,7 @@ namespace Leadping.OpenApiClient.Models
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ExactMatchFilter>(global::Leadping.OpenApiClient.Models.ExactMatchFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "includeCount", n => { IncludeCount = n.GetBoolValue(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrderByOption>(global::Leadping.OpenApiClient.Models.OrderByOption.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pageSize", n => { PageSize = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "pageSize", n => { PageSize = n.GetIntValue(); } },
                 { "rangeFilters", n => { RangeFilters = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.RangeFilter>(global::Leadping.OpenApiClient.Models.RangeFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "searchFields", n => { SearchFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -119,7 +113,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ExactMatchFilter>("filters", Filters);
             writer.WriteBoolValue("includeCount", IncludeCount);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrderByOption>("orderBy", OrderBy);
-            writer.WriteObjectValue<UntypedNode>("pageSize", PageSize);
+            writer.WriteIntValue("pageSize", PageSize);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.RangeFilter>("rangeFilters", RangeFilters);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("searchFields", SearchFields);

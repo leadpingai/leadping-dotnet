@@ -44,13 +44,7 @@ namespace Leadping.OpenApiClient.Models
         public string LicenseBillingStatus { get; set; }
 #endif
         /// <summary>The quantity on the shared organization user license item after this change.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? LicenseQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode LicenseQuantity { get; set; }
-#endif
+        public long? LicenseQuantity { get; set; }
         /// <summary>The renewal date used for this user&apos;s license proration.</summary>
         public DateTimeOffset? LicenseRenewalDate { get; set; }
         /// <summary>The date and time when the entity was last modified, if applicable.</summary>
@@ -129,7 +123,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lastUsedAt", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "licenseBillingStatus", n => { LicenseBillingStatus = n.GetStringValue(); } },
-                { "licenseQuantity", n => { LicenseQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "licenseQuantity", n => { LicenseQuantity = n.GetLongValue(); } },
                 { "licenseRenewalDate", n => { LicenseRenewalDate = n.GetDateTimeOffsetValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -153,7 +147,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastUsedAt", LastUsedAt);
             writer.WriteStringValue("licenseBillingStatus", LicenseBillingStatus);
-            writer.WriteObjectValue<UntypedNode>("licenseQuantity", LicenseQuantity);
+            writer.WriteLongValue("licenseQuantity", LicenseQuantity);
             writer.WriteDateTimeOffsetValue("licenseRenewalDate", LicenseRenewalDate);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);

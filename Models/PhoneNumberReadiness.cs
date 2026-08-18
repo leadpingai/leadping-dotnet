@@ -20,23 +20,11 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Indicates whether phone number warmup is enabled in Leadping.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Current warmup health score used to assess phone number warmup.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? HealthScore { get; set; }
-#nullable restore
-#else
-        public UntypedNode HealthScore { get; set; }
-#endif
+        public int? HealthScore { get; set; }
         /// <summary>Defines the supported SMS readiness health assessments.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus? HealthStatus { get; set; }
         /// <summary>Warmup completion percentage, from 0 through 100.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ProgressPercent { get; set; }
-#nullable restore
-#else
-        public UntypedNode ProgressPercent { get; set; }
-#endif
+        public int? ProgressPercent { get; set; }
         /// <summary>Defines the supported SMS readiness states.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state? State { get; set; }
         /// <summary>
@@ -66,9 +54,9 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "callStage", n => { CallStage = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_callStage>(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "healthScore", n => { HealthScore = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "healthScore", n => { HealthScore = n.GetIntValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>(); } },
-                { "progressPercent", n => { ProgressPercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "progressPercent", n => { ProgressPercent = n.GetIntValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state>(); } },
             };
         }
@@ -81,9 +69,9 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_callStage>("callStage", CallStage);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<UntypedNode>("healthScore", HealthScore);
+            writer.WriteIntValue("healthScore", HealthScore);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>("healthStatus", HealthStatus);
-            writer.WriteObjectValue<UntypedNode>("progressPercent", ProgressPercent);
+            writer.WriteIntValue("progressPercent", ProgressPercent);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

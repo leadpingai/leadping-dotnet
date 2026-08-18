@@ -42,13 +42,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The UTC timestamp when Leadping retrieved the provider record.</summary>
         public DateTimeOffset? RetrievedAt { get; set; }
         /// <summary>The Leadping schema version used to interpret the stored provider record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SchemaVersion { get; set; }
-#nullable restore
-#else
-        public UntypedNode SchemaVersion { get; set; }
-#endif
+        public int? SchemaVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneLookupProviderSnapshot"/> and sets the default values.
         /// </summary>
@@ -78,7 +72,7 @@ namespace Leadping.OpenApiClient.Models
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "rawRecordJson", n => { RawRecordJson = n.GetStringValue(); } },
                 { "retrievedAt", n => { RetrievedAt = n.GetDateTimeOffsetValue(); } },
-                { "schemaVersion", n => { SchemaVersion = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "schemaVersion", n => { SchemaVersion = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -92,7 +86,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("rawRecordJson", RawRecordJson);
             writer.WriteDateTimeOffsetValue("retrievedAt", RetrievedAt);
-            writer.WriteObjectValue<UntypedNode>("schemaVersion", SchemaVersion);
+            writer.WriteIntValue("schemaVersion", SchemaVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

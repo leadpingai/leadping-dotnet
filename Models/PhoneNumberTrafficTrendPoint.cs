@@ -16,21 +16,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of outbound calls that failed during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CallFailedCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode CallFailedCount { get; set; }
-#endif
+        public int? CallFailedCount { get; set; }
         /// <summary>Number of outbound calls placed during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CallPlacedCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode CallPlacedCount { get; set; }
-#endif
+        public int? CallPlacedCount { get; set; }
         /// <summary>UTC timestamp when this reporting bucket ends.</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>Short display label for this phone number traffic trend bucket, formatted for charts, filters, or list views.</summary>
@@ -42,37 +30,13 @@ namespace Leadping.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>Number of MMS messages that failed during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MmsFailedCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode MmsFailedCount { get; set; }
-#endif
+        public int? MmsFailedCount { get; set; }
         /// <summary>Number of MMS messages sent during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MmsSentCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode MmsSentCount { get; set; }
-#endif
+        public int? MmsSentCount { get; set; }
         /// <summary>Number of SMS messages that failed during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SmsFailedCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode SmsFailedCount { get; set; }
-#endif
+        public int? SmsFailedCount { get; set; }
         /// <summary>Number of SMS messages sent during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SmsSentCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode SmsSentCount { get; set; }
-#endif
+        public int? SmsSentCount { get; set; }
         /// <summary>UTC timestamp when this reporting bucket starts.</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>
@@ -100,14 +64,14 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callFailedCount", n => { CallFailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "callPlacedCount", n => { CallPlacedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "callFailedCount", n => { CallFailedCount = n.GetIntValue(); } },
+                { "callPlacedCount", n => { CallPlacedCount = n.GetIntValue(); } },
                 { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "mmsFailedCount", n => { MmsFailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "mmsSentCount", n => { MmsSentCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "smsFailedCount", n => { SmsFailedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "smsSentCount", n => { SmsSentCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "mmsFailedCount", n => { MmsFailedCount = n.GetIntValue(); } },
+                { "mmsSentCount", n => { MmsSentCount = n.GetIntValue(); } },
+                { "smsFailedCount", n => { SmsFailedCount = n.GetIntValue(); } },
+                { "smsSentCount", n => { SmsSentCount = n.GetIntValue(); } },
                 { "startAt", n => { StartAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -118,14 +82,14 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("callFailedCount", CallFailedCount);
-            writer.WriteObjectValue<UntypedNode>("callPlacedCount", CallPlacedCount);
+            writer.WriteIntValue("callFailedCount", CallFailedCount);
+            writer.WriteIntValue("callPlacedCount", CallPlacedCount);
             writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<UntypedNode>("mmsFailedCount", MmsFailedCount);
-            writer.WriteObjectValue<UntypedNode>("mmsSentCount", MmsSentCount);
-            writer.WriteObjectValue<UntypedNode>("smsFailedCount", SmsFailedCount);
-            writer.WriteObjectValue<UntypedNode>("smsSentCount", SmsSentCount);
+            writer.WriteIntValue("mmsFailedCount", MmsFailedCount);
+            writer.WriteIntValue("mmsSentCount", MmsSentCount);
+            writer.WriteIntValue("smsFailedCount", SmsFailedCount);
+            writer.WriteIntValue("smsSentCount", SmsSentCount);
             writer.WriteDateTimeOffsetValue("startAt", StartAt);
             writer.WriteAdditionalData(AdditionalData);
         }

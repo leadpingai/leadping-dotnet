@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RecipientIdentifier { get; set; }
 #endif
-        /// <summary>UTC timestamp when the suppression was released, or while it remains active.</summary>
+        /// <summary>UTC timestamp when the suppression was released, or null while it remains active.</summary>
         public DateTimeOffset? ReleasedAt { get; set; }
         /// <summary>System or workflow that created the suppression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

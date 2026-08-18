@@ -16,37 +16,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of distinct recipients contacted during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? DistinctContactedCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode DistinctContactedCount { get; set; }
-#endif
+        public int? DistinctContactedCount { get; set; }
         /// <summary>Number of recipients who opted out during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? OptOutCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode OptOutCount { get; set; }
-#endif
+        public int? OptOutCount { get; set; }
         /// <summary>Percentage of contacted recipients who opted out during this metrics window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? OptOutRatePercent { get; set; }
-#nullable restore
-#else
-        public UntypedNode OptOutRatePercent { get; set; }
-#endif
+        public double? OptOutRatePercent { get; set; }
         /// <summary>Number of days included in the metrics reporting window.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? WindowDays { get; set; }
-#nullable restore
-#else
-        public UntypedNode WindowDays { get; set; }
-#endif
+        public int? WindowDays { get; set; }
         /// <summary>UTC timestamp when the metrics reporting window starts.</summary>
         public DateTimeOffset? WindowStartedAt { get; set; }
         /// <summary>
@@ -74,10 +50,10 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "distinctContactedCount", n => { DistinctContactedCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "optOutCount", n => { OptOutCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "optOutRatePercent", n => { OptOutRatePercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "windowDays", n => { WindowDays = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "distinctContactedCount", n => { DistinctContactedCount = n.GetIntValue(); } },
+                { "optOutCount", n => { OptOutCount = n.GetIntValue(); } },
+                { "optOutRatePercent", n => { OptOutRatePercent = n.GetDoubleValue(); } },
+                { "windowDays", n => { WindowDays = n.GetIntValue(); } },
                 { "windowStartedAt", n => { WindowStartedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -88,10 +64,10 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("distinctContactedCount", DistinctContactedCount);
-            writer.WriteObjectValue<UntypedNode>("optOutCount", OptOutCount);
-            writer.WriteObjectValue<UntypedNode>("optOutRatePercent", OptOutRatePercent);
-            writer.WriteObjectValue<UntypedNode>("windowDays", WindowDays);
+            writer.WriteIntValue("distinctContactedCount", DistinctContactedCount);
+            writer.WriteIntValue("optOutCount", OptOutCount);
+            writer.WriteDoubleValue("optOutRatePercent", OptOutRatePercent);
+            writer.WriteIntValue("windowDays", WindowDays);
             writer.WriteDateTimeOffsetValue("windowStartedAt", WindowStartedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

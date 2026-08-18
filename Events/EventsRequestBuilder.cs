@@ -3,6 +3,7 @@
 using Leadping.OpenApiClient.Events.All;
 using Leadping.OpenApiClient.Events.Calls;
 using Leadping.OpenApiClient.Events.Conversations;
+using Leadping.OpenApiClient.Events.Detail;
 using Leadping.OpenApiClient.Events.Item;
 using Leadping.OpenApiClient.Events.Leads;
 using Leadping.OpenApiClient.Events.Organizations;
@@ -35,6 +36,11 @@ namespace Leadping.OpenApiClient.Events
         public global::Leadping.OpenApiClient.Events.Conversations.ConversationsRequestBuilder Conversations
         {
             get => new global::Leadping.OpenApiClient.Events.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The detail property</summary>
+        public global::Leadping.OpenApiClient.Events.Detail.DetailRequestBuilder Detail
+        {
+            get => new global::Leadping.OpenApiClient.Events.Detail.DetailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The leads property</summary>
         public global::Leadping.OpenApiClient.Events.Leads.LeadsRequestBuilder Leads

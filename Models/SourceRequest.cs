@@ -40,13 +40,7 @@ namespace Leadping.OpenApiClient.Models
         public string ApiKey { get; set; }
 #endif
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CostPerLead { get; set; }
-#nullable restore
-#else
-        public UntypedNode CostPerLead { get; set; }
-#endif
+        public double? CostPerLead { get; set; }
         /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,7 +115,7 @@ namespace Leadping.OpenApiClient.Models
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "apiKey", n => { ApiKey = n.GetStringValue(); } },
-                { "costPerLead", n => { CostPerLead = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultTagNames", n => { DefaultTagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -142,7 +136,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
             writer.WriteStringValue("apiKey", ApiKey);
-            writer.WriteObjectValue<UntypedNode>("costPerLead", CostPerLead);
+            writer.WriteDoubleValue("costPerLead", CostPerLead);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagNames", DefaultTagNames);
             writer.WriteStringValue("description", Description);

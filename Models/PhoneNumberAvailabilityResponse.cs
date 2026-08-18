@@ -42,13 +42,7 @@ namespace Leadping.OpenApiClient.Models
         public string PhoneNumber { get; set; }
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Price { get; set; }
-#nullable restore
-#else
-        public UntypedNode Price { get; set; }
-#endif
+        public double? Price { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse"/> and sets the default values.
         /// </summary>
@@ -78,7 +72,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isAvailable", n => { IsAvailable = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse_location>(global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse_location.CreateFromDiscriminatorValue); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "price", n => { Price = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -92,7 +86,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isAvailable", IsAvailable);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse_location>("location", Location);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteObjectValue<UntypedNode>("price", Price);
+            writer.WriteDoubleValue("price", Price);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

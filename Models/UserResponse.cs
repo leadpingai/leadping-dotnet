@@ -142,10 +142,10 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The roles included with this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Roles { get; set; }
+        public List<string>? Roles { get; set; }
 #nullable restore
 #else
-        public UntypedNode Roles { get; set; }
+        public List<string> Roles { get; set; }
 #endif
         /// <summary>Defines the supported Subscription Status values.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus? SubscriptionStatus { get; set; }
@@ -202,7 +202,7 @@ namespace Leadping.OpenApiClient.Models
                 { "personalDataDeletionRequestedAt", n => { PersonalDataDeletionRequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "personalDataDeletionStatus", n => { PersonalDataDeletionStatus = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "roles", n => { Roles = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus>(); } },
                 { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
             };
@@ -234,7 +234,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("personalDataDeletionRequestedAt", PersonalDataDeletionRequestedAt);
             writer.WriteStringValue("personalDataDeletionStatus", PersonalDataDeletionStatus);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteObjectValue<UntypedNode>("roles", Roles);
+            writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteAdditionalData(AdditionalData);

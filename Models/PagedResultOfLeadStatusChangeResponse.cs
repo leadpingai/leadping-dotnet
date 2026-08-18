@@ -32,21 +32,9 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse> Items { get; set; }
 #endif
         /// <summary>The number of items returned per page in the response. This may reflect the client&apos;s requested page size, or a server-defined default or limit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PageSize { get; set; }
-#nullable restore
-#else
-        public UntypedNode PageSize { get; set; }
-#endif
+        public int? PageSize { get; set; }
         /// <summary>The total number of items that match the query across all pages. May be null if the count is not computed or not applicable (e.g., in continuation-based pagination).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? TotalCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode TotalCount { get; set; }
-#endif
+        public int? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfLeadStatusChangeResponse"/> and sets the default values.
         /// </summary>
@@ -74,8 +62,8 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "continuationToken", n => { ContinuationToken = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse>(global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pageSize", n => { PageSize = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "totalCount", n => { TotalCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "pageSize", n => { PageSize = n.GetIntValue(); } },
+                { "totalCount", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -87,8 +75,8 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("continuationToken", ContinuationToken);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse>("items", Items);
-            writer.WriteObjectValue<UntypedNode>("pageSize", PageSize);
-            writer.WriteObjectValue<UntypedNode>("totalCount", TotalCount);
+            writer.WriteIntValue("pageSize", PageSize);
+            writer.WriteIntValue("totalCount", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

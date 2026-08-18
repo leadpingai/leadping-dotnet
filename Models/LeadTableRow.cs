@@ -90,13 +90,7 @@ namespace Leadping.OpenApiClient.Models
         public string Phone { get; set; }
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Price { get; set; }
-#nullable restore
-#else
-        public UntypedNode Price { get; set; }
-#endif
+        public double? Price { get; set; }
         /// <summary>Defines the asynchronous verification and enrichment lifecycle for a lead.</summary>
         public global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus? ProcessingStatus { get; set; }
         /// <summary>UTC timestamp when the processing stage last changed.</summary>
@@ -181,7 +175,7 @@ namespace Leadping.OpenApiClient.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>(global::Leadping.OpenApiClient.Models.LeadTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "price", n => { Price = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "price", n => { Price = n.GetDoubleValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus>(); } },
                 { "processingStatusChangedAt", n => { ProcessingStatusChangedAt = n.GetDateTimeOffsetValue(); } },
                 { "processingStatusReason", n => { ProcessingStatusReason = n.GetStringValue(); } },
@@ -212,7 +206,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteObjectValue<UntypedNode>("price", Price);
+            writer.WriteDoubleValue("price", Price);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus>("processingStatus", ProcessingStatus);
             writer.WriteDateTimeOffsetValue("processingStatusChangedAt", ProcessingStatusChangedAt);
             writer.WriteStringValue("processingStatusReason", ProcessingStatusReason);

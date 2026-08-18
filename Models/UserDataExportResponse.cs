@@ -26,13 +26,7 @@ namespace Leadping.OpenApiClient.Models
         public string ContentType { get; set; }
 #endif
         /// <summary>Total number of download records represented by this Leadping user data export.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? DownloadCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode DownloadCount { get; set; }
-#endif
+        public int? DownloadCount { get; set; }
         /// <summary>Temporary URL for downloading the completed Leadping data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,13 +64,7 @@ namespace Leadping.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Total number of max download records represented by this Leadping user data export.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MaxDownloadCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode MaxDownloadCount { get; set; }
-#endif
+        public int? MaxDownloadCount { get; set; }
         /// <summary>Human-readable message for this Leadping user data export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,13 +76,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Date and time when the user data export was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>Size of the generated export archive in bytes, when the export is ready.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SizeBytes { get; set; }
-#nullable restore
-#else
-        public UntypedNode SizeBytes { get; set; }
-#endif
+        public long? SizeBytes { get; set; }
         /// <summary>Date and time when the user data export started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>Current status for this Leadping user data export.</summary>
@@ -126,17 +108,17 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
-                { "downloadCount", n => { DownloadCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "downloadCount", n => { DownloadCount = n.GetIntValue(); } },
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UserDataExportFile>(global::Leadping.OpenApiClient.Models.UserDataExportFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "maxDownloadCount", n => { MaxDownloadCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "maxDownloadCount", n => { MaxDownloadCount = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
-                { "sizeBytes", n => { SizeBytes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sizeBytes", n => { SizeBytes = n.GetLongValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserDataExportStatuses>(); } },
             };
@@ -150,17 +132,17 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteStringValue("contentType", ContentType);
-            writer.WriteObjectValue<UntypedNode>("downloadCount", DownloadCount);
+            writer.WriteIntValue("downloadCount", DownloadCount);
             writer.WriteStringValue("downloadUrl", DownloadUrl);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UserDataExportFile>("files", Files);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<UntypedNode>("maxDownloadCount", MaxDownloadCount);
+            writer.WriteIntValue("maxDownloadCount", MaxDownloadCount);
             writer.WriteStringValue("message", Message);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
-            writer.WriteObjectValue<UntypedNode>("sizeBytes", SizeBytes);
+            writer.WriteLongValue("sizeBytes", SizeBytes);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserDataExportStatuses>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

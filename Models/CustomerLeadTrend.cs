@@ -32,13 +32,7 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint> Points { get; set; }
 #endif
         /// <summary>Total number of total records represented by this Leadping customer lead trend.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Total { get; set; }
-#nullable restore
-#else
-        public UntypedNode Total { get; set; }
-#endif
+        public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerLeadTrend"/> and sets the default values.
         /// </summary>
@@ -66,7 +60,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "comparison", n => { Comparison = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>(global::Leadping.OpenApiClient.Models.AnalyticsComparison.CreateFromDiscriminatorValue); } },
                 { "points", n => { Points = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "total", n => { Total = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +72,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>("comparison", Comparison);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>("points", Points);
-            writer.WriteObjectValue<UntypedNode>("total", Total);
+            writer.WriteIntValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

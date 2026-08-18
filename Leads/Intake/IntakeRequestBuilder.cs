@@ -42,6 +42,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.LeadResponse?> GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder.IntakeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -57,6 +58,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -70,6 +72,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.LeadResponse?> PostAsync(global::Leadping.OpenApiClient.Models.LeadIntakeRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder.IntakeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,6 +89,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -174,13 +178,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
             /// <summary>Lead date of birth supplied by intake sources and normalized into the lead profile.</summary>
             public Date? DateOfBirth { get; set; }
             /// <summary>Direct-post price supplied by the lead source during intake.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? DirectPostPrice { get; set; }
-#nullable restore
-#else
-            public string DirectPostPrice { get; set; }
-#endif
+            public double? DirectPostPrice { get; set; }
             /// <summary>Email address for the person represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -254,13 +252,7 @@ namespace Leadping.OpenApiClient.Leads.Intake
             public string PostalCode { get; set; }
 #endif
             /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? Price { get; set; }
-#nullable restore
-#else
-            public string Price { get; set; }
-#endif
+            public double? Price { get; set; }
             /// <summary>Product or offer associated with the lead or source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

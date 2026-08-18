@@ -76,13 +76,7 @@ namespace Leadping.OpenApiClient.Models
         public string OrganizationId { get; set; }
 #endif
         /// <summary>Number of processing attempts made for this workflow or delivery request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ProcessingAttempts { get; set; }
-#nullable restore
-#else
-        public UntypedNode ProcessingAttempts { get; set; }
-#endif
+        public int? ProcessingAttempts { get; set; }
         /// <summary>Human-readable reason explaining why Leadping skipped this automation run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +137,7 @@ namespace Leadping.OpenApiClient.Models
                 { "lastAttemptAt", n => { LastAttemptAt = n.GetDateTimeOffsetValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "processingAttempts", n => { ProcessingAttempts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "skippedReason", n => { SkippedReason = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -166,7 +160,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lastAttemptAt", LastAttemptAt);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteObjectValue<UntypedNode>("processingAttempts", ProcessingAttempts);
+            writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteStringValue("skippedReason", SkippedReason);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);

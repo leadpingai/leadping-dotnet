@@ -16,21 +16,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of leads represented by this Leadping customer lead source breakdown.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Leads { get; set; }
-#nullable restore
-#else
-        public UntypedNode Leads { get; set; }
-#endif
+        public int? Leads { get; set; }
         /// <summary>Percent expressed as a percentage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Percent { get; set; }
-#nullable restore
-#else
-        public UntypedNode Percent { get; set; }
-#endif
+        public double? Percent { get; set; }
         /// <summary>Source classification for this Leadping customer lead source breakdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,8 +52,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "leads", n => { Leads = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "percent", n => { Percent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "leads", n => { Leads = n.GetIntValue(); } },
+                { "percent", n => { Percent = n.GetDoubleValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
             };
         }
@@ -76,8 +64,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("leads", Leads);
-            writer.WriteObjectValue<UntypedNode>("percent", Percent);
+            writer.WriteIntValue("leads", Leads);
+            writer.WriteDoubleValue("percent", Percent);
             writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

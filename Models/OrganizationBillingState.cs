@@ -36,31 +36,13 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when Leadping last processed a subscription event for the organization.</summary>
         public DateTimeOffset? LastSubscriptionEventAt { get; set; }
         /// <summary>Number of user licenses currently assigned to organization members.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? OrganizationMemberAssignedQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode OrganizationMemberAssignedQuantity { get; set; }
-#endif
+        public long? OrganizationMemberAssignedQuantity { get; set; }
         /// <summary>Number of user licenses included in the organization&apos;s subscription plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? OrganizationMemberQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode OrganizationMemberQuantity { get; set; }
-#endif
+        public long? OrganizationMemberQuantity { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan? PendingBillingPlan { get; set; }
         /// <summary>Number of phone numbers included in the organization&apos;s subscription plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PhoneNumberQuantity { get; set; }
-#nullable restore
-#else
-        public UntypedNode PhoneNumberQuantity { get; set; }
-#endif
+        public long? PhoneNumberQuantity { get; set; }
         /// <summary>Start of the current plan billing period.</summary>
         public DateTimeOffset? PlanPeriodStartAt { get; set; }
         /// <summary>Current plan renewal date.</summary>
@@ -97,10 +79,10 @@ namespace Leadping.OpenApiClient.Models
                 { "hasStripeCustomer", n => { HasStripeCustomer = n.GetBoolValue(); } },
                 { "lastPaymentMethodEventAt", n => { LastPaymentMethodEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastSubscriptionEventAt", n => { LastSubscriptionEventAt = n.GetDateTimeOffsetValue(); } },
-                { "organizationMemberAssignedQuantity", n => { OrganizationMemberAssignedQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "organizationMemberQuantity", n => { OrganizationMemberQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "organizationMemberAssignedQuantity", n => { OrganizationMemberAssignedQuantity = n.GetLongValue(); } },
+                { "organizationMemberQuantity", n => { OrganizationMemberQuantity = n.GetLongValue(); } },
                 { "pendingBillingPlan", n => { PendingBillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan>(); } },
-                { "phoneNumberQuantity", n => { PhoneNumberQuantity = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "phoneNumberQuantity", n => { PhoneNumberQuantity = n.GetLongValue(); } },
                 { "planPeriodStartAt", n => { PlanPeriodStartAt = n.GetDateTimeOffsetValue(); } },
                 { "planRenewalAt", n => { PlanRenewalAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -119,10 +101,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("hasStripeCustomer", HasStripeCustomer);
             writer.WriteDateTimeOffsetValue("lastPaymentMethodEventAt", LastPaymentMethodEventAt);
             writer.WriteDateTimeOffsetValue("lastSubscriptionEventAt", LastSubscriptionEventAt);
-            writer.WriteObjectValue<UntypedNode>("organizationMemberAssignedQuantity", OrganizationMemberAssignedQuantity);
-            writer.WriteObjectValue<UntypedNode>("organizationMemberQuantity", OrganizationMemberQuantity);
+            writer.WriteLongValue("organizationMemberAssignedQuantity", OrganizationMemberAssignedQuantity);
+            writer.WriteLongValue("organizationMemberQuantity", OrganizationMemberQuantity);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan>("pendingBillingPlan", PendingBillingPlan);
-            writer.WriteObjectValue<UntypedNode>("phoneNumberQuantity", PhoneNumberQuantity);
+            writer.WriteLongValue("phoneNumberQuantity", PhoneNumberQuantity);
             writer.WriteDateTimeOffsetValue("planPeriodStartAt", PlanPeriodStartAt);
             writer.WriteDateTimeOffsetValue("planRenewalAt", PlanRenewalAt);
             writer.WriteAdditionalData(AdditionalData);

@@ -26,13 +26,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Indicates whether this automation action is active and allowed to run.</summary>
         public bool? IsEnabled { get; set; }
         /// <summary>Sort order used to evaluate or display this automation action.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Order { get; set; }
-#nullable restore
-#else
-        public UntypedNode Order { get; set; }
-#endif
+        public int? Order { get; set; }
         /// <summary>Key-value settings that configure how this automation action behaves.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +70,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "order", n => { Order = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "order", n => { Order = n.GetIntValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationAction_settings>(global::Leadping.OpenApiClient.Models.AutomationAction_settings.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -90,7 +84,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteObjectValue<UntypedNode>("order", Order);
+            writer.WriteIntValue("order", Order);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationAction_settings>("settings", Settings);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

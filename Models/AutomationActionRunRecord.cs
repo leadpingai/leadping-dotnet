@@ -62,21 +62,9 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when Leadping will retry this automation action run record.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
         /// <summary>Sort order used to evaluate or display this automation action run record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Order { get; set; }
-#nullable restore
-#else
-        public UntypedNode Order { get; set; }
-#endif
+        public int? Order { get; set; }
         /// <summary>Number of processing attempts made for this workflow or delivery request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ProcessingAttempts { get; set; }
-#nullable restore
-#else
-        public UntypedNode ProcessingAttempts { get; set; }
-#endif
+        public int? ProcessingAttempts { get; set; }
         /// <summary>UTC timestamp when this automation action run record was scheduled.</summary>
         public DateTimeOffset? ScheduledAt { get; set; }
         /// <summary>UTC timestamp when processing started for this automation action run record.</summary>
@@ -122,8 +110,8 @@ namespace Leadping.OpenApiClient.Models
                 { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
-                { "order", n => { Order = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "processingAttempts", n => { ProcessingAttempts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "order", n => { Order = n.GetIntValue(); } },
+                { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetDateTimeOffsetValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -144,8 +132,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
-            writer.WriteObjectValue<UntypedNode>("order", Order);
-            writer.WriteObjectValue<UntypedNode>("processingAttempts", ProcessingAttempts);
+            writer.WriteIntValue("order", Order);
+            writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteDateTimeOffsetValue("scheduledAt", ScheduledAt);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);

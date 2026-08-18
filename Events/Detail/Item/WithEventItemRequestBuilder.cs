@@ -9,28 +9,28 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Leadping.OpenApiClient.Events.Item.Detail
+namespace Leadping.OpenApiClient.Events.Detail.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \events\{eventId}\detail
+    /// Builds and executes requests for operations under \events\detail\{eventId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DetailRequestBuilder : BaseRequestBuilder
+    public partial class WithEventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Events.Item.Detail.DetailRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Events.Detail.Item.WithEventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/{eventId}/detail", pathParameters)
+        public WithEventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/detail/{eventId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Events.Item.Detail.DetailRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Events.Detail.Item.WithEventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/{eventId}/detail", rawUrl)
+        public WithEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/detail/{eventId}", rawUrl)
         {
         }
         /// <summary>
@@ -40,7 +40,9 @@ namespace Leadping.OpenApiClient.Events.Item.Detail
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.EventDetailResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +56,9 @@ namespace Leadping.OpenApiClient.Events.Item.Detail
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.EventDetailResponse>(requestInfo, global::Leadping.OpenApiClient.Models.EventDetailResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,11 +84,11 @@ namespace Leadping.OpenApiClient.Events.Item.Detail
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Events.Item.Detail.DetailRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Events.Detail.Item.WithEventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Leadping.OpenApiClient.Events.Item.Detail.DetailRequestBuilder WithUrl(string rawUrl)
+        public global::Leadping.OpenApiClient.Events.Detail.Item.WithEventItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Leadping.OpenApiClient.Events.Item.Detail.DetailRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Leadping.OpenApiClient.Events.Detail.Item.WithEventItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

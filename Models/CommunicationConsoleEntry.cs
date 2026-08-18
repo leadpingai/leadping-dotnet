@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier of this diagnostic console entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>User-safe diagnostic message describing what occurred at this stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The occurredAt property</summary>
+        /// <summary>UTC timestamp when this communication-processing event occurred.</summary>
         public DateTimeOffset? OccurredAt { get; set; }
-        /// <summary>The stage property</summary>
+        /// <summary>Communication-processing stage that produced the entry, such as validation, routing, or provider delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Stage { get; set; }
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Stage { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Outcome or state recorded for this processing stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

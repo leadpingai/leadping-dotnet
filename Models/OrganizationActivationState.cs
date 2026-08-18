@@ -18,13 +18,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of registrar-verified domains found by the current search.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AvailableDomainCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode AvailableDomainCount { get; set; }
-#endif
+        public int? AvailableDomainCount { get; set; }
         /// <summary>The current billing subscription status for this organization activation state.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus? BillingSubscriptionStatus { get; set; }
         /// <summary>Compliance notes for this organization activation state.</summary>
@@ -60,13 +54,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>The date and time the selected domain was purchased.</summary>
         public DateTimeOffset? DomainPurchasedAt { get; set; }
         /// <summary>The current domain generation attempt.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? DomainSearchAttempt { get; set; }
-#nullable restore
-#else
-        public UntypedNode DomainSearchAttempt { get; set; }
-#endif
+        public int? DomainSearchAttempt { get; set; }
         /// <summary>Identifies the active domain search run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,7 +223,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "activatedAt", n => { ActivatedAt = n.GetDateTimeOffsetValue(); } },
-                { "availableDomainCount", n => { AvailableDomainCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "availableDomainCount", n => { AvailableDomainCount = n.GetIntValue(); } },
                 { "billingSubscriptionStatus", n => { BillingSubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus>(); } },
                 { "complianceNotes", n => { ComplianceNotes = n.GetStringValue(); } },
                 { "controlledLaunch", n => { ControlledLaunch = n.GetBoolValue(); } },
@@ -244,7 +232,7 @@ namespace Leadping.OpenApiClient.Models
                 { "domainApprovedAt", n => { DomainApprovedAt = n.GetDateTimeOffsetValue(); } },
                 { "domainOptions", n => { DomainOptions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ActivationDomainOption>(global::Leadping.OpenApiClient.Models.ActivationDomainOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "domainPurchasedAt", n => { DomainPurchasedAt = n.GetDateTimeOffsetValue(); } },
-                { "domainSearchAttempt", n => { DomainSearchAttempt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "domainSearchAttempt", n => { DomainSearchAttempt = n.GetIntValue(); } },
                 { "domainSearchId", n => { DomainSearchId = n.GetStringValue(); } },
                 { "domainSearchStage", n => { DomainSearchStage = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationActivationState_domainSearchStage>(); } },
                 { "domainSearchUpdatedAt", n => { DomainSearchUpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -287,7 +275,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("activatedAt", ActivatedAt);
-            writer.WriteObjectValue<UntypedNode>("availableDomainCount", AvailableDomainCount);
+            writer.WriteIntValue("availableDomainCount", AvailableDomainCount);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus>("billingSubscriptionStatus", BillingSubscriptionStatus);
             writer.WriteStringValue("complianceNotes", ComplianceNotes);
             writer.WriteBoolValue("controlledLaunch", ControlledLaunch);
@@ -296,7 +284,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("domainApprovedAt", DomainApprovedAt);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.ActivationDomainOption>("domainOptions", DomainOptions);
             writer.WriteDateTimeOffsetValue("domainPurchasedAt", DomainPurchasedAt);
-            writer.WriteObjectValue<UntypedNode>("domainSearchAttempt", DomainSearchAttempt);
+            writer.WriteIntValue("domainSearchAttempt", DomainSearchAttempt);
             writer.WriteStringValue("domainSearchId", DomainSearchId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationActivationState_domainSearchStage>("domainSearchStage", DomainSearchStage);
             writer.WriteDateTimeOffsetValue("domainSearchUpdatedAt", DomainSearchUpdatedAt);

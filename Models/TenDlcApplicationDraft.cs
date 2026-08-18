@@ -68,13 +68,7 @@ namespace Leadping.OpenApiClient.Models
         public string Ein { get; set; }
 #endif
         /// <summary>Expected monthly volume for this 10DLC application draft.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ExpectedMonthlyVolume { get; set; }
-#nullable restore
-#else
-        public UntypedNode ExpectedMonthlyVolume { get; set; }
-#endif
+        public int? ExpectedMonthlyVolume { get; set; }
         /// <summary>The Telnyx brand vertical for this 10DLC application draft. The JSON name is retained for backward compatibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,13 +148,7 @@ namespace Leadping.OpenApiClient.Models
         public string UseCaseDescription { get; set; }
 #endif
         /// <summary>Version for this 10DLC application draft.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Version { get; set; }
-#nullable restore
-#else
-        public UntypedNode Version { get; set; }
-#endif
+        public int? Version { get; set; }
         /// <summary>Public business website URL submitted to carriers during brand review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,7 +190,7 @@ namespace Leadping.OpenApiClient.Models
                 { "contactName", n => { ContactName = n.GetStringValue(); } },
                 { "contactPhone", n => { ContactPhone = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
-                { "expectedMonthlyVolume", n => { ExpectedMonthlyVolume = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "expectedMonthlyVolume", n => { ExpectedMonthlyVolume = n.GetIntValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
                 { "lastSubmittedAt", n => { LastSubmittedAt = n.GetDateTimeOffsetValue(); } },
                 { "messageExamples", n => { MessageExamples = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -215,7 +203,7 @@ namespace Leadping.OpenApiClient.Models
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "useCase", n => { UseCase = n.GetStringValue(); } },
                 { "useCaseDescription", n => { UseCaseDescription = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetIntValue(); } },
                 { "websiteUrl", n => { WebsiteUrl = n.GetStringValue(); } },
             };
         }
@@ -234,7 +222,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("contactName", ContactName);
             writer.WriteStringValue("contactPhone", ContactPhone);
             writer.WriteStringValue("ein", Ein);
-            writer.WriteObjectValue<UntypedNode>("expectedMonthlyVolume", ExpectedMonthlyVolume);
+            writer.WriteIntValue("expectedMonthlyVolume", ExpectedMonthlyVolume);
             writer.WriteStringValue("industry", Industry);
             writer.WriteDateTimeOffsetValue("lastSubmittedAt", LastSubmittedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("messageExamples", MessageExamples);
@@ -247,7 +235,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("useCase", UseCase);
             writer.WriteStringValue("useCaseDescription", UseCaseDescription);
-            writer.WriteObjectValue<UntypedNode>("version", Version);
+            writer.WriteIntValue("version", Version);
             writer.WriteStringValue("websiteUrl", WebsiteUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

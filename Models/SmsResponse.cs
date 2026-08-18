@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BillableAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode BillableAmount { get; set; }
-#endif
+        public double? BillableAmount { get; set; }
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,13 +148,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>UTC timestamp when Leadping received this inbound event or message.</summary>
         public DateTimeOffset? ReceivedAt { get; set; }
         /// <summary>Number of retry attempts already made for this SMS message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? RetryCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode RetryCount { get; set; }
-#endif
+        public int? RetryCount { get; set; }
         /// <summary>UTC timestamp when Leadping is scheduled to send this SMS message.</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
         /// <summary>Reason Leadping scheduled this delivery for a later time.</summary>
@@ -234,7 +222,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billableAmount", n => { BillableAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
@@ -258,7 +246,7 @@ namespace Leadping.OpenApiClient.Models
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "receivedAt", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
-                { "retryCount", n => { RetryCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "retryCount", n => { RetryCount = n.GetIntValue(); } },
                 { "scheduledFor", n => { ScheduledFor = n.GetDateTimeOffsetValue(); } },
                 { "scheduledReason", n => { ScheduledReason = n.GetStringValue(); } },
                 { "selectionReason", n => { SelectionReason = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SmsResponse_selectionReason>(); } },
@@ -280,7 +268,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("billableAmount", BillableAmount);
+            writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
             writer.WriteStringValue("campaignId", CampaignId);
@@ -304,7 +292,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);
-            writer.WriteObjectValue<UntypedNode>("retryCount", RetryCount);
+            writer.WriteIntValue("retryCount", RetryCount);
             writer.WriteDateTimeOffsetValue("scheduledFor", ScheduledFor);
             writer.WriteStringValue("scheduledReason", ScheduledReason);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SmsResponse_selectionReason>("selectionReason", SelectionReason);

@@ -16,29 +16,11 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of automation records represented by this Leadping customer automation health.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AutomationCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode AutomationCount { get; set; }
-#endif
+        public int? AutomationCount { get; set; }
         /// <summary>Total number of enabled records represented by this Leadping customer automation health.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? EnabledCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode EnabledCount { get; set; }
-#endif
+        public int? EnabledCount { get; set; }
         /// <summary>Number of executions represented by this Leadping customer automation health.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Executions { get; set; }
-#nullable restore
-#else
-        public UntypedNode Executions { get; set; }
-#endif
+        public int? Executions { get; set; }
         /// <summary>Collection of failing automations included with this Leadping customer automation health.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,13 +30,7 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation> FailingAutomations { get; set; }
 #endif
         /// <summary>Total number of failure records represented by this Leadping customer automation health.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? FailureCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode FailureCount { get; set; }
-#endif
+        public int? FailureCount { get; set; }
         /// <summary>Last failure associated with this Leadping customer automation health.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,13 +40,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure LastFailure { get; set; }
 #endif
         /// <summary>Total number of success records represented by this Leadping customer automation health.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SuccessCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode SuccessCount { get; set; }
-#endif
+        public int? SuccessCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerAutomationHealth"/> and sets the default values.
         /// </summary>
@@ -96,13 +66,13 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "automationCount", n => { AutomationCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "enabledCount", n => { EnabledCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "executions", n => { Executions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "automationCount", n => { AutomationCount = n.GetIntValue(); } },
+                { "enabledCount", n => { EnabledCount = n.GetIntValue(); } },
+                { "executions", n => { Executions = n.GetIntValue(); } },
                 { "failingAutomations", n => { FailingAutomations = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation>(global::Leadping.OpenApiClient.Models.CustomerFailingAutomation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "failureCount", n => { FailureCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "failureCount", n => { FailureCount = n.GetIntValue(); } },
                 { "lastFailure", n => { LastFailure = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure>(global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure.CreateFromDiscriminatorValue); } },
-                { "successCount", n => { SuccessCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +82,13 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("automationCount", AutomationCount);
-            writer.WriteObjectValue<UntypedNode>("enabledCount", EnabledCount);
-            writer.WriteObjectValue<UntypedNode>("executions", Executions);
+            writer.WriteIntValue("automationCount", AutomationCount);
+            writer.WriteIntValue("enabledCount", EnabledCount);
+            writer.WriteIntValue("executions", Executions);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation>("failingAutomations", FailingAutomations);
-            writer.WriteObjectValue<UntypedNode>("failureCount", FailureCount);
+            writer.WriteIntValue("failureCount", FailureCount);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure>("lastFailure", LastFailure);
-            writer.WriteObjectValue<UntypedNode>("successCount", SuccessCount);
+            writer.WriteIntValue("successCount", SuccessCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

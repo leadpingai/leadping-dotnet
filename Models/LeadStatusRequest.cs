@@ -34,13 +34,7 @@ namespace Leadping.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Relative display order for the lead status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SortOrder { get; set; }
-#nullable restore
-#else
-        public UntypedNode SortOrder { get; set; }
-#endif
+        public int? SortOrder { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadStatusRequest"/> and sets the default values.
         /// </summary>
@@ -69,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
                 { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusRequest_category>(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "sortOrder", n => { SortOrder = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sortOrder", n => { SortOrder = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -82,7 +76,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusRequest_category>("category", Category);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("sortOrder", SortOrder);
+            writer.WriteIntValue("sortOrder", SortOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

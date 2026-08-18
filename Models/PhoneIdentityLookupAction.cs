@@ -34,13 +34,7 @@ namespace Leadping.OpenApiClient.Models
         public string Provider { get; set; }
 #endif
         /// <summary>The provider cost incurred by this lookup action, in USD.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ProviderCostAmount { get; set; }
-#nullable restore
-#else
-        public UntypedNode ProviderCostAmount { get; set; }
-#endif
+        public double? ProviderCostAmount { get; set; }
         /// <summary>The provider pricing version used to calculate the lookup cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "occurredAt", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
-                { "providerCostAmount", n => { ProviderCostAmount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "providerCostAmount", n => { ProviderCostAmount = n.GetDoubleValue(); } },
                 { "providerPricingVersion", n => { ProviderPricingVersion = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupActionStatus>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupActionType>(); } },
@@ -97,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("occurredAt", OccurredAt);
             writer.WriteStringValue("provider", Provider);
-            writer.WriteObjectValue<UntypedNode>("providerCostAmount", ProviderCostAmount);
+            writer.WriteDoubleValue("providerCostAmount", ProviderCostAmount);
             writer.WriteStringValue("providerPricingVersion", ProviderPricingVersion);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupActionStatus>("status", Status);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupActionType>("type", Type);

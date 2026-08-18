@@ -40,13 +40,7 @@ namespace Leadping.OpenApiClient.Models
         public string FileName { get; set; }
 #endif
         /// <summary>Total number of row records represented by this Leadping user data export file.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? RowCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode RowCount { get; set; }
-#endif
+        public int? RowCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserDataExportFile"/> and sets the default values.
         /// </summary>
@@ -75,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
-                { "rowCount", n => { RowCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "rowCount", n => { RowCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +82,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
-            writer.WriteObjectValue<UntypedNode>("rowCount", RowCount);
+            writer.WriteIntValue("rowCount", RowCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -40,13 +40,7 @@ namespace Leadping.OpenApiClient.Models
         public string Sha256 { get; set; }
 #endif
         /// <summary>Size of the media attachment in bytes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Size { get; set; }
-#nullable restore
-#else
-        public UntypedNode Size { get; set; }
-#endif
+        public long? Size { get; set; }
         /// <summary>URL from which the media attachment can be retrieved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +77,7 @@ namespace Leadping.OpenApiClient.Models
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "size", n => { Size = n.GetLongValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -97,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteStringValue("sha256", Sha256);
-            writer.WriteObjectValue<UntypedNode>("size", Size);
+            writer.WriteLongValue("size", Size);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

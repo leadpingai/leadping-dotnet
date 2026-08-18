@@ -14,13 +14,7 @@ namespace Leadping.OpenApiClient.Models
     public partial class OrganizationTableRow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Account balance for this organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AccountBalance { get; set; }
-#nullable restore
-#else
-        public UntypedNode AccountBalance { get; set; }
-#endif
+        public double? AccountBalance { get; set; }
         /// <summary>Defines the supported Customer Activation Status values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_activationStatus? ActivationStatus { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -50,13 +44,7 @@ namespace Leadping.OpenApiClient.Models
         public string ApiKeyPreview { get; set; }
 #endif
         /// <summary>The total number of tracked uses for this organization API key.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ApiKeyTotalUses { get; set; }
-#nullable restore
-#else
-        public UntypedNode ApiKeyTotalUses { get; set; }
-#endif
+        public long? ApiKeyTotalUses { get; set; }
         /// <summary>Defines the supported Billing Plan values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_billingPlan? BillingPlan { get; set; }
         /// <summary>Whether this organization is enabled.</summary>
@@ -120,13 +108,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Defines the supported 10DLC Application Status values.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationTableRow_tenDlcStatus? TenDlcStatus { get; set; }
         /// <summary>The user count for this organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? UserCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode UserCount { get; set; }
-#endif
+        public int? UserCount { get; set; }
         /// <summary>The website URL associated with this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,7 +144,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountBalance", n => { AccountBalance = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "accountBalance", n => { AccountBalance = n.GetDoubleValue(); } },
                 { "activationStatus", n => { ActivationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_activationStatus>(); } },
                 { "apiKeyExpiresAt", n => { ApiKeyExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyFirstUsedAt", n => { ApiKeyFirstUsedAt = n.GetDateTimeOffsetValue(); } },
@@ -170,7 +152,7 @@ namespace Leadping.OpenApiClient.Models
                 { "apiKeyLastUsedAt", n => { ApiKeyLastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyPermissions", n => { ApiKeyPermissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
-                { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_billingPlan>(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -187,7 +169,7 @@ namespace Leadping.OpenApiClient.Models
                 { "subscriptionCancelAt", n => { SubscriptionCancelAt = n.GetDateTimeOffsetValue(); } },
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_subscriptionStatus>(); } },
                 { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_tenDlcStatus>(); } },
-                { "userCount", n => { UserCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "userCount", n => { UserCount = n.GetIntValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
                 { "websiteStatus", n => { WebsiteStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_websiteStatus>(); } },
             };
@@ -199,7 +181,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("accountBalance", AccountBalance);
+            writer.WriteDoubleValue("accountBalance", AccountBalance);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_activationStatus>("activationStatus", ActivationStatus);
             writer.WriteDateTimeOffsetValue("apiKeyExpiresAt", ApiKeyExpiresAt);
             writer.WriteDateTimeOffsetValue("apiKeyFirstUsedAt", ApiKeyFirstUsedAt);
@@ -207,7 +189,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("apiKeyLastUsedAt", ApiKeyLastUsedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("apiKeyPermissions", ApiKeyPermissions);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
-            writer.WriteObjectValue<UntypedNode>("apiKeyTotalUses", ApiKeyTotalUses);
+            writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_billingPlan>("billingPlan", BillingPlan);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
@@ -224,7 +206,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("subscriptionCancelAt", SubscriptionCancelAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_tenDlcStatus>("tenDlcStatus", TenDlcStatus);
-            writer.WriteObjectValue<UntypedNode>("userCount", UserCount);
+            writer.WriteIntValue("userCount", UserCount);
             writer.WriteStringValue("website", Website);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationTableRow_websiteStatus>("websiteStatus", WebsiteStatus);
             writer.WriteAdditionalData(AdditionalData);

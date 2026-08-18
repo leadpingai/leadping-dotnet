@@ -16,13 +16,7 @@ namespace Leadping.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average minutes measured in minutes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? AverageMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode AverageMinutes { get; set; }
-#endif
+        public double? AverageMinutes { get; set; }
         /// <summary>Collection of average minutes trend included with this Leadping customer response metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,53 +26,17 @@ namespace Leadping.OpenApiClient.Models
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal> AverageMinutesTrend { get; set; }
 #endif
         /// <summary>Median minutes measured in minutes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MedianMinutes { get; set; }
-#nullable restore
-#else
-        public UntypedNode MedianMinutes { get; set; }
-#endif
+        public double? MedianMinutes { get; set; }
         /// <summary>Number of calls missed during the reporting period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MissedCalls { get; set; }
-#nullable restore
-#else
-        public UntypedNode MissedCalls { get; set; }
-#endif
+        public int? MissedCalls { get; set; }
         /// <summary>Number of responded leads represented by this Leadping customer response metrics.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? RespondedLeads { get; set; }
-#nullable restore
-#else
-        public UntypedNode RespondedLeads { get; set; }
-#endif
+        public int? RespondedLeads { get; set; }
         /// <summary>Responded within five minutes percent expressed as a percentage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? RespondedWithinFiveMinutesPercent { get; set; }
-#nullable restore
-#else
-        public UntypedNode RespondedWithinFiveMinutesPercent { get; set; }
-#endif
+        public double? RespondedWithinFiveMinutesPercent { get; set; }
         /// <summary>Number of unread messages represented by this Leadping customer response metrics.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? UnreadMessages { get; set; }
-#nullable restore
-#else
-        public UntypedNode UnreadMessages { get; set; }
-#endif
+        public int? UnreadMessages { get; set; }
         /// <summary>Number of unresponded leads represented by this Leadping customer response metrics.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? UnrespondedLeads { get; set; }
-#nullable restore
-#else
-        public UntypedNode UnrespondedLeads { get; set; }
-#endif
+        public int? UnrespondedLeads { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerResponseMetrics"/> and sets the default values.
         /// </summary>
@@ -104,14 +62,14 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "averageMinutes", n => { AverageMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "averageMinutes", n => { AverageMinutes = n.GetDoubleValue(); } },
                 { "averageMinutesTrend", n => { AverageMinutesTrend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "medianMinutes", n => { MedianMinutes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "missedCalls", n => { MissedCalls = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "respondedLeads", n => { RespondedLeads = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "unreadMessages", n => { UnreadMessages = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "unrespondedLeads", n => { UnrespondedLeads = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "medianMinutes", n => { MedianMinutes = n.GetDoubleValue(); } },
+                { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
+                { "respondedLeads", n => { RespondedLeads = n.GetIntValue(); } },
+                { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetDoubleValue(); } },
+                { "unreadMessages", n => { UnreadMessages = n.GetIntValue(); } },
+                { "unrespondedLeads", n => { UnrespondedLeads = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -121,14 +79,14 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("averageMinutes", AverageMinutes);
+            writer.WriteDoubleValue("averageMinutes", AverageMinutes);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>("averageMinutesTrend", AverageMinutesTrend);
-            writer.WriteObjectValue<UntypedNode>("medianMinutes", MedianMinutes);
-            writer.WriteObjectValue<UntypedNode>("missedCalls", MissedCalls);
-            writer.WriteObjectValue<UntypedNode>("respondedLeads", RespondedLeads);
-            writer.WriteObjectValue<UntypedNode>("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);
-            writer.WriteObjectValue<UntypedNode>("unreadMessages", UnreadMessages);
-            writer.WriteObjectValue<UntypedNode>("unrespondedLeads", UnrespondedLeads);
+            writer.WriteDoubleValue("medianMinutes", MedianMinutes);
+            writer.WriteIntValue("missedCalls", MissedCalls);
+            writer.WriteIntValue("respondedLeads", RespondedLeads);
+            writer.WriteDoubleValue("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);
+            writer.WriteIntValue("unreadMessages", UnreadMessages);
+            writer.WriteIntValue("unrespondedLeads", UnrespondedLeads);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

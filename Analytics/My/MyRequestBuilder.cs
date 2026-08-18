@@ -42,6 +42,7 @@ namespace Leadping.OpenApiClient.Analytics.My
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.CustomerAnalyticsResponse?> GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.Analytics.My.MyRequestBuilder.MyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -57,6 +58,7 @@ namespace Leadping.OpenApiClient.Analytics.My
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.CustomerAnalyticsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.CustomerAnalyticsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -95,15 +97,8 @@ namespace Leadping.OpenApiClient.Analytics.My
         public partial class MyRequestBuilderGetQueryParameters 
         {
             /// <summary>Optional number of recent days to include when explicit timestamps are not supplied.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("days")]
-            public string? Days { get; set; }
-#nullable restore
-#else
-            [QueryParameter("days")]
-            public string Days { get; set; }
-#endif
+            public int? Days { get; set; }
             /// <summary>Optional exclusive end timestamp for the analytics period.</summary>
             [QueryParameter("endAt")]
             public DateTimeOffset? EndAt { get; set; }

@@ -32,13 +32,7 @@ namespace Leadping.OpenApiClient.Models
         public string DomainName { get; set; }
 #endif
         /// <summary>Estimated annual cost for this activation domain option.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? EstimatedAnnualCost { get; set; }
-#nullable restore
-#else
-        public UntypedNode EstimatedAnnualCost { get; set; }
-#endif
+        public double? EstimatedAnnualCost { get; set; }
         /// <summary>Industry relevance for this activation domain option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +86,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "availabilityStatus", n => { AvailabilityStatus = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
-                { "estimatedAnnualCost", n => { EstimatedAnnualCost = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "estimatedAnnualCost", n => { EstimatedAnnualCost = n.GetDoubleValue(); } },
                 { "industryRelevance", n => { IndustryRelevance = n.GetStringValue(); } },
                 { "recommended", n => { Recommended = n.GetBoolValue(); } },
                 { "trustConcerns", n => { TrustConcerns = n.GetStringValue(); } },
@@ -108,7 +102,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("availabilityStatus", AvailabilityStatus);
             writer.WriteStringValue("domainName", DomainName);
-            writer.WriteObjectValue<UntypedNode>("estimatedAnnualCost", EstimatedAnnualCost);
+            writer.WriteDoubleValue("estimatedAnnualCost", EstimatedAnnualCost);
             writer.WriteStringValue("industryRelevance", IndustryRelevance);
             writer.WriteBoolValue("recommended", Recommended);
             writer.WriteStringValue("trustConcerns", TrustConcerns);

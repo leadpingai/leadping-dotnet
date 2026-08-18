@@ -41,6 +41,8 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Warmup
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse?> GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.PhoneNumbers.Item.Warmup.WarmupRequestBuilder.WarmupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,6 +57,8 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Warmup
             {
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -99,15 +103,8 @@ namespace Leadping.OpenApiClient.PhoneNumbers.Item.Warmup
             [QueryParameter("startDate")]
             public Date? StartDate { get; set; }
             /// <summary>The window days.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("windowDays")]
-            public string? WindowDays { get; set; }
-#nullable restore
-#else
-            [QueryParameter("windowDays")]
-            public string WindowDays { get; set; }
-#endif
+            public int? WindowDays { get; set; }
         }
     }
 }
