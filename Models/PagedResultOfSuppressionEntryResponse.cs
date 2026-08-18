@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// A generic container for paginated results returned to the client.
+    /// Returns one page of query results together with page-size, optional total-count, and opaque continuation-cursor metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagedResultOfSuppressionEntryResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Opaque storage continuation token. ‑ `null` → the current page was the last page.</summary>
+        /// <summary>Opaque cursor for requesting the next page, or null when no additional page is available; clients must not parse or modify it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContinuationToken { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContinuationToken { get; set; }
 #endif
-        /// <summary>The subset of items returned for the current page.</summary>
+        /// <summary>Items included in the current page, in the order determined by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.SuppressionEntryResponse>? Items { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.SuppressionEntryResponse> Items { get; set; }
 #endif
-        /// <summary>The number of items returned per page in the response. This may reflect the client&apos;s requested page size, or a server-defined default or limit.</summary>
+        /// <summary>Effective page-size limit used for this response, which may differ from the requested size because of server defaults or limits.</summary>
         public int? PageSize { get; set; }
-        /// <summary>The total number of items that match the query across all pages. May be null if the count is not computed or not applicable (e.g., in continuation-based pagination).</summary>
+        /// <summary>Total number of records matching the query across all pages, or null when counting was not requested or computed.</summary>
         public int? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfSuppressionEntryResponse"/> and sets the default values.

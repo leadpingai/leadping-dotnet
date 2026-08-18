@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AutomationConnection> Connections { get; set; }
 #endif
-        /// <summary>The date and time when the entity was created.</summary>
+        /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>User ID of the person who created this automation configuration response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this automation configuration response is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The unique identifier for the entity.</summary>
+        /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -87,9 +87,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ManagementLevel { get; set; }
 #endif
-        /// <summary>The date and time when the entity was last modified, if applicable.</summary>
+        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The display name for the entity.</summary>
+        /// <summary>Human-readable display name of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string NormalizedCarrier { get; set; }
 #endif
-        /// <summary>An enumerator describing carrier types</summary>
+        /// <summary>Classifies a telephone number by the network service or carrier category that provides it.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneLookupCarrier_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneLookupCarrier"/> and sets the default values.

@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_carrier Carrier { get; set; }
 #endif
-        /// <summary>UTC timestamp when the phone lookup record was created.</summary>
+        /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Fraud value returned by the provider, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Fraud { get; set; }
 #endif
-        /// <summary>Unique Leadping identifier for the saved phone lookup record.</summary>
+        /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this phone lookup result passed validation.</summary>
         public bool? IsValid { get; set; }
-        /// <summary>An enumerator describing phone line types</summary>
+        /// <summary>Classifies the access technology or service type associated with a telephone number.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneLookup_lineType? LineType { get; set; }
         /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_location Location { get; set; }
 #endif
-        /// <summary>UTC timestamp when the phone lookup record was last updated.</summary>
+        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Provider-formatted national phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Automations.All.My
         /// Lists current-user automations with paging, sorting, and filters for reviewing follow-up workflows and ownership.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfAutomationTableRow"/></returns>
-        /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
+        /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
@@ -68,7 +68,7 @@ namespace Leadping.OpenApiClient.Automations.All.My
         /// Lists current-user automations with paging, sorting, and filters for reviewing follow-up workflows and ownership.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.</param>
+        /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Options for flexible, efficient, and explicit querying in Cosmos DB or similar repositories.
+    /// Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RequestDataOptions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Opaque Cosmos DB continuation token. ‑ null on the **first** request. ‑ Client must echo back the NextToken it received from the previous page.</summary>
+        /// <summary>Opaque cursor returned by the previous paged response; omit it when requesting the first page and do not parse or modify it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContinuationToken { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContinuationToken { get; set; }
 #endif
-        /// <summary>Key-value exact match filters (e.g., Status = Active).</summary>
+        /// <summary>Exact-match conditions that require each named field to equal its supplied value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.ExactMatchFilter>? Filters { get; set; }
@@ -31,9 +31,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.ExactMatchFilter> Filters { get; set; }
 #endif
-        /// <summary>Whether to include the total count in the response (for pagination).</summary>
+        /// <summary>Whether the response should include the total number of matching records; counting may increase query cost or latency.</summary>
         public bool? IncludeCount { get; set; }
-        /// <summary>List of sort instructions, in priority order.</summary>
+        /// <summary>Sort instructions applied in priority order, with the first entry acting as the primary sort.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.OrderByOption>? OrderBy { get; set; }
@@ -41,9 +41,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.OrderByOption> OrderBy { get; set; }
 #endif
-        /// <summary>Maximum items to return in one page</summary>
+        /// <summary>Maximum number of items requested for one page; the server may enforce a lower maximum or apply a default.</summary>
         public int? PageSize { get; set; }
-        /// <summary>Advanced range-based filters (e.g., Price &gt; 50 and Price &lt;= 200).</summary>
+        /// <summary>Range conditions that constrain comparable fields with inclusive or exclusive lower and upper bounds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.RangeFilter>? RangeFilters { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.RangeFilter> RangeFilters { get; set; }
 #endif
-        /// <summary>The search term to filter results (applied to SearchFields).</summary>
+        /// <summary>Free-text search term applied to the configured SearchFields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Search { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Search { get; set; }
 #endif
-        /// <summary>The list of fields to apply the Search term to (must be string properties).</summary>
+        /// <summary>Serializable string field names searched for Search; supported names are determined by the queried resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SearchFields { get; set; }

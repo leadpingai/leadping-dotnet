@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time when the entity was created.</summary>
+        /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Optional supporting details displayed beneath the notification message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Details { get; set; }
 #endif
-        /// <summary>The unique identifier for the entity.</summary>
+        /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -59,9 +59,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The date and time when the entity was last modified, if applicable.</summary>
+        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The display name for the entity.</summary>
+        /// <summary>Human-readable display name of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

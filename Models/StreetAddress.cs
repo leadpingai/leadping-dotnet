@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// A minimal, serializable record type for physical mailing addresses, with support for international formats and compatibility with common APIs.
+    /// Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreetAddress : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Optional additional notes or delivery instructions.</summary>
+        /// <summary>Additional address context or delivery instructions that do not fit the structured fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdditionalInfo { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AdditionalInfo { get; set; }
 #endif
-        /// <summary>The city, town, or locality.</summary>
+        /// <summary>City, town, village, or other postal locality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The ISO 3166-1 alpha-2 country code (e.g., &quot;US&quot;, &quot;GB&quot;, &quot;CA&quot;).</summary>
+        /// <summary>Two-letter ISO 3166-1 alpha-2 country code, such as US, GB, or CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The primary address line (e.g., street address, P.O. box, company name).</summary>
+        /// <summary>Primary delivery line, such as a street address, post-office box, or company name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Line1 { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Line1 { get; set; }
 #endif
-        /// <summary>The secondary address line (e.g., apartment, suite, unit, or building).</summary>
+        /// <summary>Secondary delivery line, such as an apartment, suite, unit, floor, or building.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Line2 { get; set; }
@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Line2 { get; set; }
 #endif
-        /// <summary>The postal or ZIP code.</summary>
+        /// <summary>Postal routing code, such as a ZIP code or postcode, formatted according to the destination country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostalCode { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PostalCode { get; set; }
 #endif
-        /// <summary>The province or territory, if distinct from state in your use case (optional, use with care).</summary>
+        /// <summary>Province or territory when represented separately from State by the source or destination system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Province { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Province { get; set; }
 #endif
-        /// <summary>The broader region, district, or administrative area (e.g., prefecture or county).</summary>
+        /// <summary>Region, district, county, prefecture, or other administrative area not represented by state or province.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Region { get; set; }
 #endif
-        /// <summary>The state, province, or equivalent administrative region. Commonly used in countries like the US, Canada, and Australia.</summary>
+        /// <summary>State or equivalent first-level administrative subdivision when that label is used by the country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }

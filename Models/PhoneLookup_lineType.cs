@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>An enumerator describing phone line types</summary>
+    /// <summary>Classifies the access technology or service type associated with a telephone number.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PhoneLookup_lineType
     {

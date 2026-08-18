@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>The date and time when the entity was created.</summary>
+        /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>User ID of the person who created this tag response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The unique identifier for the entity.</summary>
+        /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this lead or record is archived.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The date and time when the entity was last modified, if applicable.</summary>
+        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Display name for this tag response in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

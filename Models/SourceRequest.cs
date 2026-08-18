@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The display name for the entity.</summary>
+        /// <summary>Human-readable display name for the resource, subject to the API&apos;s maximum name length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the organization serves customers younger than 90, for compliance and underwriting context.</summary>
         public bool? IsYoungerThan90 { get; set; }
-        /// <summary>The display name for the entity.</summary>
+        /// <summary>Human-readable display name for the resource, subject to the API&apos;s maximum name length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -43,7 +43,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact Contact { get; set; }
 #endif
-        /// <summary>The date and time when the entity was created.</summary>
+        /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Current lead status change summary that describes the lead outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this lead response is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The unique identifier for the entity.</summary>
+        /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadMetadata Metadata { get; set; }
 #endif
-        /// <summary>The date and time when the entity was last modified, if applicable.</summary>
+        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Canonical phone identity and provider lookup details for this lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

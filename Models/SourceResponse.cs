@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? ComplianceApproved { get; set; }
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
         public double? CostPerLead { get; set; }
-        /// <summary>The date and time when the entity was created.</summary>
+        /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>User summary for the person who created this lead source response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>UTC timestamp when this source first delivered a lead to Leadping.</summary>
         public DateTimeOffset? FirstLeadReceivedAt { get; set; }
-        /// <summary>The unique identifier for the entity.</summary>
+        /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when this source most recently delivered a lead to Leadping.</summary>
         public DateTimeOffset? LastLeadReceivedAt { get; set; }
-        /// <summary>The date and time when the entity was last modified, if applicable.</summary>
+        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>User summary for the person who last modified this lead source response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceResponse_modifiedByUser ModifiedByUser { get; set; }
 #endif
-        /// <summary>The display name for the entity.</summary>
+        /// <summary>Human-readable display name of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

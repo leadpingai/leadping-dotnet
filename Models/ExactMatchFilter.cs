@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// A generic object for handling exact match filtering during querying
+    /// Selects records whose named field equals a supplied scalar value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExactMatchFilter : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Field { get; set; }
 #endif
-        /// <summary>The value that the field must match.</summary>
+        /// <summary>Scalar value the target field must equal; its JSON type should match the field being queried.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Value { get; set; }

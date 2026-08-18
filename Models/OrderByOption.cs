@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// An object for ordering during querying
+    /// Defines one field and direction used to order an API query result set.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrderByOption : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An enumerator for sort direction during querying</summary>
         public global::Leadping.OpenApiClient.Models.OrderByOption_direction? Direction { get; set; }
-        /// <summary>The field to sort by.</summary>
+        /// <summary>Serializable field name used for sorting; supported names are determined by the queried resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Field { get; set; }

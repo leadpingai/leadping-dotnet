@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
-    /// <summary>An enumerator describing carrier types</summary>
+    /// <summary>Classifies a telephone number by the network service or carrier category that provides it.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PhoneLookupCarrier_type
     {
