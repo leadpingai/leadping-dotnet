@@ -36,7 +36,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.My
         /// <summary>
         /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping organization, with support for filtering, sorting, and pagination.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse"/></returns>
         /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.My
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.My
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping organization, with support for filtering, sorting, and pagination.

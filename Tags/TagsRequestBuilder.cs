@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Tags
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Leadping.OpenApiClient.tags.item collection</summary>
-        /// <param name="position">The unique identifier of the tag to update.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Tags.Item.TagsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Tags.Item.TagsItemRequestBuilder this[string position]
         {

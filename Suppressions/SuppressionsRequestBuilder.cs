@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Suppressions
             get => new global::Leadping.OpenApiClient.Suppressions.Release.ReleaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.suppressions.item collection</summary>
-        /// <param name="position">The unique identifier of the suppression entry to retrieve.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Suppressions.Item.SuppressionsItemRequestBuilder this[string position]
         {

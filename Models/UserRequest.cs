@@ -15,32 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
-        public global::Leadping.OpenApiClient.Models.UserRequest_billingPlan? BillingPlan { get; set; }
-        /// <summary>User compliance settings and attestations captured for Leadping account review.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.UserRequest_compliance? Compliance { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.UserRequest_compliance Compliance { get; set; }
-#endif
-        /// <summary>Organization currently selected for the user session or profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization? CurrentOrganization { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization CurrentOrganization { get; set; }
-#endif
-        /// <summary>Email address for the person represented by this user profile request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
         /// <summary>First name of the lead, user, or contact represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,14 +22,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string FirstName { get; set; }
-#endif
-        /// <summary>Stable unique identifier of an existing resource to update; omit it when the API assigns an identifier during creation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
 #endif
         /// <summary>Last name of the lead, user, or contact represented by this user profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,15 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>Mobile notification preferences configured for the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>? MobileDevicePreferences { get; set; }
-#nullable restore
-#else
-        public List<global::Leadping.OpenApiClient.Models.MobileDevicePreferences> MobileDevicePreferences { get; set; }
-#endif
-        /// <summary>Human-readable display name for the resource, subject to the API&apos;s maximum name length.</summary>
+        /// <summary>Display name for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -130,14 +88,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserRequest_billingPlan>(); } },
-                { "compliance", n => { Compliance = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_compliance>(global::Leadping.OpenApiClient.Models.UserRequest_compliance.CreateFromDiscriminatorValue); } },
-                { "currentOrganization", n => { CurrentOrganization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization>(global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
-                { "mobileDevicePreferences", n => { MobileDevicePreferences = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>(global::Leadping.OpenApiClient.Models.MobileDevicePreferences.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notificationPreferences", n => { NotificationPreferences = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences>(global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -151,14 +103,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserRequest_billingPlan>("billingPlan", BillingPlan);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_compliance>("compliance", Compliance);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_currentOrganization>("currentOrganization", CurrentOrganization);
-            writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("lastName", LastName);
-            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>("mobileDevicePreferences", MobileDevicePreferences);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserRequest_notificationPreferences>("notificationPreferences", NotificationPreferences);
             writer.WriteStringValue("phone", Phone);

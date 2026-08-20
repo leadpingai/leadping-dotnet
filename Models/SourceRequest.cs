@@ -31,16 +31,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>Source API key used to authenticate inbound lead delivery to Leadping.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ApiKey { get; set; }
-#nullable restore
-#else
-        public string ApiKey { get; set; }
-#endif
-        /// <summary>Configured cost charged when this source creates a billable lead.</summary>
-        public double? CostPerLead { get; set; }
         /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,17 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Indicates whether this lead source request is active and available in the Leadping API.</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>Stable unique identifier of an existing resource to update; omit it when the API assigns an identifier during creation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>Human-readable display name for the resource, subject to the API&apos;s maximum name length.</summary>
+        /// <summary>Human-readable source name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -83,8 +63,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Indicates whether Leadping should issue a new API key for this source.</summary>
-        public bool? RegenerateApiKey { get; set; }
         /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
         /// <summary>
@@ -114,15 +92,10 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "apiKey", n => { ApiKey = n.GetStringValue(); } },
-                { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultTagNames", n => { DefaultTagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "regenerateApiKey", n => { RegenerateApiKey = n.GetBoolValue(); } },
                 { "requiresTrustedForm", n => { RequiresTrustedForm = n.GetBoolValue(); } },
             };
         }
@@ -135,15 +108,10 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
-            writer.WriteStringValue("apiKey", ApiKey);
-            writer.WriteDoubleValue("costPerLead", CostPerLead);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagNames", DefaultTagNames);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteBoolValue("regenerateApiKey", RegenerateApiKey);
             writer.WriteBoolValue("requiresTrustedForm", RequiresTrustedForm);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Sources
             get => new global::Leadping.OpenApiClient.Sources.All.AllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.sources.item collection</summary>
-        /// <param name="position">The ID of the source to update.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Sources.Item.SourcesItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Sources.Item.SourcesItemRequestBuilder this[string position]
         {

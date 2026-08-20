@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Leads
             get => new global::Leadping.OpenApiClient.Leads.Intake.IntakeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.leads.item collection</summary>
-        /// <param name="position">The ID of the lead to retrieve.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Leads.Item.ItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Leads.Item.ItemRequestBuilder this[string position]
         {

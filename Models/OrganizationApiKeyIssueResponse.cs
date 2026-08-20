@@ -8,61 +8,47 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines the input used for accept organization invitation.
+    /// Returns a newly issued organization API key and its identifying metadata; the secret credential is shown only in this response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AcceptOrganizationInvitationRequest : IAdditionalDataHolder, IParsable
+    public partial class OrganizationApiKeyIssueResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email address associated with this organization invitation.</summary>
+        /// <summary>API key associated with this Leadping organization API key issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse? ApiKey { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse ApiKey { get; set; }
 #endif
-        /// <summary>First name for this organization invitation.</summary>
+        /// <summary>Date and time when the organization API key issue expires.</summary>
+        public DateTimeOffset? ExpiresAt { get; set; }
+        /// <summary>Secret token returned once when the Leadping API key is issued.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? Secret { get; set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
-#endif
-        /// <summary>UTC timestamp for last name on this organization invitation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastName { get; set; }
-#nullable restore
-#else
-        public string LastName { get; set; }
-#endif
-        /// <summary>The token supplied to authorize or complete this organization invitation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Token { get; set; }
-#nullable restore
-#else
-        public string Token { get; set; }
+        public string Secret { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AcceptOrganizationInvitationRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse"/> and sets the default values.
         /// </summary>
-        public AcceptOrganizationInvitationRequest()
+        public OrganizationApiKeyIssueResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AcceptOrganizationInvitationRequest"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.AcceptOrganizationInvitationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.AcceptOrganizationInvitationRequest();
+            return new global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,10 +58,9 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "firstName", n => { FirstName = n.GetStringValue(); } },
-                { "lastName", n => { LastName = n.GetStringValue(); } },
-                { "token", n => { Token = n.GetStringValue(); } },
+                { "apiKey", n => { ApiKey = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>(global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse.CreateFromDiscriminatorValue); } },
+                { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,10 +70,9 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("firstName", FirstName);
-            writer.WriteStringValue("lastName", LastName);
-            writer.WriteStringValue("token", Token);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>("apiKey", ApiKey);
+            writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
+            writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

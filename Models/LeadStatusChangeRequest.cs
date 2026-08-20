@@ -27,28 +27,10 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp for appointment start at on this lead status change.</summary>
         public DateTimeOffset? AppointmentStartAt { get; set; }
-        /// <summary>The assigned to user ID associated with this lead status change.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AssignedToUserId { get; set; }
-#nullable restore
-#else
-        public string AssignedToUserId { get; set; }
-#endif
         /// <summary>UTC timestamp for callback at on this lead status change.</summary>
         public DateTimeOffset? CallbackAt { get; set; }
         /// <summary>Controlled lead status change categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_category? Category { get; set; }
-        /// <summary>The automation that changed this lead status change, when applicable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ChangedByAutomationId { get; set; }
-#nullable restore
-#else
-        public string ChangedByAutomationId { get; set; }
-#endif
-        /// <summary>Known sources that can change a lead&apos;s current lead status change.</summary>
-        public global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_changeSource? ChangeSource { get; set; }
         /// <summary>The current follow up status for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,8 +39,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FollowUpStatus { get; set; }
 #endif
-        /// <summary>Whether this lead status change is missed call follow up.</summary>
-        public bool? IsMissedCallFollowUp { get; set; }
         /// <summary>The operator or customer notes recorded for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,26 +63,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>The related call event ID associated with this lead status change.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RelatedCallEventId { get; set; }
-#nullable restore
-#else
-        public string RelatedCallEventId { get; set; }
-#endif
-        /// <summary>The source ID associated with this lead status change.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceId { get; set; }
-#nullable restore
-#else
-        public string SourceId { get; set; }
-#endif
         /// <summary>UTC timestamp for task due at on this lead status change.</summary>
         public DateTimeOffset? TaskDueAt { get; set; }
-        /// <summary>UTC timestamp for timestamp on this lead status change.</summary>
-        public DateTimeOffset? Timestamp { get; set; }
         /// <summary>Category of status change being recorded for the lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,20 +101,13 @@ namespace Leadping.OpenApiClient.Models
                 { "appointmentEndAt", n => { AppointmentEndAt = n.GetDateTimeOffsetValue(); } },
                 { "appointmentNotes", n => { AppointmentNotes = n.GetStringValue(); } },
                 { "appointmentStartAt", n => { AppointmentStartAt = n.GetDateTimeOffsetValue(); } },
-                { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
                 { "callbackAt", n => { CallbackAt = n.GetDateTimeOffsetValue(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_category>(); } },
-                { "changeSource", n => { ChangeSource = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_changeSource>(); } },
-                { "changedByAutomationId", n => { ChangedByAutomationId = n.GetStringValue(); } },
                 { "followUpStatus", n => { FollowUpStatus = n.GetStringValue(); } },
-                { "isMissedCallFollowUp", n => { IsMissedCallFollowUp = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "relatedCallEventId", n => { RelatedCallEventId = n.GetStringValue(); } },
-                { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "taskDueAt", n => { TaskDueAt = n.GetDateTimeOffsetValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -166,20 +121,13 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("appointmentEndAt", AppointmentEndAt);
             writer.WriteStringValue("appointmentNotes", AppointmentNotes);
             writer.WriteDateTimeOffsetValue("appointmentStartAt", AppointmentStartAt);
-            writer.WriteStringValue("assignedToUserId", AssignedToUserId);
             writer.WriteDateTimeOffsetValue("callbackAt", CallbackAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_category>("category", Category);
-            writer.WriteStringValue("changedByAutomationId", ChangedByAutomationId);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_changeSource>("changeSource", ChangeSource);
             writer.WriteStringValue("followUpStatus", FollowUpStatus);
-            writer.WriteBoolValue("isMissedCallFollowUp", IsMissedCallFollowUp);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteStringValue("reason", Reason);
-            writer.WriteStringValue("relatedCallEventId", RelatedCallEventId);
-            writer.WriteStringValue("sourceId", SourceId);
             writer.WriteDateTimeOffsetValue("taskDueAt", TaskDueAt);
-            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

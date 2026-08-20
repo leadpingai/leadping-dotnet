@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.PaymentMethods
             get => new global::Leadping.OpenApiClient.PaymentMethods.Invoices.InvoicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.paymentMethods.item collection</summary>
-        /// <param name="position">The ID of the payment method to retrieve.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.PaymentMethods.Item.PaymentMethodsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.PaymentMethods.Item.PaymentMethodsItemRequestBuilder this[string position]
         {

@@ -8,45 +8,39 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes how a phone location value was resolved.
+    /// Confirms that an organization API key was revoked.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PhoneLocationSource : IAdditionalDataHolder, IParsable
+    public partial class OrganizationApiKeyRevokeResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The resolution method, such as Telnyx-city-state, coordinates, phone-number, or state-default.</summary>
+        /// <summary>Unique identifier of the revoked API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Method { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The city, state, coordinates, phone number, or representative ZIP used by the method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Query { get; set; }
-#nullable restore
-#else
-        public string Query { get; set; }
-#endif
+        /// <summary>Date and time when the API key was revoked.</summary>
+        public DateTimeOffset? RevokedAt { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneLocationSource"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse"/> and sets the default values.
         /// </summary>
-        public PhoneLocationSource()
+        public OrganizationApiKeyRevokeResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneLocationSource"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.PhoneLocationSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.PhoneLocationSource();
+            return new global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +50,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "method", n => { Method = n.GetStringValue(); } },
-                { "query", n => { Query = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "revokedAt", n => { RevokedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +61,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("method", Method);
-            writer.WriteStringValue("query", Query);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("revokedAt", RevokedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

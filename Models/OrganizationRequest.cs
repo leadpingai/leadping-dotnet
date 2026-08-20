@@ -23,44 +23,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationRequest_address Address { get; set; }
 #endif
-        /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
-        public double? AutoRefillAmount { get; set; }
-        /// <summary>Indicates whether automatic wallet refill is enabled for the organization.</summary>
-        public bool? AutoRefillEnabled { get; set; }
-        /// <summary>Wallet balance threshold that triggers automatic refill.</summary>
-        public double? AutoRefillTrigger { get; set; }
-        /// <summary>Postal address used for invoices, receipts, and payment processor billing records.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_billingAddress? BillingAddress { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_billingAddress BillingAddress { get; set; }
-#endif
-        /// <summary>Name used for invoices, receipts, and payment processor billing records.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BillingName { get; set; }
-#nullable restore
-#else
-        public string BillingName { get; set; }
-#endif
-        /// <summary>Tax identifier printed on billing documents. This may differ from the organization verification EIN.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BillingTaxId { get; set; }
-#nullable restore
-#else
-        public string BillingTaxId { get; set; }
-#endif
-        /// <summary>Compliance policy configuration for the organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_compliancePolicy? CompliancePolicy { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_compliancePolicy CompliancePolicy { get; set; }
-#endif
         /// <summary>Human-readable description that explains this organization profile request to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,27 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ein { get; set; }
 #endif
-        /// <summary>Uploaded EIN document reference used for organization verification.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_einDocument? EinDocument { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_einDocument EinDocument { get; set; }
-#endif
-        /// <summary>Indicates whether this organization profile request is active and available in the Leadping API.</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>Stable unique identifier of an existing resource to update; omit it when the API assigns an identifier during creation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
         /// <summary>Indicates whether the organization serves customers younger than 90, for compliance and underwriting context.</summary>
         public bool? IsYoungerThan90 { get; set; }
-        /// <summary>Human-readable display name for the resource, subject to the API&apos;s maximum name length.</summary>
+        /// <summary>Primary organization name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -113,14 +57,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Phone { get; set; }
 #endif
-        /// <summary>Phone numbers assigned to this organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Leadping.OpenApiClient.Models.IdNameValue>? Phones { get; set; }
-#nullable restore
-#else
-        public List<global::Leadping.OpenApiClient.Models.IdNameValue> Phones { get; set; }
-#endif
         /// <summary>Alternate organization name or DBA shown in Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,8 +65,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SecondaryName { get; set; }
 #endif
-        /// <summary>Describes an organization&apos;s account lifecycle and whether it can actively use Leadping services.</summary>
-        public global::Leadping.OpenApiClient.Models.OrganizationRequest_status? Status { get; set; }
         /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,24 +107,12 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_address>(global::Leadping.OpenApiClient.Models.OrganizationRequest_address.CreateFromDiscriminatorValue); } },
-                { "autoRefillAmount", n => { AutoRefillAmount = n.GetDoubleValue(); } },
-                { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
-                { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetDoubleValue(); } },
-                { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_billingAddress>(global::Leadping.OpenApiClient.Models.OrganizationRequest_billingAddress.CreateFromDiscriminatorValue); } },
-                { "billingName", n => { BillingName = n.GetStringValue(); } },
-                { "billingTaxId", n => { BillingTaxId = n.GetStringValue(); } },
-                { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_compliancePolicy>(global::Leadping.OpenApiClient.Models.OrganizationRequest_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
-                { "einDocument", n => { EinDocument = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_einDocument>(global::Leadping.OpenApiClient.Models.OrganizationRequest_einDocument.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "isYoungerThan90", n => { IsYoungerThan90 = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.IdNameValue>(global::Leadping.OpenApiClient.Models.IdNameValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secondaryName", n => { SecondaryName = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_status>(); } },
                 { "vertical", n => { Vertical = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
@@ -203,24 +125,12 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_address>("address", Address);
-            writer.WriteDoubleValue("autoRefillAmount", AutoRefillAmount);
-            writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
-            writer.WriteDoubleValue("autoRefillTrigger", AutoRefillTrigger);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_billingAddress>("billingAddress", BillingAddress);
-            writer.WriteStringValue("billingName", BillingName);
-            writer.WriteStringValue("billingTaxId", BillingTaxId);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("ein", Ein);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_einDocument>("einDocument", EinDocument);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isYoungerThan90", IsYoungerThan90);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.IdNameValue>("phones", Phones);
             writer.WriteStringValue("secondaryName", SecondaryName);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_status>("status", Status);
             writer.WriteStringValue("vertical", Vertical);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);

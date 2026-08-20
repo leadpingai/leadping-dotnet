@@ -24,6 +24,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Detail { get; set; }
 #endif
+        /// <summary>Validation errors keyed by the JSON request field name. Present for request validation failures.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.ProblemDetails_errors? Errors { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.ProblemDetails_errors Errors { get; set; }
+#endif
         /// <summary>URI reference that identifies this specific occurrence of the problem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,6 +51,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Title { get; set; }
+#endif
+        /// <summary>Request trace identifier used to correlate this problem with Leadping diagnostics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TraceId { get; set; }
+#nullable restore
+#else
+        public string TraceId { get; set; }
 #endif
         /// <summary>URI reference that identifies the problem type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,9 +94,11 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "detail", n => { Detail = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ProblemDetails_errors>(global::Leadping.OpenApiClient.Models.ProblemDetails_errors.CreateFromDiscriminatorValue); } },
                 { "instance", n => { Instance = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "traceId", n => { TraceId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -92,9 +110,11 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detail", Detail);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ProblemDetails_errors>("errors", Errors);
             writer.WriteStringValue("instance", Instance);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
+            writer.WriteStringValue("traceId", TraceId);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,14 +17,6 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Billing plan for this billing plan.</summary>
         public global::Leadping.OpenApiClient.Models.BillingPlan? BillingPlan { get; set; }
-        /// <summary>The user ID associated with this billing plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.ChangeBillingPlanRequest"/> and sets the default values.
         /// </summary>
@@ -51,7 +43,6 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BillingPlan>(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +53,6 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BillingPlan>("billingPlan", BillingPlan);
-            writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

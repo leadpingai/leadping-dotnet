@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes stripe payment method data used in Leadping API requests and responses.
+    /// Describes Stripe payment method data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StripePaymentMethodResponse : IAdditionalDataHolder, IParsable

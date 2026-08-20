@@ -46,7 +46,7 @@ namespace Leadping.OpenApiClient.Notifications
             get => new global::Leadping.OpenApiClient.Notifications.UnreadCount.UnreadCountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.notifications.item collection</summary>
-        /// <param name="position">The notification ID.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Notifications.Item.NotificationsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Notifications.Item.NotificationsItemRequestBuilder this[string position]
         {

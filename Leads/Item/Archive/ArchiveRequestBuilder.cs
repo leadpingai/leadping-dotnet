@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Archive
         {
         }
         /// <summary>
-        /// Archives a lead without deleting history, removing it from active pipeline views while preserving communication and event records.
+        /// Archives a lead without deleting history, removing it from active pipeline views while preserving communication and event records.The request body is intentionally optional. An empty body archives the lead with the default manually-archived reason.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
         /// <param name="body">Defines the fields clients can send when working with lead archive.</param>
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Archive
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archives a lead without deleting history, removing it from active pipeline views while preserving communication and event records.
+        /// Archives a lead without deleting history, removing it from active pipeline views while preserving communication and event records.The request body is intentionally optional. An empty body archives the lead with the default manually-archived reason.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the fields clients can send when working with lead archive.</param>

@@ -8,14 +8,14 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Returns one page of query results together with page-size, optional total-count, and opaque continuation-cursor metadata.
+    /// A page of safe organization API-key previews.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PagedResultOfOrganizationTableRow : IAdditionalDataHolder, IParsable
+    public partial class OrganizationApiKeyListResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Opaque cursor for requesting the next page, or null when no additional page is available; clients must not parse or modify it.</summary>
+        /// <summary>Opaque token for retrieving the next page, or null when this is the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContinuationToken { get; set; }
@@ -23,34 +23,34 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContinuationToken { get; set; }
 #endif
-        /// <summary>Items included in the current page, in the order determined by the query.</summary>
+        /// <summary>Safe API-key previews in the current page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Leadping.OpenApiClient.Models.OrganizationTableRow>? Items { get; set; }
+        public List<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Leadping.OpenApiClient.Models.OrganizationTableRow> Items { get; set; }
+        public List<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse> Items { get; set; }
 #endif
-        /// <summary>Effective page-size limit used for this response, which may differ from the requested size because of server defaults or limits.</summary>
+        /// <summary>Number of API keys in the current page.</summary>
         public int? PageSize { get; set; }
-        /// <summary>Total number of records matching the query across all pages, or null when counting was not requested or computed.</summary>
+        /// <summary>Total number of API keys matching the request.</summary>
         public int? TotalCount { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse"/> and sets the default values.
         /// </summary>
-        public PagedResultOfOrganizationTableRow()
+        public OrganizationApiKeyListResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.PagedResultOfOrganizationTableRow();
+            return new global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "continuationToken", n => { ContinuationToken = n.GetStringValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrganizationTableRow>(global::Leadping.OpenApiClient.Models.OrganizationTableRow.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>(global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pageSize", n => { PageSize = n.GetIntValue(); } },
                 { "totalCount", n => { TotalCount = n.GetIntValue(); } },
             };
@@ -74,7 +74,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("continuationToken", ContinuationToken);
-            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrganizationTableRow>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>("items", Items);
             writer.WriteIntValue("pageSize", PageSize);
             writer.WriteIntValue("totalCount", TotalCount);
             writer.WriteAdditionalData(AdditionalData);

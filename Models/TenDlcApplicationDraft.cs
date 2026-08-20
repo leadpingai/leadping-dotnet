@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes ten dlc application draft data used in Leadping API requests and responses.
+    /// Describes 10DLC application draft data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TenDlcApplicationDraft : IAdditionalDataHolder, IParsable

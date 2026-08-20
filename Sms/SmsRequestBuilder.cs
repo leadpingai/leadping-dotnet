@@ -28,7 +28,7 @@ namespace Leadping.OpenApiClient.Sms
             get => new global::Leadping.OpenApiClient.Sms.Send.SendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.sms.item collection</summary>
-        /// <param name="position">The sms event identifier.</param>
+        /// <param name="position">The SMS event identifier.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Sms.Item.WithSmsEventItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Sms.Item.WithSmsEventItemRequestBuilder this[string position]
         {

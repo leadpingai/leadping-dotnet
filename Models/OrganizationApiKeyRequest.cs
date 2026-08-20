@@ -8,30 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines the fields clients can send when working with contact form.
+    /// Defines the display name and access configuration for a new Leadping organization API key.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ContactRequest : IAdditionalDataHolder, IParsable
+    public partial class OrganizationApiKeyRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Email address for the person represented by this contact form request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
-        /// <summary>Message text supplied by the user or returned by the Leadping API for this contact form request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>Display name for this contact form request in the Leadping API.</summary>
+        /// <summary>Number of days before the key expires. Null means no expiration.</summary>
+        public int? ExpiresInDays { get; set; }
+        /// <summary>Human-readable name used to identify the key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -39,30 +25,30 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Invitation or workflow token used to authorize this request.</summary>
+        /// <summary>WorkOS permission slugs granted to the API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token { get; set; }
+        public List<string>? Permissions { get; set; }
 #nullable restore
 #else
-        public string Token { get; set; }
+        public List<string> Permissions { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.ContactRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRequest"/> and sets the default values.
         /// </summary>
-        public ContactRequest()
+        public OrganizationApiKeyRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.ContactRequest"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.ContactRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.OrganizationApiKeyRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.ContactRequest();
+            return new global::Leadping.OpenApiClient.Models.OrganizationApiKeyRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,10 +58,9 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
+                { "expiresInDays", n => { ExpiresInDays = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "token", n => { Token = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,10 +70,9 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("message", Message);
+            writer.WriteIntValue("expiresInDays", ExpiresInDays);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("token", Token);
+            writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
