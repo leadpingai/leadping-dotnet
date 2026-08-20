@@ -77,7 +77,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The date and time when this user last completed the Leadping sign-in flow.</summary>
         public DateTimeOffset? LastLoggedInAt { get; set; }
-        /// <summary>UTC timestamp for last name on this user.</summary>
+        /// <summary>Last name of the Leadping user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }

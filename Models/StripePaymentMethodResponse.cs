@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this Stripe payment method is default.</summary>
         public bool? IsDefault { get; set; }
-        /// <summary>UTC timestamp for last4 on this Stripe payment method.</summary>
+        /// <summary>Last four digits of the payment card number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Last4 { get; set; }

@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ein { get; set; }
 #endif
-        /// <summary>Indicates whether the organization serves customers younger than 90, for compliance and underwriting context.</summary>
+        /// <summary>Whether the organization was formed less than 90 days ago.</summary>
         public bool? IsYoungerThan90 { get; set; }
         /// <summary>Primary organization name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
