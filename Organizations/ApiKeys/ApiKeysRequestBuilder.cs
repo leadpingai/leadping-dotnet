@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys
             get => new global::Leadping.OpenApiClient.Organizations.ApiKeys.My.MyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.organizations.apiKeys.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The API key ID.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Organizations.ApiKeys.Item.ApiKeysItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Organizations.ApiKeys.Item.ApiKeysItemRequestBuilder this[string position]
         {

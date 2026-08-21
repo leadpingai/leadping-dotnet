@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Wallets
             get => new global::Leadping.OpenApiClient.Wallets.Me.MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.wallets.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the wallet to retrieve.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Wallets.Item.WalletsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Wallets.Item.WalletsItemRequestBuilder this[string position]
         {

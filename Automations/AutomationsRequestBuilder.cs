@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Automations
             get => new global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.automations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the automation.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Automations.Item.AutomationsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Automations.Item.AutomationsItemRequestBuilder this[string position]
         {

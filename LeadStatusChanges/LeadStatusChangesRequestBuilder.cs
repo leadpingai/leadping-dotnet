@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges
             get => new global::Leadping.OpenApiClient.LeadStatusChanges.All.AllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.leadStatusChanges.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the lead status change.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.LeadStatusChanges.Item.LeadStatusChangesItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.LeadStatusChanges.Item.LeadStatusChangesItemRequestBuilder this[string position]
         {

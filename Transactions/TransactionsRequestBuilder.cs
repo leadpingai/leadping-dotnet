@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Transactions
             get => new global::Leadping.OpenApiClient.Transactions.All.AllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.transactions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the transaction to retrieve.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Transactions.Item.TransactionsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Transactions.Item.TransactionsItemRequestBuilder this[string position]
         {
