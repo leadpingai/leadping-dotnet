@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/exports/{exportId}/download?token={token}", pathParameters)
+        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/exports/{exportId}/download?token={token}{&redirect*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,12 +30,13 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/exports/{exportId}/download?token={token}", rawUrl)
+        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/exports/{exportId}/download?token={token}{&redirect*}", rawUrl)
         {
         }
         /// <summary>
         /// Validates an export download token and redirects to the generated file when the current-user report is ready.
         /// </summary>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserDataExportDownloadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
@@ -43,11 +44,11 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.Reports.Exports.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.UserDataExportDownloadResponse?> GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.Reports.Exports.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.Reports.Exports.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.UserDataExportDownloadResponse> GetAsync(Action<RequestConfiguration<global::Leadping.OpenApiClient.Reports.Exports.Item.Download.DownloadRequestBuilder.DownloadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -57,7 +58,7 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
                 { "410", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.UserDataExportDownloadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.UserDataExportDownloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Validates an export download token and redirects to the generated file when the current-user report is ready.
@@ -75,7 +76,7 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/problem+json");
+            requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
             return requestInfo;
         }
         /// <summary>
@@ -93,6 +94,9 @@ namespace Leadping.OpenApiClient.Reports.Exports.Item.Download
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DownloadRequestBuilderGetQueryParameters 
         {
+            /// <summary>Whether to redirect to the temporary file URL. Set to false to return the URL as JSON.</summary>
+            [QueryParameter("redirect")]
+            public bool? Redirect { get; set; }
             /// <summary>The short-lived download token issued for this export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
