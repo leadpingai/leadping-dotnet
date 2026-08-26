@@ -15,10 +15,16 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of calls that failed or were blocked in this time bucket.</summary>
+        public int? CallErrors { get; set; }
         /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
         public double? CallMinutes { get; set; }
         /// <summary>Number of calls represented by this Leadping customer communication usage point.</summary>
         public int? Calls { get; set; }
+        /// <summary>Number of outbound calls placed in this time bucket.</summary>
+        public int? CallsPlaced { get; set; }
+        /// <summary>Number of inbound calls received in this time bucket.</summary>
+        public int? CallsReceived { get; set; }
         /// <summary>Date and time when this Leadping customer communication usage point was end.</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>Human-readable label for this Leadping customer communication usage point.</summary>
@@ -29,6 +35,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>Number of SMS messages that failed or were blocked in this time bucket.</summary>
+        public int? SmsErrors { get; set; }
         /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
         /// <summary>Number of SMS messages sent during the reporting period.</summary>
@@ -62,10 +70,14 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callErrors", n => { CallErrors = n.GetIntValue(); } },
                 { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
                 { "calls", n => { Calls = n.GetIntValue(); } },
+                { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
+                { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
                 { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "smsErrors", n => { SmsErrors = n.GetIntValue(); } },
                 { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
                 { "smsSent", n => { SmsSent = n.GetIntValue(); } },
                 { "spend", n => { Spend = n.GetDoubleValue(); } },
@@ -79,10 +91,14 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("callErrors", CallErrors);
             writer.WriteDoubleValue("callMinutes", CallMinutes);
             writer.WriteIntValue("calls", Calls);
+            writer.WriteIntValue("callsPlaced", CallsPlaced);
+            writer.WriteIntValue("callsReceived", CallsReceived);
             writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteStringValue("label", Label);
+            writer.WriteIntValue("smsErrors", SmsErrors);
             writer.WriteIntValue("smsReceived", SmsReceived);
             writer.WriteIntValue("smsSent", SmsSent);
             writer.WriteDoubleValue("spend", Spend);

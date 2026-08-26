@@ -7,6 +7,10 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum LeadResponse_processingStatus
     {
+        [EnumMember(Value = "Quarantined")]
+        #pragma warning disable CS1591
+        Quarantined,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Verifying")]
         #pragma warning disable CS1591
         Verifying,

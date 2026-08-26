@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Item.Transfer
         {
         }
         /// <summary>
-        /// Transfers an active Leadping phone call to a new phone number and returns the updated call record with status and routing details.
+        /// The call operation validates ownership and current provider state before returning the updated Leadping call representation.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneCallResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Item.Transfer
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneCallResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Transfers an active Leadping phone call to a new phone number and returns the updated call record with status and routing details.
+        /// The call operation validates ownership and current provider state before returning the updated Leadping call representation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Item.Transfer
             return new global::Leadping.OpenApiClient.PhoneCall.Item.Transfer.TransferRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Transfers an active Leadping phone call to a new phone number and returns the updated call record with status and routing details.
+        /// The call operation validates ownership and current provider state before returning the updated Leadping call representation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransferRequestBuilderPostQueryParameters 

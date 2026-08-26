@@ -17,6 +17,8 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of calls answered during the reporting period.</summary>
         public int? AnsweredCalls { get; set; }
+        /// <summary>Number of calls that failed or were blocked during the reporting period.</summary>
+        public int? CallErrors { get; set; }
         /// <summary>Total connected call duration, in minutes, during the reporting period.</summary>
         public double? CallMinutes { get; set; }
         /// <summary>Number of outbound calls placed during the reporting period.</summary>
@@ -67,6 +69,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "answeredCalls", n => { AnsweredCalls = n.GetIntValue(); } },
+                { "callErrors", n => { CallErrors = n.GetIntValue(); } },
                 { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
                 { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
                 { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
@@ -86,6 +89,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("answeredCalls", AnsweredCalls);
+            writer.WriteIntValue("callErrors", CallErrors);
             writer.WriteDoubleValue("callMinutes", CallMinutes);
             writer.WriteIntValue("callsPlaced", CallsPlaced);
             writer.WriteIntValue("callsReceived", CallsReceived);

@@ -41,6 +41,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Total number of success records represented by this Leadping customer automation health.</summary>
         public int? SuccessCount { get; set; }
+        /// <summary>Automation execution activity over the reporting period.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.CustomerAutomationHealthPoint>? Trend { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.CustomerAutomationHealthPoint> Trend { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerAutomationHealth"/> and sets the default values.
         /// </summary>
@@ -73,6 +81,7 @@ namespace Leadping.OpenApiClient.Models
                 { "failureCount", n => { FailureCount = n.GetIntValue(); } },
                 { "lastFailure", n => { LastFailure = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure>(global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure.CreateFromDiscriminatorValue); } },
                 { "successCount", n => { SuccessCount = n.GetIntValue(); } },
+                { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerAutomationHealthPoint>(global::Leadping.OpenApiClient.Models.CustomerAutomationHealthPoint.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -89,6 +98,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("failureCount", FailureCount);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure>("lastFailure", LastFailure);
             writer.WriteIntValue("successCount", SuccessCount);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerAutomationHealthPoint>("trend", Trend);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

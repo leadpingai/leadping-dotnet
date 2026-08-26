@@ -27,6 +27,30 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
+        /// <summary>Identifier and display name of the assigned organization member.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_assignedTo? AssignedTo { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadTableRow_assignedTo AssignedTo { get; set; }
+#endif
+        /// <summary>Leadping user currently responsible for this lead, or null when unassigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssignedToUserId { get; set; }
+#nullable restore
+#else
+        public string AssignedToUserId { get; set; }
+#endif
+        /// <summary>Optional profile image URL explicitly associated with the lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AvatarUrl { get; set; }
+#nullable restore
+#else
+        public string AvatarUrl { get; set; }
+#endif
         /// <summary>UTC timestamp when this lead table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Current lead status change summary that describes the lead outcome.</summary>
@@ -88,6 +112,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Phone { get; set; }
+#endif
+        /// <summary>Identifier of the canonical phone identity associated with this lead&apos;s phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PhoneIdentityId { get; set; }
+#nullable restore
+#else
+        public string PhoneIdentityId { get; set; }
 #endif
         /// <summary>Lead price or transaction price supplied to the Leadping API.</summary>
         public double? Price { get; set; }
@@ -165,6 +197,9 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "archivedByUserId", n => { ArchivedByUserId = n.GetStringValue(); } },
+                { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_assignedTo>(global::Leadping.OpenApiClient.Models.LeadTableRow_assignedTo.CreateFromDiscriminatorValue); } },
+                { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
+                { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus>(global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
@@ -175,6 +210,7 @@ namespace Leadping.OpenApiClient.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>(global::Leadping.OpenApiClient.Models.LeadTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
+                { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus>(); } },
                 { "processingStatusChangedAt", n => { ProcessingStatusChangedAt = n.GetDateTimeOffsetValue(); } },
@@ -196,6 +232,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteStringValue("archivedByUserId", ArchivedByUserId);
             writer.WriteIntValue("archiveReason", ArchiveReason);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_assignedTo>("assignedTo", AssignedTo);
+            writer.WriteStringValue("assignedToUserId", AssignedToUserId);
+            writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
@@ -206,6 +245,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phone", Phone);
+            writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteDoubleValue("price", Price);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadTableRow_processingStatus>("processingStatus", ProcessingStatus);
             writer.WriteDateTimeOffsetValue("processingStatusChangedAt", ProcessingStatusChangedAt);

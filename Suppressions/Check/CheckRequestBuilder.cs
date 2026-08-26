@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Suppressions.Check
         {
         }
         /// <summary>
-        /// Checks whether a recipient is blocked by an active Leadping suppression entry before sending messages or placing calls through the selected channel.
+        /// The result reflects the effective compliance state after normalization, organization scoping, and suppression-history checks.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SuppressionCheckResult"/></returns>
         /// <param name="body">Defines a recipient and communication channel to suppress, release, or check before Leadping sends outreach.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Suppressions.Check
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SuppressionCheckResult>(requestInfo, global::Leadping.OpenApiClient.Models.SuppressionCheckResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Checks whether a recipient is blocked by an active Leadping suppression entry before sending messages or placing calls through the selected channel.
+        /// The result reflects the effective compliance state after normalization, organization scoping, and suppression-history checks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines a recipient and communication channel to suppress, release, or check before Leadping sends outreach.</param>

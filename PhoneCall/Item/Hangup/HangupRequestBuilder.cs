@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Item.Hangup
         {
         }
         /// <summary>
-        /// Ends an active Leadping phone call by call ID and returns the updated call record, including status and provider routing details.
+        /// The call operation validates ownership and current provider state before returning the updated Leadping call representation.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneCallResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Item.Hangup
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneCallResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Ends an active Leadping phone call by call ID and returns the updated call record, including status and provider routing details.
+        /// The call operation validates ownership and current provider state before returning the updated Leadping call representation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

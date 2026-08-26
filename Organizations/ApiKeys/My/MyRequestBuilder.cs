@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.My
         {
         }
         /// <summary>
-        /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping organization, with support for filtering, sorting, and pagination.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse"/></returns>
         /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.My
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a paged list of API keys owned by the caller&apos;s current Leadping organization, with support for filtering, sorting, and pagination.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>

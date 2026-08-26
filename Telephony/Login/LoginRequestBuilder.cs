@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Telephony.Login
         {
         }
         /// <summary>
-        /// Generates a Leadping WebRTC login token so authenticated agents can connect to telephony services and place or receive browser-based calls.
+        /// The issued client configuration is scoped to the authenticated user and contains only the short-lived credentials required by the calling client.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TelephonyLoginResponse"/></returns>
         /// <param name="body">Identifies the Leadping user and calling context for which a short-lived telephony client token should be issued.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Telephony.Login
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.TelephonyLoginResponse>(requestInfo, global::Leadping.OpenApiClient.Models.TelephonyLoginResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Generates a Leadping WebRTC login token so authenticated agents can connect to telephony services and place or receive browser-based calls.
+        /// The issued client configuration is scoped to the authenticated user and contains only the short-lived credentials required by the calling client.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Identifies the Leadping user and calling context for which a short-lived telephony client token should be issued.</param>

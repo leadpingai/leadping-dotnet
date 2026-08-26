@@ -67,6 +67,14 @@ namespace Leadping.OpenApiClient.Models
         public int? ProcessingAttempts { get; set; }
         /// <summary>UTC timestamp when this automation action run record was scheduled.</summary>
         public DateTimeOffset? ScheduledAt { get; set; }
+        /// <summary>Connection selected by a control-flow action such as a weighted random split.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SelectedConnectionId { get; set; }
+#nullable restore
+#else
+        public string SelectedConnectionId { get; set; }
+#endif
         /// <summary>UTC timestamp when processing started for this automation action run record.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>Current lifecycle status for this automation action run record in the Leadping API.</summary>
@@ -113,6 +121,7 @@ namespace Leadping.OpenApiClient.Models
                 { "order", n => { Order = n.GetIntValue(); } },
                 { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetDateTimeOffsetValue(); } },
+                { "selectedConnectionId", n => { SelectedConnectionId = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -135,6 +144,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("order", Order);
             writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteDateTimeOffsetValue("scheduledAt", ScheduledAt);
+            writer.WriteStringValue("selectedConnectionId", SelectedConnectionId);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

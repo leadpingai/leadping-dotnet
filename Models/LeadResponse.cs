@@ -35,6 +35,22 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
+        /// <summary>Identifier and display name of the active organization member assigned to this lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadResponse_assignedTo? AssignedTo { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadResponse_assignedTo AssignedTo { get; set; }
+#endif
+        /// <summary>Leadping user currently responsible for this lead, or null when it is in the unassigned queue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssignedToUserId { get; set; }
+#nullable restore
+#else
+        public string AssignedToUserId { get; set; }
+#endif
         /// <summary>Contact details for the lead or customer represented by this lead response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +166,8 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "archivedByUserId", n => { ArchivedByUserId = n.GetStringValue(); } },
+                { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_assignedTo>(global::Leadping.OpenApiClient.Models.LeadResponse_assignedTo.CreateFromDiscriminatorValue); } },
+                { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
                 { "contact", n => { Contact = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>(global::Leadping.OpenApiClient.Models.LeadContact.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
@@ -179,6 +197,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("archivedByUserId", ArchivedByUserId);
             writer.WriteStringValue("archiveNote", ArchiveNote);
             writer.WriteIntValue("archiveReason", ArchiveReason);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_assignedTo>("assignedTo", AssignedTo);
+            writer.WriteStringValue("assignedToUserId", AssignedToUserId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>("contact", Contact);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);

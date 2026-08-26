@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Sms.Item.Cancel
         {
         }
         /// <summary>
-        /// Cancels a scheduled SMS event before delivery, preserving the event record while preventing the queued message from being sent.
+        /// Cancels a scheduled SMS event before delivery, preserving the event record while preventing the queued message from being sent.The cancellation window remains open only while the SMS status is Scheduled and closes when delivery begins.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SmsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Sms.Item.Cancel
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SmsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SmsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancels a scheduled SMS event before delivery, preserving the event record while preventing the queued message from being sent.
+        /// Cancels a scheduled SMS event before delivery, preserving the event record while preventing the queued message from being sent.The cancellation window remains open only while the SMS status is Scheduled and closes when delivery begins.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

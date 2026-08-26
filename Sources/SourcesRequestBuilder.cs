@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Sources
         /// <summary>
         /// Creates a lead source for the current organization, storing intake credentials and routing context for captured external leads.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceResponse"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SourceCredentialIssueResponse"/></returns>
         /// <param name="body">Defines the fields clients can send when working with lead source.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,11 +65,11 @@ namespace Leadping.OpenApiClient.Sources
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.SourceResponse?> PostAsync(global::Leadping.OpenApiClient.Models.SourceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.SourceCredentialIssueResponse?> PostAsync(global::Leadping.OpenApiClient.Models.SourceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.SourceResponse> PostAsync(global::Leadping.OpenApiClient.Models.SourceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.SourceCredentialIssueResponse> PostAsync(global::Leadping.OpenApiClient.Models.SourceRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Sources
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SourceCredentialIssueResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SourceCredentialIssueResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a lead source for the current organization, storing intake credentials and routing context for captured external leads.

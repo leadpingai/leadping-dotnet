@@ -53,6 +53,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +68,7 @@ namespace Leadping.OpenApiClient.PaymentMethods.Invoices
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Leadping.OpenApiClient.Models.StripeInvoiceResponse>(requestInfo, global::Leadping.OpenApiClient.Models.StripeInvoiceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

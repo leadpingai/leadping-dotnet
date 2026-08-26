@@ -39,6 +39,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TargetNodeId { get; set; }
 #endif
+        /// <summary>Percentage chance assigned to this connection when it leaves a weighted random split. Ignored for connections from other node types.</summary>
+        public int? Weight { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AutomationConnection"/> and sets the default values.
         /// </summary>
@@ -67,6 +69,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "sourceNodeId", n => { SourceNodeId = n.GetStringValue(); } },
                 { "targetNodeId", n => { TargetNodeId = n.GetStringValue(); } },
+                { "weight", n => { Weight = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -79,6 +82,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("sourceNodeId", SourceNodeId);
             writer.WriteStringValue("targetNodeId", TargetNodeId);
+            writer.WriteIntValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

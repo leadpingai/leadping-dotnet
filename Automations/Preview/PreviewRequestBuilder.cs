@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Automations.Preview
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automations/preview", pathParameters)
+        public PreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automations/preview{?validate_only*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Leadping.OpenApiClient.Automations.Preview
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automations/preview", rawUrl)
+        public PreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automations/preview{?validate_only*}", rawUrl)
         {
         }
         /// <summary>
-        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.
+        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.Set `validate_only` to return configuration validation without evaluating conditions or actions and without writing a test audit event.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationPreviewResponse"/></returns>
         /// <param name="body">Defines the fields clients can send when working with automation preview.</param>
@@ -46,11 +46,11 @@ namespace Leadping.OpenApiClient.Automations.Preview
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.AutomationPreviewResponse?> PostAsync(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.AutomationPreviewResponse?> PostAsync(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.AutomationPreviewResponse> PostAsync(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.AutomationPreviewResponse> PostAsync(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -65,18 +65,18 @@ namespace Leadping.OpenApiClient.Automations.Preview
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationPreviewResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationPreviewResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.
+        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.Set `validate_only` to return configuration validation without evaluating conditions or actions and without writing a test audit event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the fields clients can send when working with automation preview.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Leadping.OpenApiClient.Models.AutomationPreviewRequest body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,6 +94,16 @@ namespace Leadping.OpenApiClient.Automations.Preview
         public global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.Set `validate_only` to return configuration validation without evaluating conditions or actions and without writing a test audit event.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PreviewRequestBuilderPostQueryParameters 
+        {
+            /// <summary>When true, validates the automation without evaluating actions or writing an audit event.</summary>
+            [QueryParameter("validate_only")]
+            public bool? ValidateOnly { get; set; }
         }
     }
 }

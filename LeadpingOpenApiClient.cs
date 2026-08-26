@@ -3,6 +3,7 @@
 using Leadping.OpenApiClient.A2a;
 using Leadping.OpenApiClient.Analytics;
 using Leadping.OpenApiClient.Automations;
+using Leadping.OpenApiClient.Blog;
 using Leadping.OpenApiClient.Conversations;
 using Leadping.OpenApiClient.Events;
 using Leadping.OpenApiClient.Feedback;
@@ -58,6 +59,11 @@ namespace Leadping.OpenApiClient
         public global::Leadping.OpenApiClient.Automations.AutomationsRequestBuilder Automations
         {
             get => new global::Leadping.OpenApiClient.Automations.AutomationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The blog property</summary>
+        public global::Leadping.OpenApiClient.Blog.BlogRequestBuilder Blog
+        {
+            get => new global::Leadping.OpenApiClient.Blog.BlogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The conversations property</summary>
         public global::Leadping.OpenApiClient.Conversations.ConversationsRequestBuilder Conversations

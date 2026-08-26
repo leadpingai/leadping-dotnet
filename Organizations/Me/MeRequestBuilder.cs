@@ -3,6 +3,7 @@
 using Leadping.OpenApiClient.Models;
 using Leadping.OpenApiClient.Organizations.Me.Invitations;
 using Leadping.OpenApiClient.Organizations.Me.Members;
+using Leadping.OpenApiClient.Organizations.Me.Membership;
 using Leadping.OpenApiClient.Organizations.Me.OneZerodlc;
 using Leadping.OpenApiClient.Organizations.Me.Options;
 using Leadping.OpenApiClient.Organizations.Me.Switch;
@@ -31,6 +32,11 @@ namespace Leadping.OpenApiClient.Organizations.Me
         public global::Leadping.OpenApiClient.Organizations.Me.Members.MembersRequestBuilder Members
         {
             get => new global::Leadping.OpenApiClient.Organizations.Me.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The membership property</summary>
+        public global::Leadping.OpenApiClient.Organizations.Me.Membership.MembershipRequestBuilder Membership
+        {
+            get => new global::Leadping.OpenApiClient.Organizations.Me.Membership.MembershipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The OneZerodlc property</summary>
         public global::Leadping.OpenApiClient.Organizations.Me.OneZerodlc.OneZerodlcRequestBuilder OneZerodlc

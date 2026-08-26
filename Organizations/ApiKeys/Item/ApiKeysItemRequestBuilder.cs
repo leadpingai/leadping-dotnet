@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
         {
         }
         /// <summary>
-        /// Confirmation that identifies the revoked key.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the API key row with a safe token preview.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The one-time API token and safe key detail row.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse"/></returns>
         /// <param name="body">Defines the display name and access configuration for a new Leadping organization API key.</param>
@@ -123,7 +123,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Confirmation that identifies the revoked key.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +142,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns the API key row with a safe token preview.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             return requestInfo;
         }
         /// <summary>
-        /// The one-time API token and safe key detail row.
+        /// The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the display name and access configuration for a new Leadping organization API key.</param>

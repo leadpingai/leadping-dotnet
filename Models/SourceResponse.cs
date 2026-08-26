@@ -31,14 +31,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AllowedStates { get; set; }
 #endif
-        /// <summary>Source API key used to authenticate inbound lead delivery to Leadping. Unlike an organization API key, this value remains available to authorized source users.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ApiKey { get; set; }
-#nullable restore
-#else
-        public string ApiKey { get; set; }
-#endif
         /// <summary>Masked preview of the source API key for compact display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +39,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ApiKeyPreview { get; set; }
 #endif
+        /// <summary>UTC timestamp when the source credential was most recently rotated.</summary>
+        public DateTimeOffset? ApiKeyRotatedAt { get; set; }
         /// <summary>Indicates whether the organization or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
@@ -170,8 +164,8 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
+                { "apiKeyRotatedAt", n => { ApiKeyRotatedAt = n.GetDateTimeOffsetValue(); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -201,8 +195,8 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
-            writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
+            writer.WriteDateTimeOffsetValue("apiKeyRotatedAt", ApiKeyRotatedAt);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
             writer.WriteDoubleValue("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
