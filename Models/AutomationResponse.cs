@@ -113,14 +113,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>Recent automation runs returned for history and troubleshooting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Leadping.OpenApiClient.Models.AutomationRunRecord>? RecentRuns { get; set; }
-#nullable restore
-#else
-        public List<global::Leadping.OpenApiClient.Models.AutomationRunRecord> RecentRuns { get; set; }
-#endif
         /// <summary>Scope that limits where this automation configuration response applies in Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,7 +188,6 @@ namespace Leadping.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_organization>(global::Leadping.OpenApiClient.Models.AutomationResponse_organization.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "recentRuns", n => { RecentRuns = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationRunRecord>(global::Leadping.OpenApiClient.Models.AutomationRunRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>(global::Leadping.OpenApiClient.Models.AutomationTrigger.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_user>(global::Leadping.OpenApiClient.Models.AutomationResponse_user.CreateFromDiscriminatorValue); } },
@@ -227,7 +218,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_organization>("organization", Organization);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationRunRecord>("recentRuns", RecentRuns);
             writer.WriteStringValue("scope", Scope);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>("triggers", Triggers);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_user>("user", User);

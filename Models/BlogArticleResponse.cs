@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents a blog article response.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class BlogArticleResponse : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authorName property</summary>
+        /// <summary>Gets or sets the author name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorName { get; set; }
@@ -22,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AuthorName { get; set; }
 #endif
-        /// <summary>The category property</summary>
+        /// <summary>Gets or sets the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -30,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The content property</summary>
+        /// <summary>Gets or sets the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -38,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>The coverImageUrl property</summary>
+        /// <summary>Gets or sets the cover image URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CoverImageUrl { get; set; }
@@ -46,9 +47,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CoverImageUrl { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>Gets or sets the created at.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The excerpt property</summary>
+        /// <summary>Gets or sets the excerpt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Excerpt { get; set; }
@@ -56,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Excerpt { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Gets or sets the ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -64,15 +65,15 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isFeatured property</summary>
+        /// <summary>Gets or sets the is featured.</summary>
         public bool? IsFeatured { get; set; }
-        /// <summary>The isPublished property</summary>
+        /// <summary>Gets or sets the is published.</summary>
         public bool? IsPublished { get; set; }
-        /// <summary>The modifiedAt property</summary>
+        /// <summary>Gets or sets the modified at.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The publishedAt property</summary>
+        /// <summary>Gets or sets the published at.</summary>
         public DateTimeOffset? PublishedAt { get; set; }
-        /// <summary>The slug property</summary>
+        /// <summary>Gets or sets the slug.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -80,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Gets or sets the title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }

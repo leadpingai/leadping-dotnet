@@ -23,6 +23,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison Comparison { get; set; }
 #endif
+        /// <summary>Lead intake errors grouped into the same reporting buckets as Points.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>? ErrorPoints { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint> ErrorPoints { get; set; }
+#endif
         /// <summary>Collection of points included with this Leadping customer lead trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +41,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Total number of total records represented by this Leadping customer lead trend.</summary>
         public int? Total { get; set; }
+        /// <summary>Total number of lead submissions rejected during intake.</summary>
+        public int? TotalErrors { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerLeadTrend"/> and sets the default values.
         /// </summary>
@@ -59,8 +69,10 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comparison", n => { Comparison = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>(global::Leadping.OpenApiClient.Models.AnalyticsComparison.CreateFromDiscriminatorValue); } },
+                { "errorPoints", n => { ErrorPoints = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "points", n => { Points = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
+                { "totalErrors", n => { TotalErrors = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -71,8 +83,10 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>("comparison", Comparison);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>("errorPoints", ErrorPoints);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>("points", Points);
             writer.WriteIntValue("total", Total);
+            writer.WriteIntValue("totalErrors", TotalErrors);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,6 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Collection of lead intake error points included with this Leadping source metrics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>? ErrorPoints { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint> ErrorPoints { get; set; }
+#endif
         /// <summary>Date and time when the source metrics was generated.</summary>
         public DateTimeOffset? GeneratedAt { get; set; }
         /// <summary>Collection of points included with this Leadping source metrics.</summary>
@@ -33,6 +41,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange Range { get; set; }
 #endif
+        /// <summary>Total number of lead intake errors represented by this Leadping source metrics.</summary>
+        public int? TotalErrors { get; set; }
         /// <summary>Total number of leads records represented by this Leadping source metrics.</summary>
         public int? TotalLeads { get; set; }
         /// <summary>
@@ -60,9 +70,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "errorPoints", n => { ErrorPoints = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "generatedAt", n => { GeneratedAt = n.GetDateTimeOffsetValue(); } },
                 { "points", n => { Points = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "range", n => { Range = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsDateRange>(global::Leadping.OpenApiClient.Models.AnalyticsDateRange.CreateFromDiscriminatorValue); } },
+                { "totalErrors", n => { TotalErrors = n.GetIntValue(); } },
                 { "totalLeads", n => { TotalLeads = n.GetIntValue(); } },
             };
         }
@@ -73,9 +85,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>("errorPoints", ErrorPoints);
             writer.WriteDateTimeOffsetValue("generatedAt", GeneratedAt);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint>("points", Points);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsDateRange>("range", Range);
+            writer.WriteIntValue("totalErrors", TotalErrors);
             writer.WriteIntValue("totalLeads", TotalLeads);
             writer.WriteAdditionalData(AdditionalData);
         }
