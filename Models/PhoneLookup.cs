@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_carrier Carrier { get; set; }
 #endif
-        /// <summary>UTC timestamp when the resource was created.</summary>
+        /// <summary>Timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Fraud value returned by the provider, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_location Location { get; set; }
 #endif
-        /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
+        /// <summary>Timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Provider-formatted national phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

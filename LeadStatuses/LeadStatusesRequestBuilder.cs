@@ -81,6 +81,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
         /// <param name="body">Defines the editable values used to create or update a lead status.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
@@ -97,6 +98,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
@@ -140,7 +142,7 @@ namespace Leadping.OpenApiClient.LeadStatuses
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

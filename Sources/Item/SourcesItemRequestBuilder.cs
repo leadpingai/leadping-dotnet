@@ -109,6 +109,7 @@ namespace Leadping.OpenApiClient.Sources.Item
         /// <param name="body">Defines the fields clients can send when working with lead source.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
@@ -126,6 +127,7 @@ namespace Leadping.OpenApiClient.Sources.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
