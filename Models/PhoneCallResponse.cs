@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes a Leadping phone call, including participants, direction, provider state, timing, recording, and billing details.
+    /// Describes a Leadping phone call, including participants, direction, provider state, timing, voicemail, and billing details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneCallResponse : IAdditionalDataHolder, IParsable
@@ -117,14 +117,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when Leadping queued this phone call for processing.</summary>
         public DateTimeOffset? QueuedAt { get; set; }
-        /// <summary>URL for the call recording, when the provider makes one available.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RecordingUrl { get; set; }
-#nullable restore
-#else
-        public string RecordingUrl { get; set; }
-#endif
         /// <summary>UTC timestamp when the call started ringing.</summary>
         public DateTimeOffset? RingingAt { get; set; }
         /// <summary>Explains why Leadping selected, rejected, or substituted an outgoing caller or messaging number.</summary>
@@ -154,6 +146,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string ToPhoneNumber { get; set; }
+#endif
+        /// <summary>URL for voicemail audio, when the call resulted in a voicemail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoicemailUrl { get; set; }
+#nullable restore
+#else
+        public string VoicemailUrl { get; set; }
 #endif
         /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this phone call.</summary>
         public bool? WasManuallyOverridden { get; set; }
@@ -200,13 +200,13 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
-                { "recordingUrl", n => { RecordingUrl = n.GetStringValue(); } },
                 { "ringingAt", n => { RingingAt = n.GetDateTimeOffsetValue(); } },
                 { "selectionReason", n => { SelectionReason = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_selectionReason>(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneCallStatus>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
+                { "voicemailUrl", n => { VoicemailUrl = n.GetStringValue(); } },
                 { "wasManuallyOverridden", n => { WasManuallyOverridden = n.GetBoolValue(); } },
             };
         }
@@ -235,13 +235,13 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
-            writer.WriteStringValue("recordingUrl", RecordingUrl);
             writer.WriteDateTimeOffsetValue("ringingAt", RingingAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_selectionReason>("selectionReason", SelectionReason);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneCallStatus>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
+            writer.WriteStringValue("voicemailUrl", VoicemailUrl);
             writer.WriteBoolValue("wasManuallyOverridden", WasManuallyOverridden);
             writer.WriteAdditionalData(AdditionalData);
         }

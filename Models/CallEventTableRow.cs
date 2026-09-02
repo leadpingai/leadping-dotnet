@@ -131,14 +131,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationName { get; set; }
 #endif
-        /// <summary>URL for the call recording, when the provider makes one available.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RecordingUrl { get; set; }
-#nullable restore
-#else
-        public string RecordingUrl { get; set; }
-#endif
         /// <summary>Describes the durable business outcome of a Leadping phone call after provider status normalization.</summary>
         public global::Leadping.OpenApiClient.Models.CallEventTableRow_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this call event table row.</summary>
@@ -189,6 +181,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserName { get; set; }
 #endif
+        /// <summary>URL for voicemail audio, when the call resulted in a voicemail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoicemailUrl { get; set; }
+#nullable restore
+#else
+        public string VoicemailUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CallEventTableRow"/> and sets the default values.
         /// </summary>
@@ -233,7 +233,6 @@ namespace Leadping.OpenApiClient.Models
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
-                { "recordingUrl", n => { RecordingUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
@@ -241,6 +240,7 @@ namespace Leadping.OpenApiClient.Models
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
+                { "voicemailUrl", n => { VoicemailUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -269,7 +269,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("organizationName", OrganizationName);
-            writer.WriteStringValue("recordingUrl", RecordingUrl);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
@@ -277,6 +276,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);
+            writer.WriteStringValue("voicemailUrl", VoicemailUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
