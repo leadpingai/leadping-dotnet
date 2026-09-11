@@ -33,6 +33,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when processing completed for this automation run record.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
+        /// <summary>Results of condition nodes already visited by this run, preserved across waits and retries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults? ConditionResults { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults ConditionResults { get; set; }
+#endif
         /// <summary>Execution mode used for automation preview or live workflow processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +103,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>Identifier of the trigger node selected when this run was queued.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TriggerId { get; set; }
+#nullable restore
+#else
+        public string TriggerId { get; set; }
+#endif
         /// <summary>Automation trigger type that starts the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +147,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>(global::Leadping.OpenApiClient.Models.AutomationActionRunRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "automationId", n => { AutomationId = n.GetStringValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "conditionResults", n => { ConditionResults = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults>(global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults.CreateFromDiscriminatorValue); } },
                 { "executionMode", n => { ExecutionMode = n.GetStringValue(); } },
                 { "failureCode", n => { FailureCode = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -141,6 +158,7 @@ namespace Leadping.OpenApiClient.Models
                 { "skippedReason", n => { SkippedReason = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
+                { "triggerId", n => { TriggerId = n.GetStringValue(); } },
                 { "triggerType", n => { TriggerType = n.GetStringValue(); } },
             };
         }
@@ -154,6 +172,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>("actions", Actions);
             writer.WriteStringValue("automationId", AutomationId);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults>("conditionResults", ConditionResults);
             writer.WriteStringValue("executionMode", ExecutionMode);
             writer.WriteStringValue("failureCode", FailureCode);
             writer.WriteStringValue("id", Id);
@@ -164,6 +183,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("skippedReason", SkippedReason);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("triggerId", TriggerId);
             writer.WriteStringValue("triggerType", TriggerType);
             writer.WriteAdditionalData(AdditionalData);
         }
