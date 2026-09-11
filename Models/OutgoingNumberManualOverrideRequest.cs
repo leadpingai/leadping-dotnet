@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FromPhoneNumberId { get; set; }
 #endif
-        /// <summary>Selected outgoing number and selection rationale returned by Leadping.</summary>
+        /// <summary>Defines the fields clients can send when working with outgoing number selection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionRequest? Selection { get; set; }

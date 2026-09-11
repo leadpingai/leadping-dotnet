@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The current provider review status for the submitted brand.</summary>
+        /// <summary>Defines the provider lifecycle for an individual 10DLC brand or campaign.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? BrandStatus { get; set; }
-        /// <summary>The current provider review status for the submitted campaign.</summary>
+        /// <summary>Defines the provider lifecycle for an individual 10DLC brand or campaign.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? CampaignStatus { get; set; }
         /// <summary>Company name for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Uploaded EIN document reference used for organization verification.
+    /// Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationResponse_einDocument : global::Leadping.OpenApiClient.Models.IdNameValue, IParsable

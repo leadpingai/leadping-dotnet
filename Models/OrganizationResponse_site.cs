@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Leadping website record connected to this organization.
+    /// Provides a compact API reference to another resource using its stable identifier and human-readable display name.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationResponse_site : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

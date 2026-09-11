@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Complete portability data returned by Telnyx.
+    /// Number-portability and routing data returned by Telnyx.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneLookup_portability : global::Leadping.OpenApiClient.Models.PhoneLookupPortability, IParsable

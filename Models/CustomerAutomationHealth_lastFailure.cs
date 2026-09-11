@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Last failure associated with this Leadping customer automation health.
+    /// Identifies an automation with recent execution failures and summarizes its affected leads and failure context.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerAutomationHealth_lastFailure : global::Leadping.OpenApiClient.Models.CustomerFailingAutomation, IParsable

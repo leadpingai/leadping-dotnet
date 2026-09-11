@@ -27,7 +27,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>Recent SMS opt-out metrics used to evaluate sender health and compliance risk.</summary>
+        /// <summary>Describes phone number opt-out metrics data returned by Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse? OptOutMetrics { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse OptOutMetrics { get; set; }
 #endif
-        /// <summary>Current outbound SMS and voice capacity for this phone number.</summary>
+        /// <summary>Reports the sending capacity, current load, and availability of a phone number considered for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_outboundCapacity? OutboundCapacity { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.PhoneNumberMessagingEventResponse> RecentEvents { get; set; }
 #endif
-        /// <summary>SMS warmup status for this phone number.</summary>
+        /// <summary>Describes SMS warmup status data returned by Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup? SmsWarmup { get; set; }
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_smsWarmup SmsWarmup { get; set; }
 #endif
-        /// <summary>Phone number traffic metrics for recent SMS and call activity.</summary>
+        /// <summary>Describes phone number traffic metrics data returned by Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberTrafficMetricsResponse? TrafficMetrics { get; set; }

@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfint> Points { get; set; }
 #endif
-        /// <summary>Range associated with this Leadping source metrics.</summary>
+        /// <summary>Defines the inclusive reporting window and comparison window used to calculate Leadping analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange? Range { get; set; }

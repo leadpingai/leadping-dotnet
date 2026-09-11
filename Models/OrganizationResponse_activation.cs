@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Organization activation state covering site, billing, compliance, and telephony readiness.
+    /// Describes organization activation state data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationResponse_activation : global::Leadping.OpenApiClient.Models.OrganizationActivationState, IParsable

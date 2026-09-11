@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Lossless provider response retained for administrative diagnostics.
+    /// Lossless provider snapshot retained with a phone identity for replay, audits, and fields added by providers later.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneIdentityResponse_providerEnrichment : global::Leadping.OpenApiClient.Models.PhoneLookupProviderSnapshot, IParsable

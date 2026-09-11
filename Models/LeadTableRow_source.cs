@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Identifier and display name of the related source.
+    /// Provides a compact API reference to another resource using its stable identifier and human-readable display name.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadTableRow_source : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

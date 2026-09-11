@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Current wallet balance available to the organization.</summary>
         public double? AccountBalance { get; set; }
-        /// <summary>Organization activation state covering site, billing, compliance, and telephony readiness.</summary>
+        /// <summary>Describes organization activation state data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_activation? Activation { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Postal address for the organization, lead, or contact represented by this organization profile response.</summary>
+        /// <summary>Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_address? Address { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? AutoRefillEnabled { get; set; }
         /// <summary>Wallet balance threshold that triggers automatic refill.</summary>
         public double? AutoRefillTrigger { get; set; }
-        /// <summary>Postal address used for invoices, receipts, and payment processor billing records.</summary>
+        /// <summary>Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress? BillingAddress { get; set; }
@@ -57,7 +57,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_billingPlan? BillingPlan { get; set; }
-        /// <summary>Customer-safe billing state for this organization.</summary>
+        /// <summary>Customer-safe billing state for a Leadping organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState? BillingState { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingTaxId { get; set; }
 #endif
-        /// <summary>Compliance policy configuration for the organization.</summary>
+        /// <summary>Describes organization compliance policy data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_compliancePolicy? CompliancePolicy { get; set; }
@@ -107,7 +107,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ein { get; set; }
 #endif
-        /// <summary>Uploaded EIN document reference used for organization verification.</summary>
+        /// <summary>Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_einDocument? EinDocument { get; set; }
@@ -163,7 +163,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_setupStatus? SetupStatus { get; set; }
         /// <summary>Identifies a discrete billing, telephony, compliance, or configuration stage in organization provisioning.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_setupStep? SetupStep { get; set; }
-        /// <summary>Leadping website record connected to this organization.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_site? Site { get; set; }
@@ -175,7 +175,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_status? Status { get; set; }
         /// <summary>Describes an organization&apos;s billing subscription lifecycle, including trial, active, delinquent, canceled, and expired states.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_subscriptionStatus? SubscriptionStatus { get; set; }
-        /// <summary>User summary connected to this organization profile response.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_user? User { get; set; }

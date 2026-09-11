@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Complete carrier metadata reported for this phone number.
+    /// Complete carrier metadata returned by a phone number lookup provider.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneLookup_carrier : global::Leadping.OpenApiClient.Models.PhoneLookupCarrier, IParsable

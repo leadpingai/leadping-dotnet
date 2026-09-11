@@ -93,7 +93,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether voice calling is ready for this organization or phone number.</summary>
         public bool? VoiceReady { get; set; }
-        /// <summary>Warmup state for this phone number.</summary>
+        /// <summary>Messaging and calling warmup for a Leadping phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness? Warmup { get; set; }

@@ -95,7 +95,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Organization summary connected to this automation table row.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_organization? Organization { get; set; }
@@ -143,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerType { get; set; }
 #endif
-        /// <summary>User summary connected to this automation table row.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationTableRow_user? User { get; set; }

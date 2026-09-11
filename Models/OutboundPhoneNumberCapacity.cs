@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string HealthReason { get; set; }
 #endif
-        /// <summary>Current health status for this Leadping outbound phone number capacity.</summary>
+        /// <summary>Defines phone-number outbound health states used by pacing.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus? HealthStatus { get; set; }
         /// <summary>Phone number associated with this Leadping outbound phone number capacity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

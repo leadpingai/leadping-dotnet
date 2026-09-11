@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Gets or sets the author name.</summary>
+        /// <summary>The authorName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorName { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AuthorName { get; set; }
 #endif
-        /// <summary>Gets or sets the category.</summary>
+        /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>Gets or sets the content.</summary>
+        /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -39,7 +39,17 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>Gets or sets the cover image URL.</summary>
+        /// <summary>The contentUpdatedAt property</summary>
+        public DateTimeOffset? ContentUpdatedAt { get; set; }
+        /// <summary>The coverImageAlt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CoverImageAlt { get; set; }
+#nullable restore
+#else
+        public string CoverImageAlt { get; set; }
+#endif
+        /// <summary>The coverImageUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CoverImageUrl { get; set; }
@@ -47,9 +57,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CoverImageUrl { get; set; }
 #endif
-        /// <summary>Gets or sets the created at.</summary>
+        /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Gets or sets the excerpt.</summary>
+        /// <summary>The excerpt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Excerpt { get; set; }
@@ -57,7 +67,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Excerpt { get; set; }
 #endif
-        /// <summary>Gets or sets the ID.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -65,15 +75,41 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Gets or sets the is featured.</summary>
+        /// <summary>The latest background image processing failure, when present.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImageProcessingError { get; set; }
+#nullable restore
+#else
+        public string ImageProcessingError { get; set; }
+#endif
+        /// <summary>Whether saved image references are awaiting Engine processing.</summary>
+        public bool? ImagesProcessing { get; set; }
+        /// <summary>The isFeatured property</summary>
         public bool? IsFeatured { get; set; }
-        /// <summary>Gets or sets the is published.</summary>
+        /// <summary>The isPublished property</summary>
         public bool? IsPublished { get; set; }
-        /// <summary>Gets or sets the modified at.</summary>
+        /// <summary>The metaDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MetaDescription { get; set; }
+#nullable restore
+#else
+        public string MetaDescription { get; set; }
+#endif
+        /// <summary>The modifiedAt property</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>Gets or sets the published at.</summary>
+        /// <summary>The publishedAt property</summary>
         public DateTimeOffset? PublishedAt { get; set; }
-        /// <summary>Gets or sets the slug.</summary>
+        /// <summary>The seoTitle property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SeoTitle { get; set; }
+#nullable restore
+#else
+        public string SeoTitle { get; set; }
+#endif
+        /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -81,7 +117,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>Gets or sets the title.</summary>
+        /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -117,14 +153,20 @@ namespace Leadping.OpenApiClient.Models
                 { "authorName", n => { AuthorName = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
+                { "contentUpdatedAt", n => { ContentUpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "coverImageAlt", n => { CoverImageAlt = n.GetStringValue(); } },
                 { "coverImageUrl", n => { CoverImageUrl = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "excerpt", n => { Excerpt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "imageProcessingError", n => { ImageProcessingError = n.GetStringValue(); } },
+                { "imagesProcessing", n => { ImagesProcessing = n.GetBoolValue(); } },
                 { "isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
                 { "isPublished", n => { IsPublished = n.GetBoolValue(); } },
+                { "metaDescription", n => { MetaDescription = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
+                { "seoTitle", n => { SeoTitle = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -139,14 +181,20 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("authorName", AuthorName);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("content", Content);
+            writer.WriteDateTimeOffsetValue("contentUpdatedAt", ContentUpdatedAt);
+            writer.WriteStringValue("coverImageAlt", CoverImageAlt);
             writer.WriteStringValue("coverImageUrl", CoverImageUrl);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("excerpt", Excerpt);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("imageProcessingError", ImageProcessingError);
+            writer.WriteBoolValue("imagesProcessing", ImagesProcessing);
             writer.WriteBoolValue("isFeatured", IsFeatured);
             writer.WriteBoolValue("isPublished", IsPublished);
+            writer.WriteStringValue("metaDescription", MetaDescription);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDateTimeOffsetValue("publishedAt", PublishedAt);
+            writer.WriteStringValue("seoTitle", SeoTitle);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

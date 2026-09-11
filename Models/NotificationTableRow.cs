@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Priority for this notification.</summary>
+        /// <summary>Ranks the urgency and presentation importance of a Leadping user notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationPriority? Priority { get; set; }
         /// <summary>UTC timestamp for read at on this notification.</summary>
         public DateTimeOffset? ReadAt { get; set; }
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RelatedEntityType { get; set; }
 #endif
-        /// <summary>The type classification for this notification.</summary>
+        /// <summary>Identifies the Leadping workflow or account event communicated by a user notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.NotificationTableRow"/> and sets the default values.

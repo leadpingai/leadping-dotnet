@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Postal address for the organization, lead, or contact represented by this organization profile request.
+    /// Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationRequest_address : global::Leadping.OpenApiClient.Models.StreetAddress, IParsable

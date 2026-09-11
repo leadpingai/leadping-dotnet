@@ -31,6 +31,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
+        /// <summary>Opts this number into the optional $2 monthly number health add-on. Defaults to on on creation; omitted updates preserve the current selection.</summary>
+        public bool? NumberHealthEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberRequest"/> and sets the default values.
         /// </summary>
@@ -58,6 +60,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "numberHealthEnabled", n => { NumberHealthEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +72,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
+            writer.WriteBoolValue("numberHealthEnabled", NumberHealthEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

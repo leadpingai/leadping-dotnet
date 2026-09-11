@@ -17,7 +17,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_billingPlan? BillingPlan { get; set; }
-        /// <summary>Customer-safe billing state for the user&apos;s currently selected organization.</summary>
+        /// <summary>Customer-safe billing state for a Leadping organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_billingState? BillingState { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UserResponse_billingState BillingState { get; set; }
 #endif
-        /// <summary>Compliance for this user.</summary>
+        /// <summary>Describes user compliance data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_compliance? Compliance { get; set; }
@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Current organization for this user.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_currentOrganization? CurrentOrganization { get; set; }
@@ -103,7 +103,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Notification preferences for this user.</summary>
+        /// <summary>Describes user notification preferences data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserResponse_notificationPreferences? NotificationPreferences { get; set; }

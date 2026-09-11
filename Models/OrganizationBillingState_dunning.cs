@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Customer-safe payment recovery state for the organization.
+    /// Dunning state recorded after a failed recurring payment.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationBillingState_dunning : global::Leadping.OpenApiClient.Models.OrganizationDunningInfo, IParsable

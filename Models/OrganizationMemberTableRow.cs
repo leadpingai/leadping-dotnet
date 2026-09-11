@@ -35,9 +35,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The renewal date used for this user&apos;s license proration.</summary>
         public DateTimeOffset? LicenseRenewalDate { get; set; }
-        /// <summary>Role for this organization user.</summary>
+        /// <summary>Identifies an organization member&apos;s access level and permission scope within Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
-        /// <summary>Identifier and display name of the related user.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? User { get; set; }

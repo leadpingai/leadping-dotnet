@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Note { get; set; }
 #endif
-        /// <summary>Human-readable reason supplied for this request or result.</summary>
+        /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? Reason { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadArchiveRequest"/> and sets the default values.

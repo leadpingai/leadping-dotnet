@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Total number of failure records represented by this Leadping customer automation health.</summary>
         public int? FailureCount { get; set; }
-        /// <summary>Last failure associated with this Leadping customer automation health.</summary>
+        /// <summary>Identifies an automation with recent execution failures and summarizes its affected leads and failure context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth_lastFailure? LastFailure { get; set; }

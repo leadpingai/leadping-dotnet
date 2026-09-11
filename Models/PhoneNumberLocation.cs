@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CanonicalState { get; set; }
 #endif
-        /// <summary>Latitude and longitude coordinate for this phone number location.</summary>
+        /// <summary>Latitude and longitude coordinate for this lead contact profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate? Coordinate { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate Coordinate { get; set; }
 #endif
-        /// <summary>Describes how the coordinate was resolved.</summary>
+        /// <summary>Describes how a phone location value was resolved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource? CoordinateSource { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TimeZoneId { get; set; }
 #endif
-        /// <summary>Describes how the time zone was resolved.</summary>
+        /// <summary>Describes how a phone location value was resolved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource? TimeZoneSource { get; set; }

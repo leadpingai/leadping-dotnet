@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// 10DLC draft for this organization activation state.
+    /// Describes 10DLC application draft data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationActivationState_tenDlcDraft : global::Leadping.OpenApiClient.Models.TenDlcApplicationDraft, IParsable

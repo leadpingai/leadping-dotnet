@@ -17,9 +17,9 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Billable seconds for this usage ledger.</summary>
         public int? BillableSeconds { get; set; }
-        /// <summary>Billable unit for this usage ledger.</summary>
+        /// <summary>Identifies the metered unit used to price Leadping usage, such as a message, call minute, lookup, or phone number.</summary>
         public global::Leadping.OpenApiClient.Models.BillableUnit? BillableUnit { get; set; }
-        /// <summary>Channel for this usage ledger.</summary>
+        /// <summary>Identifies the messaging, calling, phone-number, lookup, or platform channel that generated billable usage.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
         /// <summary>UTC timestamp for created at on this usage ledger.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -45,7 +45,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this usage ledger is billable.</summary>
         public bool? IsBillable { get; set; }
-        /// <summary>Identifier and display name of the related lead.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead? Lead { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_lead Lead { get; set; }
 #endif
-        /// <summary>Identifier and display name of the related organization.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_organization? Organization { get; set; }
@@ -81,11 +81,11 @@ namespace Leadping.OpenApiClient.Models
         public double? Quantity { get; set; }
         /// <summary>SMS segments for this usage ledger.</summary>
         public int? SmsSegments { get; set; }
-        /// <summary>The current status for this usage ledger.</summary>
+        /// <summary>Describes whether a metered usage record is pending, rated, billed, reconciled, excluded, or failed.</summary>
         public global::Leadping.OpenApiClient.Models.UsageStatus? Status { get; set; }
         /// <summary>Unit price for this usage ledger.</summary>
         public double? UnitPrice { get; set; }
-        /// <summary>Identifier and display name of the related user.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UsageLedgerTableRow_user? User { get; set; }

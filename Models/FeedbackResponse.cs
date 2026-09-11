@@ -67,9 +67,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Route { get; set; }
 #endif
-        /// <summary>Current lifecycle status for this feedback item response in the Leadping API.</summary>
+        /// <summary>Defines admin triage statuses for durable product feedback.</summary>
         public global::Leadping.OpenApiClient.Models.FeedbackStatus? Status { get; set; }
-        /// <summary>Type classification used to route and interpret this feedback item response in the Leadping API.</summary>
+        /// <summary>Defines the type of product feedback submitted from inside Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.FeedbackType? Type { get; set; }
         /// <summary>User ID for the person who submitted the feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

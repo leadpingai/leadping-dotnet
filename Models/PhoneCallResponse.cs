@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Current lifecycle status for this phone call in the Leadping API.</summary>
+        /// <summary>Describes the durable business outcome of a Leadping phone call after provider status normalization.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneCallStatus? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this phone call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

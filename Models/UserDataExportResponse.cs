@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
         public long? SizeBytes { get; set; }
         /// <summary>Date and time when the user data export started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>Current status for this Leadping user data export.</summary>
+        /// <summary>Identifies the preparation, availability, failure, expiration, or deletion stage of a Leadping user-data export.</summary>
         public global::Leadping.OpenApiClient.Models.UserDataExportStatuses? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserDataExportResponse"/> and sets the default values.

@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ReasonLabel { get; set; }
 #endif
-        /// <summary>Reason Leadping selected this outbound sender number.</summary>
+        /// <summary>Explains why Leadping selected, rejected, or substituted an outgoing caller or messaging number.</summary>
         public global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionReason? SelectionReason { get; set; }
         /// <summary>Lead source ID used to determine this phone number&apos;s outbound eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

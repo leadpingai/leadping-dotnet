@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The human-readable label shown for this SMS readiness UI state.</summary>
+        /// <summary>Describes whether an organization is configured and permitted to send SMS or MMS traffic through Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.SmsReadinessState? Label { get; set; }
         /// <summary>Tone for this SMS readiness UI state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

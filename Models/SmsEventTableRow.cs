@@ -133,7 +133,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether automation created or triggered this SMS event table row.</summary>
         public bool? IsAutomated { get; set; }
-        /// <summary>Identifier and display name of the related lead.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? Lead { get; set; }

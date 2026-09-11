@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? BillingPlanChangeEffectiveAt { get; set; }
         /// <summary>UTC timestamp when the active subscription is scheduled to cancel.</summary>
         public DateTimeOffset? CancelAt { get; set; }
-        /// <summary>Customer-safe payment recovery state for the organization.</summary>
+        /// <summary>Dunning state recorded after a failed recurring payment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationBillingState_dunning? Dunning { get; set; }

@@ -27,7 +27,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The most recent time lookup data was enriched.</summary>
         public DateTimeOffset? LastEnrichedAt { get; set; }
-        /// <summary>Provider lookup and enrichment data for the number.</summary>
+        /// <summary>Public Leadping API schema for phone lookup result data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup? Lookup { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>Lossless provider response retained for administrative diagnostics.</summary>
+        /// <summary>Lossless provider snapshot retained with a phone identity for replay, audits, and fields added by providers later.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment? ProviderEnrichment { get; set; }

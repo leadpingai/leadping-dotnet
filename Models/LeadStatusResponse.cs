@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>LeadStatusChange category represented by the lead status.</summary>
+        /// <summary>Controlled lead status change categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.LeadStatusCategory? Category { get; set; }
         /// <summary>Display color assigned to the lead status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

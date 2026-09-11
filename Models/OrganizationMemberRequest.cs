@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>Organization role assigned to the user.</summary>
+        /// <summary>Identifies an organization member&apos;s access level and permission scope within Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
         /// <summary>User ID to add, update, or remove from the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Compliance for this compliance update.
+    /// Describes user compliance data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComplianceUpdateRequest_compliance : global::Leadping.OpenApiClient.Models.UserCompliance, IParsable

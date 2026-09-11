@@ -33,7 +33,7 @@ namespace Leadping.OpenApiClient.Models
         public int? CallsReceived { get; set; }
         /// <summary>Number of leads represented by this Leadping customer analytics summary.</summary>
         public int? Leads { get; set; }
-        /// <summary>Date and time when this Leadping customer analytics summary was leads comparison.</summary>
+        /// <summary>Compares a metric with the preceding period and reports its absolute and percentage change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsComparison? LeadsComparison { get; set; }

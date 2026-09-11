@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TriggerType { get; set; }
 #endif
-        /// <summary>Validation result returned for the automation configuration.</summary>
+        /// <summary>Result schema for the Leadping API automation validation result returned by lookup and validation endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AutomationValidationResult? Validation { get; set; }

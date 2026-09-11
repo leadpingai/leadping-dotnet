@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Geographic location metadata for the phone number, lead, or lookup result.
+    /// Public Leadping API schema for phone number location data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneLookup_location : global::Leadping.OpenApiClient.Models.PhoneNumberLocation, IParsable

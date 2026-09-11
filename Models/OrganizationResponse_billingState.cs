@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Customer-safe billing state for this organization.
+    /// Customer-safe billing state for a Leadping organization.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationResponse_billingState : global::Leadping.OpenApiClient.Models.OrganizationBillingState, IParsable

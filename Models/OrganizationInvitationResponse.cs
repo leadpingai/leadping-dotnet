@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LicenseReleasedAt { get; set; }
         /// <summary>The renewal date used for proration of this license.</summary>
         public DateTimeOffset? LicenseRenewalDate { get; set; }
-        /// <summary>Identifier and display name of the related organization.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.IdNamePair? Organization { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ResentAt { get; set; }
         /// <summary>UTC timestamp for revoked at on this organization invitation.</summary>
         public DateTimeOffset? RevokedAt { get; set; }
-        /// <summary>Role for this organization invitation.</summary>
+        /// <summary>Identifies an organization member&apos;s access level and permission scope within Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
         /// <summary>Safe message for this organization invitation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp for sent at on this organization invitation.</summary>
         public DateTimeOffset? SentAt { get; set; }
-        /// <summary>The current status for this organization invitation.</summary>
+        /// <summary>Describes the lifecycle of an organization membership invitation from issuance through acceptance, expiration, or revocation.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationInvitationStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationInvitationResponse"/> and sets the default values.

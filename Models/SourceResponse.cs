@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
         public double? CostPerLead { get; set; }
         /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>User summary for the person who created this lead source response.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser? CreatedByUser { get; set; }
@@ -103,7 +103,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LastLeadReceivedAt { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>User summary for the person who last modified this lead source response.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_modifiedByUser? ModifiedByUser { get; set; }
@@ -119,7 +119,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Organization summary connected to this lead source response.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_organization? Organization { get; set; }
@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
-        /// <summary>User summary connected to this lead source response.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse_user? User { get; set; }

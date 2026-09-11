@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Canonical phone identity and provider lookup details for this lead.
+    /// Describes Leadping&apos;s canonical identity for a phone number, including normalization, carrier, line type, reputation, and lookup history.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadResponse_phoneIdentity : global::Leadping.OpenApiClient.Models.PhoneIdentityResponse, IParsable

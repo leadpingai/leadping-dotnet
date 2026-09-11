@@ -27,7 +27,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>Identifier and display name of the assigned organization member.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_assignedTo? AssignedTo { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when this lead table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Current lead status change summary that describes the lead outcome.</summary>
+        /// <summary>Summary schema for Leadping API current lead status change summary data used in dashboards and reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_currentLeadStatus? CurrentLeadStatus { get; set; }
@@ -97,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>Identifier and display name of the related organization.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_organization? Organization { get; set; }
@@ -135,7 +135,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ProcessingStatusReason { get; set; }
 #endif
-        /// <summary>Identifier and display name of the related source.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadTableRow_source? Source { get; set; }

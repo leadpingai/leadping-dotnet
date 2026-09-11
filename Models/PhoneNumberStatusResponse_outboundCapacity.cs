@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Current outbound SMS and voice capacity for this phone number.
+    /// Reports the sending capacity, current load, and availability of a phone number considered for outbound delivery.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberStatusResponse_outboundCapacity : global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity, IParsable

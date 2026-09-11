@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AvatarUrl { get; set; }
 #endif
-        /// <summary>Current lead status change summary that describes the lead outcome.</summary>
+        /// <summary>Summary schema for Leadping API current lead status change summary data used in dashboards and reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus? CurrentLeadStatus { get; set; }
@@ -123,7 +123,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundPhoneNumberOverrideId { get; set; }
 #endif
-        /// <summary>Phone number used by this conversation response for calls, SMS, lookup, or routing.</summary>
+        /// <summary>Extends an identifier-and-name resource reference with an optional string value used for display or selection metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber? PhoneNumber { get; set; }

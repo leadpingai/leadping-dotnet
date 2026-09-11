@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Source metadata safe for later retrieval.</summary>
+        /// <summary>Describes lead source data returned by Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SourceResponse? Source { get; set; }

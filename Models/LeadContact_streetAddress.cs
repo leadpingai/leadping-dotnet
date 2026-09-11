@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Postal street address for the lead contact profile.
+    /// Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadContact_streetAddress : global::Leadping.OpenApiClient.Models.StreetAddress, IParsable

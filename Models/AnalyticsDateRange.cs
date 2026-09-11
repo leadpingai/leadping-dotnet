@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Bucket size associated with this Leadping analytics date range.</summary>
+        /// <summary>Selects the time interval used to aggregate points in a Leadping analytics trend series.</summary>
         public int? BucketSize { get; set; }
         /// <summary>Date and time when this Leadping analytics date range was end.</summary>
         public DateTimeOffset? EndAt { get; set; }

@@ -15,13 +15,13 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Gets or sets the end at.</summary>
+        /// <summary>The endAt property</summary>
         public DateTimeOffset? EndAt { get; set; }
-        /// <summary>Gets or sets the executions.</summary>
+        /// <summary>The executions property</summary>
         public int? Executions { get; set; }
-        /// <summary>Gets or sets the failure count.</summary>
+        /// <summary>The failureCount property</summary>
         public int? FailureCount { get; set; }
-        /// <summary>Gets or sets the label.</summary>
+        /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -29,9 +29,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>Gets or sets the start at.</summary>
+        /// <summary>The startAt property</summary>
         public DateTimeOffset? StartAt { get; set; }
-        /// <summary>Gets or sets the success count.</summary>
+        /// <summary>The successCount property</summary>
         public int? SuccessCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.CustomerAutomationHealthPoint"/> and sets the default values.

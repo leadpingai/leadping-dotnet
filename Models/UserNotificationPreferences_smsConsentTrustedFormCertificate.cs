@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// The TrustedForm certificate captured for the user&apos;s most recent SMS opt-in.
+    /// Describes trusted form certificate data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserNotificationPreferences_smsConsentTrustedFormCertificate : global::Leadping.OpenApiClient.Models.TrustedFormCertificate, IParsable

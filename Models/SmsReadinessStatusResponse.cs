@@ -17,7 +17,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The health score metric for this SMS warmup status.</summary>
         public int? HealthScore { get; set; }
-        /// <summary>The current delivery-health assessment for this SMS warmup status.</summary>
+        /// <summary>Summarizes the severity of conditions affecting an organization&apos;s ability to send compliant SMS or MMS traffic.</summary>
         public global::Leadping.OpenApiClient.Models.SmsReadinessHealthStatus? HealthStatus { get; set; }
         /// <summary>The phone number associated with this SMS warmup status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,9 +37,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The progress percent metric for this SMS warmup status.</summary>
         public int? ProgressPercent { get; set; }
-        /// <summary>The current state for this SMS warmup status.</summary>
+        /// <summary>Describes whether an organization is configured and permitted to send SMS or MMS traffic through Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.SmsReadinessState? Status { get; set; }
-        /// <summary>The current UI state for this SMS warmup status.</summary>
+        /// <summary>Describes SMS readiness UI state data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.SmsReadinessUiState? UiState { get; set; }

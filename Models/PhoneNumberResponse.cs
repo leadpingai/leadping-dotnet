@@ -47,7 +47,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>Organization summary connected to this phone number.</summary>
+        /// <summary>Opts this number into the optional $2 monthly number health add-on. Defaults to on; customers can opt out.</summary>
+        public bool? NumberHealthEnabled { get; set; }
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization? Organization { get; set; }
@@ -63,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string PhoneIdentityId { get; set; }
 #endif
-        /// <summary>Routing metadata that connects this phone number to teams, campaigns, and sources.</summary>
+        /// <summary>Public Leadping API schema for phone number routing metadata data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata? Routing { get; set; }
@@ -71,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata Routing { get; set; }
 #endif
-        /// <summary>SMS and call warmup for this phone number.</summary>
+        /// <summary>Messaging and calling warmup for a Leadping phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness? Warmup { get; set; }
@@ -111,6 +113,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
+                { "numberHealthEnabled", n => { NumberHealthEnabled = n.GetBoolValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>(global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization.CreateFromDiscriminatorValue); } },
                 { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "routing", n => { Routing = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>(global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata.CreateFromDiscriminatorValue); } },
@@ -131,6 +134,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
+            writer.WriteBoolValue("numberHealthEnabled", NumberHealthEnabled);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>("organization", Organization);
             writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>("routing", Routing);

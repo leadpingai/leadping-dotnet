@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Current lead status change summary that describes the lead outcome.
+    /// Summary schema for Leadping API current lead status change summary data used in dashboards and reports.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationResponse_currentLeadStatus : global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary, IParsable

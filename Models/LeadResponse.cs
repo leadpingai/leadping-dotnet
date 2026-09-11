@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
-        /// <summary>Identifier and display name of the active organization member assigned to this lead.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadResponse_assignedTo? AssignedTo { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AssignedToUserId { get; set; }
 #endif
-        /// <summary>Contact details for the lead or customer represented by this lead response.</summary>
+        /// <summary>Public Leadping API schema for lead contact profile data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact? Contact { get; set; }
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Current lead status change summary that describes the lead outcome.</summary>
+        /// <summary>Summary schema for Leadping API current lead status change summary data used in dashboards and reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus? CurrentLeadStatus { get; set; }
@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadResponse_currentLeadStatus CurrentLeadStatus { get; set; }
 #endif
-        /// <summary>Demographic profile details for the lead represented by this lead response.</summary>
+        /// <summary>Public Leadping API schema for lead demographic profile data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadProfile? Customer { get; set; }
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the lead has been archived in Leadping.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>Structured metadata used for attribution, integrations, and reporting on this lead response.</summary>
+        /// <summary>Public Leadping API schema for lead attribution metadata data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadMetadata? Metadata { get; set; }
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>Canonical phone identity and provider lookup details for this lead.</summary>
+        /// <summary>Describes Leadping&apos;s canonical identity for a phone number, including normalization, carrier, line type, reputation, and lookup history.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity? PhoneIdentity { get; set; }

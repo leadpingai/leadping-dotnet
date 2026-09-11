@@ -69,7 +69,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Priority for this notification.</summary>
+        /// <summary>Ranks the urgency and presentation importance of a Leadping user notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationPriority? Priority { get; set; }
         /// <summary>Whether this notification should also be delivered as a device push notification.</summary>
         public bool? PushEnabled { get; set; }
@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RelatedEntityType { get; set; }
 #endif
-        /// <summary>The type classification for this notification.</summary>
+        /// <summary>Identifies the Leadping workflow or account event communicated by a user notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationType? Type { get; set; }
         /// <summary>The user ID associated with this notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

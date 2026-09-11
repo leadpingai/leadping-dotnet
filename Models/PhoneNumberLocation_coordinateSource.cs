@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes how the coordinate was resolved.
+    /// Describes how a phone location value was resolved.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberLocation_coordinateSource : global::Leadping.OpenApiClient.Models.PhoneLocationSource, IParsable

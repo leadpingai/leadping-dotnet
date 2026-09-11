@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this phone number is available for purchase or assignment.</summary>
         public bool? IsAvailable { get; set; }
-        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
+        /// <summary>Public Leadping API schema for phone number location data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneNumberAvailabilityResponse_location? Location { get; set; }

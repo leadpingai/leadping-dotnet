@@ -79,6 +79,22 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this lead status change is missed call follow up.</summary>
         public bool? IsMissedCallFollowUp { get; set; }
+        /// <summary>The lead&apos;s profile image URL, when available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadAvatarUrl { get; set; }
+#nullable restore
+#else
+        public string LeadAvatarUrl { get; set; }
+#endif
+        /// <summary>The lead&apos;s email address, used for Gravatar fallback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadEmail { get; set; }
+#nullable restore
+#else
+        public string LeadEmail { get; set; }
+#endif
         /// <summary>The lead ID associated with this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -220,6 +236,8 @@ namespace Leadping.OpenApiClient.Models
                 { "followUpStatus", n => { FollowUpStatus = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isMissedCallFollowUp", n => { IsMissedCallFollowUp = n.GetBoolValue(); } },
+                { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
+                { "leadEmail", n => { LeadEmail = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
                 { "newLeadStatusChangeId", n => { NewLeadStatusChangeId = n.GetStringValue(); } },
@@ -258,6 +276,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("followUpStatus", FollowUpStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isMissedCallFollowUp", IsMissedCallFollowUp);
+            writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
+            writer.WriteStringValue("leadEmail", LeadEmail);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadName", LeadName);
             writer.WriteStringValue("newLeadStatusChangeId", NewLeadStatusChangeId);

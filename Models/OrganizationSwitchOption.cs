@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_organizationStatus? OrganizationStatus { get; set; }
         /// <summary>Whether ready for customer traffic applies to this organization switch option.</summary>
         public bool? ReadyForCustomerTraffic { get; set; }
-        /// <summary>Role for this organization switch option.</summary>
+        /// <summary>Identifies an organization member&apos;s access level and permission scope within Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
         /// <summary>Describes an organization&apos;s overall 10DLC registration lifecycle across brand and messaging campaign submission.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_tenDlcStatus? TenDlcStatus { get; set; }

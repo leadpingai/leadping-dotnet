@@ -55,7 +55,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>Phone details for the lead, user, or organization represented by this lead contact profile.</summary>
+        /// <summary>Public Leadping API schema for lead phone number data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact_phone? Phone { get; set; }
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact_phone Phone { get; set; }
 #endif
-        /// <summary>Postal street address for the lead contact profile.</summary>
+        /// <summary>Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.LeadContact_streetAddress? StreetAddress { get; set; }

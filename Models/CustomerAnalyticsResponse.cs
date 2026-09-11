@@ -13,7 +13,7 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerAnalyticsResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Activation health associated with this Leadping customer analytics.</summary>
+        /// <summary>Summarizes an organization&apos;s progress and blockers across onboarding, billing, telephony, compliance, and launch readiness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerActivationHealth? ActivationHealth { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Automation health associated with this Leadping customer analytics.</summary>
+        /// <summary>Summarizes automation coverage, execution success, failures, and workflows requiring organization attention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth? AutomationHealth { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerAutomationHealth AutomationHealth { get; set; }
 #endif
-        /// <summary>Communication usage associated with this Leadping customer analytics.</summary>
+        /// <summary>Aggregates an organization&apos;s SMS, MMS, and calling activity, delivery outcomes, and billable usage over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage? CommunicationUsage { get; set; }
@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.CustomerLeadSourceBreakdown> LeadSources { get; set; }
 #endif
-        /// <summary>Lead trend associated with this Leadping customer analytics.</summary>
+        /// <summary>Measures lead creation, qualification, and conversion activity within one reporting time bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerLeadTrend? LeadTrend { get; set; }
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.CustomerNeedsAttentionItem> NeedsAttention { get; set; }
 #endif
-        /// <summary>Range associated with this Leadping customer analytics.</summary>
+        /// <summary>Defines the inclusive reporting window and comparison window used to calculate Leadping analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange? Range { get; set; }
@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.AnalyticsDateRange Range { get; set; }
 #endif
-        /// <summary>Response metrics associated with this Leadping customer analytics.</summary>
+        /// <summary>Measures how quickly and consistently an organization responds to leads across supported communication channels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerResponseMetrics? ResponseMetrics { get; set; }
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.CustomerResponseMetrics ResponseMetrics { get; set; }
 #endif
-        /// <summary>Human-readable summary for this Leadping customer analytics.</summary>
+        /// <summary>Summarizes an organization&apos;s primary lead, response, communication, and conversion KPIs for the selected period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.CustomerAnalyticsSummary? Summary { get; set; }

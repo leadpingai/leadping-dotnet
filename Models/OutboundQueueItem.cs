@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Channel classification for this Leadping outbound queue item.</summary>
+        /// <summary>Defines outbound delivery channels protected by delivery control.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundDeliveryChannel? Channel { get; set; }
         /// <summary>Unique Leadping identifier for the outbound queue item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,9 +45,9 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OutboundQueueItem_reasonCode? ReasonCode { get; set; }
         /// <summary>Date and time when this Leadping outbound queue item was scheduled send.</summary>
         public DateTimeOffset? ScheduledSendAt { get; set; }
-        /// <summary>Source classification for this Leadping outbound queue item.</summary>
+        /// <summary>Defines the source that requested outbound delivery.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundDeliverySource? Source { get; set; }
-        /// <summary>Current status for this Leadping outbound queue item.</summary>
+        /// <summary>Defines durable outbound delivery request statuses.</summary>
         public global::Leadping.OpenApiClient.Models.OutboundDeliveryStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OutboundQueueItem"/> and sets the default values.

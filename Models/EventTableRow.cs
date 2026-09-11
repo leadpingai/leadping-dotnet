@@ -261,7 +261,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TimelineCategory { get; set; }
 #endif
-        /// <summary>Timeline type used to render this event in Leadping activity feeds.</summary>
+        /// <summary>Classifies the kind of activity displayed in a lead or conversation event timeline.</summary>
         public global::Leadping.OpenApiClient.Models.EventTimelineType? TimelineType { get; set; }
         /// <summary>Recipient phone number used for this communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

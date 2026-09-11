@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedSmsEnabled { get; set; }
         /// <summary>Whether the user has consented to receive Leadping account notification SMS messages.</summary>
         public bool? SmsConsentOptedIn { get; set; }
-        /// <summary>The TrustedForm certificate captured for the user&apos;s most recent SMS opt-in.</summary>
+        /// <summary>Describes trusted form certificate data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate? SmsConsentTrustedFormCertificate { get; set; }

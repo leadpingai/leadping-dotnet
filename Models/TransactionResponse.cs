@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Identifier and display name of the related lead.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.TransactionResponse_lead? Lead { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>Identifier and display name of the related organization.</summary>
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.TransactionResponse_organization? Organization { get; set; }
@@ -89,9 +89,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Leadping platform fee amount included in the transaction.</summary>
         public double? PlatformFeeAmount { get; set; }
-        /// <summary>Processing status for this wallet transaction.</summary>
+        /// <summary>Describes the processing and settlement lifecycle of a Leadping wallet or billing transaction.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionStatus? TransactionStatus { get; set; }
-        /// <summary>Debit or credit classification for this wallet transaction.</summary>
+        /// <summary>Classifies a wallet transaction as a debit, credit, refund, adjustment, deposit, or other balance movement.</summary>
         public global::Leadping.OpenApiClient.Models.TransactionType? TransactionType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.TransactionResponse"/> and sets the default values.

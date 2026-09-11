@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Compliance policy configuration for the organization.
+    /// Describes organization compliance policy data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrganizationResponse_compliancePolicy : global::Leadping.OpenApiClient.Models.OrganizationCompliancePolicy, IParsable

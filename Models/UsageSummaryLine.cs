@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Billable unit for this usage summary line.</summary>
+        /// <summary>Identifies the metered unit used to price Leadping usage, such as a message, call minute, lookup, or phone number.</summary>
         public global::Leadping.OpenApiClient.Models.BillableUnit? BillableUnit { get; set; }
-        /// <summary>Channel for this usage summary line.</summary>
+        /// <summary>Identifies the messaging, calling, phone-number, lookup, or platform channel that generated billable usage.</summary>
         public global::Leadping.OpenApiClient.Models.UsageChannel? Channel { get; set; }
         /// <summary>The monetary customer charge amount for this usage summary line.</summary>
         public double? CustomerChargeAmount { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
         public double? Quantity { get; set; }
         /// <summary>The record count for this usage summary line.</summary>
         public int? RecordCount { get; set; }
-        /// <summary>The current status for this usage summary line.</summary>
+        /// <summary>Describes whether a metered usage record is pending, rated, billed, reconciled, excluded, or failed.</summary>
         public global::Leadping.OpenApiClient.Models.UsageStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UsageSummaryLine"/> and sets the default values.

@@ -19,7 +19,7 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of registrar-verified domains found by the current search.</summary>
         public int? AvailableDomainCount { get; set; }
-        /// <summary>The current billing subscription status for this organization activation state.</summary>
+        /// <summary>Describes whether an organization&apos;s subscription is ready, blocked, or still incomplete during activation.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationSubscriptionStatus? BillingSubscriptionStatus { get; set; }
         /// <summary>Compliance notes for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LaunchApprovedAt { get; set; }
         /// <summary>UTC timestamp for launch review requested at on this organization activation state.</summary>
         public DateTimeOffset? LaunchReviewRequestedAt { get; set; }
-        /// <summary>The current launch review status for this organization activation state.</summary>
+        /// <summary>Describes the administrative review decision that determines whether an organization can launch Leadping workflows.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationLaunchReviewStatus? LaunchReviewStatus { get; set; }
         /// <summary>Offer for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Offer { get; set; }
 #endif
-        /// <summary>The current onboarding status for this organization activation state.</summary>
+        /// <summary>Describes completion and blocking state for an organization&apos;s core Leadping onboarding requirements.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationOnboardingStatus? OnboardingStatus { get; set; }
         /// <summary>Organization description for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp for payment method confirmed at on this organization activation state.</summary>
         public DateTimeOffset? PaymentMethodConfirmedAt { get; set; }
-        /// <summary>The current payment status for this organization activation state.</summary>
+        /// <summary>Describes whether valid funding and payment prerequisites are satisfied during organization activation.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationPaymentStatus? PaymentStatus { get; set; }
         /// <summary>Selected domain for this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ServiceArea { get; set; }
 #endif
-        /// <summary>The current status for this organization activation state.</summary>
+        /// <summary>Summarizes an organization&apos;s overall progress from initial Leadping onboarding through launch readiness.</summary>
         public global::Leadping.OpenApiClient.Models.CustomerActivationStatus? Status { get; set; }
         /// <summary>UTC timestamp for subscription active at on this organization activation state.</summary>
         public DateTimeOffset? SubscriptionActiveAt { get; set; }
@@ -149,7 +149,7 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? TelephonyProvisioningStartedAt { get; set; }
         /// <summary>UTC timestamp for telephony ready at on this organization activation state.</summary>
         public DateTimeOffset? TelephonyReadyAt { get; set; }
-        /// <summary>The current telephony status for this organization activation state.</summary>
+        /// <summary>Describes whether phone numbers, calling, messaging, and provider resources are ready for organization launch.</summary>
         public global::Leadping.OpenApiClient.Models.ActivationTelephonyStatus? TelephonyStatus { get; set; }
         /// <summary>Identifier of the first-class 10DLC application entity for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,7 +159,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TenDlcApplicationId { get; set; }
 #endif
-        /// <summary>10DLC draft for this organization activation state.</summary>
+        /// <summary>Describes 10DLC application draft data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.OrganizationActivationState_tenDlcDraft? TenDlcDraft { get; set; }
@@ -167,7 +167,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationActivationState_tenDlcDraft TenDlcDraft { get; set; }
 #endif
-        /// <summary>The current 10DLC status for this organization activation state.</summary>
+        /// <summary>Describes an organization&apos;s overall 10DLC registration lifecycle across brand and messaging campaign submission.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcApplicationStatus? TenDlcStatus { get; set; }
         /// <summary>UTC timestamp for updated at on this organization activation state.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -187,7 +187,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string WebsiteNeeds { get; set; }
 #endif
-        /// <summary>The current website status for this organization activation state.</summary>
+        /// <summary>Describes an organization website&apos;s lifecycle from discovery and verification through activation, suspension, or removal.</summary>
         public global::Leadping.OpenApiClient.Models.WebsiteLifecycleStatus? WebsiteStatus { get; set; }
         /// <summary>The URL associated with this organization activation state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

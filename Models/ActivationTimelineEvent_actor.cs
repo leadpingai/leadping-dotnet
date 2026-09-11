@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Identifier and display name of the related actor.
+    /// Provides a compact API reference to another resource using its stable identifier and human-readable display name.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivationTimelineEvent_actor : global::Leadping.OpenApiClient.Models.IdNamePair, IParsable

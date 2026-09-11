@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Caller-name data returned by the provider.</summary>
+        /// <summary>Caller-name data returned by the phone lookup provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneLookup_callerName? CallerName { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneLookup_callerName CallerName { get; set; }
 #endif
-        /// <summary>Complete carrier metadata reported for this phone number.</summary>
+        /// <summary>Complete carrier metadata returned by a phone number lookup provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneLookup_carrier? Carrier { get; set; }
@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsValid { get; set; }
         /// <summary>Classifies the access technology or service type associated with a telephone number.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneLookup_lineType? LineType { get; set; }
-        /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
+        /// <summary>Public Leadping API schema for phone number location data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneLookup_location? Location { get; set; }
@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>Complete portability data returned by Telnyx.</summary>
+        /// <summary>Number-portability and routing data returned by Telnyx.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Leadping.OpenApiClient.Models.PhoneLookup_portability? Portability { get; set; }

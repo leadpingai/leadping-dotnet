@@ -8,7 +8,7 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Phone details for the lead, user, or organization represented by this lead contact profile.
+    /// Public Leadping API schema for lead phone number data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LeadContact_phone : global::Leadping.OpenApiClient.Models.Phone, IParsable
