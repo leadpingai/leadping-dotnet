@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a lead status history entry and, when it is current, updates the lead&apos;s current status.
+        /// Update a Leadping lead status history entry through the API. When the entry is current, the operation also updates the lead&apos;s current status to match.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse"/></returns>
         /// <param name="body">Defines a lead status transition or correction, including its target status, effective time, source, and explanatory context.</param>
@@ -162,7 +162,7 @@ namespace Leadping.OpenApiClient.LeadStatusChanges.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a lead status history entry and, when it is current, updates the lead&apos;s current status.
+        /// Update a Leadping lead status history entry through the API. When the entry is current, the operation also updates the lead&apos;s current status to match.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines a lead status transition or correction, including its target status, effective time, source, and explanatory context.</param>

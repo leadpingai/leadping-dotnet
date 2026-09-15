@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Users.Me.NotificationPreferences
         {
         }
         /// <summary>
-        /// Replaces the notification channel and delivery preferences stored for the authenticated user.
+        /// Update notification channel and delivery preferences for the authenticated Leadping user through the API without submitting unrelated user profile fields.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserResponse"/></returns>
         /// <param name="body">Describes user notification preferences data used in Leadping API requests and responses.</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Users.Me.NotificationPreferences
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.UserResponse>(requestInfo, global::Leadping.OpenApiClient.Models.UserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replaces the notification channel and delivery preferences stored for the authenticated user.
+        /// Update notification channel and delivery preferences for the authenticated Leadping user through the API without submitting unrelated user profile fields.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Describes user notification preferences data used in Leadping API requests and responses.</param>

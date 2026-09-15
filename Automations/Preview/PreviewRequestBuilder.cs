@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Automations.Preview
         {
         }
         /// <summary>
-        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.Set `validate_only` to return configuration validation without evaluating conditions or actions and without writing a test audit event.
+        /// Preview matched automation steps and messages for a sample lead without creating follow-up events, or use validate_only to check the automation configuration.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationPreviewResponse"/></returns>
         /// <param name="body">Defines the fields clients can send when working with automation preview.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Automations.Preview
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationPreviewResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationPreviewResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.Set `validate_only` to return configuration validation without evaluating conditions or actions and without writing a test audit event.
+        /// Preview matched automation steps and messages for a sample lead without creating follow-up events, or use validate_only to check the automation configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the fields clients can send when working with automation preview.</param>
@@ -96,7 +96,7 @@ namespace Leadping.OpenApiClient.Automations.Preview
             return new global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Previews automation execution for a sample lead, showing matched steps and messages without creating follow-up events.Set `validate_only` to return configuration validation without evaluating conditions or actions and without writing a test audit event.
+        /// Preview matched automation steps and messages for a sample lead without creating follow-up events, or use validate_only to check the automation configuration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PreviewRequestBuilderPostQueryParameters 

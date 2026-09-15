@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Blog
         {
         }
         /// <summary>
-        /// Returns the Leadping blog articles currently available to public readers.
+        /// Retrieve the list of published Leadping blog articles through the public API. This endpoint returns articles available to readers without authentication.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.BlogArticleResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Blog
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns the Leadping blog articles currently available to public readers.
+        /// Retrieve the list of published Leadping blog articles through the public API. This endpoint returns articles available to readers without authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
