@@ -125,6 +125,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
+        /// <summary>The unpublishedAt property</summary>
+        public DateTimeOffset? UnpublishedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BlogArticleResponse"/> and sets the default values.
         /// </summary>
@@ -169,6 +171,7 @@ namespace Leadping.OpenApiClient.Models
                 { "seoTitle", n => { SeoTitle = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "unpublishedAt", n => { UnpublishedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -197,6 +200,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("seoTitle", SeoTitle);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("title", Title);
+            writer.WriteDateTimeOffsetValue("unpublishedAt", UnpublishedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

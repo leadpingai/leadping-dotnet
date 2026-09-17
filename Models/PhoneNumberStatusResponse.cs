@@ -17,6 +17,14 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether this phone number can currently place outbound calls.</summary>
         public int? CallsPossible { get; set; }
+        /// <summary>Public Leadping API schema for phone number location data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_location? Location { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_location Location { get; set; }
+#endif
         /// <summary>Indicates whether this phone number can currently send SMS messages.</summary>
         public int? MessagesPossible { get; set; }
         /// <summary>E.164 phone number exposed by this phone number warmup status.</summary>
@@ -93,6 +101,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "callsPossible", n => { CallsPossible = n.GetIntValue(); } },
+                { "location", n => { Location = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_location>(global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_location.CreateFromDiscriminatorValue); } },
                 { "messagesPossible", n => { MessagesPossible = n.GetIntValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "optOutMetrics", n => { OptOutMetrics = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>(global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse.CreateFromDiscriminatorValue); } },
@@ -110,6 +119,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("callsPossible", CallsPossible);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberStatusResponse_location>("location", Location);
             writer.WriteIntValue("messagesPossible", MessagesPossible);
             writer.WriteStringValue("number", Number);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberOptOutMetricsResponse>("optOutMetrics", OptOutMetrics);
