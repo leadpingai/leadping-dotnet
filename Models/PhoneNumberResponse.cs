@@ -73,6 +73,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata Routing { get; set; }
 #endif
+        /// <summary>Whether provider, routing, and health checks allow SMS.</summary>
+        public bool? SmsReady { get; set; }
+        /// <summary>Whether provider, routing, and health checks allow calls.</summary>
+        public bool? VoiceReady { get; set; }
         /// <summary>Messaging and calling warmup for a Leadping phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +121,8 @@ namespace Leadping.OpenApiClient.Models
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>(global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization.CreateFromDiscriminatorValue); } },
                 { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "routing", n => { Routing = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>(global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata.CreateFromDiscriminatorValue); } },
+                { "smsReady", n => { SmsReady = n.GetBoolValue(); } },
+                { "voiceReady", n => { VoiceReady = n.GetBoolValue(); } },
                 { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>(global::Leadping.OpenApiClient.Models.PhoneNumberReadiness.CreateFromDiscriminatorValue); } },
             };
         }
@@ -138,6 +144,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>("organization", Organization);
             writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>("routing", Routing);
+            writer.WriteBoolValue("smsReady", SmsReady);
+            writer.WriteBoolValue("voiceReady", VoiceReady);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>("warmup", Warmup);
             writer.WriteAdditionalData(AdditionalData);
         }

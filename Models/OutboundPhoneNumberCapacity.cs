@@ -57,6 +57,8 @@ namespace Leadping.OpenApiClient.Models
         public int? SmsLimitToday { get; set; }
         /// <summary>The next time SMS capacity becomes available in the rolling minute window.</summary>
         public DateTimeOffset? SmsMinutelyResetsAt { get; set; }
+        /// <summary>Indicates whether a phone number&apos;s channel capacity is increasing, decreasing, or stable.</summary>
+        public global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity_smsRampDirection? SmsRampDirection { get; set; }
         /// <summary>Indicates whether SMS limits for this phone number are still ramping up.</summary>
         public bool? SmsRamping { get; set; }
         /// <summary>SMS remaining this hour for the applicable messaging or voice capacity window.</summary>
@@ -83,6 +85,8 @@ namespace Leadping.OpenApiClient.Models
         public int? VoiceLimitToday { get; set; }
         /// <summary>The next time voice capacity becomes available in the rolling minute window.</summary>
         public DateTimeOffset? VoiceMinutelyResetsAt { get; set; }
+        /// <summary>Indicates whether a phone number&apos;s channel capacity is increasing, decreasing, or stable.</summary>
+        public global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity_voiceRampDirection? VoiceRampDirection { get; set; }
         /// <summary>Indicates whether call limits for this phone number are still ramping up.</summary>
         public bool? VoiceRamping { get; set; }
         /// <summary>Voice remaining this hour for the applicable messaging or voice capacity window.</summary>
@@ -134,6 +138,7 @@ namespace Leadping.OpenApiClient.Models
                 { "smsLimitThisMinute", n => { SmsLimitThisMinute = n.GetIntValue(); } },
                 { "smsLimitToday", n => { SmsLimitToday = n.GetIntValue(); } },
                 { "smsMinutelyResetsAt", n => { SmsMinutelyResetsAt = n.GetDateTimeOffsetValue(); } },
+                { "smsRampDirection", n => { SmsRampDirection = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity_smsRampDirection>(); } },
                 { "smsRamping", n => { SmsRamping = n.GetBoolValue(); } },
                 { "smsRemainingThisHour", n => { SmsRemainingThisHour = n.GetIntValue(); } },
                 { "smsRemainingThisMinute", n => { SmsRemainingThisMinute = n.GetIntValue(); } },
@@ -147,6 +152,7 @@ namespace Leadping.OpenApiClient.Models
                 { "voiceLimitThisMinute", n => { VoiceLimitThisMinute = n.GetIntValue(); } },
                 { "voiceLimitToday", n => { VoiceLimitToday = n.GetIntValue(); } },
                 { "voiceMinutelyResetsAt", n => { VoiceMinutelyResetsAt = n.GetDateTimeOffsetValue(); } },
+                { "voiceRampDirection", n => { VoiceRampDirection = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity_voiceRampDirection>(); } },
                 { "voiceRamping", n => { VoiceRamping = n.GetBoolValue(); } },
                 { "voiceRemainingThisHour", n => { VoiceRemainingThisHour = n.GetIntValue(); } },
                 { "voiceRemainingThisMinute", n => { VoiceRemainingThisMinute = n.GetIntValue(); } },
@@ -175,6 +181,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("smsLimitThisMinute", SmsLimitThisMinute);
             writer.WriteIntValue("smsLimitToday", SmsLimitToday);
             writer.WriteDateTimeOffsetValue("smsMinutelyResetsAt", SmsMinutelyResetsAt);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity_smsRampDirection>("smsRampDirection", SmsRampDirection);
             writer.WriteBoolValue("smsRamping", SmsRamping);
             writer.WriteIntValue("smsRemainingThisHour", SmsRemainingThisHour);
             writer.WriteIntValue("smsRemainingThisMinute", SmsRemainingThisMinute);
@@ -188,6 +195,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("voiceLimitThisMinute", VoiceLimitThisMinute);
             writer.WriteIntValue("voiceLimitToday", VoiceLimitToday);
             writer.WriteDateTimeOffsetValue("voiceMinutelyResetsAt", VoiceMinutelyResetsAt);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity_voiceRampDirection>("voiceRampDirection", VoiceRampDirection);
             writer.WriteBoolValue("voiceRamping", VoiceRamping);
             writer.WriteIntValue("voiceRemainingThisHour", VoiceRemainingThisHour);
             writer.WriteIntValue("voiceRemainingThisMinute", VoiceRemainingThisMinute);
