@@ -9,28 +9,28 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Leadping.OpenApiClient.Sms.Uploads
+namespace Leadping.OpenApiClient.Sms.Files
 {
     /// <summary>
-    /// Builds and executes requests for operations under \sms\uploads
+    /// Builds and executes requests for operations under \sms\files
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UploadsRequestBuilder : BaseRequestBuilder
+    public partial class FilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Sms.Uploads.UploadsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Sms.Files.FilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UploadsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sms/uploads", pathParameters)
+        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sms/files", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Sms.Uploads.UploadsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Sms.Files.FilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UploadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sms/uploads", rawUrl)
+        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sms/files", rawUrl)
         {
         }
         /// <summary>
@@ -89,11 +89,11 @@ namespace Leadping.OpenApiClient.Sms.Uploads
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Sms.Uploads.UploadsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Sms.Files.FilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Leadping.OpenApiClient.Sms.Uploads.UploadsRequestBuilder WithUrl(string rawUrl)
+        public global::Leadping.OpenApiClient.Sms.Files.FilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Leadping.OpenApiClient.Sms.Uploads.UploadsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Leadping.OpenApiClient.Sms.Files.FilesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }
