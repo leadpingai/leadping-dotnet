@@ -27,6 +27,8 @@ namespace Leadping.OpenApiClient.Models
         public int? CallsReceived { get; set; }
         /// <summary>Date and time when this Leadping customer communication usage point was end.</summary>
         public DateTimeOffset? EndAt { get; set; }
+        /// <summary>Manual provider-accepted SMS messages; automated messages are excluded.</summary>
+        public int? HumanResponses { get; set; }
         /// <summary>Human-readable label for this Leadping customer communication usage point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,11 +37,17 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>Received prospect messages excluding consent and help commands.</summary>
+        public int? ProspectReplies { get; set; }
+        /// <summary>Messages whose send execution started; queued and scheduled messages are excluded.</summary>
+        public int? SmsAttempted { get; set; }
+        /// <summary>Messages confirmed delivered, counted at delivery time.</summary>
+        public int? SmsDelivered { get; set; }
         /// <summary>Number of SMS messages that failed or were blocked in this time bucket.</summary>
         public int? SmsErrors { get; set; }
         /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
-        /// <summary>Number of SMS messages sent during the reporting period.</summary>
+        /// <summary>Provider-accepted outbound messages, counted at acceptance time (SmsSent is the compatibility field name).</summary>
         public int? SmsSent { get; set; }
         /// <summary>Spend represented by this Leadping customer communication usage point.</summary>
         public double? Spend { get; set; }
@@ -76,7 +84,11 @@ namespace Leadping.OpenApiClient.Models
                 { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
                 { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
                 { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
+                { "humanResponses", n => { HumanResponses = n.GetIntValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "prospectReplies", n => { ProspectReplies = n.GetIntValue(); } },
+                { "smsAttempted", n => { SmsAttempted = n.GetIntValue(); } },
+                { "smsDelivered", n => { SmsDelivered = n.GetIntValue(); } },
                 { "smsErrors", n => { SmsErrors = n.GetIntValue(); } },
                 { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
                 { "smsSent", n => { SmsSent = n.GetIntValue(); } },
@@ -97,7 +109,11 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("callsPlaced", CallsPlaced);
             writer.WriteIntValue("callsReceived", CallsReceived);
             writer.WriteDateTimeOffsetValue("endAt", EndAt);
+            writer.WriteIntValue("humanResponses", HumanResponses);
             writer.WriteStringValue("label", Label);
+            writer.WriteIntValue("prospectReplies", ProspectReplies);
+            writer.WriteIntValue("smsAttempted", SmsAttempted);
+            writer.WriteIntValue("smsDelivered", SmsDelivered);
             writer.WriteIntValue("smsErrors", SmsErrors);
             writer.WriteIntValue("smsReceived", SmsReceived);
             writer.WriteIntValue("smsSent", SmsSent);

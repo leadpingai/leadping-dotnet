@@ -75,6 +75,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SelectedConnectionId { get; set; }
 #endif
+        /// <summary>Delivery outcome of the persisted SMS. Workflow steps advance on command acceptance, without waiting for delivery.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.AutomationActionRunRecord_smsDelivery? SmsDelivery { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.AutomationActionRunRecord_smsDelivery SmsDelivery { get; set; }
+#endif
         /// <summary>UTC timestamp when processing started for this automation action run record.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>Current lifecycle status for this automation action run record in the Leadping API.</summary>
@@ -122,6 +130,7 @@ namespace Leadping.OpenApiClient.Models
                 { "processingAttempts", n => { ProcessingAttempts = n.GetIntValue(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetDateTimeOffsetValue(); } },
                 { "selectedConnectionId", n => { SelectedConnectionId = n.GetStringValue(); } },
+                { "smsDelivery", n => { SmsDelivery = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord_smsDelivery>(global::Leadping.OpenApiClient.Models.AutomationActionRunRecord_smsDelivery.CreateFromDiscriminatorValue); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -145,6 +154,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("processingAttempts", ProcessingAttempts);
             writer.WriteDateTimeOffsetValue("scheduledAt", ScheduledAt);
             writer.WriteStringValue("selectedConnectionId", SelectedConnectionId);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord_smsDelivery>("smsDelivery", SmsDelivery);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

@@ -25,14 +25,46 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal> AverageMinutesTrend { get; set; }
 #endif
+        /// <summary>Exclusive cohort end.</summary>
+        public DateTimeOffset? CohortEndAt { get; set; }
+        /// <summary>Inclusive cohort start.</summary>
+        public DateTimeOffset? CohortStartAt { get; set; }
         /// <summary>Median minutes measured in minutes.</summary>
         public double? MedianMinutes { get; set; }
         /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
+        /// <summary>Responses observed through this instant; min(report end plus five minutes, generation time).</summary>
+        public DateTimeOffset? ObservedThrough { get; set; }
+        /// <summary>Timely human responses divided by all mature eligible leads, including unanswered leads.</summary>
+        public double? OverallFiveMinuteSlaPercent { get; set; }
         /// <summary>Number of responded leads represented by this Leadping customer response metrics.</summary>
         public int? RespondedLeads { get; set; }
-        /// <summary>Responded within five minutes percent expressed as a percentage.</summary>
+        /// <summary>Conditional percentage: human responses within five minutes divided by responded leads only; not overall coverage.</summary>
         public double? RespondedWithinFiveMinutesPercent { get; set; }
+        /// <summary>Shared definition used in charts and exports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResponseDefinition { get; set; }
+#nullable restore
+#else
+        public string ResponseDefinition { get; set; }
+#endif
+        /// <summary>Non-deleted leads created in the cohort with a full five-minute observation window.</summary>
+        public int? SlaEligibleLeads { get; set; }
+        /// <summary>Cohort leads younger than five minutes at ObservedThrough; excluded from SLA denominator.</summary>
+        public int? SlaPendingLeads { get; set; }
+        /// <summary>Mature eligible leads with a human response within exactly five minutes.</summary>
+        public int? SlaTimelyLeads { get; set; }
+        /// <summary>Cohort SLA counts and coverage by lead creation bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.CustomerResponseSlaPoint>? SlaTrend { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.CustomerResponseSlaPoint> SlaTrend { get; set; }
+#endif
+        /// <summary>Mature eligible leads without a human response by ObservedThrough.</summary>
+        public int? SlaUnrespondedLeads { get; set; }
         /// <summary>Number of unread messages represented by this Leadping customer response metrics.</summary>
         public int? UnreadMessages { get; set; }
         /// <summary>Number of unresponded leads represented by this Leadping customer response metrics.</summary>
@@ -64,10 +96,20 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "averageMinutes", n => { AverageMinutes = n.GetDoubleValue(); } },
                 { "averageMinutesTrend", n => { AverageMinutesTrend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>(global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cohortEndAt", n => { CohortEndAt = n.GetDateTimeOffsetValue(); } },
+                { "cohortStartAt", n => { CohortStartAt = n.GetDateTimeOffsetValue(); } },
                 { "medianMinutes", n => { MedianMinutes = n.GetDoubleValue(); } },
                 { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
+                { "observedThrough", n => { ObservedThrough = n.GetDateTimeOffsetValue(); } },
+                { "overallFiveMinuteSlaPercent", n => { OverallFiveMinuteSlaPercent = n.GetDoubleValue(); } },
                 { "respondedLeads", n => { RespondedLeads = n.GetIntValue(); } },
                 { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetDoubleValue(); } },
+                { "responseDefinition", n => { ResponseDefinition = n.GetStringValue(); } },
+                { "slaEligibleLeads", n => { SlaEligibleLeads = n.GetIntValue(); } },
+                { "slaPendingLeads", n => { SlaPendingLeads = n.GetIntValue(); } },
+                { "slaTimelyLeads", n => { SlaTimelyLeads = n.GetIntValue(); } },
+                { "slaTrend", n => { SlaTrend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerResponseSlaPoint>(global::Leadping.OpenApiClient.Models.CustomerResponseSlaPoint.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "slaUnrespondedLeads", n => { SlaUnrespondedLeads = n.GetIntValue(); } },
                 { "unreadMessages", n => { UnreadMessages = n.GetIntValue(); } },
                 { "unrespondedLeads", n => { UnrespondedLeads = n.GetIntValue(); } },
             };
@@ -81,10 +123,20 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("averageMinutes", AverageMinutes);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AnalyticsTrendPointOfdecimal>("averageMinutesTrend", AverageMinutesTrend);
+            writer.WriteDateTimeOffsetValue("cohortEndAt", CohortEndAt);
+            writer.WriteDateTimeOffsetValue("cohortStartAt", CohortStartAt);
             writer.WriteDoubleValue("medianMinutes", MedianMinutes);
             writer.WriteIntValue("missedCalls", MissedCalls);
+            writer.WriteDateTimeOffsetValue("observedThrough", ObservedThrough);
+            writer.WriteDoubleValue("overallFiveMinuteSlaPercent", OverallFiveMinuteSlaPercent);
             writer.WriteIntValue("respondedLeads", RespondedLeads);
             writer.WriteDoubleValue("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);
+            writer.WriteStringValue("responseDefinition", ResponseDefinition);
+            writer.WriteIntValue("slaEligibleLeads", SlaEligibleLeads);
+            writer.WriteIntValue("slaPendingLeads", SlaPendingLeads);
+            writer.WriteIntValue("slaTimelyLeads", SlaTimelyLeads);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerResponseSlaPoint>("slaTrend", SlaTrend);
+            writer.WriteIntValue("slaUnrespondedLeads", SlaUnrespondedLeads);
             writer.WriteIntValue("unreadMessages", UnreadMessages);
             writer.WriteIntValue("unrespondedLeads", UnrespondedLeads);
             writer.WriteAdditionalData(AdditionalData);

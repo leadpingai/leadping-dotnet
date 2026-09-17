@@ -39,6 +39,30 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The associated lead&apos;s profile image URL, when available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadAvatarUrl { get; set; }
+#nullable restore
+#else
+        public string LeadAvatarUrl { get; set; }
+#endif
+        /// <summary>The associated lead&apos;s email address, used for Gravatar fallback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadEmail { get; set; }
+#nullable restore
+#else
+        public string LeadEmail { get; set; }
+#endif
+        /// <summary>Display name of the associated lead, when available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadName { get; set; }
+#nullable restore
+#else
+        public string LeadName { get; set; }
+#endif
         /// <summary>Suppressed email address normalized for matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +151,9 @@ namespace Leadping.OpenApiClient.Models
                 { "audit", n => { Audit = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>(global::Leadping.OpenApiClient.Models.SuppressionEntryAudit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
+                { "leadEmail", n => { LeadEmail = n.GetStringValue(); } },
+                { "leadName", n => { LeadName = n.GetStringValue(); } },
                 { "normalizedEmail", n => { NormalizedEmail = n.GetStringValue(); } },
                 { "normalizedPhoneNumber", n => { NormalizedPhoneNumber = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
@@ -148,6 +175,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>("audit", Audit);
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
+            writer.WriteStringValue("leadEmail", LeadEmail);
+            writer.WriteStringValue("leadName", LeadName);
             writer.WriteStringValue("normalizedEmail", NormalizedEmail);
             writer.WriteStringValue("normalizedPhoneNumber", NormalizedPhoneNumber);
             writer.WriteStringValue("organizationId", OrganizationId);

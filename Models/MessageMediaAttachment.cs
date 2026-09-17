@@ -31,14 +31,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FileName { get; set; }
 #endif
-        /// <summary>The durable Media record containing this attachment&apos;s scanned bytes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaId { get; set; }
-#nullable restore
-#else
-        public string MediaId { get; set; }
-#endif
         /// <summary>SHA-256 digest of the media content, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +41,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Size of the media attachment in bytes.</summary>
         public long? Size { get; set; }
+        /// <summary>The durable Media record containing this attachment&apos;s scanned bytes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UploadId { get; set; }
+#nullable restore
+#else
+        public string UploadId { get; set; }
+#endif
         /// <summary>URL from which the media attachment can be retrieved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,9 +84,9 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
-                { "mediaId", n => { MediaId = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
+                { "uploadId", n => { UploadId = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -99,9 +99,9 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
-            writer.WriteStringValue("mediaId", MediaId);
             writer.WriteStringValue("sha256", Sha256);
             writer.WriteLongValue("size", Size);
+            writer.WriteStringValue("uploadId", UploadId);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

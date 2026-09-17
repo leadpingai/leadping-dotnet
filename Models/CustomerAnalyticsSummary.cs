@@ -31,6 +31,8 @@ namespace Leadping.OpenApiClient.Models
         public int? CallsPlaced { get; set; }
         /// <summary>Number of inbound calls received during the reporting period.</summary>
         public int? CallsReceived { get; set; }
+        /// <summary>Manual provider-accepted SMS messages; automated messages are excluded.</summary>
+        public int? HumanResponses { get; set; }
         /// <summary>Number of leads represented by this Leadping customer analytics summary.</summary>
         public int? Leads { get; set; }
         /// <summary>Compares a metric with the preceding period and reports its absolute and percentage change.</summary>
@@ -47,11 +49,29 @@ namespace Leadping.OpenApiClient.Models
         public int? MissedCalls { get; set; }
         /// <summary>Number of missed leads represented by this Leadping customer analytics summary.</summary>
         public int? MissedLeads { get; set; }
-        /// <summary>Responded within five minutes percent expressed as a percentage.</summary>
+        /// <summary>Responses observed through this instant; min(report end plus five minutes, generation time).</summary>
+        public DateTimeOffset? ObservedThrough { get; set; }
+        /// <summary>Timely human responses divided by all mature eligible leads, including unanswered leads.</summary>
+        public double? OverallFiveMinuteSlaPercent { get; set; }
+        /// <summary>Received prospect messages excluding consent and help commands.</summary>
+        public int? ProspectReplies { get; set; }
+        /// <summary>Conditional percentage: human responses within five minutes divided by responded leads only; not overall coverage.</summary>
         public double? RespondedWithinFiveMinutesPercent { get; set; }
+        /// <summary>Non-deleted leads created in the cohort with a full five-minute observation window.</summary>
+        public int? SlaEligibleLeads { get; set; }
+        /// <summary>Cohort leads younger than five minutes at ObservedThrough; excluded from SLA denominator.</summary>
+        public int? SlaPendingLeads { get; set; }
+        /// <summary>Mature eligible leads with a human response within exactly five minutes.</summary>
+        public int? SlaTimelyLeads { get; set; }
+        /// <summary>Mature eligible leads without a human response by ObservedThrough.</summary>
+        public int? SlaUnrespondedLeads { get; set; }
+        /// <summary>Messages whose send execution started; queued and scheduled messages are excluded.</summary>
+        public int? SmsAttempted { get; set; }
+        /// <summary>Messages confirmed delivered, counted at delivery time.</summary>
+        public int? SmsDelivered { get; set; }
         /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
-        /// <summary>Number of SMS messages sent during the reporting period.</summary>
+        /// <summary>Provider-accepted outbound messages, counted at acceptance time (SmsSent is the compatibility field name).</summary>
         public int? SmsSent { get; set; }
         /// <summary>Number of unread messages represented by this Leadping customer analytics summary.</summary>
         public int? UnreadMessages { get; set; }
@@ -97,12 +117,22 @@ namespace Leadping.OpenApiClient.Models
                 { "callMinutes", n => { CallMinutes = n.GetDoubleValue(); } },
                 { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
                 { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
+                { "humanResponses", n => { HumanResponses = n.GetIntValue(); } },
                 { "leads", n => { Leads = n.GetIntValue(); } },
                 { "leadsComparison", n => { LeadsComparison = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>(global::Leadping.OpenApiClient.Models.AnalyticsComparison.CreateFromDiscriminatorValue); } },
                 { "medianResponseMinutes", n => { MedianResponseMinutes = n.GetDoubleValue(); } },
                 { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
                 { "missedLeads", n => { MissedLeads = n.GetIntValue(); } },
+                { "observedThrough", n => { ObservedThrough = n.GetDateTimeOffsetValue(); } },
+                { "overallFiveMinuteSlaPercent", n => { OverallFiveMinuteSlaPercent = n.GetDoubleValue(); } },
+                { "prospectReplies", n => { ProspectReplies = n.GetIntValue(); } },
                 { "respondedWithinFiveMinutesPercent", n => { RespondedWithinFiveMinutesPercent = n.GetDoubleValue(); } },
+                { "slaEligibleLeads", n => { SlaEligibleLeads = n.GetIntValue(); } },
+                { "slaPendingLeads", n => { SlaPendingLeads = n.GetIntValue(); } },
+                { "slaTimelyLeads", n => { SlaTimelyLeads = n.GetIntValue(); } },
+                { "slaUnrespondedLeads", n => { SlaUnrespondedLeads = n.GetIntValue(); } },
+                { "smsAttempted", n => { SmsAttempted = n.GetIntValue(); } },
+                { "smsDelivered", n => { SmsDelivered = n.GetIntValue(); } },
                 { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
                 { "smsSent", n => { SmsSent = n.GetIntValue(); } },
                 { "unreadMessages", n => { UnreadMessages = n.GetIntValue(); } },
@@ -123,12 +153,22 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("callMinutes", CallMinutes);
             writer.WriteIntValue("callsPlaced", CallsPlaced);
             writer.WriteIntValue("callsReceived", CallsReceived);
+            writer.WriteIntValue("humanResponses", HumanResponses);
             writer.WriteIntValue("leads", Leads);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsComparison>("leadsComparison", LeadsComparison);
             writer.WriteDoubleValue("medianResponseMinutes", MedianResponseMinutes);
             writer.WriteIntValue("missedCalls", MissedCalls);
             writer.WriteIntValue("missedLeads", MissedLeads);
+            writer.WriteDateTimeOffsetValue("observedThrough", ObservedThrough);
+            writer.WriteDoubleValue("overallFiveMinuteSlaPercent", OverallFiveMinuteSlaPercent);
+            writer.WriteIntValue("prospectReplies", ProspectReplies);
             writer.WriteDoubleValue("respondedWithinFiveMinutesPercent", RespondedWithinFiveMinutesPercent);
+            writer.WriteIntValue("slaEligibleLeads", SlaEligibleLeads);
+            writer.WriteIntValue("slaPendingLeads", SlaPendingLeads);
+            writer.WriteIntValue("slaTimelyLeads", SlaTimelyLeads);
+            writer.WriteIntValue("slaUnrespondedLeads", SlaUnrespondedLeads);
+            writer.WriteIntValue("smsAttempted", SmsAttempted);
+            writer.WriteIntValue("smsDelivered", SmsDelivered);
             writer.WriteIntValue("smsReceived", SmsReceived);
             writer.WriteIntValue("smsSent", SmsSent);
             writer.WriteIntValue("unreadMessages", UnreadMessages);

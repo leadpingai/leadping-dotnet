@@ -67,6 +67,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ScheduledAt { get; set; }
         /// <summary>Date and time when the workflow action was skipped.</summary>
         public DateTimeOffset? SkippedAt { get; set; }
+        /// <summary>Delivery outcome of the persisted SMS. Workflow steps advance on command acceptance, without waiting for delivery.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse_smsDelivery? SmsDelivery { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse_smsDelivery SmsDelivery { get; set; }
+#endif
         /// <summary>Date and time when the automation workflow action started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>Current status for this Leadping automation workflow action.</summary>
@@ -147,6 +155,7 @@ namespace Leadping.OpenApiClient.Models
                 { "safeReason", n => { SafeReason = n.GetStringValue(); } },
                 { "scheduledAt", n => { ScheduledAt = n.GetDateTimeOffsetValue(); } },
                 { "skippedAt", n => { SkippedAt = n.GetDateTimeOffsetValue(); } },
+                { "smsDelivery", n => { SmsDelivery = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse_smsDelivery>(global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse_smsDelivery.CreateFromDiscriminatorValue); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "statusDisplay", n => { StatusDisplay = n.GetStringValue(); } },
@@ -174,6 +183,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("safeReason", SafeReason);
             writer.WriteDateTimeOffsetValue("scheduledAt", ScheduledAt);
             writer.WriteDateTimeOffsetValue("skippedAt", SkippedAt);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationWorkflowActionResponse_smsDelivery>("smsDelivery", SmsDelivery);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("statusDisplay", StatusDisplay);

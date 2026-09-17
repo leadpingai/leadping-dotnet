@@ -131,6 +131,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationName { get; set; }
 #endif
+        /// <summary>Defines the source that requested outbound delivery.</summary>
+        public global::Leadping.OpenApiClient.Models.CallEventTableRow_outboundSource? OutboundSource { get; set; }
         /// <summary>Describes the durable business outcome of a Leadping phone call after provider status normalization.</summary>
         public global::Leadping.OpenApiClient.Models.CallEventTableRow_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this call event table row.</summary>
@@ -233,6 +235,7 @@ namespace Leadping.OpenApiClient.Models
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
+                { "outboundSource", n => { OutboundSource = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_outboundSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
@@ -269,6 +272,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("organizationName", OrganizationName);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_outboundSource>("outboundSource", OutboundSource);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CallEventTableRow_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);

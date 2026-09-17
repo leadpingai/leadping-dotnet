@@ -27,11 +27,19 @@ namespace Leadping.OpenApiClient.Models
         public int? CallsReceived { get; set; }
         /// <summary>Number of SMS messages that failed or were blocked during the reporting period.</summary>
         public int? FailedOrBlockedSms { get; set; }
+        /// <summary>Manual provider-accepted SMS messages; automated messages are excluded.</summary>
+        public int? HumanResponses { get; set; }
         /// <summary>Number of calls missed during the reporting period.</summary>
         public int? MissedCalls { get; set; }
+        /// <summary>Received prospect messages excluding consent and help commands.</summary>
+        public int? ProspectReplies { get; set; }
+        /// <summary>Messages whose send execution started; queued and scheduled messages are excluded.</summary>
+        public int? SmsAttempted { get; set; }
+        /// <summary>Messages confirmed delivered, counted at delivery time.</summary>
+        public int? SmsDelivered { get; set; }
         /// <summary>Number of SMS messages received during the reporting period.</summary>
         public int? SmsReceived { get; set; }
-        /// <summary>Number of SMS messages sent during the reporting period.</summary>
+        /// <summary>Provider-accepted outbound messages, counted at acceptance time (SmsSent is the compatibility field name).</summary>
         public int? SmsSent { get; set; }
         /// <summary>Collection of trend included with this Leadping customer communication usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +82,11 @@ namespace Leadping.OpenApiClient.Models
                 { "callsPlaced", n => { CallsPlaced = n.GetIntValue(); } },
                 { "callsReceived", n => { CallsReceived = n.GetIntValue(); } },
                 { "failedOrBlockedSms", n => { FailedOrBlockedSms = n.GetIntValue(); } },
+                { "humanResponses", n => { HumanResponses = n.GetIntValue(); } },
                 { "missedCalls", n => { MissedCalls = n.GetIntValue(); } },
+                { "prospectReplies", n => { ProspectReplies = n.GetIntValue(); } },
+                { "smsAttempted", n => { SmsAttempted = n.GetIntValue(); } },
+                { "smsDelivered", n => { SmsDelivered = n.GetIntValue(); } },
                 { "smsReceived", n => { SmsReceived = n.GetIntValue(); } },
                 { "smsSent", n => { SmsSent = n.GetIntValue(); } },
                 { "trend", n => { Trend = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint>(global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -94,7 +106,11 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("callsPlaced", CallsPlaced);
             writer.WriteIntValue("callsReceived", CallsReceived);
             writer.WriteIntValue("failedOrBlockedSms", FailedOrBlockedSms);
+            writer.WriteIntValue("humanResponses", HumanResponses);
             writer.WriteIntValue("missedCalls", MissedCalls);
+            writer.WriteIntValue("prospectReplies", ProspectReplies);
+            writer.WriteIntValue("smsAttempted", SmsAttempted);
+            writer.WriteIntValue("smsDelivered", SmsDelivered);
             writer.WriteIntValue("smsReceived", SmsReceived);
             writer.WriteIntValue("smsSent", SmsSent);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsagePoint>("trend", Trend);
