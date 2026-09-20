@@ -51,6 +51,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Indicates sample activity for app review that must not count toward real financial totals.</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +129,7 @@ namespace Leadping.OpenApiClient.Models
                 { "gatewayFeeAmount", n => { GatewayFeeAmount = n.GetDoubleValue(); } },
                 { "gatewayStatus", n => { GatewayStatus = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_lead>(global::Leadping.OpenApiClient.Models.TransactionResponse_lead.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
@@ -154,6 +157,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("gatewayFeeAmount", GatewayFeeAmount);
             writer.WriteStringValue("gatewayStatus", GatewayStatus);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_lead>("lead", Lead);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDoubleValue("netAmount", NetAmount);
