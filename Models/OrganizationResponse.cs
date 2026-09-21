@@ -125,6 +125,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Human-readable display name of the resource.</summary>
@@ -243,6 +245,7 @@ namespace Leadping.OpenApiClient.Models
                 { "einDocument", n => { EinDocument = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_einDocument>(global::Leadping.OpenApiClient.Models.OrganizationResponse_einDocument.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -284,6 +287,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_einDocument>("einDocument", EinDocument);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone", Phone);

@@ -69,6 +69,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the Leadping conversation has been archived.</summary>
         public bool? IsArchived { get; set; }
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Indicates whether the current user has unread activity in the conversation.</summary>
         public bool? IsUnread { get; set; }
         /// <summary>UTC timestamp when the most recent conversation event occurred.</summary>
@@ -175,6 +177,7 @@ namespace Leadping.OpenApiClient.Models
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isUnread", n => { IsUnread = n.GetBoolValue(); } },
                 { "lastEventAt", n => { LastEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastEventIsInternalNote", n => { LastEventIsInternalNote = n.GetBoolValue(); } },
@@ -205,6 +208,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isUnread", IsUnread);
             writer.WriteDateTimeOffsetValue("lastEventAt", LastEventAt);
             writer.WriteBoolValue("lastEventIsInternalNote", LastEventIsInternalNote);

@@ -89,6 +89,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this lead is archived.</summary>
         public bool? IsArchived { get; set; }
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Last name of the lead, user, or contact represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,6 +209,7 @@ namespace Leadping.OpenApiClient.Models
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>(global::Leadping.OpenApiClient.Models.LeadTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -242,6 +245,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadTableRow_organization>("organization", Organization);
             writer.WriteStringValue("phone", Phone);

@@ -133,6 +133,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether automation created or triggered this SMS event table row.</summary>
         public bool? IsAutomated { get; set; }
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -292,6 +294,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
@@ -342,6 +345,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isAutomated", IsAutomated);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("lead", Lead);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteStringValue("organization", Organization);

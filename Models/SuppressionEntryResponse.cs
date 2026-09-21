@@ -39,6 +39,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>The associated lead&apos;s profile image URL, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +153,7 @@ namespace Leadping.OpenApiClient.Models
                 { "audit", n => { Audit = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>(global::Leadping.OpenApiClient.Models.SuppressionEntryAudit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "channel", n => { Channel = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
                 { "leadEmail", n => { LeadEmail = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
@@ -175,6 +178,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.SuppressionEntryAudit>("audit", Audit);
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
             writer.WriteStringValue("leadEmail", LeadEmail);
             writer.WriteStringValue("leadName", LeadName);

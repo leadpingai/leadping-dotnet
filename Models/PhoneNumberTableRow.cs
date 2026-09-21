@@ -25,6 +25,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Optional display label for this phone number table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +130,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
@@ -150,6 +153,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("organization", Organization);

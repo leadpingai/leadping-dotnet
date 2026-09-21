@@ -49,6 +49,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Whether this notification is read.</summary>
         public bool? IsRead { get; set; }
         /// <summary>Message for this notification.</summary>
@@ -131,6 +133,7 @@ namespace Leadping.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isRead", n => { IsRead = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
@@ -156,6 +159,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isRead", IsRead);
             writer.WriteStringValue("message", Message);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);

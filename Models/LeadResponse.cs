@@ -99,6 +99,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the lead has been archived in Leadping.</summary>
         public bool? IsArchived { get; set; }
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Public Leadping API schema for lead attribution metadata data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +179,7 @@ namespace Leadping.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata.CreateFromDiscriminatorValue); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "phoneIdentity", n => { PhoneIdentity = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity>(global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity.CreateFromDiscriminatorValue); } },
@@ -208,6 +211,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>("metadata", Metadata);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_phoneIdentity>("phoneIdentity", PhoneIdentity);

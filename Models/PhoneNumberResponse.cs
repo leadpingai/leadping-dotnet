@@ -27,6 +27,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Indicates whether Leadping provisions and manages this phone number.</summary>
         public bool? LeadpingOwned { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
@@ -113,6 +115,7 @@ namespace Leadping.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "leadpingOwned", n => { LeadpingOwned = n.GetBoolValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -136,6 +139,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("leadpingOwned", LeadpingOwned);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);

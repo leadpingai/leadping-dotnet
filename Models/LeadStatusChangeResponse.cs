@@ -77,6 +77,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Whether this lead status change is missed call follow up.</summary>
         public bool? IsMissedCallFollowUp { get; set; }
         /// <summary>The lead&apos;s profile image URL, when available.</summary>
@@ -235,6 +237,7 @@ namespace Leadping.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "followUpStatus", n => { FollowUpStatus = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isMissedCallFollowUp", n => { IsMissedCallFollowUp = n.GetBoolValue(); } },
                 { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
                 { "leadEmail", n => { LeadEmail = n.GetStringValue(); } },
@@ -275,6 +278,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("followUpStatus", FollowUpStatus);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isMissedCallFollowUp", IsMissedCallFollowUp);
             writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
             writer.WriteStringValue("leadEmail", LeadEmail);

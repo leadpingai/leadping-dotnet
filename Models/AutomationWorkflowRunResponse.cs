@@ -63,6 +63,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Human-readable last action summary for this Leadping automation workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +201,7 @@ namespace Leadping.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>(global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "failedAt", n => { FailedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastActionSummary", n => { LastActionSummary = n.GetStringValue(); } },
                 { "lastErrorCode", n => { LastErrorCode = n.GetStringValue(); } },
                 { "lastErrorMessage", n => { LastErrorMessage = n.GetStringValue(); } },
@@ -235,6 +238,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationWorkflowEventResponse>("events", Events);
             writer.WriteDateTimeOffsetValue("failedAt", FailedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("lastActionSummary", LastActionSummary);
             writer.WriteStringValue("lastErrorCode", LastErrorCode);
             writer.WriteStringValue("lastErrorMessage", LastErrorMessage);

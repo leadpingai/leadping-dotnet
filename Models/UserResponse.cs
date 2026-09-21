@@ -75,6 +75,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.UserIdentity> Identities { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>The date and time when this user last completed the Leadping sign-in flow.</summary>
         public DateTimeOffset? LastLoggedInAt { get; set; }
         /// <summary>Last name of the Leadping user.</summary>
@@ -191,6 +193,7 @@ namespace Leadping.OpenApiClient.Models
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UserIdentity>(global::Leadping.OpenApiClient.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastLoggedInAt", n => { LastLoggedInAt = n.GetDateTimeOffsetValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "mobileDevicePreferences", n => { MobileDevicePreferences = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>(global::Leadping.OpenApiClient.Models.MobileDevicePreferences.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -223,6 +226,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UserIdentity>("identities", Identities);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("lastLoggedInAt", LastLoggedInAt);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>("mobileDevicePreferences", MobileDevicePreferences);

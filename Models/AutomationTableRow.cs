@@ -65,6 +65,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Indicates whether Leadping manages this automation table row automatically instead of a user.</summary>
         public bool? IsSystemManaged { get; set; }
         /// <summary>UTC timestamp when this automation last ran.</summary>
@@ -191,6 +193,7 @@ namespace Leadping.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "healthSummary", n => { HealthSummary = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isSystemManaged", n => { IsSystemManaged = n.GetBoolValue(); } },
                 { "lastRunAt", n => { LastRunAt = n.GetDateTimeOffsetValue(); } },
                 { "lastRunStatus", n => { LastRunStatus = n.GetStringValue(); } },
@@ -221,6 +224,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("healthSummary", HealthSummary);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isSystemManaged", IsSystemManaged);
             writer.WriteDateTimeOffsetValue("lastRunAt", LastRunAt);
             writer.WriteStringValue("lastRunStatus", LastRunStatus);

@@ -53,6 +53,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this lead or record is archived.</summary>
         public bool? IsArchived { get; set; }
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Display name for this tag response in the Leadping API.</summary>
@@ -111,6 +113,7 @@ namespace Leadping.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "normalizedName", n => { NormalizedName = n.GetStringValue(); } },
@@ -131,6 +134,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("normalizedName", NormalizedName);

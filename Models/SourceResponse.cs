@@ -99,6 +99,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp when this source most recently delivered a lead to Leadping.</summary>
         public DateTimeOffset? LastLeadReceivedAt { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
@@ -177,6 +179,7 @@ namespace Leadping.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "firstLeadReceivedAt", n => { FirstLeadReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastLeadReceivedAt", n => { LastLeadReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "modifiedByUser", n => { ModifiedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_modifiedByUser>(global::Leadping.OpenApiClient.Models.SourceResponse_modifiedByUser.CreateFromDiscriminatorValue); } },
@@ -208,6 +211,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDateTimeOffsetValue("firstLeadReceivedAt", FirstLeadReceivedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("lastLeadReceivedAt", LastLeadReceivedAt);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_modifiedByUser>("modifiedByUser", ModifiedByUser);

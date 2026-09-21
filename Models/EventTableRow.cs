@@ -171,6 +171,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Lead ID associated with this timeline event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -334,6 +336,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumber", n => { FromPhoneNumber = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
@@ -391,6 +394,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumber", FromPhoneNumber);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);

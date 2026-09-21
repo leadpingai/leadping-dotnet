@@ -49,6 +49,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>Indicates whether the recipient has opted out of further SMS communication.</summary>
         public bool? IsOptOut { get; set; }
         /// <summary>Short display label for this phone number messaging event, formatted for charts, filters, or list views.</summary>
@@ -105,6 +107,7 @@ namespace Leadping.OpenApiClient.Models
                 { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "fromPhoneNumber", n => { FromPhoneNumber = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isOptOut", n => { IsOptOut = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "textPreview", n => { TextPreview = n.GetStringValue(); } },
@@ -123,6 +126,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("fromPhoneNumber", FromPhoneNumber);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isOptOut", IsOptOut);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("textPreview", TextPreview);

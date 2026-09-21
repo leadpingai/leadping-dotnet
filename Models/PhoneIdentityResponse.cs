@@ -25,6 +25,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>The most recent time lookup data was enriched.</summary>
         public DateTimeOffset? LastEnrichedAt { get; set; }
         /// <summary>Public Leadping API schema for phone lookup result data.</summary>
@@ -96,6 +98,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastEnrichedAt", n => { LastEnrichedAt = n.GetDateTimeOffsetValue(); } },
                 { "lookup", n => { Lookup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup>(global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup.CreateFromDiscriminatorValue); } },
                 { "lookupActions", n => { LookupActions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction>(global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -114,6 +117,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("lastEnrichedAt", LastEnrichedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_lookup>("lookup", Lookup);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.PhoneIdentityLookupAction>("lookupActions", LookupActions);
