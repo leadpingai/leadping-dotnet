@@ -1,7 +1,7 @@
 name: Publish .NET SDK
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: sdk-release
   cancel-in-progress: false
 
 on:
@@ -46,7 +46,8 @@ jobs:
             awk '/^[0-9]+\.[0-9]+\.[0-9]+$/ { print }' >> "${versions_file}"
 
           nuget_response="$(mktemp)"
-          if curl -fsSL "https://api.nuget.org/v3-flatcontainer/leadping.openapiclient/index.json" -o "${nuget_response}"; then
+          registry_status="$(curl -sSL --retry 3 --connect-timeout 15 --max-time 120 -w '%{http_code}' "https://api.nuget.org/v3-flatcontainer/leadping.openapiclient/index.json" -o "${nuget_response}")"
+          if [ "${registry_status}" = "200" ]; then
             python3 - "${nuget_response}" <<'PY' >> "${versions_file}"
           import json
           import re
@@ -59,6 +60,9 @@ jobs:
               if re.fullmatch(r"\d+\.\d+\.\d+", version):
                   print(version)
           PY
+          elif [ "${registry_status}" != "404" ]; then
+            echo "::error::Registry version lookup failed (HTTP ${registry_status})."
+            exit 1
           fi
 
           version="$(python3 - "${versions_file}" <<'PY'
@@ -115,6 +119,16 @@ jobs:
             -p:PackageVersion="${{ steps.version.outputs.version }}" \
             -p:ContinuousIntegrationBuild=true
 
+      # Reserve the version before any upload. Failed releases keep their tag so
+      # subsequent runs select a new version, even if a registry has not indexed it.
+      - name: Reserve release version
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          git tag "${TAG}"
+          git push origin "refs/tags/${TAG}:refs/tags/${TAG}"
+
       - name: NuGet trusted publishing login
         id: nuget-login
         uses: NuGet/login@v1
@@ -149,15 +163,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH__TOKEN || secrets.GIT__TOKEN || github.token }}
           TAG: ${{ steps.version.outputs.tag }}
-          GIT_EMAIL: ${{ secrets.GIT__EMAIL || 'support@leadping.ai' }}
         run: |
           set -euo pipefail
 
-          git config user.name "leadpingai-bot"
-          git config user.email "${GIT_EMAIL}"
-          git tag "${TAG}"
-          git push origin "${TAG}"
-
-          gh release create "${TAG}" artifacts/* \
+          gh release create "${TAG}" --verify-tag artifacts/* \
             --title "${TAG}" \
             --notes "Generated Leadping .NET SDK ${TAG}."
