@@ -49,6 +49,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CoverImageAlt { get; set; }
 #endif
+        /// <summary>The processed cover image height in pixels, when known.</summary>
+        public int? CoverImageHeight { get; set; }
         /// <summary>The coverImageUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +59,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CoverImageUrl { get; set; }
 #endif
+        /// <summary>The processed cover image width in pixels, when known.</summary>
+        public int? CoverImageWidth { get; set; }
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The excerpt property</summary>
@@ -89,6 +93,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsFeatured { get; set; }
         /// <summary>The isPublished property</summary>
         public bool? IsPublished { get; set; }
+        /// <summary>The lastPublishedAt property</summary>
+        public DateTimeOffset? LastPublishedAt { get; set; }
         /// <summary>The metaDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,7 +163,9 @@ namespace Leadping.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "contentUpdatedAt", n => { ContentUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "coverImageAlt", n => { CoverImageAlt = n.GetStringValue(); } },
+                { "coverImageHeight", n => { CoverImageHeight = n.GetIntValue(); } },
                 { "coverImageUrl", n => { CoverImageUrl = n.GetStringValue(); } },
+                { "coverImageWidth", n => { CoverImageWidth = n.GetIntValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "excerpt", n => { Excerpt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -165,6 +173,7 @@ namespace Leadping.OpenApiClient.Models
                 { "imagesProcessing", n => { ImagesProcessing = n.GetBoolValue(); } },
                 { "isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
                 { "isPublished", n => { IsPublished = n.GetBoolValue(); } },
+                { "lastPublishedAt", n => { LastPublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "metaDescription", n => { MetaDescription = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
@@ -186,7 +195,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteDateTimeOffsetValue("contentUpdatedAt", ContentUpdatedAt);
             writer.WriteStringValue("coverImageAlt", CoverImageAlt);
+            writer.WriteIntValue("coverImageHeight", CoverImageHeight);
             writer.WriteStringValue("coverImageUrl", CoverImageUrl);
+            writer.WriteIntValue("coverImageWidth", CoverImageWidth);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("excerpt", Excerpt);
             writer.WriteStringValue("id", Id);
@@ -194,6 +205,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("imagesProcessing", ImagesProcessing);
             writer.WriteBoolValue("isFeatured", IsFeatured);
             writer.WriteBoolValue("isPublished", IsPublished);
+            writer.WriteDateTimeOffsetValue("lastPublishedAt", LastPublishedAt);
             writer.WriteStringValue("metaDescription", MetaDescription);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDateTimeOffsetValue("publishedAt", PublishedAt);
