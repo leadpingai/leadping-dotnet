@@ -67,14 +67,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The identities included with this user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Leadping.OpenApiClient.Models.UserIdentity>? Identities { get; set; }
-#nullable restore
-#else
-        public List<global::Leadping.OpenApiClient.Models.UserIdentity> Identities { get; set; }
-#endif
         /// <summary>The isDemo property</summary>
         public bool? IsDemo { get; set; }
         /// <summary>The date and time when this user last completed the Leadping sign-in flow.</summary>
@@ -192,7 +184,6 @@ namespace Leadping.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UserIdentity>(global::Leadping.OpenApiClient.Models.UserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastLoggedInAt", n => { LastLoggedInAt = n.GetDateTimeOffsetValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
@@ -225,7 +216,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.UserIdentity>("identities", Identities);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("lastLoggedInAt", LastLoggedInAt);
             writer.WriteStringValue("lastName", LastName);
