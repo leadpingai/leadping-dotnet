@@ -107,6 +107,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>The publishedAt property</summary>
         public DateTimeOffset? PublishedAt { get; set; }
+        /// <summary>The renderedHtml property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderedHtml { get; set; }
+#nullable restore
+#else
+        public string RenderedHtml { get; set; }
+#endif
         /// <summary>The seoTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +185,7 @@ namespace Leadping.OpenApiClient.Models
                 { "metaDescription", n => { MetaDescription = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
+                { "renderedHtml", n => { RenderedHtml = n.GetStringValue(); } },
                 { "seoTitle", n => { SeoTitle = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -209,6 +218,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("metaDescription", MetaDescription);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDateTimeOffsetValue("publishedAt", PublishedAt);
+            writer.WriteStringValue("renderedHtml", RenderedHtml);
             writer.WriteStringValue("seoTitle", SeoTitle);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("title", Title);
