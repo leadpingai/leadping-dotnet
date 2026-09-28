@@ -123,6 +123,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SeoTitle { get; set; }
 #endif
+        /// <summary>Whether to create a Facebook post after publication.</summary>
+        public bool? ShareOnFacebook { get; set; }
+        /// <summary>Whether to create a Instagram post after publication.</summary>
+        public bool? ShareOnInstagram { get; set; }
+        /// <summary>Whether to create a LinkedIn post after publication.</summary>
+        public bool? ShareOnLinkedIn { get; set; }
+        /// <summary>Whether to create a X post after publication.</summary>
+        public bool? ShareOnX { get; set; }
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +138,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Slug { get; set; }
+#endif
+        /// <summary>The socialPosts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.BlogSocialPost>? SocialPosts { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.BlogSocialPost> SocialPosts { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +203,12 @@ namespace Leadping.OpenApiClient.Models
                 { "publishedAt", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "renderedHtml", n => { RenderedHtml = n.GetStringValue(); } },
                 { "seoTitle", n => { SeoTitle = n.GetStringValue(); } },
+                { "shareOnFacebook", n => { ShareOnFacebook = n.GetBoolValue(); } },
+                { "shareOnInstagram", n => { ShareOnInstagram = n.GetBoolValue(); } },
+                { "shareOnLinkedIn", n => { ShareOnLinkedIn = n.GetBoolValue(); } },
+                { "shareOnX", n => { ShareOnX = n.GetBoolValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
+                { "socialPosts", n => { SocialPosts = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.BlogSocialPost>(global::Leadping.OpenApiClient.Models.BlogSocialPost.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "unpublishedAt", n => { UnpublishedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -220,7 +241,12 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("publishedAt", PublishedAt);
             writer.WriteStringValue("renderedHtml", RenderedHtml);
             writer.WriteStringValue("seoTitle", SeoTitle);
+            writer.WriteBoolValue("shareOnFacebook", ShareOnFacebook);
+            writer.WriteBoolValue("shareOnInstagram", ShareOnInstagram);
+            writer.WriteBoolValue("shareOnLinkedIn", ShareOnLinkedIn);
+            writer.WriteBoolValue("shareOnX", ShareOnX);
             writer.WriteStringValue("slug", Slug);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.BlogSocialPost>("socialPosts", SocialPosts);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("unpublishedAt", UnpublishedAt);
             writer.WriteAdditionalData(AdditionalData);
