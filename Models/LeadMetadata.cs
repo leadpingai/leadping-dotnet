@@ -167,7 +167,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SubId { get; set; }
 #endif
-        /// <summary>UTC timestamp when Leadping last successfully validated the TrustedForm certificate URL.</summary>
+        /// <summary>UTC timestamp when Leadping last successfully checked the TrustedForm certificate URL availability.</summary>
         public DateTimeOffset? TrustedFormCheckedAt { get; set; }
         /// <summary>TrustedForm certificate URL used as proof of consumer consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
