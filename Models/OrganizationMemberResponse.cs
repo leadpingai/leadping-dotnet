@@ -77,6 +77,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Identifies an organization member&apos;s access level and permission scope within Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
+        /// <summary>Defines the states an organization member can work; this is not verification of professional licensing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.OrganizationMemberStateEligibility? StateEligibility { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.OrganizationMemberStateEligibility StateEligibility { get; set; }
+#endif
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,7 @@ namespace Leadping.OpenApiClient.Models
                 { "removedAt", n => { RemovedAt = n.GetDateTimeOffsetValue(); } },
                 { "removedByUserId", n => { RemovedByUserId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>(); } },
+                { "stateEligibility", n => { StateEligibility = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationMemberStateEligibility>(global::Leadping.OpenApiClient.Models.OrganizationMemberStateEligibility.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
             };
@@ -155,6 +164,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("removedAt", RemovedAt);
             writer.WriteStringValue("removedByUserId", RemovedByUserId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>("role", Role);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationMemberStateEligibility>("stateEligibility", StateEligibility);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("user", User);
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteAdditionalData(AdditionalData);

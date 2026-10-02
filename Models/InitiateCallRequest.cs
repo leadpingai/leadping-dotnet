@@ -63,6 +63,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
+        /// <summary>Connect the authenticated user&apos;s browser phone to the server-controlled destination call.</summary>
+        public bool? UseBrowserPhone { get; set; }
         /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this phone call initiation request.</summary>
         public bool? WasManuallyOverridden { get; set; }
         /// <summary>
@@ -96,6 +98,7 @@ namespace Leadping.OpenApiClient.Models
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "outboundIdempotencyKey", n => { OutboundIdempotencyKey = n.GetStringValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "useBrowserPhone", n => { UseBrowserPhone = n.GetBoolValue(); } },
                 { "wasManuallyOverridden", n => { WasManuallyOverridden = n.GetBoolValue(); } },
             };
         }
@@ -112,6 +115,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("outboundIdempotencyKey", OutboundIdempotencyKey);
             writer.WriteStringValue("sourceId", SourceId);
+            writer.WriteBoolValue("useBrowserPhone", UseBrowserPhone);
             writer.WriteBoolValue("wasManuallyOverridden", WasManuallyOverridden);
             writer.WriteAdditionalData(AdditionalData);
         }

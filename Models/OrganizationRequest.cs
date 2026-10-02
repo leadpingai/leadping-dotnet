@@ -49,6 +49,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Main service or offer described during organization setup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Offer { get; set; }
+#nullable restore
+#else
+        public string Offer { get; set; }
+#endif
         /// <summary>Phone details for the lead, user, or organization represented by this organization profile request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string SecondaryName { get; set; }
+#endif
+        /// <summary>Intended audience described during organization setup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetAudience { get; set; }
+#nullable restore
+#else
+        public string TargetAudience { get; set; }
 #endif
         /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,8 +127,10 @@ namespace Leadping.OpenApiClient.Models
                 { "ein", n => { Ein = n.GetStringValue(); } },
                 { "isYoungerThan90", n => { IsYoungerThan90 = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "offer", n => { Offer = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "secondaryName", n => { SecondaryName = n.GetStringValue(); } },
+                { "targetAudience", n => { TargetAudience = n.GetStringValue(); } },
                 { "vertical", n => { Vertical = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
@@ -129,8 +147,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("ein", Ein);
             writer.WriteBoolValue("isYoungerThan90", IsYoungerThan90);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("offer", Offer);
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("secondaryName", SecondaryName);
+            writer.WriteStringValue("targetAudience", TargetAudience);
             writer.WriteStringValue("vertical", Vertical);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);

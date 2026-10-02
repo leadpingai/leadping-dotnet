@@ -25,6 +25,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Identifies an organization member&apos;s access level and permission scope within Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
+        /// <summary>Defines the states an organization member can work; this is not verification of professional licensing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.OrganizationMemberRequest_stateEligibility? StateEligibility { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.OrganizationMemberRequest_stateEligibility StateEligibility { get; set; }
+#endif
         /// <summary>User ID to add, update, or remove from the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +68,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>(); } },
+                { "stateEligibility", n => { StateEligibility = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRequest_stateEligibility>(global::Leadping.OpenApiClient.Models.OrganizationMemberRequest_stateEligibility.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -72,6 +81,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>("role", Role);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRequest_stateEligibility>("stateEligibility", StateEligibility);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
