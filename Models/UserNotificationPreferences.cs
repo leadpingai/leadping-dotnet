@@ -47,16 +47,16 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedEnabled { get; set; }
         /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
-        /// <summary>Whether the user has consented to receive Leadping account notification SMS messages.</summary>
-        public bool? SmsConsentOptedIn { get; set; }
-        /// <summary>Describes trusted form certificate data used in Leadping API requests and responses.</summary>
+        /// <summary>Describes Leadping Consent certificate data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate? SmsConsentTrustedFormCertificate { get; set; }
+        public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate? SmsConsentCertificate { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate SmsConsentTrustedFormCertificate { get; set; }
+        public global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate SmsConsentCertificate { get; set; }
 #endif
+        /// <summary>Whether the user has consented to receive Leadping account notification SMS messages.</summary>
+        public bool? SmsConsentOptedIn { get; set; }
         /// <summary>When the user&apos;s Leadping notification SMS consent was last changed.</summary>
         public DateTimeOffset? SmsConsentUpdatedAt { get; set; }
         /// <summary>Indicates whether subscription renewing email functionality is enabled for this Leadping user notification preferences.</summary>
@@ -116,8 +116,8 @@ namespace Leadping.OpenApiClient.Models
                 { "newLeadSmsEnabled", n => { NewLeadSmsEnabled = n.GetBoolValue(); } },
                 { "paymentFailedEnabled", n => { PaymentFailedEnabled = n.GetBoolValue(); } },
                 { "paymentFailedSmsEnabled", n => { PaymentFailedSmsEnabled = n.GetBoolValue(); } },
+                { "smsConsentCertificate", n => { SmsConsentCertificate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate>(global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate.CreateFromDiscriminatorValue); } },
                 { "smsConsentOptedIn", n => { SmsConsentOptedIn = n.GetBoolValue(); } },
-                { "smsConsentTrustedFormCertificate", n => { SmsConsentTrustedFormCertificate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate>(global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate.CreateFromDiscriminatorValue); } },
                 { "smsConsentUpdatedAt", n => { SmsConsentUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "subscriptionRenewingEmailEnabled", n => { SubscriptionRenewingEmailEnabled = n.GetBoolValue(); } },
                 { "subscriptionRenewingEnabled", n => { SubscriptionRenewingEnabled = n.GetBoolValue(); } },
@@ -152,8 +152,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("newLeadSmsEnabled", NewLeadSmsEnabled);
             writer.WriteBoolValue("paymentFailedEnabled", PaymentFailedEnabled);
             writer.WriteBoolValue("paymentFailedSmsEnabled", PaymentFailedSmsEnabled);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate>("smsConsentCertificate", SmsConsentCertificate);
             writer.WriteBoolValue("smsConsentOptedIn", SmsConsentOptedIn);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate>("smsConsentTrustedFormCertificate", SmsConsentTrustedFormCertificate);
             writer.WriteDateTimeOffsetValue("smsConsentUpdatedAt", SmsConsentUpdatedAt);
             writer.WriteBoolValue("subscriptionRenewingEmailEnabled", SubscriptionRenewingEmailEnabled);
             writer.WriteBoolValue("subscriptionRenewingEnabled", SubscriptionRenewingEnabled);

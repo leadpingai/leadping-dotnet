@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.SourceResponse_organization Organization { get; set; }
 #endif
-        /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
+        /// <summary>Indicates whether leads from this source must include a TrustedForm or Leadping Consent certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

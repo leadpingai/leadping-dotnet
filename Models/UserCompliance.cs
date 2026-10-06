@@ -25,13 +25,13 @@ namespace Leadping.OpenApiClient.Models
         public bool? AcceptedToSubscription { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The TrustedForm certificates included with this user compliance.</summary>
+        /// <summary>The Leadping Consent certificates included with this user compliance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Leadping.OpenApiClient.Models.TrustedFormCertificate>? TrustedFormCertificates { get; set; }
+        public List<global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate>? ConsentCertificates { get; set; }
 #nullable restore
 #else
-        public List<global::Leadping.OpenApiClient.Models.TrustedFormCertificate> TrustedFormCertificates { get; set; }
+        public List<global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate> ConsentCertificates { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserCompliance"/> and sets the default values.
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
                 { "acceptedSms", n => { AcceptedSms = n.GetBoolValue(); } },
                 { "acceptedTerms", n => { AcceptedTerms = n.GetBoolValue(); } },
                 { "acceptedToSubscription", n => { AcceptedToSubscription = n.GetBoolValue(); } },
-                { "trustedFormCertificates", n => { TrustedFormCertificates = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TrustedFormCertificate>(global::Leadping.OpenApiClient.Models.TrustedFormCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "consentCertificates", n => { ConsentCertificates = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate>(global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("acceptedSms", AcceptedSms);
             writer.WriteBoolValue("acceptedTerms", AcceptedTerms);
             writer.WriteBoolValue("acceptedToSubscription", AcceptedToSubscription);
-            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TrustedFormCertificate>("trustedFormCertificates", TrustedFormCertificates);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate>("consentCertificates", ConsentCertificates);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -77,6 +77,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LandingPage { get; set; }
 #endif
+        /// <summary>Standalone Leadping Consent certificate identifier, accepted as an alternative to TrustedForm.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadpingConsentCertificateId { get; set; }
+#nullable restore
+#else
+        public string LeadpingConsentCertificateId { get; set; }
+#endif
+        /// <summary>Server-issued timestamp for successful Leadping Consent evidence and recipient validation.</summary>
+        public DateTimeOffset? LeadpingConsentCheckedAt { get; set; }
         /// <summary>Organization ID that owns this lead&apos;s attribution metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -276,6 +286,8 @@ namespace Leadping.OpenApiClient.Models
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isImported", n => { IsImported = n.GetBoolValue(); } },
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
+                { "leadpingConsentCertificateId", n => { LeadpingConsentCertificateId = n.GetStringValue(); } },
+                { "leadpingConsentCheckedAt", n => { LeadpingConsentCheckedAt = n.GetDateTimeOffsetValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
@@ -320,6 +332,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isImported", IsImported);
             writer.WriteStringValue("landingPage", LandingPage);
+            writer.WriteStringValue("leadpingConsentCertificateId", LeadpingConsentCertificateId);
+            writer.WriteDateTimeOffsetValue("leadpingConsentCheckedAt", LeadpingConsentCheckedAt);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("origin", Origin);
             writer.WriteDoubleValue("price", Price);

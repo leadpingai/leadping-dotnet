@@ -8,16 +8,16 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes trusted form certificate data used in Leadping API requests and responses.
+    /// Describes Leadping Consent certificate data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TrustedFormCertificate : IAdditionalDataHolder, IParsable
+    public partial class LeadpingConsentCertificate : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>UTC timestamp for created at on this TrustedForm certificate.</summary>
+        /// <summary>UTC timestamp for created at on this Leadping Consent certificate.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Unique Leadping identifier for this TrustedForm certificate.</summary>
+        /// <summary>Unique Leadping identifier for this Leadping Consent certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Source for this TrustedForm certificate.</summary>
+        /// <summary>Source for this Leadping Consent certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }
@@ -33,30 +33,22 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The URL associated with this TrustedForm certificate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.TrustedFormCertificate"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate"/> and sets the default values.
         /// </summary>
-        public TrustedFormCertificate()
+        public LeadpingConsentCertificate()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.TrustedFormCertificate"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Leadping.OpenApiClient.Models.TrustedFormCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.TrustedFormCertificate();
+            return new global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +61,6 @@ namespace Leadping.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,7 +73,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("source", Source);
-            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,20 +8,20 @@ using System;
 namespace Leadping.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes trusted form certificate data used in Leadping API requests and responses.
+    /// Describes Leadping Consent certificate data used in Leadping API requests and responses.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UserNotificationPreferences_smsConsentTrustedFormCertificate : global::Leadping.OpenApiClient.Models.TrustedFormCertificate, IParsable
+    public partial class UserNotificationPreferences_smsConsentCertificate : global::Leadping.OpenApiClient.Models.LeadpingConsentCertificate, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentTrustedFormCertificate();
+            return new global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -41,7 +41,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? RequireProduct { get; set; }
         /// <summary>Whether this organization compliance policy requires source compliance approval.</summary>
         public bool? RequireSourceComplianceApproval { get; set; }
-        /// <summary>Whether this organization compliance policy requires TrustedForm for automations.</summary>
+        /// <summary>Whether this organization compliance policy requires TrustedForm or Leadping Consent evidence for automations.</summary>
         public bool? RequireTrustedFormForAutomations { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationCompliancePolicy"/> and sets the default values.

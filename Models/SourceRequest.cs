@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Indicates whether leads from this source must include a TrustedForm certificate for consent proof.</summary>
+        /// <summary>Indicates whether leads from this source must include a TrustedForm or Leadping Consent certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SourceRequest"/> and sets the default values.
