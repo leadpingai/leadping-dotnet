@@ -59,6 +59,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ImportBatchId { get; set; }
 #endif
+        /// <summary>Stable source operation key. Reuse for retries, and change for a new submission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntakeIdempotencyKey { get; set; }
+#nullable restore
+#else
+        public string IntakeIdempotencyKey { get; set; }
+#endif
         /// <summary>IP address captured with the request for audit and compliance review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,6 +291,7 @@ namespace Leadping.OpenApiClient.Models
                 { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "importBatchId", n => { ImportBatchId = n.GetStringValue(); } },
+                { "intakeIdempotencyKey", n => { IntakeIdempotencyKey = n.GetStringValue(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isImported", n => { IsImported = n.GetBoolValue(); } },
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
@@ -329,6 +338,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("importBatchId", ImportBatchId);
+            writer.WriteStringValue("intakeIdempotencyKey", IntakeIdempotencyKey);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isImported", IsImported);
             writer.WriteStringValue("landingPage", LandingPage);

@@ -78,6 +78,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Gender { get; set; }
 #endif
+        /// <summary>Stable delivery key reused when retrying the same lead submission to this source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdempotencyKey { get; set; }
+#nullable restore
+#else
+        public string IdempotencyKey { get; set; }
+#endif
         /// <summary>Landing page URL where the lead submitted their information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -291,6 +299,7 @@ namespace Leadping.OpenApiClient.Models
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
+                { "idempotencyKey", n => { IdempotencyKey = n.GetStringValue(); } },
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -333,6 +342,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("gender", Gender);
+            writer.WriteStringValue("idempotencyKey", IdempotencyKey);
             writer.WriteStringValue("landingPage", LandingPage);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("phone", Phone);
