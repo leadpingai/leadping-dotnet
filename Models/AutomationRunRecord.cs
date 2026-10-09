@@ -31,6 +31,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AutomationId { get; set; }
 #endif
+        /// <summary>Persisted origin of an automation run and the events produced by its actions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.AutomationRunRecord_automationLineage? AutomationLineage { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.AutomationRunRecord_automationLineage AutomationLineage { get; set; }
+#endif
         /// <summary>UTC timestamp when processing completed for this automation run record.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>Results of condition nodes already visited by this run, preserved across waits and retries.</summary>
@@ -146,6 +154,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>(global::Leadping.OpenApiClient.Models.AutomationActionRunRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "automationId", n => { AutomationId = n.GetStringValue(); } },
+                { "automationLineage", n => { AutomationLineage = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_automationLineage>(global::Leadping.OpenApiClient.Models.AutomationRunRecord_automationLineage.CreateFromDiscriminatorValue); } },
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "conditionResults", n => { ConditionResults = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults>(global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults.CreateFromDiscriminatorValue); } },
                 { "executionMode", n => { ExecutionMode = n.GetStringValue(); } },
@@ -171,6 +180,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationActionRunRecord>("actions", Actions);
             writer.WriteStringValue("automationId", AutomationId);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_automationLineage>("automationLineage", AutomationLineage);
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationRunRecord_conditionResults>("conditionResults", ConditionResults);
             writer.WriteStringValue("executionMode", ExecutionMode);
