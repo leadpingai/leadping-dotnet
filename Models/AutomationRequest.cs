@@ -73,6 +73,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
+        /// <summary>Time zone used by workflow time and day conditions in preview and runtime. Defaults to UTC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>Automation triggers that can start this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +132,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>(global::Leadping.OpenApiClient.Models.AutomationTrigger.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
@@ -144,6 +153,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("scope", Scope);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>("triggers", Triggers);
             writer.WriteIntValue("version", Version);
             writer.WriteStringValue("visibility", Visibility);

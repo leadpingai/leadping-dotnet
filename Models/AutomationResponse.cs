@@ -123,6 +123,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
+        /// <summary>Time zone used by workflow time and day conditions in preview and runtime. Defaults to UTC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>Automation triggers that can start this workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +200,7 @@ namespace Leadping.OpenApiClient.Models
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_organization>(global::Leadping.OpenApiClient.Models.AutomationResponse_organization.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>(global::Leadping.OpenApiClient.Models.AutomationTrigger.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_user>(global::Leadping.OpenApiClient.Models.AutomationResponse_user.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -223,6 +232,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_organization>("organization", Organization);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("scope", Scope);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AutomationTrigger>("triggers", Triggers);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationResponse_user>("user", User);
             writer.WriteIntValue("version", Version);
