@@ -285,6 +285,14 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.EventTableRow_trafficType? TrafficType { get; set; }
         /// <summary>UTC timestamp when the provider marked the message undeliverable.</summary>
         public DateTimeOffset? UndeliverableAt { get; set; }
+        /// <summary>Playable recording URL for voicemail events.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoicemailUrl { get; set; }
+#nullable restore
+#else
+        public string VoicemailUrl { get; set; }
+#endif
         /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this event timeline table row.</summary>
         public bool? WasManuallyOverridden { get; set; }
         /// <summary>
@@ -360,6 +368,7 @@ namespace Leadping.OpenApiClient.Models
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
                 { "trafficType", n => { TrafficType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.EventTableRow_trafficType>(); } },
                 { "undeliverableAt", n => { UndeliverableAt = n.GetDateTimeOffsetValue(); } },
+                { "voicemailUrl", n => { VoicemailUrl = n.GetStringValue(); } },
                 { "wasManuallyOverridden", n => { WasManuallyOverridden = n.GetBoolValue(); } },
             };
         }
@@ -418,6 +427,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.EventTableRow_trafficType>("trafficType", TrafficType);
             writer.WriteDateTimeOffsetValue("undeliverableAt", UndeliverableAt);
+            writer.WriteStringValue("voicemailUrl", VoicemailUrl);
             writer.WriteBoolValue("wasManuallyOverridden", WasManuallyOverridden);
             writer.WriteAdditionalData(AdditionalData);
         }

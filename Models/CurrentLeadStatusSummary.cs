@@ -43,6 +43,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
+        /// <summary>When this follow-up was completed; email/call activity alone does not complete it.</summary>
+        public DateTimeOffset? FollowUpCompletedAt { get; set; }
+        /// <summary>The earliest callback or task time for the current status.</summary>
+        public DateTimeOffset? FollowUpDueAt { get; set; }
         /// <summary>Unique Leadping identifier for this current lead status change summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +63,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Outcome { get; set; }
 #endif
+        /// <summary>Monotonic revision of the lead&apos;s current status and scheduling state.</summary>
+        public long? Revision { get; set; }
         /// <summary>Known sources that can change a lead&apos;s current lead status change.</summary>
         public global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_source? Source { get; set; }
         /// <summary>
@@ -91,8 +97,11 @@ namespace Leadping.OpenApiClient.Models
                 { "changedByAutomationId", n => { ChangedByAutomationId = n.GetStringValue(); } },
                 { "changedByUserId", n => { ChangedByUserId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "followUpCompletedAt", n => { FollowUpCompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "followUpDueAt", n => { FollowUpDueAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
+                { "revision", n => { Revision = n.GetLongValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_source>(); } },
             };
         }
@@ -108,8 +117,11 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("changedByAutomationId", ChangedByAutomationId);
             writer.WriteStringValue("changedByUserId", ChangedByUserId);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("followUpCompletedAt", FollowUpCompletedAt);
+            writer.WriteDateTimeOffsetValue("followUpDueAt", FollowUpDueAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("outcome", Outcome);
+            writer.WriteLongValue("revision", Revision);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

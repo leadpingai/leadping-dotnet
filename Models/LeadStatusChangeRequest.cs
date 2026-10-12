@@ -31,6 +31,18 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? CallbackAt { get; set; }
         /// <summary>Controlled lead status change categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_category? Category { get; set; }
+        /// <summary>Whether the scheduled follow-up is explicitly complete.</summary>
+        public bool? CompleteFollowUp { get; set; }
+        /// <summary>Optional optimistic concurrency guard for the status currently displayed by the client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpectedCurrentStatusId { get; set; }
+#nullable restore
+#else
+        public string ExpectedCurrentStatusId { get; set; }
+#endif
+        /// <summary>Optional revision guard, including when the lead has no persisted status history yet.</summary>
+        public long? ExpectedRevision { get; set; }
         /// <summary>The current follow up status for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +115,9 @@ namespace Leadping.OpenApiClient.Models
                 { "appointmentStartAt", n => { AppointmentStartAt = n.GetDateTimeOffsetValue(); } },
                 { "callbackAt", n => { CallbackAt = n.GetDateTimeOffsetValue(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_category>(); } },
+                { "completeFollowUp", n => { CompleteFollowUp = n.GetBoolValue(); } },
+                { "expectedCurrentStatusId", n => { ExpectedCurrentStatusId = n.GetStringValue(); } },
+                { "expectedRevision", n => { ExpectedRevision = n.GetLongValue(); } },
                 { "followUpStatus", n => { FollowUpStatus = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
@@ -123,6 +138,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("appointmentStartAt", AppointmentStartAt);
             writer.WriteDateTimeOffsetValue("callbackAt", CallbackAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeRequest_category>("category", Category);
+            writer.WriteBoolValue("completeFollowUp", CompleteFollowUp);
+            writer.WriteStringValue("expectedCurrentStatusId", ExpectedCurrentStatusId);
+            writer.WriteLongValue("expectedRevision", ExpectedRevision);
             writer.WriteStringValue("followUpStatus", FollowUpStatus);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("outcome", Outcome);

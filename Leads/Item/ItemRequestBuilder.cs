@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.Leads.Item.Archive;
 using Leadping.OpenApiClient.Leads.Item.Assignment;
+using Leadping.OpenApiClient.Leads.Item.FollowUp;
 using Leadping.OpenApiClient.Leads.Item.Status;
 using Leadping.OpenApiClient.Leads.Item.StatusHistory;
 using Leadping.OpenApiClient.Leads.Item.Tags;
@@ -33,6 +34,11 @@ namespace Leadping.OpenApiClient.Leads.Item
         public global::Leadping.OpenApiClient.Leads.Item.Assignment.AssignmentRequestBuilder Assignment
         {
             get => new global::Leadping.OpenApiClient.Leads.Item.Assignment.AssignmentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The followUp property</summary>
+        public global::Leadping.OpenApiClient.Leads.Item.FollowUp.FollowUpRequestBuilder FollowUp
+        {
+            get => new global::Leadping.OpenApiClient.Leads.Item.FollowUp.FollowUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The status property</summary>
         public global::Leadping.OpenApiClient.Leads.Item.Status.StatusRequestBuilder Status

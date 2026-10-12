@@ -51,6 +51,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
+        /// <summary>Monotonic event boundary. Mark-read requests must send the version the reader observed.</summary>
+        public long? EventVersion { get; set; }
         /// <summary>First name of the lead, user, or contact represented by this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +176,7 @@ namespace Leadping.OpenApiClient.Models
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "eventVersion", n => { EventVersion = n.GetLongValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
@@ -205,6 +208,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
+            writer.WriteLongValue("eventVersion", EventVersion);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);

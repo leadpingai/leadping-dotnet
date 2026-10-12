@@ -109,6 +109,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>The organization context required to handle this call on a mobile device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Phone number used by this phone call for calls, SMS, lookup, or routing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,6 +209,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "ringingAt", n => { RingingAt = n.GetDateTimeOffsetValue(); } },
@@ -237,6 +246,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
             writer.WriteDateTimeOffsetValue("ringingAt", RingingAt);

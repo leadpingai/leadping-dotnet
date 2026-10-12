@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>Identifier of the canonical phone identity stored by Leadping.</summary>
+        /// <summary>Server-derived identifier of the canonical phone identity. Client-supplied linkage is ignored when creating or updating a lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneIdentityId { get; set; }

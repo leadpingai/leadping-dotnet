@@ -31,6 +31,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The mobile conversation destination.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConversationId { get; set; }
+#nullable restore
+#else
+        public string ConversationId { get; set; }
+#endif
         /// <summary>UTC timestamp when the resource was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Optional supporting details displayed beneath the notification message.</summary>
@@ -53,6 +61,14 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsDemo { get; set; }
         /// <summary>Whether this notification is read.</summary>
         public bool? IsRead { get; set; }
+        /// <summary>The lead used to resolve the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadId { get; set; }
+#nullable restore
+#else
+        public string LeadId { get; set; }
+#endif
         /// <summary>Message for this notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +86,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The organization selected before opening this notification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
 #endif
         /// <summary>Ranks the urgency and presentation importance of a Leadping user notification.</summary>
         public global::Leadping.OpenApiClient.Models.NotificationPriority? Priority { get; set; }
@@ -130,14 +154,17 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actionButtonText", n => { ActionButtonText = n.GetStringValue(); } },
                 { "actionUrl", n => { ActionUrl = n.GetStringValue(); } },
+                { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isRead", n => { IsRead = n.GetBoolValue(); } },
+                { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Leadping.OpenApiClient.Models.NotificationPriority>(); } },
                 { "pushEnabled", n => { PushEnabled = n.GetBoolValue(); } },
                 { "readAt", n => { ReadAt = n.GetDateTimeOffsetValue(); } },
@@ -156,14 +183,17 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionButtonText", ActionButtonText);
             writer.WriteStringValue("actionUrl", ActionUrl);
+            writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("details", Details);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isRead", IsRead);
+            writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("message", Message);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.NotificationPriority>("priority", Priority);
             writer.WriteBoolValue("pushEnabled", PushEnabled);
             writer.WriteDateTimeOffsetValue("readAt", ReadAt);

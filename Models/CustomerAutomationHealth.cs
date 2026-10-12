@@ -17,6 +17,14 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total number of automation records represented by this Leadping customer automation health.</summary>
         public int? AutomationCount { get; set; }
+        /// <summary>States whether missing historical evidence can make reported counts incomplete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.AnalyticsCoverage? Coverage { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.AnalyticsCoverage Coverage { get; set; }
+#endif
         /// <summary>Total number of enabled records represented by this Leadping customer automation health.</summary>
         public int? EnabledCount { get; set; }
         /// <summary>Number of executions represented by this Leadping customer automation health.</summary>
@@ -75,6 +83,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "automationCount", n => { AutomationCount = n.GetIntValue(); } },
+                { "coverage", n => { Coverage = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsCoverage>(global::Leadping.OpenApiClient.Models.AnalyticsCoverage.CreateFromDiscriminatorValue); } },
                 { "enabledCount", n => { EnabledCount = n.GetIntValue(); } },
                 { "executions", n => { Executions = n.GetIntValue(); } },
                 { "failingAutomations", n => { FailingAutomations = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation>(global::Leadping.OpenApiClient.Models.CustomerFailingAutomation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -92,6 +101,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("automationCount", AutomationCount);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AnalyticsCoverage>("coverage", Coverage);
             writer.WriteIntValue("enabledCount", EnabledCount);
             writer.WriteIntValue("executions", Executions);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerFailingAutomation>("failingAutomations", FailingAutomations);

@@ -61,6 +61,8 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse_changeSource? ChangeSource { get; set; }
         /// <summary>UTC timestamp for created at on this lead status change.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>When this follow-up was completed; email/call activity alone does not complete it.</summary>
+        public DateTimeOffset? FollowUpCompletedAt { get; set; }
         /// <summary>The current follow up status for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +179,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RelatedCallEventId { get; set; }
 #endif
+        /// <summary>Monotonic revision of the lead&apos;s current status and scheduling state.</summary>
+        public long? Revision { get; set; }
         /// <summary>The source ID associated with this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,6 +239,7 @@ namespace Leadping.OpenApiClient.Models
                 { "changedByAutomationId", n => { ChangedByAutomationId = n.GetStringValue(); } },
                 { "changedByUserId", n => { ChangedByUserId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "followUpCompletedAt", n => { FollowUpCompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "followUpStatus", n => { FollowUpStatus = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
@@ -251,6 +256,7 @@ namespace Leadping.OpenApiClient.Models
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "relatedCallEventId", n => { RelatedCallEventId = n.GetStringValue(); } },
+                { "revision", n => { Revision = n.GetLongValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "taskDueAt", n => { TaskDueAt = n.GetDateTimeOffsetValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
@@ -276,6 +282,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("changedByUserId", ChangedByUserId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadStatusChangeResponse_changeSource>("changeSource", ChangeSource);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteDateTimeOffsetValue("followUpCompletedAt", FollowUpCompletedAt);
             writer.WriteStringValue("followUpStatus", FollowUpStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
@@ -292,6 +299,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("relatedCallEventId", RelatedCallEventId);
+            writer.WriteLongValue("revision", Revision);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteDateTimeOffsetValue("taskDueAt", TaskDueAt);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);

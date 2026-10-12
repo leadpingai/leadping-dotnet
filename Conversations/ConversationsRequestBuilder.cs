@@ -28,7 +28,7 @@ namespace Leadping.OpenApiClient.Conversations
             get => new global::Leadping.OpenApiClient.Conversations.My.MyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.conversations.item collection</summary>
-        /// <param name="position">The ID of the conversation to mark as read.</param>
+        /// <param name="position">The ID of the conversation to retrieve.</param>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
         public global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder this[string position]
         {
