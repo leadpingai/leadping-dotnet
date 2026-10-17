@@ -79,6 +79,16 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LastEventAt { get; set; }
         /// <summary>Indicates that the most recent conversation activity is an internal note.</summary>
         public bool? LastEventIsInternalNote { get; set; }
+        /// <summary>UTC timestamp of the latest inbound customer activity.</summary>
+        public DateTimeOffset? LastInboundAt { get; set; }
+        /// <summary>Preview of the latest inbound customer activity, preserved across outbound updates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastInboundSnippet { get; set; }
+#nullable restore
+#else
+        public string LastInboundSnippet { get; set; }
+#endif
         /// <summary>Last name of the lead, user, or contact represented by this conversation response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +121,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadPhoneNumber { get; set; }
 #endif
+        /// <summary>Whether a customer reply is awaiting a manual response or acknowledgement.</summary>
+        public bool? NeedsReply { get; set; }
         /// <summary>Recommended next step to move this conversation response forward.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +147,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber PhoneNumber { get; set; }
 #endif
+        /// <summary>Monotonic inbound reply boundary used when marking a conversation handled.</summary>
+        public long? ReplyVersion { get; set; }
         /// <summary>Defines the customer-facing operational status for an inbox conversation.</summary>
         public global::Leadping.OpenApiClient.Models.ConversationResponse_status? Status { get; set; }
         /// <summary>Human-readable reason explaining the current status of this conversation response.</summary>
@@ -184,13 +198,17 @@ namespace Leadping.OpenApiClient.Models
                 { "isUnread", n => { IsUnread = n.GetBoolValue(); } },
                 { "lastEventAt", n => { LastEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastEventIsInternalNote", n => { LastEventIsInternalNote = n.GetBoolValue(); } },
+                { "lastInboundAt", n => { LastInboundAt = n.GetDateTimeOffsetValue(); } },
+                { "lastInboundSnippet", n => { LastInboundSnippet = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "lastSnippet", n => { LastSnippet = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadPhoneNumber", n => { LeadPhoneNumber = n.GetStringValue(); } },
+                { "needsReply", n => { NeedsReply = n.GetBoolValue(); } },
                 { "nextStep", n => { NextStep = n.GetStringValue(); } },
                 { "outboundPhoneNumberOverrideId", n => { OutboundPhoneNumberOverrideId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber>(global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber.CreateFromDiscriminatorValue); } },
+                { "replyVersion", n => { ReplyVersion = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ConversationResponse_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
             };
@@ -216,13 +234,17 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isUnread", IsUnread);
             writer.WriteDateTimeOffsetValue("lastEventAt", LastEventAt);
             writer.WriteBoolValue("lastEventIsInternalNote", LastEventIsInternalNote);
+            writer.WriteDateTimeOffsetValue("lastInboundAt", LastInboundAt);
+            writer.WriteStringValue("lastInboundSnippet", LastInboundSnippet);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("lastSnippet", LastSnippet);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadPhoneNumber", LeadPhoneNumber);
+            writer.WriteBoolValue("needsReply", NeedsReply);
             writer.WriteStringValue("nextStep", NextStep);
             writer.WriteStringValue("outboundPhoneNumberOverrideId", OutboundPhoneNumberOverrideId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber>("phoneNumber", PhoneNumber);
+            writer.WriteLongValue("replyVersion", ReplyVersion);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ConversationResponse_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
             writer.WriteAdditionalData(AdditionalData);
