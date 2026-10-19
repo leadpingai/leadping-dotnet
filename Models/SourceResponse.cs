@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Product allowlist used to accept or route leads from this source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedProducts { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedProducts { get; set; }
-#endif
         /// <summary>State or region allowlist used to accept leads from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +33,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the source credential was most recently rotated.</summary>
         public DateTimeOffset? ApiKeyRotatedAt { get; set; }
+        /// <summary>Whether to look up lead phone numbers during intake. When disabled, lookup is required before calling or texting.</summary>
+        public bool? AutomaticPhoneLookup { get; set; }
         /// <summary>Indicates whether the organization or sender passed compliance review.</summary>
         public bool? ComplianceApproved { get; set; }
         /// <summary>Configured cost charged when this source creates a billable lead.</summary>
@@ -164,10 +158,10 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedProducts", n => { AllowedProducts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyRotatedAt", n => { ApiKeyRotatedAt = n.GetDateTimeOffsetValue(); } },
+                { "automaticPhoneLookup", n => { AutomaticPhoneLookup = n.GetBoolValue(); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -196,10 +190,10 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedProducts", AllowedProducts);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteDateTimeOffsetValue("apiKeyRotatedAt", ApiKeyRotatedAt);
+            writer.WriteBoolValue("automaticPhoneLookup", AutomaticPhoneLookup);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
             writer.WriteDoubleValue("costPerLead", CostPerLead);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
