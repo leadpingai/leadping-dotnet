@@ -39,6 +39,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceStatus { get; set; }
 #endif
+        /// <summary>The provider responsible for a lead&apos;s consent certificate.</summary>
+        public global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType? ConsentCertificateType { get; set; }
+        /// <summary>Certificate URL used as proof of consumer consent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConsentCertificateUrl { get; set; }
+#nullable restore
+#else
+        public string ConsentCertificateUrl { get; set; }
+#endif
         /// <summary>UTC timestamp when this lead attribution metadata was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Direct-post price supplied by the lead source during intake.</summary>
@@ -84,14 +94,6 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LandingPage { get; set; }
-#endif
-        /// <summary>Standalone Leadping Consent certificate identifier, accepted as an alternative to TrustedForm.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LeadpingConsentCertificateId { get; set; }
-#nullable restore
-#else
-        public string LeadpingConsentCertificateId { get; set; }
 #endif
         /// <summary>Server-issued timestamp for successful Leadping Consent evidence and recipient validation.</summary>
         public DateTimeOffset? LeadpingConsentCheckedAt { get; set; }
@@ -187,14 +189,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when Leadping last successfully checked the TrustedForm certificate URL availability.</summary>
         public DateTimeOffset? TrustedFormCheckedAt { get; set; }
-        /// <summary>TrustedForm certificate URL used as proof of consumer consent.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TrustedFormUrl { get; set; }
-#nullable restore
-#else
-        public string TrustedFormUrl { get; set; }
-#endif
         /// <summary>Browser or client user agent captured when this lead attribution metadata was submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -287,6 +281,8 @@ namespace Leadping.OpenApiClient.Models
                 { "assignedPhoneNumberId", n => { AssignedPhoneNumberId = n.GetStringValue(); } },
                 { "complianceBlockedReason", n => { ComplianceBlockedReason = n.GetStringValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
+                { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>(); } },
+                { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
@@ -295,7 +291,6 @@ namespace Leadping.OpenApiClient.Models
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isImported", n => { IsImported = n.GetBoolValue(); } },
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
-                { "leadpingConsentCertificateId", n => { LeadpingConsentCertificateId = n.GetStringValue(); } },
                 { "leadpingConsentCheckedAt", n => { LeadpingConsentCheckedAt = n.GetDateTimeOffsetValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
@@ -313,7 +308,6 @@ namespace Leadping.OpenApiClient.Models
                 { "sourceMetadata", n => { SourceMetadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata.CreateFromDiscriminatorValue); } },
                 { "subId", n => { SubId = n.GetStringValue(); } },
                 { "trustedFormCheckedAt", n => { TrustedFormCheckedAt = n.GetDateTimeOffsetValue(); } },
-                { "trustedFormUrl", n => { TrustedFormUrl = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
@@ -334,6 +328,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("assignedPhoneNumberId", AssignedPhoneNumberId);
             writer.WriteStringValue("complianceBlockedReason", ComplianceBlockedReason);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>("consentCertificateType", ConsentCertificateType);
+            writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("externalId", ExternalId);
@@ -342,7 +338,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isImported", IsImported);
             writer.WriteStringValue("landingPage", LandingPage);
-            writer.WriteStringValue("leadpingConsentCertificateId", LeadpingConsentCertificateId);
             writer.WriteDateTimeOffsetValue("leadpingConsentCheckedAt", LeadpingConsentCheckedAt);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("origin", Origin);
@@ -360,7 +355,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata>("sourceMetadata", SourceMetadata);
             writer.WriteStringValue("subId", SubId);
             writer.WriteDateTimeOffsetValue("trustedFormCheckedAt", TrustedFormCheckedAt);
-            writer.WriteStringValue("trustedFormUrl", TrustedFormUrl);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("utmCampaign", UtmCampaign);

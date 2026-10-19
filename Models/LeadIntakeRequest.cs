@@ -42,6 +42,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string City { get; set; }
 #endif
+        /// <summary>The provider responsible for a lead&apos;s consent certificate.</summary>
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType? ConsentCertificateType { get; set; }
+        /// <summary>Certificate URL used as proof of consumer consent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConsentCertificateUrl { get; set; }
+#nullable restore
+#else
+        public string ConsentCertificateUrl { get; set; }
+#endif
         /// <summary>Lead date of birth supplied by intake sources and normalized into the lead profile.</summary>
         public Date? DateOfBirth { get; set; }
         /// <summary>Direct-post price supplied by the lead source during intake.</summary>
@@ -200,14 +210,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> TagNames { get; set; }
 #endif
-        /// <summary>TrustedForm certificate URL used as proof of consumer consent.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TrustedFormUrl { get; set; }
-#nullable restore
-#else
-        public string TrustedFormUrl { get; set; }
-#endif
         /// <summary>UTM campaign parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -293,6 +295,8 @@ namespace Leadping.OpenApiClient.Models
                 { "address2", n => { Address2 = n.GetStringValue(); } },
                 { "birthDate", n => { BirthDate = n.GetDateValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
+                { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType>(); } },
+                { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
@@ -315,7 +319,6 @@ namespace Leadping.OpenApiClient.Models
                 { "subId", n => { SubId = n.GetStringValue(); } },
                 { "tagIds", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tagNames", n => { TagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "trustedFormUrl", n => { TrustedFormUrl = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
                 { "utmContent", n => { UtmContent = n.GetStringValue(); } },
                 { "utmMedium", n => { UtmMedium = n.GetStringValue(); } },
@@ -336,6 +339,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("address2", Address2);
             writer.WriteDateValue("birthDate", BirthDate);
             writer.WriteStringValue("city", City);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType>("consentCertificateType", ConsentCertificateType);
+            writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
             writer.WriteDateValue("dateOfBirth", DateOfBirth);
             writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("email", Email);
@@ -358,7 +363,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("subId", SubId);
             writer.WriteCollectionOfPrimitiveValues<string>("tagIds", TagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("tagNames", TagNames);
-            writer.WriteStringValue("trustedFormUrl", TrustedFormUrl);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
             writer.WriteStringValue("utmContent", UtmContent);
             writer.WriteStringValue("utmMedium", UtmMedium);

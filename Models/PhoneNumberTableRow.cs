@@ -27,6 +27,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The isDemo property</summary>
         public bool? IsDemo { get; set; }
+        /// <summary>City and state from the stored phone identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Location { get; set; }
+#nullable restore
+#else
+        public string Location { get; set; }
+#endif
         /// <summary>Optional display label for this phone number table row in the Leadping API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,7 @@ namespace Leadping.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
@@ -154,6 +163,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
+            writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("organization", Organization);

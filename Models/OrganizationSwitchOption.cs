@@ -37,6 +37,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this organization switch option is current.</summary>
         public bool? IsCurrent { get; set; }
+        /// <summary>The isDemo property</summary>
+        public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp for last used at on this organization switch option.</summary>
         public DateTimeOffset? LastUsedAt { get; set; }
         /// <summary>The human-readable name shown for this organization switch option.</summary>
@@ -87,6 +89,7 @@ namespace Leadping.OpenApiClient.Models
                 { "hasPaymentMethod", n => { HasPaymentMethod = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
+                { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastUsedAt", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "needsAdminReview", n => { NeedsAdminReview = n.GetBoolValue(); } },
@@ -108,6 +111,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("hasPaymentMethod", HasPaymentMethod);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isCurrent", IsCurrent);
+            writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("lastUsedAt", LastUsedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("needsAdminReview", NeedsAdminReview);
