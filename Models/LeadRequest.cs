@@ -15,6 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Business represented by a lead contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadRequest_company? Company { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadRequest_company Company { get; set; }
+#endif
         /// <summary>Public Leadping API schema for lead contact profile data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,15 +31,23 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadContact Contact { get; set; }
 #endif
-        /// <summary>Public Leadping API schema for lead demographic profile data.</summary>
+        /// <summary>Preferred contact language, channel, and callback windows; does not grant consent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Leadping.OpenApiClient.Models.LeadProfile? Customer { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadRequest_contactPreferences? ContactPreferences { get; set; }
 #nullable restore
 #else
-        public global::Leadping.OpenApiClient.Models.LeadProfile Customer { get; set; }
+        public global::Leadping.OpenApiClient.Models.LeadRequest_contactPreferences ContactPreferences { get; set; }
 #endif
-        /// <summary>Indicates whether this lead request is active and available in the Leadping API.</summary>
+        /// <summary>Industry-specific JSON scalar or scalar-array answers; keys are stable field identifiers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadRequest_customFields? CustomFields { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadRequest_customFields CustomFields { get; set; }
+#endif
+        /// <summary>Whether the lead is enabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Stable unique identifier of an existing resource to update; omit it when the API assigns an identifier during creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,6 +57,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The service or purchase requested by a lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadRequest_inquiry? Inquiry { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadRequest_inquiry Inquiry { get; set; }
+#endif
         /// <summary>Public Leadping API schema for lead attribution metadata data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +73,23 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadMetadata Metadata { get; set; }
 #endif
-        /// <summary>Tag IDs assigned to or filtered against this lead.</summary>
+        /// <summary>Public Leadping API schema for lead demographic profile data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadRequest_profile? Profile { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadRequest_profile Profile { get; set; }
+#endif
+        /// <summary>Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadRequest_serviceAddress? ServiceAddress { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadRequest_serviceAddress ServiceAddress { get; set; }
+#endif
+        /// <summary>Optional tag IDs assigned to this lead. Defaults to an empty list when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TagIds { get; set; }
@@ -57,7 +97,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> TagIds { get; set; }
 #endif
-        /// <summary>Tag names assigned to this lead when matching existing tags by name.</summary>
+        /// <summary>Optional tag names matched against existing tags. Defaults to an empty list when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TagNames { get; set; }
@@ -90,11 +130,16 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "company", n => { Company = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_company>(global::Leadping.OpenApiClient.Models.LeadRequest_company.CreateFromDiscriminatorValue); } },
                 { "contact", n => { Contact = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>(global::Leadping.OpenApiClient.Models.LeadContact.CreateFromDiscriminatorValue); } },
-                { "customer", n => { Customer = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>(global::Leadping.OpenApiClient.Models.LeadProfile.CreateFromDiscriminatorValue); } },
+                { "contactPreferences", n => { ContactPreferences = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_contactPreferences>(global::Leadping.OpenApiClient.Models.LeadRequest_contactPreferences.CreateFromDiscriminatorValue); } },
+                { "customFields", n => { CustomFields = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_customFields>(global::Leadping.OpenApiClient.Models.LeadRequest_customFields.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "inquiry", n => { Inquiry = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_inquiry>(global::Leadping.OpenApiClient.Models.LeadRequest_inquiry.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata.CreateFromDiscriminatorValue); } },
+                { "profile", n => { Profile = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_profile>(global::Leadping.OpenApiClient.Models.LeadRequest_profile.CreateFromDiscriminatorValue); } },
+                { "serviceAddress", n => { ServiceAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_serviceAddress>(global::Leadping.OpenApiClient.Models.LeadRequest_serviceAddress.CreateFromDiscriminatorValue); } },
                 { "tagIds", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tagNames", n => { TagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -106,11 +151,16 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_company>("company", Company);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadContact>("contact", Contact);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile>("customer", Customer);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_contactPreferences>("contactPreferences", ContactPreferences);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_customFields>("customFields", CustomFields);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_inquiry>("inquiry", Inquiry);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_profile>("profile", Profile);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadRequest_serviceAddress>("serviceAddress", ServiceAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("tagIds", TagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("tagNames", TagNames);
             writer.WriteAdditionalData(AdditionalData);

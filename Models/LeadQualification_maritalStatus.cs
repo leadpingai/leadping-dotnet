@@ -5,7 +5,7 @@ namespace Leadping.OpenApiClient.Models
 {
     /// <summary>Classifies a lead&apos;s reported marital status when required by a qualification or integration workflow.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum LeadProfile_maritalStatus
+    public enum LeadQualification_maritalStatus
     {
         [EnumMember(Value = "Married")]
         #pragma warning disable CS1591

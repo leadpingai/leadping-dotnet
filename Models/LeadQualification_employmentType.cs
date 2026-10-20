@@ -5,7 +5,7 @@ namespace Leadping.OpenApiClient.Models
 {
     /// <summary>Classifies a lead&apos;s reported employment arrangement for qualification and demographic workflows.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum LeadProfile_employmentType
+    public enum LeadQualification_employmentType
     {
         [EnumMember(Value = "Employed")]
         #pragma warning disable CS1591

@@ -18,30 +18,16 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lead birth date used for demographic matching and insurance intake workflows.</summary>
         public Date? BirthDate { get; set; }
-        /// <summary>Lead credit score range or score supplied by the intake source.</summary>
-        public int? CreditScore { get; set; }
-        /// <summary>Classifies a lead&apos;s reported employment arrangement for qualification and demographic workflows.</summary>
-        public global::Leadping.OpenApiClient.Models.LeadProfile_employmentType? EmploymentType { get; set; }
         /// <summary>Classifies a lead&apos;s self-reported gender when required by a qualification, demographic, or integration workflow.</summary>
         public global::Leadping.OpenApiClient.Models.LeadProfile_gender? Gender { get; set; }
-        /// <summary>Indicates whether the lead reported bankruptcy history.</summary>
-        public bool? HasBankruptcy { get; set; }
-        /// <summary>Indicates whether the lead reported a medical condition relevant to qualification.</summary>
-        public bool? HasMedicalCondition { get; set; }
-        /// <summary>Lead height provided for qualification workflows that require demographic details.</summary>
-        public int? Height { get; set; }
-        /// <summary>Lead income amount or range supplied for qualification workflows.</summary>
-        public int? Income { get; set; }
-        /// <summary>Indicates whether the lead owns their home.</summary>
-        public bool? IsHomeowner { get; set; }
-        /// <summary>Classifies a lead&apos;s reported marital status when required by a qualification or integration workflow.</summary>
-        public global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus? MaritalStatus { get; set; }
-        /// <summary>Number of months the lead has lived at the current residence.</summary>
-        public int? MonthsAtResidence { get; set; }
-        /// <summary>Number of dependents reported by the lead.</summary>
-        public int? NumberOfDependents { get; set; }
-        /// <summary>Relative weighting used to rank or score this lead demographic profile.</summary>
-        public int? Weight { get; set; }
+        /// <summary>Optional consumer qualification details for workflows that need them.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadProfile_qualification? Qualification { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadProfile_qualification Qualification { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadProfile"/> and sets the default values.
         /// </summary>
@@ -68,18 +54,8 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "birthDate", n => { BirthDate = n.GetDateValue(); } },
-                { "creditScore", n => { CreditScore = n.GetIntValue(); } },
-                { "employmentType", n => { EmploymentType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_employmentType>(); } },
                 { "gender", n => { Gender = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_gender>(); } },
-                { "hasBankruptcy", n => { HasBankruptcy = n.GetBoolValue(); } },
-                { "hasMedicalCondition", n => { HasMedicalCondition = n.GetBoolValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "income", n => { Income = n.GetIntValue(); } },
-                { "isHomeowner", n => { IsHomeowner = n.GetBoolValue(); } },
-                { "maritalStatus", n => { MaritalStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus>(); } },
-                { "monthsAtResidence", n => { MonthsAtResidence = n.GetIntValue(); } },
-                { "numberOfDependents", n => { NumberOfDependents = n.GetIntValue(); } },
-                { "weight", n => { Weight = n.GetIntValue(); } },
+                { "qualification", n => { Qualification = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile_qualification>(global::Leadping.OpenApiClient.Models.LeadProfile_qualification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,18 +66,8 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("birthDate", BirthDate);
-            writer.WriteIntValue("creditScore", CreditScore);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_employmentType>("employmentType", EmploymentType);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_gender>("gender", Gender);
-            writer.WriteBoolValue("hasBankruptcy", HasBankruptcy);
-            writer.WriteBoolValue("hasMedicalCondition", HasMedicalCondition);
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("income", Income);
-            writer.WriteBoolValue("isHomeowner", IsHomeowner);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadProfile_maritalStatus>("maritalStatus", MaritalStatus);
-            writer.WriteIntValue("monthsAtResidence", MonthsAtResidence);
-            writer.WriteIntValue("numberOfDependents", NumberOfDependents);
-            writer.WriteIntValue("weight", Weight);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadProfile_qualification>("qualification", Qualification);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

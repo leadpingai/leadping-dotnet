@@ -23,6 +23,24 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AssignedPhoneNumberId { get; set; }
 #endif
+        /// <summary>Timestamp when the source originally captured the inquiry.</summary>
+        public DateTimeOffset? CapturedAt { get; set; }
+        /// <summary>Source-reported IP address of the original visitor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CaptureIpAddress { get; set; }
+#nullable restore
+#else
+        public string CaptureIpAddress { get; set; }
+#endif
+        /// <summary>Source-reported user agent of the original visitor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CaptureUserAgent { get; set; }
+#nullable restore
+#else
+        public string CaptureUserAgent { get; set; }
+#endif
         /// <summary>Reason Leadping blocked this operation for compliance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +69,15 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when this lead attribution metadata was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Direct-post price supplied by the lead source during intake.</summary>
+        /// <summary>ISO 4217 currency code for the lead acquisition price.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Alias for price. When both are supplied, their amounts must agree.</summary>
         public double? DirectPostPrice { get; set; }
         /// <summary>External system identifier used to reconcile this lead attribution metadata across integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -279,11 +305,15 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignedPhoneNumberId", n => { AssignedPhoneNumberId = n.GetStringValue(); } },
+                { "captureIpAddress", n => { CaptureIpAddress = n.GetStringValue(); } },
+                { "captureUserAgent", n => { CaptureUserAgent = n.GetStringValue(); } },
+                { "capturedAt", n => { CapturedAt = n.GetDateTimeOffsetValue(); } },
                 { "complianceBlockedReason", n => { ComplianceBlockedReason = n.GetStringValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
                 { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>(); } },
                 { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
                 { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "importBatchId", n => { ImportBatchId = n.GetStringValue(); } },
@@ -326,11 +356,15 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignedPhoneNumberId", AssignedPhoneNumberId);
+            writer.WriteDateTimeOffsetValue("capturedAt", CapturedAt);
+            writer.WriteStringValue("captureIpAddress", CaptureIpAddress);
+            writer.WriteStringValue("captureUserAgent", CaptureUserAgent);
             writer.WriteStringValue("complianceBlockedReason", ComplianceBlockedReason);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>("consentCertificateType", ConsentCertificateType);
             writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("importBatchId", ImportBatchId);

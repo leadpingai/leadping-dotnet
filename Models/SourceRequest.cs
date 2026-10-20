@@ -15,14 +15,6 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>State or region allowlist used to accept leads from this source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedStates { get; set; }
-#nullable restore
-#else
-        public List<string> AllowedStates { get; set; }
-#endif
         /// <summary>Whether to look up lead phone numbers during intake. When disabled, lookup is required before calling or texting.</summary>
         public bool? AutomaticPhoneLookup { get; set; }
         /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
@@ -84,7 +76,6 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedStates", n => { AllowedStates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "automaticPhoneLookup", n => { AutomaticPhoneLookup = n.GetBoolValue(); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultTagNames", n => { DefaultTagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -100,7 +91,6 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedStates", AllowedStates);
             writer.WriteBoolValue("automaticPhoneLookup", AutomaticPhoneLookup);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagNames", DefaultTagNames);

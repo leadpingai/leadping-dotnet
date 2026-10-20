@@ -34,6 +34,24 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Lead birth date used for demographic matching and insurance intake workflows.</summary>
         public Date? BirthDate { get; set; }
+        /// <summary>Original source capture timestamp.</summary>
+        public DateTimeOffset? CapturedAt { get; set; }
+        /// <summary>Original visitor IP as reported by the source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CaptureIpAddress { get; set; }
+#nullable restore
+#else
+        public string CaptureIpAddress { get; set; }
+#endif
+        /// <summary>Original visitor user agent as reported by the source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CaptureUserAgent { get; set; }
+#nullable restore
+#else
+        public string CaptureUserAgent { get; set; }
+#endif
         /// <summary>City for the lead or organization postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +59,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string City { get; set; }
+#endif
+        /// <summary>Business represented by a lead contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company? Company { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company Company { get; set; }
 #endif
         /// <summary>The provider responsible for a lead&apos;s consent certificate.</summary>
         public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType? ConsentCertificateType { get; set; }
@@ -52,9 +78,41 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConsentCertificateUrl { get; set; }
 #endif
+        /// <summary>Preferred contact language, channel, and callback windows; does not grant consent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences? ContactPreferences { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences ContactPreferences { get; set; }
+#endif
+        /// <summary>ISO 3166-1 alpha-2 contact address country code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country { get; set; }
+#nullable restore
+#else
+        public string Country { get; set; }
+#endif
+        /// <summary>ISO 4217 acquisition price currency.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Industry-specific JSON scalar or scalar-array answers; keys are stable field identifiers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_customFields? CustomFields { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_customFields CustomFields { get; set; }
+#endif
         /// <summary>Lead date of birth supplied by intake sources and normalized into the lead profile.</summary>
         public Date? DateOfBirth { get; set; }
-        /// <summary>Direct-post price supplied by the lead source during intake.</summary>
+        /// <summary>Alias for price. When both are supplied, their amounts must agree.</summary>
         public double? DirectPostPrice { get; set; }
         /// <summary>Email address for the person represented by this lead intake request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,6 +154,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string IdempotencyKey { get; set; }
 #endif
+        /// <summary>The service or purchase requested by a lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_inquiry? Inquiry { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_inquiry Inquiry { get; set; }
+#endif
         /// <summary>Landing page URL where the lead submitted their information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +178,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>Phone details for the lead, user, or organization represented by this lead intake request.</summary>
+        /// <summary>Contact phone number. Use E.164 with a leading + for international numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Phone { get; set; }
@@ -146,6 +212,22 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Product { get; set; }
 #endif
+        /// <summary>Public Leadping API schema for lead demographic profile data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_profile? Profile { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_profile Profile { get; set; }
+#endif
+        /// <summary>Publisher identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PubId { get; set; }
+#nullable restore
+#else
+        public string PubId { get; set; }
+#endif
         /// <summary>Referring page or traffic source that sent the lead into Leadping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +251,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string SellerLeadIdentifier { get; set; }
+#endif
+        /// <summary>Describes a physical or mailing address using international locality, administrative-area, postal-code, and country fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_serviceAddress? ServiceAddress { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_serviceAddress ServiceAddress { get; set; }
 #endif
         /// <summary>Source-provided key-value metadata retained for lead attribution and integration troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -209,6 +299,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> TagNames { get; set; }
+#endif
+        /// <summary>Contact time zone identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
 #endif
         /// <summary>UTM campaign parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -294,9 +392,17 @@ namespace Leadping.OpenApiClient.Models
                 { "address1", n => { Address1 = n.GetStringValue(); } },
                 { "address2", n => { Address2 = n.GetStringValue(); } },
                 { "birthDate", n => { BirthDate = n.GetDateValue(); } },
+                { "captureIpAddress", n => { CaptureIpAddress = n.GetStringValue(); } },
+                { "captureUserAgent", n => { CaptureUserAgent = n.GetStringValue(); } },
+                { "capturedAt", n => { CapturedAt = n.GetDateTimeOffsetValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
+                { "company", n => { Company = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company.CreateFromDiscriminatorValue); } },
                 { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType>(); } },
                 { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
+                { "contactPreferences", n => { ContactPreferences = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences.CreateFromDiscriminatorValue); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "customFields", n => { CustomFields = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_customFields>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_customFields.CreateFromDiscriminatorValue); } },
                 { "dateOfBirth", n => { DateOfBirth = n.GetDateValue(); } },
                 { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
@@ -304,6 +410,7 @@ namespace Leadping.OpenApiClient.Models
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
                 { "idempotencyKey", n => { IdempotencyKey = n.GetStringValue(); } },
+                { "inquiry", n => { Inquiry = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_inquiry>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_inquiry.CreateFromDiscriminatorValue); } },
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -311,14 +418,18 @@ namespace Leadping.OpenApiClient.Models
                 { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "product", n => { Product = n.GetStringValue(); } },
+                { "profile", n => { Profile = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_profile>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_profile.CreateFromDiscriminatorValue); } },
+                { "pubId", n => { PubId = n.GetStringValue(); } },
                 { "referrer", n => { Referrer = n.GetStringValue(); } },
                 { "sellerLeadId", n => { SellerLeadId = n.GetStringValue(); } },
                 { "sellerLeadIdentifier", n => { SellerLeadIdentifier = n.GetStringValue(); } },
+                { "serviceAddress", n => { ServiceAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_serviceAddress>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_serviceAddress.CreateFromDiscriminatorValue); } },
                 { "sourceMetadata", n => { SourceMetadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_sourceMetadata>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_sourceMetadata.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "subId", n => { SubId = n.GetStringValue(); } },
                 { "tagIds", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tagNames", n => { TagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
                 { "utmContent", n => { UtmContent = n.GetStringValue(); } },
                 { "utmMedium", n => { UtmMedium = n.GetStringValue(); } },
@@ -338,9 +449,17 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("address1", Address1);
             writer.WriteStringValue("address2", Address2);
             writer.WriteDateValue("birthDate", BirthDate);
+            writer.WriteDateTimeOffsetValue("capturedAt", CapturedAt);
+            writer.WriteStringValue("captureIpAddress", CaptureIpAddress);
+            writer.WriteStringValue("captureUserAgent", CaptureUserAgent);
             writer.WriteStringValue("city", City);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company>("company", Company);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType>("consentCertificateType", ConsentCertificateType);
             writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences>("contactPreferences", ContactPreferences);
+            writer.WriteStringValue("country", Country);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_customFields>("customFields", CustomFields);
             writer.WriteDateValue("dateOfBirth", DateOfBirth);
             writer.WriteDoubleValue("directPostPrice", DirectPostPrice);
             writer.WriteStringValue("email", Email);
@@ -348,6 +467,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("gender", Gender);
             writer.WriteStringValue("idempotencyKey", IdempotencyKey);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_inquiry>("inquiry", Inquiry);
             writer.WriteStringValue("landingPage", LandingPage);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("phone", Phone);
@@ -355,14 +475,18 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteDoubleValue("price", Price);
             writer.WriteStringValue("product", Product);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_profile>("profile", Profile);
+            writer.WriteStringValue("pubId", PubId);
             writer.WriteStringValue("referrer", Referrer);
             writer.WriteStringValue("sellerLeadId", SellerLeadId);
             writer.WriteStringValue("sellerLeadIdentifier", SellerLeadIdentifier);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_serviceAddress>("serviceAddress", ServiceAddress);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_sourceMetadata>("sourceMetadata", SourceMetadata);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("subId", SubId);
             writer.WriteCollectionOfPrimitiveValues<string>("tagIds", TagIds);
             writer.WriteCollectionOfPrimitiveValues<string>("tagNames", TagNames);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
             writer.WriteStringValue("utmContent", UtmContent);
             writer.WriteStringValue("utmMedium", UtmMedium);

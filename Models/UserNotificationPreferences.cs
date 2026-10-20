@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -47,6 +48,20 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedEnabled { get; set; }
         /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
+        /// <summary>Whether push and automation alerts wait until the user&apos;s daily quiet hours end.</summary>
+        public bool? QuietHoursEnabled { get; set; }
+        /// <summary>The exclusive local end of daily quiet hours.</summary>
+        public Time? QuietHoursEnd { get; set; }
+        /// <summary>The inclusive local start of daily quiet hours.</summary>
+        public Time? QuietHoursStart { get; set; }
+        /// <summary>The time zone used for quiet hours, including daylight saving changes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QuietHoursTimeZoneId { get; set; }
+#nullable restore
+#else
+        public string QuietHoursTimeZoneId { get; set; }
+#endif
         /// <summary>Describes Leadping Consent certificate data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +131,10 @@ namespace Leadping.OpenApiClient.Models
                 { "newLeadSmsEnabled", n => { NewLeadSmsEnabled = n.GetBoolValue(); } },
                 { "paymentFailedEnabled", n => { PaymentFailedEnabled = n.GetBoolValue(); } },
                 { "paymentFailedSmsEnabled", n => { PaymentFailedSmsEnabled = n.GetBoolValue(); } },
+                { "quietHoursEnabled", n => { QuietHoursEnabled = n.GetBoolValue(); } },
+                { "quietHoursEnd", n => { QuietHoursEnd = n.GetTimeValue(); } },
+                { "quietHoursStart", n => { QuietHoursStart = n.GetTimeValue(); } },
+                { "quietHoursTimeZoneId", n => { QuietHoursTimeZoneId = n.GetStringValue(); } },
                 { "smsConsentCertificate", n => { SmsConsentCertificate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate>(global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate.CreateFromDiscriminatorValue); } },
                 { "smsConsentOptedIn", n => { SmsConsentOptedIn = n.GetBoolValue(); } },
                 { "smsConsentUpdatedAt", n => { SmsConsentUpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -152,6 +171,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("newLeadSmsEnabled", NewLeadSmsEnabled);
             writer.WriteBoolValue("paymentFailedEnabled", PaymentFailedEnabled);
             writer.WriteBoolValue("paymentFailedSmsEnabled", PaymentFailedSmsEnabled);
+            writer.WriteBoolValue("quietHoursEnabled", QuietHoursEnabled);
+            writer.WriteTimeValue("quietHoursEnd", QuietHoursEnd);
+            writer.WriteTimeValue("quietHoursStart", QuietHoursStart);
+            writer.WriteStringValue("quietHoursTimeZoneId", QuietHoursTimeZoneId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate>("smsConsentCertificate", SmsConsentCertificate);
             writer.WriteBoolValue("smsConsentOptedIn", SmsConsentOptedIn);
             writer.WriteDateTimeOffsetValue("smsConsentUpdatedAt", SmsConsentUpdatedAt);
