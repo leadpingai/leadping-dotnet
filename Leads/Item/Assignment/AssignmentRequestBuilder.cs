@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Assignment
         {
         }
         /// <summary>
-        /// Updates ownership of the specified lead after validating that the selected assignee is an active member of the current organization.
+        /// Assigns the lead to an active member of the current organization, or returns it to the unassigned queue.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
         /// <param name="body">Assigns an organization lead to an active organization member. A null user ID returns the lead to the unassigned queue.</param>
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Leads.Item.Assignment
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates ownership of the specified lead after validating that the selected assignee is an active member of the current organization.
+        /// Assigns the lead to an active member of the current organization, or returns it to the unassigned queue.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Assigns an organization lead to an active organization member. A null user ID returns the lead to the unassigned queue.</param>

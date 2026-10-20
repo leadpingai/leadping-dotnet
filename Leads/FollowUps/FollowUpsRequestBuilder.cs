@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Leads.FollowUps
         {
         }
         /// <summary>
-        /// Returns a paginated list of current incomplete follow-ups accessible to the current user, with the option to include upcoming follow-ups.
+        /// Returns a paginated list of current incomplete follow-ups with lead assignment and organization access enforced, with the option to include upcoming follow-ups.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Leads.FollowUps
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a paginated list of current incomplete follow-ups accessible to the current user, with the option to include upcoming follow-ups.
+        /// Returns a paginated list of current incomplete follow-ups with lead assignment and organization access enforced, with the option to include upcoming follow-ups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Leads.FollowUps
             return new global::Leadping.OpenApiClient.Leads.FollowUps.FollowUpsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a paginated list of current incomplete follow-ups accessible to the current user, with the option to include upcoming follow-ups.
+        /// Returns a paginated list of current incomplete follow-ups with lead assignment and organization access enforced, with the option to include upcoming follow-ups.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowUpsRequestBuilderGetQueryParameters 
