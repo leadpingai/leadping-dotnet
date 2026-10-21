@@ -219,6 +219,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when Leadping last successfully checked the TrustedForm certificate URL availability.</summary>
         public DateTimeOffset? TrustedFormCheckedAt { get; set; }
+        /// <summary>Server-issued timestamp when TrustedForm returned HTTP 400 or the certificate was already used by the organization; the evidence remains unverified.</summary>
+        public DateTimeOffset? TrustedFormRejectedAt { get; set; }
         /// <summary>Browser or client user agent captured when this lead attribution metadata was submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -344,6 +346,7 @@ namespace Leadping.OpenApiClient.Models
                 { "sourceMetadata", n => { SourceMetadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata.CreateFromDiscriminatorValue); } },
                 { "subId", n => { SubId = n.GetStringValue(); } },
                 { "trustedFormCheckedAt", n => { TrustedFormCheckedAt = n.GetDateTimeOffsetValue(); } },
+                { "trustedFormRejectedAt", n => { TrustedFormRejectedAt = n.GetDateTimeOffsetValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
@@ -397,6 +400,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata>("sourceMetadata", SourceMetadata);
             writer.WriteStringValue("subId", SubId);
             writer.WriteDateTimeOffsetValue("trustedFormCheckedAt", TrustedFormCheckedAt);
+            writer.WriteDateTimeOffsetValue("trustedFormRejectedAt", TrustedFormRejectedAt);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
