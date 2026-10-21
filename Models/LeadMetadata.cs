@@ -57,6 +57,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ComplianceStatus { get; set; }
 #endif
+        /// <summary>User attestation of SMS consent from another source; does not establish independent verification.</summary>
+        public bool? ConsentAttested { get; set; }
         /// <summary>The provider responsible for a lead&apos;s consent certificate.</summary>
         public global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType? ConsentCertificateType { get; set; }
         /// <summary>Certificate URL used as proof of consumer consent.</summary>
@@ -67,6 +69,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConsentCertificateUrl { get; set; }
 #endif
+        /// <summary>Leadping&apos;s assessment of the supporting consent evidence.</summary>
+        public global::Leadping.OpenApiClient.Models.ConsentVerificationStatus? ConsentVerificationStatus { get; set; }
         /// <summary>UTC timestamp when this lead attribution metadata was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>ISO 4217 currency code for the lead acquisition price.</summary>
@@ -310,8 +314,10 @@ namespace Leadping.OpenApiClient.Models
                 { "capturedAt", n => { CapturedAt = n.GetDateTimeOffsetValue(); } },
                 { "complianceBlockedReason", n => { ComplianceBlockedReason = n.GetStringValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
+                { "consentAttested", n => { ConsentAttested = n.GetBoolValue(); } },
                 { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>(); } },
                 { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
+                { "consentVerificationStatus", n => { ConsentVerificationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ConsentVerificationStatus>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "directPostPrice", n => { DirectPostPrice = n.GetDoubleValue(); } },
@@ -361,8 +367,10 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("captureUserAgent", CaptureUserAgent);
             writer.WriteStringValue("complianceBlockedReason", ComplianceBlockedReason);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
+            writer.WriteBoolValue("consentAttested", ConsentAttested);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>("consentCertificateType", ConsentCertificateType);
             writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ConsentVerificationStatus>("consentVerificationStatus", ConsentVerificationStatus);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("directPostPrice", DirectPostPrice);

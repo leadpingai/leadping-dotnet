@@ -68,6 +68,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company Company { get; set; }
 #endif
+        /// <summary>Explicitly attests to SMS consent when consentCertificateType is Other. Allows manual texts only.</summary>
+        public bool? ConsentAttested { get; set; }
         /// <summary>The provider responsible for a lead&apos;s consent certificate.</summary>
         public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType? ConsentCertificateType { get; set; }
         /// <summary>Certificate URL used as proof of consumer consent.</summary>
@@ -397,6 +399,7 @@ namespace Leadping.OpenApiClient.Models
                 { "capturedAt", n => { CapturedAt = n.GetDateTimeOffsetValue(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "company", n => { Company = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company.CreateFromDiscriminatorValue); } },
+                { "consentAttested", n => { ConsentAttested = n.GetBoolValue(); } },
                 { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType>(); } },
                 { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
                 { "contactPreferences", n => { ContactPreferences = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences>(global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences.CreateFromDiscriminatorValue); } },
@@ -454,6 +457,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("captureUserAgent", CaptureUserAgent);
             writer.WriteStringValue("city", City);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company>("company", Company);
+            writer.WriteBoolValue("consentAttested", ConsentAttested);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType>("consentCertificateType", ConsentCertificateType);
             writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadIntakeRequest_contactPreferences>("contactPreferences", ContactPreferences);
