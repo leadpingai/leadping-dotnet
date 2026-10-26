@@ -229,14 +229,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string UserAgent { get; set; }
 #endif
-        /// <summary>User ID associated with this lead&apos;s attribution metadata.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserId { get; set; }
-#nullable restore
-#else
-        public string UserId { get; set; }
-#endif
         /// <summary>UTM campaign parameter captured for lead attribution reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -348,7 +340,6 @@ namespace Leadping.OpenApiClient.Models
                 { "trustedFormCheckedAt", n => { TrustedFormCheckedAt = n.GetDateTimeOffsetValue(); } },
                 { "trustedFormRejectedAt", n => { TrustedFormRejectedAt = n.GetDateTimeOffsetValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
                 { "utmCampaign", n => { UtmCampaign = n.GetStringValue(); } },
                 { "utmContent", n => { UtmContent = n.GetStringValue(); } },
                 { "utmMedium", n => { UtmMedium = n.GetStringValue(); } },
@@ -402,7 +393,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("trustedFormCheckedAt", TrustedFormCheckedAt);
             writer.WriteDateTimeOffsetValue("trustedFormRejectedAt", TrustedFormRejectedAt);
             writer.WriteStringValue("userAgent", UserAgent);
-            writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("utmCampaign", UtmCampaign);
             writer.WriteStringValue("utmContent", UtmContent);
             writer.WriteStringValue("utmMedium", UtmMedium);

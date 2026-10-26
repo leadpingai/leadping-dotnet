@@ -29,8 +29,6 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The isDemo property</summary>
         public bool? IsDemo { get; set; }
-        /// <summary>Indicates whether Leadping provisions and manages this phone number.</summary>
-        public bool? LeadpingOwned { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Human-readable display name of the resource.</summary>
@@ -59,6 +57,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization Organization { get; set; }
 #endif
+        /// <summary>Identifies whose traffic a phone number serves, independently of provider control.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberOwnership? Ownership { get; set; }
         /// <summary>Identifier of the canonical phone identity for this number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,12 +116,12 @@ namespace Leadping.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
-                { "leadpingOwned", n => { LeadpingOwned = n.GetBoolValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "numberHealthEnabled", n => { NumberHealthEnabled = n.GetBoolValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>(global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization.CreateFromDiscriminatorValue); } },
+                { "ownership", n => { Ownership = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOwnership>(); } },
                 { "phoneIdentityId", n => { PhoneIdentityId = n.GetStringValue(); } },
                 { "routing", n => { Routing = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>(global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata.CreateFromDiscriminatorValue); } },
                 { "smsReady", n => { SmsReady = n.GetBoolValue(); } },
@@ -140,12 +140,12 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
-            writer.WriteBoolValue("leadpingOwned", LeadpingOwned);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteBoolValue("numberHealthEnabled", NumberHealthEnabled);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberResponse_organization>("organization", Organization);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOwnership>("ownership", Ownership);
             writer.WriteStringValue("phoneIdentityId", PhoneIdentityId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberRoutingMetadata>("routing", Routing);
             writer.WriteBoolValue("smsReady", SmsReady);

@@ -21,6 +21,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ActorDisplayName { get; set; }
 #endif
+        /// <summary>The lead who performed this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorLeadId { get; set; }
+#nullable restore
+#else
+        public string ActorLeadId { get; set; }
+#endif
         /// <summary>User ID for the actor that performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -275,6 +283,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                { "actorLeadId", n => { ActorLeadId = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
@@ -326,6 +335,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
+            writer.WriteStringValue("actorLeadId", ActorLeadId);
             writer.WriteStringValue("actorUserId", ActorUserId);
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);

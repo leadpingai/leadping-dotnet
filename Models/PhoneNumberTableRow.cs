@@ -67,14 +67,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
-        /// <summary>Ownership classification for this phone number, such as Leadping-owned or customer-owned.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ownership { get; set; }
-#nullable restore
-#else
-        public string Ownership { get; set; }
-#endif
+        /// <summary>Identifies whose traffic a phone number serves, independently of provider control.</summary>
+        public global::Leadping.OpenApiClient.Models.PhoneNumberOwnership? Ownership { get; set; }
         /// <summary>Human-readable routing summary for this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,7 +138,7 @@ namespace Leadping.OpenApiClient.Models
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
-                { "ownership", n => { Ownership = n.GetStringValue(); } },
+                { "ownership", n => { Ownership = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOwnership>(); } },
                 { "routingSummary", n => { RoutingSummary = n.GetStringValue(); } },
                 { "smsReady", n => { SmsReady = n.GetBoolValue(); } },
                 { "tenDlcCampaignStatus", n => { TenDlcCampaignStatus = n.GetStringValue(); } },
@@ -168,7 +162,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("organizationId", OrganizationId);
-            writer.WriteStringValue("ownership", Ownership);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOwnership>("ownership", Ownership);
             writer.WriteStringValue("routingSummary", RoutingSummary);
             writer.WriteBoolValue("smsReady", SmsReady);
             writer.WriteStringValue("tenDlcCampaignStatus", TenDlcCampaignStatus);

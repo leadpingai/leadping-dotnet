@@ -49,6 +49,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CreatedByUserEmail { get; set; }
 #endif
+        /// <summary>Maximum new leads accepted per UTC day. Null means unlimited; zero pauses intake.</summary>
+        public int? DailyLeadLimit { get; set; }
         /// <summary>Tag IDs automatically assigned to leads created by this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,6 +160,7 @@ namespace Leadping.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdByUser", n => { CreatedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser>(global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser.CreateFromDiscriminatorValue); } },
                 { "createdByUserEmail", n => { CreatedByUserEmail = n.GetStringValue(); } },
+                { "dailyLeadLimit", n => { DailyLeadLimit = n.GetIntValue(); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultTags", n => { DefaultTags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -189,6 +192,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceResponse_createdByUser>("createdByUser", CreatedByUser);
             writer.WriteStringValue("createdByUserEmail", CreatedByUserEmail);
+            writer.WriteIntValue("dailyLeadLimit", DailyLeadLimit);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("defaultTags", DefaultTags);
             writer.WriteStringValue("description", Description);

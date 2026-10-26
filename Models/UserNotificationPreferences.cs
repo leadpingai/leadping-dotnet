@@ -48,7 +48,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedEnabled { get; set; }
         /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
-        /// <summary>Whether push and automation alerts wait until the user&apos;s daily quiet hours end.</summary>
+        /// <summary>Whether push, SMS, and automation alerts wait until the user&apos;s daily quiet hours end.</summary>
         public bool? QuietHoursEnabled { get; set; }
         /// <summary>The exclusive local end of daily quiet hours.</summary>
         public Time? QuietHoursEnd { get; set; }

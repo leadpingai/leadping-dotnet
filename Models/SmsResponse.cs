@@ -137,6 +137,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>UTC timestamp when Leadping will retry this SMS message.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
+        /// <summary>The organization receiving this message status update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>Phone number ID selected for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -246,6 +254,7 @@ namespace Leadping.OpenApiClient.Models
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "receivedAt", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
@@ -293,6 +302,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);

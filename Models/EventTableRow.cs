@@ -29,6 +29,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ActorEmail { get; set; }
 #endif
+        /// <summary>The lead who performed this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorLeadId { get; set; }
+#nullable restore
+#else
+        public string ActorLeadId { get; set; }
+#endif
         /// <summary>User ID for the person or system that created this event timeline table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -322,6 +330,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
                 { "actorEmail", n => { ActorEmail = n.GetStringValue(); } },
+                { "actorLeadId", n => { ActorLeadId = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
                 { "automationRunId", n => { AutomationRunId = n.GetStringValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
@@ -381,6 +390,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
             writer.WriteStringValue("actorEmail", ActorEmail);
+            writer.WriteStringValue("actorLeadId", ActorLeadId);
             writer.WriteStringValue("actorUserId", ActorUserId);
             writer.WriteStringValue("automationRunId", AutomationRunId);
             writer.WriteDoubleValue("billableAmount", BillableAmount);
