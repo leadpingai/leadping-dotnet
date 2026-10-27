@@ -25,6 +25,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when the source credential was most recently rotated.</summary>
         public DateTimeOffset? ApiKeyRotatedAt { get; set; }
+        /// <summary>Whether to validate consent certificates during intake. Skipped validation leaves consent unverified.</summary>
+        public bool? AutomaticConsentValidation { get; set; }
         /// <summary>Whether to look up lead phone numbers during intake. When disabled, lookup is required before calling or texting.</summary>
         public bool? AutomaticPhoneLookup { get; set; }
         /// <summary>Indicates whether the organization or sender passed compliance review.</summary>
@@ -154,6 +156,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyRotatedAt", n => { ApiKeyRotatedAt = n.GetDateTimeOffsetValue(); } },
+                { "automaticConsentValidation", n => { AutomaticConsentValidation = n.GetBoolValue(); } },
                 { "automaticPhoneLookup", n => { AutomaticPhoneLookup = n.GetBoolValue(); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
@@ -186,6 +189,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteDateTimeOffsetValue("apiKeyRotatedAt", ApiKeyRotatedAt);
+            writer.WriteBoolValue("automaticConsentValidation", AutomaticConsentValidation);
             writer.WriteBoolValue("automaticPhoneLookup", AutomaticPhoneLookup);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
             writer.WriteDoubleValue("costPerLead", CostPerLead);

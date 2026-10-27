@@ -69,6 +69,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ConsentCertificateUrl { get; set; }
 #endif
+        /// <summary>Server-issued time at which the source policy skipped certificate validation for this consent snapshot.</summary>
+        public DateTimeOffset? ConsentValidationSkippedAt { get; set; }
         /// <summary>Leadping&apos;s assessment of the supporting consent evidence.</summary>
         public global::Leadping.OpenApiClient.Models.ConsentVerificationStatus? ConsentVerificationStatus { get; set; }
         /// <summary>UTC timestamp when this lead attribution metadata was created.</summary>
@@ -311,6 +313,7 @@ namespace Leadping.OpenApiClient.Models
                 { "consentAttested", n => { ConsentAttested = n.GetBoolValue(); } },
                 { "consentCertificateType", n => { ConsentCertificateType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>(); } },
                 { "consentCertificateUrl", n => { ConsentCertificateUrl = n.GetStringValue(); } },
+                { "consentValidationSkippedAt", n => { ConsentValidationSkippedAt = n.GetDateTimeOffsetValue(); } },
                 { "consentVerificationStatus", n => { ConsentVerificationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ConsentVerificationStatus>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
@@ -364,6 +367,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("consentAttested", ConsentAttested);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_consentCertificateType>("consentCertificateType", ConsentCertificateType);
             writer.WriteStringValue("consentCertificateUrl", ConsentCertificateUrl);
+            writer.WriteDateTimeOffsetValue("consentValidationSkippedAt", ConsentValidationSkippedAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ConsentVerificationStatus>("consentVerificationStatus", ConsentVerificationStatus);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("currency", Currency);

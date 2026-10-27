@@ -15,6 +15,8 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to validate consent certificates during intake. Skipped validation leaves consent unverified.</summary>
+        public bool? AutomaticConsentValidation { get; set; }
         /// <summary>Whether to look up lead phone numbers during intake. When disabled, lookup is required before calling or texting.</summary>
         public bool? AutomaticPhoneLookup { get; set; }
         /// <summary>Maximum new leads accepted per UTC day. Null means unlimited; zero pauses intake.</summary>
@@ -78,6 +80,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "automaticConsentValidation", n => { AutomaticConsentValidation = n.GetBoolValue(); } },
                 { "automaticPhoneLookup", n => { AutomaticPhoneLookup = n.GetBoolValue(); } },
                 { "dailyLeadLimit", n => { DailyLeadLimit = n.GetIntValue(); } },
                 { "defaultTagIds", n => { DefaultTagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -94,6 +97,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("automaticConsentValidation", AutomaticConsentValidation);
             writer.WriteBoolValue("automaticPhoneLookup", AutomaticPhoneLookup);
             writer.WriteIntValue("dailyLeadLimit", DailyLeadLimit);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagIds", DefaultTagIds);

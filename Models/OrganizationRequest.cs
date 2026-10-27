@@ -81,6 +81,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TargetAudience { get; set; }
 #endif
+        /// <summary>Default timezone for organization reporting and display when a user has no personal preference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>Industry vertical used for lead routing, compliance review, and reporting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,7 @@ namespace Leadping.OpenApiClient.Models
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "secondaryName", n => { SecondaryName = n.GetStringValue(); } },
                 { "targetAudience", n => { TargetAudience = n.GetStringValue(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
                 { "vertical", n => { Vertical = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
@@ -151,6 +160,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("secondaryName", SecondaryName);
             writer.WriteStringValue("targetAudience", TargetAudience);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteStringValue("vertical", Vertical);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);

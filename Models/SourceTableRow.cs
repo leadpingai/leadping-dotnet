@@ -29,6 +29,8 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ApiKeyRotatedAt { get; set; }
         /// <summary>Total number of authenticated requests made with this source API key.</summary>
         public long? ApiKeyTotalUses { get; set; }
+        /// <summary>Whether to validate consent certificates during intake. Skipped validation leaves consent unverified.</summary>
+        public bool? AutomaticConsentValidation { get; set; }
         /// <summary>Whether lead phone numbers are looked up automatically during intake.</summary>
         public bool? AutomaticPhoneLookup { get; set; }
         /// <summary>Indicates whether the organization or sender passed compliance review.</summary>
@@ -158,6 +160,7 @@ namespace Leadping.OpenApiClient.Models
                 { "apiKeyPreview", n => { ApiKeyPreview = n.GetStringValue(); } },
                 { "apiKeyRotatedAt", n => { ApiKeyRotatedAt = n.GetDateTimeOffsetValue(); } },
                 { "apiKeyTotalUses", n => { ApiKeyTotalUses = n.GetLongValue(); } },
+                { "automaticConsentValidation", n => { AutomaticConsentValidation = n.GetBoolValue(); } },
                 { "automaticPhoneLookup", n => { AutomaticPhoneLookup = n.GetBoolValue(); } },
                 { "complianceApproved", n => { ComplianceApproved = n.GetBoolValue(); } },
                 { "costPerLead", n => { CostPerLead = n.GetDoubleValue(); } },
@@ -191,6 +194,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("apiKeyPreview", ApiKeyPreview);
             writer.WriteDateTimeOffsetValue("apiKeyRotatedAt", ApiKeyRotatedAt);
             writer.WriteLongValue("apiKeyTotalUses", ApiKeyTotalUses);
+            writer.WriteBoolValue("automaticConsentValidation", AutomaticConsentValidation);
             writer.WriteBoolValue("automaticPhoneLookup", AutomaticPhoneLookup);
             writer.WriteBoolValue("complianceApproved", ComplianceApproved);
             writer.WriteDoubleValue("costPerLead", CostPerLead);

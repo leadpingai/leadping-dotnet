@@ -59,6 +59,14 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationMemberRole? Role { get; set; }
         /// <summary>Describes an organization&apos;s overall 10DLC registration lifecycle across brand and messaging campaign submission.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_tenDlcStatus? TenDlcStatus { get; set; }
+        /// <summary>Default timezone for organization reporting and display when a user has no personal preference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.OrganizationSwitchOption"/> and sets the default values.
         /// </summary>
@@ -97,6 +105,7 @@ namespace Leadping.OpenApiClient.Models
                 { "readyForCustomerTraffic", n => { ReadyForCustomerTraffic = n.GetBoolValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>(); } },
                 { "tenDlcStatus", n => { TenDlcStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_tenDlcStatus>(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -119,6 +128,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("readyForCustomerTraffic", ReadyForCustomerTraffic);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>("role", Role);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_tenDlcStatus>("tenDlcStatus", TenDlcStatus);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

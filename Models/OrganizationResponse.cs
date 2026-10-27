@@ -177,6 +177,14 @@ namespace Leadping.OpenApiClient.Models
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_status? Status { get; set; }
         /// <summary>Describes an organization&apos;s billing subscription lifecycle, including trial, active, delinquent, canceled, and expired states.</summary>
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_subscriptionStatus? SubscriptionStatus { get; set; }
+        /// <summary>Default timezone for organization reporting and display when a user has no personal preference.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZoneId { get; set; }
+#nullable restore
+#else
+        public string TimeZoneId { get; set; }
+#endif
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -256,6 +264,7 @@ namespace Leadping.OpenApiClient.Models
                 { "site", n => { Site = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_site>(global::Leadping.OpenApiClient.Models.OrganizationResponse_site.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_status>(); } },
                 { "subscriptionStatus", n => { SubscriptionStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_subscriptionStatus>(); } },
+                { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_user>(global::Leadping.OpenApiClient.Models.OrganizationResponse_user.CreateFromDiscriminatorValue); } },
                 { "vertical", n => { Vertical = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetStringValue(); } },
@@ -298,6 +307,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_site>("site", Site);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_status>("status", Status);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_subscriptionStatus>("subscriptionStatus", SubscriptionStatus);
+            writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_user>("user", User);
             writer.WriteStringValue("vertical", Vertical);
             writer.WriteStringValue("website", Website);
