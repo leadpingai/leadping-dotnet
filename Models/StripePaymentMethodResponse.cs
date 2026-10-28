@@ -47,6 +47,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Last4 { get; set; }
 #endif
+        /// <summary>Reusable payment types supported for immediate billing payments.</summary>
+        public global::Leadping.OpenApiClient.Models.BillingPaymentMethodType? Type { get; set; }
+        /// <summary>The wallet name when supplied by a digital wallet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WalletName { get; set; }
+#nullable restore
+#else
+        public string WalletName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.StripePaymentMethodResponse"/> and sets the default values.
         /// </summary>
@@ -79,6 +89,8 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "last4", n => { Last4 = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Leadping.OpenApiClient.Models.BillingPaymentMethodType>(); } },
+                { "walletName", n => { WalletName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -95,6 +107,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteStringValue("last4", Last4);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.BillingPaymentMethodType>("type", Type);
+            writer.WriteStringValue("walletName", WalletName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

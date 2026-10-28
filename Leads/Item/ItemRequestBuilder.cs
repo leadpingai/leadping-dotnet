@@ -3,6 +3,7 @@
 using Leadping.OpenApiClient.Leads.Item.Archive;
 using Leadping.OpenApiClient.Leads.Item.Assignment;
 using Leadping.OpenApiClient.Leads.Item.FollowUp;
+using Leadping.OpenApiClient.Leads.Item.PhoneLookup;
 using Leadping.OpenApiClient.Leads.Item.Status;
 using Leadping.OpenApiClient.Leads.Item.StatusHistory;
 using Leadping.OpenApiClient.Leads.Item.Tags;
@@ -39,6 +40,11 @@ namespace Leadping.OpenApiClient.Leads.Item
         public global::Leadping.OpenApiClient.Leads.Item.FollowUp.FollowUpRequestBuilder FollowUp
         {
             get => new global::Leadping.OpenApiClient.Leads.Item.FollowUp.FollowUpRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The phoneLookup property</summary>
+        public global::Leadping.OpenApiClient.Leads.Item.PhoneLookup.PhoneLookupRequestBuilder PhoneLookup
+        {
+            get => new global::Leadping.OpenApiClient.Leads.Item.PhoneLookup.PhoneLookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The status property</summary>
         public global::Leadping.OpenApiClient.Leads.Item.Status.StatusRequestBuilder Status

@@ -55,6 +55,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when this call event table row was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Stored description of the call event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>Communication direction for this call event table row, such as inbound or outbound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -226,6 +234,7 @@ namespace Leadping.OpenApiClient.Models
                 { "consoleEntries", n => { ConsoleEntries = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>(global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "endedAt", n => { EndedAt = n.GetDateTimeOffsetValue(); } },
@@ -264,6 +273,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>("consoleEntries", ConsoleEntries);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("direction", Direction);
             writer.WriteIntValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("endedAt", EndedAt);

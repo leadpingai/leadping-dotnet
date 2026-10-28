@@ -137,6 +137,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OrganizationId { get; set; }
 #endif
+        /// <summary>Organization name captured at intake for searching lead attribution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationName { get; set; }
+#nullable restore
+#else
+        public string OrganizationName { get; set; }
+#endif
         /// <summary>System or workflow that created this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,6 +218,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata SourceMetadata { get; set; }
+#endif
+        /// <summary>Source name captured at intake for searching lead attribution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceName { get; set; }
+#nullable restore
+#else
+        public string SourceName { get; set; }
 #endif
         /// <summary>Affiliate or publisher sub ID captured for lead attribution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -326,6 +342,7 @@ namespace Leadping.OpenApiClient.Models
                 { "landingPage", n => { LandingPage = n.GetStringValue(); } },
                 { "leadpingConsentCheckedAt", n => { LeadpingConsentCheckedAt = n.GetDateTimeOffsetValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "product", n => { Product = n.GetStringValue(); } },
@@ -339,6 +356,7 @@ namespace Leadping.OpenApiClient.Models
                 { "smsOptOutAt", n => { SmsOptOutAt = n.GetDateTimeOffsetValue(); } },
                 { "smsOptedOut", n => { SmsOptedOut = n.GetBoolValue(); } },
                 { "sourceMetadata", n => { SourceMetadata = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata>(global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata.CreateFromDiscriminatorValue); } },
+                { "sourceName", n => { SourceName = n.GetStringValue(); } },
                 { "subId", n => { SubId = n.GetStringValue(); } },
                 { "trustedFormCheckedAt", n => { TrustedFormCheckedAt = n.GetDateTimeOffsetValue(); } },
                 { "trustedFormRejectedAt", n => { TrustedFormRejectedAt = n.GetDateTimeOffsetValue(); } },
@@ -380,6 +398,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("landingPage", LandingPage);
             writer.WriteDateTimeOffsetValue("leadpingConsentCheckedAt", LeadpingConsentCheckedAt);
             writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteStringValue("organizationName", OrganizationName);
             writer.WriteStringValue("origin", Origin);
             writer.WriteDoubleValue("price", Price);
             writer.WriteStringValue("product", Product);
@@ -393,6 +412,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("smsOptInAt", SmsOptInAt);
             writer.WriteDateTimeOffsetValue("smsOptOutAt", SmsOptOutAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sourceMetadata>("sourceMetadata", SourceMetadata);
+            writer.WriteStringValue("sourceName", SourceName);
             writer.WriteStringValue("subId", SubId);
             writer.WriteDateTimeOffsetValue("trustedFormCheckedAt", TrustedFormCheckedAt);
             writer.WriteDateTimeOffsetValue("trustedFormRejectedAt", TrustedFormRejectedAt);
