@@ -41,6 +41,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Date and time when this Leadping customer analytics was generated.</summary>
         public DateTimeOffset? GeneratedAt { get; set; }
+        /// <summary>Current outcomes for non-deleted, non-demo leads created in the selected period.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.CustomerLeadOutcomes? LeadOutcomes { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.CustomerLeadOutcomes LeadOutcomes { get; set; }
+#endif
         /// <summary>Collection of lead sources included with this Leadping customer analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Leadping.OpenApiClient.Models
                 { "automationHealth", n => { AutomationHealth = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CustomerAutomationHealth>(global::Leadping.OpenApiClient.Models.CustomerAutomationHealth.CreateFromDiscriminatorValue); } },
                 { "communicationUsage", n => { CommunicationUsage = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage>(global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage.CreateFromDiscriminatorValue); } },
                 { "generatedAt", n => { GeneratedAt = n.GetDateTimeOffsetValue(); } },
+                { "leadOutcomes", n => { LeadOutcomes = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CustomerLeadOutcomes>(global::Leadping.OpenApiClient.Models.CustomerLeadOutcomes.CreateFromDiscriminatorValue); } },
                 { "leadSources", n => { LeadSources = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerLeadSourceBreakdown>(global::Leadping.OpenApiClient.Models.CustomerLeadSourceBreakdown.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "leadTrend", n => { LeadTrend = n.GetObjectValue<global::Leadping.OpenApiClient.Models.CustomerLeadTrend>(global::Leadping.OpenApiClient.Models.CustomerLeadTrend.CreateFromDiscriminatorValue); } },
                 { "needsAttention", n => { NeedsAttention = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerNeedsAttentionItem>(global::Leadping.OpenApiClient.Models.CustomerNeedsAttentionItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -137,6 +146,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CustomerAutomationHealth>("automationHealth", AutomationHealth);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CustomerCommunicationUsage>("communicationUsage", CommunicationUsage);
             writer.WriteDateTimeOffsetValue("generatedAt", GeneratedAt);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CustomerLeadOutcomes>("leadOutcomes", LeadOutcomes);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerLeadSourceBreakdown>("leadSources", LeadSources);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.CustomerLeadTrend>("leadTrend", LeadTrend);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CustomerNeedsAttentionItem>("needsAttention", NeedsAttention);

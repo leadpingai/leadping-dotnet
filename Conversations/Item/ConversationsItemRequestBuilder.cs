@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.Conversations.Item.MarkHandled;
 using Leadping.OpenApiClient.Conversations.Item.MarkRead;
+using Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded;
 using Leadping.OpenApiClient.Conversations.Item.OutboundReadiness;
 using Leadping.OpenApiClient.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Leadping.OpenApiClient.Conversations.Item
         public global::Leadping.OpenApiClient.Conversations.Item.MarkRead.MarkReadRequestBuilder MarkRead
         {
             get => new global::Leadping.OpenApiClient.Conversations.Item.MarkRead.MarkReadRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The markReplyNeeded property</summary>
+        public global::Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded.MarkReplyNeededRequestBuilder MarkReplyNeeded
+        {
+            get => new global::Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded.MarkReplyNeededRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The outboundReadiness property</summary>
         public global::Leadping.OpenApiClient.Conversations.Item.OutboundReadiness.OutboundReadinessRequestBuilder OutboundReadiness
