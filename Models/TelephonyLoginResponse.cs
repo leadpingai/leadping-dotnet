@@ -25,6 +25,22 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp for expires at on this telephony login.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
+        /// <summary>Password for the organization&apos;s incoming SIP connection, when requested and configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IncomingPassword { get; set; }
+#nullable restore
+#else
+        public string IncomingPassword { get; set; }
+#endif
+        /// <summary>Username for the organization&apos;s incoming SIP connection, when requested and configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IncomingUsername { get; set; }
+#nullable restore
+#else
+        public string IncomingUsername { get; set; }
+#endif
         /// <summary>Password for this telephony login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +84,8 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "callbackToken", n => { CallbackToken = n.GetStringValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "incomingPassword", n => { IncomingPassword = n.GetStringValue(); } },
+                { "incomingUsername", n => { IncomingUsername = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -81,6 +99,8 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("callbackToken", CallbackToken);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
+            writer.WriteStringValue("incomingPassword", IncomingPassword);
+            writer.WriteStringValue("incomingUsername", IncomingUsername);
             writer.WriteStringValue("password", Password);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

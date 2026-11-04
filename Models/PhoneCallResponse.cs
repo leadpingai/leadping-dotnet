@@ -43,6 +43,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CallerId { get; set; }
 #endif
+        /// <summary>Provider session identity used to correlate device invitations and server lifecycle events.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallSessionId { get; set; }
+#nullable restore
+#else
+        public string CallSessionId { get; set; }
+#endif
         /// <summary>Messaging campaign identifier associated with this phone call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +122,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LeadId { get; set; }
+#endif
+        /// <summary>The matched lead&apos;s display name, when the caller belongs to a known lead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadName { get; set; }
+#nullable restore
+#else
+        public string LeadName { get; set; }
 #endif
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
@@ -204,6 +220,7 @@ namespace Leadping.OpenApiClient.Models
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "browserCallApproval", n => { BrowserCallApproval = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval>(global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval.CreateFromDiscriminatorValue); } },
+                { "callSessionId", n => { CallSessionId = n.GetStringValue(); } },
                 { "callerId", n => { CallerId = n.GetStringValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
                 { "consoleEntries", n => { ConsoleEntries = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>(global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -217,6 +234,7 @@ namespace Leadping.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
+                { "leadName", n => { LeadName = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
@@ -243,6 +261,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval>("browserCallApproval", BrowserCallApproval);
             writer.WriteStringValue("callerId", CallerId);
+            writer.WriteStringValue("callSessionId", CallSessionId);
             writer.WriteStringValue("campaignId", CampaignId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>("consoleEntries", ConsoleEntries);
             writer.WriteStringValue("conversationId", ConversationId);
@@ -255,6 +274,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("leadId", LeadId);
+            writer.WriteStringValue("leadName", LeadName);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);

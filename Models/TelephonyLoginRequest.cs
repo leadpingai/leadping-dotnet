@@ -23,6 +23,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.TelephonyLoginRequest_device Device { get; set; }
 #endif
+        /// <summary>Includes credentials for receiving calls to the authenticated organization.</summary>
+        public bool? IncludeIncoming { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.TelephonyLoginRequest"/> and sets the default values.
         /// </summary>
@@ -49,6 +51,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "device", n => { Device = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TelephonyLoginRequest_device>(global::Leadping.OpenApiClient.Models.TelephonyLoginRequest_device.CreateFromDiscriminatorValue); } },
+                { "includeIncoming", n => { IncludeIncoming = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -59,6 +62,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TelephonyLoginRequest_device>("device", Device);
+            writer.WriteBoolValue("includeIncoming", IncludeIncoming);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
