@@ -15,6 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Controls demo presentation for an individual platform admin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.UserResponse_adminDemoPreferences? AdminDemoPreferences { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.UserResponse_adminDemoPreferences AdminDemoPreferences { get; set; }
+#endif
         /// <summary>Identifies the Leadping subscription plan that determines organization features, allowances, and billing behavior.</summary>
         public global::Leadping.OpenApiClient.Models.UserResponse_billingPlan? BillingPlan { get; set; }
         /// <summary>Customer-safe billing state for a Leadping organization.</summary>
@@ -176,6 +184,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "adminDemoPreferences", n => { AdminDemoPreferences = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_adminDemoPreferences>(global::Leadping.OpenApiClient.Models.UserResponse_adminDemoPreferences.CreateFromDiscriminatorValue); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_billingPlan>(); } },
                 { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_billingState>(global::Leadping.OpenApiClient.Models.UserResponse_billingState.CreateFromDiscriminatorValue); } },
                 { "compliance", n => { Compliance = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>(global::Leadping.OpenApiClient.Models.UserResponse_compliance.CreateFromDiscriminatorValue); } },
@@ -208,6 +217,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_adminDemoPreferences>("adminDemoPreferences", AdminDemoPreferences);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.UserResponse_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_billingState>("billingState", BillingState);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserResponse_compliance>("compliance", Compliance);
