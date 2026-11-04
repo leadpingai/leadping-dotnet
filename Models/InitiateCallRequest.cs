@@ -47,6 +47,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LeadId { get; set; }
 #endif
+        /// <summary>Approve a call for the Portal to originate through WebRTC instead of dialing from the server.</summary>
+        public bool? OriginateFromBrowser { get; set; }
         /// <summary>Idempotency key used to prevent duplicate outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +65,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Connect the authenticated user&apos;s browser phone to the server-controlled destination call.</summary>
+        /// <summary>Connect the authenticated user&apos;s phone to a server-controlled destination call.</summary>
         public bool? UseBrowserPhone { get; set; }
         /// <summary>Indicates whether a user manually overrode Leadping&apos;s automatic number selection for this phone call initiation request.</summary>
         public bool? WasManuallyOverridden { get; set; }
@@ -96,6 +98,7 @@ namespace Leadping.OpenApiClient.Models
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
+                { "originateFromBrowser", n => { OriginateFromBrowser = n.GetBoolValue(); } },
                 { "outboundIdempotencyKey", n => { OutboundIdempotencyKey = n.GetStringValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "useBrowserPhone", n => { UseBrowserPhone = n.GetBoolValue(); } },
@@ -113,6 +116,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("leadId", LeadId);
+            writer.WriteBoolValue("originateFromBrowser", OriginateFromBrowser);
             writer.WriteStringValue("outboundIdempotencyKey", OutboundIdempotencyKey);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteBoolValue("useBrowserPhone", UseBrowserPhone);

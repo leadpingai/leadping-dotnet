@@ -68,7 +68,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_company Company { get; set; }
 #endif
-        /// <summary>Explicitly attests to SMS consent when consentCertificateType is Other. Allows manual texts only.</summary>
+        /// <summary>Explicitly attests to SMS consent when consentCertificateType is Other. Allows manual calls and texts only.</summary>
         public bool? ConsentAttested { get; set; }
         /// <summary>The provider responsible for a lead&apos;s consent certificate.</summary>
         public global::Leadping.OpenApiClient.Models.LeadIntakeRequest_consentCertificateType? ConsentCertificateType { get; set; }

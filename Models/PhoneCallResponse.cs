@@ -27,6 +27,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string BillingStatus { get; set; }
 #endif
+        /// <summary>Server-approved parameters for one outbound browser call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval? BrowserCallApproval { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval BrowserCallApproval { get; set; }
+#endif
         /// <summary>Caller ID phone number presented during the outbound call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,6 +203,7 @@ namespace Leadping.OpenApiClient.Models
                 { "answeredAt", n => { AnsweredAt = n.GetDateTimeOffsetValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
+                { "browserCallApproval", n => { BrowserCallApproval = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval>(global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval.CreateFromDiscriminatorValue); } },
                 { "callerId", n => { CallerId = n.GetStringValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
                 { "consoleEntries", n => { ConsoleEntries = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>(global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -232,6 +241,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("answeredAt", AnsweredAt);
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneCallResponse_browserCallApproval>("browserCallApproval", BrowserCallApproval);
             writer.WriteStringValue("callerId", CallerId);
             writer.WriteStringValue("campaignId", CampaignId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.CommunicationConsoleEntry>("consoleEntries", ConsoleEntries);

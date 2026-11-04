@@ -41,6 +41,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp for last used at on this organization switch option.</summary>
         public DateTimeOffset? LastUsedAt { get; set; }
+        /// <summary>Number of active members in this organization, excluding pending invitations.</summary>
+        public int? MemberCount { get; set; }
         /// <summary>The human-readable name shown for this organization switch option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +101,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lastUsedAt", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
+                { "memberCount", n => { MemberCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "needsAdminReview", n => { NeedsAdminReview = n.GetBoolValue(); } },
                 { "organizationStatus", n => { OrganizationStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_organizationStatus>(); } },
@@ -122,6 +125,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isCurrent", IsCurrent);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteDateTimeOffsetValue("lastUsedAt", LastUsedAt);
+            writer.WriteIntValue("memberCount", MemberCount);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("needsAdminReview", NeedsAdminReview);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationSwitchOption_organizationStatus>("organizationStatus", OrganizationStatus);

@@ -129,6 +129,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Direction { get; set; }
 #endif
+        /// <summary>Confirmed call talk time in seconds, when available.</summary>
+        public int? DurationSeconds { get; set; }
         /// <summary>Machine-readable error code returned while processing this event timeline table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -346,6 +348,7 @@ namespace Leadping.OpenApiClient.Models
                 { "deliveredAt", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "direction", n => { Direction = n.GetStringValue(); } },
+                { "durationSeconds", n => { DurationSeconds = n.GetIntValue(); } },
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 { "eventCategory", n => { EventCategory = n.GetStringValue(); } },
                 { "eventType", n => { EventType = n.GetStringValue(); } },
@@ -406,6 +409,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("deliveredAt", DeliveredAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("direction", Direction);
+            writer.WriteIntValue("durationSeconds", DurationSeconds);
             writer.WriteStringValue("errorCode", ErrorCode);
             writer.WriteStringValue("eventCategory", EventCategory);
             writer.WriteStringValue("eventType", EventType);
