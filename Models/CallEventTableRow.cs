@@ -13,6 +13,22 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallEventTableRow : IAdditionalDataHolder, IParsable
     {
+        /// <summary>The recorded display name of the actor who performed this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorDisplayName { get; set; }
+#nullable restore
+#else
+        public string ActorDisplayName { get; set; }
+#endif
+        /// <summary>The user who performed this action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorUserId { get; set; }
+#nullable restore
+#else
+        public string ActorUserId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UTC timestamp when the call was answered.</summary>
@@ -226,6 +242,8 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
                 { "answeredAt", n => { AnsweredAt = n.GetDateTimeOffsetValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billableSeconds", n => { BillableSeconds = n.GetIntValue(); } },
@@ -265,6 +283,8 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("actorDisplayName", ActorDisplayName);
+            writer.WriteStringValue("actorUserId", ActorUserId);
             writer.WriteDateTimeOffsetValue("answeredAt", AnsweredAt);
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteIntValue("billableSeconds", BillableSeconds);
