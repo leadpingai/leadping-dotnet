@@ -35,6 +35,8 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? LastPaymentMethodEventAt { get; set; }
         /// <summary>UTC timestamp when Leadping last processed a subscription event for the organization.</summary>
         public DateTimeOffset? LastSubscriptionEventAt { get; set; }
+        /// <summary>Number of billable phone numbers with Number Health enabled.</summary>
+        public long? NumberHealthQuantity { get; set; }
         /// <summary>Number of user licenses currently assigned to organization members.</summary>
         public long? OrganizationMemberAssignedQuantity { get; set; }
         /// <summary>Number of user licenses included in the organization&apos;s subscription plan.</summary>
@@ -79,6 +81,7 @@ namespace Leadping.OpenApiClient.Models
                 { "hasStripeCustomer", n => { HasStripeCustomer = n.GetBoolValue(); } },
                 { "lastPaymentMethodEventAt", n => { LastPaymentMethodEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastSubscriptionEventAt", n => { LastSubscriptionEventAt = n.GetDateTimeOffsetValue(); } },
+                { "numberHealthQuantity", n => { NumberHealthQuantity = n.GetLongValue(); } },
                 { "organizationMemberAssignedQuantity", n => { OrganizationMemberAssignedQuantity = n.GetLongValue(); } },
                 { "organizationMemberQuantity", n => { OrganizationMemberQuantity = n.GetLongValue(); } },
                 { "pendingBillingPlan", n => { PendingBillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan>(); } },
@@ -101,6 +104,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("hasStripeCustomer", HasStripeCustomer);
             writer.WriteDateTimeOffsetValue("lastPaymentMethodEventAt", LastPaymentMethodEventAt);
             writer.WriteDateTimeOffsetValue("lastSubscriptionEventAt", LastSubscriptionEventAt);
+            writer.WriteLongValue("numberHealthQuantity", NumberHealthQuantity);
             writer.WriteLongValue("organizationMemberAssignedQuantity", OrganizationMemberAssignedQuantity);
             writer.WriteLongValue("organizationMemberQuantity", OrganizationMemberQuantity);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationBillingState_pendingBillingPlan>("pendingBillingPlan", PendingBillingPlan);

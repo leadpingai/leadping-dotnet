@@ -47,6 +47,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress BillingAddress { get; set; }
 #endif
+        /// <summary>Stored billing contact email for the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingContactEmail { get; set; }
+#nullable restore
+#else
+        public string BillingContactEmail { get; set; }
+#endif
         /// <summary>Name used for invoices, receipts, and payment processor billing records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -241,6 +249,7 @@ namespace Leadping.OpenApiClient.Models
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetDoubleValue(); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress>(global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress.CreateFromDiscriminatorValue); } },
+                { "billingContactEmail", n => { BillingContactEmail = n.GetStringValue(); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingPlan>(); } },
                 { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState>(global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState.CreateFromDiscriminatorValue); } },
@@ -284,6 +293,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
             writer.WriteDoubleValue("autoRefillTrigger", AutoRefillTrigger);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress>("billingAddress", BillingAddress);
+            writer.WriteStringValue("billingContactEmail", BillingContactEmail);
             writer.WriteStringValue("billingName", BillingName);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState>("billingState", BillingState);
