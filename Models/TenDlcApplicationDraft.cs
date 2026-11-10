@@ -15,10 +15,38 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether campaign content is age gated.</summary>
+        public bool? AgeGated { get; set; }
+        /// <summary>Whether the campaign subscription renews automatically.</summary>
+        public bool? AutoRenewal { get; set; }
+        /// <summary>Legal entity type registered with Telnyx.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BrandEntityType { get; set; }
+#nullable restore
+#else
+        public string BrandEntityType { get; set; }
+#endif
         /// <summary>Defines the provider lifecycle for an individual 10DLC brand or campaign.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? BrandStatus { get; set; }
+        /// <summary>Individual representative email required for public-company verification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BusinessContactEmail { get; set; }
+#nullable restore
+#else
+        public string BusinessContactEmail { get; set; }
+#endif
         /// <summary>Defines the provider lifecycle for an individual 10DLC brand or campaign.</summary>
         public global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus? CampaignStatus { get; set; }
+        /// <summary>Legal business city.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? City { get; set; }
+#nullable restore
+#else
+        public string City { get; set; }
+#endif
         /// <summary>Company name for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +87,24 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ContactPhone { get; set; }
 #endif
+        /// <summary>ISO two-letter country of registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country { get; set; }
+#nullable restore
+#else
+        public string Country { get; set; }
+#endif
+        /// <summary>Whether messages concern direct lending or loan arrangements.</summary>
+        public bool? DirectLending { get; set; }
+        /// <summary>Customer-facing brand or DBA name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName { get; set; }
+#nullable restore
+#else
+        public string DisplayName { get; set; }
+#endif
         /// <summary>EIN for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,8 +113,36 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Ein { get; set; }
 #endif
+        /// <summary>Whether campaign messages contain links.</summary>
+        public bool? EmbeddedLink { get; set; }
+        /// <summary>Representative embedded link submitted for review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmbeddedLinkSample { get; set; }
+#nullable restore
+#else
+        public string EmbeddedLinkSample { get; set; }
+#endif
+        /// <summary>Whether campaign messages contain phone numbers.</summary>
+        public bool? EmbeddedPhone { get; set; }
         /// <summary>Expected monthly volume for this 10DLC application draft.</summary>
         public int? ExpectedMonthlyVolume { get; set; }
+        /// <summary>Comma-separated help keywords.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HelpKeywords { get; set; }
+#nullable restore
+#else
+        public string HelpKeywords { get; set; }
+#endif
+        /// <summary>Help response with customer-care information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HelpMessage { get; set; }
+#nullable restore
+#else
+        public string HelpMessage { get; set; }
+#endif
         /// <summary>The Telnyx brand vertical for this 10DLC application draft. The JSON name is retained for backward compatibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +151,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Industry { get; set; }
 #endif
+        /// <summary>Whether the brand resells services to other businesses.</summary>
+        public bool? IsReseller { get; set; }
         /// <summary>UTC timestamp for last submitted at on this 10DLC application draft.</summary>
         public DateTimeOffset? LastSubmittedAt { get; set; }
         /// <summary>The message examples included with this 10DLC application draft.</summary>
@@ -95,6 +171,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> MissingFields { get; set; }
 #endif
+        /// <summary>Whether the campaign uses a number pool.</summary>
+        public bool? NumberPool { get; set; }
+        /// <summary>Comma-separated opt-in keywords.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OptinKeywords { get; set; }
+#nullable restore
+#else
+        public string OptinKeywords { get; set; }
+#endif
         /// <summary>Opt in language for this 10DLC application draft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +188,38 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string OptInLanguage { get; set; }
+#endif
+        /// <summary>Opt-in confirmation response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OptinMessage { get; set; }
+#nullable restore
+#else
+        public string OptinMessage { get; set; }
+#endif
+        /// <summary>Comma-separated opt-out keywords.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OptoutKeywords { get; set; }
+#nullable restore
+#else
+        public string OptoutKeywords { get; set; }
+#endif
+        /// <summary>Opt-out confirmation response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OptoutMessage { get; set; }
+#nullable restore
+#else
+        public string OptoutMessage { get; set; }
+#endif
+        /// <summary>Legal business postal code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PostalCode { get; set; }
+#nullable restore
+#else
+        public string PostalCode { get; set; }
 #endif
         /// <summary>Public privacy-policy URL that explains how messaging recipient data is handled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,6 +237,54 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RejectionReason { get; set; }
 #endif
+        /// <summary>Legal business state or region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? State { get; set; }
+#nullable restore
+#else
+        public string State { get; set; }
+#endif
+        /// <summary>Public-company stock exchange.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StockExchange { get; set; }
+#nullable restore
+#else
+        public string StockExchange { get; set; }
+#endif
+        /// <summary>Public-company stock ticker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StockSymbol { get; set; }
+#nullable restore
+#else
+        public string StockSymbol { get; set; }
+#endif
+        /// <summary>Legal business street address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Street { get; set; }
+#nullable restore
+#else
+        public string Street { get; set; }
+#endif
+        /// <summary>Whether the program responds to help keywords.</summary>
+        public bool? SubscriberHelp { get; set; }
+        /// <summary>Whether subscribers opt in before messaging.</summary>
+        public bool? SubscriberOptin { get; set; }
+        /// <summary>Whether the program supports opt-out keywords.</summary>
+        public bool? SubscriberOptout { get; set; }
+        /// <summary>Selected sub-use cases for a mixed campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SubUseCases { get; set; }
+#nullable restore
+#else
+        public List<string> SubUseCases { get; set; }
+#endif
+        /// <summary>Acceptance of the carrier campaign terms.</summary>
+        public bool? TermsAndConditions { get; set; }
         /// <summary>Public terms-of-service URL governing the messaging program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,22 +348,51 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ageGated", n => { AgeGated = n.GetBoolValue(); } },
+                { "autoRenewal", n => { AutoRenewal = n.GetBoolValue(); } },
+                { "brandEntityType", n => { BrandEntityType = n.GetStringValue(); } },
                 { "brandStatus", n => { BrandStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>(); } },
+                { "businessContactEmail", n => { BusinessContactEmail = n.GetStringValue(); } },
                 { "campaignStatus", n => { CampaignStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>(); } },
+                { "city", n => { City = n.GetStringValue(); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "complianceWarnings", n => { ComplianceWarnings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "contactEmail", n => { ContactEmail = n.GetStringValue(); } },
                 { "contactName", n => { ContactName = n.GetStringValue(); } },
                 { "contactPhone", n => { ContactPhone = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "directLending", n => { DirectLending = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
+                { "embeddedLink", n => { EmbeddedLink = n.GetBoolValue(); } },
+                { "embeddedLinkSample", n => { EmbeddedLinkSample = n.GetStringValue(); } },
+                { "embeddedPhone", n => { EmbeddedPhone = n.GetBoolValue(); } },
                 { "expectedMonthlyVolume", n => { ExpectedMonthlyVolume = n.GetIntValue(); } },
+                { "helpKeywords", n => { HelpKeywords = n.GetStringValue(); } },
+                { "helpMessage", n => { HelpMessage = n.GetStringValue(); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
+                { "isReseller", n => { IsReseller = n.GetBoolValue(); } },
                 { "lastSubmittedAt", n => { LastSubmittedAt = n.GetDateTimeOffsetValue(); } },
                 { "messageExamples", n => { MessageExamples = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "missingFields", n => { MissingFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "numberPool", n => { NumberPool = n.GetBoolValue(); } },
                 { "optInLanguage", n => { OptInLanguage = n.GetStringValue(); } },
+                { "optinKeywords", n => { OptinKeywords = n.GetStringValue(); } },
+                { "optinMessage", n => { OptinMessage = n.GetStringValue(); } },
+                { "optoutKeywords", n => { OptoutKeywords = n.GetStringValue(); } },
+                { "optoutMessage", n => { OptoutMessage = n.GetStringValue(); } },
+                { "postalCode", n => { PostalCode = n.GetStringValue(); } },
                 { "privacyPolicyUrl", n => { PrivacyPolicyUrl = n.GetStringValue(); } },
                 { "rejectionReason", n => { RejectionReason = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "stockExchange", n => { StockExchange = n.GetStringValue(); } },
+                { "stockSymbol", n => { StockSymbol = n.GetStringValue(); } },
+                { "street", n => { Street = n.GetStringValue(); } },
+                { "subUseCases", n => { SubUseCases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "subscriberHelp", n => { SubscriberHelp = n.GetBoolValue(); } },
+                { "subscriberOptin", n => { SubscriberOptin = n.GetBoolValue(); } },
+                { "subscriberOptout", n => { SubscriberOptout = n.GetBoolValue(); } },
+                { "termsAndConditions", n => { TermsAndConditions = n.GetBoolValue(); } },
                 { "termsUrl", n => { TermsUrl = n.GetStringValue(); } },
                 { "trustedFormRequired", n => { TrustedFormRequired = n.GetBoolValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -214,22 +409,51 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("ageGated", AgeGated);
+            writer.WriteBoolValue("autoRenewal", AutoRenewal);
+            writer.WriteStringValue("brandEntityType", BrandEntityType);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>("brandStatus", BrandStatus);
+            writer.WriteStringValue("businessContactEmail", BusinessContactEmail);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.TenDlcRegistrationStatus>("campaignStatus", CampaignStatus);
+            writer.WriteStringValue("city", City);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteCollectionOfPrimitiveValues<string>("complianceWarnings", ComplianceWarnings);
             writer.WriteStringValue("contactEmail", ContactEmail);
             writer.WriteStringValue("contactName", ContactName);
             writer.WriteStringValue("contactPhone", ContactPhone);
+            writer.WriteStringValue("country", Country);
+            writer.WriteBoolValue("directLending", DirectLending);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("ein", Ein);
+            writer.WriteBoolValue("embeddedLink", EmbeddedLink);
+            writer.WriteStringValue("embeddedLinkSample", EmbeddedLinkSample);
+            writer.WriteBoolValue("embeddedPhone", EmbeddedPhone);
             writer.WriteIntValue("expectedMonthlyVolume", ExpectedMonthlyVolume);
+            writer.WriteStringValue("helpKeywords", HelpKeywords);
+            writer.WriteStringValue("helpMessage", HelpMessage);
             writer.WriteStringValue("industry", Industry);
+            writer.WriteBoolValue("isReseller", IsReseller);
             writer.WriteDateTimeOffsetValue("lastSubmittedAt", LastSubmittedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("messageExamples", MessageExamples);
             writer.WriteCollectionOfPrimitiveValues<string>("missingFields", MissingFields);
+            writer.WriteBoolValue("numberPool", NumberPool);
+            writer.WriteStringValue("optinKeywords", OptinKeywords);
             writer.WriteStringValue("optInLanguage", OptInLanguage);
+            writer.WriteStringValue("optinMessage", OptinMessage);
+            writer.WriteStringValue("optoutKeywords", OptoutKeywords);
+            writer.WriteStringValue("optoutMessage", OptoutMessage);
+            writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("privacyPolicyUrl", PrivacyPolicyUrl);
             writer.WriteStringValue("rejectionReason", RejectionReason);
+            writer.WriteStringValue("state", State);
+            writer.WriteStringValue("stockExchange", StockExchange);
+            writer.WriteStringValue("stockSymbol", StockSymbol);
+            writer.WriteStringValue("street", Street);
+            writer.WriteBoolValue("subscriberHelp", SubscriberHelp);
+            writer.WriteBoolValue("subscriberOptin", SubscriberOptin);
+            writer.WriteBoolValue("subscriberOptout", SubscriberOptout);
+            writer.WriteCollectionOfPrimitiveValues<string>("subUseCases", SubUseCases);
+            writer.WriteBoolValue("termsAndConditions", TermsAndConditions);
             writer.WriteStringValue("termsUrl", TermsUrl);
             writer.WriteBoolValue("trustedFormRequired", TrustedFormRequired);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
