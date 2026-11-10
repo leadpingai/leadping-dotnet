@@ -7,6 +7,10 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EventTableRow_selectionReason
     {
+        [EnumMember(Value = "NearestLocation")]
+        #pragma warning disable CS1591
+        NearestLocation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "StickyConversation")]
         #pragma warning disable CS1591
         StickyConversation,

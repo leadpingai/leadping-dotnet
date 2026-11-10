@@ -55,6 +55,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CountryCode { get; set; }
 #endif
+        /// <summary>Whether the coordinates represent an approximate phone-number region rather than a resolved city.</summary>
+        public bool? IsCoordinateApproximate { get; set; }
         /// <summary>Geographic location metadata for the phone number, lead, or lookup result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +119,7 @@ namespace Leadping.OpenApiClient.Models
                 { "coordinate", n => { Coordinate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate>(global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate.CreateFromDiscriminatorValue); } },
                 { "coordinateSource", n => { CoordinateSource = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource>(global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource.CreateFromDiscriminatorValue); } },
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
+                { "isCoordinateApproximate", n => { IsCoordinateApproximate = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
@@ -135,6 +138,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinate>("coordinate", Coordinate);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_coordinateSource>("coordinateSource", CoordinateSource);
             writer.WriteStringValue("countryCode", CountryCode);
+            writer.WriteBoolValue("isCoordinateApproximate", IsCoordinateApproximate);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("timeZoneId", TimeZoneId);
