@@ -15,10 +15,26 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Customer-safe explanation when calling is unavailable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallBlockedReason { get; set; }
+#nullable restore
+#else
+        public string CallBlockedReason { get; set; }
+#endif
         /// <summary>Whether the lead can currently be called after evaluating applicable contact hours, suppression, and consent rules.</summary>
         public bool? CanCall { get; set; }
         /// <summary>Whether the lead can currently be texted after evaluating applicable contact hours, suppression, and consent rules.</summary>
         public bool? CanText { get; set; }
+        /// <summary>Customer-safe explanation when texting is unavailable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TextBlockedReason { get; set; }
+#nullable restore
+#else
+        public string TextBlockedReason { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.LeadContactabilityResponse"/> and sets the default values.
         /// </summary>
@@ -44,8 +60,10 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callBlockedReason", n => { CallBlockedReason = n.GetStringValue(); } },
                 { "canCall", n => { CanCall = n.GetBoolValue(); } },
                 { "canText", n => { CanText = n.GetBoolValue(); } },
+                { "textBlockedReason", n => { TextBlockedReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +73,10 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("callBlockedReason", CallBlockedReason);
             writer.WriteBoolValue("canCall", CanCall);
             writer.WriteBoolValue("canText", CanText);
+            writer.WriteStringValue("textBlockedReason", TextBlockedReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
