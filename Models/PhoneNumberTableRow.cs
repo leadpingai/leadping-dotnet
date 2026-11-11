@@ -77,8 +77,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RoutingSummary { get; set; }
 #endif
-        /// <summary>Indicates whether a phone number&apos;s channel capacity is increasing, decreasing, or stable.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_smsRampDirection? SmsRampDirection { get; set; }
         /// <summary>Indicates whether SMS messaging is ready for this organization or phone number.</summary>
         public bool? SmsReady { get; set; }
         /// <summary>10DLC campaign status associated with this sender or SMS event.</summary>
@@ -97,8 +95,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Indicates whether a phone number&apos;s channel capacity is increasing, decreasing, or stable.</summary>
-        public global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_voiceRampDirection? VoiceRampDirection { get; set; }
         /// <summary>Indicates whether voice calling is ready for this organization or phone number.</summary>
         public bool? VoiceReady { get; set; }
         /// <summary>Messaging and calling warmup for a Leadping phone number.</summary>
@@ -144,11 +140,9 @@ namespace Leadping.OpenApiClient.Models
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "ownership", n => { Ownership = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOwnership>(); } },
                 { "routingSummary", n => { RoutingSummary = n.GetStringValue(); } },
-                { "smsRampDirection", n => { SmsRampDirection = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_smsRampDirection>(); } },
                 { "smsReady", n => { SmsReady = n.GetBoolValue(); } },
                 { "tenDlcCampaignStatus", n => { TenDlcCampaignStatus = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "voiceRampDirection", n => { VoiceRampDirection = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_voiceRampDirection>(); } },
                 { "voiceReady", n => { VoiceReady = n.GetBoolValue(); } },
                 { "warmup", n => { Warmup = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>(global::Leadping.OpenApiClient.Models.PhoneNumberReadiness.CreateFromDiscriminatorValue); } },
             };
@@ -170,11 +164,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOwnership>("ownership", Ownership);
             writer.WriteStringValue("routingSummary", RoutingSummary);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_smsRampDirection>("smsRampDirection", SmsRampDirection);
             writer.WriteBoolValue("smsReady", SmsReady);
             writer.WriteStringValue("tenDlcCampaignStatus", TenDlcCampaignStatus);
             writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberTableRow_voiceRampDirection>("voiceRampDirection", VoiceRampDirection);
             writer.WriteBoolValue("voiceReady", VoiceReady);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness>("warmup", Warmup);
             writer.WriteAdditionalData(AdditionalData);

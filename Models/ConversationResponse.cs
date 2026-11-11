@@ -35,7 +35,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AvatarUrl { get; set; }
 #endif
-        /// <summary>Stored compliance status of the associated lead; not a live call-readiness guarantee.</summary>
+        /// <summary>Consent verification status of the associated lead; not a live call-readiness guarantee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComplianceStatus { get; set; }
