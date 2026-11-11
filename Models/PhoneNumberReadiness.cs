@@ -27,6 +27,14 @@ namespace Leadping.OpenApiClient.Models
         public int? ProgressPercent { get; set; }
         /// <summary>Describes whether an organization is configured and permitted to send SMS or MMS traffic through Leadping.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state? State { get; set; }
+        /// <summary>Hourly local reputation-risk estimate using 24-hour, seven-day, and thirty-day traffic evidence.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_trafficHealth? TrafficHealth { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_trafficHealth TrafficHealth { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberReadiness"/> and sets the default values.
         /// </summary>
@@ -58,6 +66,7 @@ namespace Leadping.OpenApiClient.Models
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>(); } },
                 { "progressPercent", n => { ProgressPercent = n.GetIntValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state>(); } },
+                { "trafficHealth", n => { TrafficHealth = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_trafficHealth>(global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_trafficHealth.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,6 +82,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_healthStatus>("healthStatus", HealthStatus);
             writer.WriteIntValue("progressPercent", ProgressPercent);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_state>("state", State);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberReadiness_trafficHealth>("trafficHealth", TrafficHealth);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

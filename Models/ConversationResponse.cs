@@ -35,6 +35,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AvatarUrl { get; set; }
 #endif
+        /// <summary>Stored compliance status of the associated lead; not a live call-readiness guarantee.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ComplianceStatus { get; set; }
+#nullable restore
+#else
+        public string ComplianceStatus { get; set; }
+#endif
         /// <summary>Summary schema for Leadping API current lead status change summary data used in dashboards and reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +196,7 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
+                { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "eventVersion", n => { EventVersion = n.GetLongValue(); } },
@@ -224,6 +233,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
+            writer.WriteStringValue("complianceStatus", ComplianceStatus);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
             writer.WriteLongValue("eventVersion", EventVersion);

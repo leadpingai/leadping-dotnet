@@ -77,6 +77,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The isDemo property</summary>
         public bool? IsDemo { get; set; }
+        /// <summary>The lastActiveAt property</summary>
+        public DateTimeOffset? LastActiveAt { get; set; }
         /// <summary>The date and time when this user last completed the Leadping sign-in flow.</summary>
         public DateTimeOffset? LastLoggedInAt { get; set; }
         /// <summary>Last name of the Leadping user.</summary>
@@ -194,6 +196,7 @@ namespace Leadping.OpenApiClient.Models
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
+                { "lastActiveAt", n => { LastActiveAt = n.GetDateTimeOffsetValue(); } },
                 { "lastLoggedInAt", n => { LastLoggedInAt = n.GetDateTimeOffsetValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "mobileDevicePreferences", n => { MobileDevicePreferences = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>(global::Leadping.OpenApiClient.Models.MobileDevicePreferences.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -227,6 +230,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
+            writer.WriteDateTimeOffsetValue("lastActiveAt", LastActiveAt);
             writer.WriteDateTimeOffsetValue("lastLoggedInAt", LastLoggedInAt);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MobileDevicePreferences>("mobileDevicePreferences", MobileDevicePreferences);

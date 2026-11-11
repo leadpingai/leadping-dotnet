@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.Models;
 using Leadping.OpenApiClient.Organizations.Me.Invitations;
+using Leadping.OpenApiClient.Organizations.Me.LeadAssignees;
 using Leadping.OpenApiClient.Organizations.Me.Members;
 using Leadping.OpenApiClient.Organizations.Me.Membership;
 using Leadping.OpenApiClient.Organizations.Me.OneZerodlc;
@@ -27,6 +28,11 @@ namespace Leadping.OpenApiClient.Organizations.Me
         public global::Leadping.OpenApiClient.Organizations.Me.Invitations.InvitationsRequestBuilder Invitations
         {
             get => new global::Leadping.OpenApiClient.Organizations.Me.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The leadAssignees property</summary>
+        public global::Leadping.OpenApiClient.Organizations.Me.LeadAssignees.LeadAssigneesRequestBuilder LeadAssignees
+        {
+            get => new global::Leadping.OpenApiClient.Organizations.Me.LeadAssignees.LeadAssigneesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The members property</summary>
         public global::Leadping.OpenApiClient.Organizations.Me.Members.MembersRequestBuilder Members
