@@ -273,6 +273,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Summary { get; set; }
 #endif
+        /// <summary>Tags affected by this event, including their display colors.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Leadping.OpenApiClient.Models.TagSummary>? Tags { get; set; }
+#nullable restore
+#else
+        public List<global::Leadping.OpenApiClient.Models.TagSummary> Tags { get; set; }
+#endif
         /// <summary>Timeline category used to group events for display and filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -375,6 +383,7 @@ namespace Leadping.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.EventTableRow_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>(global::Leadping.OpenApiClient.Models.TagSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timelineCategory", n => { TimelineCategory = n.GetStringValue(); } },
                 { "timelineType", n => { TimelineType = n.GetEnumValue<global::Leadping.OpenApiClient.Models.EventTimelineType>(); } },
                 { "toPhoneNumber", n => { ToPhoneNumber = n.GetStringValue(); } },
@@ -436,6 +445,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.EventTableRow_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);
             writer.WriteStringValue("summary", Summary);
+            writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.TagSummary>("tags", Tags);
             writer.WriteStringValue("timelineCategory", TimelineCategory);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.EventTimelineType>("timelineType", TimelineType);
             writer.WriteStringValue("toPhoneNumber", ToPhoneNumber);
