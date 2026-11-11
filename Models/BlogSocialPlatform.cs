@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Leadping.OpenApiClient.Models
 {
+    /// <summary>Social platform supported for publishing a blog article.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum BlogSocialPlatform
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "facebook")]
         #pragma warning disable CS1591

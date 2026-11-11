@@ -43,7 +43,9 @@ namespace Leadping.OpenApiClient.Sms.Item.Cancel
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 409 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.SmsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,7 +62,9 @@ namespace Leadping.OpenApiClient.Sms.Item.Cancel
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "409", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SmsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SmsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

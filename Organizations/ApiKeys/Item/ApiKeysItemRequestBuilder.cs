@@ -39,10 +39,12 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,10 +57,12 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -68,10 +72,12 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,10 +90,12 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyPreviewResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,7 +109,11 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 400 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 401 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 403 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 404 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 409 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 415 status code</exception>
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 429 status code</exception>
+        /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse?> PostAsync(global::Leadping.OpenApiClient.Models.OrganizationApiKeyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -118,7 +130,11 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
                 { "400", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "401", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "403", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "404", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "409", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "415", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
+                { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

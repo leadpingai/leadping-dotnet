@@ -83,7 +83,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the Leadping conversation has been archived.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Indicates whether the current user has unread activity in the conversation.</summary>
         public bool? IsUnread { get; set; }

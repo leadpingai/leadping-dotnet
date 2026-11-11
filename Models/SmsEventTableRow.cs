@@ -141,7 +141,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether automation created or triggered this SMS event table row.</summary>
         public bool? IsAutomated { get; set; }
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

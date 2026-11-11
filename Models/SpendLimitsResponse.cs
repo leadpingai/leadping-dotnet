@@ -15,19 +15,19 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dailyLimit property</summary>
+        /// <summary>Daily usage budget in USD. Null means no daily limit; zero stops new paid usage.</summary>
         public double? DailyLimit { get; set; }
-        /// <summary>The dailyResetsAt property</summary>
+        /// <summary>UTC timestamp when the next calendar day begins and daily spending resets.</summary>
         public DateTimeOffset? DailyResetsAt { get; set; }
-        /// <summary>The dailySpent property</summary>
+        /// <summary>Settled usage spending in USD for the current UTC calendar day.</summary>
         public double? DailySpent { get; set; }
-        /// <summary>The monthlyLimit property</summary>
+        /// <summary>Monthly usage budget in USD. Null means no monthly limit; zero stops new paid usage.</summary>
         public double? MonthlyLimit { get; set; }
-        /// <summary>The monthlyResetsAt property</summary>
+        /// <summary>UTC timestamp when the next calendar month begins and monthly spending resets.</summary>
         public DateTimeOffset? MonthlyResetsAt { get; set; }
-        /// <summary>The monthlySpent property</summary>
+        /// <summary>Settled usage spending in USD for the current UTC calendar month.</summary>
         public double? MonthlySpent { get; set; }
-        /// <summary>The reserved property</summary>
+        /// <summary>Pending usage reservations in USD.</summary>
         public double? Reserved { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SpendLimitsResponse"/> and sets the default values.

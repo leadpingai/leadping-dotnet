@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>The associated lead&apos;s profile image URL, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

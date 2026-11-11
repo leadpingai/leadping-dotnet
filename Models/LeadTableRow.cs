@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this lead is archived.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Last name of the lead, user, or contact represented by this lead table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

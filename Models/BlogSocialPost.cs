@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attemptedAt property</summary>
+        /// <summary>UTC timestamp of the publication attempt, or null if no attempt has been recorded.</summary>
         public DateTimeOffset? AttemptedAt { get; set; }
-        /// <summary>The error property</summary>
+        /// <summary>Details of the publication failure, when present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error { get; set; }
@@ -25,9 +25,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Error { get; set; }
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>Social platform supported for publishing a blog article.</summary>
         public global::Leadping.OpenApiClient.Models.BlogSocialPlatform? Platform { get; set; }
-        /// <summary>The postId property</summary>
+        /// <summary>Identifier assigned to the published post by the social platform, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostId { get; set; }

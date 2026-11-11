@@ -51,6 +51,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string FollowUpStatus { get; set; }
 #endif
+        /// <summary>Configured organization status ID, independent of its display name and history entry ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadStatusId { get; set; }
+#nullable restore
+#else
+        public string LeadStatusId { get; set; }
+#endif
         /// <summary>The operator or customer notes recorded for this lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +127,7 @@ namespace Leadping.OpenApiClient.Models
                 { "expectedCurrentStatusId", n => { ExpectedCurrentStatusId = n.GetStringValue(); } },
                 { "expectedRevision", n => { ExpectedRevision = n.GetLongValue(); } },
                 { "followUpStatus", n => { FollowUpStatus = n.GetStringValue(); } },
+                { "leadStatusId", n => { LeadStatusId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
@@ -142,6 +151,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("expectedCurrentStatusId", ExpectedCurrentStatusId);
             writer.WriteLongValue("expectedRevision", ExpectedRevision);
             writer.WriteStringValue("followUpStatus", FollowUpStatus);
+            writer.WriteStringValue("leadStatusId", LeadStatusId);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteStringValue("reason", Reason);

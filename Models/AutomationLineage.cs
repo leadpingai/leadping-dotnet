@@ -13,7 +13,7 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomationLineage : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The actionId property</summary>
+        /// <summary>Identifier of the action that produced the event, when applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionId { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<string> AutomationIds { get; set; }
 #endif
-        /// <summary>The rootEventId property</summary>
+        /// <summary>Identifier of the original event that started the automation chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RootEventId { get; set; }
@@ -39,7 +39,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RootEventId { get; set; }
 #endif
-        /// <summary>The runId property</summary>
+        /// <summary>Identifier of the automation run that produced the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RunId { get; set; }
@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RunId { get; set; }
 #endif
-        /// <summary>The triggerEventId property</summary>
+        /// <summary>Identifier of the event that directly triggered this run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerEventId { get; set; }

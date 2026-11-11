@@ -55,6 +55,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Configured organization status ID, independent of its display name and history entry ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadStatusId { get; set; }
+#nullable restore
+#else
+        public string LeadStatusId { get; set; }
+#endif
         /// <summary>Current lead status change outcome assigned to the lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Leadping.OpenApiClient.Models
                 { "followUpCompletedAt", n => { FollowUpCompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "followUpDueAt", n => { FollowUpDueAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "leadStatusId", n => { LeadStatusId = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetLongValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_source>(); } },
@@ -120,6 +129,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("followUpCompletedAt", FollowUpCompletedAt);
             writer.WriteDateTimeOffsetValue("followUpDueAt", FollowUpDueAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("leadStatusId", LeadStatusId);
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteLongValue("revision", Revision);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_source>("source", Source);

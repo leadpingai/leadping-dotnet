@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Date and time when this Leadping analytics trend point was end.</summary>
+        /// <summary>Exclusive UTC end of the analytics time bucket.</summary>
         public DateTimeOffset? EndAt { get; set; }
         /// <summary>Human-readable label for this Leadping analytics trend point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>Date and time when this Leadping analytics trend point was start.</summary>
+        /// <summary>Inclusive UTC start of the analytics time bucket.</summary>
         public DateTimeOffset? StartAt { get; set; }
         /// <summary>Value associated with this Leadping analytics trend point.</summary>
         public double? Value { get; set; }

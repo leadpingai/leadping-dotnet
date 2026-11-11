@@ -123,7 +123,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the lead has been archived in Leadping.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Public Leadping API schema for lead attribution metadata data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

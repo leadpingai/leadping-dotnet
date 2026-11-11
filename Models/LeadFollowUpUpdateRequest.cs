@@ -17,9 +17,9 @@ namespace Leadping.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The new time, or null to complete the follow-up.</summary>
         public DateTimeOffset? DueAt { get; set; }
-        /// <summary>The expectedRevision property</summary>
+        /// <summary>Revision observed by the client; a mismatch causes a conflict instead of overwriting a newer follow-up.</summary>
         public long? ExpectedRevision { get; set; }
-        /// <summary>The expectedStatusId property</summary>
+        /// <summary>Identifier of the current status observed by the client; a mismatch causes a conflict.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpectedStatusId { get; set; }

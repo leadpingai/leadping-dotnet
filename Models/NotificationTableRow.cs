@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Whether this notification is read.</summary>
         public bool? IsRead { get; set; }

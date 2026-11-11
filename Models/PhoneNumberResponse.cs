@@ -27,7 +27,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }

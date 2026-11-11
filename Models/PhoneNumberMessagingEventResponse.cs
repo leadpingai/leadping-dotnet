@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Indicates whether the recipient has opted out of further SMS communication.</summary>
         public bool? IsOptOut { get; set; }

@@ -35,6 +35,10 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the lead status has been archived.</summary>
         public bool? IsArchived { get; set; }
+        /// <summary>Whether this is the default destination for outbound call attempts.</summary>
+        public bool? IsDefaultCalledStatus { get; set; }
+        /// <summary>Whether this is the built-in initial status for new leads.</summary>
+        public bool? IsInitialStatus { get; set; }
         /// <summary>Date and time when the lead status was last modified.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Display name of the lead status.</summary>
@@ -84,6 +88,8 @@ namespace Leadping.OpenApiClient.Models
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
+                { "isDefaultCalledStatus", n => { IsDefaultCalledStatus = n.GetBoolValue(); } },
+                { "isInitialStatus", n => { IsInitialStatus = n.GetBoolValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
@@ -101,6 +107,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
+            writer.WriteBoolValue("isDefaultCalledStatus", IsDefaultCalledStatus);
+            writer.WriteBoolValue("isInitialStatus", IsInitialStatus);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);

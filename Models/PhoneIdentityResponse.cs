@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>The most recent time lookup data was enriched.</summary>
         public DateTimeOffset? LastEnrichedAt { get; set; }

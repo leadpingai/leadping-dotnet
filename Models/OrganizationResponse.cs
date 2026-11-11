@@ -33,6 +33,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_address Address { get; set; }
 #endif
+        /// <summary>Automatically advances new leads after a confirmed outbound call attempt. Enabled by default.</summary>
+        public bool? AutomaticallyMarkLeadsCalled { get; set; }
         /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
         public double? AutoRefillAmount { get; set; }
         /// <summary>Indicates whether automatic wallet refill is enabled for the organization.</summary>
@@ -80,6 +82,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string BillingTaxId { get; set; }
+#endif
+        /// <summary>Destination status for outbound call attempts. Null uses the built-in Called status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CalledLeadStatusId { get; set; }
+#nullable restore
+#else
+        public string CalledLeadStatusId { get; set; }
 #endif
         /// <summary>Describes organization compliance policy data used in Leadping API requests and responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +143,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
@@ -248,12 +258,14 @@ namespace Leadping.OpenApiClient.Models
                 { "autoRefillAmount", n => { AutoRefillAmount = n.GetDoubleValue(); } },
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetDoubleValue(); } },
+                { "automaticallyMarkLeadsCalled", n => { AutomaticallyMarkLeadsCalled = n.GetBoolValue(); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress>(global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingContactEmail", n => { BillingContactEmail = n.GetStringValue(); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
                 { "billingPlan", n => { BillingPlan = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingPlan>(); } },
                 { "billingState", n => { BillingState = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState>(global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState.CreateFromDiscriminatorValue); } },
                 { "billingTaxId", n => { BillingTaxId = n.GetStringValue(); } },
+                { "calledLeadStatusId", n => { CalledLeadStatusId = n.GetStringValue(); } },
                 { "compliancePolicy", n => { CompliancePolicy = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_compliancePolicy>(global::Leadping.OpenApiClient.Models.OrganizationResponse_compliancePolicy.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -289,6 +301,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("accountBalance", AccountBalance);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_activation>("activation", Activation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_address>("address", Address);
+            writer.WriteBoolValue("automaticallyMarkLeadsCalled", AutomaticallyMarkLeadsCalled);
             writer.WriteDoubleValue("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
             writer.WriteDoubleValue("autoRefillTrigger", AutoRefillTrigger);
@@ -298,6 +311,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingPlan>("billingPlan", BillingPlan);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingState>("billingState", BillingState);
             writer.WriteStringValue("billingTaxId", BillingTaxId);
+            writer.WriteStringValue("calledLeadStatusId", CalledLeadStatusId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_compliancePolicy>("compliancePolicy", CompliancePolicy);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);

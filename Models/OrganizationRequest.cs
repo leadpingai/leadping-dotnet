@@ -23,6 +23,16 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationRequest_address Address { get; set; }
 #endif
+        /// <summary>Automatically advances new leads after a confirmed outbound call attempt. Enabled by default.</summary>
+        public bool? AutomaticallyMarkLeadsCalled { get; set; }
+        /// <summary>Destination status for outbound call attempts. Null uses the built-in Called status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CalledLeadStatusId { get; set; }
+#nullable restore
+#else
+        public string CalledLeadStatusId { get; set; }
+#endif
         /// <summary>Human-readable description that explains this organization profile request to API users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +141,8 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_address>(global::Leadping.OpenApiClient.Models.OrganizationRequest_address.CreateFromDiscriminatorValue); } },
+                { "automaticallyMarkLeadsCalled", n => { AutomaticallyMarkLeadsCalled = n.GetBoolValue(); } },
+                { "calledLeadStatusId", n => { CalledLeadStatusId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
                 { "isYoungerThan90", n => { IsYoungerThan90 = n.GetBoolValue(); } },
@@ -152,6 +164,8 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_address>("address", Address);
+            writer.WriteBoolValue("automaticallyMarkLeadsCalled", AutomaticallyMarkLeadsCalled);
+            writer.WriteStringValue("calledLeadStatusId", CalledLeadStatusId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("ein", Ein);
             writer.WriteBoolValue("isYoungerThan90", IsYoungerThan90);

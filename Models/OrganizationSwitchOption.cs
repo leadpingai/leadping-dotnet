@@ -37,7 +37,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this organization switch option is current.</summary>
         public bool? IsCurrent { get; set; }
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp for last used at on this organization switch option.</summary>
         public DateTimeOffset? LastUsedAt { get; set; }

@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this lead or record is archived.</summary>
         public bool? IsArchived { get; set; }
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }

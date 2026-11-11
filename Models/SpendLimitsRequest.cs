@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dailyLimit property</summary>
+        /// <summary>Daily usage budget in USD for the UTC calendar day. Null removes the limit; zero stops new paid usage.</summary>
         public double? DailyLimit { get; set; }
-        /// <summary>The monthlyLimit property</summary>
+        /// <summary>Monthly usage budget in USD for the UTC calendar month. Null removes the limit; zero stops new paid usage.</summary>
         public double? MonthlyLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SpendLimitsRequest"/> and sets the default values.

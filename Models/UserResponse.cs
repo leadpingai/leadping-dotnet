@@ -75,9 +75,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
-        /// <summary>The lastActiveAt property</summary>
+        /// <summary>UTC timestamp of the user&apos;s most recently recorded activity, when available.</summary>
         public DateTimeOffset? LastActiveAt { get; set; }
         /// <summary>The date and time when this user last completed the Leadping sign-in flow.</summary>
         public DateTimeOffset? LastLoggedInAt { get; set; }

@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completeFrom property</summary>
+        /// <summary>Earliest UTC timestamp from which evidence is complete, or null when no complete range is known.</summary>
         public DateTimeOffset? CompleteFrom { get; set; }
-        /// <summary>The detail property</summary>
+        /// <summary>Explanation of the available evidence and any gaps in coverage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Detail { get; set; }
@@ -25,7 +25,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Detail { get; set; }
 #endif
-        /// <summary>The isPartial property</summary>
+        /// <summary>Whether missing historical evidence may make the reported metrics incomplete.</summary>
         public bool? IsPartial { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AnalyticsCoverage"/> and sets the default values.

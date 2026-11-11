@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The callerNumber property</summary>
+        /// <summary>Approved caller ID phone number for this outbound call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallerNumber { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CallerNumber { get; set; }
 #endif
-        /// <summary>The clientState property</summary>
+        /// <summary>Opaque server-issued state to pass unchanged when initiating the approved call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientState { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string ClientState { get; set; }
 #endif
-        /// <summary>The destinationNumber property</summary>
+        /// <summary>Approved destination phone number for this outbound call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationNumber { get; set; }
@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string DestinationNumber { get; set; }
 #endif
-        /// <summary>The expiresAt property</summary>
+        /// <summary>UTC timestamp after which this call approval is no longer valid.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The maximumDurationSeconds property</summary>
+        /// <summary>Maximum permitted duration of the call, in seconds.</summary>
         public int? MaximumDurationSeconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BrowserCallApproval"/> and sets the default values.

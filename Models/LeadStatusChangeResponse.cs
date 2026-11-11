@@ -79,7 +79,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isDemo property</summary>
+        /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Whether this lead status change is missed call follow up.</summary>
         public bool? IsMissedCallFollowUp { get; set; }
@@ -114,6 +114,14 @@ namespace Leadping.OpenApiClient.Models
 #nullable restore
 #else
         public string LeadName { get; set; }
+#endif
+        /// <summary>Configured organization status ID, independent of its display name and history entry ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadStatusId { get; set; }
+#nullable restore
+#else
+        public string LeadStatusId { get; set; }
 #endif
         /// <summary>Unique identifier of the new lead status change associated with this Leadping lead status change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -248,6 +256,7 @@ namespace Leadping.OpenApiClient.Models
                 { "leadEmail", n => { LeadEmail = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
+                { "leadStatusId", n => { LeadStatusId = n.GetStringValue(); } },
                 { "newLeadStatusChangeId", n => { NewLeadStatusChangeId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "oldLeadStatusChangeId", n => { OldLeadStatusChangeId = n.GetStringValue(); } },
@@ -291,6 +300,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("leadEmail", LeadEmail);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadName", LeadName);
+            writer.WriteStringValue("leadStatusId", LeadStatusId);
             writer.WriteStringValue("newLeadStatusChangeId", NewLeadStatusChangeId);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("oldLeadStatusChangeId", OldLeadStatusChangeId);

@@ -15,9 +15,9 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The showDemoData property</summary>
+        /// <summary>Whether demo records are included in the administrator&apos;s views.</summary>
         public bool? ShowDemoData { get; set; }
-        /// <summary>The showDemoMarkers property</summary>
+        /// <summary>Whether demo records display a demo indicator.</summary>
         public bool? ShowDemoMarkers { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AdminDemoPreferences"/> and sets the default values.

@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authorName property</summary>
+        /// <summary>Public display name of the article author, when provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorName { get; set; }
@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AuthorName { get; set; }
 #endif
-        /// <summary>The category property</summary>
+        /// <summary>Editorial category assigned to the article, when present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -31,7 +31,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The content property</summary>
+        /// <summary>Saved article body before server-side rendering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -39,9 +39,9 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>The contentUpdatedAt property</summary>
+        /// <summary>UTC timestamp of the most recent editorial content update.</summary>
         public DateTimeOffset? ContentUpdatedAt { get; set; }
-        /// <summary>The coverImageAlt property</summary>
+        /// <summary>Alternative text describing the cover image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CoverImageAlt { get; set; }
@@ -51,7 +51,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The processed cover image height in pixels, when known.</summary>
         public int? CoverImageHeight { get; set; }
-        /// <summary>The coverImageUrl property</summary>
+        /// <summary>URL of the article&apos;s cover image, when available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CoverImageUrl { get; set; }
@@ -61,9 +61,9 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The processed cover image width in pixels, when known.</summary>
         public int? CoverImageWidth { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>UTC timestamp when the article was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The excerpt property</summary>
+        /// <summary>Short plain-language preview of the article.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Excerpt { get; set; }
@@ -71,7 +71,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Excerpt { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Leadping identifier of the blog article.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -89,13 +89,13 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether saved image references are awaiting Engine processing.</summary>
         public bool? ImagesProcessing { get; set; }
-        /// <summary>The isFeatured property</summary>
+        /// <summary>Whether the article is selected for featured placement.</summary>
         public bool? IsFeatured { get; set; }
-        /// <summary>The isPublished property</summary>
+        /// <summary>Whether the article is currently published and available to public readers.</summary>
         public bool? IsPublished { get; set; }
-        /// <summary>The lastPublishedAt property</summary>
+        /// <summary>UTC timestamp when the article last changed from unpublished to published.</summary>
         public DateTimeOffset? LastPublishedAt { get; set; }
-        /// <summary>The metaDescription property</summary>
+        /// <summary>Optional article description used in search-engine metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MetaDescription { get; set; }
@@ -103,11 +103,11 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string MetaDescription { get; set; }
 #endif
-        /// <summary>The modifiedAt property</summary>
+        /// <summary>UTC timestamp when the article was last modified.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The publishedAt property</summary>
+        /// <summary>UTC publication timestamp shown for the article, when set.</summary>
         public DateTimeOffset? PublishedAt { get; set; }
-        /// <summary>The renderedHtml property</summary>
+        /// <summary>Server-rendered and sanitized HTML for displaying the article.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenderedHtml { get; set; }
@@ -115,7 +115,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RenderedHtml { get; set; }
 #endif
-        /// <summary>The seoTitle property</summary>
+        /// <summary>Optional title used in search-engine metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SeoTitle { get; set; }
@@ -131,7 +131,7 @@ namespace Leadping.OpenApiClient.Models
         public bool? ShareOnLinkedIn { get; set; }
         /// <summary>Whether to create a X post after publication.</summary>
         public bool? ShareOnX { get; set; }
-        /// <summary>The slug property</summary>
+        /// <summary>URL slug used to retrieve the published article.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -139,7 +139,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The socialPosts property</summary>
+        /// <summary>Publication attempts and provider post identifiers for each social platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Leadping.OpenApiClient.Models.BlogSocialPost>? SocialPosts { get; set; }
@@ -147,7 +147,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public List<global::Leadping.OpenApiClient.Models.BlogSocialPost> SocialPosts { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Public title of the article.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -155,7 +155,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The unpublishedAt property</summary>
+        /// <summary>UTC timestamp when the article last changed from published to unpublished.</summary>
         public DateTimeOffset? UnpublishedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.BlogArticleResponse"/> and sets the default values.
