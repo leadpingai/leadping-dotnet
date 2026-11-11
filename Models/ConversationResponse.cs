@@ -35,6 +35,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AvatarUrl { get; set; }
 #endif
+        /// <summary>Current manual voice eligibility, including contact hours. Populated on individual conversation reads. Sender readiness and billing are checked when calling; null means eligibility has not been evaluated.</summary>
+        public bool? CanCallNow { get; set; }
+        /// <summary>Current manual SMS eligibility, including contact hours. Populated on individual conversation reads. Sender readiness and billing are checked when sending; null means eligibility has not been evaluated.</summary>
+        public bool? CanTextNow { get; set; }
         /// <summary>Consent verification status of the associated lead; not a live call-readiness guarantee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,6 +200,8 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
+                { "canCallNow", n => { CanCallNow = n.GetBoolValue(); } },
+                { "canTextNow", n => { CanTextNow = n.GetBoolValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
                 { "currentLeadStatus", n => { CurrentLeadStatus = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>(global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
@@ -233,6 +239,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
+            writer.WriteBoolValue("canCallNow", CanCallNow);
+            writer.WriteBoolValue("canTextNow", CanTextNow);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_currentLeadStatus>("currentLeadStatus", CurrentLeadStatus);
             writer.WriteStringValue("email", Email);
