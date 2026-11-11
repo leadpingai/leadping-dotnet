@@ -25,6 +25,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>UTC timestamp of the user&apos;s most recent activity in Leadping.</summary>
+        public DateTimeOffset? LastActiveAt { get; set; }
         /// <summary>The billing status for this user&apos;s organization license.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +90,7 @@ namespace Leadping.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "lastActiveAt", n => { LastActiveAt = n.GetDateTimeOffsetValue(); } },
                 { "licenseBillingStatus", n => { LicenseBillingStatus = n.GetStringValue(); } },
                 { "licenseRenewalDate", n => { LicenseRenewalDate = n.GetDateTimeOffsetValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>(); } },
@@ -105,6 +108,7 @@ namespace Leadping.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("lastActiveAt", LastActiveAt);
             writer.WriteStringValue("licenseBillingStatus", LicenseBillingStatus);
             writer.WriteDateTimeOffsetValue("licenseRenewalDate", LicenseRenewalDate);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OrganizationMemberRole>("role", Role);
