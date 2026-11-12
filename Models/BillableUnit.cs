@@ -31,6 +31,10 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         Voice_minute,
         #pragma warning restore CS1591
+        [EnumMember(Value = "call_attempt")]
+        #pragma warning disable CS1591
+        Call_attempt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "phone_number_month")]
         #pragma warning disable CS1591
         Phone_number_month,
