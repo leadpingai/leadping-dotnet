@@ -23,6 +23,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationRequest_address Address { get; set; }
 #endif
+        /// <summary>Restores the previous status after the last upcoming appointment completes or becomes overdue.</summary>
+        public bool? AutomaticallyClearAppointmentSet { get; set; }
+        /// <summary>Sets the lead to Appointment set when an appointment is created.</summary>
+        public bool? AutomaticallyMarkAppointmentSet { get; set; }
         /// <summary>Automatically advances new leads after a confirmed outbound call attempt. Enabled by default.</summary>
         public bool? AutomaticallyMarkLeadsCalled { get; set; }
         /// <summary>Destination status for outbound call attempts. Null uses the built-in Called status.</summary>
@@ -141,6 +145,8 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_address>(global::Leadping.OpenApiClient.Models.OrganizationRequest_address.CreateFromDiscriminatorValue); } },
+                { "automaticallyClearAppointmentSet", n => { AutomaticallyClearAppointmentSet = n.GetBoolValue(); } },
+                { "automaticallyMarkAppointmentSet", n => { AutomaticallyMarkAppointmentSet = n.GetBoolValue(); } },
                 { "automaticallyMarkLeadsCalled", n => { AutomaticallyMarkLeadsCalled = n.GetBoolValue(); } },
                 { "calledLeadStatusId", n => { CalledLeadStatusId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -164,6 +170,8 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationRequest_address>("address", Address);
+            writer.WriteBoolValue("automaticallyClearAppointmentSet", AutomaticallyClearAppointmentSet);
+            writer.WriteBoolValue("automaticallyMarkAppointmentSet", AutomaticallyMarkAppointmentSet);
             writer.WriteBoolValue("automaticallyMarkLeadsCalled", AutomaticallyMarkLeadsCalled);
             writer.WriteStringValue("calledLeadStatusId", CalledLeadStatusId);
             writer.WriteStringValue("description", Description);

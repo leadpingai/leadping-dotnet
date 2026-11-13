@@ -33,6 +33,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.OrganizationResponse_address Address { get; set; }
 #endif
+        /// <summary>Restores the previous status after the last upcoming appointment completes or becomes overdue.</summary>
+        public bool? AutomaticallyClearAppointmentSet { get; set; }
+        /// <summary>Sets the lead to Appointment set when an appointment is created.</summary>
+        public bool? AutomaticallyMarkAppointmentSet { get; set; }
         /// <summary>Automatically advances new leads after a confirmed outbound call attempt. Enabled by default.</summary>
         public bool? AutomaticallyMarkLeadsCalled { get; set; }
         /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
@@ -258,6 +262,8 @@ namespace Leadping.OpenApiClient.Models
                 { "autoRefillAmount", n => { AutoRefillAmount = n.GetDoubleValue(); } },
                 { "autoRefillEnabled", n => { AutoRefillEnabled = n.GetBoolValue(); } },
                 { "autoRefillTrigger", n => { AutoRefillTrigger = n.GetDoubleValue(); } },
+                { "automaticallyClearAppointmentSet", n => { AutomaticallyClearAppointmentSet = n.GetBoolValue(); } },
+                { "automaticallyMarkAppointmentSet", n => { AutomaticallyMarkAppointmentSet = n.GetBoolValue(); } },
                 { "automaticallyMarkLeadsCalled", n => { AutomaticallyMarkLeadsCalled = n.GetBoolValue(); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress>(global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingContactEmail", n => { BillingContactEmail = n.GetStringValue(); } },
@@ -301,6 +307,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDoubleValue("accountBalance", AccountBalance);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_activation>("activation", Activation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_address>("address", Address);
+            writer.WriteBoolValue("automaticallyClearAppointmentSet", AutomaticallyClearAppointmentSet);
+            writer.WriteBoolValue("automaticallyMarkAppointmentSet", AutomaticallyMarkAppointmentSet);
             writer.WriteBoolValue("automaticallyMarkLeadsCalled", AutomaticallyMarkLeadsCalled);
             writer.WriteDoubleValue("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
