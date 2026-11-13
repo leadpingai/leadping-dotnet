@@ -16,6 +16,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Email the assigned agent when a callback is due.</summary>
+        public bool? AppointmentReminderEmailEnabled { get; set; }
+        /// <summary>Send push notifications for due callback appointments.</summary>
+        public bool? AppointmentReminderEnabled { get; set; }
+        /// <summary>Show callback reminder dialogs in the Portal.</summary>
+        public bool? AppointmentReminderInAppEnabled { get; set; }
+        /// <summary>Text the assigned agent when a callback is due, subject to SMS consent.</summary>
+        public bool? AppointmentReminderSmsEnabled { get; set; }
         /// <summary>Indicates whether automation failed email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? AutomationFailedEmailEnabled { get; set; }
         /// <summary>Whether automation failed notifications are enabled for this user notification preferences.</summary>
@@ -48,10 +56,12 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedEnabled { get; set; }
         /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
-        /// <summary>Whether push, SMS, and automation alerts wait until the user&apos;s daily quiet hours end.</summary>
+        /// <summary>Whether notification delivery respects the user&apos;s daily quiet hours.</summary>
         public bool? QuietHoursEnabled { get; set; }
         /// <summary>The exclusive local end of daily quiet hours.</summary>
         public Time? QuietHoursEnd { get; set; }
+        /// <summary>Queue notifications until quiet hours end; when false, skip their external delivery.</summary>
+        public bool? QuietHoursQueueEnabled { get; set; }
         /// <summary>The inclusive local start of daily quiet hours.</summary>
         public Time? QuietHoursStart { get; set; }
         /// <summary>The time zone used for quiet hours, including daylight saving changes.</summary>
@@ -115,6 +125,10 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "appointmentReminderEmailEnabled", n => { AppointmentReminderEmailEnabled = n.GetBoolValue(); } },
+                { "appointmentReminderEnabled", n => { AppointmentReminderEnabled = n.GetBoolValue(); } },
+                { "appointmentReminderInAppEnabled", n => { AppointmentReminderInAppEnabled = n.GetBoolValue(); } },
+                { "appointmentReminderSmsEnabled", n => { AppointmentReminderSmsEnabled = n.GetBoolValue(); } },
                 { "automationFailedEmailEnabled", n => { AutomationFailedEmailEnabled = n.GetBoolValue(); } },
                 { "automationFailedEnabled", n => { AutomationFailedEnabled = n.GetBoolValue(); } },
                 { "automationFailedSmsEnabled", n => { AutomationFailedSmsEnabled = n.GetBoolValue(); } },
@@ -133,6 +147,7 @@ namespace Leadping.OpenApiClient.Models
                 { "paymentFailedSmsEnabled", n => { PaymentFailedSmsEnabled = n.GetBoolValue(); } },
                 { "quietHoursEnabled", n => { QuietHoursEnabled = n.GetBoolValue(); } },
                 { "quietHoursEnd", n => { QuietHoursEnd = n.GetTimeValue(); } },
+                { "quietHoursQueueEnabled", n => { QuietHoursQueueEnabled = n.GetBoolValue(); } },
                 { "quietHoursStart", n => { QuietHoursStart = n.GetTimeValue(); } },
                 { "quietHoursTimeZoneId", n => { QuietHoursTimeZoneId = n.GetStringValue(); } },
                 { "smsConsentCertificate", n => { SmsConsentCertificate = n.GetObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate>(global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate.CreateFromDiscriminatorValue); } },
@@ -155,6 +170,10 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("appointmentReminderEmailEnabled", AppointmentReminderEmailEnabled);
+            writer.WriteBoolValue("appointmentReminderEnabled", AppointmentReminderEnabled);
+            writer.WriteBoolValue("appointmentReminderInAppEnabled", AppointmentReminderInAppEnabled);
+            writer.WriteBoolValue("appointmentReminderSmsEnabled", AppointmentReminderSmsEnabled);
             writer.WriteBoolValue("automationFailedEmailEnabled", AutomationFailedEmailEnabled);
             writer.WriteBoolValue("automationFailedEnabled", AutomationFailedEnabled);
             writer.WriteBoolValue("automationFailedSmsEnabled", AutomationFailedSmsEnabled);
@@ -173,6 +192,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("paymentFailedSmsEnabled", PaymentFailedSmsEnabled);
             writer.WriteBoolValue("quietHoursEnabled", QuietHoursEnabled);
             writer.WriteTimeValue("quietHoursEnd", QuietHoursEnd);
+            writer.WriteBoolValue("quietHoursQueueEnabled", QuietHoursQueueEnabled);
             writer.WriteTimeValue("quietHoursStart", QuietHoursStart);
             writer.WriteStringValue("quietHoursTimeZoneId", QuietHoursTimeZoneId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.UserNotificationPreferences_smsConsentCertificate>("smsConsentCertificate", SmsConsentCertificate);

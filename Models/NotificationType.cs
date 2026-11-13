@@ -7,6 +7,10 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum NotificationType
     {
+        [EnumMember(Value = "Appointment")]
+        #pragma warning disable CS1591
+        Appointment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "General")]
         #pragma warning disable CS1591
         General,

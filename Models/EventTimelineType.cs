@@ -39,6 +39,10 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         LeadCreated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "Appointment")]
+        #pragma warning disable CS1591
+        Appointment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LeadUpdated")]
         #pragma warning disable CS1591
         LeadUpdated,

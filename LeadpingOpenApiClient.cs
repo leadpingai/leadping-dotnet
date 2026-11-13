@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.A2a;
 using Leadping.OpenApiClient.Analytics;
+using Leadping.OpenApiClient.Appointments;
 using Leadping.OpenApiClient.Automations;
 using Leadping.OpenApiClient.Blog;
 using Leadping.OpenApiClient.Conversations;
@@ -54,6 +55,11 @@ namespace Leadping.OpenApiClient
         public global::Leadping.OpenApiClient.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Leadping.OpenApiClient.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The appointments property</summary>
+        public global::Leadping.OpenApiClient.Appointments.AppointmentsRequestBuilder Appointments
+        {
+            get => new global::Leadping.OpenApiClient.Appointments.AppointmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The automations property</summary>
         public global::Leadping.OpenApiClient.Automations.AutomationsRequestBuilder Automations
