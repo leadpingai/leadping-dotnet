@@ -39,6 +39,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.SmsEventTableRow_automation? Automation { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.SmsEventTableRow_automation Automation { get; set; }
+#endif
         /// <summary>Monetary amount billed for this Leadping communication or transaction.</summary>
         public double? BillableAmount { get; set; }
         /// <summary>Billing state for this communication, charge, or transaction.</summary>
@@ -285,6 +293,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
                 { "actorLeadId", n => { ActorLeadId = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
+                { "automation", n => { Automation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SmsEventTableRow_automation>(global::Leadping.OpenApiClient.Models.SmsEventTableRow_automation.CreateFromDiscriminatorValue); } },
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
@@ -337,6 +346,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
             writer.WriteStringValue("actorLeadId", ActorLeadId);
             writer.WriteStringValue("actorUserId", ActorUserId);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SmsEventTableRow_automation>("automation", Automation);
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
             writer.WriteDateTimeOffsetValue("blockedAt", BlockedAt);
