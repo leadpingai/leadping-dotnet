@@ -85,6 +85,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CancelReason { get; set; }
 #endif
+        /// <summary>Whether the current user authored this editable note.</summary>
+        public bool? CanEditNote { get; set; }
         /// <summary>Compliance action applied to this message, lead, or sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,6 +203,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>UTC timestamp when Leadping will retry this event timeline table row.</summary>
         public DateTimeOffset? NextRetryAt { get; set; }
+        /// <summary>Whether the note has been edited.</summary>
+        public bool? NoteEdited { get; set; }
         /// <summary>Phone number ID selected for outbound delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -347,6 +351,7 @@ namespace Leadping.OpenApiClient.Models
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
                 { "blockedAt", n => { BlockedAt = n.GetDateTimeOffsetValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
+                { "canEditNote", n => { CanEditNote = n.GetBoolValue(); } },
                 { "cancelReason", n => { CancelReason = n.GetStringValue(); } },
                 { "canceledAt", n => { CanceledAt = n.GetDateTimeOffsetValue(); } },
                 { "complianceAction", n => { ComplianceAction = n.GetStringValue(); } },
@@ -368,6 +373,7 @@ namespace Leadping.OpenApiClient.Models
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "nextRetryAt", n => { NextRetryAt = n.GetDateTimeOffsetValue(); } },
+                { "noteEdited", n => { NoteEdited = n.GetBoolValue(); } },
                 { "outboundPhoneNumberId", n => { OutboundPhoneNumberId = n.GetStringValue(); } },
                 { "queuedAt", n => { QueuedAt = n.GetDateTimeOffsetValue(); } },
                 { "receivedAt", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
@@ -411,6 +417,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("campaignId", CampaignId);
             writer.WriteDateTimeOffsetValue("canceledAt", CanceledAt);
             writer.WriteStringValue("cancelReason", CancelReason);
+            writer.WriteBoolValue("canEditNote", CanEditNote);
             writer.WriteStringValue("complianceAction", ComplianceAction);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
@@ -430,6 +437,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteDateTimeOffsetValue("nextRetryAt", NextRetryAt);
+            writer.WriteBoolValue("noteEdited", NoteEdited);
             writer.WriteStringValue("outboundPhoneNumberId", OutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("queuedAt", QueuedAt);
             writer.WriteDateTimeOffsetValue("receivedAt", ReceivedAt);
