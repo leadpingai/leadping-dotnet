@@ -7,6 +7,10 @@ namespace Leadping.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OrganizationInvitationStatus
     {
+        [EnumMember(Value = "Declined")]
+        #pragma warning disable CS1591
+        Declined,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Awaiting confirmation")]
         #pragma warning disable CS1591
         AwaitingConfirmation,

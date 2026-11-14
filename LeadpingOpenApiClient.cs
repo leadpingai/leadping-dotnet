@@ -8,6 +8,7 @@ using Leadping.OpenApiClient.Blog;
 using Leadping.OpenApiClient.Conversations;
 using Leadping.OpenApiClient.Events;
 using Leadping.OpenApiClient.Feedback;
+using Leadping.OpenApiClient.Invitations;
 using Leadping.OpenApiClient.LeadStatusChanges;
 using Leadping.OpenApiClient.LeadStatuses;
 using Leadping.OpenApiClient.Leads;
@@ -85,6 +86,11 @@ namespace Leadping.OpenApiClient
         public global::Leadping.OpenApiClient.Feedback.FeedbackRequestBuilder Feedback
         {
             get => new global::Leadping.OpenApiClient.Feedback.FeedbackRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The invitations property</summary>
+        public global::Leadping.OpenApiClient.Invitations.InvitationsRequestBuilder Invitations
+        {
+            get => new global::Leadping.OpenApiClient.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The leads property</summary>
         public global::Leadping.OpenApiClient.Leads.LeadsRequestBuilder Leads
