@@ -95,6 +95,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
+        /// <summary>Geographic state or region associated with the phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? State { get; set; }
+#nullable restore
+#else
+        public string State { get; set; }
+#endif
         /// <summary>Organization ID used to determine this phone number&apos;s outbound eligibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,6 +149,7 @@ namespace Leadping.OpenApiClient.Models
                 { "reasonLabel", n => { ReasonLabel = n.GetStringValue(); } },
                 { "selectionReason", n => { SelectionReason = n.GetEnumValue<global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionReason>(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
             };
         }
@@ -164,6 +173,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("reasonLabel", ReasonLabel);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.OutgoingNumberSelectionReason>("selectionReason", SelectionReason);
             writer.WriteStringValue("sourceId", SourceId);
+            writer.WriteStringValue("state", State);
             writer.WriteStringValue("teamId", TeamId);
             writer.WriteAdditionalData(AdditionalData);
         }
