@@ -15,6 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Explains why outbound calls are unavailable for this sender.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallUnavailableReason { get; set; }
+#nullable restore
+#else
+        public string CallUnavailableReason { get; set; }
+#endif
         /// <summary>Messaging campaign identifier associated with this eligible outgoing phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,8 +31,12 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
+        /// <summary>Whether this sender is ready for outbound calls.</summary>
+        public bool? CanCall { get; set; }
         /// <summary>Indicates whether Leadping can send outbound messages using this eligible outgoing phone number.</summary>
         public bool? CanSend { get; set; }
+        /// <summary>Whether this sender is ready for outbound texts.</summary>
+        public bool? CanText { get; set; }
         /// <summary>Human-readable phone number shown in Leadping UI and API responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +123,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string TeamId { get; set; }
 #endif
+        /// <summary>Explains why outbound texts are unavailable for this sender.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TextUnavailableReason { get; set; }
+#nullable restore
+#else
+        public string TextUnavailableReason { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse"/> and sets the default values.
         /// </summary>
@@ -136,8 +156,11 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callUnavailableReason", n => { CallUnavailableReason = n.GetStringValue(); } },
                 { "campaignId", n => { CampaignId = n.GetStringValue(); } },
+                { "canCall", n => { CanCall = n.GetBoolValue(); } },
                 { "canSend", n => { CanSend = n.GetBoolValue(); } },
+                { "canText", n => { CanText = n.GetBoolValue(); } },
                 { "displayNumber", n => { DisplayNumber = n.GetStringValue(); } },
                 { "healthLabel", n => { HealthLabel = n.GetStringValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse_healthStatus>(); } },
@@ -151,6 +174,7 @@ namespace Leadping.OpenApiClient.Models
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetStringValue(); } },
+                { "textUnavailableReason", n => { TextUnavailableReason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -160,8 +184,11 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("callUnavailableReason", CallUnavailableReason);
             writer.WriteStringValue("campaignId", CampaignId);
+            writer.WriteBoolValue("canCall", CanCall);
             writer.WriteBoolValue("canSend", CanSend);
+            writer.WriteBoolValue("canText", CanText);
             writer.WriteStringValue("displayNumber", DisplayNumber);
             writer.WriteStringValue("healthLabel", HealthLabel);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.EligibleOutgoingNumberResponse_healthStatus>("healthStatus", HealthStatus);
@@ -175,6 +202,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("teamId", TeamId);
+            writer.WriteStringValue("textUnavailableReason", TextUnavailableReason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
