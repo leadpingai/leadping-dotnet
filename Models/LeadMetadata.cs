@@ -187,6 +187,18 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string SellerLeadId { get; set; }
 #endif
+        /// <summary>Interest expressed in the lead&apos;s first inbound text reply, independent of contact consent.</summary>
+        public global::Leadping.OpenApiClient.Models.LeadMetadata_sentiment? Sentiment { get; set; }
+        /// <summary>Completion time, including a first reply that has no positive or negative sentiment.</summary>
+        public DateTimeOffset? SentimentAnalyzedAt { get; set; }
+        /// <summary>First inbound SMS selected for sentiment analysis. Later replies cannot replace it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SentimentMessageId { get; set; }
+#nullable restore
+#else
+        public string SentimentMessageId { get; set; }
+#endif
         /// <summary>Phone number where SMS consent was captured or evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -349,6 +361,9 @@ namespace Leadping.OpenApiClient.Models
                 { "pubId", n => { PubId = n.GetStringValue(); } },
                 { "referrer", n => { Referrer = n.GetStringValue(); } },
                 { "sellerLeadId", n => { SellerLeadId = n.GetStringValue(); } },
+                { "sentiment", n => { Sentiment = n.GetEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sentiment>(); } },
+                { "sentimentAnalyzedAt", n => { SentimentAnalyzedAt = n.GetDateTimeOffsetValue(); } },
+                { "sentimentMessageId", n => { SentimentMessageId = n.GetStringValue(); } },
                 { "smsConsentPhoneNumber", n => { SmsConsentPhoneNumber = n.GetStringValue(); } },
                 { "smsConsentStatus", n => { SmsConsentStatus = n.GetStringValue(); } },
                 { "smsHelpRequestedAt", n => { SmsHelpRequestedAt = n.GetDateTimeOffsetValue(); } },
@@ -405,6 +420,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("pubId", PubId);
             writer.WriteStringValue("referrer", Referrer);
             writer.WriteStringValue("sellerLeadId", SellerLeadId);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.LeadMetadata_sentiment>("sentiment", Sentiment);
+            writer.WriteDateTimeOffsetValue("sentimentAnalyzedAt", SentimentAnalyzedAt);
+            writer.WriteStringValue("sentimentMessageId", SentimentMessageId);
             writer.WriteStringValue("smsConsentPhoneNumber", SmsConsentPhoneNumber);
             writer.WriteStringValue("smsConsentStatus", SmsConsentStatus);
             writer.WriteDateTimeOffsetValue("smsHelpRequestedAt", SmsHelpRequestedAt);

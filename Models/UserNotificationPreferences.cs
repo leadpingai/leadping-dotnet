@@ -56,6 +56,12 @@ namespace Leadping.OpenApiClient.Models
         public bool? PaymentFailedEnabled { get; set; }
         /// <summary>Indicates whether payment failed SMS functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? PaymentFailedSmsEnabled { get; set; }
+        /// <summary>Email alerts when a lead&apos;s first text reply has positive sentiment.</summary>
+        public bool? PositiveSentimentEmailEnabled { get; set; }
+        /// <summary>Send push alerts when a lead&apos;s first text reply has positive sentiment.</summary>
+        public bool? PositiveSentimentEnabled { get; set; }
+        /// <summary>Text alerts for positive first replies, subject to notification SMS consent.</summary>
+        public bool? PositiveSentimentSmsEnabled { get; set; }
         /// <summary>Whether notification delivery respects the user&apos;s daily quiet hours.</summary>
         public bool? QuietHoursEnabled { get; set; }
         /// <summary>The exclusive local end of daily quiet hours.</summary>
@@ -145,6 +151,9 @@ namespace Leadping.OpenApiClient.Models
                 { "newLeadSmsEnabled", n => { NewLeadSmsEnabled = n.GetBoolValue(); } },
                 { "paymentFailedEnabled", n => { PaymentFailedEnabled = n.GetBoolValue(); } },
                 { "paymentFailedSmsEnabled", n => { PaymentFailedSmsEnabled = n.GetBoolValue(); } },
+                { "positiveSentimentEmailEnabled", n => { PositiveSentimentEmailEnabled = n.GetBoolValue(); } },
+                { "positiveSentimentEnabled", n => { PositiveSentimentEnabled = n.GetBoolValue(); } },
+                { "positiveSentimentSmsEnabled", n => { PositiveSentimentSmsEnabled = n.GetBoolValue(); } },
                 { "quietHoursEnabled", n => { QuietHoursEnabled = n.GetBoolValue(); } },
                 { "quietHoursEnd", n => { QuietHoursEnd = n.GetTimeValue(); } },
                 { "quietHoursQueueEnabled", n => { QuietHoursQueueEnabled = n.GetBoolValue(); } },
@@ -190,6 +199,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("newLeadSmsEnabled", NewLeadSmsEnabled);
             writer.WriteBoolValue("paymentFailedEnabled", PaymentFailedEnabled);
             writer.WriteBoolValue("paymentFailedSmsEnabled", PaymentFailedSmsEnabled);
+            writer.WriteBoolValue("positiveSentimentEmailEnabled", PositiveSentimentEmailEnabled);
+            writer.WriteBoolValue("positiveSentimentEnabled", PositiveSentimentEnabled);
+            writer.WriteBoolValue("positiveSentimentSmsEnabled", PositiveSentimentSmsEnabled);
             writer.WriteBoolValue("quietHoursEnabled", QuietHoursEnabled);
             writer.WriteTimeValue("quietHoursEnd", QuietHoursEnd);
             writer.WriteBoolValue("quietHoursQueueEnabled", QuietHoursQueueEnabled);
