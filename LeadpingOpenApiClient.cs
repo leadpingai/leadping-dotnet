@@ -12,6 +12,7 @@ using Leadping.OpenApiClient.Invitations;
 using Leadping.OpenApiClient.LeadStatusChanges;
 using Leadping.OpenApiClient.LeadStatuses;
 using Leadping.OpenApiClient.Leads;
+using Leadping.OpenApiClient.MessageTemplates;
 using Leadping.OpenApiClient.Notifications;
 using Leadping.OpenApiClient.Organizations;
 using Leadping.OpenApiClient.Outbound;
@@ -106,6 +107,11 @@ namespace Leadping.OpenApiClient
         public global::Leadping.OpenApiClient.LeadStatuses.LeadStatusesRequestBuilder LeadStatuses
         {
             get => new global::Leadping.OpenApiClient.LeadStatuses.LeadStatusesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The messageTemplates property</summary>
+        public global::Leadping.OpenApiClient.MessageTemplates.MessageTemplatesRequestBuilder MessageTemplates
+        {
+            get => new global::Leadping.OpenApiClient.MessageTemplates.MessageTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
         public global::Leadping.OpenApiClient.Notifications.NotificationsRequestBuilder Notifications
