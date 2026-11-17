@@ -65,6 +65,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
+        /// <summary>When local geography resolution completed, including when no geographic match exists. Prevents repeated resolution until an explicit rebuild or new carrier lookup.</summary>
+        public DateTimeOffset? ResolvedAt { get; set; }
         /// <summary>State, province, or region for the lead or organization postal address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +123,7 @@ namespace Leadping.OpenApiClient.Models
                 { "countryCode", n => { CountryCode = n.GetStringValue(); } },
                 { "isCoordinateApproximate", n => { IsCoordinateApproximate = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
+                { "resolvedAt", n => { ResolvedAt = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "timeZoneId", n => { TimeZoneId = n.GetStringValue(); } },
                 { "timeZoneSource", n => { TimeZoneSource = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource>(global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource.CreateFromDiscriminatorValue); } },
@@ -140,6 +143,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("countryCode", CountryCode);
             writer.WriteBoolValue("isCoordinateApproximate", IsCoordinateApproximate);
             writer.WriteStringValue("location", Location);
+            writer.WriteDateTimeOffsetValue("resolvedAt", ResolvedAt);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("timeZoneId", TimeZoneId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneNumberLocation_timeZoneSource>("timeZoneSource", TimeZoneSource);
