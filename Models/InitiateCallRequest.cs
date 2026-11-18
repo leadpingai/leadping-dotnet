@@ -49,7 +49,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Approve a call for the Portal to originate through WebRTC instead of dialing from the server.</summary>
         public bool? OriginateFromBrowser { get; set; }
-        /// <summary>Idempotency key used to prevent duplicate outbound delivery.</summary>
+        /// <summary>Reuse this key with the same call inputs when retrying an attempt. A replay returns the existing call without issuing another dial approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutboundIdempotencyKey { get; set; }

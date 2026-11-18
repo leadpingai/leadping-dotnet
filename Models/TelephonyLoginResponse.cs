@@ -23,7 +23,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string CallbackToken { get; set; }
 #endif
-        /// <summary>UTC timestamp for expires at on this telephony login.</summary>
+        /// <summary>UTC deadline for refreshing this authorized phone login.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>Password for the organization&apos;s incoming SIP connection, when requested and configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
