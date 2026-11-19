@@ -117,6 +117,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
+        /// <summary>The leadAvatarUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadAvatarUrl { get; set; }
+#nullable restore
+#else
+        public string LeadAvatarUrl { get; set; }
+#endif
         /// <summary>Lead ID associated with this call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -260,6 +268,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
+                { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadName", n => { LeadName = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
@@ -301,6 +310,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
+            writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadName", LeadName);
             writer.WriteStringValue("organization", Organization);

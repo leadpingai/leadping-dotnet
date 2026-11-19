@@ -159,6 +159,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.IdNamePair Lead { get; set; }
 #endif
+        /// <summary>The leadAvatarUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeadAvatarUrl { get; set; }
+#nullable restore
+#else
+        public string LeadAvatarUrl { get; set; }
+#endif
         /// <summary>Media attached to this SMS/MMS event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -314,6 +322,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
+                { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
@@ -367,6 +376,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isAutomated", IsAutomated);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("lead", Lead);
+            writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("organizationName", OrganizationName);
