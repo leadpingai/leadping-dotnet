@@ -41,6 +41,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>The at property</summary>
         public DateTimeOffset? At { get; set; }
+        /// <summary>The endAt property</summary>
+        public DateTimeOffset? EndAt { get; set; }
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +102,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actorName", n => { ActorName = n.GetStringValue(); } },
                 { "assignedToName", n => { AssignedToName = n.GetStringValue(); } },
                 { "at", n => { At = n.GetDateTimeOffsetValue(); } },
+                { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "reminderAt", n => { ReminderAt = n.GetDateTimeOffsetValue(); } },
                 { "revision", n => { Revision = n.GetLongValue(); } },
@@ -119,6 +122,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("actorName", ActorName);
             writer.WriteStringValue("assignedToName", AssignedToName);
             writer.WriteDateTimeOffsetValue("at", At);
+            writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteStringValue("notes", Notes);
             writer.WriteDateTimeOffsetValue("reminderAt", ReminderAt);
             writer.WriteLongValue("revision", Revision);

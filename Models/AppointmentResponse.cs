@@ -35,6 +35,8 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The dismissedAt property</summary>
         public DateTimeOffset? DismissedAt { get; set; }
+        /// <summary>The endAt property</summary>
+        public DateTimeOffset? EndAt { get; set; }
         /// <summary>The history property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,6 +188,7 @@ namespace Leadping.OpenApiClient.Models
                 { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dismissedAt", n => { DismissedAt = n.GetDateTimeOffsetValue(); } },
+                { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "history", n => { History = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AppointmentActivity>(global::Leadping.OpenApiClient.Models.AppointmentActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
@@ -218,6 +221,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("assignedToUserId", AssignedToUserId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteDateTimeOffsetValue("dismissedAt", DismissedAt);
+            writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.AppointmentActivity>("history", History);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);

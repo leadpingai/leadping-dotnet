@@ -23,6 +23,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AssignedToUserId { get; set; }
 #endif
+        /// <summary>The endAt property</summary>
+        public DateTimeOffset? EndAt { get; set; }
         /// <summary>The expectedRevision property</summary>
         public long? ExpectedRevision { get; set; }
         /// <summary>The leadId property</summary>
@@ -85,6 +87,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
+                { "endAt", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "expectedRevision", n => { ExpectedRevision = n.GetLongValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
@@ -101,6 +104,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignedToUserId", AssignedToUserId);
+            writer.WriteDateTimeOffsetValue("endAt", EndAt);
             writer.WriteLongValue("expectedRevision", ExpectedRevision);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("notes", Notes);
