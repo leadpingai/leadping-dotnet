@@ -27,6 +27,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? CanCall { get; set; }
         /// <summary>Whether the lead can currently be texted after evaluating applicable contact hours, suppression, and consent rules.</summary>
         public bool? CanText { get; set; }
+        /// <summary>Whether the stored phone lookup rules out texting this recipient.</summary>
+        public bool? SmsLineRestricted { get; set; }
         /// <summary>Customer-safe explanation when texting is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace Leadping.OpenApiClient.Models
                 { "callBlockedReason", n => { CallBlockedReason = n.GetStringValue(); } },
                 { "canCall", n => { CanCall = n.GetBoolValue(); } },
                 { "canText", n => { CanText = n.GetBoolValue(); } },
+                { "smsLineRestricted", n => { SmsLineRestricted = n.GetBoolValue(); } },
                 { "textBlockedReason", n => { TextBlockedReason = n.GetStringValue(); } },
             };
         }
@@ -76,6 +79,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("callBlockedReason", CallBlockedReason);
             writer.WriteBoolValue("canCall", CanCall);
             writer.WriteBoolValue("canText", CanText);
+            writer.WriteBoolValue("smsLineRestricted", SmsLineRestricted);
             writer.WriteStringValue("textBlockedReason", TextBlockedReason);
             writer.WriteAdditionalData(AdditionalData);
         }
