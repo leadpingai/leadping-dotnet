@@ -47,6 +47,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Name of the automation when it started.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AutomationName { get; set; }
+#nullable restore
+#else
+        public string AutomationName { get; set; }
+#endif
         /// <summary>Automation run ID opened from this automation event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -346,6 +354,7 @@ namespace Leadping.OpenApiClient.Models
                 { "actorEmail", n => { ActorEmail = n.GetStringValue(); } },
                 { "actorLeadId", n => { ActorLeadId = n.GetStringValue(); } },
                 { "actorUserId", n => { ActorUserId = n.GetStringValue(); } },
+                { "automationName", n => { AutomationName = n.GetStringValue(); } },
                 { "automationRunId", n => { AutomationRunId = n.GetStringValue(); } },
                 { "billableAmount", n => { BillableAmount = n.GetDoubleValue(); } },
                 { "billingStatus", n => { BillingStatus = n.GetStringValue(); } },
@@ -410,6 +419,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("actorEmail", ActorEmail);
             writer.WriteStringValue("actorLeadId", ActorLeadId);
             writer.WriteStringValue("actorUserId", ActorUserId);
+            writer.WriteStringValue("automationName", AutomationName);
             writer.WriteStringValue("automationRunId", AutomationRunId);
             writer.WriteDoubleValue("billableAmount", BillableAmount);
             writer.WriteStringValue("billingStatus", BillingStatus);
