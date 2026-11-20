@@ -171,7 +171,7 @@ namespace Leadping.OpenApiClient.Appointments
             /// <summary>Whether to return only due, undismissed reminders assigned to the current agent.</summary>
             [QueryParameter("dueOnly")]
             public bool? DueOnly { get; set; }
-            /// <summary>Whether to include completed and cancelled appointments. Ignored when dueOnly is true.</summary>
+            /// <summary>Whether to include completed, cancelled, and archived appointments. Ignored when dueOnly is true.</summary>
             [QueryParameter("includeClosed")]
             public bool? IncludeClosed { get; set; }
             /// <summary>An optional lead identifier to filter appointments.</summary>

@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*}", pathParameters)
+        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,textingAvailable*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*}", rawUrl)
+        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,textingAvailable*}", rawUrl)
         {
         }
         /// <summary>
@@ -117,9 +117,12 @@ namespace Leadping.OpenApiClient.Conversations.My
             [QueryParameter("archiveFilter")]
             public string ArchiveFilter { get; set; }
 #endif
-            /// <summary>Whether to include only conversations with contactable leads.</summary>
+            /// <summary>Whether to include only conversations where calling is available.</summary>
             [QueryParameter("contactable")]
             public bool? Contactable { get; set; }
+            /// <summary>Whether to include only conversations where texting is available.</summary>
+            [QueryParameter("textingAvailable")]
+            public bool? TextingAvailable { get; set; }
         }
     }
 }

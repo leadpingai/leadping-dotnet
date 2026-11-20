@@ -27,6 +27,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Defines phone-number outbound health states used by pacing.</summary>
         public global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus? HealthStatus { get; set; }
+        /// <summary>Next time an active reservation starts or expires and may change the reported usage.</summary>
+        public DateTimeOffset? NextReservationChangeAt { get; set; }
         /// <summary>Phone number associated with this Leadping outbound phone number capacity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +131,7 @@ namespace Leadping.OpenApiClient.Models
                 { "capacityAvailable", n => { CapacityAvailable = n.GetBoolValue(); } },
                 { "healthReason", n => { HealthReason = n.GetStringValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>(); } },
+                { "nextReservationChangeAt", n => { NextReservationChangeAt = n.GetDateTimeOffsetValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phoneNumberId", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "smsApproved", n => { SmsApproved = n.GetBoolValue(); } },
@@ -172,6 +175,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("capacityAvailable", CapacityAvailable);
             writer.WriteStringValue("healthReason", HealthReason);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.PhoneNumberOutboundHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteDateTimeOffsetValue("nextReservationChangeAt", NextReservationChangeAt);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteStringValue("phoneNumberId", PhoneNumberId);
             writer.WriteBoolValue("smsApproved", SmsApproved);
