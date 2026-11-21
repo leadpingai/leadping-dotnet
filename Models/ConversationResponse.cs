@@ -117,6 +117,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string LastSnippet { get; set; }
 #endif
+        /// <summary>Timestamp of the conversation activity shown in LastSnippet.</summary>
+        public DateTimeOffset? LastSnippetAt { get; set; }
         /// <summary>Lead ID associated with this inbox conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +219,7 @@ namespace Leadping.OpenApiClient.Models
                 { "lastInboundSnippet", n => { LastInboundSnippet = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "lastSnippet", n => { LastSnippet = n.GetStringValue(); } },
+                { "lastSnippetAt", n => { LastSnippetAt = n.GetDateTimeOffsetValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadPhoneNumber", n => { LeadPhoneNumber = n.GetStringValue(); } },
                 { "needsReply", n => { NeedsReply = n.GetBoolValue(); } },
@@ -256,6 +259,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastInboundSnippet", LastInboundSnippet);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("lastSnippet", LastSnippet);
+            writer.WriteDateTimeOffsetValue("lastSnippetAt", LastSnippetAt);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadPhoneNumber", LeadPhoneNumber);
             writer.WriteBoolValue("needsReply", NeedsReply);
