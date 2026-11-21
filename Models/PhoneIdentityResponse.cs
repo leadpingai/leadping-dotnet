@@ -71,6 +71,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment ProviderEnrichment { get; set; }
 #endif
+        /// <summary>Whether Telnyx rejected SMS routing to this destination with error 40001.</summary>
+        public bool? SmsNotRoutable { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneIdentityResponse"/> and sets the default values.
         /// </summary>
@@ -106,6 +108,7 @@ namespace Leadping.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "providerEnrichment", n => { ProviderEnrichment = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment>(global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment.CreateFromDiscriminatorValue); } },
+                { "smsNotRoutable", n => { SmsNotRoutable = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -125,6 +128,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment>("providerEnrichment", ProviderEnrichment);
+            writer.WriteBoolValue("smsNotRoutable", SmsNotRoutable);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

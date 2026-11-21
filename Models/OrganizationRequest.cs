@@ -29,6 +29,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? AutomaticallyMarkAppointmentSet { get; set; }
         /// <summary>Automatically advances new leads after a confirmed outbound call attempt. Enabled by default.</summary>
         public bool? AutomaticallyMarkLeadsCalled { get; set; }
+        /// <summary>Automatically advances new leads when an outbound message is delivered.</summary>
+        public bool? AutomaticallyMarkLeadsMessaged { get; set; }
         /// <summary>Destination status for outbound call attempts. Null uses the built-in Called status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +57,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether the organization was formed less than 90 days ago.</summary>
         public bool? IsYoungerThan90 { get; set; }
+        /// <summary>Destination status for delivered outbound messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessagedLeadStatusId { get; set; }
+#nullable restore
+#else
+        public string MessagedLeadStatusId { get; set; }
+#endif
         /// <summary>Primary organization name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,10 +158,12 @@ namespace Leadping.OpenApiClient.Models
                 { "automaticallyClearAppointmentSet", n => { AutomaticallyClearAppointmentSet = n.GetBoolValue(); } },
                 { "automaticallyMarkAppointmentSet", n => { AutomaticallyMarkAppointmentSet = n.GetBoolValue(); } },
                 { "automaticallyMarkLeadsCalled", n => { AutomaticallyMarkLeadsCalled = n.GetBoolValue(); } },
+                { "automaticallyMarkLeadsMessaged", n => { AutomaticallyMarkLeadsMessaged = n.GetBoolValue(); } },
                 { "calledLeadStatusId", n => { CalledLeadStatusId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ein", n => { Ein = n.GetStringValue(); } },
                 { "isYoungerThan90", n => { IsYoungerThan90 = n.GetBoolValue(); } },
+                { "messagedLeadStatusId", n => { MessagedLeadStatusId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offer", n => { Offer = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -173,10 +185,12 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("automaticallyClearAppointmentSet", AutomaticallyClearAppointmentSet);
             writer.WriteBoolValue("automaticallyMarkAppointmentSet", AutomaticallyMarkAppointmentSet);
             writer.WriteBoolValue("automaticallyMarkLeadsCalled", AutomaticallyMarkLeadsCalled);
+            writer.WriteBoolValue("automaticallyMarkLeadsMessaged", AutomaticallyMarkLeadsMessaged);
             writer.WriteStringValue("calledLeadStatusId", CalledLeadStatusId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("ein", Ein);
             writer.WriteBoolValue("isYoungerThan90", IsYoungerThan90);
+            writer.WriteStringValue("messagedLeadStatusId", MessagedLeadStatusId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("offer", Offer);
             writer.WriteStringValue("phone", Phone);

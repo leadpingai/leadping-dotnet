@@ -39,6 +39,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? AutomaticallyMarkAppointmentSet { get; set; }
         /// <summary>Automatically advances new leads after a confirmed outbound call attempt. Enabled by default.</summary>
         public bool? AutomaticallyMarkLeadsCalled { get; set; }
+        /// <summary>Automatically advances new leads when an outbound message is delivered.</summary>
+        public bool? AutomaticallyMarkLeadsMessaged { get; set; }
         /// <summary>Wallet refill amount charged when automatic refill is triggered.</summary>
         public double? AutoRefillAmount { get; set; }
         /// <summary>Indicates whether automatic wallet refill is enabled for the organization.</summary>
@@ -149,6 +151,14 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
+        /// <summary>Destination status for delivered outbound messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessagedLeadStatusId { get; set; }
+#nullable restore
+#else
+        public string MessagedLeadStatusId { get; set; }
+#endif
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Human-readable display name of the resource.</summary>
@@ -265,6 +275,7 @@ namespace Leadping.OpenApiClient.Models
                 { "automaticallyClearAppointmentSet", n => { AutomaticallyClearAppointmentSet = n.GetBoolValue(); } },
                 { "automaticallyMarkAppointmentSet", n => { AutomaticallyMarkAppointmentSet = n.GetBoolValue(); } },
                 { "automaticallyMarkLeadsCalled", n => { AutomaticallyMarkLeadsCalled = n.GetBoolValue(); } },
+                { "automaticallyMarkLeadsMessaged", n => { AutomaticallyMarkLeadsMessaged = n.GetBoolValue(); } },
                 { "billingAddress", n => { BillingAddress = n.GetObjectValue<global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress>(global::Leadping.OpenApiClient.Models.OrganizationResponse_billingAddress.CreateFromDiscriminatorValue); } },
                 { "billingContactEmail", n => { BillingContactEmail = n.GetStringValue(); } },
                 { "billingName", n => { BillingName = n.GetStringValue(); } },
@@ -281,6 +292,7 @@ namespace Leadping.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
+                { "messagedLeadStatusId", n => { MessagedLeadStatusId = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -310,6 +322,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("automaticallyClearAppointmentSet", AutomaticallyClearAppointmentSet);
             writer.WriteBoolValue("automaticallyMarkAppointmentSet", AutomaticallyMarkAppointmentSet);
             writer.WriteBoolValue("automaticallyMarkLeadsCalled", AutomaticallyMarkLeadsCalled);
+            writer.WriteBoolValue("automaticallyMarkLeadsMessaged", AutomaticallyMarkLeadsMessaged);
             writer.WriteDoubleValue("autoRefillAmount", AutoRefillAmount);
             writer.WriteBoolValue("autoRefillEnabled", AutoRefillEnabled);
             writer.WriteDoubleValue("autoRefillTrigger", AutoRefillTrigger);
@@ -329,6 +342,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
+            writer.WriteStringValue("messagedLeadStatusId", MessagedLeadStatusId);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone", Phone);
