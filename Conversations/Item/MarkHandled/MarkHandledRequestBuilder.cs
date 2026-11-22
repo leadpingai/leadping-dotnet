@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Conversations.Item.MarkHandled
 {
     /// <summary>
-    /// Builds and executes requests for operations under \conversations\{id}\mark-handled
+    /// Builds and executes requests for operations under \conversations\{conversation-id}\mark-handled
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MarkHandledRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.MarkHandled
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkHandledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/mark-handled?replyVersion={replyVersion}", pathParameters)
+        public MarkHandledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/mark-handled?replyVersion={replyVersion}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.MarkHandled
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkHandledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/mark-handled?replyVersion={replyVersion}", rawUrl)
+        public MarkHandledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/mark-handled?replyVersion={replyVersion}", rawUrl)
         {
         }
         /// <summary>

@@ -55,6 +55,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string OutboundIdempotencyKey { get; set; }
 #endif
+        /// <summary>Version of the incoming conversation reply displayed to the agent when composing this response.</summary>
+        public long? ReplyVersion { get; set; }
         /// <summary>UTC timestamp when Leadping should send the SMS message.</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
         /// <summary>Existing SMS event ID to reuse or update when retrying a send request.</summary>
@@ -113,6 +115,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "mediaUrls", n => { MediaUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "outboundIdempotencyKey", n => { OutboundIdempotencyKey = n.GetStringValue(); } },
+                { "replyVersion", n => { ReplyVersion = n.GetLongValue(); } },
                 { "scheduledFor", n => { ScheduledFor = n.GetDateTimeOffsetValue(); } },
                 { "smsEventId", n => { SmsEventId = n.GetStringValue(); } },
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
@@ -132,6 +135,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteCollectionOfPrimitiveValues<string>("mediaUrls", MediaUrls);
             writer.WriteStringValue("outboundIdempotencyKey", OutboundIdempotencyKey);
+            writer.WriteLongValue("replyVersion", ReplyVersion);
             writer.WriteDateTimeOffsetValue("scheduledFor", ScheduledFor);
             writer.WriteStringValue("smsEventId", SmsEventId);
             writer.WriteStringValue("sourceId", SourceId);

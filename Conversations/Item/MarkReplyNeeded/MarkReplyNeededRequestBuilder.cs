@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded
 {
     /// <summary>
-    /// Builds and executes requests for operations under \conversations\{id}\mark-reply-needed
+    /// Builds and executes requests for operations under \conversations\{conversation-id}\mark-reply-needed
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MarkReplyNeededRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkReplyNeededRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/mark-reply-needed?replyVersion={replyVersion}", pathParameters)
+        public MarkReplyNeededRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/mark-reply-needed?replyVersion={replyVersion}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkReplyNeededRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/mark-reply-needed?replyVersion={replyVersion}", rawUrl)
+        public MarkReplyNeededRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/mark-reply-needed?replyVersion={replyVersion}", rawUrl)
         {
         }
         /// <summary>

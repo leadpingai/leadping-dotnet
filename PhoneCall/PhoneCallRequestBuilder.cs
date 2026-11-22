@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.PhoneCall.Initiate;
 using Leadping.OpenApiClient.PhoneCall.Item;
+using Leadping.OpenApiClient.PhoneCall.Next;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace Leadping.OpenApiClient.PhoneCall
         public global::Leadping.OpenApiClient.PhoneCall.Initiate.InitiateRequestBuilder Initiate
         {
             get => new global::Leadping.OpenApiClient.PhoneCall.Initiate.InitiateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The next property</summary>
+        public global::Leadping.OpenApiClient.PhoneCall.Next.NextRequestBuilder Next
+        {
+            get => new global::Leadping.OpenApiClient.PhoneCall.Next.NextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.phoneCall.item collection</summary>
         /// <param name="position">The unique identifier of the call to end.</param>

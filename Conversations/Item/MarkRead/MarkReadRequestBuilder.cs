@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Conversations.Item.MarkRead
 {
     /// <summary>
-    /// Builds and executes requests for operations under \conversations\{id}\mark-read
+    /// Builds and executes requests for operations under \conversations\{conversation-id}\mark-read
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MarkReadRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.MarkRead
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkReadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/mark-read?eventVersion={eventVersion}", pathParameters)
+        public MarkReadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/mark-read?eventVersion={eventVersion}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.MarkRead
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/mark-read?eventVersion={eventVersion}", rawUrl)
+        public MarkReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/mark-read?eventVersion={eventVersion}", rawUrl)
         {
         }
         /// <summary>

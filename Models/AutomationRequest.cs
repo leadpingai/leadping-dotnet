@@ -73,7 +73,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
-        /// <summary>Time zone used by workflow time and day conditions in preview and runtime. New workflows default to the organization�s time zone.</summary>
+        /// <summary>Time zone used by workflow time and day conditions in preview and runtime. New workflows default to the organization&apos;s time zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZoneId { get; set; }

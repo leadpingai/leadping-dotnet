@@ -29,14 +29,14 @@ namespace Leadping.OpenApiClient.Conversations
         }
         /// <summary>Gets an item from the Leadping.OpenApiClient.conversations.item collection</summary>
         /// <param name="position">The ID of the conversation to retrieve.</param>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
-        public global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder"/></returns>
+        public global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("id", position);
-                return new global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("conversation%2Did", position);
+                return new global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

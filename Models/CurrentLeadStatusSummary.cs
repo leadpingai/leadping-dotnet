@@ -15,6 +15,8 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The promised callback time, independent of a general follow-up task.</summary>
+        public DateTimeOffset? CallbackAt { get; set; }
         /// <summary>Controlled lead status change categories used for reporting, automation, and analytics.</summary>
         public global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_category? Category { get; set; }
         /// <summary>UTC timestamp when the lead status change last changed.</summary>
@@ -100,6 +102,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callbackAt", n => { CallbackAt = n.GetDateTimeOffsetValue(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_category>(); } },
                 { "changedAt", n => { ChangedAt = n.GetDateTimeOffsetValue(); } },
                 { "changedByAutomationId", n => { ChangedByAutomationId = n.GetStringValue(); } },
@@ -121,6 +124,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("callbackAt", CallbackAt);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.CurrentLeadStatusSummary_category>("category", Category);
             writer.WriteDateTimeOffsetValue("changedAt", ChangedAt);
             writer.WriteStringValue("changedByAutomationId", ChangedByAutomationId);

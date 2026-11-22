@@ -12,7 +12,7 @@ using System;
 namespace Leadping.OpenApiClient.Conversations.Item.OutboundReadiness
 {
     /// <summary>
-    /// Builds and executes requests for operations under \conversations\{id}\outbound-readiness
+    /// Builds and executes requests for operations under \conversations\{conversation-id}\outbound-readiness
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutboundReadinessRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.OutboundReadiness
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutboundReadinessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/outbound-readiness{?voice*}", pathParameters)
+        public OutboundReadinessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/outbound-readiness{?voice*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.OutboundReadiness
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutboundReadinessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}/outbound-readiness{?voice*}", rawUrl)
+        public OutboundReadinessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}/outbound-readiness{?voice*}", rawUrl)
         {
         }
         /// <summary>

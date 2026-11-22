@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,textingAvailable*}", pathParameters)
+        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,priority*,textingAvailable*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,textingAvailable*}", rawUrl)
+        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,priority*,textingAvailable*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists the current user&apos;s lead conversations with paging and sorting for inbox views, recent follow-up, and communication history.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PagedResultOfConversationResponse"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.ConversationPage"/></returns>
         /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,11 +49,11 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// <exception cref="global::Leadping.OpenApiClient.Models.ProblemDetails">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfConversationResponse?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Conversations.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.ConversationPage?> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Conversations.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Leadping.OpenApiClient.Models.PagedResultOfConversationResponse> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Conversations.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Leadping.OpenApiClient.Models.ConversationPage> PostAsync(global::Leadping.OpenApiClient.Models.RequestDataOptions body, Action<RequestConfiguration<global::Leadping.OpenApiClient.Conversations.My.MyRequestBuilder.MyRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -68,7 +68,7 @@ namespace Leadping.OpenApiClient.Conversations.My
                 { "429", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
                 { "500", global::Leadping.OpenApiClient.Models.ProblemDetails.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PagedResultOfConversationResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PagedResultOfConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.ConversationPage>(requestInfo, global::Leadping.OpenApiClient.Models.ConversationPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists the current user&apos;s lead conversations with paging and sorting for inbox views, recent follow-up, and communication history.
@@ -120,6 +120,9 @@ namespace Leadping.OpenApiClient.Conversations.My
             /// <summary>Whether to include only conversations where calling is available.</summary>
             [QueryParameter("contactable")]
             public bool? Contactable { get; set; }
+            /// <summary>Orders the full filtered inbox by the next action before paging.</summary>
+            [QueryParameter("priority")]
+            public bool? Priority { get; set; }
             /// <summary>Whether to include only conversations where texting is available.</summary>
             [QueryParameter("textingAvailable")]
             public bool? TextingAvailable { get; set; }

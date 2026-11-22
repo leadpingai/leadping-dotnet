@@ -4,6 +4,7 @@ using Leadping.OpenApiClient.Conversations.Item.MarkHandled;
 using Leadping.OpenApiClient.Conversations.Item.MarkRead;
 using Leadping.OpenApiClient.Conversations.Item.MarkReplyNeeded;
 using Leadping.OpenApiClient.Conversations.Item.OutboundReadiness;
+using Leadping.OpenApiClient.Conversations.Item.Retry;
 using Leadping.OpenApiClient.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -16,10 +17,10 @@ using System;
 namespace Leadping.OpenApiClient.Conversations.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \conversations\{id}
+    /// Builds and executes requests for operations under \conversations\{conversation-id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConversationsItemRequestBuilder : BaseRequestBuilder
+    public partial class ConversationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The markHandled property</summary>
         public global::Leadping.OpenApiClient.Conversations.Item.MarkHandled.MarkHandledRequestBuilder MarkHandled
@@ -41,20 +42,25 @@ namespace Leadping.OpenApiClient.Conversations.Item
         {
             get => new global::Leadping.OpenApiClient.Conversations.Item.OutboundReadiness.OutboundReadinessRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The retry property</summary>
+        public global::Leadping.OpenApiClient.Conversations.Item.Retry.RetryRequestBuilder Retry
+        {
+            get => new global::Leadping.OpenApiClient.Conversations.Item.Retry.RetryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}", pathParameters)
+        public ConversationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{id}", rawUrl)
+        public ConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/{conversation%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -112,11 +118,11 @@ namespace Leadping.OpenApiClient.Conversations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder WithUrl(string rawUrl)
+        public global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Leadping.OpenApiClient.Conversations.Item.ConversationsItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Leadping.OpenApiClient.Conversations.Item.ConversationItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -35,6 +35,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string AvatarUrl { get; set; }
 #endif
+        /// <summary>Rep-selected time for the next call attempt.</summary>
+        public DateTimeOffset? CallRetryAt { get; set; }
         /// <summary>Current manual voice eligibility, including contact hours. Populated on individual conversation reads. Sender readiness and billing are checked when calling; null means eligibility has not been evaluated.</summary>
         public bool? CanCallNow { get; set; }
         /// <summary>Current manual SMS eligibility, including contact hours. Populated on individual conversation reads. Sender readiness and billing are checked when sending; null means eligibility has not been evaluated.</summary>
@@ -81,6 +83,10 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The next action for a conversation, in inbox priority order.</summary>
+        public int? InboxAction { get; set; }
+        /// <summary>Customer reply time, due time, or request time explaining the action.</summary>
+        public DateTimeOffset? InboxActionAt { get; set; }
         /// <summary>Indicates whether the Leadping conversation has been archived.</summary>
         public bool? IsArchived { get; set; }
         /// <summary>Whether this record belongs to demo data.</summary>
@@ -202,6 +208,7 @@ namespace Leadping.OpenApiClient.Models
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
+                { "callRetryAt", n => { CallRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "canCallNow", n => { CanCallNow = n.GetBoolValue(); } },
                 { "canTextNow", n => { CanTextNow = n.GetBoolValue(); } },
                 { "complianceStatus", n => { ComplianceStatus = n.GetStringValue(); } },
@@ -210,6 +217,8 @@ namespace Leadping.OpenApiClient.Models
                 { "eventVersion", n => { EventVersion = n.GetLongValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "inboxAction", n => { InboxAction = n.GetIntValue(); } },
+                { "inboxActionAt", n => { InboxActionAt = n.GetDateTimeOffsetValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isUnread", n => { IsUnread = n.GetBoolValue(); } },
@@ -242,6 +251,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
+            writer.WriteDateTimeOffsetValue("callRetryAt", CallRetryAt);
             writer.WriteBoolValue("canCallNow", CanCallNow);
             writer.WriteBoolValue("canTextNow", CanTextNow);
             writer.WriteStringValue("complianceStatus", ComplianceStatus);
@@ -250,6 +260,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteLongValue("eventVersion", EventVersion);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("inboxAction", InboxAction);
+            writer.WriteDateTimeOffsetValue("inboxActionAt", InboxActionAt);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isUnread", IsUnread);
