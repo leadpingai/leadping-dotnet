@@ -105,6 +105,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether the lead is enabled.</summary>
         public bool? Enabled { get; set; }
+        /// <summary>Whether the source covers SMS consent for the current recipient.</summary>
+        public bool? HasSourceSmsConsent { get; set; }
         /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,6 +221,7 @@ namespace Leadping.OpenApiClient.Models
                 { "deletedAt", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "deletedByUserId", n => { DeletedByUserId = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "hasSourceSmsConsent", n => { HasSourceSmsConsent = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "inquiry", n => { Inquiry = n.GetObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_inquiry>(global::Leadping.OpenApiClient.Models.LeadResponse_inquiry.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
@@ -256,6 +259,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("deletedAt", DeletedAt);
             writer.WriteStringValue("deletedByUserId", DeletedByUserId);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("hasSourceSmsConsent", HasSourceSmsConsent);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.LeadResponse_inquiry>("inquiry", Inquiry);
             writer.WriteBoolValue("isArchived", IsArchived);
