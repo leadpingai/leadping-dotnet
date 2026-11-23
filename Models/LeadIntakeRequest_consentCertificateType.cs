@@ -15,6 +15,10 @@ namespace Leadping.OpenApiClient.Models
         #pragma warning disable CS1591
         Leadping,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ManualVoice")]
+        #pragma warning disable CS1591
+        ManualVoice,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Other")]
         #pragma warning disable CS1591
         Other,

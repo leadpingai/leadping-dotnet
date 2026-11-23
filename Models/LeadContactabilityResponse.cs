@@ -27,6 +27,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? CanCall { get; set; }
         /// <summary>Whether the lead can currently be texted after evaluating applicable contact hours, suppression, and consent rules.</summary>
         public bool? CanText { get; set; }
+        /// <summary>Next opening or closing of a contact window that can change this result.</summary>
+        public DateTimeOffset? NextWindowChangeAt { get; set; }
         /// <summary>Whether the stored phone lookup rules out texting this recipient.</summary>
         public bool? SmsLineRestricted { get; set; }
         /// <summary>Customer-safe explanation when texting is unavailable.</summary>
@@ -65,6 +67,7 @@ namespace Leadping.OpenApiClient.Models
                 { "callBlockedReason", n => { CallBlockedReason = n.GetStringValue(); } },
                 { "canCall", n => { CanCall = n.GetBoolValue(); } },
                 { "canText", n => { CanText = n.GetBoolValue(); } },
+                { "nextWindowChangeAt", n => { NextWindowChangeAt = n.GetDateTimeOffsetValue(); } },
                 { "smsLineRestricted", n => { SmsLineRestricted = n.GetBoolValue(); } },
                 { "textBlockedReason", n => { TextBlockedReason = n.GetStringValue(); } },
             };
@@ -79,6 +82,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("callBlockedReason", CallBlockedReason);
             writer.WriteBoolValue("canCall", CanCall);
             writer.WriteBoolValue("canText", CanText);
+            writer.WriteDateTimeOffsetValue("nextWindowChangeAt", NextWindowChangeAt);
             writer.WriteBoolValue("smsLineRestricted", SmsLineRestricted);
             writer.WriteStringValue("textBlockedReason", TextBlockedReason);
             writer.WriteAdditionalData(AdditionalData);
