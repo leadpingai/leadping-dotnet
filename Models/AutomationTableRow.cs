@@ -23,6 +23,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the current user can start this automation for a selected inbox lead.</summary>
+        public bool? CanRunForLead { get; set; }
         /// <summary>Human-readable summary of the automation condition evaluation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,6 +189,7 @@ namespace Leadping.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionSummary", n => { ActionSummary = n.GetStringValue(); } },
+                { "canRunForLead", n => { CanRunForLead = n.GetBoolValue(); } },
                 { "conditionSummary", n => { ConditionSummary = n.GetStringValue(); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -218,6 +221,7 @@ namespace Leadping.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionSummary", ActionSummary);
+            writer.WriteBoolValue("canRunForLead", CanRunForLead);
             writer.WriteStringValue("conditionSummary", ConditionSummary);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteStringValue("description", Description);

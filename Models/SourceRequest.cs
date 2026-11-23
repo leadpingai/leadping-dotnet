@@ -53,6 +53,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Whether to normalize capitalization in incoming lead names and cities.</summary>
+        public bool? NormalizeIncomingData { get; set; }
         /// <summary>Indicates whether leads from this source must include a TrustedForm or Leadping Consent certificate for consent proof.</summary>
         public bool? RequiresTrustedForm { get; set; }
         /// <summary>
@@ -87,6 +89,7 @@ namespace Leadping.OpenApiClient.Models
                 { "defaultTagNames", n => { DefaultTagNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "normalizeIncomingData", n => { NormalizeIncomingData = n.GetBoolValue(); } },
                 { "requiresTrustedForm", n => { RequiresTrustedForm = n.GetBoolValue(); } },
             };
         }
@@ -104,6 +107,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("defaultTagNames", DefaultTagNames);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("normalizeIncomingData", NormalizeIncomingData);
             writer.WriteBoolValue("requiresTrustedForm", RequiresTrustedForm);
             writer.WriteAdditionalData(AdditionalData);
         }

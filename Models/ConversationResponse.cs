@@ -27,6 +27,14 @@ namespace Leadping.OpenApiClient.Models
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>Defines why a lead was removed from the active working pipeline.</summary>
         public int? ArchiveReason { get; set; }
+        /// <summary>The lead assignee used for inbox audience selection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssignedToUserId { get; set; }
+#nullable restore
+#else
+        public string AssignedToUserId { get; set; }
+#endif
         /// <summary>Optional profile image URL explicitly associated with the lead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +133,10 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Timestamp of the conversation activity shown in LastSnippet.</summary>
         public DateTimeOffset? LastSnippetAt { get; set; }
+        /// <summary>When the associated lead was created.</summary>
+        public DateTimeOffset? LeadCreatedAt { get; set; }
+        /// <summary>Whether the associated lead is enabled for selection.</summary>
+        public bool? LeadEnabled { get; set; }
         /// <summary>Lead ID associated with this inbox conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,6 +219,7 @@ namespace Leadping.OpenApiClient.Models
                 { "activeOutboundPhoneNumberId", n => { ActiveOutboundPhoneNumberId = n.GetStringValue(); } },
                 { "archiveReason", n => { ArchiveReason = n.GetIntValue(); } },
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
+                { "assignedToUserId", n => { AssignedToUserId = n.GetStringValue(); } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "callRetryAt", n => { CallRetryAt = n.GetDateTimeOffsetValue(); } },
                 { "canCallNow", n => { CanCallNow = n.GetBoolValue(); } },
@@ -229,6 +242,8 @@ namespace Leadping.OpenApiClient.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "lastSnippet", n => { LastSnippet = n.GetStringValue(); } },
                 { "lastSnippetAt", n => { LastSnippetAt = n.GetDateTimeOffsetValue(); } },
+                { "leadCreatedAt", n => { LeadCreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "leadEnabled", n => { LeadEnabled = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "leadPhoneNumber", n => { LeadPhoneNumber = n.GetStringValue(); } },
                 { "needsReply", n => { NeedsReply = n.GetBoolValue(); } },
@@ -250,6 +265,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("activeOutboundPhoneNumberId", ActiveOutboundPhoneNumberId);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteIntValue("archiveReason", ArchiveReason);
+            writer.WriteStringValue("assignedToUserId", AssignedToUserId);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteDateTimeOffsetValue("callRetryAt", CallRetryAt);
             writer.WriteBoolValue("canCallNow", CanCallNow);
@@ -272,6 +288,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("lastSnippet", LastSnippet);
             writer.WriteDateTimeOffsetValue("lastSnippetAt", LastSnippetAt);
+            writer.WriteDateTimeOffsetValue("leadCreatedAt", LeadCreatedAt);
+            writer.WriteBoolValue("leadEnabled", LeadEnabled);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteStringValue("leadPhoneNumber", LeadPhoneNumber);
             writer.WriteBoolValue("needsReply", NeedsReply);

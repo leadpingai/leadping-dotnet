@@ -105,6 +105,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Whether to normalize capitalization in incoming lead names and cities.</summary>
+        public bool? NormalizeIncomingData { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +179,7 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "modifiedByUser", n => { ModifiedByUser = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_modifiedByUser>(global::Leadping.OpenApiClient.Models.SourceTableRow_modifiedByUser.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "normalizeIncomingData", n => { NormalizeIncomingData = n.GetBoolValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_organization>(global::Leadping.OpenApiClient.Models.SourceTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "requiresTrustedForm", n => { RequiresTrustedForm = n.GetBoolValue(); } },
@@ -211,6 +214,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_modifiedByUser>("modifiedByUser", ModifiedByUser);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("normalizeIncomingData", NormalizeIncomingData);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.SourceTableRow_organization>("organization", Organization);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteBoolValue("requiresTrustedForm", RequiresTrustedForm);

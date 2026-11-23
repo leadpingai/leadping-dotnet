@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Leadping.OpenApiClient.Automations.All;
 using Leadping.OpenApiClient.Automations.Item;
+using Leadping.OpenApiClient.Automations.LeadAudience;
 using Leadping.OpenApiClient.Automations.Preview;
 using Leadping.OpenApiClient.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -24,6 +25,11 @@ namespace Leadping.OpenApiClient.Automations
         public global::Leadping.OpenApiClient.Automations.All.AllRequestBuilder All
         {
             get => new global::Leadping.OpenApiClient.Automations.All.AllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The leadAudience property</summary>
+        public global::Leadping.OpenApiClient.Automations.LeadAudience.LeadAudienceRequestBuilder LeadAudience
+        {
+            get => new global::Leadping.OpenApiClient.Automations.LeadAudience.LeadAudienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preview property</summary>
         public global::Leadping.OpenApiClient.Automations.Preview.PreviewRequestBuilder Preview
