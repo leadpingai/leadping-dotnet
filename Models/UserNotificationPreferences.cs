@@ -108,6 +108,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? UnreadSmsSmsEnabled { get; set; }
         /// <summary>Whether usage limit hit notifications are enabled for this user notification preferences.</summary>
         public bool? UsageLimitHitEnabled { get; set; }
+        /// <summary>Text organization admins when their prepaid wallet runs out of funds.</summary>
+        public bool? WalletDepletedSmsEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.UserNotificationPreferences"/> and sets the default values.
         /// </summary>
@@ -173,6 +175,7 @@ namespace Leadping.OpenApiClient.Models
                 { "unreadSmsEnabled", n => { UnreadSmsEnabled = n.GetBoolValue(); } },
                 { "unreadSmsSmsEnabled", n => { UnreadSmsSmsEnabled = n.GetBoolValue(); } },
                 { "usageLimitHitEnabled", n => { UsageLimitHitEnabled = n.GetBoolValue(); } },
+                { "walletDepletedSmsEnabled", n => { WalletDepletedSmsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -222,6 +225,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("unreadSmsEnabled", UnreadSmsEnabled);
             writer.WriteBoolValue("unreadSmsSmsEnabled", UnreadSmsSmsEnabled);
             writer.WriteBoolValue("usageLimitHitEnabled", UsageLimitHitEnabled);
+            writer.WriteBoolValue("walletDepletedSmsEnabled", WalletDepletedSmsEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
