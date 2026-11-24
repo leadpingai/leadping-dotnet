@@ -15,6 +15,14 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The outgoing number selected in the dialer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FromPhoneNumberId { get; set; }
+#nullable restore
+#else
+        public string FromPhoneNumberId { get; set; }
+#endif
         /// <summary>The destination phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +56,7 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
             };
         }
@@ -58,6 +67,7 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteAdditionalData(AdditionalData);
         }
