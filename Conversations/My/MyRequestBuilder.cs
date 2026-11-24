@@ -22,7 +22,7 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,priority*,textingAvailable*}", pathParameters)
+        public MyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,priority*,selectedConversationId*,textingAvailable*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Leadping.OpenApiClient.Conversations.My
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,priority*,textingAvailable*}", rawUrl)
+        public MyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/my{?archiveFilter*,contactable*,priority*,selectedConversationId*,textingAvailable*}", rawUrl)
         {
         }
         /// <summary>
@@ -123,6 +123,16 @@ namespace Leadping.OpenApiClient.Conversations.My
             /// <summary>Orders the full filtered inbox by the next action before paging.</summary>
             [QueryParameter("priority")]
             public bool? Priority { get; set; }
+            /// <summary>Optional selected thread to include when it still matches the priority inbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("selectedConversationId")]
+            public string? SelectedConversationId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("selectedConversationId")]
+            public string SelectedConversationId { get; set; }
+#endif
             /// <summary>Whether to include only conversations where texting is available.</summary>
             [QueryParameter("textingAvailable")]
             public bool? TextingAvailable { get; set; }

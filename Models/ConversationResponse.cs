@@ -91,7 +91,7 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The next action for a conversation, in inbox priority order.</summary>
+        /// <summary>The reason a conversation appears in the priority inbox.</summary>
         public int? InboxAction { get; set; }
         /// <summary>Customer reply time, due time, or request time explaining the action.</summary>
         public DateTimeOffset? InboxActionAt { get; set; }
@@ -101,6 +101,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? IsDemo { get; set; }
         /// <summary>Indicates whether the current user has unread activity in the conversation.</summary>
         public bool? IsUnread { get; set; }
+        /// <summary>The lastAgentReplyAt property</summary>
+        public DateTimeOffset? LastAgentReplyAt { get; set; }
         /// <summary>UTC timestamp when the most recent conversation event occurred.</summary>
         public DateTimeOffset? LastEventAt { get; set; }
         /// <summary>Indicates that the most recent conversation activity is an internal note.</summary>
@@ -179,6 +181,22 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber PhoneNumber { get; set; }
 #endif
+        /// <summary>The priorityLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PriorityLabel { get; set; }
+#nullable restore
+#else
+        public string PriorityLabel { get; set; }
+#endif
+        /// <summary>The priorityPreview property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PriorityPreview { get; set; }
+#nullable restore
+#else
+        public string PriorityPreview { get; set; }
+#endif
         /// <summary>Monotonic inbound reply boundary used when marking a conversation handled.</summary>
         public long? ReplyVersion { get; set; }
         /// <summary>Defines the customer-facing operational status for an inbox conversation.</summary>
@@ -235,6 +253,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isUnread", n => { IsUnread = n.GetBoolValue(); } },
+                { "lastAgentReplyAt", n => { LastAgentReplyAt = n.GetDateTimeOffsetValue(); } },
                 { "lastEventAt", n => { LastEventAt = n.GetDateTimeOffsetValue(); } },
                 { "lastEventIsInternalNote", n => { LastEventIsInternalNote = n.GetBoolValue(); } },
                 { "lastInboundAt", n => { LastInboundAt = n.GetDateTimeOffsetValue(); } },
@@ -250,6 +269,8 @@ namespace Leadping.OpenApiClient.Models
                 { "nextStep", n => { NextStep = n.GetStringValue(); } },
                 { "outboundPhoneNumberOverrideId", n => { OutboundPhoneNumberOverrideId = n.GetStringValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber>(global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber.CreateFromDiscriminatorValue); } },
+                { "priorityLabel", n => { PriorityLabel = n.GetStringValue(); } },
+                { "priorityPreview", n => { PriorityPreview = n.GetStringValue(); } },
                 { "replyVersion", n => { ReplyVersion = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Leadping.OpenApiClient.Models.ConversationResponse_status>(); } },
                 { "statusReason", n => { StatusReason = n.GetStringValue(); } },
@@ -281,6 +302,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isUnread", IsUnread);
+            writer.WriteDateTimeOffsetValue("lastAgentReplyAt", LastAgentReplyAt);
             writer.WriteDateTimeOffsetValue("lastEventAt", LastEventAt);
             writer.WriteBoolValue("lastEventIsInternalNote", LastEventIsInternalNote);
             writer.WriteDateTimeOffsetValue("lastInboundAt", LastInboundAt);
@@ -296,6 +318,8 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("nextStep", NextStep);
             writer.WriteStringValue("outboundPhoneNumberOverrideId", OutboundPhoneNumberOverrideId);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationResponse_phoneNumber>("phoneNumber", PhoneNumber);
+            writer.WriteStringValue("priorityLabel", PriorityLabel);
+            writer.WriteStringValue("priorityPreview", PriorityPreview);
             writer.WriteLongValue("replyVersion", ReplyVersion);
             writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.ConversationResponse_status>("status", Status);
             writer.WriteStringValue("statusReason", StatusReason);

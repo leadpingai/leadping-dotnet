@@ -43,6 +43,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string RefreshAfter { get; set; }
 #endif
+        /// <summary>Describes conversation data returned by Leadping.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Leadping.OpenApiClient.Models.ConversationPage_selectedConversation? SelectedConversation { get; set; }
+#nullable restore
+#else
+        public global::Leadping.OpenApiClient.Models.ConversationPage_selectedConversation SelectedConversation { get; set; }
+#endif
         /// <summary>The totalCount property</summary>
         public int? TotalCount { get; set; }
         /// <summary>
@@ -75,6 +83,7 @@ namespace Leadping.OpenApiClient.Models
                 { "needsReplyCount", n => { NeedsReplyCount = n.GetIntValue(); } },
                 { "pageSize", n => { PageSize = n.GetIntValue(); } },
                 { "refreshAfter", n => { RefreshAfter = n.GetStringValue(); } },
+                { "selectedConversation", n => { SelectedConversation = n.GetObjectValue<global::Leadping.OpenApiClient.Models.ConversationPage_selectedConversation>(global::Leadping.OpenApiClient.Models.ConversationPage_selectedConversation.CreateFromDiscriminatorValue); } },
                 { "totalCount", n => { TotalCount = n.GetIntValue(); } },
             };
         }
@@ -90,6 +99,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteIntValue("needsReplyCount", NeedsReplyCount);
             writer.WriteIntValue("pageSize", PageSize);
             writer.WriteStringValue("refreshAfter", RefreshAfter);
+            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.ConversationPage_selectedConversation>("selectedConversation", SelectedConversation);
             writer.WriteIntValue("totalCount", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }

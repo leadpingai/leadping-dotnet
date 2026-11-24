@@ -63,6 +63,14 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.TransactionResponse_lead Lead { get; set; }
 #endif
+        /// <summary>Identifier of the message associated with an SMS or MMS usage entry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEventId { get; set; }
+#nullable restore
+#else
+        public string MessageEventId { get; set; }
+#endif
         /// <summary>UTC timestamp when the resource was last modified, or null when it has not been updated.</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
@@ -134,6 +142,7 @@ namespace Leadping.OpenApiClient.Models
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isUsageReservation", n => { IsUsageReservation = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_lead>(global::Leadping.OpenApiClient.Models.TransactionResponse_lead.CreateFromDiscriminatorValue); } },
+                { "messageEventId", n => { MessageEventId = n.GetStringValue(); } },
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
@@ -163,6 +172,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isUsageReservation", IsUsageReservation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionResponse_lead>("lead", Lead);
+            writer.WriteStringValue("messageEventId", MessageEventId);
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteDoubleValue("netAmount", NetAmount);
             writer.WriteStringValue("notes", Notes);
