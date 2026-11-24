@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
         {
         }
         /// <summary>
-        /// Deletes the organization-owned API key without deleting the organization.The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
+        /// Delete an organization-owned Leadping API key while keeping the organization intact. The request requires organization ownership or platform admin access.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OrganizationApiKeyRevokeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +139,7 @@ namespace Leadping.OpenApiClient.Organizations.ApiKeys.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse>(requestInfo, global::Leadping.OpenApiClient.Models.OrganizationApiKeyIssueResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the organization-owned API key without deleting the organization.The operation enforces organization ownership or platform-admin authorization and returns state suitable for membership, billing, and support workflows.
+        /// Delete an organization-owned Leadping API key while keeping the organization intact. The request requires organization ownership or platform admin access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

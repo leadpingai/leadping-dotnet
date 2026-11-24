@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.MessageTemplates
         {
         }
         /// <summary>
-        /// Lists organization templates, including disabled templates.
+        /// Retrieve your organization’s Leadping message templates in one request. The list includes enabled templates as well as templates that are currently disabled.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.MessageTemplate&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Leadping.OpenApiClient.MessageTemplates
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a disabled organization template.
+        /// Create a reusable message template for your Leadping organization. New templates start disabled, so you can review the message before enabling it.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.MessageTemplate"/></returns>
         /// <param name="body">The editable fields of an organization message template.</param>
@@ -104,7 +104,7 @@ namespace Leadping.OpenApiClient.MessageTemplates
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.MessageTemplate>(requestInfo, global::Leadping.OpenApiClient.Models.MessageTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists organization templates, including disabled templates.
+        /// Retrieve your organization’s Leadping message templates in one request. The list includes enabled templates as well as templates that are currently disabled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Leadping.OpenApiClient.MessageTemplates
             return requestInfo;
         }
         /// <summary>
-        /// Creates a disabled organization template.
+        /// Create a reusable message template for your Leadping organization. New templates start disabled, so you can review the message before enabling it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The editable fields of an organization message template.</param>

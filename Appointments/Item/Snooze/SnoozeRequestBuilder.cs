@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Snooze
         {
         }
         /// <summary>
-        /// Defers the reminder for ten minutes without moving the appointment, using the expected revision.
+        /// Delay a Leadping appointment reminder by ten minutes while keeping the callback time unchanged. Send the expected revision to detect conflicting updates.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Snooze
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defers the reminder for ten minutes without moving the appointment, using the expected revision.
+        /// Delay a Leadping appointment reminder by ten minutes while keeping the callback time unchanged. Send the expected revision to detect conflicting updates.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>

@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Invitations.Item.Accept
         {
         }
         /// <summary>
-        /// Accept
+        /// Accept a pending organization invitation in Leadping. Sign in as the invited recipient and submit the invitation ID to join the organization.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Invitations.Item.Accept
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Accept
+        /// Accept a pending organization invitation in Leadping. Sign in as the invited recipient and submit the invitation ID to join the organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

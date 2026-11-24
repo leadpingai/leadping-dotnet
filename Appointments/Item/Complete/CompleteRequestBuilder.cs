@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Complete
         {
         }
         /// <summary>
-        /// Marks an appointment as completed using the expected revision to detect concurrent changes.
+        /// Mark a callback appointment as completed in Leadping. Supply the expected revision so the API can detect another user’s changes before recording completion.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Complete
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Marks an appointment as completed using the expected revision to detect concurrent changes.
+        /// Mark a callback appointment as completed in Leadping. Supply the expected revision so the API can detect another user’s changes before recording completion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>

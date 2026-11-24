@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Invitations.Decline
         {
         }
         /// <summary>
-        /// Decline with token
+        /// Decline a Leadping organization invitation without signing in. Submit the token from the invitation link to identify the invite you want to decline.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Supplies the secret invitation token from the recipient’s email link.</param>
@@ -59,7 +59,7 @@ namespace Leadping.OpenApiClient.Invitations.Decline
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Decline with token
+        /// Decline a Leadping organization invitation without signing in. Submit the token from the invitation link to identify the invite you want to decline.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Supplies the secret invitation token from the recipient’s email link.</param>

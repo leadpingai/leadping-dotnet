@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Appointments.BookedTimes
         {
         }
         /// <summary>
-        /// Gets occupied appointment times for a lead&apos;s selected assignee.
+        /// Look up appointment times already booked for a lead’s selected assignee in Leadping before choosing a time for a new or rescheduled callback.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Appointments.BookedTimes
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets occupied appointment times for a lead&apos;s selected assignee.
+        /// Look up appointment times already booked for a lead’s selected assignee in Leadping before choosing a time for a new or rescheduled callback.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Leadping.OpenApiClient.Appointments.BookedTimes
             return new global::Leadping.OpenApiClient.Appointments.BookedTimes.BookedTimesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets occupied appointment times for a lead&apos;s selected assignee.
+        /// Look up appointment times already booked for a lead’s selected assignee in Leadping before choosing a time for a new or rescheduled callback.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BookedTimesRequestBuilderGetQueryParameters 

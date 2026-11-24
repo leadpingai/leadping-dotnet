@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.Retry
         {
         }
         /// <summary>
-        /// Updates the next manual call attempt if the observed retry time is still current.
+        /// Set the next manual call time for a Leadping conversation. The update applies only if the retry time still matches the one you last saw.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Conversations.Item.Retry
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the next manual call attempt if the observed retry time is still current.
+        /// Set the next manual call time for a Leadping conversation. The update applies only if the retry time still matches the one you last saw.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

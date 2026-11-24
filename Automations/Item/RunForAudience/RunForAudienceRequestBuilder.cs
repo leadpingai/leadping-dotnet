@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Automations.Item.RunForAudience
         {
         }
         /// <summary>
-        /// Queues a bulk run for the authorized lead audience.
+        /// Queue a Leadping automation for a group of leads in one request. The bulk run uses the lead audience the current user is authorized to select.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="body">Runs an automation for a server-resolved audience, omitting leads the user unchecked.</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.Automations.Item.RunForAudience
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Queues a bulk run for the authorized lead audience.
+        /// Queue a Leadping automation for a group of leads in one request. The bulk run uses the lead audience the current user is authorized to select.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Runs an automation for a server-resolved audience, omitting leads the user unchecked.</param>

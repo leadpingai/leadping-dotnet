@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Wallets.Me.SpendLimits
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SpendLimitsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SpendLimitsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the current organization&apos;s daily and monthly usage limits in USD and returns the updated limits and UTC progress.A null limit removes that budget; a zero limit stops new paid usage.
+        /// Set daily and monthly usage budgets in USD for your Leadping organization. Use null to remove a limit or zero to stop new paid usage.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SpendLimitsResponse"/></returns>
         /// <param name="body">Organization usage budgets in USD. Null removes a limit; zero stops new paid usage.</param>
@@ -121,7 +121,7 @@ namespace Leadping.OpenApiClient.Wallets.Me.SpendLimits
             return requestInfo;
         }
         /// <summary>
-        /// Sets the current organization&apos;s daily and monthly usage limits in USD and returns the updated limits and UTC progress.A null limit removes that budget; a zero limit stops new paid usage.
+        /// Set daily and monthly usage budgets in USD for your Leadping organization. Use null to remove a limit or zero to stop new paid usage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Organization usage budgets in USD. Null removes a limit; zero stops new paid usage.</param>

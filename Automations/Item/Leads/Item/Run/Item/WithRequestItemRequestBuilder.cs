@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Automations.Item.Leads.Item.Run.Item
         {
         }
         /// <summary>
-        /// Queues a manual automation run for a lead. Reuse the request ID when retrying the same run.
+        /// Queue a manual automation for a specific lead in Leadping. Reuse the same request ID if you retry so the retry refers to the original run.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationRunRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Automations.Item.Leads.Item.Run.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationRunRecord>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationRunRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Queues a manual automation run for a lead. Reuse the request ID when retrying the same run.
+        /// Queue a manual automation for a specific lead in Leadping. Reuse the same request ID if you retry so the retry refers to the original run.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

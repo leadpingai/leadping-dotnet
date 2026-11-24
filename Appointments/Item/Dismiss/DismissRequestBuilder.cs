@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Dismiss
         {
         }
         /// <summary>
-        /// Dismisses the reminder without completing the appointment, using the expected revision.
+        /// Dismiss a callback reminder in Leadping while leaving the appointment open. Include the expected revision to apply the change to the reminder you reviewed.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Dismiss
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Dismisses the reminder without completing the appointment, using the expected revision.
+        /// Dismiss a callback reminder in Leadping while leaving the appointment open. Include the expected revision to apply the change to the reminder you reviewed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>

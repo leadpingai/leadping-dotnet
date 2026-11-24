@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Events.Conversations.Item.Notes.Item
         {
         }
         /// <summary>
-        /// The event table row.
+        /// Edit an internal note you authored in Leadping. Submit the revised note text and use the returned event row to display the updated entry in the timeline.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.EventTableRow"/></returns>
         /// <param name="body">Defines the input used for create note.</param>
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Events.Conversations.Item.Notes.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.EventTableRow>(requestInfo, global::Leadping.OpenApiClient.Models.EventTableRow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The event table row.
+        /// Edit an internal note you authored in Leadping. Submit the revised note text and use the returned event row to display the updated entry in the timeline.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines the input used for create note.</param>

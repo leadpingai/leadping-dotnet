@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Outbound.Item.Capacity
         {
         }
         /// <summary>
-        /// Returns the phone number&apos;s outbound sending capacity based on current provider and Leadping state, including throttling and delivery eligibility.The phone number must belong to the current organization.
+        /// Check outbound sending capacity for a phone number in your Leadping organization, including current throttling and eligibility for delivery.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Outbound.Item.Capacity
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity>(requestInfo, global::Leadping.OpenApiClient.Models.OutboundPhoneNumberCapacity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the phone number&apos;s outbound sending capacity based on current provider and Leadping state, including throttling and delivery eligibility.The phone number must belong to the current organization.
+        /// Check outbound sending capacity for a phone number in your Leadping organization, including current throttling and eligibility for delivery.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

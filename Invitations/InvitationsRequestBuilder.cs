@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Invitations
         {
         }
         /// <summary>
-        /// Get
+        /// List open, unexpired organization invitations for the signed-in recipient’s verified email address, or use an invitation token to look up one invite.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.OrganizationInvitationTableRow&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Invitations
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get
+        /// List open, unexpired organization invitations for the signed-in recipient’s verified email address, or use an invitation token to look up one invite.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.Invitations
             return new global::Leadping.OpenApiClient.Invitations.InvitationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get
+        /// List open, unexpired organization invitations for the signed-in recipient’s verified email address, or use an invitation token to look up one invite.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvitationsRequestBuilderGetQueryParameters 

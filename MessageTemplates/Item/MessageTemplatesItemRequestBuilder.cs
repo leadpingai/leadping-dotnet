@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.MessageTemplates.Item
         {
         }
         /// <summary>
-        /// Permanently deletes an organization template.
+        /// Permanently remove a message template from your Leadping organization by ID. To keep the template for later use, disable it with the update endpoint.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.MessageTemplates.Item
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an organization template&apos;s name, message, and enabled state.
+        /// Update a Leadping message template by ID. Change its name or message text, or enable or disable the template for use in your organization.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.MessageTemplate"/></returns>
         /// <param name="body">The editable fields of an organization message template.</param>
@@ -90,7 +90,7 @@ namespace Leadping.OpenApiClient.MessageTemplates.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.MessageTemplate>(requestInfo, global::Leadping.OpenApiClient.Models.MessageTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently deletes an organization template.
+        /// Permanently remove a message template from your Leadping organization by ID. To keep the template for later use, disable it with the update endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Leadping.OpenApiClient.MessageTemplates.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an organization template&apos;s name, message, and enabled state.
+        /// Update a Leadping message template by ID. Change its name or message text, or enable or disable the template for use in your organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The editable fields of an organization message template.</param>

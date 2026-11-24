@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Dial.Item
         {
         }
         /// <summary>
-        /// Calls a number with the browser phone. For a new number, the caller confirms permission for manual voice contact and a lead is created.
+        /// Place a call with the Leadping browser phone. For a new number, confirm permission for manual voice contact so Leadping can create the lead.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.PhoneCallResponse"/></returns>
         /// <param name="body">Requests a manual browser call to a number entered by the agent.</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Dial.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.PhoneCallResponse>(requestInfo, global::Leadping.OpenApiClient.Models.PhoneCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Calls a number with the browser phone. For a new number, the caller confirms permission for manual voice contact and a lead is created.
+        /// Place a call with the Leadping browser phone. For a new number, confirm permission for manual voice contact so Leadping can create the lead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Requests a manual browser call to a number entered by the agent.</param>

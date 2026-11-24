@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Leads.Item.PhoneLookup
         {
         }
         /// <summary>
-        /// Queues a phone identity lookup for a lead visible to the current user and returns the lead after the lookup request is accepted.The lookup runs asynchronously and incurs a charge.
+        /// Queue a new, billable phone identity lookup for a lead you can access. The API returns the lead once the request is accepted and runs the lookup asynchronously.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.LeadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Leadping.OpenApiClient.Leads.Item.PhoneLookup
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.LeadResponse>(requestInfo, global::Leadping.OpenApiClient.Models.LeadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Queues a phone identity lookup for a lead visible to the current user and returns the lead after the lookup request is accepted.The lookup runs asynchronously and incurs a charge.
+        /// Queue a new, billable phone identity lookup for a lead you can access. The API returns the lead once the request is accepted and runs the lookup asynchronously.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

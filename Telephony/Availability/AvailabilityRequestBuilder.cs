@@ -47,7 +47,7 @@ namespace Leadping.OpenApiClient.Telephony.Availability
         {
         }
         /// <summary>
-        /// Returns whether the authenticated user can currently receive an incoming call.
+        /// Check whether the signed-in Leadping user can receive an incoming call right now. Use the result to show their current availability in a calling workflow.
         /// </summary>
         /// <returns>A <see cref="bool"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Leadping.OpenApiClient.Telephony.Availability
             return await RequestAdapter.SendPrimitiveAsync<bool?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns whether the authenticated user can currently receive an incoming call.
+        /// Check whether the signed-in Leadping user can receive an incoming call right now. Use the result to show their current availability in a calling workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

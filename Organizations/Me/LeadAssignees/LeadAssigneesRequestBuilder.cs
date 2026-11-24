@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Organizations.Me.LeadAssignees
         {
         }
         /// <summary>
-        /// Returns distinct users in the current organization, ordered by name, for selecting lead assignees.
+        /// Retrieve active users in the current Leadping organization for a lead assignee filter. Each user appears once, and results are ordered by name.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.IdNamePair&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Leadping.OpenApiClient.Organizations.Me.LeadAssignees
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns distinct users in the current organization, ordered by name, for selecting lead assignees.
+        /// Retrieve active users in the current Leadping organization for a lead assignee filter. Each user appears once, and results are ordered by name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Next.Item
         {
         }
         /// <summary>
-        /// Starts the next eligible call in the rep&apos;s filtered inbox.
+        /// Start the next eligible call from a rep’s Leadping inbox. Supply the inbox filters so the next call comes from the leads in the rep’s current view.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
@@ -63,7 +63,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Next.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Starts the next eligible call in the rep&apos;s filtered inbox.
+        /// Start the next eligible call from a rep’s Leadping inbox. Supply the inbox filters so the next call comes from the leads in the rep’s current view.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines cursor pagination, sorting, search, exact-match filters, and range filters for a structured API query.</param>
@@ -94,7 +94,7 @@ namespace Leadping.OpenApiClient.PhoneCall.Next.Item
             return new global::Leadping.OpenApiClient.PhoneCall.Next.Item.WithRequestItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Starts the next eligible call in the rep&apos;s filtered inbox.
+        /// Start the next eligible call from a rep’s Leadping inbox. Supply the inbox filters so the next call comes from the leads in the rep’s current view.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithRequestItemRequestBuilderPostQueryParameters 

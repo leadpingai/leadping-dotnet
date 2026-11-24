@@ -53,7 +53,7 @@ namespace Leadping.OpenApiClient.Appointments
         {
         }
         /// <summary>
-        /// Returns appointments visible to the current user, with optional lead, reminder, and status filters.
+        /// List callback appointments the signed-in user can access in Leadping. Filter by lead, reminder, or appointment status to narrow the results.
         /// </summary>
         /// <returns>A List&lt;global::Leadping.OpenApiClient.Models.AppointmentResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Leadping.OpenApiClient.Appointments
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Schedules a callback appointment for a lead and configures its assigned agent and reminder.
+        /// Schedule a callback for a lead through the Leadping API. Set the appointment time, assign the agent responsible for the call, and configure its reminder.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="body">Creates or reschedules an agent&apos;s callback appointment.</param>
@@ -110,7 +110,7 @@ namespace Leadping.OpenApiClient.Appointments
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns appointments visible to the current user, with optional lead, reminder, and status filters.
+        /// List callback appointments the signed-in user can access in Leadping. Filter by lead, reminder, or appointment status to narrow the results.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Leadping.OpenApiClient.Appointments
             return requestInfo;
         }
         /// <summary>
-        /// Schedules a callback appointment for a lead and configures its assigned agent and reminder.
+        /// Schedule a callback for a lead through the Leadping API. Set the appointment time, assign the agent responsible for the call, and configure its reminder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Creates or reschedules an agent&apos;s callback appointment.</param>
@@ -160,7 +160,7 @@ namespace Leadping.OpenApiClient.Appointments
             return new global::Leadping.OpenApiClient.Appointments.AppointmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns appointments visible to the current user, with optional lead, reminder, and status filters.
+        /// List callback appointments the signed-in user can access in Leadping. Filter by lead, reminder, or appointment status to narrow the results.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AppointmentsRequestBuilderGetQueryParameters 

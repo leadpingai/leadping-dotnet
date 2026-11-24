@@ -58,7 +58,7 @@ namespace Leadping.OpenApiClient.Appointments.Item
         {
         }
         /// <summary>
-        /// Returns an appointment and its history, subject to lead and organization access.
+        /// Retrieve a callback appointment and its history by ID in Leadping. The signed-in user must have access to the associated lead and organization.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Leadping.OpenApiClient.Appointments.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an appointment using the expected revision to detect concurrent changes.
+        /// Edit an existing callback appointment in Leadping. Include the revision you last retrieved so the API can detect changes made since you viewed it.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="body">Creates or reschedules an agent&apos;s callback appointment.</param>
@@ -114,7 +114,7 @@ namespace Leadping.OpenApiClient.Appointments.Item
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an appointment and its history, subject to lead and organization access.
+        /// Retrieve a callback appointment and its history by ID in Leadping. The signed-in user must have access to the associated lead and organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Leadping.OpenApiClient.Appointments.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an appointment using the expected revision to detect concurrent changes.
+        /// Edit an existing callback appointment in Leadping. Include the revision you last retrieved so the API can detect changes made since you viewed it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Creates or reschedules an agent&apos;s callback appointment.</param>

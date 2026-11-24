@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Cancel
         {
         }
         /// <summary>
-        /// Cancels an appointment and invalidates unsent reminders using the expected revision.
+        /// Cancel a Leadping callback appointment and invalidate reminders that have yet to be sent. Include the expected revision to detect concurrent changes.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AppointmentResponse"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Appointments.Item.Cancel
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AppointmentResponse>(requestInfo, global::Leadping.OpenApiClient.Models.AppointmentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancels an appointment and invalidates unsent reminders using the expected revision.
+        /// Cancel a Leadping callback appointment and invalidate reminders that have yet to be sent. Include the expected revision to detect concurrent changes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Protects appointment actions against concurrent edits.</param>

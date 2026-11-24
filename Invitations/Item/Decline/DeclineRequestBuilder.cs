@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Invitations.Item.Decline
         {
         }
         /// <summary>
-        /// Decline
+        /// Decline a pending Leadping organization invitation by ID while signed in as the recipient. Use this endpoint to turn down the invitation to join.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Invitations.Item.Decline
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Decline
+        /// Decline a pending Leadping organization invitation by ID while signed in as the recipient. Use this endpoint to turn down the invitation to join.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

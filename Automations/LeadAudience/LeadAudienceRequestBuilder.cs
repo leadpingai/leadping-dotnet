@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Automations.LeadAudience
         {
         }
         /// <summary>
-        /// Counts the active leads selectable by the current user across the organization.
+        /// Check how many active leads the signed-in user can select across the organization before queuing a bulk automation run in Leadping.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.AutomationLeadAudience"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Leadping.OpenApiClient.Automations.LeadAudience
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.AutomationLeadAudience>(requestInfo, global::Leadping.OpenApiClient.Models.AutomationLeadAudience.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Counts the active leads selectable by the current user across the organization.
+        /// Check how many active leads the signed-in user can select across the organization before queuing a bulk automation run in Leadping.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
