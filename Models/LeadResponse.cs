@@ -105,7 +105,7 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Whether the lead is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>Whether the source covers SMS consent for the current recipient.</summary>
+        /// <summary>Whether the source provides consent for manual quote calls and manual or automated quote texts to this recipient.</summary>
         public bool? HasSourceSmsConsent { get; set; }
         /// <summary>Stable unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
