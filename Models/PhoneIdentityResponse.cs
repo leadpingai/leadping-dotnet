@@ -63,14 +63,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Number { get; set; }
 #endif
-        /// <summary>Lossless provider snapshot retained with a phone identity for replay, audits, and fields added by providers later.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment? ProviderEnrichment { get; set; }
-#nullable restore
-#else
-        public global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment ProviderEnrichment { get; set; }
-#endif
         /// <summary>Whether Telnyx rejected SMS routing to this destination with error 40001.</summary>
         public bool? SmsNotRoutable { get; set; }
         /// <summary>
@@ -107,7 +99,6 @@ namespace Leadping.OpenApiClient.Models
                 { "modifiedAt", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
-                { "providerEnrichment", n => { ProviderEnrichment = n.GetObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment>(global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment.CreateFromDiscriminatorValue); } },
                 { "smsNotRoutable", n => { SmsNotRoutable = n.GetBoolValue(); } },
             };
         }
@@ -127,7 +118,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modifiedAt", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
-            writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.PhoneIdentityResponse_providerEnrichment>("providerEnrichment", ProviderEnrichment);
             writer.WriteBoolValue("smsNotRoutable", SmsNotRoutable);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -53,8 +53,6 @@ namespace Leadping.OpenApiClient.Models
 #else
         public global::Leadping.OpenApiClient.Models.TransactionTableRow_lead Lead { get; set; }
 #endif
-        /// <summary>Net monetary amount after fees, credits, or adjustments.</summary>
-        public double? NetAmount { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +136,6 @@ namespace Leadping.OpenApiClient.Models
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "isUsageReservation", n => { IsUsageReservation = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_lead>(global::Leadping.OpenApiClient.Models.TransactionTableRow_lead.CreateFromDiscriminatorValue); } },
-                { "netAmount", n => { NetAmount = n.GetDoubleValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_organization>(global::Leadping.OpenApiClient.Models.TransactionTableRow_organization.CreateFromDiscriminatorValue); } },
                 { "paymentMethodDisplay", n => { PaymentMethodDisplay = n.GetStringValue(); } },
                 { "pricingVersion", n => { PricingVersion = n.GetStringValue(); } },
@@ -167,7 +164,6 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteBoolValue("isUsageReservation", IsUsageReservation);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_lead>("lead", Lead);
-            writer.WriteDoubleValue("netAmount", NetAmount);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.TransactionTableRow_organization>("organization", Organization);
             writer.WriteStringValue("paymentMethodDisplay", PaymentMethodDisplay);
             writer.WriteStringValue("pricingVersion", PricingVersion);
