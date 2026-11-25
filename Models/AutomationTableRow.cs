@@ -51,6 +51,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether this automation table row is active and available in the Leadping API.</summary>
         public bool? Enabled { get; set; }
+        /// <summary>Distinct leads with an unfinished workflow in this automation.</summary>
+        public int? EnrolledLeadCount { get; set; }
         /// <summary>Human-readable health summary for this automation table row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +165,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Visibility { get; set; }
 #endif
+        /// <summary>Enrolled leads with at least one waiting or scheduled workflow.</summary>
+        public int? WaitingLeadCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.AutomationTableRow"/> and sets the default values.
         /// </summary>
@@ -194,6 +198,7 @@ namespace Leadping.OpenApiClient.Models
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enrolledLeadCount", n => { EnrolledLeadCount = n.GetIntValue(); } },
                 { "healthSummary", n => { HealthSummary = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
@@ -211,6 +216,7 @@ namespace Leadping.OpenApiClient.Models
                 { "triggerType", n => { TriggerType = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_user>(global::Leadping.OpenApiClient.Models.AutomationTableRow_user.CreateFromDiscriminatorValue); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "waitingLeadCount", n => { WaitingLeadCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -226,6 +232,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteIntValue("enrolledLeadCount", EnrolledLeadCount);
             writer.WriteStringValue("healthSummary", HealthSummary);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isDemo", IsDemo);
@@ -243,6 +250,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("triggerType", TriggerType);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.AutomationTableRow_user>("user", User);
             writer.WriteStringValue("visibility", Visibility);
+            writer.WriteIntValue("waitingLeadCount", WaitingLeadCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
