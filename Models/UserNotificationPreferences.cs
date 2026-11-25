@@ -36,6 +36,8 @@ namespace Leadping.OpenApiClient.Models
         public bool? BillingEmailEnabled { get; set; }
         /// <summary>Whether billing SMS is enabled for this user notification preferences.</summary>
         public bool? BillingSmsEnabled { get; set; }
+        /// <summary>Play a sound in the Portal when an incoming text message arrives.</summary>
+        public bool? IncomingMessageSoundEnabled { get; set; }
         /// <summary>Indicates whether low wallet balance email functionality is enabled for this Leadping user notification preferences.</summary>
         public bool? LowWalletBalanceEmailEnabled { get; set; }
         /// <summary>Whether low wallet balance notifications are enabled for this user notification preferences.</summary>
@@ -145,6 +147,7 @@ namespace Leadping.OpenApiClient.Models
                 { "automationFailedSmsEnabled", n => { AutomationFailedSmsEnabled = n.GetBoolValue(); } },
                 { "billingEmailEnabled", n => { BillingEmailEnabled = n.GetBoolValue(); } },
                 { "billingSmsEnabled", n => { BillingSmsEnabled = n.GetBoolValue(); } },
+                { "incomingMessageSoundEnabled", n => { IncomingMessageSoundEnabled = n.GetBoolValue(); } },
                 { "lowWalletBalanceEmailEnabled", n => { LowWalletBalanceEmailEnabled = n.GetBoolValue(); } },
                 { "lowWalletBalanceEnabled", n => { LowWalletBalanceEnabled = n.GetBoolValue(); } },
                 { "lowWalletBalanceSmsEnabled", n => { LowWalletBalanceSmsEnabled = n.GetBoolValue(); } },
@@ -195,6 +198,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteBoolValue("automationFailedSmsEnabled", AutomationFailedSmsEnabled);
             writer.WriteBoolValue("billingEmailEnabled", BillingEmailEnabled);
             writer.WriteBoolValue("billingSmsEnabled", BillingSmsEnabled);
+            writer.WriteBoolValue("incomingMessageSoundEnabled", IncomingMessageSoundEnabled);
             writer.WriteBoolValue("lowWalletBalanceEmailEnabled", LowWalletBalanceEmailEnabled);
             writer.WriteBoolValue("lowWalletBalanceEnabled", LowWalletBalanceEnabled);
             writer.WriteBoolValue("lowWalletBalanceSmsEnabled", LowWalletBalanceSmsEnabled);
