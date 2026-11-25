@@ -15,7 +15,7 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The lower evaluated channel score, or null when neither channel has sufficient evidence.</summary>
+        /// <summary>Rounded average of the evaluated SMS and voice scores, or null when neither channel has sufficient evidence.</summary>
         public int? Score { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.PhoneNumberTrafficHealth"/> and sets the default values.

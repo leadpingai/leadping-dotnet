@@ -1,3 +1,4 @@
+Warning: KiotaBuilder Unable to check for updates
 Warning: KiotaBuilder OpenAPI warning: #/paths/~1automations/post/responses/201/headers/Location/schema - The format uri-reference is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/paths/~1feedback/post/responses/201/headers/Location/schema - The format uri-reference is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/paths/~1leads/post/responses/201/headers/Location/schema - The format uri-reference is not supported by Kiota and the string type will be used.
