@@ -34,7 +34,7 @@ namespace Leadping.OpenApiClient.Wallets.Me.SpendLimits
         {
         }
         /// <summary>
-        /// Returns the current organization&apos;s daily and monthly usage limits in USD and its progress for the current UTC periods.
+        /// Returns organization and channel budgets and usage in the current UTC periods.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SpendLimitsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Leadping.OpenApiClient.Wallets.Me.SpendLimits
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SpendLimitsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SpendLimitsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set daily and monthly usage budgets in USD for your Leadping organization. Use null to remove a limit or zero to stop new paid usage.
+        /// Set organization and channel usage budgets in USD for your Leadping organization. Use null to remove a limit or zero to stop new paid usage.
         /// </summary>
         /// <returns>A <see cref="global::Leadping.OpenApiClient.Models.SpendLimitsResponse"/></returns>
         /// <param name="body">Organization usage budgets in USD. Null removes a limit; zero stops new paid usage.</param>
@@ -102,7 +102,7 @@ namespace Leadping.OpenApiClient.Wallets.Me.SpendLimits
             return await RequestAdapter.SendAsync<global::Leadping.OpenApiClient.Models.SpendLimitsResponse>(requestInfo, global::Leadping.OpenApiClient.Models.SpendLimitsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the current organization&apos;s daily and monthly usage limits in USD and its progress for the current UTC periods.
+        /// Returns organization and channel budgets and usage in the current UTC periods.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Leadping.OpenApiClient.Wallets.Me.SpendLimits
             return requestInfo;
         }
         /// <summary>
-        /// Set daily and monthly usage budgets in USD for your Leadping organization. Use null to remove a limit or zero to stop new paid usage.
+        /// Set organization and channel usage budgets in USD for your Leadping organization. Use null to remove a limit or zero to stop new paid usage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Organization usage budgets in USD. Null removes a limit; zero stops new paid usage.</param>

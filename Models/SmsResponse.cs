@@ -115,6 +115,8 @@ namespace Leadping.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Whether the scheduled send is waiting for spending capacity to reset.</summary>
+        public bool? IsBudgetDelayed { get; set; }
         /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Lead ID associated with the SMS conversation or outreach attempt.</summary>
@@ -249,6 +251,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumber", n => { FromPhoneNumber = n.GetStringValue(); } },
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isBudgetDelayed", n => { IsBudgetDelayed = n.GetBoolValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "leadId", n => { LeadId = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>(global::Leadping.OpenApiClient.Models.MessageMediaAttachment.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -297,6 +300,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumber", FromPhoneNumber);
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isBudgetDelayed", IsBudgetDelayed);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteStringValue("leadId", LeadId);
             writer.WriteCollectionOfObjectValues<global::Leadping.OpenApiClient.Models.MessageMediaAttachment>("media", Media);

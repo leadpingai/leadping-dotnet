@@ -15,6 +15,12 @@ namespace Leadping.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Optional calling budget in USD.</summary>
+        public double? CallingLimit { get; set; }
+        /// <summary>Calendar period for an organization channel budget, in UTC.</summary>
+        public global::Leadping.OpenApiClient.Models.SpendPeriod? CallingPeriod { get; set; }
+        /// <summary>Settled calling charges this period plus pending calling reservations.</summary>
+        public double? CallingUsed { get; set; }
         /// <summary>Daily usage budget in USD. Null means no daily limit; zero stops new paid usage.</summary>
         public double? DailyLimit { get; set; }
         /// <summary>UTC timestamp when the next calendar day begins and daily spending resets.</summary>
@@ -29,6 +35,12 @@ namespace Leadping.OpenApiClient.Models
         public double? MonthlySpent { get; set; }
         /// <summary>Pending usage reservations in USD.</summary>
         public double? Reserved { get; set; }
+        /// <summary>Optional texting budget in USD.</summary>
+        public double? TextingLimit { get; set; }
+        /// <summary>Calendar period for an organization channel budget, in UTC.</summary>
+        public global::Leadping.OpenApiClient.Models.SpendPeriod? TextingPeriod { get; set; }
+        /// <summary>Settled texting charges this period plus pending texting reservations.</summary>
+        public double? TextingUsed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Leadping.OpenApiClient.Models.SpendLimitsResponse"/> and sets the default values.
         /// </summary>
@@ -54,6 +66,9 @@ namespace Leadping.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callingLimit", n => { CallingLimit = n.GetDoubleValue(); } },
+                { "callingPeriod", n => { CallingPeriod = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SpendPeriod>(); } },
+                { "callingUsed", n => { CallingUsed = n.GetDoubleValue(); } },
                 { "dailyLimit", n => { DailyLimit = n.GetDoubleValue(); } },
                 { "dailyResetsAt", n => { DailyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "dailySpent", n => { DailySpent = n.GetDoubleValue(); } },
@@ -61,6 +76,9 @@ namespace Leadping.OpenApiClient.Models
                 { "monthlyResetsAt", n => { MonthlyResetsAt = n.GetDateTimeOffsetValue(); } },
                 { "monthlySpent", n => { MonthlySpent = n.GetDoubleValue(); } },
                 { "reserved", n => { Reserved = n.GetDoubleValue(); } },
+                { "textingLimit", n => { TextingLimit = n.GetDoubleValue(); } },
+                { "textingPeriod", n => { TextingPeriod = n.GetEnumValue<global::Leadping.OpenApiClient.Models.SpendPeriod>(); } },
+                { "textingUsed", n => { TextingUsed = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -70,6 +88,9 @@ namespace Leadping.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("callingLimit", CallingLimit);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SpendPeriod>("callingPeriod", CallingPeriod);
+            writer.WriteDoubleValue("callingUsed", CallingUsed);
             writer.WriteDoubleValue("dailyLimit", DailyLimit);
             writer.WriteDateTimeOffsetValue("dailyResetsAt", DailyResetsAt);
             writer.WriteDoubleValue("dailySpent", DailySpent);
@@ -77,6 +98,9 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("monthlyResetsAt", MonthlyResetsAt);
             writer.WriteDoubleValue("monthlySpent", MonthlySpent);
             writer.WriteDoubleValue("reserved", Reserved);
+            writer.WriteDoubleValue("textingLimit", TextingLimit);
+            writer.WriteEnumValue<global::Leadping.OpenApiClient.Models.SpendPeriod>("textingPeriod", TextingPeriod);
+            writer.WriteDoubleValue("textingUsed", TextingUsed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -149,6 +149,8 @@ namespace Leadping.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether automation created or triggered this SMS event table row.</summary>
         public bool? IsAutomated { get; set; }
+        /// <summary>Whether the scheduled send is waiting for spending capacity to reset.</summary>
+        public bool? IsBudgetDelayed { get; set; }
         /// <summary>Whether this record belongs to demo data.</summary>
         public bool? IsDemo { get; set; }
         /// <summary>Provides a compact API reference to another resource using its stable identifier and human-readable display name.</summary>
@@ -320,6 +322,7 @@ namespace Leadping.OpenApiClient.Models
                 { "fromPhoneNumberId", n => { FromPhoneNumberId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
+                { "isBudgetDelayed", n => { IsBudgetDelayed = n.GetBoolValue(); } },
                 { "isDemo", n => { IsDemo = n.GetBoolValue(); } },
                 { "lead", n => { Lead = n.GetObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>(global::Leadping.OpenApiClient.Models.IdNamePair.CreateFromDiscriminatorValue); } },
                 { "leadAvatarUrl", n => { LeadAvatarUrl = n.GetStringValue(); } },
@@ -374,6 +377,7 @@ namespace Leadping.OpenApiClient.Models
             writer.WriteStringValue("fromPhoneNumberId", FromPhoneNumberId);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isAutomated", IsAutomated);
+            writer.WriteBoolValue("isBudgetDelayed", IsBudgetDelayed);
             writer.WriteBoolValue("isDemo", IsDemo);
             writer.WriteObjectValue<global::Leadping.OpenApiClient.Models.IdNamePair>("lead", Lead);
             writer.WriteStringValue("leadAvatarUrl", LeadAvatarUrl);
